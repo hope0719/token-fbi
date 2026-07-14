@@ -56,6 +56,16 @@ const TOKENS = [
     updated: "2026-07-14"
   },
   {
+    name: "美团 longcat 大模型",
+    type: "大模型",
+    rating: 5,
+    quota: "新用户免费 1000 万 token，很耐用；续购 9.9 元买 5000 万",
+    effect: "美团旗下大模型，免费额度大方、性价比高，适合长期日常高频使用",
+    how: "打开 longcat.chat 官网注册即送新用户免费额度，用完可在平台低价续购",
+    link: "https://longcat.chat/platform/product",
+    updated: "2026-07-14"
+  },
+  {
     name: "美团 catpaw（App）",
     type: "工具",
     rating: 4,
