@@ -49,11 +49,11 @@ python3 -m http.server 8080
    git add .
    git commit -m "init Token FBI"
    git branch -M main
-   git remote add origin git@github.com:YOUR_GITHUB/token-fbi.git
+   git remote add origin git@github.com:hope0719/token-fbi.git
    git push -u origin main
    ```
 3. 仓库 **Settings → Pages**，Source 选 `main` 分支根目录，保存。
-4. 稍等片刻，访问 `https://YOUR_GITHUB.github.io/token-fbi/` 即可。
+4. 稍等片刻，访问 `https://hope0719.github.io/token-fbi/` 即可。
 
 ## 投稿
 
