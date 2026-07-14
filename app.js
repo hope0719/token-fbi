@@ -46,21 +46,21 @@ const TOKENS = [
     updated: "2026-07-14"
   },
   {
-    name: "阿里 qoderwork",
-    type: "大模型",
+    name: "阿里 qoderwork（App）",
+    type: "工具",
     rating: 4,
     quota: "登录即送 2100 积分，邀请再送 200，每日签到 100 积分",
-    effect: "畅快使用 GLM5.2，积分制日常够用",
-    how: "打开 qoder.com.cn 注册登录即可领取，签到/邀请持续攒分",
-    link: "https://qoder.com.cn",
+    effect: "阿里旗下 AI 编程 App，内置调用 GLM5.2，积分制日常够用",
+    how: "打开 App 注册登录即可领取，签到/邀请持续攒分（走下方邀请链接有邀请奖励）",
+    link: "https://qoder.com.cn/referral?referral_code=YoIiLVYpMLQsCajUHM30noFvBlFuzqqz",
     updated: "2026-07-14"
   },
   {
-    name: "美团 catpaw",
-    type: "大模型",
+    name: "美团 catpaw（App）",
+    type: "工具",
     rating: 4,
     quota: "500 次兑换额度，用完可再申请",
-    effect: "美团旗下 AI，可用 GLM5.2 相关能力",
+    effect: "美团旗下 AI App，可用 GLM5.2 相关能力",
     how: "打开 catpaw.meituan.com 按页面兑换额度",
     link: "https://catpaw.meituan.com/",
     updated: "2026-07-14"
