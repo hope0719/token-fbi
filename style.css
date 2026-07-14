@@ -105,6 +105,15 @@ main.wrap { padding-top: 48px; padding-bottom: 24px; }
 .about h2, .submit h2 { font-size: 22px; margin: 0 0 12px; }
 .about p, .submit p { color: #334155; max-width: 720px; }
 .submit { padding-bottom: 56px; }
+.submit-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
+.qrcode-box {
+  display: none; margin-top: 18px; padding: 22px;
+  background: #f1f5f9; border: 1px solid var(--line); border-radius: var(--radius);
+  text-align: center; color: var(--muted); font-size: 13px;
+}
+.qrcode-box.is-visible { display: block; }
+.qrcode-box img { border-radius: 8px; margin-bottom: 10px; }
+.qrcode-box p { margin: 0; max-width: 360px; }
 
 /* Footer */
 .site-footer { background: var(--navy); color: #94a3b8; margin-top: 24px; }

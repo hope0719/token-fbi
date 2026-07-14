@@ -68,9 +68,12 @@
     <p>发现哪家有新免费额度？两种渠道都欢迎，一起把情报网织密：</p>
     <div class="submit-actions">
       <a class="btn btn-primary" href="https://github.com/YOUR_GITHUB/token-fbi/issues" target="_blank" rel="noopener">🐙 去 GitHub 投稿</a>
-      <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">💬 加飞书群投稿</a>
+      <a class="btn btn-ghost" href="#qrcode-feishu" onclick="document.getElementById('qrcode-feishu').classList.toggle('is-visible')">💬 加飞书群投稿</a>
     </div>
-    <p class="submit-note">飞书群入口待补充：把群链接或入群二维码放到这里即可（需要的话我也可以帮你建一个飞书群）。</p>
+    <div id="qrcode-feishu" class="qrcode-box">
+      <img src="qrcode-feishu-group.png" alt="TOKEN-FBI 情报局 飞书群二维码" width="220" />
+      <p>扫描加入「TOKEN-FBI 情报局」飞书群，直接爆料或交流免费 token 情报。</p>
+    </div>
   </section>
 
   <footer class="site-footer">
