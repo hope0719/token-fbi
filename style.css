@@ -106,14 +106,14 @@ main.wrap { padding-top: 48px; padding-bottom: 24px; }
 .about p, .submit p { color: #334155; max-width: 720px; }
 .submit { padding-bottom: 56px; }
 .submit-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
-.btn-feishu {
+.btn-wechat {
   display: inline-flex; align-items: center; justify-content: center;
   width: 52px; height: 52px; border-radius: 14px;
-  background: #3370ff; box-shadow: 0 2px 8px rgba(51,112,255,.35);
+  background: #07c160; box-shadow: 0 2px 8px rgba(7,193,96,.35);
   transition: transform .08s ease, background .2s ease; text-decoration: none;
 }
-.btn-feishu:hover { background: #2860e0; }
-.btn-feishu:active { transform: translateY(1px); }
+.btn-wechat:hover { background: #06ad56; }
+.btn-wechat:active { transform: translateY(1px); }
 .qrcode-box {
   display: none; margin-top: 18px; padding: 22px;
   background: #f1f5f9; border: 1px solid var(--line); border-radius: var(--radius);
