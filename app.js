@@ -82,7 +82,7 @@ const TOKENS = [
     quota: "HY3 模型限时免费，到 2026-07-22",
     effect: "腾讯系 AI 工作台，HY3 能力可直接调用，写代码、查资料、做自动化都好用",
     how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免至 7/22，手慢无）",
-    link: "https://workbuddy.ai",
+    link: "https://www.codebuddy.cn/events/invite?inviteCode=akek8mgwjqlt",
     updated: "2026-07-14"
   },
   {
