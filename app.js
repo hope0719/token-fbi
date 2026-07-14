@@ -6,34 +6,64 @@
 
 const TOKENS = [
   {
-    name: "示例 · 通义千问",
+    name: "阶跃星辰 StepFun",
     type: "大模型",
-    rating: 4,                                  // 香度 1~5（几颗火）
-    quota: "新用户注册即送额度 + App 内每日签到",
-    effect: "中文问答、写稿、总结都够用，日常白嫖神器",
-    how: "官网/App 注册后自动到账，签到可累计",
-    link: "#",                                 // 领取入口链接
+    rating: 5,                                  // 香度 1~5（几颗火）
+    quota: "400M Credits + 15天免费体验（用完再送15天，邀请好友最高累计90天）",
+    effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，推理最强）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理",
+    how: "注册后到 Plan 列表点「免费领取」，再到 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）。活动 7 月 31 日截止，仅限新用户",
+    link: "https://platform.stepfun.com/?invite_code=HWNNAXYV",
     updated: "2026-07-14"
   },
   {
-    name: "示例 · 即梦 AI",
-    type: "绘图",
+    name: "商汤 Token Plan（sensenova）",
+    type: "大模型",
+    rating: 3,
+    quota: "限免期 5 小时 500 次调用（日常很难用完）",
+    effect: "可用 DeepSeek V4 Flash，能力强、响应快，适合接 Workbuddy 等客户端的自定义模型",
+    how: "手机号注册 sensenova.cn/token-plan → 创建 API Key → 文档查 Base URL（https://token.sensenova.cn/v1/chat/completions）与 Model ID（deepseek-v4-flash）→ 填进客户端",
+    link: "https://www.sensenova.cn/token-plan",
+    updated: "2026-07-14"
+  },
+  {
+    name: "火山引擎 Ark 协作计划（字节）",
+    type: "大模型",
     rating: 5,
-    quota: "每日免费生成额度，做图做视频都能用",
-    effect: "出图快、中文提示词理解好，适合做封面/配图",
-    how: "App 内每日登录领取免费点数",
-    link: "#",
+    quota: "每天免费 300 万 token（解决小问题即切换，超额才扣费）",
+    effect: "可调用 GLM5.2 等模型，适合日常高频小任务",
+    how: "打开火山引擎 Ark 协作计划页面，按活动领取每日免费额度即可",
+    link: "https://console.volcengine.com/ark/region:cn-beijing/openManagement/rewardPlan",
     updated: "2026-07-14"
   },
   {
-    name: "示例 · 可灵 AI",
-    type: "视频",
+    name: "七牛云 AI 推理",
+    type: "大模型",
+    rating: 5,
+    quota: "300 万 token，新用户再送 1000 万 token（均可直接用于 GLM5.2）",
+    effect: "直接用 GLM5.2，免工具调用，注册登录即可拿 API",
+    how: "访问 https://s.qiniu.com/VV7Zfa 注册登录，到 https://portal.qiniu.com/ai-inference/api-key 创建 API Key（注意：不要在微信内打开）",
+    link: "https://s.qiniu.com/VV7Zfa",
+    updated: "2026-07-14"
+  },
+  {
+    name: "阿里 qoderwork",
+    type: "大模型",
     rating: 4,
-    quota: "每日赠送免费生成次数",
-    effect: "文生视频质量在线，短片段够玩",
-    how: "官网注册后每日 0 点刷新免费额度",
-    link: "#",
-    updated: "2026-07-13"
+    quota: "登录即送 2100 积分，邀请再送 200，每日签到 100 积分",
+    effect: "畅快使用 GLM5.2，积分制日常够用",
+    how: "打开 qoder.com.cn 注册登录即可领取，签到/邀请持续攒分",
+    link: "https://qoder.com.cn",
+    updated: "2026-07-14"
+  },
+  {
+    name: "美团 catpaw",
+    type: "大模型",
+    rating: 4,
+    quota: "500 次兑换额度，用完可再申请",
+    effect: "美团旗下 AI，可用 GLM5.2 相关能力",
+    how: "打开 catpaw.meituan.com 按页面兑换额度",
+    link: "https://catpaw.meituan.com/",
+    updated: "2026-07-14"
   }
 ];
 
