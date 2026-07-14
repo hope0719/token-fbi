@@ -81,7 +81,17 @@ main.wrap { padding-top: 48px; padding-bottom: 24px; }
 .card {
   background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 12px;
+  position: relative;
 }
+.card.is-limited { border-color: #fecaca; }
+.card-badge {
+  position: absolute; top: 14px; right: 14px; z-index: 2;
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .5px;
+  padding: 4px 10px; border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(239,68,68,.35);
+}
+.card.is-limited .card-top { padding-right: 66px; }
 .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
 .card-name { font-size: 18px; font-weight: 700; margin: 0; }
 .card-type {

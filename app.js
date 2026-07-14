@@ -13,6 +13,7 @@ const TOKENS = [
     effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，推理最强）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理",
     how: "注册后到 Plan 列表点「免费领取」，再到 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）。活动 7 月 31 日截止，仅限新用户",
     link: "https://platform.stepfun.com/?invite_code=HWNNAXYV",
+    limited: "2026-07-31",
     updated: "2026-07-14"
   },
   {
@@ -83,6 +84,7 @@ const TOKENS = [
     effect: "腾讯系 AI 工作台，HY3 能力可直接调用，写代码、查资料、做自动化都好用",
     how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免至 7/22，手慢无）",
     link: "https://www.codebuddy.cn/events/invite?inviteCode=akek8mgwjqlt",
+    limited: "2026-07-22",
     updated: "2026-07-14"
   },
   {
@@ -112,6 +114,11 @@ const MAX = 5;
 const cardBox = document.getElementById("cards");
 const filters = document.getElementById("filters");
 
+function fmtMd(d) {
+  const p = d.split("-");
+  return parseInt(p[1], 10) + "/" + parseInt(p[2], 10);
+}
+
 function fire(rating) {
   let s = "";
   for (let i = 1; i <= MAX; i++) {
@@ -127,11 +134,12 @@ function render(type) {
     return;
   }
   cardBox.innerHTML = list.map(t => `
-    <article class="card">
+    <article class="card${t.limited ? ' is-limited' : ''}">
+      ${t.limited ? `<span class="card-badge" title="限时活动，截止 ${t.limited}">限时 ${fmtMd(t.limited)}</span>` : ''}
       <div class="card-top">
         <h3 class="card-name">${t.name}</h3>
-        <span class="card-type">${t.type}</span>
       </div>
+      <span class="card-type">${t.type}</span>
       <div class="card-rating" title="香度 ${t.rating}/5">${fire(t.rating)}</div>
       <div class="card-row"><span class="k">免费额度</span><span class="v">${t.quota}</span></div>
       <div class="card-row"><span class="k">效果怎么样</span><span class="v">${t.effect}</span></div>
