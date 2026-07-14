@@ -74,6 +74,26 @@ const TOKENS = [
     how: "打开 catpaw.meituan.com 按页面兑换额度",
     link: "https://catpaw.meituan.com/",
     updated: "2026-07-14"
+  },
+  {
+    name: "WorkBuddy",
+    type: "工具",
+    rating: 5,
+    quota: "HY3 模型限时免费，到 2026-07-22",
+    effect: "腾讯系 AI 工作台，HY3 能力可直接调用，写代码、查资料、做自动化都好用",
+    how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免至 7/22，手慢无）",
+    link: "https://workbuddy.ai",
+    updated: "2026-07-14"
+  },
+  {
+    name: "Agnes AI",
+    type: "大模型",
+    rating: 4,
+    quota: "（情报待补充）",
+    effect: "（情报待补充，欢迎投稿或补充）",
+    how: "（情报待补充）",
+    link: "#",
+    updated: "2026-07-14"
   }
 ];
 
