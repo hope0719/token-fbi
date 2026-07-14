@@ -94,6 +94,16 @@ const TOKENS = [
     how: "注册 platform.agnes-ai.com 生成 API Key 直接调用；多模态建议配合官方 skill（github.com/lj1270998580-crypto/Agnes-help-skill）使用",
     link: "https://platform.agnes-ai.com",
     updated: "2026-07-15"
+  },
+  {
+    name: "NVIDIA NIM 免费 API",
+    type: "大模型",
+    rating: 5,
+    quota: "标 Free Endpoint 的模型免费调用，提供 H100 算力（速率有限制，个人学习/测试够用）",
+    effect: "可调 MiniMax M2.7、GLM-5.1、Kimi K2.5、DeepSeek V3.2、Gemma 4、Llama 4 等顶级模型，兼容 OpenAI SDK",
+    how: "打开 build.nvidia.com 注册（+86 手机号可验证）→ 创建 API Key → 调 Free Endpoint 模型（base_url: integrate.api.nvidia.com/v1）",
+    link: "https://build.nvidia.com",
+    updated: "2026-07-15"
   }
 ];
 
