@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Token 情报局 · Token FBI</title>
+  <meta name="description" content="我们在调查哪家的 token 最香 —— 免费 AI token 情报站：有哪些、效果如何、怎么拿。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#">
+        <span class="brand-badge">🔍</span>
+        <span class="brand-text">
+          <strong>Token FBI</strong>
+          <em>Token 情报局</em>
+        </span>
+      </a>
+      <nav class="site-nav">
+        <a href="#list">情报列表</a>
+        <a href="#about">关于</a>
+        <a class="nav-cta" href="#submit">投稿情报</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="hero-kicker">非官方 · 纯爱好者情报站</p>
+      <h1>我们在调查哪家的 <span class="hl">token 最香</span></h1>
+      <p class="hero-sub">
+        汇总现在还能免费拿到的 AI token：有哪些、效果怎么样、怎么领。
+        帮你看清每一家值不值得冲。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#list">查看情报 ↓</a>
+        <a class="btn btn-ghost" href="#submit">我也来爆料</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap" id="list">
+    <div class="list-head">
+      <h2>情报列表</h2>
+      <div class="filters" id="filters">
+        <button class="chip is-active" data-type="all">全部</button>
+        <button class="chip" data-type="大模型">大模型</button>
+        <button class="chip" data-type="绘图">绘图</button>
+        <button class="chip" data-type="视频">视频</button>
+        <button class="chip" data-type="工具">工具</button>
+      </div>
+    </div>
+    <div class="cards" id="cards"><!-- 卡片由 app.js 渲染 --></div>
+  </main>
+
+  <section class="wrap about" id="about">
+    <h2>关于本站</h2>
+    <p>
+      Token FBI 是一个爱好者自发维护的免费 token 情报站。我们不卖 token、不接暗广，
+      只做一件事：<strong>帮你看清现在哪家的免费额度最值得领</strong>。
+      情报有时效，领之前请以各家官方页面为准。
+    </p>
+  </section>
+
+  <section class="wrap submit" id="submit">
+    <h2>投稿一条情报</h2>
+    <p>发现哪家有新免费额度？欢迎在仓库提 Issue 或 PR，一起把情报网织密。</p>
+    <a class="btn btn-primary" href="https://github.com/YOUR_GITHUB/token-fbi/issues" target="_blank" rel="noopener">去 GitHub 投稿</a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>Token 情报局 · Token FBI</span>
+      <span class="muted">我们在调查哪家的 token 最香</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
