@@ -68,7 +68,13 @@
     <p>发现哪家有新免费额度？两种渠道都欢迎，一起把情报网织密：</p>
     <div class="submit-actions">
       <a class="btn btn-primary" href="https://github.com/YOUR_GITHUB/token-fbi/issues" target="_blank" rel="noopener">🐙 去 GitHub 投稿</a>
-      <a class="btn btn-ghost" href="#qrcode-feishu" onclick="document.getElementById('qrcode-feishu').classList.toggle('is-visible')">💬 加飞书群投稿</a>
+      <a class="btn-feishu" href="#qrcode-feishu" title="加飞书群投稿" aria-label="加飞书群投稿" onclick="document.getElementById('qrcode-feishu').classList.toggle('is-visible')">
+        <svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true">
+          <path d="M13 31c8-2 14-7 18-15 1 7 0 12-4 17-3 3-7 5-12 5-2 0-4-.4-5-1 1 0 3-.3 4-1z" fill="#e8eaed"/>
+          <circle cx="32" cy="13" r="5" fill="#e8eaed"/>
+          <path d="M37 13l5-2-4 4z" fill="#e8eaed"/>
+        </svg>
+      </a>
     </div>
     <div id="qrcode-feishu" class="qrcode-box">
       <img src="qrcode-feishu-group.png" alt="TOKEN-FBI 情报局 飞书群二维码" width="220" />
