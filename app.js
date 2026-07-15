@@ -128,6 +128,17 @@ const TOKENS = [
     how: "打开 build.nvidia.com 注册（+86 手机号可验证）→ 创建 API Key → 调 Free Endpoint 模型（base_url: integrate.api.nvidia.com/v1）",
     link: "https://build.nvidia.com",
     updated: "2026-07-15"
+  },
+  {
+    name: "硅基流动 SiliconFlow",
+    type: "大模型",
+    modality: "GLM5.2 等全模型 · 文本/多模态",
+    rating: 4,
+    quota: "邀请好友奖励：每邀请 1 位得 14 元额度",
+    effect: "聚合多家开源大模型（含智谱 GLM5.2、DeepSeek 等），文本 / 图像多模态 API，兼容 OpenAI 格式",
+    how: "打开 cloud.siliconflow.cn 注册（可走邀请链接）→ 在「邀请有礼」中邀请好友，每邀 1 位得 14 元额度",
+    link: "https://cloud.siliconflow.cn/i/HgdEna2e",
+    updated: "2026-07-15"
   }
 ];
 
