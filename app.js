@@ -2,12 +2,14 @@
  * Token 情报局 · Token FBI
  * 卡片数据都在下面的 TOKENS 数组里。
  * 想加一条情报？复制一个 {...} 对象粘进去就行，字段说明见每个属性。
+ *   - modality：模型类型（文本模型 / 多模态大模型 / 全模态模型 等），显示在名字右边
  * ========================================================= */
 
 const TOKENS = [
   {
     name: "阶跃星辰 StepFun",
     type: "大模型",
+    modality: "多模态大模型",
     rating: 5,                                  // 香度 1~5（几颗火）
     quota: "400M Credits + 15天免费体验（用完再送15天，邀请好友最高累计90天）",
     effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，推理最强）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理",
@@ -19,6 +21,7 @@ const TOKENS = [
   {
     name: "商汤 Token Plan（sensenova）",
     type: "大模型",
+    modality: "DeepSeek V4 Flash · 文本模型",
     rating: 3,
     quota: "限免期 5 小时 500 次调用（日常很难用完）",
     effect: "可用 DeepSeek V4 Flash，能力强、响应快，适合接 Workbuddy 等客户端的自定义模型",
@@ -29,6 +32,7 @@ const TOKENS = [
   {
     name: "火山引擎 Ark 协作计划（字节）",
     type: "大模型",
+    modality: "GLM5.2 · 文本模型",
     rating: 5,
     quota: "每天免费 300 万 token（解决小问题即切换，超额才扣费）",
     effect: "可调用 GLM5.2 等模型，适合日常高频小任务",
@@ -39,6 +43,7 @@ const TOKENS = [
   {
     name: "七牛云 AI 推理",
     type: "大模型",
+    modality: "GLM5.2 · 文本模型",
     rating: 5,
     quota: "300 万 token，新用户再送 1000 万 token（均可直接用于 GLM5.2）",
     effect: "直接用 GLM5.2，免工具调用，注册登录即可拿 API",
@@ -49,6 +54,7 @@ const TOKENS = [
   {
     name: "阿里 qoderwork（App）",
     type: "工具",
+    modality: "GLM5.2 · 文本模型",
     rating: 4,
     quota: "登录即送 2100 积分，邀请再送 200，每日签到 100 积分",
     effect: "阿里旗下 AI 编程 App，内置调用 GLM5.2，积分制日常够用",
@@ -59,6 +65,7 @@ const TOKENS = [
   {
     name: "美团 longcat 大模型",
     type: "大模型",
+    modality: "文本模型",
     rating: 5,
     quota: "新用户免费 1000 万 token，很耐用；续购 9.9 元买 5000 万",
     effect: "美团旗下大模型，免费额度大方、性价比高，适合长期日常高频使用",
@@ -69,6 +76,7 @@ const TOKENS = [
   {
     name: "美团 catpaw（App）",
     type: "工具",
+    modality: "GLM5.2 · 文本模型",
     rating: 4,
     quota: "500 次兑换额度，用完可再申请",
     effect: "美团旗下 AI App，可用 GLM5.2 相关能力",
@@ -79,6 +87,7 @@ const TOKENS = [
   {
     name: "WorkBuddy",
     type: "工具",
+    modality: "HY3 · 文本模型",
     rating: 5,
     quota: "HY3 模型限时免费，到 2026-07-22",
     effect: "腾讯系 AI 工作台，HY3 能力可直接调用，写代码、查资料、做自动化都好用",
@@ -90,6 +99,7 @@ const TOKENS = [
   {
     name: "Agnes AI",
     type: "大模型",
+    modality: "全模态模型",
     rating: 5,
     quota: "不限期全模态免费，API 每分钟 20 次请求（RPM 20 以内）",
     effect: "Agnes2.0 全模态模型，文本 / 图像 / 视频全能适配，官方承诺持续升级并保持免费",
@@ -98,8 +108,20 @@ const TOKENS = [
     updated: "2026-07-15"
   },
   {
+    name: "腾讯混元 3（Hunyuan）",
+    type: "大模型",
+    modality: "模态模型 / 多模态模型",
+    rating: 4,
+    quota: "（情报待补充）",
+    effect: "腾讯混元系列大模型，覆盖文本与多模态能力（具体免费额度待补充）",
+    how: "（情报待补充，欢迎投稿或补充）",
+    link: "#",
+    updated: "2026-07-15"
+  },
+  {
     name: "NVIDIA NIM 免费 API",
     type: "大模型",
+    modality: "多模型聚合（文本 / 多模态）",
     rating: 5,
     quota: "标 Free Endpoint 的模型免费调用，提供 H100 算力（速率有限制，个人学习/测试够用）",
     effect: "可调 MiniMax M2.7、GLM-5.1、Kimi K2.5、DeepSeek V3.2、Gemma 4、Llama 4 等顶级模型，兼容 OpenAI SDK",
@@ -138,6 +160,7 @@ function render(type) {
       ${t.limited ? `<span class="card-badge" title="限时活动，截止 ${t.limited}">限时 ${fmtMd(t.limited)}</span>` : ''}
       <div class="card-top">
         <h3 class="card-name">${t.name}</h3>
+        ${t.modality ? `<span class="card-modality">${t.modality}</span>` : ''}
       </div>
       <span class="card-type">${t.type}</span>
       <div class="card-rating" title="香度 ${t.rating}/5">${fire(t.rating)}</div>
