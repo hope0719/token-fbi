@@ -108,6 +108,17 @@ const TOKENS = [
     updated: "2026-07-15"
   },
   {
+    name: "阿里云百炼 × OceanBase 专属福利",
+    type: "大模型",
+    modality: "百炼全模型（通义千问等）· 文本/多模态",
+    rating: 5,
+    quota: "1 亿 Token 免费额度（实测新、老用户均可领）",
+    effect: "阿里云百炼与 OceanBase 联合福利，额度可抵扣百炼全量模型（通义千问 / DeepSeek / 万相 等）的调用与算力",
+    how: "进入专属福利页 opc.aliyun.com/oceanbase → 登录阿里云账号 → 申请 OPC 专属 token 补贴即可领取（据投稿实测，新老用户都能拿到）",
+    link: "https://opc.aliyun.com/oceanbase",
+    updated: "2026-07-15"
+  },
+  {
     name: "NVIDIA NIM 免费 API",
     type: "大模型",
     modality: "多模型聚合（文本 / 多模态）",
