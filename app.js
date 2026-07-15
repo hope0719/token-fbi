@@ -181,9 +181,11 @@ function render(type) {
       ${t.limited ? `<span class="card-badge" title="限时活动，截止 ${t.limited}">限时 ${fmtMd(t.limited)}</span>` : ''}
       <div class="card-top">
         <h3 class="card-name">${t.name}</h3>
-        ${t.modality ? `<span class="card-modality">${t.modality}</span>` : ''}
+        <span class="card-tags">
+          ${t.modality ? `<span class="card-modality">${t.modality}</span>` : ''}
+          <span class="card-type">${catOf(t)}</span>
+        </span>
       </div>
-      <span class="card-type">${catOf(t)}</span>
       <div class="card-rating" title="香度 ${t.rating}/5">${fire(t.rating)}</div>
       <div class="card-row"><span class="k">免费额度</span><span class="v">${t.quota}</span></div>
       <div class="card-row"><span class="k">效果怎么样</span><span class="v">${t.effect}</span></div>
