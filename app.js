@@ -87,14 +87,14 @@ const TOKENS = [
   {
     name: "WorkBuddy",
     type: "工具",
-    modality: "HY3 · 文本模型",
+    modality: "HY3 · 混元3 · 文本模型",
     rating: 5,
-    quota: "HY3 模型限时免费，到 2026-07-22",
-    effect: "腾讯系 AI 工作台，HY3 能力可直接调用，写代码、查资料、做自动化都好用",
+    quota: "HY3（混元3）模型限时免费，到 2026-07-22",
+    effect: "腾讯系 AI 工作台，HY3（混元3）能力可直接调用，速度很快；写代码、查资料、做自动化都好用",
     how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免至 7/22，手慢无）",
     link: "https://www.codebuddy.cn/events/invite?inviteCode=akek8mgwjqlt",
     limited: "2026-07-22",
-    updated: "2026-07-14"
+    updated: "2026-07-15"
   },
   {
     name: "Agnes AI",
@@ -105,17 +105,6 @@ const TOKENS = [
     effect: "Agnes2.0 全模态模型，文本 / 图像 / 视频全能适配，官方承诺持续升级并保持免费",
     how: "注册 platform.agnes-ai.com 生成 API Key 直接调用；多模态建议配合官方 skill（github.com/lj1270998580-crypto/Agnes-help-skill）使用",
     link: "https://platform.agnes-ai.com",
-    updated: "2026-07-15"
-  },
-  {
-    name: "腾讯混元 3（Hunyuan）",
-    type: "大模型",
-    modality: "模态模型 / 多模态模型",
-    rating: 4,
-    quota: "（情报待补充）",
-    effect: "腾讯混元系列大模型，覆盖文本与多模态能力（具体免费额度待补充）",
-    how: "（情报待补充，欢迎投稿或补充）",
-    link: "#",
     updated: "2026-07-15"
   },
   {
