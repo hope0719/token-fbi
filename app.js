@@ -110,7 +110,7 @@ const TOKENS = [
   {
     name: "阿里云百炼 × OceanBase",
     type: "大模型",
-    modality: "百炼全模型（通义千问等）· 文本/多模态",
+    modality: "百炼、通义、千问等 · 多模态大模型",
     rating: 5,
     quota: "1 亿 Token 免费额度（实测新、老用户均可领）",
     effect: "阿里云百炼与 OceanBase 联合福利，额度可抵扣百炼全量模型（通义千问 / DeepSeek / 万相 等）的调用与算力",
