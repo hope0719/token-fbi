@@ -160,8 +160,18 @@ function fire(rating) {
   return s;
 }
 
+/* 归类规则（首页只分三类，避免与卡片上的模型类型标签重复）：
+ *   - 工具：App 类（type === "工具"）优先
+ *   - GLM5.2：非工具且模型类型含 "GLM5.2"
+ *   - 大模型：其余模型平台
+ */
+function catOf(t) {
+  if (t.type === "工具") return "工具";
+  return (t.modality || "").includes("GLM5.2") ? "GLM5.2" : "大模型";
+}
+
 function render(type) {
-  const list = type === "all" ? TOKENS : TOKENS.filter(t => t.type === type);
+  const list = type === "all" ? TOKENS : TOKENS.filter(t => catOf(t) === type);
   if (!list.length) {
     cardBox.innerHTML = '<p style="color:#64748b">这类暂时还没有情报，欢迎投稿～</p>';
     return;
@@ -173,7 +183,7 @@ function render(type) {
         <h3 class="card-name">${t.name}</h3>
         ${t.modality ? `<span class="card-modality">${t.modality}</span>` : ''}
       </div>
-      <span class="card-type">${t.type}</span>
+      <span class="card-type">${catOf(t)}</span>
       <div class="card-rating" title="香度 ${t.rating}/5">${fire(t.rating)}</div>
       <div class="card-row"><span class="k">免费额度</span><span class="v">${t.quota}</span></div>
       <div class="card-row"><span class="k">效果怎么样</span><span class="v">${t.effect}</span></div>
