@@ -92,8 +92,8 @@ main.wrap { padding-top: 48px; padding-bottom: 24px; }
   box-shadow: 0 2px 8px rgba(239,68,68,.35);
 }
 .card.is-limited .card-top { padding-right: 80px; }
-.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; flex-wrap: wrap; flex-direction: column; }
-.card-name { font-size: 18px; font-weight: 700; margin: 0; }
+.card-top { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.card-name { font-size: 18px; font-weight: 700; margin: 0; width: 100%; }
 .card-modality {
   flex: none; font-size: 12px; font-weight: 600; color: #0e7490;
   background: #cffafe; border: 1px solid #a5f3fc;
