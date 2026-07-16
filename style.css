@@ -33,9 +33,10 @@ body {
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
 .brand-badge { font-size: 22px; }
-.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-text { display: flex; flex-direction: row; align-items: baseline; gap: 6px; line-height: 1.1; }
 .brand-text strong { font-size: 17px; letter-spacing: .5px; }
 .brand-text em { font-style: normal; font-size: 12px; color: #94a3b8; }
+.brand-sep { color: #64748b; font-weight: 400; font-size: 14px; }
 .site-nav { display: flex; align-items: center; gap: 18px; }
 .site-nav a { color: #cbd5e1; text-decoration: none; font-size: 14px; }
 .site-nav a:hover { color: #fff; }
@@ -120,11 +121,12 @@ main.wrap { padding-top: 48px; padding-bottom: 24px; }
   flex: none; font-size: 12px; font-weight: 600; color: #0e7490;
   background: #cffafe; border: 1px solid #a5f3fc;
   padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis; max-width: 100%;
 }
-.card-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; width: 100%; }
+.card-tags { display: flex; align-items: center; gap: 6px; flex-wrap: nowrap; width: 100%; }
 .card-type {
   flex: none; font-size: 12px; color: var(--accent-ink); background: #fef3c7;
-  border: 1px solid #fde68a; padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+  border: 1px solid #fde68a; padding: 3px 10px; border-radius: 999px; white-space: nowrap; flex-shrink: 0;
 }
 
 /* 3. 香度 🔥 放大 + 加间距 */
