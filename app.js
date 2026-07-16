@@ -139,6 +139,193 @@ const TOKENS = [
     how: "打开 cloud.siliconflow.cn 注册（可走邀请链接）→ 在「邀请有礼」中邀请好友，每邀 1 位得 14 元额度",
     link: "https://cloud.siliconflow.cn/i/HgdEna2e",
     updated: "2026-07-15"
+  },
+  {
+    name: "智谱 GLM-4-Flash",
+    type: "大模型",
+    modality: "GLM 系列 · 文本模型",
+    rating: 5,
+    quota: "完全免费，无额度上限，永久有效",
+    effect: "零门槛永久免费，中文理解与生成能力在线，日常问答/写稿/总结全能胜任",
+    how: "打开 bigmodel.cn 注册登录后直接使用（无需实名认证），API 与 Web 端共用额度",
+    link: "https://bigmodel.cn",
+    updated: "2026-07-16"
+  },
+  {
+    name: "DeepSeek V3",
+    type: "大模型",
+    modality: "DeepSeek 系列 · 文本模型",
+    rating: 5,
+    quota: "1000 万 tokens（永久有效，不清零）",
+    effect: "国产顶级开源大模型，推理能力强、响应快，代码/数学/中文都靠谱，适合长期高频使用",
+    how: "打开 platform.deepseek.com 注册账号 → 实名认证 → 创建 API Key → 直接调用（兼容 OpenAI 格式）",
+    link: "https://platform.deepseek.com",
+    updated: "2026-07-16"
+  },
+  {
+    name: "DeepSeek R1",
+    type: "大模型",
+    modality: "DeepSeek 系列 · 推理模型",
+    rating: 5,
+    quota: "500 万 tokens（永久有效，不清零）",
+    effect: "DeepSeek 推理增强版，数理逻辑/代码/复杂推理比 V3 更强，适合硬核任务",
+    how: "同 DeepSeek V3：platform.deepseek.com 注册 → 实名认证 → 创建 API Key",
+    link: "https://platform.deepseek.com",
+    updated: "2026-07-16"
+  },
+  {
+    name: "智谱推荐有礼",
+    type: "大模型",
+    modality: "GLM-4.5-Air · 文本模型",
+    rating: 5,
+    quota: "每成功邀请 1 人注册+实名认证，双方各得 2000 万 Tokens（每月上限 10 人，累计最高 2 亿/月）",
+    effect: "用你的专属邀请链接拉新，被邀请人得 2500 万新用户礼包 + 2000 万 GLM-4.5-Air Tokens，你同样得 2000 万",
+    how: "登录 bigmodel.cn → 获取专属邀请链接 → 分享给好友 → 好友完成注册及实名认证后额度自动到账",
+    link: "https://bigmodel.cn",
+    updated: "2026-07-16"
+  },
+  {
+    name: "阿里云百炼 Qwen-Turbo",
+    type: "大模型",
+    modality: "通义千问 Qwen 系列 · 文本模型",
+    rating: 5,
+    quota: "1000 万 tokens/月（每月自动刷新，长期可用）",
+    effect: "阿里云百炼默认开通额度，Qwen-Turbo 速度快、成本低，日常问答/翻译/总结足够用",
+    how: "打开阿里云百炼（dashscope.aliyun.com）→ 开通服务 → 实名认证 → 创建 API Key → 每月自动刷新额度",
+    link: "https://dashscope.aliyun.com",
+    updated: "2026-07-16"
+  },
+  {
+    name: "阿里云百炼 Qwen-Plus",
+    type: "大模型",
+    modality: "通义千问 Qwen 系列 · 文本模型",
+    rating: 4,
+    quota: "1000 万 tokens（有效期 3 个月）",
+    effect: "Qwen-Plus 比 Turbo 更强，复杂任务/长文本处理更稳，适合对质量要求高的场景",
+    how: "同 Qwen-Turbo：dashscope.aliyun.com 开通 → 实名认证 → 创建 API Key",
+    link: "https://dashscope.aliyun.com",
+    updated: "2026-07-16"
+  },
+  {
+    name: "百度 ERNIE-Speed",
+    type: "大模型",
+    modality: "ERNIE 系列 · 文本模型",
+    rating: 4,
+    quota: "1000 万 tokens/月（每月自动刷新）",
+    effect: "百度智能云轻量级大模型，响应快、中文理解好，适合高频小任务",
+    how: "打开 qianfan.baidu.com 注册 → 实名认证 → 开通 ERNIE-Speed → 创建 API Key",
+    link: "https://qianfan.baidu.com",
+    updated: "2026-07-16"
+  },
+  {
+    name: "百度 ERNIE-Lite",
+    type: "大模型",
+    modality: "ERNIE 系列 · 文本模型",
+    rating: 4,
+    quota: "1000 万 tokens/月（每月自动刷新）",
+    effect: "百度智能云另一款轻量模型，与 Speed 互补，额度独立计算",
+    how: "同 ERNIE-Speed：qianfan.baidu.com 开通 → 实名认证 → 创建 API Key",
+    link: "https://qianfan.baidu.com",
+    updated: "2026-07-16"
+  },
+  {
+    name: "火山方舟（字节）",
+    type: "大模型",
+    modality: "多模型（豆包/DeepSeek 等）· 文本模型",
+    rating: 4,
+    quota: "每个模型 50 万 tokens（长期有效）",
+    effect: "字节跳动大模型平台，覆盖豆包、DeepSeek 等多家模型，R1 模型关联应用后支持联网查询",
+    how: "打开 volcengine.com 注册火山引擎 → 开通方舟服务 → 按模型领取免费试用额度",
+    link: "https://www.volcengine.com",
+    updated: "2026-07-16"
+  },
+  {
+    name: "智谱 GLM-4-Plus",
+    type: "大模型",
+    modality: "GLM 系列 · 文本模型",
+    rating: 4,
+    quota: "100 万 tokens（有效期 1 个月）",
+    effect: "智谱旗舰级模型，比 Flash 更强，适合复杂问答、长文档处理",
+    how: "打开 bigmodel.cn 注册 → 实名认证 → 开通 GLM-4-Plus → 创建 API Key",
+    link: "https://bigmodel.cn",
+    updated: "2026-07-16"
+  },
+  {
+    name: "讯飞星火 Spark Lite",
+    type: "大模型",
+    modality: "Spark 系列 · 文本模型",
+    rating: 3,
+    quota: "100 万 tokens/月（每月自动刷新）",
+    effect: "科大讯飞轻量大模型，中文交互流畅，适合日常对话与简单创作",
+    how: "打开 xfyun.cn 注册讯飞开放平台 → 实名认证 → 开通 Spark Lite → 创建 API Key",
+    link: "https://xfyun.cn",
+    updated: "2026-07-16"
+  },
+  {
+    name: "腾讯云混元",
+    type: "大模型",
+    modality: "混元系列 · 文本模型",
+    rating: 3,
+    quota: "100 万 tokens（有效期 1 年）",
+    effect: "腾讯云自研大模型，中文理解扎实，适合企业级应用与日常对话",
+    how: "打开 cloud.tencent.com 注册 → 实名认证 → 开通混元服务 → 创建 API Key",
+    link: "https://cloud.tencent.com/product/hunyuan",
+    updated: "2026-07-16"
+  },
+  {
+    name: "腾讯云知识引擎",
+    type: "大模型",
+    modality: "知识引擎 · 文本模型",
+    rating: 3,
+    quota: "50 万 tokens（有效期 2 个月）",
+    effect: "腾讯云知识增强型大模型，适合文档问答、知识检索等场景",
+    how: "打开 cloud.tencent.com 注册 → 实名认证 → 开通知识引擎 → 创建 API Key",
+    link: "https://cloud.tencent.com/product/ke",
+    updated: "2026-07-16"
+  },
+  {
+    name: "Wisemodel / 赖耶 AI",
+    type: "大模型",
+    modality: "赖耶系列 · 文本模型",
+    rating: 3,
+    quota: "新用户完成授权即得 20 元 token 资源包",
+    effect: "Wisemodel 平台聚合多家模型，赖耶 AI 为合作方，支持 API 调用与在线体验",
+    how: "打开 wisemodel.cn 注册 → 完成赖耶 AI 授权 → 自动到账 20 元资源包",
+    link: "https://wisemodel.cn",
+    updated: "2026-07-16"
+  },
+  {
+    name: "Wisemodel 邀请奖励",
+    type: "大模型",
+    modality: "赖耶系列 · 文本模型",
+    rating: 3,
+    quota: "每邀请 1 位新用户完成授权，你得 14 元 token 资源包（上限 280 元）",
+    effect: "邀请好友一起薅，双方都得 token，平台早期推广力度大",
+    how: "Wisemodel.cn 注册后获取邀请链接 → 好友通过你的链接注册并完成赖耶 AI 授权 → 你获 14 元/人",
+    link: "https://wisemodel.cn",
+    updated: "2026-07-16"
+  },
+  {
+    name: "MiniMax",
+    type: "大模型",
+    modality: "abab 系列 · 文本模型",
+    rating: 3,
+    quota: "新用户注册即送调用额度 + 邀请双方各得代金券",
+    effect: "MiniMax 自研 abab6.5 系列支持超长上下文，适合长文档分析与多轮对话",
+    how: "打开 minimax.io 或国内入口注册 → 完成新手任务 → 自动到账额度",
+    link: "https://www.minimax.io",
+    updated: "2026-07-16"
+  },
+  {
+    name: "欧派算力云",
+    type: "大模型",
+    modality: "DeepSeek R1/V3 · 文本模型",
+    rating: 3,
+    quota: "新用户注册送 R1 与 V3 各 100 万 tokens（有效期 6 个月）",
+    effect: "专注 DeepSeek 模型的第三方算力平台，R1/V3 推理速度稳定",
+    how: "打开欧派算力云官网注册 → 实名认证 → 自动到账 R1+V3 各 100 万 tokens",
+    link: "https://opc.aliyun.com",
+    updated: "2026-07-16"
   }
 ];
 
