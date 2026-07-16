@@ -46,12 +46,22 @@ body {
 .nav-cta:hover { background: var(--accent); color: #1a1206 !important; }
 
 /* Hero */
-.hero { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%); color: #fff; padding: 72px 0 88px; }
-.hero-kicker { color: #fbbf24; font-size: 13px; letter-spacing: 2px; margin: 0 0 14px; text-transform: uppercase; }
-.hero h1 { font-size: clamp(28px, 5vw, 46px); margin: 0 0 16px; line-height: 1.2; }
+.hero { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%); color: #fff; padding: 72px 0 88px; position: relative; overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; inset: 0; opacity: .08; pointer-events: none;
+  background-image: radial-gradient(#fbbf24 1px, transparent 1px); background-size: 24px 24px;
+}
+.hero-kicker { color: #fbbf24; font-size: 13px; letter-spacing: 2px; margin: 0 0 14px; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
+.hero-kicker .fbi-badge { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; background: rgba(245,158,11,.15); border: 1px solid rgba(245,158,11,.4); }
+.hero-kicker .fbi-badge svg { width: 18px; height: 18px; }
+.hero h1 { font-size: clamp(28px, 5vw, 46px); margin: 0 0 16px; line-height: 1.2; position: relative; }
 .hero h1 .hl { color: var(--accent); }
-.hero-sub { color: #cbd5e1; max-width: 620px; margin: 0 0 28px; font-size: 17px; }
-.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-sub { color: #cbd5e1; max-width: 620px; margin: 0 0 12px; font-size: 17px; position: relative; }
+.hero-stats { display: flex; gap: 24px; flex-wrap: wrap; margin: 0 0 28px; position: relative; }
+.hero-stat { display: flex; align-items: baseline; gap: 6px; }
+.hero-stat .num { font-size: 28px; font-weight: 800; color: var(--accent); line-height: 1; }
+.hero-stat .lbl { font-size: 13px; color: #cbd5e1; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; position: relative; }
 
 .btn {
   display: inline-block; text-decoration: none; font-size: 15px; font-weight: 600;
@@ -78,18 +88,30 @@ main.wrap { padding-top: 48px; padding-bottom: 24px; }
 
 /* Cards */
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+
+/* 1. 卡片 hover 微上浮 */
 .card {
   background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 12px;
   position: relative;
+  transition: transform .18s ease, box-shadow .18s ease;
 }
-.card.is-limited { border-color: #fecaca; }
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(15,23,42,.12);
+}
+
+/* 2. 限时角标脉冲动画 */
+@keyframes pulse-badge {
+  0%, 100% { box-shadow: 0 2px 8px rgba(239,68,68,.35); }
+  50% { box-shadow: 0 2px 18px rgba(239,68,68,.65); }
+}
 .card-badge {
   position: absolute; top: 14px; right: 14px; z-index: 2;
   background: linear-gradient(135deg, #ef4444, #f97316);
   color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .5px;
   padding: 4px 10px; border-radius: 999px;
-  box-shadow: 0 2px 8px rgba(239,68,68,.35);
+  animation: pulse-badge 2s infinite;
 }
 .card.is-limited .card-top { padding-right: 80px; }
 .card-top { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
@@ -104,17 +126,30 @@ main.wrap { padding-top: 48px; padding-bottom: 24px; }
   flex: none; font-size: 12px; color: var(--accent-ink); background: #fef3c7;
   border: 1px solid #fde68a; padding: 3px 10px; border-radius: 999px; white-space: nowrap;
 }
-.card-rating { font-size: 14px; color: var(--accent); letter-spacing: 2px; }
+
+/* 3. 香度 🔥 放大 + 加间距 */
+.card-rating { font-size: 18px; color: var(--accent); letter-spacing: 4px; }
 .card-rating .dim { color: #e2e8f0; }
+
+/* 6. 卡片内部信息层级重构 */
 .card-row { font-size: 14px; }
-.card-row .k { color: var(--muted); display: block; font-size: 12px; margin-bottom: 2px; }
+.card-row .k { color: var(--muted); display: block; font-size: 12px; margin-bottom: 2px; font-weight: 600; }
 .card-row .v { color: var(--ink); }
+.card-row .v strong { color: var(--accent-ink); background: #fef3c7; padding: 1px 6px; border-radius: 4px; }
+.card-row .how-row .v { color: #64748b; font-size: 13px; }
+.card-row .how-row .v::before { content: "↗ "; color: var(--accent); }
+
 .card-link {
   margin-top: auto; text-align: center; text-decoration: none; font-size: 14px; font-weight: 600;
   color: var(--navy); border: 1px solid var(--line); padding: 9px; border-radius: 10px;
 }
 .card-link:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
 .card-date { font-size: 12px; color: var(--muted); text-align: right; }
+
+/* 8. 空状态插画 */
+.empty-state { text-align: center; padding: 48px 20px; color: var(--muted); }
+.empty-state svg { width: 120px; height: 120px; margin-bottom: 16px; opacity: .6; }
+.empty-state p { margin: 0; font-size: 15px; }
 
 /* About / Submit */
 .about, .submit { padding-top: 40px; padding-bottom: 8px; }
@@ -146,10 +181,26 @@ main.wrap { padding-top: 48px; padding-bottom: 24px; }
 .footer-brand { display: flex; flex-direction: column; gap: 3px; }
 .footer-brand strong { color: #e2e8f0; font-size: 15px; }
 .footer-byline { display: flex; align-items: center; gap: 10px; }
+
+/* 7. 页脚署名印章升级 */
 .stamp {
   color: var(--accent); font-weight: 700; font-size: 14px; letter-spacing: 1px;
-  border: 1px solid var(--accent); border-radius: 6px; padding: 3px 9px;
+  border: 2px solid var(--accent); border-radius: 6px; padding: 4px 10px;
+  transform: rotate(-3deg); display: inline-block;
 }
+
+/* 9. 回到顶部按钮 */
+.back-to-top {
+  position: fixed; bottom: 24px; right: 24px; z-index: 50;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #1a1206; border: none;
+  font-size: 20px; font-weight: 700; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(245,158,11,.4);
+  opacity: 0; transform: translateY(10px); pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease, background .2s ease;
+}
+.back-to-top.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.back-to-top:hover { background: #fbbf24; }
 
 @media (max-width: 540px) {
   .site-nav a:not(.nav-cta) { display: none; }

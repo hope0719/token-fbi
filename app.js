@@ -361,10 +361,13 @@ function catOf(t) {
 
 function render(type) {
   const list = type === "all" ? TOKENS : TOKENS.filter(t => catOf(t) === type);
+  const emptyEl = document.getElementById("empty-state");
   if (!list.length) {
-    cardBox.innerHTML = '<p style="color:#64748b">这类暂时还没有情报，欢迎投稿～</p>';
+    cardBox.innerHTML = "";
+    if (emptyEl) emptyEl.style.display = "block";
     return;
   }
+  if (emptyEl) emptyEl.style.display = "none";
   cardBox.innerHTML = list.map(t => `
     <article class="card${t.limited ? ' is-limited' : ''}">
       ${t.limited ? `<span class="card-badge" title="限时活动，截止 ${t.limited}">限时 ${fmtMd(t.limited)}</span>` : ''}
@@ -376,7 +379,7 @@ function render(type) {
       <div class="card-rating" title="香度 ${t.rating}/5">${fire(t.rating)}</div>
       <div class="card-row"><span class="k">免费额度</span><span class="v">${t.quota}</span></div>
       <div class="card-row"><span class="k">效果怎么样</span><span class="v">${t.effect}</span></div>
-      <div class="card-row"><span class="k">怎么拿</span><span class="v">${t.how}</span></div>
+      <div class="card-row how-row"><span class="k">怎么拿</span><span class="v">${t.how}</span></div>
       <a class="card-link" href="${t.link}" target="_blank" rel="noopener">去领取 →</a>
       <div class="card-date">更新于 ${t.updated}</div>
     </article>
@@ -390,5 +393,25 @@ filters.addEventListener("click", e => {
   btn.classList.add("is-active");
   render(btn.dataset.type);
 });
+
+/* Hero 数据大字报 */
+(function initStats() {
+  const total = TOKENS.length;
+  const limited = TOKENS.filter(t => t.limited).length;
+  const latest = TOKENS.slice().sort((a, b) => b.updated.localeCompare(a.updated))[0]?.updated || "—";
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  set("stat-total", total);
+  set("stat-limited", limited);
+  set("stat-updated", latest);
+})();
+
+/* 回到顶部按钮 */
+const backBtn = document.getElementById("backToTop");
+if (backBtn) {
+  const toggle = () => backBtn.classList.toggle("is-visible", window.scrollY > 400);
+  window.addEventListener("scroll", toggle, { passive: true });
+  backBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  toggle();
+}
 
 render("all");

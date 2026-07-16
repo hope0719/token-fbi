@@ -27,11 +27,21 @@
 
   <section class="hero">
     <div class="wrap">
-      <p class="hero-kicker">非官方 · 纯爱好者情报站</p>
+      <p class="hero-kicker">
+        <span class="fbi-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        </span>
+        非官方 · 纯爱好者情报站
+      </p>
       <h1>我们在调查哪家的 <span class="hl">token 最香</span></h1>
       <p class="hero-sub">
         汇总现在还能免费拿到的 AI token：有哪些、效果怎么样、怎么领。<br>帮你看清每一家值不值得冲。
       </p>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="num" id="stat-total">0</span><span class="lbl">家平台收录</span></div>
+        <div class="hero-stat"><span class="num" id="stat-limited">0</span><span class="lbl">个限时活动</span></div>
+        <div class="hero-stat"><span class="num" id="stat-updated">—</span><span class="lbl">最后更新</span></div>
+      </div>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#list">查看情报 ↓</a>
         <a class="btn btn-ghost" href="#submit">我也来爆料</a>
@@ -49,7 +59,18 @@
         <button class="chip" data-type="工具">工具</button>
       </div>
     </div>
-    <div class="cards" id="cards"><!-- 卡片由 app.js 渲染 --></div>
+    <div class="cards" id="cards">
+      <div class="empty-state" id="empty-state" style="display:none;">
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="20" width="80" height="80" rx="16" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="2"/>
+          <circle cx="45" cy="50" r="8" fill="#fbbf24"/>
+          <path d="M38 66h44M38 76h28" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="72" cy="42" r="10" fill="#fff" stroke="#f59e0b" stroke-width="2"/>
+          <path d="M68 42l4 4 6-6" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p>这类暂时还没有情报，欢迎投稿～</p>
+      </div>
+    </div>
   </main>
 
   <section class="wrap about" id="about">
@@ -90,6 +111,8 @@
       </div>
     </div>
   </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部" title="回到顶部">↑</button>
 
   <script src="app.js"></script>
 </body>
