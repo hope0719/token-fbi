@@ -6,28 +6,18 @@
  * ========================================================= */
 
 const TOKENS = [
+  /* ========== 前面：较新模型（截图里 GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 等同期或更晚） ========== */
   {
-    name: "阶跃星辰 StepFun",
-    type: "大模型",
-    modality: "多模态大模型",
-    rating: 5,                                  // 香度 1~5（几颗火）
-    quota: "400M Credits + 15天免费体验（用完再送15天，邀请好友最高累计90天）",
-    effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，推理最强）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理",
-    how: "注册后到 Plan 列表点「免费领取」，再到 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）。活动 7 月 31 日截止，仅限新用户",
-    link: "https://platform.stepfun.com/?invite_code=HWNNAXYV",
-    limited: "2026-07-31",
-    updated: "2026-07-14"
-  },
-  {
-    name: "商汤 Token Plan（sensenova）",
-    type: "大模型",
-    modality: "DeepSeek V4 Flash · 文本模型",
-    rating: 3,
-    quota: "限免期 5 小时 500 次调用（日常很难用完）",
-    effect: "可用 DeepSeek V4 Flash，能力强、响应快，适合接 Workbuddy 等客户端的自定义模型",
-    how: "手机号注册 sensenova.cn/token-plan → 创建 API Key → 文档查 Base URL（https://token.sensenova.cn/v1/chat/completions）与 Model ID（deepseek-v4-flash）→ 填进客户端",
-    link: "https://www.sensenova.cn/token-plan",
-    updated: "2026-07-14"
+    name: "WorkBuddy",
+    type: "工具",
+    modality: "HY3 · 混元3 · 文本模型",
+    rating: 5,
+    quota: "HY3（混元3）模型限时免费，到 2026-07-22",
+    effect: "腾讯系 AI 工作台，HY3（混元3）能力可直接调用，速度很快；写代码、查资料、做自动化都好用",
+    how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免至 7/22，手慢无）",
+    link: "https://www.codebuddy.cn/events/invite?inviteCode=akek8mgwjqlt",
+    limited: "2026-07-22",
+    updated: "2026-07-15"
   },
   {
     name: "火山引擎 Ark 协作计划（字节）",
@@ -63,17 +53,6 @@ const TOKENS = [
     updated: "2026-07-14"
   },
   {
-    name: "美团 longcat 大模型",
-    type: "大模型",
-    modality: "文本模型",
-    rating: 5,
-    quota: "新用户免费 1000 万 token，很耐用；续购 9.9 元买 5000 万",
-    effect: "美团旗下大模型，免费额度大方、性价比高，适合长期日常高频使用",
-    how: "打开 longcat.chat 官网注册即送新用户免费额度，用完可在平台低价续购",
-    link: "https://longcat.chat/platform/product",
-    updated: "2026-07-14"
-  },
-  {
     name: "美团 catpaw（App）",
     type: "工具",
     modality: "GLM5.2 · 文本模型",
@@ -85,16 +64,48 @@ const TOKENS = [
     updated: "2026-07-14"
   },
   {
-    name: "WorkBuddy",
-    type: "工具",
-    modality: "HY3 · 混元3 · 文本模型",
-    rating: 5,
-    quota: "HY3（混元3）模型限时免费，到 2026-07-22",
-    effect: "腾讯系 AI 工作台，HY3（混元3）能力可直接调用，速度很快；写代码、查资料、做自动化都好用",
-    how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免至 7/22，手慢无）",
-    link: "https://www.codebuddy.cn/events/invite?inviteCode=akek8mgwjqlt",
-    limited: "2026-07-22",
+    name: "硅基流动 SiliconFlow",
+    type: "大模型",
+    modality: "GLM5.2 等全模型 · 文本/多模态",
+    rating: 4,
+    quota: "邀请好友奖励：每邀请 1 位得 14 元额度",
+    effect: "聚合多家开源大模型（含智谱 GLM5.2、DeepSeek 等），文本 / 图像多模态 API，兼容 OpenAI 格式",
+    how: "打开 cloud.siliconflow.cn 注册（可走邀请链接）→ 在「邀请有礼」中邀请好友，每邀 1 位得 14 元额度",
+    link: "https://cloud.siliconflow.cn/i/HgdEna2e",
     updated: "2026-07-15"
+  },
+  {
+    name: "MiniMax",
+    type: "大模型",
+    modality: "abab 系列 · 文本模型",
+    rating: 3,
+    quota: "新用户注册即送调用额度 + 邀请双方各得代金券",
+    effect: "MiniMax 自研 abab6.5 系列支持超长上下文，适合长文档分析与多轮对话",
+    how: "打开 minimax.io 或国内入口注册 → 完成新手任务 → 自动到账额度",
+    link: "https://www.minimax.io",
+    updated: "2026-07-16"
+  },
+  {
+    name: "NVIDIA NIM 免费 API",
+    type: "大模型",
+    modality: "多模型聚合（文本 / 多模态）",
+    rating: 5,
+    quota: "标 Free Endpoint 的模型免费调用，提供 H100 算力（速率有限制，个人学习/测试够用）",
+    effect: "可调 MiniMax M2.7、GLM-5.1、Kimi K2.5、DeepSeek V3.2、Gemma 4、Llama 4 等顶级模型，兼容 OpenAI SDK",
+    how: "打开 build.nvidia.com 注册（+86 手机号可验证）→ 创建 API Key → 调 Free Endpoint 模型（base_url: integrate.api.nvidia.com/v1）",
+    link: "https://build.nvidia.com",
+    updated: "2026-07-15"
+  },
+  {
+    name: "商汤 Token Plan（sensenova）",
+    type: "大模型",
+    modality: "DeepSeek V4 Flash · 文本模型",
+    rating: 3,
+    quota: "限免期 5 小时 500 次调用（日常很难用完）",
+    effect: "可用 DeepSeek V4 Flash，能力强、响应快，适合接 Workbuddy 等客户端的自定义模型",
+    how: "手机号注册 sensenova.cn/token-plan → 创建 API Key → 文档查 Base URL（https://token.sensenova.cn/v1/chat/completions）与 Model ID（deepseek-v4-flash）→ 填进客户端",
+    link: "https://www.sensenova.cn/token-plan",
+    updated: "2026-07-14"
   },
   {
     name: "Agnes AI",
@@ -119,26 +130,28 @@ const TOKENS = [
     updated: "2026-07-15"
   },
   {
-    name: "NVIDIA NIM 免费 API",
+    name: "美团 longcat 大模型",
     type: "大模型",
-    modality: "多模型聚合（文本 / 多模态）",
+    modality: "文本模型",
     rating: 5,
-    quota: "标 Free Endpoint 的模型免费调用，提供 H100 算力（速率有限制，个人学习/测试够用）",
-    effect: "可调 MiniMax M2.7、GLM-5.1、Kimi K2.5、DeepSeek V3.2、Gemma 4、Llama 4 等顶级模型，兼容 OpenAI SDK",
-    how: "打开 build.nvidia.com 注册（+86 手机号可验证）→ 创建 API Key → 调 Free Endpoint 模型（base_url: integrate.api.nvidia.com/v1）",
-    link: "https://build.nvidia.com",
-    updated: "2026-07-15"
+    quota: "新用户免费 1000 万 token，很耐用；续购 9.9 元买 5000 万",
+    effect: "美团旗下大模型，免费额度大方、性价比高，适合长期日常高频使用",
+    how: "打开 longcat.chat 官网注册即送新用户免费额度，用完可在平台低价续购",
+    link: "https://longcat.chat/platform/product",
+    updated: "2026-07-14"
   },
+  /* ========== 后面：较老模型（发布在截图那些模型之前的） ========== */
   {
-    name: "硅基流动 SiliconFlow",
+    name: "阶跃星辰 StepFun",
     type: "大模型",
-    modality: "GLM5.2 等全模型 · 文本/多模态",
-    rating: 4,
-    quota: "邀请好友奖励：每邀请 1 位得 14 元额度",
-    effect: "聚合多家开源大模型（含智谱 GLM5.2、DeepSeek 等），文本 / 图像多模态 API，兼容 OpenAI 格式",
-    how: "打开 cloud.siliconflow.cn 注册（可走邀请链接）→ 在「邀请有礼」中邀请好友，每邀 1 位得 14 元额度",
-    link: "https://cloud.siliconflow.cn/i/HgdEna2e",
-    updated: "2026-07-15"
+    modality: "多模态大模型",
+    rating: 5,
+    quota: "400M Credits + 15天免费体验（用完再送15天，邀请好友最高累计90天）",
+    effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，推理最强）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理",
+    how: "注册后到 Plan 列表点「免费领取」，再到 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）。活动 7 月 31 日截止，仅限新用户",
+    link: "https://platform.stepfun.com/?invite_code=HWNNAXYV",
+    limited: "2026-07-31",
+    updated: "2026-07-14"
   },
   {
     name: "智谱 GLM-4-Flash",
@@ -303,17 +316,6 @@ const TOKENS = [
     effect: "邀请好友一起薅，双方都得 token，平台早期推广力度大",
     how: "Wisemodel.cn 注册后获取邀请链接 → 好友通过你的链接注册并完成赖耶 AI 授权 → 你获 14 元/人",
     link: "https://wisemodel.cn",
-    updated: "2026-07-16"
-  },
-  {
-    name: "MiniMax",
-    type: "大模型",
-    modality: "abab 系列 · 文本模型",
-    rating: 3,
-    quota: "新用户注册即送调用额度 + 邀请双方各得代金券",
-    effect: "MiniMax 自研 abab6.5 系列支持超长上下文，适合长文档分析与多轮对话",
-    how: "打开 minimax.io 或国内入口注册 → 完成新手任务 → 自动到账额度",
-    link: "https://www.minimax.io",
     updated: "2026-07-16"
   },
   {
