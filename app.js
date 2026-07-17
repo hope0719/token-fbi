@@ -8,6 +8,28 @@
 const TOKENS = [
   /* ========== 前面：较新模型（截图里 GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 等同期或更晚） ========== */
   {
+    name: "智谱 GLM-4.7-Flash",
+    type: "大模型",
+    modality: "GLM-4.7-Flash · 混合思考模型（30B总参/3B激活）",
+    rating: 5,
+    quota: "完全免费，永久有效（需实名认证，无需绑卡）",
+    effect: "替代已下线的 GLM-4.5-Flash，开源 SOTA 级混合思考模型，编程/中文写作/翻译/推理全能，200K 上下文，128K 输出，1 QPS 个人够用",
+    how: "打开 bigmodel.cn 注册并完成实名认证 → 在体验中心选 GLM-4.7-Flash → 直接调用 API（文档：docs.bigmodel.cn/cn/guide/models/free/glm-4.7-flash）",
+    link: "https://bigmodel.cn/trialcenter/modeltrial/text?modelCode=glm-4.7-flash",
+    updated: "2026-07-17"
+  },
+  {
+    name: "CometAPI",
+    type: "工具",
+    modality: "Kimi K2 · 文本模型（1T 参数 MoE）",
+    rating: 4,
+    quota: "注册即送免费额度（每月 10 万输入 token + 100 万输出 token），Kimi K2 可直接调用",
+    effect: "聚合 500+ AI 模型的新兴平台，Kimi K2（1T 参数 MoE）代码/MATH/Agent 能力均超 GPT-4.1，免费层适合原型验证和小项目",
+    how: "打开 cometapi.com 注册（仅需邮箱）→ 验证后获取 API Key → 调 Kimi K2（model: kimi-k2-0711-preview）",
+    link: "https://www.cometapi.com",
+    updated: "2026-07-17"
+  },
+  {
     name: "WorkBuddy",
     type: "工具",
     modality: "HY3 · 混元3 · 文本模型",
@@ -328,6 +350,17 @@ const TOKENS = [
     how: "打开欧派算力云官网注册 → 实名认证 → 自动到账 R1+V3 各 100 万 tokens",
     link: "https://opc.aliyun.com",
     updated: "2026-07-16"
+  },
+  {
+    name: "OpenRouter",
+    type: "工具",
+    modality: "35+ 聚合模型（Kimi K2 / Qwen3-Next-80B / Llama 等）",
+    rating: 4,
+    quota: "注册即享永久免费模型（BYOK 用户每月 100 万次请求）；免费模型每日 50 次（充值 $10 后升至 1000 次/日）",
+    effect: "一站式聚合 500+ 模型（GPT/Claude/Gemini/Kimi/DeepSeek 等），OpenAI 兼容接口，一个 Key 切所有模型，免费层够日常原型测试",
+    how: "打开 openrouter.ai 注册（无需信用卡）→ 进入 Keys 页创建 API Key → 选 :free 后缀模型直接调用（如 kimi/kimi-k2:free）",
+    link: "https://openrouter.ai",
+    updated: "2026-07-17"
   }
 ];
 
