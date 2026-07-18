@@ -22,13 +22,14 @@ const TOKENS = [
   {
     name: "京东 JoyAgent",
     type: "工具",
-    modality: "DeepSeek-V4-pro / GLM-5.1 · 多模型聚合",
+    modality: "GLM5.2 · 多模型聚合",
     rating: 4,
-    quota: "注册即送 5 万积分（约 50 万次常规问答），无需实名认证",
-    effect: "京东云旗下一站式大模型聚合平台，支持 DeepSeek-V4-pro、GLM-5.1 等新模型，API 兼容 OpenAI/Anthropic 协议，适合快速原型和 Agent 开发",
-    how: "打开 joyagent.jd.com 用京东账号登录 → 打开 joycode.jd.com/pricing 点「团队版 免费体验」→ 返回 JoyAgent 个人中心查看到账积分 → 创建 API Key 直接调用",
+    quota: "每日发放 10000 积分，无需实名认证",
+    effect: "京东云旗下一站式大模型聚合平台，实测可用 GLM5.2 等模型，API 兼容 OpenAI/Anthropic 协议；但创建并调用 API Key 必须先下载 JoyAgent App，适合快速原型和 Agent 开发",
+    how: "用京东账号登录 joyagent.jd.com 开通免费体验 → 下载 JoyAgent App（创建/调用 API Key 必须在 App 内完成）→ 个人中心查看每日发放 10000 积分 → 获取 API Key 即可调用 GLM5.2 等模型",
     link: "https://joyagent.jd.com",
-    updated: "2026-07-18"
+    special: "需 App",
+    updated: "2026-07-19"
   },
   {
     name: "智谱 GLM-4.7-Flash",
@@ -454,6 +455,7 @@ function render(type) {
         <h3 class="card-name">${t.name}</h3>
         <div class="card-tags">
           ${t.modality ? `<span class="card-modality">${t.modality}</span>` : ''}
+          ${t.special ? `<span class="card-special" title="${t.special}">${t.special}</span>` : ''}
           <span class="card-type">${catOf(t)}</span>
         </div>
       </div>
