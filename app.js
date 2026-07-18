@@ -8,6 +8,17 @@
 const TOKENS = [
   /* ========== 前面：较新模型（截图里 GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 等同期或更晚） ========== */
   {
+    name: "京东 JoyAgent",
+    type: "工具",
+    modality: "DeepSeek-V4-pro / GLM-5.1 · 多模型聚合",
+    rating: 4,
+    quota: "注册即送 5 万积分（约 50 万次常规问答），无需实名认证",
+    effect: "京东云旗下一站式大模型聚合平台，支持 DeepSeek-V4-pro、GLM-5.1 等新模型，API 兼容 OpenAI/Anthropic 协议，适合快速原型和 Agent 开发",
+    how: "打开 joyagent.jd.com 用京东账号登录 → 打开 joycode.jd.com/pricing 点「团队版 免费体验」→ 返回 JoyAgent 个人中心查看到账积分 → 创建 API Key 直接调用",
+    link: "https://joyagent.jd.com",
+    updated: "2026-07-18"
+  },
+  {
     name: "智谱 GLM-4.7-Flash",
     type: "大模型",
     modality: "GLM-4.7-Flash · 混合思考模型（30B总参/3B激活）",
@@ -161,6 +172,41 @@ const TOKENS = [
     how: "打开 longcat.chat 官网注册即送新用户免费额度，用完可在平台低价续购",
     link: "https://longcat.chat/platform/product",
     updated: "2026-07-14"
+  },
+  {
+    name: "SCNet.AI",
+    type: "大模型",
+    modality: "科研智能体 · 多模态",
+    rating: 4,
+    quota: "新用户注册送 1000 万 Token + 100 卡时 AI 推理算力 + 100 卡时高性能计算算力",
+    effect: "面向科研场景的 AI 平台，支持大模型推理、CFD、分子动力学等仿真实验，1000 万 Token 可支撑数十轮主流大模型推理或小型模型微调",
+    how: "打开 scnet.ai 注册账号 → 领取免费资源包 → 资源 90 天内有效，限量领取",
+    link: "https://www.scnet.ai",
+    limited: "2026-07-23",
+    updated: "2026-07-18"
+  },
+  {
+    name: "无问AI SecurityPlan",
+    type: "大模型",
+    modality: "SecurityPlan · 网安垂直模型",
+    rating: 3,
+    quota: "新用户注册送 3000 万 Token（无用量限制，用完即止）",
+    effect: "专为网络安全从业者打造的垂直模型，支持代码审计、漏洞挖掘、红蓝对抗、日志审计等场景，兼容 OpenAI/Anthropic 接口",
+    how: "打开 wwlib.cn 注册账号 → 进入开发者控制台获取 API Key → 直接调用（注意：仅限授权测试，严禁用于非授权测试）",
+    link: "https://www.wwlib.cn/index.php/develement",
+    limited: "2026-07-31",
+    updated: "2026-07-18"
+  },
+  {
+    name: "快手 StreamLake（KAT-Coder）",
+    type: "工具",
+    modality: "KAT-Coder-Air V1 · 代码模型",
+    rating: 4,
+    quota: "KAT-Coder-Air V1 永久免费；KAT-Coder-Pro V1 新用户曾送 2000 万 Tokens（活动已结束）",
+    effect: "快手旗下 AI 编程平台，KAT-Coder-Air V1 轻量版永久免费，支持代码生成、续写、诊断；Pro 版能力更强，适合复杂企业项目",
+    how: "打开 streamlake.ai 注册登录 → 进入万擎平台控制台 → KAT-Coder-Air V1 直接免费使用 → 创建 API Key 接入 Claude Code、Cline 等工具",
+    link: "https://streamlake.ai",
+    updated: "2026-07-18"
   },
   /* ========== 后面：较老模型（发布在截图那些模型之前的） ========== */
   {
