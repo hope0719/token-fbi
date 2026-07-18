@@ -8,6 +8,18 @@
 const TOKENS = [
   /* ========== 前面：较新模型（截图里 GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 等同期或更晚） ========== */
   {
+    name: "阶跃星辰 StepFun",
+    type: "大模型",
+    modality: "多模态大模型",
+    rating: 5,
+    quota: "400M Credits + 15天免费体验（用完再送15天，邀请好友最高累计90天）",
+    effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，推理最强）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理",
+    how: "注册后到 Plan 列表点「免费领取」，再到 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）。活动 7 月 31 日截止，仅限新用户",
+    link: "https://platform.stepfun.com/?invite_code=HWNNAXYV",
+    limited: "2026-07-31",
+    updated: "2026-07-14"
+  },
+  {
     name: "京东 JoyAgent",
     type: "工具",
     modality: "DeepSeek-V4-pro / GLM-5.1 · 多模型聚合",
@@ -209,18 +221,6 @@ const TOKENS = [
     updated: "2026-07-18"
   },
   /* ========== 后面：较老模型（发布在截图那些模型之前的） ========== */
-  {
-    name: "阶跃星辰 StepFun",
-    type: "大模型",
-    modality: "多模态大模型",
-    rating: 5,
-    quota: "400M Credits + 15天免费体验（用完再送15天，邀请好友最高累计90天）",
-    effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，推理最强）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理",
-    how: "注册后到 Plan 列表点「免费领取」，再到 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）。活动 7 月 31 日截止，仅限新用户",
-    link: "https://platform.stepfun.com/?invite_code=HWNNAXYV",
-    limited: "2026-07-31",
-    updated: "2026-07-14"
-  },
   {
     name: "智谱 GLM-4-Flash",
     type: "大模型",
