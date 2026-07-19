@@ -211,6 +211,41 @@ const TOKENS = [
     updated: "2026-07-18"
   },
   {
+    name: "ZenMux",
+    type: "工具",
+    modality: "DeepSeek V4 Pro/Flash · Kimi K2.7 · GLM 5.2 · Step 3.7 Flash 等",
+    rating: 5,
+    quota: "DeepSeek V4 Pro/Flash 永久免费无限调用（无上限、无需实名、无需充值）",
+    effect: "全球首个支持保险赔付机制的企业级大模型聚合平台，一个 API Key 接入 100+ 模型。目前独家开放 DeepSeek V4 Pro/Flash、Kimi K2.7 Code、GLM 5.2、Step 3.7 Flash 等永久免费通道，国内低延迟，完美适配 Claude Code、OpenClaw、Cursor 等工具",
+    how: "打开 zenmux.ai 注册（支持邮箱/GitHub/谷歌一键登录）→ 进入 PAYG API 创建密钥 → 勾选 free 模型权限（如 deepseek/deepseek-v4-pro-free）→ 复制 API Key 配置到客户端",
+    link: "https://zenmux.ai",
+    updated: "2026-07-19"
+  },
+  {
+    name: "腾讯云 TokenHub",
+    type: "大模型",
+    modality: "Hy3 · DeepSeek V4 · GLM-5 · MiniMax-M2.7 · Kimi-K2.5 等",
+    rating: 5,
+    quota: "新人一次性最高 100 万 Tokens（90 天有效），活动持续至 2026-12-31",
+    effect: "腾讯云大模型服务平台，覆盖 Hy3、DeepSeek-V4、GLM-5、MiniMax-M2.7、Kimi-K2.5 等主流模型，首次调用自动领取免费额度，支持 OpenAI 兼容 API，一个 Key 切多模型",
+    how: "登录 TokenHub 控制台 → 实名认证 → 进入模型广场 → 点击右上角「新用户福利免费体验」→ 勾选模型后立即领取；也支持首次调用时自动领取",
+    link: "https://cloud.tencent.com/product/tokenhub",
+    limited: "2026-12-31",
+    updated: "2026-07-19"
+  },
+  {
+    name: "天翼云息壤（电信）",
+    type: "大模型",
+    modality: "GLM-5 · DeepSeek V4 · Qwen3.5 · Doubao 等约 18 个主流模型",
+    rating: 4,
+    quota: "文本类模型 2500 万 Tokens/模型（有效期 2 周，从首次使用算起）；DeepSeek V4 Pro/Flash 各 50 万 Tokens",
+    effect: "中国电信旗下全栈国产化智算平台，\"国模+国芯+国云\"融合底座，支持 GLM-5、DeepSeek-V4、Qwen3.5、Doubao-Seed-2.0-pro 等约 18 个主流大模型，适合政企/科研/个人开发者",
+    how: "登录天翼云官网 → 完成实名认证 → 进入「息壤智算」→「模型广场」→ 选模型领取免费额度；额度耗尽或到期后可直接切换其他模型继续使用",
+    link: "https://www.ctyun.cn/product/maas",
+    limited: "2026-08-02",
+    updated: "2026-07-19"
+  },
+  {
     name: "快手 StreamLake（KAT-Coder）",
     type: "工具",
     modality: "KAT-Coder-Air V1 · 代码模型",
