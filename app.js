@@ -101,13 +101,13 @@ const TOKENS = [
   {
     name: "美团 catpaw（App）",
     type: "工具",
-    modality: "GLM5.2 · 文本模型",
-    rating: 4,
-    quota: "500 次兑换额度，用完可再申请",
-    effect: "美团旗下 AI App，可用 GLM5.2 相关能力",
-    how: "打开 catpaw.meituan.com 按页面兑换额度",
+    modality: "GLM 5.2 · DeepSeek V4 Pro · Kimi K3 等 · 多模型聚合",
+    rating: 5,
+    quota: "新用户登录即送 1200 积分（此前为 500 次兑换额度），日常调用够用",
+    effect: "美团旗下 AI App，已接入 GLM 5.2、DeepSeek V4 Pro、Kimi K3 等热门模型；界面类 WorkBuddy / Codex，对话 + 编程场景全覆盖，Kimi K3 这类平时排队挤爆的模型这里能直接调",
+    how: "打开 catpaw.meituan.com 注册登录即领 1200 积分 → 在模型列表选 GLM 5.2 / DeepSeek V4 Pro / Kimi K3 等直接使用（注意：装 App 后若曾装过 catpaw ai，可能出现图标重复，属已知现象）",
     link: "https://catpaw.meituan.com/",
-    updated: "2026-07-14"
+    updated: "2026-07-22"
   },
   {
     name: "硅基流动 SiliconFlow",
