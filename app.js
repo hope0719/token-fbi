@@ -8,6 +8,116 @@
 const TOKENS = [
   /* ========== 前面：较新模型（截图里 GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 等同期或更晚） ========== */
   {
+    name: "中国移动 MoMA（移动模型服务平台）",
+    type: "大模型",
+    modality: "九天 / DeepSeek / 豆包 / 通义 / GLM / MiniMax 等 300+ 模型",
+    rating: 5,
+    quota: "新用户领取 2500 万 Tokens 免费额度（30 天有效，限流 3000 tokens/min，据官方文档）",
+    effect: "中国移动 2026 年推出的国内首个开放普惠大模型聚合平台，汇聚 300+ 主流模型，统一 API 网关 + 智能路由（成本/效果/均衡三策略），单位 Token 成本约降 30%，支持体验、API 调用、一键部署与微调",
+    how: "打开移动云 MoMA 产品页 → 登录/注册移动云账号 → 进入【模型观测】点「立即领取」拿 2500 万免费额度 → 模型广场获取 API Key 调用（兼容 OpenAI 格式）",
+    link: "https://ecloud.10086.cn/portal/product/MaaS",
+    updated: "2026-07-23"
+  },
+  {
+    name: "月之暗面 Kimi 开放平台",
+    type: "大模型",
+    modality: "Kimi K2.6 / K2.5 · 长上下文 MoE 模型",
+    rating: 4,
+    quota: "新用户注册赠送 15 元体验金（永久有效，按量抵扣，无需绑卡）",
+    effect: "月之暗面官方平台，Kimi K2.6 最新最智能、长程代码编写更强更稳；K2.5 支持百万上下文、视觉+文本、思考/非思考模式，3 RPM 限速但超长文本处理一流",
+    how: "打开 platform.moonshot.cn 注册（手机号）→ API Key 管理新建密钥（sk- 开头，生成后须立即复制保存）→ 调 kimi-k2.6 / kimi-k2.5（base_url: https://api.moonshot.cn/v1）",
+    link: "https://platform.moonshot.cn",
+    updated: "2026-07-23"
+  },
+  {
+    name: "联通云 Coding Plan",
+    type: "大模型",
+    modality: "glm5（智谱）/ Qwen3.5（阿里）/ MiniMax 等 · 编程模型",
+    rating: 4,
+    quota: "0 元订阅：Lite 每月 1.8 万次调用、Pro 每月 9 万次调用（每日 1200 次额度），按调用次数计费，无需绑卡",
+    effect: "中国联通官方免费 Coding 套餐，覆盖编程全场景主流模型，适合 OpenClaw / Claude Code / Cursor 等 Agent 开发，目前国内仍有约 12000 个免费名额，先到先得",
+    how: "打开联通云 Coding Plan 活动页注册 → 实名认证 → 0 元开通 Lite/Pro 套餐 → 获取 API Key 配置到编程工具（base_url 见控制台）",
+    link: "https://www.cucloud.cn/activity/kickoffseason.html",
+    updated: "2026-07-23"
+  },
+  {
+    name: "魔搭社区 ModelScope",
+    type: "大模型",
+    modality: "Qwen 系列 / LUX / Stable Diffusion 等 · 文本+多模态",
+    rating: 4,
+    quota: "每天 2000 次免费 API 调用（长期有效，注册即享，无需实名即可注册）",
+    effect: "阿里达摩院开源社区，收录 17 万+ 开源模型，生态完整、国内访问稳定；API-Inference 支持文本/图像等多模态，适合原型验证与模型体验",
+    how: "打开 modelscope.cn 注册 → 【访问控制】获取 Access Token（需绑阿里云并实名才能用 API-Inference）→ 配置到工具（注意 Anthropic 兼容时去掉 ms- 前缀）",
+    link: "https://modelscope.cn",
+    updated: "2026-07-23"
+  },
+  {
+    name: "OpenStarry",
+    type: "工具",
+    modality: "GLM 5.2 / DeepSeek V4 / Kimi K2.6 / MiniMax M3 等 40+ 模型",
+    rating: 3,
+    quota: "注册即赠 200 次免费调用（Coding Plan + Token Plan 按量计费，一个 Key 接入 40+ 国产及国际模型）",
+    effect: "国产大模型 API 聚合中转平台，统一管理多家提供商，一行代码改动随时切换模型；覆盖最新 GLM 5.2 / Kimi K2.6 / DeepSeek V4 / MiniMax M3 / Qwen3.7-Max 等",
+    how: "打开 openstarry.com 注册 → 创建 API Key → 勾选免费模型权限 → 复制 Key 配置到客户端（OpenAI 兼容格式）",
+    link: "https://www.openstarry.com",
+    updated: "2026-07-23"
+  },
+  {
+    name: "OpenCode Zen",
+    type: "工具",
+    modality: "DeepSeek V4 Flash Free / MiMo-V2.5 Free / Nemotron 3 Ultra Free / Big Pickle 等",
+    rating: 4,
+    quota: "多个精选模型限时免费（DeepSeek V4 Flash Free、MiMo-V2.5 Free、North Mini Code Free、Nemotron 3 Ultra Free、Big Pickle），无需付费；余额低于 $5 才自动充值",
+    effect: "OpenCode（16 万+ Star 开源编程 Agent）自带的 Zen 模型网关，专为 coding agent 基准测试挑选并验证的模型，OpenAI 兼容接口，可配到任意编程客户端",
+    how: "打开 opencode.ai 安装 OpenCode → 在配置里启用 Zen（base_url: https://opencode.ai/zen/v1/chat/completions）→ 选用带 Free 后缀的免费模型即可，无需绑卡",
+    link: "https://opencode.ai/zen",
+    updated: "2026-07-23"
+  },
+  {
+    name: "Google Gemini（AI Studio）",
+    type: "大模型",
+    modality: "Gemini 2.5 Flash / Pro · 多模态",
+    rating: 4,
+    quota: "免费层：Gemini 2.5 Flash 每天 250 次请求、100 万 Token 上下文（长期有效，Google AI Studio 申请 Key）",
+    effect: "谷歌官方免费 API，多模态、超长上下文，性能第一梯队；适合个人开发、小型项目与原型测试，海外前沿模型直连首选",
+    how: "打开 Google AI Studio（aistudio.google.com）登录 Google 账号 → 创建 API Key → 调 gemini-2.5-flash（base_url: https://generativelanguage.googleapis.com/v1beta）",
+    link: "https://aistudio.google.com",
+    updated: "2026-07-23"
+  },
+  {
+    name: "Groq",
+    type: "大模型",
+    modality: "Llama / Qwen / GPT-OSS / Gemma 等 · 开源模型",
+    rating: 4,
+    quota: "免费层：Llama、Qwen、GPT-OSS、Gemma 等开源模型免费调用（按模型看速率限制，无需信用卡）",
+    effect: "以极致推理速度著称的 AI 基础设施厂商，免费开放多款开源前沿模型，低延迟，适合高并发轻量任务与海外模型对比测试",
+    how: "打开 groq.com 注册 → 控制台创建 API Key → 调开放模型（base_url: https://api.groq.com/openai/v1，OpenAI 兼容）",
+    link: "https://groq.com",
+    updated: "2026-07-23"
+  },
+  {
+    name: "Cloudflare Workers AI",
+    type: "大模型",
+    modality: "Llama / Qwen / Mistral 等 · 开源模型",
+    rating: 3,
+    quota: "免费层：每天 10,000 Neurons 额度（UTC0 点刷新，长期有效，全球边缘节点）",
+    effect: "Cloudflare 全球边缘网络内置的推理服务，数十款开源模型免费调用，配置简单、全球访问快，适合轻量编程任务与接口测试",
+    how: "打开 workers.cloudflare.com 注册 → 在 Workers 项目里调用 AI 绑定（或从 dashboard 获取 API Token）→ 调 @cf/ 系列模型",
+    link: "https://workers.cloudflare.com",
+    updated: "2026-07-23"
+  },
+  {
+    name: "GitHub Models",
+    type: "大模型",
+    modality: "GPT-4o / Llama / Phi / Mistral 等",
+    rating: 4,
+    quota: "免费访问 GPT-4o、Llama、Phi、Mistral 等模型（低 RPM，专为 GitHub Actions 与快速原型设计，无需信用卡）",
+    effect: "GitHub 官方模型服务，用 GitHub 账号直接调用多家前沿模型，适合 CI/CD 流水线内嵌 AI 与快速实验，无需额外注册 AI 平台",
+    how: "打开 github.com/marketplace/models 用 GitHub 账号登录 → 在 Codespaces / Actions 或本地用 GitHub Token 调模型（OpenAI 兼容接口）",
+    link: "https://github.com/marketplace/models",
+    updated: "2026-07-23"
+  },
+  {
     name: "阶跃星辰 StepFun",
     type: "大模型",
     modality: "多模态大模型",
