@@ -8,6 +8,39 @@
 const TOKENS = [
   /* ========== 前面：较新模型（截图里 GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 等同期或更晚） ========== */
   {
+    name: "AtomCode CodingPlan（开源终端编程助手）",
+    type: "工具",
+    modality: "GLM-5.2 / DeepSeek-V4-Flash / Qwen3-VL · 编程模型",
+    rating: 4,
+    quota: "免费体验版每日 10:00 开抢（每日 150 个名额，Pro 体验版 150 人/日），5 小时滚动窗口无限续杯，无需绑卡",
+    effect: "开源终端 AI 编程助手（Claude Code 最佳平替），CodingPlan 免费版可调用 GLM-5.2、DeepSeek-V4-Flash、Qwen3-VL 等顶流模型，支持 Windows / macOS / Linux / 鸿蒙 PC；仅在 AtomCode 客户端内使用，不能当通用 API",
+    how: "打开 atomcode.atomgit.com 下载 AtomCode（AtomGit 账号通用）→ 进入「CodingPlan」选「GLM-5.2 免费体验版」→ 每天 10:00 准点抢名额（名额 7 天/30 天有效，可续）",
+    link: "https://atomcode.atomgit.com",
+    updated: "2026-07-24"
+  },
+  {
+    name: "腾讯 Marvis（马维斯）",
+    type: "工具",
+    modality: "混元 / DeepSeek V4 · 操作系统级 AI 助手",
+    rating: 4,
+    quota: "每人每天 1000 万免费 Token（当前完全免费，无需邀请码，长期免费不现实但现免费用）",
+    effect: "腾讯操作系统级 AI 助手，一句话调度 6 个 Agent 并行干文件/系统/应用/网页/搜索任务；效率模式用混元 + DeepSeek V4 云端模型，隐私模式走本地 Qwen 端侧模型，数据不出域，支持 Win/Mac/安卓/iOS 跨端操控",
+    how: "打开 marvis.qq.com 下载客户端（Win/Mac/安卓）→ 用 QQ/微信登录即用，每天 1000 万免费 Token 自动到账，无需额外配置",
+    link: "https://marvis.qq.com",
+    updated: "2026-07-24"
+  },
+  {
+    name: "HuggingFace Inference API",
+    type: "大模型",
+    modality: "DeepSeek V4 / Qwen3 / Mistral 等 · 开源模型",
+    rating: 4,
+    quota: "免费共享推理端点，无需信用卡（限流，适合原型验证；PRO $9/月或自部署解锁更高额度）",
+    effect: "全球最大开源模型社区提供的免费推理 API，覆盖 DeepSeek-V4、Qwen3-235B、Mistral Large 3、Llama 等上千开源模型，无需绑卡即可用 OpenAI 兼容接口调用，适合个人开发与模型对比测试",
+    how: "打开 huggingface.co 注册 → 在模型页点「Deploy → Inference API」或用共享端点 router.huggingface.co/hf-inference → 用 HF Token 调用（curl/OpenAI SDK 均可）",
+    link: "https://huggingface.co",
+    updated: "2026-07-24"
+  },
+  {
     name: "中国移动 MoMA（移动模型服务平台）",
     type: "大模型",
     modality: "九天 / DeepSeek / 豆包 / 通义 / GLM / MiniMax 等 300+ 模型",
@@ -367,6 +400,28 @@ const TOKENS = [
     updated: "2026-07-18"
   },
   /* ========== 后面：较老模型（发布在截图那些模型之前的） ========== */
+  {
+    name: "零一万物 01.AI（Yi 大模型）",
+    type: "大模型",
+    modality: "Yi-Lightning / Yi-Vision · 文本+视觉",
+    rating: 4,
+    quota: "新用户注册送 ¥10 免费额度（约数百万 tokens），速率 5 RPM，无需绑卡（需手机号）",
+    effect: "李开复创立的国产大模型公司，Yi-Lightning 性价比极高、国内直连无需代理，OpenAI 兼容接口；支持智能路由（自动选 DeepSeek-V3/Qwen3/Yi）与 Yi-Vision 视觉理解，适合中英文双语原型",
+    how: "打开 platform.lingyiwanwu.com 注册 → 新用户自动获得 ¥10 体验额度 → 创建 API Key（base_url: https://api.lingyiwanwu.com/v1）调 yi-lightning",
+    link: "https://platform.lingyiwanwu.com",
+    updated: "2026-07-24"
+  },
+  {
+    name: "360智脑（360GPT）",
+    type: "大模型",
+    modality: "360gpt-pro / 360gpt-turbo · 文本模型",
+    rating: 3,
+    quota: "新用户免费试用额度（具体以官网为准），兼容 OpenAI 接口，无需绑卡（需手机号）",
+    effect: "360 自研通用大模型，文本生成 / 向量 / 图像多模态，完全兼容 OpenAI API（仅改 base_url 与 model 名即可迁移）；国内直连稳定，曾在 OpenAI 停服时推出限时大额赠送，适合国产替代与 Embedding 检索场景",
+    how: "打开 ai.360.com 注册 360 账号 → 进入开放平台创建 API Key（base_url: https://api.360.cn/v1）→ 调 360gpt2-pro / 360gpt-turbo",
+    link: "https://ai.360.com",
+    updated: "2026-07-24"
+  },
   {
     name: "智谱 GLM-4-Flash",
     type: "大模型",
