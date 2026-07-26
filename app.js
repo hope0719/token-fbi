@@ -176,14 +176,14 @@ const TOKENS = [
     updated: "2026-07-19"
   },
   {
-    name: "智谱 GLM-4.7-Flash",
+    name: "智谱 BigModel（GLM-4.7-Flash / GLM-4-Flash / GLM-4-Plus / 邀请有礼）",
     type: "大模型",
-    modality: "GLM-4.7-Flash · 混合思考模型（30B总参/3B激活）",
+    modality: "GLM 系列 · 文本模型",
     rating: 5,
-    quota: "完全免费，永久有效（需实名认证，无需绑卡）",
-    effect: "替代已下线的 GLM-4.5-Flash，开源 SOTA 级混合思考模型，编程/中文写作/翻译/推理全能，200K 上下文，128K 输出，1 QPS 个人够用",
-    how: "打开 bigmodel.cn 注册并完成实名认证 → 在体验中心选 GLM-4.7-Flash → 直接调用 API（文档：docs.bigmodel.cn/cn/guide/models/free/glm-4.7-flash）",
-    link: "https://bigmodel.cn/trialcenter/modeltrial/text?modelCode=glm-4.7-flash",
+    quota: "GLM-4.7-Flash 完全免费永久有效（需实名）；GLM-4-Flash 完全免费无上限（无需实名）；GLM-4-Plus 100 万 tokens/月；邀请有礼：每邀请1人双方各得 2000 万 Tokens（每月上限 10 人）",
+    effect: "智谱全系列模型统一入口：GLM-4.7-Flash 为混合思考最新替代模型（200K 上下文，128K 输出）；GLM-4-Flash 零门槛永久免费；GLM-4-Plus 旗舰级复杂任务；邀请有礼可叠加额度",
+    how: "打开 bigmodel.cn → 注册账号 → GLM-4-Flash 直接使用（无需实名）；GLM-4.7-Flash / GLM-4-Plus 需实名认证后开通；邀请有礼在平台获取专属链接分享",
+    link: "https://bigmodel.cn",
     updated: "2026-07-17"
   },
   {
@@ -424,17 +424,6 @@ const TOKENS = [
     updated: "2026-07-24"
   },
   {
-    name: "智谱 GLM-4-Flash",
-    type: "大模型",
-    modality: "GLM 系列 · 文本模型",
-    rating: 5,
-    quota: "完全免费，无额度上限，永久有效",
-    effect: "零门槛永久免费，中文理解与生成能力在线，日常问答/写稿/总结全能胜任",
-    how: "打开 bigmodel.cn 注册登录后直接使用（无需实名认证），API 与 Web 端共用额度",
-    link: "https://bigmodel.cn",
-    updated: "2026-07-16"
-  },
-  {
     name: "DeepSeek V3",
     type: "大模型",
     modality: "DeepSeek 系列 · 文本模型",
@@ -454,17 +443,6 @@ const TOKENS = [
     effect: "DeepSeek 推理增强版，数理逻辑/代码/复杂推理比 V3 更强，适合硬核任务",
     how: "同 DeepSeek V3：platform.deepseek.com 注册 → 实名认证 → 创建 API Key",
     link: "https://platform.deepseek.com",
-    updated: "2026-07-16"
-  },
-  {
-    name: "智谱推荐有礼",
-    type: "大模型",
-    modality: "GLM-4.5-Air · 文本模型",
-    rating: 5,
-    quota: "每成功邀请 1 人注册+实名认证，双方各得 2000 万 Tokens（每月上限 10 人，累计最高 2 亿/月）",
-    effect: "用你的专属邀请链接拉新，被邀请人得 2500 万新用户礼包 + 2000 万 GLM-4.5-Air Tokens，你同样得 2000 万",
-    how: "登录 bigmodel.cn → 获取专属邀请链接 → 分享给好友 → 好友完成注册及实名认证后额度自动到账",
-    link: "https://bigmodel.cn",
     updated: "2026-07-16"
   },
   {
@@ -490,24 +468,13 @@ const TOKENS = [
     updated: "2026-07-16"
   },
   {
-    name: "百度 ERNIE-Speed",
+    name: "百度 ERNIE-Speed / ERNIE-Lite",
     type: "大模型",
     modality: "ERNIE 系列 · 文本模型",
     rating: 4,
-    quota: "1000 万 tokens/月（每月自动刷新）",
-    effect: "百度智能云轻量级大模型，响应快、中文理解好，适合高频小任务",
-    how: "打开 qianfan.baidu.com 注册 → 实名认证 → 开通 ERNIE-Speed → 创建 API Key",
-    link: "https://qianfan.baidu.com",
-    updated: "2026-07-16"
-  },
-  {
-    name: "百度 ERNIE-Lite",
-    type: "大模型",
-    modality: "ERNIE 系列 · 文本模型",
-    rating: 4,
-    quota: "1000 万 tokens/月（每月自动刷新）",
-    effect: "百度智能云另一款轻量模型，与 Speed 互补，额度独立计算",
-    how: "同 ERNIE-Speed：qianfan.baidu.com 开通 → 实名认证 → 创建 API Key",
+    quota: "各 1000 万 tokens/月（每月自动刷新，额度独立）",
+    effect: "百度智能云两款轻量级大模型：ERNIE-Speed 响应快、中文理解好；ERNIE-Lite 与 Speed 互补，额度独立计算。均适合高频小任务",
+    how: "打开 qianfan.baidu.com 注册 → 实名认证 → 分别开通 ERNIE-Speed / ERNIE-Lite → 各创建 API Key",
     link: "https://qianfan.baidu.com",
     updated: "2026-07-16"
   },
@@ -520,17 +487,6 @@ const TOKENS = [
     effect: "字节跳动大模型平台，覆盖豆包、DeepSeek 等多家模型，R1 模型关联应用后支持联网查询",
     how: "打开 volcengine.com 注册火山引擎 → 开通方舟服务 → 按模型领取免费试用额度",
     link: "https://www.volcengine.com",
-    updated: "2026-07-16"
-  },
-  {
-    name: "智谱 GLM-4-Plus",
-    type: "大模型",
-    modality: "GLM 系列 · 文本模型",
-    rating: 4,
-    quota: "100 万 tokens（有效期 1 个月）",
-    effect: "智谱旗舰级模型，比 Flash 更强，适合复杂问答、长文档处理",
-    how: "打开 bigmodel.cn 注册 → 实名认证 → 开通 GLM-4-Plus → 创建 API Key",
-    link: "https://bigmodel.cn",
     updated: "2026-07-16"
   },
   {
