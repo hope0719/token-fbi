@@ -6,9 +6,22 @@
  * ========================================================= */
 
 const TOKENS = [
+  /* ========== 固定置顶 ========== */
+  {
+    name: "阶跃星辰 StepFun",
+    type: "大模型",
+    modality: "多模态大模型",
+    rating: 5,
+    quota: "400M Credits + 15天免费体验（用完再送15天，邀请好友最高累计90天）",
+    effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，推理最强）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理",
+    how: "注册后到 Plan 列表点「免费领取」，再到 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）。活动 7 月 31 日截止，仅限新用户",
+    link: "https://platform.stepfun.com/?invite_code=HWNNAXYV",
+    limited: "2026-07-31",
+    updated: "2026-07-14"
+  },
   /* ========== 前面：较新模型（截图里 GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 等同期或更晚） ========== */
   {
-    name: "AtomCode CodingPlan（开源终端编程助手）",
+    name: "AtomCode CodingPlan",
     type: "工具",
     modality: "GLM-5.2 / DeepSeek-V4-Flash / Qwen3-VL · 编程模型",
     rating: 4,
@@ -41,7 +54,7 @@ const TOKENS = [
     updated: "2026-07-24"
   },
   {
-    name: "中国移动 MoMA（移动模型服务平台）",
+    name: "中国移动 MoMA",
     type: "大模型",
     modality: "九天 / DeepSeek / 豆包 / 通义 / GLM / MiniMax 等 300+ 模型",
     rating: 5,
@@ -149,18 +162,6 @@ const TOKENS = [
     how: "打开 github.com/marketplace/models 用 GitHub 账号登录 → 在 Codespaces / Actions 或本地用 GitHub Token 调模型（OpenAI 兼容接口）",
     link: "https://github.com/marketplace/models",
     updated: "2026-07-23"
-  },
-  {
-    name: "阶跃星辰 StepFun",
-    type: "大模型",
-    modality: "多模态大模型",
-    rating: 5,
-    quota: "400M Credits + 15天免费体验（用完再送15天，邀请好友最高累计90天）",
-    effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，推理最强）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理",
-    how: "注册后到 Plan 列表点「免费领取」，再到 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）。活动 7 月 31 日截止，仅限新用户",
-    link: "https://platform.stepfun.com/?invite_code=HWNNAXYV",
-    limited: "2026-07-31",
-    updated: "2026-07-14"
   },
   {
     name: "京东 JoyAgent",
@@ -656,10 +657,9 @@ function render(type) {
         <div class="card-tags">
           ${t.modality ? `<span class="card-modality">${t.modality}</span>` : ''}
           ${t.special ? `<span class="card-special" title="${t.special}">${t.special}</span>` : ''}
-          <span class="card-type">${catOf(t)}</span>
         </div>
       </div>
-      <div class="card-rating" title="香度 ${t.rating}/5">${fire(t.rating)}</div>
+      <div class="card-rating" title="香度 ${t.rating}/5">${fire(t.rating)} <span class="card-type">${catOf(t)}</span></div>
       <div class="card-row"><span class="k">免费额度</span><span class="v">${t.quota}</span></div>
       <div class="card-row"><span class="k">效果怎么样</span><span class="v">${t.effect}</span></div>
       <div class="card-row how-row"><span class="k">怎么拿</span><span class="v">${t.how}</span></div>
