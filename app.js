@@ -164,6 +164,29 @@ const TOKENS = [
     updated: "2026-07-23"
   },
   {
+    name: "MonkeyCode（长亭科技）",
+    type: "工具",
+    modality: "Qwen3.6-plus · 代码/文本模型",
+    rating: 4,
+    quota: "基础会员永久免费：每天 3000 万 Token（零点自动刷新）+ 注册送 100 积分 + 每日签到 100 积分",
+    effect: "长亭科技出品的开源 AI 编程平台（AGPL-3.0），每个任务自动创建独立云端虚拟机（1C/4G），基础模型 Qwen3.6-plus 调用不扣积分；支持 GitHub 仓库导入、实时预览、临时域名，手机端也能用。注意：容器 15 分钟无互动休眠、3 天未对话回收，代码记得及时 Push",
+    how: "打开 monkeycode-ai.com 用微信/GitHub 扫码登录 → 免费额度自动到账 → 网页直接建任务，或装 VS Code / JetBrains 插件；邀请 1 位新用户再 +5000 积分",
+    link: "https://monkeycode-ai.com",
+    updated: "2026-07-29"
+  },
+  {
+    name: "微信 AI 小程序成长计划（云开发 CloudBase）",
+    type: "工具",
+    modality: "Hy3 + Hy Image 3.0 · 文本/生图",
+    rating: 5,
+    quota: "10 亿大模型 Token + 10 万张 AI 生图（本轮加码后额度，自申请起 6 个月有效），另送 6 个月个人版云开发环境",
+    effect: "腾讯云开发 CloudBase 联合微信小程序的开发者扶持计划，模型已全面升级为混元 Hy3 与 Hy Image 3.0；全行业无类目限制，小游戏开发者同享。10 亿 Token 足够把 AI 能力『用厚』在产品里，老用户自动升级或领 120 元代金券",
+    how: "登录微信公众平台 mp.weixin.qq.com → 行业能力 → AI 小程序成长计划报名 → 开通 CloudBase 个人版环境后额度自动到账 → 控制台 AI 模块勾选 Hy3 即可调用（也可配 CloudBase MCP 在 CodeBuddy/Cursor 里用自然语言生成小程序）",
+    link: "https://cloud.tencent.com/developer/article/2705075",
+    limited: "2026-12-31",
+    updated: "2026-07-29"
+  },
+  {
     name: "京东 JoyAgent",
     type: "工具",
     modality: "GLM5.2 · 多模型聚合",
@@ -202,12 +225,12 @@ const TOKENS = [
     type: "工具",
     modality: "HY3 · 混元3 · 文本模型",
     rating: 5,
-    quota: "HY3（混元3）模型限时免费，到 2026-07-22",
-    effect: "腾讯系 AI 工作台，HY3（混元3）能力可直接调用，速度很快；写代码、查资料、做自动化都好用",
-    how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免至 7/22，手慢无）",
+    quota: "HY3（混元3）模型限时免费，官方已宣布延长至 2026-08-05",
+    effect: "腾讯系 AI 工作台，HY3（混元3）能力可直接调用，速度很快；写代码、查资料、做自动化都好用。Hy3 限免期间连续两周全球调用量第一（周调用 11.5 万亿 Token），因用户呼声限免从 7/22 延长到 8/5",
+    how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免延至 8/5，抓紧用）",
     link: "https://www.codebuddy.cn/events/invite?inviteCode=akek8mgwjqlt",
-    limited: "2026-07-22",
-    updated: "2026-07-15"
+    limited: "2026-08-05",
+    updated: "2026-07-29"
   },
   {
     name: "火山引擎 Ark 协作计划（字节）",
