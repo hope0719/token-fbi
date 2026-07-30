@@ -257,13 +257,14 @@ const TOKENS = [
   {
     name: "阿里 qoderwork（App）",
     type: "工具",
-    modality: "GLM5.2 · 文本模型",
+    modality: "Qwen3.7-Max / GLM5.2 · 文本模型",
     rating: 4,
-    quota: "登录即送 2100 积分，邀请再送 200，每日签到 100 积分",
-    effect: "阿里旗下 AI 编程 App，内置调用 GLM5.2，积分制日常够用",
-    how: "打开 App 注册登录即可领取，签到/邀请持续攒分",
+    quota: "限时加码：全量用户（含老用户）每天 200 次 Qwen3.7-Max 免费请求（每日 0 点刷新，7/31 截止）；另登录即送 2100 积分，邀请再送 200，每日签到 100 积分",
+    effect: "阿里旗下 AI 编程 App，官方已把「新用户每天 100 次」升级为「所有用户每天 200 次」Qwen3.7-Max 免费调用（Code Arena 全球第二的旗舰模型，超额后仍享 5 折）；覆盖 QoderWork 与 Qoder CLI，长上下文推理和跨文件代码理解显著增强",
+    how: "更新 QoderWork / Qoder CLI 到最新版本 → 登录后直接切换 Qwen3.7-Max 模型即自动生效（每设备首个登录账号享受，CLI 里 /usage 查剩余次数）；积分照常签到/邀请攒",
     link: "https://qoder.com.cn/referral?referral_code=YoIiLVYpMLQsCajUHM30noFvBlFuzqqz",
-    updated: "2026-07-14"
+    limited: "2026-07-31",
+    updated: "2026-07-30"
   },
   {
     name: "美团 catpaw（App）",
@@ -312,13 +313,13 @@ const TOKENS = [
   {
     name: "商汤 Token Plan（sensenova）",
     type: "大模型",
-    modality: "DeepSeek V4 Flash · 文本模型",
-    rating: 3,
-    quota: "限免期 5 小时 500 次调用（日常很难用完）",
-    effect: "可用 DeepSeek V4 Flash，能力强、响应快，适合接 Workbuddy 等客户端的自定义模型",
-    how: "手机号注册 sensenova.cn/token-plan → 创建 API Key → 文档查 Base URL（https://token.sensenova.cn/v1/chat/completions）与 Model ID（deepseek-v4-flash）→ 填进客户端",
+    modality: "SenseNova 6.7 Flash-Lite / U1 Fast / DeepSeek V4 Flash · 文本模型",
+    rating: 4,
+    quota: "限时免费公测：每个模型每 5 小时 1500 次调用（首月免费体验，按次数计非 Token）",
+    effect: "限免额度已从 500 次/5h 加码到 1500 次/5h，且新增 SenseNova 6.7 Flash-Lite、SenseNova U1 Fast 等自研模型可选；DeepSeek V4 Flash 依旧在列，适合跑 Agent、图表分析、办公自动化和多模态任务",
+    how: "手机号注册 sensenova.cn/token-plan → 创建 API Key → 文档查 Base URL（https://token.sensenova.cn/v1/chat/completions）与 Model ID（deepseek-v4-flash 等）→ 填进客户端",
     link: "https://www.sensenova.cn/token-plan",
-    updated: "2026-07-14"
+    updated: "2026-07-30"
   },
   {
     name: "Agnes AI",
@@ -393,12 +394,12 @@ const TOKENS = [
     type: "大模型",
     modality: "Hy3 · DeepSeek V4 · GLM-5 · MiniMax-M2.7 · Kimi-K2.5 等",
     rating: 5,
-    quota: "新人一次性最高 100 万 Tokens（90 天有效），活动持续至 2026-12-31",
-    effect: "腾讯云大模型服务平台，覆盖 Hy3、DeepSeek-V4、GLM-5、MiniMax-M2.7、Kimi-K2.5 等主流模型，首次调用自动领取免费额度，支持 OpenAI 兼容 API，一个 Key 切多模型",
+    quota: "语言/多模态理解模型各 100 万 Tokens（官方文档最新口径：有效期 1 年）+ HY-Image-V3.0 生图 50 次 + 视频生成 50 积分 + 混元 3D 100 积分，活动持续至 2026-12-31",
+    effect: "腾讯云大模型服务平台，覆盖 Hy3、DeepSeek-V4-Pro/Flash、GLM-5.2/5.1、Kimi-K2.6/K2.5、MiniMax-M3/M2.7 等 16+ 主流模型，免费包已扩展到文本+生图+视频+3D 全线；首次调用自动领取，OpenAI 兼容 API，一个 Key 切多模型",
     how: "登录 TokenHub 控制台 → 实名认证 → 进入模型广场 → 点击右上角「新用户福利免费体验」→ 勾选模型后立即领取；也支持首次调用时自动领取",
     link: "https://cloud.tencent.com/product/tokenhub",
     limited: "2026-12-31",
-    updated: "2026-07-19"
+    updated: "2026-07-30"
   },
   {
     name: "天翼云息壤（电信）",
