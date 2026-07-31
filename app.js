@@ -37,7 +37,7 @@ const TOKENS = [
     modality: "DeepSeek V4 Flash · 1M 上下文 · OpenAI 兼容网关",
     rating: 4,
     quota: "DeepSeek V4 Flash 长期免费：10 RPM / 每天 150 次（不绑卡、不充值、无试用期；充值账户额度 ×3 至 450 次/天）",
-    effect: "OpenAI 完全兼容的多模型聚合网关，免费档开放 DeepSeek-V4-Flash（284B MoE、激活 13B、1M tokens 超长上下文、最大输出 38.4 万 tokens）。支持把 model 设为「auto:free」自动路由到零成本模型；可直接对接 Claude Code、Cursor、LangChain、Dify、LiteLLM 等；额度按请求 token 数动态加权扣减，短问答实际可用次数远超 150 次",
+    effect: "中国台湾集聯科技有限公司（統一編號 62232477，登記於苗栗縣頭份市）运营的 OpenAI 完全兼容多模型聚合网关，数据驻留 AWS Tokyo（非大陆、非美本土）。免费档开放 DeepSeek-V4-Flash（284B MoE、激活 13B、1M tokens 超长上下文、最大输出 38.4 万 tokens）。支持把 model 设为「auto:free」自动路由到零成本模型；可直接对接 Claude Code、Cursor、LangChain、Dify、LiteLLM 等；额度按请求 token 数动态加权扣减，短问答实际可用次数远超 150 次",
     how: "打开 bazaarlink.ai/free 用邮箱注册（无需信用卡）→ 进入 /keys 创建密钥（sk-bl- 开头，仅显示一次，请立即保存）→ base_url 填 https://bazaarlink.ai/api/v1，模型名填 deepseek/deepseek-v4-flash 或 auto:free；Agent 也可 POST /api/v1/agents/register 自助申请 Key",
     link: "https://bazaarlink.ai/free",
     updated: "2026-07-31"
