@@ -21,6 +21,28 @@ const TOKENS = [
   },
   /* ========== 前面：较新模型（截图里 GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 等同期或更晚） ========== */
   {
+    name: "360 纳米 Work",
+    type: "工具",
+    modality: "Kimi / DeepSeek / GLM / 豆包 等 16 家模型智能调度",
+    rating: 4,
+    quota: "首批入驻用户每人 1 亿 Token 免费试用额度（360 计划优先扶持 1000 家中小企业，名额有限、先到先得）",
+    effect: "360 于 2026-07-28 发布的企业多智能体协同办公平台（由「安全龙虾」升级而来）。内置约 500 个岗位 AI 专家、5 万+ 技能，支持云端 7×24 定时任务（关机不中断）、通用/项目/私有三层知识库记忆；按任务难度在轻量、省钱、满血三档间自动调度 Kimi、DeepSeek、GLM、豆包等 16 家模型，日常轻量任务可省约 90% 成本。1 亿 Token 按主流国产 API 价折算约值 200-500 元",
+    how: "打开 work.n.cn 注册登录（网页端 / Windows 客户端 / 移动端）→ 首次进入领取 1 亿免费 Token → 直接调用现成 AI 专家，或零代码定制专属数字员工；企业用户另可申请配套实训与陪跑服务",
+    link: "https://work.n.cn",
+    updated: "2026-07-31"
+  },
+  {
+    name: "BazaarLink",
+    type: "大模型",
+    modality: "DeepSeek V4 Flash · 1M 上下文 · OpenAI 兼容网关",
+    rating: 4,
+    quota: "DeepSeek V4 Flash 长期免费：10 RPM / 每天 150 次（不绑卡、不充值、无试用期；充值账户额度 ×3 至 450 次/天）",
+    effect: "OpenAI 完全兼容的多模型聚合网关，免费档开放 DeepSeek-V4-Flash（284B MoE、激活 13B、1M tokens 超长上下文、最大输出 38.4 万 tokens）。支持把 model 设为「auto:free」自动路由到零成本模型；可直接对接 Claude Code、Cursor、LangChain、Dify、LiteLLM 等；额度按请求 token 数动态加权扣减，短问答实际可用次数远超 150 次",
+    how: "打开 bazaarlink.ai/free 用邮箱注册（无需信用卡）→ 进入 /keys 创建密钥（sk-bl- 开头，仅显示一次，请立即保存）→ base_url 填 https://bazaarlink.ai/api/v1，模型名填 deepseek/deepseek-v4-flash 或 auto:free；Agent 也可 POST /api/v1/agents/register 自助申请 Key",
+    link: "https://bazaarlink.ai/free",
+    updated: "2026-07-31"
+  },
+  {
     name: "AtomCode CodingPlan",
     type: "工具",
     modality: "GLM-5.2 / DeepSeek-V4-Flash / Qwen3-VL · 编程模型",
