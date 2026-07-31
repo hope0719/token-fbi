@@ -6,6 +6,18 @@
  * ========================================================= */
 
 const TOKENS = [
+  {
+    name: "TRAE Work",
+    type: "工具",
+    modality: "GLM-5.2 / Kimi K3 · 折扣价",
+    rating: 4,
+    quota: "通过分享链接登录桌面端，新注册用户一次性获得 5000 积分",
+    effect: "TRAE Work AI 办公平台，可一站式搞定各类办公与创作任务。模型调用走折扣价通道，明确使用 GLM-5.2 与 Kimi K3 两款新模型，相比官方原价更低",
+    how: "打开分享链接 https://www.trae.cn/work-fission/Q4PUV29JRKCF → 下载并登录 TRAE Work 桌面端 → 新账号自动到账 5000 积分，直接选用 GLM-5.2 / K3 模型开始使用",
+    link: "https://www.trae.cn/work-fission/Q4PUV29JRKCF",
+    updated: "2026-08-01"
+  },
+
   /* ========== 固定置顶 ========== */
   {
     name: "阶跃星辰 StepFun",
@@ -275,18 +287,6 @@ const TOKENS = [
     how: "访问 https://s.qiniu.com/VV7Zfa 注册登录，到 https://portal.qiniu.com/ai-inference/api-key 创建 API Key（注意：不要在微信内打开）",
     link: "https://s.qiniu.com/VV7Zfa",
     updated: "2026-07-14"
-  },
-  {
-    name: "阿里 qoderwork（App）",
-    type: "工具",
-    modality: "Qwen3.7-Max / GLM5.2 · 文本模型",
-    rating: 4,
-    quota: "限时加码：全量用户（含老用户）每天 200 次 Qwen3.7-Max 免费请求（每日 0 点刷新，7/31 截止）；另登录即送 2100 积分，邀请再送 200，每日签到 100 积分",
-    effect: "阿里旗下 AI 编程 App，官方已把「新用户每天 100 次」升级为「所有用户每天 200 次」Qwen3.7-Max 免费调用（Code Arena 全球第二的旗舰模型，超额后仍享 5 折）；覆盖 QoderWork 与 Qoder CLI，长上下文推理和跨文件代码理解显著增强",
-    how: "更新 QoderWork / Qoder CLI 到最新版本 → 登录后直接切换 Qwen3.7-Max 模型即自动生效（每设备首个登录账号享受，CLI 里 /usage 查剩余次数）；积分照常签到/邀请攒",
-    link: "https://qoder.com.cn/referral?referral_code=YoIiLVYpMLQsCajUHM30noFvBlFuzqqz",
-    limited: "2026-07-31",
-    updated: "2026-07-30"
   },
   {
     name: "美团 catpaw（App）",
