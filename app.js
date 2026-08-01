@@ -24,12 +24,12 @@ const TOKENS = [
     type: "大模型",
     modality: "多模态大模型",
     rating: 5,
-    quota: "400M Credits + 15天免费体验（用完再送15天，邀请好友最高累计90天）",
-    effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，推理最强）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理",
-    how: "注册后到 Plan 列表点「免费领取」，再到 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）。活动 7 月 31 日截止，仅限新用户",
+    quota: "Flash Plan（原价 ¥49/月、400M Credits）限时免费：注册即得 15 天，完成指定任务再解锁 15 天，每邀请 1 位好友 +15 天（邀请最高 +90 天），累计最高 120 天",
+    effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，198B MoE、激活 11B，原生图片/视频理解，深度兼容 Claude Code / OpenClaw / KiloCode / Hermes Agent）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理，支持智能路由与 MCP 工具",
+    how: "注册后到 Plan 列表点「免费领取」，再到 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）。⚠️ 7/29 活动已升级：截止日由 7 月 31 日延至 8 月 24 日，且改为新老用户皆可参与（原仅限新用户），封顶时长由 90 天提至 120 天",
     link: "https://platform.stepfun.com/?invite_code=HMVLLXUM",
-    limited: "2026-07-31",
-    updated: "2026-07-14"
+    limited: "2026-08-24",
+    updated: "2026-08-01"
   },
   /* ========== 前面：较新模型（截图里 GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 等同期或更晚） ========== */
   {
@@ -53,6 +53,17 @@ const TOKENS = [
     how: "打开 bazaarlink.ai/free 用邮箱注册（无需信用卡）→ 进入 /keys 创建密钥（sk-bl- 开头，仅显示一次，请立即保存）→ base_url 填 https://bazaarlink.ai/api/v1，模型名填 deepseek/deepseek-v4-flash 或 auto:free；Agent 也可 POST /api/v1/agents/register 自助申请 Key",
     link: "https://bazaarlink.ai/free",
     updated: "2026-07-31"
+  },
+  {
+    name: "白山云智算（白山云 AI）",
+    type: "大模型",
+    modality: "GLM-5 / MiniMax-M2.5 / Kimi K2 / DeepSeek V3·R1 / Qwen · OpenAI 兼容",
+    rating: 4,
+    quota: "注册 + 实名认证自动到账 150 元大模型 API 体验金（零门槛、不需邀请码、不需充值）；每邀请 1 位新用户完成注册实名再得 200 元，上不封顶",
+    effect: "白山云（IDC 认证中国独立边缘云第一，全球 975+ 边缘节点）旗下智算平台。体验金可直接抵扣 API 调用费，150 元按国产模型均价折算约合数千万 tokens。模型覆盖 GLM-4.5/4.6/GLM-5、MiniMax-M2.5、Kimi-K2-Instruct、DeepSeek-V3/R1、Qwen2.5/Qwen3 等国产第一梯队；接口 100% 兼容 OpenAI，替换 base_url 即可接入 OpenClaw / Claude Code / Cursor / Dify 等 Agent 框架，边缘节点就近调度、延迟低",
+    how: "打开 ai.baishan.com 注册账号 → 完成实名认证（150 元体验金自动发放至账户余额）→ 控制台创建 API Key → base_url 换成白山智算地址即可调用。⚠️ 原「首次调用再送 300 元」限时福利已于 2026-03-16 停止，现仅注册福利与邀新福利持续有效；高峰期算力偏紧可能响应变慢",
+    link: "https://ai.baishan.com/auth/login",
+    updated: "2026-08-01"
   },
   {
     name: "AtomCode CodingPlan",
@@ -383,10 +394,9 @@ const TOKENS = [
     rating: 4,
     quota: "新用户注册送 1000 万 Token + 100 卡时 AI 推理算力 + 100 卡时高性能计算算力",
     effect: "面向科研场景的 AI 平台，支持大模型推理、CFD、分子动力学等仿真实验，1000 万 Token 可支撑数十轮主流大模型推理或小型模型微调",
-    how: "打开 scnet.ai 注册账号 → 领取免费资源包 → 资源 90 天内有效，限量领取",
+    how: "打开 scnet.ai 注册账号 → 领取免费资源包 → 资源 90 天内有效，限量领取。⚠️ 原公示的 7/23 活动期已过，官方未发布新截止日期，当前以控制台实际可领为准",
     link: "https://www.scnet.ai",
-    limited: "2026-07-23",
-    updated: "2026-07-18"
+    updated: "2026-08-01"
   },
   {
     name: "无问AI SecurityPlan",
@@ -395,10 +405,9 @@ const TOKENS = [
     rating: 3,
     quota: "新用户注册送 3000 万 Token（无用量限制，用完即止）",
     effect: "专为网络安全从业者打造的垂直模型，支持代码审计、漏洞挖掘、红蓝对抗、日志审计等场景，兼容 OpenAI/Anthropic 接口",
-    how: "打开 wwlib.cn 注册账号 → 进入开发者控制台获取 API Key → 直接调用（注意：仅限授权测试，严禁用于非授权测试）",
+    how: "打开 wwlib.cn 注册账号 → 进入开发者控制台获取 API Key → 直接调用（注意：仅限授权测试，严禁用于非授权测试）。⚠️ 官方公示的「7/8—7/31 注册送 3000 万 Token」活动期已结束，是否延续以控制台为准；Security Plan 计划本身仍在运行",
     link: "https://www.wwlib.cn/index.php/develement",
-    limited: "2026-07-31",
-    updated: "2026-07-18"
+    updated: "2026-08-01"
   },
   {
     name: "ZenMux",
@@ -611,6 +620,39 @@ const TOKENS = [
     how: "打开 openrouter.ai 注册（无需信用卡）→ 进入 Keys 页创建 API Key → 选 :free 后缀模型直接调用（如 kimi/kimi-k2:free）",
     link: "https://openrouter.ai",
     updated: "2026-07-17"
+  },
+  {
+    name: "无问芯穹 Infini-AI（无穹）",
+    type: "大模型",
+    modality: "DeepSeek R1/V3 · Qwen3 · Kimi · ChatGLM4 · 异构算力",
+    rating: 4,
+    quota: "实名注册即得百亿 tokens 免费配额（面向全部实名个人与企业用户）；GenStudio LLM API 免费调用不设总量上限，仅有速率限制",
+    effect: "清华电子系汪玉教授团队创办，聚合壁仞、海光、昇腾、寒武纪、摩尔线程等 10 余种国产芯片的异构算力平台，是智谱 AI、月之暗面的算力供应商。免费开放满血版 DeepSeek-R1/V3、Qwen3、Kimi、ChatGLM4 等 20+ 模型，接口 100% 兼容 OpenAI，一行代码改 base_url 即可迁移；自研 FlashDecoding++ 使推理速度最高提升 400%，平均延迟 <200ms。另提供 LoRA/SFT 微调、ComfyUI 工作流托管与 Agent 平台。⚠️ 模型代际偏上一轮（非 GLM-5.x / DeepSeek V4 档）",
+    how: "打开 infini-ai.com 注册并完成实名认证 → 免费配额自动到账（额度用完可再领）→ 控制台「密钥管理」创建 API Key → base_url 指向 GenStudio 接口即可调用；支持 Cursor / VSCode / JetBrains 插件一键接入。高校与初创企业另有专项算力补贴计划",
+    link: "https://cloud.infini-ai.com",
+    updated: "2026-08-01"
+  },
+  {
+    name: "腾讯元器 Yuanqi",
+    type: "工具",
+    modality: "混元大模型全系 · 智能体创作与分发",
+    rating: 4,
+    quota: "新用户免费 Token 额度 1 亿（由此前的 100 万提升 100 倍）；智能体分发至腾讯全域渠道时混元模型资源全部免费",
+    effect: "腾讯官方一站式 AI 智能体（Agent）创作与分发平台，基于自研混元大模型。零代码/低代码拖拽即可 3 分钟建出智能体，预置微信搜一搜、PDF 解析、混元图片生成等官方插件，支持知识库（DOC/TXT/PDF/Excel 问答对）与流程图式工作流编排。建好的智能体可一键分发至微信公众号、小程序、QQ、微信客服、腾讯元宝、腾讯云等渠道，也可以 API 形式嵌入第三方系统——1 亿免费 Token 即用于这条 API 通道。已过等保三级认证",
+    how: "打开 yuanqi.tencent.com 用 QQ / 微信登录 → 新建智能体，配置提示词、插件与知识库 → 发布后在「API 调用」页获取密钥与调用地址，1 亿免费 Token 自动生效 → 也可直接一键分发到公众号 / 小程序等腾讯生态渠道",
+    link: "https://yuanqi.tencent.com",
+    updated: "2026-08-01"
+  },
+  {
+    name: "PPIO 派欧云",
+    type: "大模型",
+    modality: "DeepSeek R1/V3 community 满血版 · Qwen3.5 · 文本模型",
+    rating: 3,
+    quota: "注册并实名送 5 元代金券（≈500 万 DeepSeek-V3 Tokens）+ 130GB 免费存储；community 版模型开放免费尝鲜",
+    effect: "国内分布式云计算服务商（原 pp.io，2025-05 迁至 ppio.com）。community 版为全参数满血模型，稳定性与效果同非 community 版无差异，适合个人尝鲜与开发调试；接口兼容 OpenAI，可接 Chatbox、LobeChat、AnythingLLM、Word VBA 等客户端，支持 DeepSeek 系列 1M 超长上下文。另有 GPU 容器实例与 Serverless 可部署私有模型，初创企业扶持最高 10 万元。⚠️ 额度不大且模型代际偏旧，定位为补充线而非主力",
+    how: "打开 ppio.com 注册账号（可用邀请码 VOJL20）→ 完成实名认证领 5 元代金券 → 控制台「API 密钥管理」点【+ 创建】生成密钥（仅显示一次）→ base_url 填 https://api.ppio.com/openai，模型 ID 填 deepseek/deepseek-v3/community 或 deepseek/deepseek-r1/community。大量调用需充值并切换到非 community 版",
+    link: "https://ppio.com",
+    updated: "2026-08-01"
   }
 ];
 
