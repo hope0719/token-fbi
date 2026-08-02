@@ -246,7 +246,7 @@ const TOKENS = [
   },
   {
     name: "ZenMux",
-    type: "工具",
+    type: "大模型",
     modality: "DeepSeek V4 Pro/Flash · Kimi K2.7 · GLM 5.2 · Step 3.7 Flash 等",
     rating: 5,
     quota: "DeepSeek V4 Pro/Flash 永久免费无限调用（无上限、无需实名、无需充值）",
