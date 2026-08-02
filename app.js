@@ -313,14 +313,13 @@ function fire(rating) {
   return s;
 }
 
-/* 归类规则（首页只分三类，避免与卡片上的模型类型标签重复）：
- *   - 工具：App 类（type === "工具"）优先
- *   - GLM5.2：非工具且模型类型含 "GLM5.2"
- *   - 大模型：其余模型平台
+/* 归类规则（只分两类）：
+ *   - 工具：App 类（type === "工具"）
+ *   - 大模型：其余所有模型平台
  */
 function catOf(t) {
   if (t.type === "工具") return "工具";
-  return (t.modality || "").includes("GLM5.2") ? "GLM5.2" : "大模型";
+  return "大模型";
 }
 
 function render(type) {
