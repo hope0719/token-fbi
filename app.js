@@ -122,7 +122,7 @@ const TOKENS = [
   },
   {
     name: "微信 AI 小程序成长计划（云开发 CloudBase）",
-    type: "工具",
+    type: "大模型",
     modality: "Hy3 + Hy Image 3.0 · 文本/生图",
     rating: 5,
     quota: "10 亿大模型 Token + 10 万张 AI 生图（本轮加码后额度，自申请起 6 个月有效），另送 6 个月个人版云开发环境",
@@ -282,7 +282,7 @@ const TOKENS = [
   /* ========== 后面：较老模型（发布在截图那些模型之前的） ========== */
   {
     name: "OpenRouter",
-    type: "工具",
+    type: "大模型",
     modality: "35+ 聚合模型（Kimi K2 / Qwen3-Next-80B / Llama 等）",
     rating: 4,
     quota: "注册即享永久免费模型（BYOK 用户每月 100 万次请求）；免费模型每日 50 次（充值 $10 后升至 1000 次/日）",
