@@ -33,17 +33,6 @@ const TOKENS = [
   },
   /* ========== 前面：较新模型（截图里 GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 等同期或更晚） ========== */
   {
-    name: "360 纳米 Work",
-    type: "工具",
-    modality: "Kimi / DeepSeek / GLM / 豆包 等 16 家模型智能调度",
-    rating: 4,
-    quota: "首批入驻用户每人 1 亿 Token 免费试用额度（360 计划优先扶持 1000 家中小企业，名额有限、先到先得）",
-    effect: "360 于 2026-07-28 发布的企业多智能体协同办公平台（由「安全龙虾」升级而来）。内置约 500 个岗位 AI 专家、5 万+ 技能，支持云端 7×24 定时任务（关机不中断）、通用/项目/私有三层知识库记忆；按任务难度在轻量、省钱、满血三档间自动调度 Kimi、DeepSeek、GLM、豆包等 16 家模型，日常轻量任务可省约 90% 成本。1 亿 Token 按主流国产 API 价折算约值 200-500 元",
-    how: "打开 work.n.cn 注册登录（网页端 / Windows 客户端 / 移动端）→ 首次进入领取 1 亿免费 Token → 直接调用现成 AI 专家，或零代码定制专属数字员工；企业用户另可申请配套实训与陪跑服务",
-    link: "https://work.n.cn",
-    updated: "2026-07-31"
-  },
-  {
     name: "BazaarLink",
     type: "大模型",
     modality: "DeepSeek V4 Flash · 1M 上下文 · OpenAI 兼容网关",
@@ -86,17 +75,6 @@ const TOKENS = [
     how: "打开 huggingface.co 注册 → 在模型页点「Deploy → Inference API」或用共享端点 router.huggingface.co/hf-inference → 用 HF Token 调用（curl/OpenAI SDK 均可）",
     link: "https://huggingface.co",
     updated: "2026-07-24"
-  },
-  {
-    name: "中国移动 MoMA",
-    type: "大模型",
-    modality: "九天 / DeepSeek / 豆包 / 通义 / GLM / MiniMax 等 300+ 模型",
-    rating: 5,
-    quota: "新用户领取 2500 万 Tokens 免费额度（30 天有效，限流 3000 tokens/min，据官方文档）",
-    effect: "中国移动 2026 年推出的国内首个开放普惠大模型聚合平台，汇聚 300+ 主流模型，统一 API 网关 + 智能路由（成本/效果/均衡三策略），单位 Token 成本约降 30%，支持体验、API 调用、一键部署与微调",
-    how: "打开移动云 MoMA 产品页 → 登录/注册移动云账号 → 进入【模型观测】点「立即领取」拿 2500 万免费额度 → 模型广场获取 API Key 调用（兼容 OpenAI 格式）",
-    link: "https://ecloud.10086.cn/portal/product/MaaS",
-    updated: "2026-07-23"
   },
   {
     name: "月之暗面 Kimi 开放平台",
@@ -165,28 +143,6 @@ const TOKENS = [
     link: "https://joyagent.jd.com",
     special: "需 App",
     updated: "2026-07-19"
-  },
-  {
-    name: "智谱 BigModel（GLM-4.7-Flash / GLM-4-Flash / GLM-4-Plus / 邀请有礼）",
-    type: "大模型",
-    modality: "GLM 系列 · 文本模型",
-    rating: 5,
-    quota: "GLM-4.7-Flash 完全免费永久有效（需实名）；GLM-4-Flash 完全免费无上限（无需实名）；GLM-4-Plus 100 万 tokens/月；邀请有礼：每邀请1人双方各得 2000 万 Tokens（每月上限 10 人）",
-    effect: "智谱全系列模型统一入口：GLM-4.7-Flash 为混合思考最新替代模型（200K 上下文，128K 输出）；GLM-4-Flash 零门槛永久免费；GLM-4-Plus 旗舰级复杂任务；邀请有礼可叠加额度",
-    how: "打开 bigmodel.cn → 注册账号 → GLM-4-Flash 直接使用（无需实名）；GLM-4.7-Flash / GLM-4-Plus 需实名认证后开通；邀请有礼在平台获取专属链接分享",
-    link: "https://bigmodel.cn",
-    updated: "2026-07-17"
-  },
-  {
-    name: "CometAPI",
-    type: "工具",
-    modality: "Kimi K2 · 文本模型（1T 参数 MoE）",
-    rating: 4,
-    quota: "注册即送免费额度（每月 10 万输入 token + 100 万输出 token），Kimi K2 可直接调用",
-    effect: "聚合 500+ AI 模型的新兴平台，Kimi K2（1T 参数 MoE）代码/MATH/Agent 能力均超 GPT-4.1，免费层适合原型验证和小项目",
-    how: "打开 cometapi.com 注册（仅需邮箱）→ 验证后获取 API Key → 调 Kimi K2（model: kimi-k2-0711-preview）",
-    link: "https://www.cometapi.com",
-    updated: "2026-07-17"
   },
   {
     name: "WorkBuddy",
