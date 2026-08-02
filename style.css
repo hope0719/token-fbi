@@ -91,9 +91,9 @@ body {
 .model-chip {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 6px;
-  padding: 8px 10px;
+  padding: 10px 12px;
   border-radius: 10px;
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.1);
@@ -107,6 +107,9 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.model-chip:has(.model-tag) {
+  justify-content: space-between;
 }
 .model-tag {
   font-size: 11px;
