@@ -132,19 +132,7 @@ const TOKENS = [
     limited: "2026-12-31",
     updated: "2026-07-29"
   },
-  {
-    name: "京东 JoyAgent",
-    type: "工具",
-    modality: "GLM5.2 · 多模型聚合",
-    rating: 0,
-    quota: "每日发放 10000 积分，无需实名认证",
-    effect: "【实测非常难用，热度记作零】京东云旗下一站式大模型聚合平台，API 兼容 OpenAI/Anthropic 协议；但创建并调用 API Key 必须先下载 JoyAgent App，整体体验差、流程繁琐，不推荐优先使用",
-    how: "用京东账号登录 joyagent.jd.com 开通免费体验 → 下载 JoyAgent App（创建/调用 API Key 必须在 App 内完成）→ 个人中心查看每日发放 10000 积分 → 获取 API Key 即可调用 GLM5.2 等模型",
-    link: "https://joyagent.jd.com",
-    special: "需 App",
-    updated: "2026-07-19"
-  },
-  {
+{
     name: "WorkBuddy",
     type: "工具",
     modality: "HY3 · 混元3 · 文本模型",
@@ -361,11 +349,13 @@ filters.addEventListener("click", e => {
 
 /* Hero 数据大字报 */
 (function initStats() {
-  const total = TOKENS.length;
+  const models = TOKENS.filter(t => catOf(t) === "大模型").length;
+  const tools = TOKENS.filter(t => catOf(t) === "工具").length;
   const limited = TOKENS.filter(t => t.limited).length;
   const latest = TOKENS.slice().sort((a, b) => b.updated.localeCompare(a.updated))[0]?.updated || "—";
   const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-  set("stat-total", total);
+  set("stat-models", models);
+  set("stat-tools", tools);
   set("stat-limited", limited);
   set("stat-updated", latest);
 })();
