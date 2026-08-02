@@ -344,6 +344,17 @@ const TOKENS = [
     updated: "2026-07-30"
   },
   {
+    name: "Agnes AI",
+    type: "大模型",
+    modality: "全模态模型",
+    rating: 5,
+    quota: "不限期全模态免费，API 每分钟 20 次请求（RPM 20 以内）",
+    effect: "Agnes2.0 全模态模型，文本 / 图像 / 视频全能适配，官方承诺持续升级并保持免费",
+    how: "注册 platform.agnes-ai.com 生成 API Key 直接调用；多模态建议配合官方 skill（github.com/lj1270998580-crypto/Agnes-help-skill）使用",
+    link: "https://platform.agnes-ai.com",
+    updated: "2026-08-03"
+  },
+  {
     name: "阿里云百炼 × OceanBase",
     type: "大模型",
     modality: "百炼、通义、千问等 · 多模态大模型",
