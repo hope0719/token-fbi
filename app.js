@@ -55,17 +55,6 @@ const TOKENS = [
     updated: "2026-07-31"
   },
   {
-    name: "白山云智算（白山云 AI）",
-    type: "大模型",
-    modality: "GLM-5 / MiniMax-M2.5 / Kimi K2 / DeepSeek V3·R1 / Qwen · OpenAI 兼容",
-    rating: 4,
-    quota: "注册 + 实名认证自动到账 150 元大模型 API 体验金（零门槛、不需邀请码、不需充值）；每邀请 1 位新用户完成注册实名再得 200 元，上不封顶",
-    effect: "白山云（IDC 认证中国独立边缘云第一，全球 975+ 边缘节点）旗下智算平台。体验金可直接抵扣 API 调用费，150 元按国产模型均价折算约合数千万 tokens。模型覆盖 GLM-4.5/4.6/GLM-5、MiniMax-M2.5、Kimi-K2-Instruct、DeepSeek-V3/R1、Qwen2.5/Qwen3 等国产第一梯队；接口 100% 兼容 OpenAI，替换 base_url 即可接入 OpenClaw / Claude Code / Cursor / Dify 等 Agent 框架，边缘节点就近调度、延迟低",
-    how: "打开 ai.baishan.com 注册账号 → 完成实名认证（150 元体验金自动发放至账户余额）→ 控制台创建 API Key → base_url 换成白山智算地址即可调用。⚠️ 原「首次调用再送 300 元」限时福利已于 2026-03-16 停止，现仅注册福利与邀新福利持续有效；高峰期算力偏紧可能响应变慢",
-    link: "https://ai.baishan.com/auth/login",
-    updated: "2026-08-01"
-  },
-  {
     name: "AtomCode CodingPlan",
     type: "工具",
     modality: "GLM-5.2 / DeepSeek-V4-Flash / Qwen3-VL · 编程模型",
@@ -118,17 +107,6 @@ const TOKENS = [
     effect: "月之暗面官方平台，Kimi K2.6 最新最智能、长程代码编写更强更稳；K2.5 支持百万上下文、视觉+文本、思考/非思考模式，3 RPM 限速但超长文本处理一流",
     how: "打开 platform.moonshot.cn 注册（手机号）→ API Key 管理新建密钥（sk- 开头，生成后须立即复制保存）→ 调 kimi-k2.6 / kimi-k2.5（base_url: https://api.moonshot.cn/v1）",
     link: "https://platform.moonshot.cn",
-    updated: "2026-07-23"
-  },
-  {
-    name: "联通云 Coding Plan",
-    type: "大模型",
-    modality: "glm5（智谱）/ Qwen3.5（阿里）/ MiniMax 等 · 编程模型",
-    rating: 4,
-    quota: "0 元订阅：Lite 每月 1.8 万次调用、Pro 每月 9 万次调用（每日 1200 次额度），按调用次数计费，无需绑卡",
-    effect: "中国联通官方免费 Coding 套餐，覆盖编程全场景主流模型，适合 OpenClaw / Claude Code / Cursor 等 Agent 开发，目前国内仍有约 12000 个免费名额，先到先得",
-    how: "打开联通云 Coding Plan 活动页注册 → 实名认证 → 0 元开通 Lite/Pro 套餐 → 获取 API Key 配置到编程工具（base_url 见控制台）",
-    link: "https://www.cucloud.cn/activity/kickoffseason.html",
     updated: "2026-07-23"
   },
   {
@@ -413,28 +391,6 @@ const TOKENS = [
   },
   /* ========== 后面：较老模型（发布在截图那些模型之前的） ========== */
   {
-    name: "DeepSeek V3",
-    type: "大模型",
-    modality: "DeepSeek 系列 · 文本模型",
-    rating: 5,
-    quota: "1000 万 tokens（永久有效，不清零）",
-    effect: "国产顶级开源大模型，推理能力强、响应快，代码/数学/中文都靠谱，适合长期高频使用",
-    how: "打开 platform.deepseek.com 注册账号 → 实名认证 → 创建 API Key → 直接调用（兼容 OpenAI 格式）",
-    link: "https://platform.deepseek.com",
-    updated: "2026-07-16"
-  },
-  {
-    name: "DeepSeek R1",
-    type: "大模型",
-    modality: "DeepSeek 系列 · 推理模型",
-    rating: 5,
-    quota: "500 万 tokens（永久有效，不清零）",
-    effect: "DeepSeek 推理增强版，数理逻辑/代码/复杂推理比 V3 更强，适合硬核任务",
-    how: "同 DeepSeek V3：platform.deepseek.com 注册 → 实名认证 → 创建 API Key",
-    link: "https://platform.deepseek.com",
-    updated: "2026-07-16"
-  },
-  {
     name: "阿里云百炼 Qwen-Turbo",
     type: "大模型",
     modality: "通义千问 Qwen 系列 · 文本模型",
@@ -490,17 +446,6 @@ const TOKENS = [
     updated: "2026-07-17"
   },
   {
-    name: "无问芯穹 Infini-AI（无穹）",
-    type: "大模型",
-    modality: "DeepSeek R1/V3 · Qwen3 · Kimi · ChatGLM4 · 异构算力",
-    rating: 4,
-    quota: "实名注册即得百亿 tokens 免费配额（面向全部实名个人与企业用户）；GenStudio LLM API 免费调用不设总量上限，仅有速率限制",
-    effect: "清华电子系汪玉教授团队创办，聚合壁仞、海光、昇腾、寒武纪、摩尔线程等 10 余种国产芯片的异构算力平台，是智谱 AI、月之暗面的算力供应商。免费开放满血版 DeepSeek-R1/V3、Qwen3、Kimi、ChatGLM4 等 20+ 模型，接口 100% 兼容 OpenAI，一行代码改 base_url 即可迁移；自研 FlashDecoding++ 使推理速度最高提升 400%，平均延迟 <200ms。另提供 LoRA/SFT 微调、ComfyUI 工作流托管与 Agent 平台。⚠️ 模型代际偏上一轮（非 GLM-5.x / DeepSeek V4 档）",
-    how: "打开 infini-ai.com 注册并完成实名认证 → 免费配额自动到账（额度用完可再领）→ 控制台「密钥管理」创建 API Key → base_url 指向 GenStudio 接口即可调用；支持 Cursor / VSCode / JetBrains 插件一键接入。高校与初创企业另有专项算力补贴计划",
-    link: "https://cloud.infini-ai.com",
-    updated: "2026-08-01"
-  },
-  {
     name: "腾讯元器 Yuanqi",
     type: "工具",
     modality: "混元大模型全系 · 智能体创作与分发",
@@ -511,17 +456,6 @@ const TOKENS = [
     link: "https://yuanqi.tencent.com",
     updated: "2026-08-01"
   },
-  {
-    name: "PPIO 派欧云",
-    type: "大模型",
-    modality: "DeepSeek R1/V3 community 满血版 · Qwen3.5 · 文本模型",
-    rating: 3,
-    quota: "注册并实名送 5 元代金券（≈500 万 DeepSeek-V3 Tokens）+ 130GB 免费存储；community 版模型开放免费尝鲜",
-    effect: "国内分布式云计算服务商（原 pp.io，2025-05 迁至 ppio.com）。community 版为全参数满血模型，稳定性与效果同非 community 版无差异，适合个人尝鲜与开发调试；接口兼容 OpenAI，可接 Chatbox、LobeChat、AnythingLLM、Word VBA 等客户端，支持 DeepSeek 系列 1M 超长上下文。另有 GPU 容器实例与 Serverless 可部署私有模型，初创企业扶持最高 10 万元。⚠️ 额度不大且模型代际偏旧，定位为补充线而非主力",
-    how: "打开 ppio.com 注册账号（可用邀请码 VOJL20）→ 完成实名认证领 5 元代金券 → 控制台「API 密钥管理」点【+ 创建】生成密钥（仅显示一次）→ base_url 填 https://api.ppio.com/openai，模型 ID 填 deepseek/deepseek-v3/community 或 deepseek/deepseek-r1/community。大量调用需充值并切换到非 community 版",
-    link: "https://ppio.com",
-    updated: "2026-08-01"
-  }
 ];
 
 /* ---- 渲染逻辑（一般不用改） ---- */
