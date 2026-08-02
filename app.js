@@ -322,17 +322,6 @@ const TOKENS = [
     updated: "2026-07-15"
   },
   {
-    name: "MiniMax",
-    type: "大模型",
-    modality: "abab 系列 · 文本模型",
-    rating: 3,
-    quota: "新用户注册即送调用额度 + 邀请双方各得代金券",
-    effect: "MiniMax 自研 abab6.5 系列支持超长上下文，适合长文档分析与多轮对话",
-    how: "打开 minimax.io 或国内入口注册 → 完成新手任务 → 自动到账额度",
-    link: "https://www.minimax.io",
-    updated: "2026-07-16"
-  },
-  {
     name: "NVIDIA NIM 免费 API",
     type: "大模型",
     modality: "多模型聚合（文本 / 多模态）",
@@ -355,17 +344,6 @@ const TOKENS = [
     updated: "2026-07-30"
   },
   {
-    name: "Agnes AI",
-    type: "大模型",
-    modality: "全模态模型",
-    rating: 5,
-    quota: "不限期全模态免费，API 每分钟 20 次请求（RPM 20 以内）",
-    effect: "Agnes2.0 全模态模型，文本 / 图像 / 视频全能适配，官方承诺持续升级并保持免费",
-    how: "注册 platform.agnes-ai.com 生成 API Key 直接调用；多模态建议配合官方 skill（github.com/lj1270998580-crypto/Agnes-help-skill）使用",
-    link: "https://platform.agnes-ai.com",
-    updated: "2026-07-15"
-  },
-  {
     name: "阿里云百炼 × OceanBase",
     type: "大模型",
     modality: "百炼、通义、千问等 · 多模态大模型",
@@ -386,28 +364,6 @@ const TOKENS = [
     how: "打开 longcat.chat 官网注册即送新用户免费额度，用完可在平台低价续购",
     link: "https://longcat.chat/platform/product",
     updated: "2026-07-14"
-  },
-  {
-    name: "SCNet.AI",
-    type: "大模型",
-    modality: "科研智能体 · 多模态",
-    rating: 4,
-    quota: "新用户注册送 1000 万 Token + 100 卡时 AI 推理算力 + 100 卡时高性能计算算力",
-    effect: "面向科研场景的 AI 平台，支持大模型推理、CFD、分子动力学等仿真实验，1000 万 Token 可支撑数十轮主流大模型推理或小型模型微调",
-    how: "打开 scnet.ai 注册账号 → 领取免费资源包 → 资源 90 天内有效，限量领取。⚠️ 原公示的 7/23 活动期已过，官方未发布新截止日期，当前以控制台实际可领为准",
-    link: "https://www.scnet.ai",
-    updated: "2026-08-01"
-  },
-  {
-    name: "无问AI SecurityPlan",
-    type: "大模型",
-    modality: "SecurityPlan · 网安垂直模型",
-    rating: 3,
-    quota: "新用户注册送 3000 万 Token（无用量限制，用完即止）",
-    effect: "专为网络安全从业者打造的垂直模型，支持代码审计、漏洞挖掘、红蓝对抗、日志审计等场景，兼容 OpenAI/Anthropic 接口",
-    how: "打开 wwlib.cn 注册账号 → 进入开发者控制台获取 API Key → 直接调用（注意：仅限授权测试，严禁用于非授权测试）。⚠️ 官方公示的「7/8—7/31 注册送 3000 万 Token」活动期已结束，是否延续以控制台为准；Security Plan 计划本身仍在运行",
-    link: "https://www.wwlib.cn/index.php/develement",
-    updated: "2026-08-01"
   },
   {
     name: "ZenMux",
@@ -444,40 +400,7 @@ const TOKENS = [
     limited: "2026-08-02",
     updated: "2026-07-19"
   },
-  {
-    name: "快手 StreamLake（KAT-Coder）",
-    type: "工具",
-    modality: "KAT-Coder-Air V1 · 代码模型",
-    rating: 4,
-    quota: "KAT-Coder-Air V1 永久免费；KAT-Coder-Pro V1 新用户曾送 2000 万 Tokens（活动已结束）",
-    effect: "快手旗下 AI 编程平台，KAT-Coder-Air V1 轻量版永久免费，支持代码生成、续写、诊断；Pro 版能力更强，适合复杂企业项目",
-    how: "打开 streamlake.ai 注册登录 → 进入万擎平台控制台 → KAT-Coder-Air V1 直接免费使用 → 创建 API Key 接入 Claude Code、Cline 等工具",
-    link: "https://streamlake.ai",
-    updated: "2026-07-18"
-  },
   /* ========== 后面：较老模型（发布在截图那些模型之前的） ========== */
-  {
-    name: "零一万物 01.AI（Yi 大模型）",
-    type: "大模型",
-    modality: "Yi-Lightning / Yi-Vision · 文本+视觉",
-    rating: 4,
-    quota: "新用户注册送 ¥10 免费额度（约数百万 tokens），速率 5 RPM，无需绑卡（需手机号）",
-    effect: "李开复创立的国产大模型公司，Yi-Lightning 性价比极高、国内直连无需代理，OpenAI 兼容接口；支持智能路由（自动选 DeepSeek-V3/Qwen3/Yi）与 Yi-Vision 视觉理解，适合中英文双语原型",
-    how: "打开 platform.lingyiwanwu.com 注册 → 新用户自动获得 ¥10 体验额度 → 创建 API Key（base_url: https://api.lingyiwanwu.com/v1）调 yi-lightning",
-    link: "https://platform.lingyiwanwu.com",
-    updated: "2026-07-24"
-  },
-  {
-    name: "360智脑（360GPT）",
-    type: "大模型",
-    modality: "360gpt-pro / 360gpt-turbo · 文本模型",
-    rating: 3,
-    quota: "新用户免费试用额度（具体以官网为准），兼容 OpenAI 接口，无需绑卡（需手机号）",
-    effect: "360 自研通用大模型，文本生成 / 向量 / 图像多模态，完全兼容 OpenAI API（仅改 base_url 与 model 名即可迁移）；国内直连稳定，曾在 OpenAI 停服时推出限时大额赠送，适合国产替代与 Embedding 检索场景",
-    how: "打开 ai.360.com 注册 360 账号 → 进入开放平台创建 API Key（base_url: https://api.360.cn/v1）→ 调 360gpt2-pro / 360gpt-turbo",
-    link: "https://ai.360.com",
-    updated: "2026-07-24"
-  },
   {
     name: "DeepSeek V3",
     type: "大模型",
@@ -523,17 +446,6 @@ const TOKENS = [
     updated: "2026-07-16"
   },
   {
-    name: "百度 ERNIE-Speed / ERNIE-Lite",
-    type: "大模型",
-    modality: "ERNIE 系列 · 文本模型",
-    rating: 4,
-    quota: "各 1000 万 tokens/月（每月自动刷新，额度独立）",
-    effect: "百度智能云两款轻量级大模型：ERNIE-Speed 响应快、中文理解好；ERNIE-Lite 与 Speed 互补，额度独立计算。均适合高频小任务",
-    how: "打开 qianfan.baidu.com 注册 → 实名认证 → 分别开通 ERNIE-Speed / ERNIE-Lite → 各创建 API Key",
-    link: "https://qianfan.baidu.com",
-    updated: "2026-07-16"
-  },
-  {
     name: "火山方舟（字节）",
     type: "大模型",
     modality: "多模型（豆包/DeepSeek 等）· 文本模型",
@@ -545,17 +457,6 @@ const TOKENS = [
     updated: "2026-07-16"
   },
   {
-    name: "讯飞星火 Spark Lite",
-    type: "大模型",
-    modality: "Spark 系列 · 文本模型",
-    rating: 3,
-    quota: "100 万 tokens/月（每月自动刷新）",
-    effect: "科大讯飞轻量大模型，中文交互流畅，适合日常对话与简单创作",
-    how: "打开 xfyun.cn 注册讯飞开放平台 → 实名认证 → 开通 Spark Lite → 创建 API Key",
-    link: "https://xfyun.cn",
-    updated: "2026-07-16"
-  },
-  {
     name: "腾讯云混元",
     type: "大模型",
     modality: "混元系列 · 文本模型",
@@ -564,50 +465,6 @@ const TOKENS = [
     effect: "腾讯云自研大模型，中文理解扎实，适合企业级应用与日常对话",
     how: "打开 cloud.tencent.com 注册 → 实名认证 → 开通混元服务 → 创建 API Key",
     link: "https://cloud.tencent.com/product/hunyuan",
-    updated: "2026-07-16"
-  },
-  {
-    name: "腾讯云知识引擎",
-    type: "大模型",
-    modality: "知识引擎 · 文本模型",
-    rating: 3,
-    quota: "50 万 tokens（有效期 2 个月）",
-    effect: "腾讯云知识增强型大模型，适合文档问答、知识检索等场景",
-    how: "打开 cloud.tencent.com 注册 → 实名认证 → 开通知识引擎 → 创建 API Key",
-    link: "https://cloud.tencent.com/product/ke",
-    updated: "2026-07-16"
-  },
-  {
-    name: "Wisemodel / 赖耶 AI",
-    type: "大模型",
-    modality: "赖耶系列 · 文本模型",
-    rating: 3,
-    quota: "新用户完成授权即得 20 元 token 资源包",
-    effect: "Wisemodel 平台聚合多家模型，赖耶 AI 为合作方，支持 API 调用与在线体验",
-    how: "打开 wisemodel.cn 注册 → 完成赖耶 AI 授权 → 自动到账 20 元资源包",
-    link: "https://wisemodel.cn",
-    updated: "2026-07-16"
-  },
-  {
-    name: "Wisemodel 邀请奖励",
-    type: "大模型",
-    modality: "赖耶系列 · 文本模型",
-    rating: 3,
-    quota: "每邀请 1 位新用户完成授权，你得 14 元 token 资源包（上限 280 元）",
-    effect: "邀请好友一起薅，双方都得 token，平台早期推广力度大",
-    how: "Wisemodel.cn 注册后获取邀请链接 → 好友通过你的链接注册并完成赖耶 AI 授权 → 你获 14 元/人",
-    link: "https://wisemodel.cn",
-    updated: "2026-07-16"
-  },
-  {
-    name: "欧派算力云",
-    type: "大模型",
-    modality: "DeepSeek R1/V3 · 文本模型",
-    rating: 3,
-    quota: "新用户注册送 R1 与 V3 各 100 万 tokens（有效期 6 个月）",
-    effect: "专注 DeepSeek 模型的第三方算力平台，R1/V3 推理速度稳定",
-    how: "打开欧派算力云官网注册 → 实名认证 → 自动到账 R1+V3 各 100 万 tokens",
-    link: "https://opc.aliyun.com",
     updated: "2026-07-16"
   },
   {
