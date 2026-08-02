@@ -143,61 +143,6 @@ const TOKENS = [
     updated: "2026-07-23"
   },
   {
-    name: "Google Gemini（AI Studio）",
-    type: "大模型",
-    modality: "Gemini 2.5 Flash / Pro · 多模态",
-    rating: 4,
-    quota: "免费层：Gemini 2.5 Flash 每天 250 次请求、100 万 Token 上下文（长期有效，Google AI Studio 申请 Key）",
-    effect: "谷歌官方免费 API，多模态、超长上下文，性能第一梯队；适合个人开发、小型项目与原型测试，海外前沿模型直连首选",
-    how: "打开 Google AI Studio（aistudio.google.com）登录 Google 账号 → 创建 API Key → 调 gemini-2.5-flash（base_url: https://generativelanguage.googleapis.com/v1beta）",
-    link: "https://aistudio.google.com",
-    updated: "2026-07-23"
-  },
-  {
-    name: "Groq",
-    type: "大模型",
-    modality: "Llama / Qwen / GPT-OSS / Gemma 等 · 开源模型",
-    rating: 4,
-    quota: "免费层：Llama、Qwen、GPT-OSS、Gemma 等开源模型免费调用（按模型看速率限制，无需信用卡）",
-    effect: "以极致推理速度著称的 AI 基础设施厂商，免费开放多款开源前沿模型，低延迟，适合高并发轻量任务与海外模型对比测试",
-    how: "打开 groq.com 注册 → 控制台创建 API Key → 调开放模型（base_url: https://api.groq.com/openai/v1，OpenAI 兼容）",
-    link: "https://groq.com",
-    updated: "2026-07-23"
-  },
-  {
-    name: "Cloudflare Workers AI",
-    type: "大模型",
-    modality: "Llama / Qwen / Mistral 等 · 开源模型",
-    rating: 3,
-    quota: "免费层：每天 10,000 Neurons 额度（UTC0 点刷新，长期有效，全球边缘节点）",
-    effect: "Cloudflare 全球边缘网络内置的推理服务，数十款开源模型免费调用，配置简单、全球访问快，适合轻量编程任务与接口测试",
-    how: "打开 workers.cloudflare.com 注册 → 在 Workers 项目里调用 AI 绑定（或从 dashboard 获取 API Token）→ 调 @cf/ 系列模型",
-    link: "https://workers.cloudflare.com",
-    updated: "2026-07-23"
-  },
-  {
-    name: "GitHub Models",
-    type: "大模型",
-    modality: "GPT-4o / Llama / Phi / Mistral 等",
-    rating: 4,
-    quota: "免费访问 GPT-4o、Llama、Phi、Mistral 等模型（低 RPM，专为 GitHub Actions 与快速原型设计，无需信用卡）",
-    effect: "GitHub 官方模型服务，用 GitHub 账号直接调用多家前沿模型，适合 CI/CD 流水线内嵌 AI 与快速实验，无需额外注册 AI 平台",
-    how: "打开 github.com/marketplace/models 用 GitHub 账号登录 → 在 Codespaces / Actions 或本地用 GitHub Token 调模型（OpenAI 兼容接口）",
-    link: "https://github.com/marketplace/models",
-    updated: "2026-07-23"
-  },
-  {
-    name: "MonkeyCode（长亭科技）",
-    type: "工具",
-    modality: "Qwen3.6-plus · 代码/文本模型",
-    rating: 4,
-    quota: "基础会员永久免费：每天 3000 万 Token（零点自动刷新）+ 注册送 100 积分 + 每日签到 100 积分",
-    effect: "长亭科技出品的开源 AI 编程平台（AGPL-3.0），每个任务自动创建独立云端虚拟机（1C/4G），基础模型 Qwen3.6-plus 调用不扣积分；支持 GitHub 仓库导入、实时预览、临时域名，手机端也能用。注意：容器 15 分钟无互动休眠、3 天未对话回收，代码记得及时 Push",
-    how: "打开 monkeycode-ai.com 用微信/GitHub 扫码登录 → 免费额度自动到账 → 网页直接建任务，或装 VS Code / JetBrains 插件；邀请 1 位新用户再 +5000 积分",
-    link: "https://monkeycode-ai.com",
-    updated: "2026-07-29"
-  },
-  {
     name: "微信 AI 小程序成长计划（云开发 CloudBase）",
     type: "工具",
     modality: "Hy3 + Hy Image 3.0 · 文本/生图",
@@ -333,17 +278,6 @@ const TOKENS = [
     updated: "2026-08-03"
   },
   {
-    name: "阿里云百炼 × OceanBase",
-    type: "大模型",
-    modality: "百炼、通义、千问等 · 多模态大模型",
-    rating: 5,
-    quota: "1 亿 Token 免费额度（实测新、老用户均可领）",
-    effect: "阿里云百炼与 OceanBase 联合福利，额度可抵扣百炼全量模型（通义千问 / DeepSeek / 万相 等）的调用与算力",
-    how: "进入福利页 opc.aliyun.com/oceanbase → 登录阿里云账号 → 申请 OPC 专属 token 补贴即可领取（据投稿实测，新老用户都能拿到）",
-    link: "https://opc.aliyun.com/oceanbase",
-    updated: "2026-07-15"
-  },
-  {
     name: "美团 longcat 大模型",
     type: "大模型",
     modality: "文本模型",
@@ -391,50 +325,6 @@ const TOKENS = [
   },
   /* ========== 后面：较老模型（发布在截图那些模型之前的） ========== */
   {
-    name: "阿里云百炼 Qwen-Turbo",
-    type: "大模型",
-    modality: "通义千问 Qwen 系列 · 文本模型",
-    rating: 5,
-    quota: "1000 万 tokens/月（每月自动刷新，长期可用）",
-    effect: "阿里云百炼默认开通额度，Qwen-Turbo 速度快、成本低，日常问答/翻译/总结足够用",
-    how: "打开阿里云百炼（dashscope.aliyun.com）→ 开通服务 → 实名认证 → 创建 API Key → 每月自动刷新额度",
-    link: "https://dashscope.aliyun.com",
-    updated: "2026-07-16"
-  },
-  {
-    name: "阿里云百炼 Qwen-Plus",
-    type: "大模型",
-    modality: "通义千问 Qwen 系列 · 文本模型",
-    rating: 4,
-    quota: "1000 万 tokens（有效期 3 个月）",
-    effect: "Qwen-Plus 比 Turbo 更强，复杂任务/长文本处理更稳，适合对质量要求高的场景",
-    how: "同 Qwen-Turbo：dashscope.aliyun.com 开通 → 实名认证 → 创建 API Key",
-    link: "https://dashscope.aliyun.com",
-    updated: "2026-07-16"
-  },
-  {
-    name: "火山方舟（字节）",
-    type: "大模型",
-    modality: "多模型（豆包/DeepSeek 等）· 文本模型",
-    rating: 4,
-    quota: "每个模型 50 万 tokens（长期有效）",
-    effect: "字节跳动大模型平台，覆盖豆包、DeepSeek 等多家模型，R1 模型关联应用后支持联网查询",
-    how: "打开 volcengine.com 注册火山引擎 → 开通方舟服务 → 按模型领取免费试用额度",
-    link: "https://www.volcengine.com",
-    updated: "2026-07-16"
-  },
-  {
-    name: "腾讯云混元",
-    type: "大模型",
-    modality: "混元系列 · 文本模型",
-    rating: 3,
-    quota: "100 万 tokens（有效期 1 年）",
-    effect: "腾讯云自研大模型，中文理解扎实，适合企业级应用与日常对话",
-    how: "打开 cloud.tencent.com 注册 → 实名认证 → 开通混元服务 → 创建 API Key",
-    link: "https://cloud.tencent.com/product/hunyuan",
-    updated: "2026-07-16"
-  },
-  {
     name: "OpenRouter",
     type: "工具",
     modality: "35+ 聚合模型（Kimi K2 / Qwen3-Next-80B / Llama 等）",
@@ -445,18 +335,9 @@ const TOKENS = [
     link: "https://openrouter.ai",
     updated: "2026-07-17"
   },
-  {
-    name: "腾讯元器 Yuanqi",
-    type: "工具",
-    modality: "混元大模型全系 · 智能体创作与分发",
-    rating: 4,
-    quota: "新用户免费 Token 额度 1 亿（由此前的 100 万提升 100 倍）；智能体分发至腾讯全域渠道时混元模型资源全部免费",
-    effect: "腾讯官方一站式 AI 智能体（Agent）创作与分发平台，基于自研混元大模型。零代码/低代码拖拽即可 3 分钟建出智能体，预置微信搜一搜、PDF 解析、混元图片生成等官方插件，支持知识库（DOC/TXT/PDF/Excel 问答对）与流程图式工作流编排。建好的智能体可一键分发至微信公众号、小程序、QQ、微信客服、腾讯元宝、腾讯云等渠道，也可以 API 形式嵌入第三方系统——1 亿免费 Token 即用于这条 API 通道。已过等保三级认证",
-    how: "打开 yuanqi.tencent.com 用 QQ / 微信登录 → 新建智能体，配置提示词、插件与知识库 → 发布后在「API 调用」页获取密钥与调用地址，1 亿免费 Token 自动生效 → 也可直接一键分发到公众号 / 小程序等腾讯生态渠道",
-    link: "https://yuanqi.tencent.com",
-    updated: "2026-08-01"
-  },
 ];
+
+
 
 /* ---- 渲染逻辑（一般不用改） ---- */
 const MAX = 5;
