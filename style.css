@@ -82,6 +82,41 @@ body {
   font-size: 14px; font-weight: 700; margin: 0 0 12px;
   color: #fbbf24; letter-spacing: .5px;
 }
+/* 精选模型 — 三列网格卡片 */
+.sidebar-model-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.model-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  transition: background .15s ease;
+}
+.model-chip:hover { background: rgba(255,255,255,.12); }
+.model-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.model-tag {
+  font-size: 11px;
+  color: #94a3b8;
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: rgba(255,255,255,.06);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
 .sidebar-models, .sidebar-apps {
   list-style: none; margin: 0; padding: 0;
   display: flex; flex-direction: column; gap: 8px;
@@ -256,5 +291,6 @@ main.wrap { padding-top: 48px; padding-bottom: 24px; }
   .site-nav a:not(.nav-cta) { display: none; }
   .hero { padding: 56px 0 64px; }
   .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .sidebar-model-grid { grid-template-columns: repeat(2, 1fr); }
   .site-footer .wrap { flex-direction: column; align-items: flex-start; }
 }
