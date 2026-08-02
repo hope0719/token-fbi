@@ -52,6 +52,8 @@ body {
   content: ""; position: absolute; inset: 0; opacity: .08; pointer-events: none;
   background-image: radial-gradient(#fbbf24 1px, transparent 1px); background-size: 24px 24px;
 }
+.hero-grid { display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: start; position: relative; }
+.hero-left { position: relative; }
 .hero-kicker { color: #fbbf24; font-size: 13px; letter-spacing: 2px; margin: 0 0 14px; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
 .hero-kicker .fbi-badge { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; background: rgba(245,158,11,.15); border: 1px solid rgba(245,158,11,.4); }
 .hero-kicker .fbi-badge svg { width: 18px; height: 18px; }
@@ -63,6 +65,47 @@ body {
 .hero-stat .num { font-size: 28px; font-weight: 800; color: var(--accent); line-height: 1; }
 .hero-stat .lbl { font-size: 13px; color: #cbd5e1; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; position: relative; }
+
+/* Hero Sidebar — 精选模型 & 推荐平台 */
+.hero-sidebar {
+  display: flex; flex-direction: column; gap: 16px;
+  position: relative;
+}
+.sidebar-panel {
+  background: rgba(255,255,255,.04);
+  border: 2px solid #22c55e;
+  border-radius: var(--radius);
+  padding: 20px 18px 16px;
+  backdrop-filter: blur(8px);
+}
+.sidebar-title {
+  font-size: 14px; font-weight: 700; margin: 0 0 12px;
+  color: #fbbf24; letter-spacing: .5px;
+}
+.sidebar-models, .sidebar-apps {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.sidebar-models li, .sidebar-apps li {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px; font-size: 13px; color: #e2e8f0;
+  padding: 6px 10px; border-radius: 8px;
+  background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+  transition: background .15s ease;
+}
+.sidebar-models li:hover, .sidebar-apps li:hover { background: rgba(255,255,255,.08); }
+.sidebar-models li strong, .sidebar-apps li strong {
+  color: #fff; font-weight: 600; font-size: 13px;
+}
+.sidebar-models li span, .sidebar-apps li span {
+  font-size: 11px; color: #94a3b8; white-space: nowrap; flex-shrink: 0;
+}
+.sidebar-divider {
+  height: 1px; background: rgba(34,197,94,.35); margin: 4px 0 10px;
+}
+.sidebar-note {
+  font-size: 12px; color: #94a3b8; margin: 0; line-height: 1.5;
+}
 
 .btn {
   display: inline-block; text-decoration: none; font-size: 15px; font-weight: 600;
@@ -212,5 +255,6 @@ main.wrap { padding-top: 48px; padding-bottom: 24px; }
 @media (max-width: 540px) {
   .site-nav a:not(.nav-cta) { display: none; }
   .hero { padding: 56px 0 64px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
   .site-footer .wrap { flex-direction: column; align-items: flex-start; }
 }
