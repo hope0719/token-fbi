@@ -287,16 +287,35 @@ const TOKENS = [
 const MAX = 5;
 const cardBox = document.getElementById("cards");
 const filters = document.getElementById("filters");
+let motionReady = false;
+
+function playCardMotion() {
+  if (!motionReady || !window.gsap) return;
+  const cards = cardBox.querySelectorAll(".card");
+  if (!cards.length) return;
+  window.gsap.from(cards, {
+    autoAlpha: 0,
+    y: 12,
+    duration: 0.32,
+    ease: "power2.out",
+    stagger: { amount: Math.min(cards.length * 0.028, 0.42) },
+    clearProps: "transform,visibility,opacity"
+  });
+}
 
 function fmtMd(d) {
   const p = d.split("-");
   return parseInt(p[1], 10) + "/" + parseInt(p[2], 10);
 }
 
+function cleanText(value) {
+  return String(value).replace(/[—–]/g, "-");
+}
+
 function fire(rating) {
   let s = "";
   for (let i = 1; i <= MAX; i++) {
-    s += i <= rating ? "🔥" : '<span class="dim">🔥</span>';
+    s += i <= rating ? "★" : '<span class="dim">★</span>';
   }
   return s;
 }
@@ -321,22 +340,25 @@ function render(type) {
   if (emptyEl) emptyEl.style.display = "none";
   cardBox.innerHTML = list.map(t => `
     <article class="card${t.limited ? ' is-limited' : ''}">
-      ${t.limited ? `<span class="card-badge" title="限时活动，截止 ${t.limited}">限时 ${fmtMd(t.limited)}</span>` : ''}
+      ${t.limited ? `<span class="card-badge" title="限时活动，截止 ${cleanText(t.limited)}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 4.25v4l2.5 1.5M13.5 8A5.5 5.5 0 1 1 2.5 8a5.5 5.5 0 0 1 11 0Z" /></svg>限时 ${fmtMd(t.limited)}</span>` : ''}
       <div class="card-top">
-        <h3 class="card-name">${t.name}</h3>
+        <h3 class="card-name">${cleanText(t.name)}</h3>
         <div class="card-tags">
-          ${t.modality ? `<span class="card-modality">${t.modality}</span>` : ''}
-          ${t.special ? `<span class="card-special" title="${t.special}">${t.special}</span>` : ''}
+          ${t.modality ? `<span class="card-modality">${cleanText(t.modality)}</span>` : ''}
+          ${t.special ? `<span class="card-special" title="${cleanText(t.special)}">${cleanText(t.special)}</span>` : ''}
         </div>
       </div>
       <div class="card-rating" title="香度 ${t.rating}/5">${fire(t.rating)} <span class="card-type">${catOf(t)}</span></div>
-      <div class="card-row"><span class="k">免费额度</span><span class="v">${t.quota}</span></div>
-      <div class="card-row"><span class="k">效果怎么样</span><span class="v">${t.effect}</span></div>
-      <div class="card-row how-row"><span class="k">怎么拿</span><span class="v">${t.how}</span></div>
-      <a class="card-link" href="${t.link}" target="_blank" rel="noopener">去领取 →</a>
-      <div class="card-date">更新于 ${t.updated}</div>
+      <div class="card-row"><span class="k">免费额度</span><span class="v">${cleanText(t.quota)}</span></div>
+      <div class="card-row"><span class="k">效果怎么样</span><span class="v">${cleanText(t.effect)}</span></div>
+      <div class="card-row how-row"><span class="k">怎么拿</span><span class="v">${cleanText(t.how)}</span></div>
+      <div class="card-footer">
+        <a class="card-link" href="${t.link}" target="_blank" rel="noopener">立即领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>
+        <div class="card-date">更新于 ${t.updated}</div>
+      </div>
     </article>
   `).join("");
+  playCardMotion();
 }
 
 filters.addEventListener("click", e => {
@@ -344,6 +366,7 @@ filters.addEventListener("click", e => {
   if (!btn) return;
   filters.querySelectorAll(".chip").forEach(c => c.classList.remove("is-active"));
   btn.classList.add("is-active");
+  filters.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", String(c === btn)));
   render(btn.dataset.type);
 });
 
@@ -358,15 +381,55 @@ filters.addEventListener("click", e => {
   set("stat-tools", tools);
   set("stat-limited", limited);
   set("stat-updated", latest);
+  set("list-total", `已收录 ${TOKENS.length} 条有效线索`);
 })();
 
 /* 回到顶部按钮 */
 const backBtn = document.getElementById("backToTop");
-if (backBtn) {
-  const toggle = () => backBtn.classList.toggle("is-visible", window.scrollY > 400);
-  window.addEventListener("scroll", toggle, { passive: true });
+const hero = document.getElementById("top");
+if (backBtn && hero && "IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(([entry]) => {
+    backBtn.classList.toggle("is-visible", !entry.isIntersecting);
+  }, { threshold: 0.08 });
+  observer.observe(hero);
   backBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-  toggle();
+}
+
+const wechatTrigger = document.querySelector(".wechat-trigger");
+const qrcodeBox = document.getElementById("qrcode-wechat");
+if (wechatTrigger && qrcodeBox) {
+  wechatTrigger.addEventListener("click", () => {
+    const isOpen = qrcodeBox.hasAttribute("hidden");
+    qrcodeBox.toggleAttribute("hidden", !isOpen);
+    wechatTrigger.setAttribute("aria-expanded", String(isOpen));
+  });
 }
 
 render("all");
+
+/* 轻量动效：失败时页面保持完全可读，减少动态效果偏好下不执行。 */
+if (window.gsap) {
+  const motion = window.gsap.matchMedia();
+  motion.add("(prefers-reduced-motion: no-preference)", () => {
+    motionReady = true;
+    window.gsap.from("[data-reveal='hero-copy'], [data-reveal='watchlist']", {
+      autoAlpha: 0,
+      y: 18,
+      duration: 0.54,
+      stagger: 0.1,
+      ease: "power3.out",
+      clearProps: "transform,visibility,opacity"
+    });
+    window.gsap.from("[data-reveal='hero-stats'] > div", {
+      autoAlpha: 0,
+      y: 10,
+      duration: 0.35,
+      stagger: 0.055,
+      delay: 0.18,
+      ease: "power2.out",
+      clearProps: "transform,visibility,opacity"
+    });
+    playCardMotion();
+    return () => { motionReady = false; };
+  });
+}

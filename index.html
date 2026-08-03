@@ -3,145 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Token 情报局 · Token FBI</title>
-  <meta name="description" content="我们在调查哪家的 token 最香 —— 免费 AI token 情报站：有哪些、效果如何、怎么拿。" />
+  <meta name="theme-color" content="#020617" />
+  <meta name="description" content="免费 AI token 情报站。查看仍可领取的额度、模型能力与领取方法。" />
+  <title>Token FBI | 免费 AI token 情报站</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#list">跳到情报列表</a>
+
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="#">
-        <span class="brand-badge">🔍</span>
-        <span class="brand-text">
-          <strong>Token FBI</strong>
-          <span class="brand-sep" aria-hidden="true">-</span>
-          <em>Token 情报局</em>
-        </span>
+      <a class="brand" href="#top" aria-label="Token FBI 首页">
+        <span class="brand-mark" aria-hidden="true">T</span>
+        <span class="brand-text"><strong>Token FBI</strong><em>Token 情报局</em></span>
       </a>
-      <nav class="site-nav">
+      <nav class="site-nav" aria-label="主导航">
         <a href="#list">情报列表</a>
-        <a href="#about">关于</a>
+        <a href="#about">关于本站</a>
         <a class="nav-cta" href="#submit">投稿情报</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-left">
-      <p class="hero-kicker">
-        <span class="fbi-badge" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-        </span>
-        非官方 · 纯爱好者情报站
-      </p>
-      <h1>我们在调查哪家的 <span class="hl">token 最香</span></h1>
-      <p class="hero-sub">
-        汇总现在还能免费拿到的 AI token：有哪些、效果怎么样、怎么领。<br>帮你看清每一家值不值得冲。
-      </p>
-      <div class="hero-stats">
-        <div class="hero-stat"><span class="num" id="stat-models">0</span><span class="lbl">大模型类</span></div>
-        <div class="hero-stat"><span class="num" id="stat-tools">0</span><span class="lbl">工具类</span></div>
-        <div class="hero-stat"><span class="num" id="stat-limited">0</span><span class="lbl">个限时活动</span></div>
-        <div class="hero-stat"><span class="num" id="stat-updated">—</span><span class="lbl">最后更新</span></div>
-      </div>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#list">查看情报 ↓</a>
-        <a class="btn btn-ghost" href="#submit">我也来爆料</a>
-      </div>
-      </div>
-
-      <aside class="hero-sidebar">
-        <div class="sidebar-panel">
-          <h3 class="sidebar-title">🎯 精选模型</h3>
-          <div class="sidebar-model-grid">
-            <div class="model-chip"><span class="model-name">DeepSeek V4</span></div>
-            <div class="model-chip"><span class="model-name">GLM 5.2</span></div>
-            <div class="model-chip"><span class="model-name">Kimi K3</span></div>
-            <div class="model-chip"><span class="model-name">千问 3.8</span></div>
-            <div class="model-chip"><span class="model-name">Hy3</span></div>
-            <div class="model-chip"><span class="model-name">LongCat 2.0</span></div>
+  <main>
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy" data-reveal="hero-copy">
+          <h1>把值得领取的<br><span>AI 额度</span>放在一处。</h1>
+          <p class="hero-sub">额度、模型、领取方式和实测判断，一次查清。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#list">查看情报</a>
+            <a class="text-link" href="#submit">提交一条新线索</a>
           </div>
-          <div class="sidebar-divider"></div>
-          <p class="sidebar-note">+ 阶跃 Step / NVIDIA / Agnes（多模态保留）</p>
+          <dl class="hero-stats" aria-label="本站数据概览" data-reveal="hero-stats">
+            <div><dt>大模型</dt><dd id="stat-models">0</dd></div>
+            <div><dt>工具</dt><dd id="stat-tools">0</dd></div>
+            <div><dt>限时活动</dt><dd id="stat-limited">0</dd></div>
+            <div><dt>最后更新</dt><dd id="stat-updated">-</dd></div>
+          </dl>
         </div>
-        <div class="sidebar-panel">
-          <h3 class="sidebar-title">⭐ 推荐工具</h3>
-          <div class="sidebar-model-grid">
-            <div class="model-chip"><span class="model-name">WorkBuddy</span></div>
-            <div class="model-chip"><span class="model-name">Dumate</span></div>
-            <div class="model-chip"><span class="model-name">TRAE Work</span></div>
-            <div class="model-chip"><span class="model-name">catpaw</span></div>
+
+        <aside class="watchlist" aria-label="收录范围" data-reveal="watchlist">
+          <h2>优先收录能直接调用<br>主流模型的平台</h2>
+          <ul class="model-list">
+            <li>DeepSeek V4</li>
+            <li>GLM 5.2</li>
+            <li>Kimi K3</li>
+            <li>千问 3.8</li>
+            <li>Hy3</li>
+            <li>LongCat 2.0</li>
+          </ul>
+          <p class="watchlist-note">多模态与高价值聚合平台，也会持续核验收录。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="wrap intelligence" id="list" aria-labelledby="list-title">
+      <div class="list-head">
+        <div>
+          <h2 id="list-title">还有效的免费额度</h2>
+        </div>
+        <p class="list-status" id="list-total" aria-live="polite">正在载入</p>
+      </div>
+      <div class="filters" id="filters" aria-label="按类别筛选">
+        <button class="chip is-active" data-type="all" type="button" aria-pressed="true">全部</button>
+        <button class="chip" data-type="大模型" type="button" aria-pressed="false">大模型</button>
+        <button class="chip" data-type="工具" type="button" aria-pressed="false">工具</button>
+      </div>
+      <div class="cards" id="cards">
+        <div class="empty-state" id="empty-state" style="display:none;">
+          <p>这类暂时还没有情报，欢迎投稿补充。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap about" id="about">
+      <div class="about-lead">
+        <h2>不卖 token，<br>只帮你找到它。</h2>
+      </div>
+      <div class="about-copy">
+        <p>Token FBI 是爱好者自发维护的免费 token 情报站。我们把分散在各平台的免费额度整理到一处，说明能做什么、怎么领，以及是否值得花时间。</p>
+        <p>情报有时效。领取前，请以各家官方页面的最新政策为准。</p>
+      </div>
+    </section>
+
+    <section class="submit" id="submit">
+      <div class="wrap submit-inner">
+        <div class="submit-copy">
+          <h2>发现新额度？<br>让更多人看到。</h2>
+        </div>
+        <div class="submit-action-block">
+          <p>通过 GitHub Issue 或微信群提交线索。我们会核验后整理入库。</p>
+          <div class="submit-actions">
+            <a class="btn btn-primary" href="https://github.com/hope0719/token-fbi/issues" target="_blank" rel="noopener">去 GitHub 投稿</a>
+            <button class="wechat-trigger" type="button" aria-expanded="false" aria-controls="qrcode-wechat">微信群投稿</button>
+          </div>
+          <div class="qrcode-box" id="qrcode-wechat" hidden>
+            <img src="qrcode-wechat.jpg" alt="微信二维码。添加好友时请备注 Token FBI。" width="220" height="220" />
+            <p>扫码添加微信好友，备注「Token FBI」，拉你进群交流免费 token 情报。</p>
           </div>
         </div>
-      </aside>
-    </div>
-  </section>
-
-  <main class="wrap" id="list">
-    <div class="list-head">
-      <h2>情报列表</h2>
-      <div class="filters" id="filters">
-        <button class="chip is-active" data-type="all">全部</button>
-        <button class="chip" data-type="大模型">大模型</button>
-        <button class="chip" data-type="工具">工具</button>
       </div>
-    </div>
-    <div class="cards" id="cards">
-      <div class="empty-state" id="empty-state" style="display:none;">
-        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="20" y="20" width="80" height="80" rx="16" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="2"/>
-          <circle cx="45" cy="50" r="8" fill="#fbbf24"/>
-          <path d="M38 66h44M38 76h28" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
-          <circle cx="72" cy="42" r="10" fill="#fff" stroke="#f59e0b" stroke-width="2"/>
-          <path d="M68 42l4 4 6-6" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <p>这类暂时还没有情报，欢迎投稿～</p>
-      </div>
-    </div>
+    </section>
   </main>
-
-  <section class="wrap about" id="about">
-    <h2>关于本站</h2>
-    <p>
-      Token FBI 是一个爱好者自发维护的免费 token 情报站。我们不卖 token、不接暗广，<br>
-      只做一件事：<strong>帮你看清现在哪家的免费额度最值得领</strong>。<br>
-      情报有时效，领之前请以各家官方页面为准。
-    </p>
-  </section>
-
-  <section class="wrap submit" id="submit">
-    <h2>投稿一条情报</h2>
-    <p>发现哪家有新免费额度？两种渠道都欢迎，一起把情报网织密：</p>
-    <div class="submit-actions">
-      <a class="btn btn-primary" href="https://github.com/hope0719/token-fbi/issues" target="_blank" rel="noopener">🐙 去 GitHub 投稿</a>
-      <a class="btn-wechat" href="#qrcode-wechat" title="加微信进群投稿" aria-label="加微信进群投稿" onclick="document.getElementById('qrcode-wechat').classList.toggle('is-visible')">
-        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-          <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.584.926a.272.272 0 00.14.045c.134 0 .24-.111.24-.247 0-.06-.024-.12-.04-.177l-.327-1.233a.492.492 0 01.176-.554C23.618 18.535 24.61 16.81 24.61 14.91c0-3.366-3.252-6.052-7.673-6.052zm-2.574 2.405c.535 0 .969.44.969.983a.976.976 0 01-.97.983.976.976 0 01-.969-.983c0-.542.434-.983.97-.983zm5.15 0c.535 0 .969.44.969.983a.976.976 0 01-.97.983.976.976 0 01-.969-.983c0-.542.434-.983.97-.983z" fill="#e8eaed"/>
-        </svg>
-      </a>
-    </div>
-    <div id="qrcode-wechat" class="qrcode-box">
-      <img src="qrcode-wechat.jpg" alt="微信二维码 · 加好友拉你进 Token FBI 群" width="220" />
-      <p>扫码添加微信好友，备注「Token FBI」，拉你进微信群一起爆料交流免费 token 情报。</p>
-    </div>
-  </section>
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <div class="footer-brand">
-        <strong>Token 情报局 · Token FBI</strong>
-        <span class="muted">我们在调查哪家的 token 最香</span>
-      </div>
-      <div class="footer-byline">
-        <span class="stamp">© 2026</span>
-        <span class="muted">爱好者情报站 · 非官方</span>
-      </div>
+      <div><strong>Token FBI</strong><span>免费 AI token 情报站</span></div>
+      <span>非官方爱好者项目</span>
     </div>
   </footer>
 
-  <button class="back-to-top" id="backToTop" aria-label="回到顶部" title="回到顶部">↑</button>
-
-  <script src="app.js"></script>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="回到顶部" title="回到顶部">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6.5 10.5 12 5l5.5 5.5" /></svg>
+  </button>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="app.js"></script>
 </body>
 </html>
