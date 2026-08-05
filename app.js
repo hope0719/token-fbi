@@ -24,12 +24,11 @@ const TOKENS = [
     type: "大模型",
     modality: "多模态大模型",
     rating: 5,
-    quota: "Flash Plan（原价 ¥49/月、400M Credits）限时免费：注册即得 15 天，完成指定任务再解锁 15 天，每邀请 1 位好友 +15 天（邀请最高 +90 天），累计最高 120 天",
+    quota: "Flash Plan（原价 ¥49/月、400M Credits）限时免费活动已结束，目前按官方标准计费；新用户注册可关注平台是否仍有基础免费额度，以实际页面为准",
     effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，198B MoE、激活 11B，原生图片/视频理解，深度兼容 Claude Code / OpenClaw / KiloCode / Hermes Agent）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理，支持智能路由与 MCP 工具",
-    how: "注册后到 Plan 列表点「免费领取」，再到 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）。⚠️ 7/29 活动已升级：截止日由 7 月 31 日延至 8 月 24 日，且改为新老用户皆可参与（原仅限新用户），封顶时长由 90 天提至 120 天",
+    how: "注册后在 Plan 列表选择所需套餐，再到 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）",
     link: "https://platform.stepfun.com/?invite_code=HMVLLXUM",
-    limited: "2026-08-24",
-    updated: "2026-08-01"
+    updated: "2026-08-05"
   },
   /* ========== 前面：较新模型（截图里 GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 等同期或更晚） ========== */
   {
@@ -137,12 +136,12 @@ const TOKENS = [
     type: "工具",
     modality: "HY3 · 混元3 · 文本模型",
     rating: 5,
-    quota: "HY3（混元3）模型限时免费，官方已宣布延长至 2026-08-05",
-    effect: "腾讯系 AI 工作台，HY3（混元3）能力可直接调用，速度很快；写代码、查资料、做自动化都好用。Hy3 限免期间连续两周全球调用量第一（周调用 11.5 万亿 Token），因用户呼声限免从 7/22 延长到 8/5",
-    how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免延至 8/5，抓紧用）",
+    quota: "HY3（混元3）模型限时免费，官方已宣布延长至 2026-08-31",
+    effect: "腾讯系 AI 工作台，HY3（混元3）能力可直接调用，速度很快；写代码、查资料、做自动化都好用。Hy3 限免期间连续两周全球调用量第一（周调用 11.5 万亿 Token），因用户呼声限免从 7/22 延长到 8/31",
+    how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免延至 8/31，抓紧用）",
     link: "https://www.codebuddy.cn/events/invite?inviteCode=akek8mgwjqlt",
-    limited: "2026-08-05",
-    updated: "2026-07-29"
+    limited: "2026-08-31",
+    updated: "2026-08-05"
   },
   {
     name: "火山引擎 Ark 协作计划（字节）",
