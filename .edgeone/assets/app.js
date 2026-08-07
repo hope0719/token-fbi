@@ -18,6 +18,19 @@ const TOKENS = [
     updated: "2026-08-01"
   },
 
+  /* ========== 固定置顶 ========== */
+  {
+    name: "阶跃星辰 StepFun",
+    type: "大模型",
+    modality: "多模态大模型",
+    rating: 5,
+    quota: "Flash Plan（原价 ¥49/月、400M Credits）限时免费：注册即得 15 天，完成指定任务再解锁 15 天，每邀请 1 位好友 +15 天（邀请最高 +90 天），累计最高 120 天",
+    effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，198B MoE、激活 11B，原生图片/视频理解，深度兼容 Claude Code / OpenClaw / KiloCode / Hermes Agent）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理，支持智能路由与 MCP 工具",
+    how: "注册后到 Plan 列表点「免费领取」，再到 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）。⚠️ 7/29 活动已升级：截止日由 7 月 31 日延至 8 月 24 日，且改为新老用户皆可参与（原仅限新用户），封顶时长由 90 天提至 120 天",
+    link: "https://platform.stepfun.com/?invite_code=HMVLLXUM",
+    limited: "2026-08-24",
+    updated: "2026-08-01"
+  },
   /* ========== 前面：较新模型（截图里 GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 等同期或更晚） ========== */
   {
     name: "BazaarLink",
@@ -78,12 +91,12 @@ const TOKENS = [
     name: "魔搭社区 ModelScope",
     type: "大模型",
     modality: "Qwen 系列 / LUX / Stable Diffusion 等 · 文本+多模态",
-    rating: 3,
-    quota: "已切换『魔豆』计费体系，每日免费调用次数较此前明显下调（原每天 2000 次 RPD 缩水）；注册即享、无需实名即可注册，但需留意额度变动",
-    effect: "阿里达摩院开源社区，收录 17 万+ 开源模型，生态完整、国内访问稳定；API-Inference 支持文本/图像等多模态，适合原型验证与模型体验。⚠️ 2026-08 起改采『魔豆』计费，免费调用次数较此前明显减少",
+    rating: 4,
+    quota: "每天 2000 次免费 API 调用（长期有效，注册即享，无需实名即可注册）",
+    effect: "阿里达摩院开源社区，收录 17 万+ 开源模型，生态完整、国内访问稳定；API-Inference 支持文本/图像等多模态，适合原型验证与模型体验",
     how: "打开 modelscope.cn 注册 → 【访问控制】获取 Access Token（需绑阿里云并实名才能用 API-Inference）→ 配置到工具（注意 Anthropic 兼容时去掉 ms- 前缀）",
     link: "https://modelscope.cn",
-    updated: "2026-08-07"
+    updated: "2026-07-23"
   },
   {
     name: "OpenStarry",
@@ -124,12 +137,12 @@ const TOKENS = [
     type: "工具",
     modality: "HY3 · 混元3 · 文本模型",
     rating: 5,
-    quota: "HY3（混元3）模型限时免费，官方已宣布延长至 2026-08-31",
-    effect: "腾讯系 AI 工作台，HY3（混元3）能力可直接调用，速度很快；写代码、查资料、做自动化都好用。Hy3 限免期间连续两周全球调用量第一（周调用 11.5 万亿 Token），因用户呼声限免从 7/22 延长到 8/31",
-    how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免延至 8/31，抓紧用）",
+    quota: "HY3（混元3）模型限时免费，官方已宣布延长至 2026-08-05",
+    effect: "腾讯系 AI 工作台，HY3（混元3）能力可直接调用，速度很快；写代码、查资料、做自动化都好用。Hy3 限免期间连续两周全球调用量第一（周调用 11.5 万亿 Token），因用户呼声限免从 7/22 延长到 8/5",
+    how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免延至 8/5，抓紧用）",
     link: "https://www.codebuddy.cn/events/invite?inviteCode=akek8mgwjqlt",
-    limited: "2026-08-31",
-    updated: "2026-08-05"
+    limited: "2026-08-05",
+    updated: "2026-07-29"
   },
   {
     name: "火山引擎 Ark 协作计划（字节）",
@@ -189,13 +202,13 @@ const TOKENS = [
   {
     name: "商汤 Token Plan（sensenova）",
     type: "大模型",
-    modality: "SenseNova 6.7 Flash-Lite / U1 Fast / DeepSeek V4 Flash · 日日新系列 · 文本模型",
-    rating: 3,
+    modality: "SenseNova 6.7 Flash-Lite / U1 Fast / DeepSeek V4 Flash · 文本模型",
+    rating: 4,
     quota: "限时免费公测：每个模型每 5 小时 1500 次调用（首月免费体验，按次数计非 Token）",
-    effect: "限免额度已从 500 次/5h 加码到 1500 次/5h，且新增 SenseNova 6.7 Flash-Lite、SenseNova U1 Fast 等自研模型可选；DeepSeek V4 Flash 依旧在列，适合跑 Agent、图表分析、办公自动化和多模态任务。⚠️ 注意：日日新系列近期模型错误频发（报错率高），白天不建议使用，晚间相对稳定，介意的话避开白天高峰",
+    effect: "限免额度已从 500 次/5h 加码到 1500 次/5h，且新增 SenseNova 6.7 Flash-Lite、SenseNova U1 Fast 等自研模型可选；DeepSeek V4 Flash 依旧在列，适合跑 Agent、图表分析、办公自动化和多模态任务",
     how: "手机号注册 sensenova.cn/token-plan → 创建 API Key → 文档查 Base URL（https://token.sensenova.cn/v1/chat/completions）与 Model ID（deepseek-v4-flash 等）→ 填进客户端",
     link: "https://www.sensenova.cn/token-plan",
-    updated: "2026-08-07"
+    updated: "2026-07-30"
   },
   {
     name: "Agnes AI",
@@ -251,6 +264,7 @@ const TOKENS = [
     effect: "中国电信旗下全栈国产化智算平台，\"国模+国芯+国云\"融合底座，支持 GLM-5、DeepSeek-V4、Qwen3.5、Doubao-Seed-2.0-pro 等约 18 个主流大模型，适合政企/科研/个人开发者",
     how: "登录天翼云官网 → 完成实名认证 → 进入「息壤智算」→「模型广场」→ 选模型领取免费额度；额度耗尽或到期后可直接切换其他模型继续使用",
     link: "https://www.ctyun.cn/product/maas",
+    limited: "2026-08-02",
     updated: "2026-07-19"
   },
   /* ========== 后面：较老模型（发布在截图那些模型之前的） ========== */
@@ -265,18 +279,6 @@ const TOKENS = [
     link: "https://openrouter.ai",
     updated: "2026-07-17"
   },
-  /* ========== 末尾：阶跃星辰（已无限时活动，新用户注册赠 ¥10 余额） ========== */
-  {
-    name: "阶跃星辰 StepFun",
-    type: "大模型",
-    modality: "多模态大模型",
-    rating: 2,
-    quota: "新用户注册即赠 ¥10 余额，按官方标准计费用于抵扣模型调用",
-    effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，198B MoE、激活 11B，原生图片/视频理解，深度兼容 Claude Code / OpenClaw / KiloCode / Hermes Agent）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理，支持智能路由与 MCP 工具",
-    how: "打开 platform.stepfun.com 注册 → 新用户自动到账 ¥10 余额 → 在 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）",
-    link: "https://platform.stepfun.com/?invite_code=HMVLLXUM",
-    updated: "2026-08-05"
-  }
 ];
 
 
@@ -285,35 +287,16 @@ const TOKENS = [
 const MAX = 5;
 const cardBox = document.getElementById("cards");
 const filters = document.getElementById("filters");
-let motionReady = false;
-
-function playCardMotion() {
-  if (!motionReady || !window.gsap) return;
-  const cards = cardBox.querySelectorAll(".card");
-  if (!cards.length) return;
-  window.gsap.from(cards, {
-    autoAlpha: 0,
-    y: 12,
-    duration: 0.32,
-    ease: "power2.out",
-    stagger: { amount: Math.min(cards.length * 0.028, 0.42) },
-    clearProps: "transform,visibility,opacity"
-  });
-}
 
 function fmtMd(d) {
   const p = d.split("-");
   return parseInt(p[1], 10) + "/" + parseInt(p[2], 10);
 }
 
-function cleanText(value) {
-  return String(value).replace(/[—–]/g, "-");
-}
-
 function fire(rating) {
   let s = "";
   for (let i = 1; i <= MAX; i++) {
-    s += i <= rating ? "★" : '<span class="dim">★</span>';
+    s += i <= rating ? "🔥" : '<span class="dim">🔥</span>';
   }
   return s;
 }
@@ -338,25 +321,22 @@ function render(type) {
   if (emptyEl) emptyEl.style.display = "none";
   cardBox.innerHTML = list.map(t => `
     <article class="card${t.limited ? ' is-limited' : ''}">
-      ${t.limited ? `<span class="card-badge" title="限时活动，截止 ${cleanText(t.limited)}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 4.25v4l2.5 1.5M13.5 8A5.5 5.5 0 1 1 2.5 8a5.5 5.5 0 0 1 11 0Z" /></svg>限时 ${fmtMd(t.limited)}</span>` : ''}
+      ${t.limited ? `<span class="card-badge" title="限时活动，截止 ${t.limited}">限时 ${fmtMd(t.limited)}</span>` : ''}
       <div class="card-top">
-        <h3 class="card-name">${cleanText(t.name)}</h3>
+        <h3 class="card-name">${t.name}</h3>
         <div class="card-tags">
-          ${t.modality ? `<span class="card-modality">${cleanText(t.modality)}</span>` : ''}
-          ${t.special ? `<span class="card-special" title="${cleanText(t.special)}">${cleanText(t.special)}</span>` : ''}
+          ${t.modality ? `<span class="card-modality">${t.modality}</span>` : ''}
+          ${t.special ? `<span class="card-special" title="${t.special}">${t.special}</span>` : ''}
         </div>
       </div>
       <div class="card-rating" title="香度 ${t.rating}/5">${fire(t.rating)} <span class="card-type">${catOf(t)}</span></div>
-      <div class="card-row"><span class="k">免费额度</span><span class="v">${cleanText(t.quota)}</span></div>
-      <div class="card-row"><span class="k">效果怎么样</span><span class="v">${cleanText(t.effect)}</span></div>
-      <div class="card-row how-row"><span class="k">怎么拿</span><span class="v">${cleanText(t.how)}</span></div>
-      <div class="card-footer">
-        <a class="card-link" href="${t.link}" target="_blank" rel="noopener">立即领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>
-        <div class="card-date">更新于 ${t.updated}</div>
-      </div>
+      <div class="card-row"><span class="k">免费额度</span><span class="v">${t.quota}</span></div>
+      <div class="card-row"><span class="k">效果怎么样</span><span class="v">${t.effect}</span></div>
+      <div class="card-row how-row"><span class="k">怎么拿</span><span class="v">${t.how}</span></div>
+      <a class="card-link" href="${t.link}" target="_blank" rel="noopener">去领取 →</a>
+      <div class="card-date">更新于 ${t.updated}</div>
     </article>
   `).join("");
-  playCardMotion();
 }
 
 filters.addEventListener("click", e => {
@@ -364,7 +344,6 @@ filters.addEventListener("click", e => {
   if (!btn) return;
   filters.querySelectorAll(".chip").forEach(c => c.classList.remove("is-active"));
   btn.classList.add("is-active");
-  filters.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", String(c === btn)));
   render(btn.dataset.type);
 });
 
@@ -379,55 +358,15 @@ filters.addEventListener("click", e => {
   set("stat-tools", tools);
   set("stat-limited", limited);
   set("stat-updated", latest);
-  set("list-total", `已收录 ${TOKENS.length} 条有效线索`);
 })();
 
 /* 回到顶部按钮 */
 const backBtn = document.getElementById("backToTop");
-const hero = document.getElementById("top");
-if (backBtn && hero && "IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(([entry]) => {
-    backBtn.classList.toggle("is-visible", !entry.isIntersecting);
-  }, { threshold: 0.08 });
-  observer.observe(hero);
+if (backBtn) {
+  const toggle = () => backBtn.classList.toggle("is-visible", window.scrollY > 400);
+  window.addEventListener("scroll", toggle, { passive: true });
   backBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-}
-
-const wechatTrigger = document.querySelector(".wechat-trigger");
-const qrcodeBox = document.getElementById("qrcode-wechat");
-if (wechatTrigger && qrcodeBox) {
-  wechatTrigger.addEventListener("click", () => {
-    const isOpen = qrcodeBox.hasAttribute("hidden");
-    qrcodeBox.toggleAttribute("hidden", !isOpen);
-    wechatTrigger.setAttribute("aria-expanded", String(isOpen));
-  });
+  toggle();
 }
 
 render("all");
-
-/* 轻量动效：失败时页面保持完全可读，减少动态效果偏好下不执行。 */
-if (window.gsap) {
-  const motion = window.gsap.matchMedia();
-  motion.add("(prefers-reduced-motion: no-preference)", () => {
-    motionReady = true;
-    window.gsap.from("[data-reveal='hero-copy'], [data-reveal='watchlist']", {
-      autoAlpha: 0,
-      y: 18,
-      duration: 0.54,
-      stagger: 0.1,
-      ease: "power3.out",
-      clearProps: "transform,visibility,opacity"
-    });
-    window.gsap.from("[data-reveal='hero-stats'] > div", {
-      autoAlpha: 0,
-      y: 10,
-      duration: 0.35,
-      stagger: 0.055,
-      delay: 0.18,
-      ease: "power2.out",
-      clearProps: "transform,visibility,opacity"
-    });
-    playCardMotion();
-    return () => { motionReady = false; };
-  });
-}
