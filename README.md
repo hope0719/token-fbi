@@ -20,6 +20,22 @@
 
 ---
 
+## 🎬 使用教程
+
+**【免费 token 集合，WorkBuddy 直接无限 token 使用】**
+
+我们录了一份视频教程，已经 **万人观看**，带你快速上手 Token FBI、领取免费额度：
+
+👉 [Bilibili: 免费 token 集合，WorkBuddy 直接无限 token 使用](https://www.bilibili.com/video/BV1EHM96TEWg?vd_source=849374a5ac857214c3fec62e61b03d00)
+
+视频里会演示：
+- 如何打开 Token FBI 查看最新情报
+- 如何筛选「大模型」和「工具」两类平台
+- 如何找到 WorkBuddy 等工具的免费 token 入口
+- 实际领取与使用的完整流程
+
+---
+
 ## 📖 这是什么？
 
 Token FBI 是一张**活着的免费 AI token 名录**。
