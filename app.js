@@ -17,30 +17,6 @@ const TOKENS = [
     link: "https://www.trae.cn/work-fission/7MSJC6MSHPNL?utm_source=copy_link&utm_medium=friends_invite",
     updated: "2026-08-07"
   },
-
-  /* ========== 前面：较新模型（截图里 GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 等同期或更晚） ========== */
-  {
-    name: "BazaarLink",
-    type: "大模型",
-    modality: "DeepSeek V4 Flash · 1M 上下文 · OpenAI 兼容网关",
-    rating: 4,
-    quota: "DeepSeek V4 Flash 长期免费：10 RPM / 每天 150 次（不绑卡、不充值、无试用期；充值账户额度 ×3 至 450 次/天）",
-    effect: "中国台湾集聯科技有限公司（統一編號 62232477，登記於苗栗縣頭份市）运营的 OpenAI 完全兼容多模型聚合网关，数据驻留 AWS Tokyo（非大陆、非美本土）。免费档开放 DeepSeek-V4-Flash（284B MoE、激活 13B、1M tokens 超长上下文、最大输出 38.4 万 tokens）。支持把 model 设为「auto:free」自动路由到零成本模型；可直接对接 Claude Code、Cursor、LangChain、Dify、LiteLLM 等；额度按请求 token 数动态加权扣减，短问答实际可用次数远超 150 次",
-    how: "打开 bazaarlink.ai/free 用邮箱注册（无需信用卡）→ 进入 /keys 创建密钥（sk-bl- 开头，仅显示一次，请立即保存）→ base_url 填 https://bazaarlink.ai/api/v1，模型名填 deepseek/deepseek-v4-flash 或 auto:free；Agent 也可 POST /api/v1/agents/register 自助申请 Key",
-    link: "https://bazaarlink.ai/free",
-    updated: "2026-07-31"
-  },
-  {
-    name: "AtomCode CodingPlan",
-    type: "工具",
-    modality: "GLM-5.2 / DeepSeek-V4-Flash / Qwen3-VL · 编程模型",
-    rating: 4,
-    quota: "免费体验版每日 10:00 开抢（每日 150 个名额，Pro 体验版 150 人/日），5 小时滚动窗口无限续杯，无需绑卡",
-    effect: "开源终端 AI 编程助手（Claude Code 最佳平替），CodingPlan 免费版可调用 GLM-5.2、DeepSeek-V4-Flash、Qwen3-VL 等顶流模型，支持 Windows / macOS / Linux / 鸿蒙 PC；仅在 AtomCode 客户端内使用，不能当通用 API",
-    how: "打开 atomcode.atomgit.com 下载 AtomCode（AtomGit 账号通用）→ 进入「CodingPlan」选「GLM-5.2 免费体验版」→ 每天 10:00 准点抢名额（名额 7 天/30 天有效，可续）",
-    link: "https://atomcode.atomgit.com",
-    updated: "2026-07-24"
-  },
   {
     name: "腾讯 Marvis（马维斯）",
     type: "工具",
@@ -52,74 +28,9 @@ const TOKENS = [
     link: "https://marvis.qq.com",
     updated: "2026-07-24"
   },
+
+  /* ========== 较新 / 主力平台 ========== */
   {
-    name: "HuggingFace Inference API",
-    type: "大模型",
-    modality: "DeepSeek V4 / Qwen3 / Mistral 等 · 开源模型",
-    rating: 4,
-    quota: "免费共享推理端点，无需信用卡（限流，适合原型验证；PRO $9/月或自部署解锁更高额度）",
-    effect: "全球最大开源模型社区提供的免费推理 API，覆盖 DeepSeek-V4、Qwen3-235B、Mistral Large 3、Llama 等上千开源模型，无需绑卡即可用 OpenAI 兼容接口调用，适合个人开发与模型对比测试",
-    how: "打开 huggingface.co 注册 → 在模型页点「Deploy → Inference API」或用共享端点 router.huggingface.co/hf-inference → 用 HF Token 调用（curl/OpenAI SDK 均可）",
-    link: "https://huggingface.co",
-    updated: "2026-07-24"
-  },
-  {
-    name: "月之暗面 Kimi 开放平台",
-    type: "大模型",
-    modality: "Kimi K2.6 / K2.5 · 长上下文 MoE 模型",
-    rating: 4,
-    quota: "新用户注册赠送 15 元体验金（永久有效，按量抵扣，无需绑卡）",
-    effect: "月之暗面官方平台，Kimi K2.6 最新最智能、长程代码编写更强更稳；K2.5 支持百万上下文、视觉+文本、思考/非思考模式，3 RPM 限速但超长文本处理一流",
-    how: "打开 platform.moonshot.cn 注册（手机号）→ API Key 管理新建密钥（sk- 开头，生成后须立即复制保存）→ 调 kimi-k2.6 / kimi-k2.5（base_url: https://api.moonshot.cn/v1）",
-    link: "https://platform.moonshot.cn",
-    updated: "2026-07-23"
-  },
-  {
-    name: "魔搭社区 ModelScope",
-    type: "大模型",
-    modality: "Qwen 系列 / LUX / Stable Diffusion 等 · 文本+多模态",
-    rating: 3,
-    quota: "已切换『魔豆』计费体系，每日免费调用次数较此前明显下调（原每天 2000 次 RPD 缩水）；注册即享、无需实名即可注册，但需留意额度变动",
-    effect: "阿里达摩院开源社区，收录 17 万+ 开源模型，生态完整、国内访问稳定；API-Inference 支持文本/图像等多模态，适合原型验证与模型体验。⚠️ 2026-08 起改采『魔豆』计费，免费调用次数较此前明显减少",
-    how: "打开 modelscope.cn 注册 → 【访问控制】获取 Access Token（需绑阿里云并实名才能用 API-Inference）→ 配置到工具（注意 Anthropic 兼容时去掉 ms- 前缀）",
-    link: "https://modelscope.cn",
-    updated: "2026-08-07"
-  },
-  {
-    name: "OpenStarry",
-    type: "工具",
-    modality: "GLM 5.2 / DeepSeek V4 / Kimi K2.6 / MiniMax M3 等 40+ 模型",
-    rating: 3,
-    quota: "注册即赠 200 次免费调用（Coding Plan + Token Plan 按量计费，一个 Key 接入 40+ 国产及国际模型）",
-    effect: "国产大模型 API 聚合中转平台，统一管理多家提供商，一行代码改动随时切换模型；覆盖最新 GLM 5.2 / Kimi K2.6 / DeepSeek V4 / MiniMax M3 / Qwen3.7-Max 等",
-    how: "打开 openstarry.com 注册 → 创建 API Key → 勾选免费模型权限 → 复制 Key 配置到客户端（OpenAI 兼容格式）",
-    link: "https://www.openstarry.com",
-    updated: "2026-07-23"
-  },
-  {
-    name: "OpenCode Zen",
-    type: "工具",
-    modality: "DeepSeek V4 Flash Free / MiMo-V2.5 Free / Nemotron 3 Ultra Free / Big Pickle 等",
-    rating: 4,
-    quota: "多个精选模型限时免费（DeepSeek V4 Flash Free、MiMo-V2.5 Free、North Mini Code Free、Nemotron 3 Ultra Free、Big Pickle），无需付费；余额低于 $5 才自动充值",
-    effect: "OpenCode（16 万+ Star 开源编程 Agent）自带的 Zen 模型网关，专为 coding agent 基准测试挑选并验证的模型，OpenAI 兼容接口，可配到任意编程客户端",
-    how: "打开 opencode.ai 安装 OpenCode → 在配置里启用 Zen（base_url: https://opencode.ai/zen/v1/chat/completions）→ 选用带 Free 后缀的免费模型即可，无需绑卡",
-    link: "https://opencode.ai/zen",
-    updated: "2026-07-23"
-  },
-  {
-    name: "微信 AI 小程序成长计划（云开发 CloudBase）",
-    type: "大模型",
-    modality: "Hy3 + Hy Image 3.0 · 文本/生图",
-    rating: 5,
-    quota: "10 亿大模型 Token + 10 万张 AI 生图（本轮加码后额度，自申请起 6 个月有效），另送 6 个月个人版云开发环境",
-    effect: "腾讯云开发 CloudBase 联合微信小程序的开发者扶持计划，模型已全面升级为混元 Hy3 与 Hy Image 3.0；全行业无类目限制，小游戏开发者同享。10 亿 Token 足够把 AI 能力『用厚』在产品里，老用户自动升级或领 120 元代金券",
-    how: "登录微信公众平台 mp.weixin.qq.com → 行业能力 → AI 小程序成长计划报名 → 开通 CloudBase 个人版环境后额度自动到账 → 控制台 AI 模块勾选 Hy3 即可调用（也可配 CloudBase MCP 在 CodeBuddy/Cursor 里用自然语言生成小程序）",
-    link: "https://cloud.tencent.com/developer/article/2705075",
-    limited: "2026-12-31",
-    updated: "2026-07-29"
-  },
-{
     name: "WorkBuddy",
     type: "工具",
     modality: "HY3 · 混元3 · 文本模型",
@@ -219,41 +130,8 @@ const TOKENS = [
     link: "https://longcat.chat/platform/product",
     updated: "2026-07-14"
   },
-  {
-    name: "ZenMux",
-    type: "大模型",
-    modality: "DeepSeek V4 Pro/Flash · Kimi K2.7 · GLM 5.2 · Step 3.7 Flash 等",
-    rating: 5,
-    quota: "DeepSeek V4 Pro/Flash 永久免费无限调用（无上限、无需实名、无需充值）",
-    effect: "全球首个支持保险赔付机制的企业级大模型聚合平台，一个 API Key 接入 100+ 模型。目前独家开放 DeepSeek V4 Pro/Flash、Kimi K2.7 Code、GLM 5.2、Step 3.7 Flash 等永久免费通道，国内低延迟，完美适配 Claude Code、OpenClaw、Cursor 等工具",
-    how: "打开 zenmux.ai 注册（支持邮箱/GitHub/谷歌一键登录）→ 进入 PAYG API 创建密钥 → 勾选 free 模型权限（如 deepseek/deepseek-v4-pro-free）→ 复制 API Key 配置到客户端",
-    link: "https://zenmux.ai",
-    updated: "2026-07-19"
-  },
-  {
-    name: "腾讯云 TokenHub",
-    type: "大模型",
-    modality: "Hy3 · DeepSeek V4 · GLM-5 · MiniMax-M2.7 · Kimi-K2.5 等",
-    rating: 5,
-    quota: "语言/多模态理解模型各 100 万 Tokens（官方文档最新口径：有效期 1 年）+ HY-Image-V3.0 生图 50 次 + 视频生成 50 积分 + 混元 3D 100 积分，活动持续至 2026-12-31",
-    effect: "腾讯云大模型服务平台，覆盖 Hy3、DeepSeek-V4-Pro/Flash、GLM-5.2/5.1、Kimi-K2.6/K2.5、MiniMax-M3/M2.7 等 16+ 主流模型，免费包已扩展到文本+生图+视频+3D 全线；首次调用自动领取，OpenAI 兼容 API，一个 Key 切多模型",
-    how: "登录 TokenHub 控制台 → 实名认证 → 进入模型广场 → 点击右上角「新用户福利免费体验」→ 勾选模型后立即领取；也支持首次调用时自动领取",
-    link: "https://cloud.tencent.com/product/tokenhub",
-    limited: "2026-12-31",
-    updated: "2026-07-30"
-  },
-  {
-    name: "天翼云息壤（电信）",
-    type: "大模型",
-    modality: "GLM-5 · DeepSeek V4 · Qwen3.5 · Doubao 等约 18 个主流模型",
-    rating: 4,
-    quota: "文本类模型 2500 万 Tokens/模型（有效期 2 周，从首次使用算起）；DeepSeek V4 Pro/Flash 各 50 万 Tokens",
-    effect: "中国电信旗下全栈国产化智算平台，\"国模+国芯+国云\"融合底座，支持 GLM-5、DeepSeek-V4、Qwen3.5、Doubao-Seed-2.0-pro 等约 18 个主流大模型，适合政企/科研/个人开发者",
-    how: "登录天翼云官网 → 完成实名认证 → 进入「息壤智算」→「模型广场」→ 选模型领取免费额度；额度耗尽或到期后可直接切换其他模型继续使用",
-    link: "https://www.ctyun.cn/product/maas",
-    updated: "2026-07-19"
-  },
-  /* ========== 后面：较老模型（发布在截图那些模型之前的） ========== */
+
+  /* ========== 较老模型平台 ========== */
   {
     name: "OpenRouter",
     type: "大模型",
@@ -265,6 +143,7 @@ const TOKENS = [
     link: "https://openrouter.ai",
     updated: "2026-07-17"
   },
+
   /* ========== 末尾：阶跃星辰（活动已结束，新用户仅 10 额度，0 星） ========== */
   {
     name: "阶跃星辰 StepFun",
@@ -276,7 +155,132 @@ const TOKENS = [
     how: "打开 platform.stepfun.com 注册 → 新用户仅到账 10 额度（¥10 余额）→ 在 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）",
     link: "https://platform.stepfun.com/?invite_code=HMVLLXUM",
     updated: "2026-08-07"
-  }
+  },
+
+  /* ========== 降级区：2026-08-07 下调两星，暂列末位观察 ========== */
+  {
+    name: "BazaarLink",
+    type: "大模型",
+    modality: "DeepSeek V4 Flash · 1M 上下文 · OpenAI 兼容网关",
+    rating: 2,
+    quota: "DeepSeek V4 Flash 长期免费：10 RPM / 每天 150 次（不绑卡、不充值、无试用期；充值账户额度 ×3 至 450 次/天）",
+    effect: "中国台湾集聯科技有限公司（統一編號 62232477，登記於苗栗縣頭份市）运营的 OpenAI 完全兼容多模型聚合网关，数据驻留 AWS Tokyo（非大陆、非美本土）。免费档开放 DeepSeek-V4-Flash（284B MoE、激活 13B、1M tokens 超长上下文、最大输出 38.4 万 tokens）。支持把 model 设为「auto:free」自动路由到零成本模型；可直接对接 Claude Code、Cursor、LangChain、Dify、LiteLLM 等；额度按请求 token 数动态加权扣减，短问答实际可用次数远超 150 次",
+    how: "打开 bazaarlink.ai/free 用邮箱注册（无需信用卡）→ 进入 /keys 创建密钥（sk-bl- 开头，仅显示一次，请立即保存）→ base_url 填 https://bazaarlink.ai/api/v1，模型名填 deepseek/deepseek-v4-flash 或 auto:free；Agent 也可 POST /api/v1/agents/register 自助申请 Key",
+    link: "https://bazaarlink.ai/free",
+    updated: "2026-07-31"
+  },
+  {
+    name: "AtomCode CodingPlan",
+    type: "工具",
+    modality: "GLM-5.2 / DeepSeek-V4-Flash / Qwen3-VL · 编程模型",
+    rating: 2,
+    quota: "免费体验版每日 10:00 开抢（每日 150 个名额，Pro 体验版 150 人/日），5 小时滚动窗口无限续杯，无需绑卡",
+    effect: "开源终端 AI 编程助手（Claude Code 最佳平替），CodingPlan 免费版可调用 GLM-5.2、DeepSeek-V4-Flash、Qwen3-VL 等顶流模型，支持 Windows / macOS / Linux / 鸿蒙 PC；仅在 AtomCode 客户端内使用，不能当通用 API",
+    how: "打开 atomcode.atomgit.com 下载 AtomCode（AtomGit 账号通用）→ 进入「CodingPlan」选「GLM-5.2 免费体验版」→ 每天 10:00 准点抢名额（名额 7 天/30 天有效，可续）",
+    link: "https://atomcode.atomgit.com",
+    updated: "2026-07-24"
+  },
+  {
+    name: "HuggingFace Inference API",
+    type: "大模型",
+    modality: "DeepSeek V4 / Qwen3 / Mistral 等 · 开源模型",
+    rating: 2,
+    quota: "免费共享推理端点，无需信用卡（限流，适合原型验证；PRO $9/月或自部署解锁更高额度）",
+    effect: "全球最大开源模型社区提供的免费推理 API，覆盖 DeepSeek-V4、Qwen3-235B、Mistral Large 3、Llama 等上千开源模型，无需绑卡即可用 OpenAI 兼容接口调用，适合个人开发与模型对比测试",
+    how: "打开 huggingface.co 注册 → 在模型页点「Deploy → Inference API」或用共享端点 router.huggingface.co/hf-inference → 用 HF Token 调用（curl/OpenAI SDK 均可）",
+    link: "https://huggingface.co",
+    updated: "2026-07-24"
+  },
+  {
+    name: "月之暗面 Kimi 开放平台",
+    type: "大模型",
+    modality: "Kimi K2.6 / K2.5 · 长上下文 MoE 模型",
+    rating: 2,
+    quota: "新用户注册赠送 15 元体验金（永久有效，按量抵扣，无需绑卡）",
+    effect: "月之暗面官方平台，Kimi K2.6 最新最智能、长程代码编写更强更稳；K2.5 支持百万上下文、视觉+文本、思考/非思考模式，3 RPM 限速但超长文本处理一流",
+    how: "打开 platform.moonshot.cn 注册（手机号）→ API Key 管理新建密钥（sk- 开头，生成后须立即复制保存）→ 调 kimi-k2.6 / kimi-k2.5（base_url: https://api.moonshot.cn/v1）",
+    link: "https://platform.moonshot.cn",
+    updated: "2026-07-23"
+  },
+  {
+    name: "魔搭社区 ModelScope",
+    type: "大模型",
+    modality: "Qwen 系列 / LUX / Stable Diffusion 等 · 文本+多模态",
+    rating: 1,
+    quota: "已切换『魔豆』计费体系，每日免费调用次数较此前明显下调（原每天 2000 次 RPD 缩水）；注册即享、无需实名即可注册，但需留意额度变动",
+    effect: "阿里达摩院开源社区，收录 17 万+ 开源模型，生态完整、国内访问稳定；API-Inference 支持文本/图像等多模态，适合原型验证与模型体验。⚠️ 2026-08 起改采『魔豆』计费，免费调用次数较此前明显减少",
+    how: "打开 modelscope.cn 注册 → 【访问控制】获取 Access Token（需绑阿里云并实名才能用 API-Inference）→ 配置到工具（注意 Anthropic 兼容时去掉 ms- 前缀）",
+    link: "https://modelscope.cn",
+    updated: "2026-08-07"
+  },
+  {
+    name: "OpenStarry",
+    type: "工具",
+    modality: "GLM 5.2 / DeepSeek V4 / Kimi K2.6 / MiniMax M3 等 40+ 模型",
+    rating: 1,
+    quota: "注册即赠 200 次免费调用（Coding Plan + Token Plan 按量计费，一个 Key 接入 40+ 国产及国际模型）",
+    effect: "国产大模型 API 聚合中转平台，统一管理多家提供商，一行代码改动随时切换模型；覆盖最新 GLM 5.2 / Kimi K2.6 / DeepSeek V4 / MiniMax M3 / Qwen3.7-Max 等",
+    how: "打开 openstarry.com 注册 → 创建 API Key → 勾选免费模型权限 → 复制 Key 配置到客户端（OpenAI 兼容格式）",
+    link: "https://www.openstarry.com",
+    updated: "2026-07-23"
+  },
+  {
+    name: "OpenCode Zen",
+    type: "工具",
+    modality: "DeepSeek V4 Flash Free / MiMo-V2.5 Free / Nemotron 3 Ultra Free / Big Pickle 等",
+    rating: 2,
+    quota: "多个精选模型限时免费（DeepSeek V4 Flash Free、MiMo-V2.5 Free、North Mini Code Free、Nemotron 3 Ultra Free、Big Pickle），无需付费；余额低于 $5 才自动充值",
+    effect: "OpenCode（16 万+ Star 开源编程 Agent）自带的 Zen 模型网关，专为 coding agent 基准测试挑选并验证的模型，OpenAI 兼容接口，可配到任意编程客户端",
+    how: "打开 opencode.ai 安装 OpenCode → 在配置里启用 Zen（base_url: https://opencode.ai/zen/v1/chat/completions）→ 选用带 Free 后缀的免费模型即可，无需绑卡",
+    link: "https://opencode.ai/zen",
+    updated: "2026-07-23"
+  },
+  {
+    name: "微信 AI 小程序成长计划（云开发 CloudBase）",
+    type: "大模型",
+    modality: "Hy3 + Hy Image 3.0 · 文本/生图",
+    rating: 3,
+    quota: "10 亿大模型 Token + 10 万张 AI 生图（本轮加码后额度，自申请起 6 个月有效），另送 6 个月个人版云开发环境",
+    effect: "腾讯云开发 CloudBase 联合微信小程序的开发者扶持计划，模型已全面升级为混元 Hy3 与 Hy Image 3.0；全行业无类目限制，小游戏开发者同享。10 亿 Token 足够把 AI 能力『用厚』在产品里，老用户自动升级或领 120 元代金券",
+    how: "登录微信公众平台 mp.weixin.qq.com → 行业能力 → AI 小程序成长计划报名 → 开通 CloudBase 个人版环境后额度自动到账 → 控制台 AI 模块勾选 Hy3 即可调用（也可配 CloudBase MCP 在 CodeBuddy/Cursor 里用自然语言生成小程序）",
+    link: "https://cloud.tencent.com/developer/article/2705075",
+    limited: "2026-12-31",
+    updated: "2026-07-29"
+  },
+  {
+    name: "ZenMux",
+    type: "大模型",
+    modality: "DeepSeek V4 Pro/Flash · Kimi K2.7 · GLM 5.2 · Step 3.7 Flash 等",
+    rating: 3,
+    quota: "DeepSeek V4 Pro/Flash 永久免费无限调用（无上限、无需实名、无需充值）",
+    effect: "全球首个支持保险赔付机制的企业级大模型聚合平台，一个 API Key 接入 100+ 模型。目前独家开放 DeepSeek V4 Pro/Flash、Kimi K2.7 Code、GLM 5.2、Step 3.7 Flash 等永久免费通道，国内低延迟，完美适配 Claude Code、OpenClaw、Cursor 等工具",
+    how: "打开 zenmux.ai 注册（支持邮箱/GitHub/谷歌一键登录）→ 进入 PAYG API 创建密钥 → 勾选 free 模型权限（如 deepseek/deepseek-v4-pro-free）→ 复制 API Key 配置到客户端",
+    link: "https://zenmux.ai",
+    updated: "2026-07-19"
+  },
+  {
+    name: "腾讯云 TokenHub",
+    type: "大模型",
+    modality: "Hy3 · DeepSeek V4 · GLM-5 · MiniMax-M2.7 · Kimi-K2.5 等",
+    rating: 3,
+    quota: "语言/多模态理解模型各 100 万 Tokens（官方文档最新口径：有效期 1 年）+ HY-Image-V3.0 生图 50 次 + 视频生成 50 积分 + 混元 3D 100 积分，活动持续至 2026-12-31",
+    effect: "腾讯云大模型服务平台，覆盖 Hy3、DeepSeek-V4-Pro/Flash、GLM-5.2/5.1、Kimi-K2.6/K2.5、MiniMax-M3/M2.7 等 16+ 主流模型，免费包已扩展到文本+生图+视频+3D 全线；首次调用自动领取，OpenAI 兼容 API，一个 Key 切多模型",
+    how: "登录 TokenHub 控制台 → 实名认证 → 进入模型广场 → 点击右上角「新用户福利免费体验」→ 勾选模型后立即领取；也支持首次调用时自动领取",
+    link: "https://cloud.tencent.com/product/tokenhub",
+    limited: "2026-12-31",
+    updated: "2026-07-30"
+  },
+  {
+    name: "天翼云息壤（电信）",
+    type: "大模型",
+    modality: "GLM-5 · DeepSeek V4 · Qwen3.5 · Doubao 等约 18 个主流模型",
+    rating: 2,
+    quota: "文本类模型 2500 万 Tokens/模型（有效期 2 周，从首次使用算起）；DeepSeek V4 Pro/Flash 各 50 万 Tokens",
+    effect: "中国电信旗下全栈国产化智算平台，\"国模+国芯+国云\"融合底座，支持 GLM-5、DeepSeek-V4、Qwen3.5、Doubao-Seed-2.0-pro 等约 18 个主流大模型，适合政企/科研/个人开发者",
+    how: "登录天翼云官网 → 完成实名认证 → 进入「息壤智算」→「模型广场」→ 选模型领取免费额度；额度耗尽或到期后可直接切换其他模型继续使用",
+    link: "https://www.ctyun.cn/product/maas",
+    updated: "2026-07-19"
+  },
 ];
 
 
