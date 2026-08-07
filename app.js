@@ -7,16 +7,20 @@
 
 const TOKENS = [
   {
-    name: "TRAE Work",
+    name: "WorkBuddy",
     type: "工具",
-    modality: "GLM-5.2 / Kimi K3 · 折扣价",
-    rating: 4,
-    quota: "通过我的分享链接登录桌面端，新注册用户一次性获得 5000 积分",
-    effect: "TraeWork AI 办公平台，可一站式搞定各类办公与创作任务。模型调用走折扣价通道，明确使用 GLM-5.2 与 Kimi K3 两款新模型，相比官方原价更低",
-    how: "打开我的分享链接 https://www.trae.cn/work-fission/7MSJC6MSHPNL?utm_source=copy_link&utm_medium=friends_invite → 下载并登录 TraeWork 桌面端 → 新账号自动到账 5000 积分，直接选用 GLM-5.2 / K3 模型开始使用",
-    link: "https://www.trae.cn/work-fission/7MSJC6MSHPNL?utm_source=copy_link&utm_medium=friends_invite",
+    modality: "HY3 · 混元3 · 文本模型",
+    rating: 5,
+    quota: "HY3（混元3）模型限时免费，官方已宣布延长至 2026-08-31",
+    effect: "腾讯系 AI 工作台，HY3（混元3）能力可直接调用，速度很快；写代码、查资料、做自动化都好用。Hy3 限免期间连续两周全球调用量第一（周调用 11.5 万亿 Token），因用户呼声限免从 7/22 延长到 8/31",
+    how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免延至 8/31，抓紧用）",
+    link: "https://www.codebuddy.cn/events/invite?inviteCode=akek8mgwjqlt",
+    limited: "2026-08-31",
     updated: "2026-08-07"
   },
+
+  /* ========== 较新 / 主力平台 ========== */
+
   {
     name: "腾讯 Marvis（马维斯）",
     type: "工具",
@@ -29,19 +33,6 @@ const TOKENS = [
     updated: "2026-07-24"
   },
 
-  /* ========== 较新 / 主力平台 ========== */
-  {
-    name: "WorkBuddy",
-    type: "工具",
-    modality: "HY3 · 混元3 · 文本模型",
-    rating: 5,
-    quota: "HY3（混元3）模型限时免费，官方已宣布延长至 2026-08-31",
-    effect: "腾讯系 AI 工作台，HY3（混元3）能力可直接调用，速度很快；写代码、查资料、做自动化都好用。Hy3 限免期间连续两周全球调用量第一（周调用 11.5 万亿 Token），因用户呼声限免从 7/22 延长到 8/31",
-    how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免延至 8/31，抓紧用）",
-    link: "https://www.codebuddy.cn/events/invite?inviteCode=akek8mgwjqlt",
-    limited: "2026-08-31",
-    updated: "2026-08-07"
-  },
   {
     name: "火山引擎 Ark 协作计划（字节）",
     type: "大模型",
@@ -53,6 +44,7 @@ const TOKENS = [
     link: "https://console.volcengine.com/ark/region:cn-beijing/openManagement/rewardPlan",
     updated: "2026-07-14"
   },
+
   {
     name: "七牛云 AI 推理",
     type: "大模型",
@@ -64,6 +56,7 @@ const TOKENS = [
     link: "https://s.qiniu.com/VV7Zfa",
     updated: "2026-07-14"
   },
+
   {
     name: "美团 catpaw（App）",
     type: "工具",
@@ -75,6 +68,19 @@ const TOKENS = [
     link: "https://catpaw.meituan.com/",
     updated: "2026-07-22"
   },
+
+  {
+    name: "TRAE Work",
+    type: "工具",
+    modality: "GLM-5.2 / Kimi K3 · 折扣价",
+    rating: 4,
+    quota: "通过我的分享链接登录桌面端，新注册用户一次性获得 5000 积分",
+    effect: "TraeWork AI 办公平台，可一站式搞定各类办公与创作任务。模型调用走折扣价通道，明确使用 GLM-5.2 与 Kimi K3 两款新模型，相比官方原价更低",
+    how: "打开我的分享链接 https://www.trae.cn/work-fission/7MSJC6MSHPNL?utm_source=copy_link&utm_medium=friends_invite → 下载并登录 TraeWork 桌面端 → 新账号自动到账 5000 积分，直接选用 GLM-5.2 / K3 模型开始使用",
+    link: "https://www.trae.cn/work-fission/7MSJC6MSHPNL?utm_source=copy_link&utm_medium=friends_invite",
+    updated: "2026-08-07"
+  },
+
   {
     name: "硅基流动 SiliconFlow",
     type: "大模型",
@@ -86,6 +92,7 @@ const TOKENS = [
     link: "https://cloud.siliconflow.cn/i/HgdEna2e",
     updated: "2026-07-15"
   },
+
   {
     name: "NVIDIA NIM 免费 API",
     type: "大模型",
@@ -97,6 +104,7 @@ const TOKENS = [
     link: "https://build.nvidia.com",
     updated: "2026-07-15"
   },
+
   {
     name: "商汤 Token Plan（sensenova）",
     type: "大模型",
@@ -108,6 +116,7 @@ const TOKENS = [
     link: "https://www.sensenova.cn/token-plan",
     updated: "2026-08-07"
   },
+
   {
     name: "Agnes AI",
     type: "大模型",
@@ -119,6 +128,7 @@ const TOKENS = [
     link: "https://platform.agnes-ai.com",
     updated: "2026-08-03"
   },
+
   {
     name: "美团 longcat 大模型",
     type: "大模型",
@@ -132,6 +142,7 @@ const TOKENS = [
   },
 
   /* ========== 较老模型平台 ========== */
+
   {
     name: "OpenRouter",
     type: "大模型",
@@ -145,6 +156,7 @@ const TOKENS = [
   },
 
   /* ========== 末尾：阶跃星辰（活动已结束，新用户仅 10 额度，0 星） ========== */
+
   {
     name: "阶跃星辰 StepFun",
     type: "大模型",
@@ -158,6 +170,7 @@ const TOKENS = [
   },
 
   /* ========== 降级区：2026-08-07 下调两星，暂列末位观察 ========== */
+
   {
     name: "BazaarLink",
     type: "大模型",
@@ -169,6 +182,7 @@ const TOKENS = [
     link: "https://bazaarlink.ai/free",
     updated: "2026-07-31"
   },
+
   {
     name: "AtomCode CodingPlan",
     type: "工具",
@@ -180,6 +194,7 @@ const TOKENS = [
     link: "https://atomcode.atomgit.com",
     updated: "2026-07-24"
   },
+
   {
     name: "HuggingFace Inference API",
     type: "大模型",
@@ -191,6 +206,7 @@ const TOKENS = [
     link: "https://huggingface.co",
     updated: "2026-07-24"
   },
+
   {
     name: "月之暗面 Kimi 开放平台",
     type: "大模型",
@@ -202,6 +218,7 @@ const TOKENS = [
     link: "https://platform.moonshot.cn",
     updated: "2026-07-23"
   },
+
   {
     name: "魔搭社区 ModelScope",
     type: "大模型",
@@ -213,6 +230,7 @@ const TOKENS = [
     link: "https://modelscope.cn",
     updated: "2026-08-07"
   },
+
   {
     name: "OpenStarry",
     type: "工具",
@@ -224,6 +242,7 @@ const TOKENS = [
     link: "https://www.openstarry.com",
     updated: "2026-07-23"
   },
+
   {
     name: "OpenCode Zen",
     type: "工具",
@@ -235,6 +254,7 @@ const TOKENS = [
     link: "https://opencode.ai/zen",
     updated: "2026-07-23"
   },
+
   {
     name: "微信 AI 小程序成长计划（云开发 CloudBase）",
     type: "大模型",
@@ -247,6 +267,7 @@ const TOKENS = [
     limited: "2026-12-31",
     updated: "2026-07-29"
   },
+
   {
     name: "ZenMux",
     type: "大模型",
@@ -258,6 +279,7 @@ const TOKENS = [
     link: "https://zenmux.ai",
     updated: "2026-07-19"
   },
+
   {
     name: "腾讯云 TokenHub",
     type: "大模型",
@@ -270,6 +292,7 @@ const TOKENS = [
     limited: "2026-12-31",
     updated: "2026-07-30"
   },
+
   {
     name: "天翼云息壤（电信）",
     type: "大模型",
@@ -280,7 +303,7 @@ const TOKENS = [
     how: "登录天翼云官网 → 完成实名认证 → 进入「息壤智算」→「模型广场」→ 选模型领取免费额度；额度耗尽或到期后可直接切换其他模型继续使用",
     link: "https://www.ctyun.cn/product/maas",
     updated: "2026-07-19"
-  },
+  }
 ];
 
 
