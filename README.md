@@ -10,7 +10,9 @@
 
 **直接打开即可使用，无需注册、无需安装：**
 
-👉 **[https://hope0719.github.io/token-fbi/](https://hope0719.github.io/token-fbi/)**
+👉 **[https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net](https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net)** （国内 / 微信 / 手机浏览器均可直连，推荐）
+
+> 备用镜像（GitHub Pages，桌面端可访问，但国内手机 / 微信内可能打不开）：[https://hope0719.github.io/token-fbi/](https://hope0719.github.io/token-fbi/)
 
 ![Token FBI 站点截图](screenshot.png)
 
@@ -60,7 +62,7 @@ Token FBI 是一张**活着的免费 AI token 名录**。
 | **LongCat 2.0** | 美团 1.6T 模型，2026-06-30 发布 |
 
 > **补充保留**：以下平台/模型虽不属上述 6 个精选，但因**多模态能力突出**或**聚合价值高**而保留：
-> - **阶跃星辰 StepFun**（Step 3.7 Flash 原生多模态，文/图/音/视频全能）
+> - **阶跃星辰 StepFun**（Step 3.7 Flash 原生多模态，文/图/音/视频全能；⚠️ 限时活动已结束，新用户仅余 10 额度，仍因多模态能力保留）
 > - **NVIDIA NIM 免费 API**（聚合多模型，含 GLM-5.2 等主流模型）
 > - **Agnes AI**（全模态模型，不限期 RPM 20 免费）
 
@@ -92,7 +94,7 @@ Token FBI 是一张**活着的免费 AI token 名录**。
 
 ### 3. 推荐工具：严格按指定清单
 
-Hero 侧栏「推荐工具」**只展示站长明确指定的 App**，不自行推导或编造：
+本站推荐工具 **只展示站长明确指定的 App**，不自行推导或编造（相关 App 以卡片形式收录在名录中）：
 - 当前指定：WorkBuddy / Dumate / TRAE Work / catpaw
 
 ### 4. 统计口径
@@ -119,7 +121,7 @@ Hero 侧栏「推荐工具」**只展示站长明确指定的 App**，不自行�
 | 平台 | 截止日期 |
 | :--- | :--- |
 | 微信 AI 小程序成长计划 | 2026-12-31 |
-| WorkBuddy Hy3 | 2026-08-31 |
+| WorkBuddy（HY3 限免） | 2026-08-31 |
 | 腾讯云 TokenHub | 2026-12-31 |
 
 > ⚠️ 限时活动可能随时延期或提前结束，领之前请以各平台官方页面为准。
@@ -139,34 +141,34 @@ Hero 侧栏「推荐工具」**只展示站长明确指定的 App**，不自行�
 
 ## 🏢 已收录平台（大模型类 17 · 工具类 7，共 24 家）
 
-以下为截至 **2026-08-03** 的完整收录清单，按数组顺序排列：
+以下为截至 **2026-08-07** 的完整收录清单，按数组顺序排列（香度 🔥 随体验动态变化）：
 
 | # | 平台 | 类型 | 核心模型 | 香度 |
 |:--:|:---|:---|:---|:--:|
 | 1 | TRAE Work | 工具 | GLM-5.2 / Kimi K3 · 折扣价 | 🔥🔥🔥🔥 |
-| 2 | 阶跃星辰 StepFun | 大模型 | 多模态大模型 | 🔥🔥🔥🔥🔥 |
-| 3 | BazaarLink | 大模型 | DeepSeek V4 Flash · 1M 上下文 | 🔥🔥🔥🔥 |
-| 4 | AtomCode CodingPlan | 工具 | GLM-5.2 / DeepSeek-V4-Flash / Qwen3-VL | 🔥🔥🔥🔥 |
-| 5 | 腾讯 Marvis（马维斯） | 工具 | 混元 / DeepSeek V4 · 操作系统级 AI | 🔥🔥🔥🔥 |
-| 6 | HuggingFace Inference API | 大模型 | DeepSeek V4 / Qwen3 / Mistral 等 | 🔥🔥🔥🔥🔥 |
-| 7 | 月之暗面 Kimi 开放平台 | 大模型 | Kimi K2.6 / K2.5 · 长上下文 MoE | 🔥🔥🔥🔥🔥 |
-| 8 | 魔搭社区 ModelScope | 大模型 | Qwen / LUX / SD 等开源模型 | 🔥🔥🔥🔥 |
-| 9 | OpenStarry | 工具 | GLM 5.2 / DeepSeek V4 / Kimi K2.6 等 40+ | 🔥🔥🔥 |
-| 10 | OpenCode Zen | 工具 | DeepSeek V4 Flash Free / MiMo-V2.5 等 | 🔥🔥🔥🔥 |
-| 11 | 微信 AI 小程序成长计划（云开发 CloudBase） | 大模型 | Hy3 + Hy Image 3.0 · 文本/生图 | 🔥🔥🔥🔥🔥 |
-| 12 | WorkBuddy | 工具 | HY3 · 混元3 | 🔥🔥🔥🔥🔥 |
-| 13 | 火山引擎 Ark 协作计划（字节） | 大模型 | GLM5.2 · 文本模型 | 🔥🔥🔥🔥🔥 |
-| 14 | 七牛云 AI 推理 | 大模型 | GLM5.2 · 文本模型 | 🔥🔥🔥🔥🔥 |
-| 15 | 美团 catpaw（App） | 工具 | GLM 5.2 · DeepSeek V4 Pro · Kimi K3 | 🔥🔥🔥🔥🔥 |
-| 16 | 硅基流动 SiliconFlow | 大模型 | GLM5.2 等全模型 · 文本/多模态 | 🔥🔥🔥🔥🔥 |
-| 17 | NVIDIA NIM 免费 API | 大模型 | 多模型聚合（文本 / 多模态） | 🔥🔥🔥🔥🔥 |
-| 18 | 商汤 Token Plan（sensenova） | 大模型 | SenseNova 6.7 / DeepSeek V4 Flash | 🔥🔥🔥🔥 |
-| 19 | Agnes AI | 大模型 | 全模态模型 | 🔥🔥🔥🔥🔥 |
-| 20 | 美团 longcat 大模型 | 大模型 | LongCat 文本模型 | 🔥🔥🔥🔥🔥 |
-| 21 | ZenMux | 大模型 | DeepSeek V4 · Kimi K2.7 · GLM 5.2 · Step | 🔥🔥🔥🔥🔥 |
-| 22 | 腾讯云 TokenHub | 大模型 | Hy3 · DeepSeek V4 · GLM-5 · Kimi-K2.5 | 🔥🔥🔥🔥🔥 |
-| 23 | 天翼云息壤（电信） | 大模型 | GLM-5 · DeepSeek V4 · Qwen3.5 · Doubao | 🔥🔥🔥🔥 |
-| 24 | OpenRouter | 大模型 | 35+ 聚合模型（Kimi K2 / Qwen3 / Llama） | 🔥🔥🔥🔥 |
+| 2 | BazaarLink | 大模型 | DeepSeek V4 Flash · 1M 上下文 | 🔥🔥🔥🔥 |
+| 3 | AtomCode CodingPlan | 工具 | GLM-5.2 / DeepSeek-V4-Flash / Qwen3-VL | 🔥🔥🔥🔥 |
+| 4 | 腾讯 Marvis（马维斯） | 工具 | 混元 / DeepSeek V4 · 操作系统级 AI | 🔥🔥🔥🔥 |
+| 5 | HuggingFace Inference API | 大模型 | DeepSeek V4 / Qwen3 / Mistral 等 | 🔥🔥🔥🔥 |
+| 6 | 月之暗面 Kimi 开放平台 | 大模型 | Kimi K2.6 / K2.5 · 长上下文 MoE | 🔥🔥🔥🔥 |
+| 7 | 魔搭社区 ModelScope | 大模型 | Qwen / LUX / SD 等 · 文本+多模态（魔豆计费） | 🔥🔥🔥 |
+| 8 | OpenStarry | 工具 | GLM 5.2 / DeepSeek V4 / Kimi K2.6 等 40+ | 🔥🔥🔥 |
+| 9 | OpenCode Zen | 工具 | DeepSeek V4 Flash Free / MiMo-V2.5 等 | 🔥🔥🔥🔥 |
+| 10 | 微信 AI 小程序成长计划（云开发 CloudBase） | 大模型 | Hy3 + Hy Image 3.0 · 文本/生图 | 🔥🔥🔥🔥🔥 |
+| 11 | WorkBuddy | 工具 | HY3 · 混元3（HY3 限免至 8/31） | 🔥🔥🔥🔥🔥 |
+| 12 | 火山引擎 Ark 协作计划（字节） | 大模型 | GLM5.2 · 文本模型 | 🔥🔥🔥🔥🔥 |
+| 13 | 七牛云 AI 推理 | 大模型 | GLM5.2 · 文本模型 | 🔥🔥🔥🔥🔥 |
+| 14 | 美团 catpaw（App） | 工具 | GLM 5.2 · DeepSeek V4 Pro · Kimi K3 | 🔥🔥🔥🔥🔥 |
+| 15 | 硅基流动 SiliconFlow | 大模型 | GLM5.2 等全模型 · 文本/多模态 | 🔥🔥🔥🔥 |
+| 16 | NVIDIA NIM 免费 API | 大模型 | 多模型聚合（文本 / 多模态） | 🔥🔥🔥🔥🔥 |
+| 17 | 商汤 Token Plan（sensenova） | 大模型 | SenseNova 6.7 / DeepSeek V4 Flash · 日日新 | 🔥🔥🔥 |
+| 18 | Agnes AI | 大模型 | 全模态模型 | 🔥🔥🔥🔥🔥 |
+| 19 | 美团 longcat 大模型 | 大模型 | LongCat 文本模型 | 🔥🔥🔥🔥🔥 |
+| 20 | ZenMux | 大模型 | DeepSeek V4 · Kimi K2.7 · GLM 5.2 · Step | 🔥🔥🔥🔥🔥 |
+| 21 | 腾讯云 TokenHub | 大模型 | Hy3 · DeepSeek V4 · GLM-5 · Kimi-K2.5 | 🔥🔥🔥🔥🔥 |
+| 22 | 天翼云息壤（电信） | 大模型 | GLM-5 · DeepSeek V4 · Qwen3.5 · Doubao 等 | 🔥🔥🔥🔥 |
+| 23 | OpenRouter | 大模型 | 35+ 聚合模型（Kimi K2 / Qwen3 / Llama） | 🔥🔥🔥🔥 |
+| 24 | 阶跃星辰 StepFun | 大模型 | 多模态大模型（活动已结束，仅新用户 10 额度） | — |
 
 ---
 
@@ -251,6 +253,8 @@ token-fbi/
 
 ## 🔄 最近更新
 
+- **2026-08-07**：① 商汤日日新系列报错频发（白天不建议用）→ 扣一星 + 加警告；② 魔搭改「魔豆」计费、免费次数缩水 → 扣一星；③ 阶跃星辰限时活动结束，新用户仅 10 额度 → 降为 0 星；④ WorkBuddy 限免延至 8/31；⑤ TRAE Work 分享链接更新；⑥ 静态页 Hero 重构、统计改为实时计算；⑦ 主访问链接切换为 CloudStudio 国内镜像
+- **2026-08-05**：WorkBuddy 限免信息刷新；硅基流动新用户基础免费额度 + 邀请得 14 元
 - **2026-08-03**：精选模型 curation，下架杂牌/旧代际卡，当前保留 24 张高质量卡片（大模型类 17 · 工具类 7）；删除京东 JoyAgent，统计文案改为「大模型类 / 工具类」
 - **2026-08-01**：新增白山云智算、无问芯穹、腾讯元器、PPIO 派欧云；StepFun 活动延至 8/24
 - **2026-07-31**：新增 360 纳米 Work、BazaarLink
