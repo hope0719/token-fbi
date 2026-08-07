@@ -129,7 +129,7 @@ const TOKENS = [
     how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免延至 8/31，抓紧用）",
     link: "https://www.codebuddy.cn/events/invite?inviteCode=akek8mgwjqlt",
     limited: "2026-08-31",
-    updated: "2026-08-05"
+    updated: "2026-08-07"
   },
   {
     name: "火山引擎 Ark 协作计划（字节）",
@@ -265,17 +265,17 @@ const TOKENS = [
     link: "https://openrouter.ai",
     updated: "2026-07-17"
   },
-  /* ========== 末尾：阶跃星辰（已无限时活动，新用户注册赠 ¥10 余额） ========== */
+  /* ========== 末尾：阶跃星辰（活动已结束，新用户仅 10 额度，0 星） ========== */
   {
     name: "阶跃星辰 StepFun",
     type: "大模型",
     modality: "多模态大模型",
-    rating: 2,
-    quota: "新用户注册即赠 ¥10 余额，按官方标准计费用于抵扣模型调用",
-    effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，198B MoE、激活 11B，原生图片/视频理解，深度兼容 Claude Code / OpenClaw / KiloCode / Hermes Agent）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理，支持智能路由与 MCP 工具",
-    how: "打开 platform.stepfun.com 注册 → 新用户自动到账 ¥10 余额 → 在 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）",
+    rating: 0,
+    quota: "新用户注册只给 10 额度（¥10 余额），限时活动已结束，按官方标准计费抵扣模型调用",
+    effect: "可用全部旗舰自研模型：step-3.7-flash（最新旗舰，198B MoE、激活 11B，原生图片/视频理解，深度兼容 Claude Code / OpenClaw / KiloCode / Hermes Agent）、step-3.5-flash、step-image-edit-2（图像编辑）、stepaudio 系列（语音/ASR/TTS），覆盖文/图/音/视频/推理，支持智能路由与 MCP 工具。⚠️ 限时活动已结束，新用户仅赠 10 额度，不再有大规模免费额度",
+    how: "打开 platform.stepfun.com 注册 → 新用户仅到账 10 额度（¥10 余额）→ 在 Step Plan 菜单拿 Base URL 与密钥接入（兼容 OpenAI/Claude API）",
     link: "https://platform.stepfun.com/?invite_code=HMVLLXUM",
-    updated: "2026-08-05"
+    updated: "2026-08-07"
   }
 ];
 
