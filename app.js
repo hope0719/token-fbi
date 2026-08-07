@@ -11,11 +11,11 @@ const TOKENS = [
     type: "工具",
     modality: "GLM-5.2 / Kimi K3 · 折扣价",
     rating: 4,
-    quota: "通过分享链接登录桌面端，新注册用户一次性获得 5000 积分",
-    effect: "TRAE Work AI 办公平台，可一站式搞定各类办公与创作任务。模型调用走折扣价通道，明确使用 GLM-5.2 与 Kimi K3 两款新模型，相比官方原价更低",
-    how: "打开分享链接 https://www.trae.cn/work-fission/Q4PUV29JRKCF → 下载并登录 TRAE Work 桌面端 → 新账号自动到账 5000 积分，直接选用 GLM-5.2 / K3 模型开始使用",
-    link: "https://www.trae.cn/work-fission/Q4PUV29JRKCF",
-    updated: "2026-08-01"
+    quota: "通过我的分享链接登录桌面端，新注册用户一次性获得 5000 积分",
+    effect: "TraeWork AI 办公平台，可一站式搞定各类办公与创作任务。模型调用走折扣价通道，明确使用 GLM-5.2 与 Kimi K3 两款新模型，相比官方原价更低",
+    how: "打开我的分享链接 https://www.trae.cn/work-fission/7MSJC6MSHPNL?utm_source=copy_link&utm_medium=friends_invite → 下载并登录 TraeWork 桌面端 → 新账号自动到账 5000 积分，直接选用 GLM-5.2 / K3 模型开始使用",
+    link: "https://www.trae.cn/work-fission/7MSJC6MSHPNL?utm_source=copy_link&utm_medium=friends_invite",
+    updated: "2026-08-07"
   },
 
   /* ========== 前面：较新模型（截图里 GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 等同期或更晚） ========== */
