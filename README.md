@@ -33,7 +33,7 @@ Token FBI 是一张**活着的免费 AI token 名录**。
 | **名称** | 平台 / 产品名 |
 | **类型** | 大模型 / 工具（聚合平台、发 Token 活动归大模型；编程/写作/代理 App 归工具） |
 | **支持模型** | 该平台提供的模型阵容 |
-| **香度 🔥** | 1~5 颗火，综合考量额度大小、模型质量、领取门槛 |
+| **星级 ★** | 1~5 星，综合考量额度大小、模型质量、领取门槛 |
 | **免费额度** | 具体能拿多少（Token 数 / 金额 / 调用次数） |
 | **效果如何** | 实际体验：能干什么、够用多久、有什么限制 |
 | **怎么领** | 一步步操作指引 + 注意事项 |
@@ -141,34 +141,34 @@ Token FBI 是一张**活着的免费 AI token 名录**。
 
 ## 🏢 已收录平台（大模型类 17 · 工具类 7，共 24 家）
 
-以下为截至 **2026-08-07** 的完整收录清单，按数组顺序排列（香度 🔥 随体验动态变化）：
+以下为截至 **2026-08-07** 的完整收录清单，按数组顺序排列（星级 ★ 随体验动态变化）：
 
-| # | 平台 | 类型 | 核心模型 | 香度 |
+| # | 平台 | 类型 | 核心模型 | 星级 |
 |:--:|:---|:---|:---|:--:|
-| 1 | WorkBuddy | 工具 | HY3 · 混元3（HY3 限免至 8/31） | 🔥🔥🔥🔥🔥 |
-| 2 | 腾讯 Marvis（马维斯） | 工具 | 混元 / DeepSeek V4 · 操作系统级 AI | 🔥🔥🔥🔥 |
-| 3 | 火山引擎 Ark 协作计划（字节） | 大模型 | GLM5.2 · 文本模型 | 🔥🔥🔥🔥🔥 |
-| 4 | 七牛云 AI 推理 | 大模型 | GLM5.2 · 文本模型 | 🔥🔥🔥🔥🔥 |
-| 5 | 美团 catpaw（App） | 工具 | GLM 5.2 · DeepSeek V4 Pro · Kimi K3 | 🔥🔥🔥🔥🔥 |
-| 6 | TRAE Work | 工具 | GLM-5.2 / Kimi K3 · 折扣价 | 🔥🔥🔥🔥 |
-| 7 | 硅基流动 SiliconFlow | 大模型 | GLM5.2 等全模型 · 文本/多模态 | 🔥🔥🔥🔥 |
-| 8 | NVIDIA NIM 免费 API | 大模型 | 多模型聚合（文本 / 多模态） | 🔥🔥🔥🔥🔥 |
-| 9 | 商汤 Token Plan（sensenova） | 大模型 | SenseNova 6.7 / DeepSeek V4 Flash · 日日新 | 🔥🔥🔥 |
-| 10 | Agnes AI | 大模型 | 全模态模型 | 🔥🔥🔥🔥🔥 |
-| 11 | 美团 longcat 大模型 | 大模型 | LongCat 文本模型 | 🔥🔥🔥🔥🔥 |
-| 12 | OpenRouter | 大模型 | 35+ 聚合模型（Kimi K2 / Qwen3 / Llama） | 🔥🔥🔥🔥 |
+| 1 | WorkBuddy | 工具 | HY3 · 混元3（HY3 限免至 8/31） | ★★★★★ |
+| 2 | 腾讯 Marvis（马维斯） | 工具 | 混元 / DeepSeek V4 · 操作系统级 AI | ★★★★ |
+| 3 | 火山引擎 Ark 协作计划（字节） | 大模型 | GLM5.2 · 文本模型 | ★★★★★ |
+| 4 | 七牛云 AI 推理 | 大模型 | GLM5.2 · 文本模型 | ★★★★★ |
+| 5 | 美团 catpaw（App） | 工具 | GLM 5.2 · DeepSeek V4 Pro · Kimi K3 | ★★★★★ |
+| 6 | TRAE Work | 工具 | GLM-5.2 / Kimi K3 · 折扣价 | ★★★★ |
+| 7 | 硅基流动 SiliconFlow | 大模型 | GLM5.2 等全模型 · 文本/多模态 | ★★★★ |
+| 8 | NVIDIA NIM 免费 API | 大模型 | 多模型聚合（文本 / 多模态） | ★★★★★ |
+| 9 | 商汤 Token Plan（sensenova） | 大模型 | SenseNova 6.7 / DeepSeek V4 Flash · 日日新 | ★★★ |
+| 10 | Agnes AI | 大模型 | 全模态模型 | ★★★★★ |
+| 11 | 美团 longcat 大模型 | 大模型 | LongCat 文本模型 | ★★★★★ |
+| 12 | OpenRouter | 大模型 | 35+ 聚合模型（Kimi K2 / Qwen3 / Llama） | ★★★★ |
 | 13 | 阶跃星辰 StepFun | 大模型 | 多模态大模型（活动已结束，仅新用户 10 额度） | — |
-| 14 | BazaarLink | 大模型 | DeepSeek V4 Flash · 1M 上下文 | 🔥🔥 |
-| 15 | AtomCode CodingPlan | 工具 | GLM-5.2 / DeepSeek-V4-Flash / Qwen3-VL | 🔥🔥 |
-| 16 | HuggingFace Inference API | 大模型 | DeepSeek V4 / Qwen3 / Mistral 等 | 🔥🔥 |
-| 17 | 月之暗面 Kimi 开放平台 | 大模型 | Kimi K2.6 / K2.5 · 长上下文 MoE | 🔥🔥 |
-| 18 | 魔搭社区 ModelScope | 大模型 | Qwen / LUX / SD 等 · 文本+多模态（魔豆计费） | 🔥 |
-| 19 | OpenStarry | 工具 | GLM 5.2 / DeepSeek V4 / Kimi K2.6 等 40+ | 🔥 |
-| 20 | OpenCode Zen | 工具 | DeepSeek V4 Flash Free / MiMo-V2.5 等 | 🔥🔥 |
-| 21 | 微信 AI 小程序成长计划（云开发 CloudBase） | 大模型 | Hy3 + Hy Image 3.0 · 文本/生图 | 🔥🔥🔥 |
-| 22 | ZenMux | 大模型 | DeepSeek V4 · Kimi K2.7 · GLM 5.2 · Step | 🔥🔥🔥 |
-| 23 | 腾讯云 TokenHub | 大模型 | Hy3 · DeepSeek V4 · GLM-5 · Kimi-K2.5 | 🔥🔥🔥 |
-| 24 | 天翼云息壤（电信） | 大模型 | GLM-5 · DeepSeek V4 · Qwen3.5 · Doubao 等 | 🔥🔥 |
+| 14 | BazaarLink | 大模型 | DeepSeek V4 Flash · 1M 上下文 | ★★ |
+| 15 | AtomCode CodingPlan | 工具 | GLM-5.2 / DeepSeek-V4-Flash / Qwen3-VL | ★★ |
+| 16 | HuggingFace Inference API | 大模型 | DeepSeek V4 / Qwen3 / Mistral 等 | ★★ |
+| 17 | 月之暗面 Kimi 开放平台 | 大模型 | Kimi K2.6 / K2.5 · 长上下文 MoE | ★★ |
+| 18 | 魔搭社区 ModelScope | 大模型 | Qwen / LUX / SD 等 · 文本+多模态（魔豆计费） | ★ |
+| 19 | OpenStarry | 工具 | GLM 5.2 / DeepSeek V4 / Kimi K2.6 等 40+ | ★ |
+| 20 | OpenCode Zen | 工具 | DeepSeek V4 Flash Free / MiMo-V2.5 等 | ★★ |
+| 21 | 微信 AI 小程序成长计划（云开发 CloudBase） | 大模型 | Hy3 + Hy Image 3.0 · 文本/生图 | ★★★ |
+| 22 | ZenMux | 大模型 | DeepSeek V4 · Kimi K2.7 · GLM 5.2 · Step | ★★★ |
+| 23 | 腾讯云 TokenHub | 大模型 | Hy3 · DeepSeek V4 · GLM-5 · Kimi-K2.5 | ★★★ |
+| 24 | 天翼云息壤（电信） | 大模型 | GLM-5 · DeepSeek V4 · Qwen3.5 · Doubao 等 | ★★ |
 
 > 📌 **降级区说明**：第 14~24 名（BazaarLink / AtomCode / HuggingFace / 月之暗面 / 魔搭 / OpenStarry / OpenCode Zen / 微信成长计划 / ZenMux / TokenHub / 天翼云）于 **2026-08-07** 各扣两星并移至名录末位观察，恢复需重新评估。
 
@@ -189,7 +189,7 @@ Token FBI 是一张**活着的免费 AI token 名录**。
   name: "平台名称",
   type: "大模型",        // 或 "工具"
   modality: "支持的模型",
-  rating: 4,             // 香度 1~5
+  rating: 4,             // 星级 1~5
   quota: "免费额度说明",
   effect: "效果怎么样",
   how: "怎么领（步骤指引）",
