@@ -76,9 +76,9 @@ const TOKENS = [
     rating: 4,
     quota: "通过我的分享链接登录桌面端，新注册用户一次性获得 5000 积分",
     effect: "TraeWork AI 办公平台，可一站式搞定各类办公与创作任务。模型调用走折扣价通道，明确使用 GLM-5.2 与 Kimi K3 两款新模型，相比官方原价更低",
-    how: "打开我的分享链接 https://www.trae.cn/work-fission/2BLPGCQ6CZSB?utm_source=copy_link&utm_medium=friends_invite → 下载并登录 TraeWork 桌面端 → 新账号自动到账 5000 积分，直接选用 GLM-5.2 / K3 模型开始使用",
-    link: "https://www.trae.cn/work-fission/2BLPGCQ6CZSB?utm_source=copy_link&utm_medium=friends_invite",
-    updated: "2026-08-07"
+    how: "打开我的分享链接 https://www.trae.cn/work-fission/7WNKJ8J7VQR7?utm_source=copy_link&utm_medium=friends_invite → 下载并登录 TraeWork 桌面端 → 新账号自动到账 5000 积分，直接选用 GLM-5.2 / K3 模型开始使用",
+    link: "https://www.trae.cn/work-fission/7WNKJ8J7VQR7?utm_source=copy_link&utm_medium=friends_invite",
+    updated: "2026-08-11"
   },
 
   {
