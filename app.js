@@ -470,3 +470,49 @@ if (window.gsap) {
     return () => { motionReady = false; };
   });
 }
+
+/* 关于区：点击按钮复制微信号（兼容旧浏览器降级） */
+(function initWechatCopy() {
+  const btn = document.getElementById("wechatCopy");
+  if (!btn) return;
+  const labelEl = btn.querySelector(".about-wechat-label");
+  const defaultLabel = labelEl ? labelEl.innerHTML : btn.innerHTML;
+  let resetTimer = null;
+
+  async function doCopy(text) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+    } catch (_) { /* 走降级 */ }
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand("copy"); } catch (_) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  btn.addEventListener("click", async () => {
+    const text = btn.dataset.copy || "";
+    const ok = await doCopy(text);
+    btn.classList.toggle("is-copied", ok);
+    if (labelEl) {
+      labelEl.innerHTML = ok ? "已复制 " + text + " ✓" : "复制失败，请手动复制";
+    } else {
+      btn.innerHTML = ok ? "已复制 ✓" : "复制失败";
+    }
+    if (resetTimer) clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => {
+      btn.classList.remove("is-copied");
+      if (labelEl) labelEl.innerHTML = defaultLabel;
+      else btn.innerHTML = defaultLabel;
+    }, 1800);
+  });
+})();
