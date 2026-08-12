@@ -317,6 +317,20 @@ const TOKENS = [
     updated: "2026-07-19"
   },
 
+  /* ========== 倒数第二：太行HUB（2026-08-12 新增） ========== */
+
+  {
+    name: "太行HUB（token.taiha.cn）",
+    type: "大模型",
+    modality: "DeepSeek-V4 / 通义千问-Max / GLM-4 / 豆包-Pro / 阶跃 / Kimi / 混元 / 百川3 等 · 文本+多模态",
+    rating: 5,
+    quota: "新用户注册送 2 元余额（按量抵扣）；模型价格比各大官方低 20%-37%，无充值手续费、无最低消费门槛",
+    effect: "A股上市公司旗下合规聚合平台（增值电信 + EDI 双证），一个 Key 调用中国所有顶尖模型：DeepSeek-V4 / 通义千问-Max / 智谱 GLM-4 / 豆包-Pro / 阶跃星辰 / Kimi / 混元 / 百川3 等文本模型，通义千问-VL / GLM-4V / DeepSeek-VL / 豆包视觉 / Seedance 2.5 等多模态，以及 Embedding / 语音识别 / 实时翻译等功能模型；完全兼容 OpenAI 协议，base_url https://api.taiha.cn/v1，Claude Code / Cursor / Dify 等工具即插即用；价格比官网直降 20%-37%，支持开发票与企业对公采购",
+    how: "打开注册链接注册 → 新用户到账 2 元余额 → 充值账户余额（全模型共享消耗）→ 创建 API Key → base_url 填 https://api.taiha.cn/v1 即可调用任意模型",
+    link: "https://token.taiha.cn/sign-up?aff=Ox6S",
+    updated: "2026-08-12"
+  },
+
   /* ========== 末尾：MonkeyCode（2026-08-12 新增） ========== */
 
   {
