@@ -315,6 +315,20 @@ const TOKENS = [
     how: "登录天翼云官网 → 完成实名认证 → 进入「息壤智算」→「模型广场」→ 选模型领取免费额度；额度耗尽或到期后可直接切换其他模型继续使用",
     link: "https://www.ctyun.cn/product/maas",
     updated: "2026-07-19"
+  },
+
+  /* ========== 末尾：MonkeyCode（2026-08-12 新增） ========== */
+
+  {
+    name: "MonkeyCode（长亭）",
+    type: "工具",
+    modality: "GLM / Kimi / MiniMax / Qwen / DeepSeek 等 · 全主流模型",
+    rating: 3,
+    quota: "免费档 ¥0 永久：每天 30M Token（3000 万），云开发环境 1C/4G、1 个任务并发；每日签到 100 积分，每邀请 1 位新用户 +5000 积分",
+    effect: "长亭科技（Chaitin）出品的在线 AI 编程开发平台，浏览器即用、自带云端开发环境与终端，可跑 Agent 做开发/调研/文档/数据分析，PC 与手机数据实时同步；内置 GLM/Kimi/MiniMax/Qwen/DeepSeek 等主流模型；GitHub 全量开源（AGPLv3）。⚠️ 免费档限基础模型范围 + 单任务并发",
+    how: "打开链接注册即用 → 浏览器进入控制台创建开发任务 → 免费档每天 30M Token 自动到账；建议每日签到、邀请好友多攒积分",
+    link: "https://monkeycode-ai.com/?ic=019fe974-4b9e-7186-b8a6-2901baec7c2e",
+    updated: "2026-08-12"
   }
 ];
 
