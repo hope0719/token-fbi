@@ -69,6 +69,21 @@ const TOKENS = [
     updated: "2026-07-22"
   },
 
+  /* ========== DeepSeek V4 Pro 正式版上线（2026-08-13 情报，浅橙卡） ========== */
+
+  {
+    name: "DeepSeek V4 Pro（正式版）",
+    type: "大模型",
+    tone: "orange",
+    modality: "文本模型 · 旗舰正式版（模型名 deepseek-v4-pro）",
+    rating: 5,
+    quota: "官方 API 定价：输入 ¥3 / 百万 token、输出 ¥6 / 百万 token，命中缓存低至 ¥0.025 / 百万 token",
+    effect: "DeepSeek 家族旗舰 V4 Pro 正式版静悄悄上线，已可通过 API 调用（节点 DeepSeek-V4-Pro-0813）。官方测评：终端操作 87.9 超 Opus-4.8（85）、网络安全 83.3 全场最高、自动化任务 31.8 全场第一；修 Bug 62.7 分较预览版 12.8 分全面提升；高端开发与最强闭源模型仍差一个身位。已支持 Responses API / Anthropic API。⚠️ 官方尚未官宣，以官方后续公告为准",
+    how: "打开 DeepSeek 开放平台创建 API Key → 模型名填 deepseek-v4-pro 即可调用；今天明天各网站 / App 将陆续更新支持 DeepSeek V4 Pro，可留意各平台模型列表",
+    link: "https://platform.deepseek.com",
+    updated: "2026-08-13"
+  },
+
   {
     name: "TRAE Work",
     type: "工具",
@@ -404,7 +419,7 @@ function render(type) {
   }
   if (emptyEl) emptyEl.style.display = "none";
   cardBox.innerHTML = list.map(t => `
-    <article class="card${t.limited ? ' is-limited' : ''}">
+    <article class="card${t.limited ? ' is-limited' : ''}${t.tone ? ' tone-' + t.tone : ''}">
       ${t.limited ? `<span class="card-badge" title="限时活动，截止 ${cleanText(t.limited)}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 4.25v4l2.5 1.5M13.5 8A5.5 5.5 0 1 1 2.5 8a5.5 5.5 0 0 1 11 0Z" /></svg>限时 ${fmtMd(t.limited)}</span>` : ''}
       <div class="card-top">
         <h3 class="card-name">${cleanText(t.name)}</h3>

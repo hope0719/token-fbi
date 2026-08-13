@@ -16,7 +16,7 @@
 
 ![Token FBI 站点截图](screenshot.png)
 
-站点实时展示 **大模型类 19 家、工具类 8 家**（共 27 张）的最新免费 token 情报，支持按分类筛选（全部 / 大模型 / 工具），限时活动会标注截止日期角标。
+站点实时展示 **大模型类 20 家、工具类 8 家**（共 28 张）的最新免费 token 情报，支持按分类筛选（全部 / 大模型 / 工具），限时活动会标注截止日期角标。
 
 ---
 
@@ -155,9 +155,9 @@ Token FBI 是一张**活着的免费 AI token 名录**。
 
 ---
 
-## 🏢 已收录平台（大模型类 19 · 工具类 8，共 27 家）
+## 🏢 已收录平台（大模型类 20 · 工具类 8，共 28 家）
 
-以下为截至 **2026-08-12** 的完整收录清单，按数组顺序排列（星级 ★ 随体验动态变化）：
+以下为截至 **2026-08-13** 的完整收录清单，按数组顺序排列（星级 ★ 随体验动态变化）：
 
 | # | 平台 | 类型 | 核心模型 | 星级 |
 |:--:|:---|:---|:---|:--:|
@@ -166,30 +166,31 @@ Token FBI 是一张**活着的免费 AI token 名录**。
 | 3 | 火山引擎 Ark 协作计划（字节） | 大模型 | GLM5.2 · 文本模型 | ★★★★★ |
 | 4 | 七牛云 AI 推理 | 大模型 | GLM5.2 · 文本模型 | ★★★★★ |
 | 5 | 美团 catpaw（App） | 工具 | GLM 5.2 · DeepSeek V4 Pro · Kimi K3 | ★★★★★ |
-| 6 | TRAE Work | 工具 | GLM-5.2 / Kimi K3 · 折扣价 | ★★★★ |
-| 7 | 2026 微信小程序开发大赛 | 大模型 | GLM-5.2 · 文本模型（Coding Plan 免费 Token） | ★★★★ |
-| 8 | 硅基流动 SiliconFlow | 大模型 | GLM5.2 等全模型 · 文本/多模态 | ★★★★ |
-| 9 | NVIDIA NIM 免费 API | 大模型 | 多模型聚合（文本 / 多模态） | ★★★★★ |
-| 10 | 商汤 Token Plan（sensenova） | 大模型 | SenseNova 6.7 / DeepSeek V4 Flash · 日日新 | ★★★ |
-| 11 | Agnes AI | 大模型 | 全模态模型 | ★★★★★ |
-| 12 | 美团 longcat 大模型 | 大模型 | LongCat 文本模型 | ★★★★★ |
-| 13 | OpenRouter | 大模型 | 35+ 聚合模型（Kimi K2 / Qwen3 / Llama） | ★★★★ |
-| 14 | 阶跃星辰 StepFun | 大模型 | 多模态大模型（活动已结束，仅新用户 10 额度） | — |
-| 15 | BazaarLink | 大模型 | DeepSeek V4 Flash · 1M 上下文 | ★★ |
-| 16 | AtomCode CodingPlan | 工具 | GLM-5.2 / DeepSeek-V4-Flash / Qwen3-VL | ★★ |
-| 17 | HuggingFace Inference API | 大模型 | DeepSeek V4 / Qwen3 / Mistral 等 | ★★ |
-| 18 | 月之暗面 Kimi 开放平台 | 大模型 | Kimi K2.6 / K2.5 · 长上下文 MoE | ★★ |
-| 19 | 魔搭社区 ModelScope | 大模型 | Qwen / LUX / SD 等 · 文本+多模态（魔豆计费） | ★ |
-| 20 | OpenStarry | 工具 | GLM 5.2 / DeepSeek V4 / Kimi K2.6 等 40+ | ★ |
-| 21 | OpenCode Zen | 工具 | DeepSeek V4 Flash Free / MiMo-V2.5 等 | ★★ |
-| 22 | 微信 AI 小程序成长计划（云开发 CloudBase） | 大模型 | Hy3 + Hy Image 3.0 · 文本/生图 | ★★★ |
-| 23 | ZenMux | 大模型 | DeepSeek V4 · Kimi K2.7 · GLM 5.2 · Step | ★★★ |
-| 24 | 腾讯云 TokenHub | 大模型 | Hy3 · DeepSeek V4 · GLM-5 · Kimi-K2.5 | ★★★ |
-| 25 | 天翼云息壤（电信） | 大模型 | GLM-5 · DeepSeek V4 · Qwen3.5 · Doubao 等 | ★★ |
-| 26 | 太行HUB（token.taiha.cn） | 大模型 | DeepSeek-V4 / 千问-Max / GLM-4 / 豆包-Pro 等 | ★★★★★ |
-| 27 | MonkeyCode（长亭） | 工具 | GLM / Kimi / MiniMax / Qwen / DeepSeek 等 | ★★★ |
+| 6 | DeepSeek V4 Pro（正式版） | 大模型 | 文本模型 · 旗舰正式版（模型名 deepseek-v4-pro） | ★★★★★ |
+| 7 | TRAE Work | 工具 | GLM-5.2 / Kimi K3 · 折扣价 | ★★★★ |
+| 8 | 2026 微信小程序开发大赛 | 大模型 | GLM-5.2 · 文本模型（Coding Plan 免费 Token） | ★★★★ |
+| 9 | 硅基流动 SiliconFlow | 大模型 | GLM5.2 等全模型 · 文本/多模态 | ★★★★ |
+| 10 | NVIDIA NIM 免费 API | 大模型 | 多模型聚合（文本 / 多模态） | ★★★★★ |
+| 11 | 商汤 Token Plan（sensenova） | 大模型 | SenseNova 6.7 / DeepSeek V4 Flash · 日日新 | ★★★ |
+| 12 | Agnes AI | 大模型 | 全模态模型 | ★★★★★ |
+| 13 | 美团 longcat 大模型 | 大模型 | LongCat 文本模型 | ★★★★★ |
+| 14 | OpenRouter | 大模型 | 35+ 聚合模型（Kimi K2 / Qwen3 / Llama） | ★★★★ |
+| 15 | 阶跃星辰 StepFun | 大模型 | 多模态大模型（活动已结束，仅新用户 10 额度） | — |
+| 16 | BazaarLink | 大模型 | DeepSeek V4 Flash · 1M 上下文 | ★★ |
+| 17 | AtomCode CodingPlan | 工具 | GLM-5.2 / DeepSeek-V4-Flash / Qwen3-VL | ★★ |
+| 18 | HuggingFace Inference API | 大模型 | DeepSeek V4 / Qwen3 / Mistral 等 | ★★ |
+| 19 | 月之暗面 Kimi 开放平台 | 大模型 | Kimi K2.6 / K2.5 · 长上下文 MoE | ★★ |
+| 20 | 魔搭社区 ModelScope | 大模型 | Qwen / LUX / SD 等 · 文本+多模态（魔豆计费） | ★ |
+| 21 | OpenStarry | 工具 | GLM 5.2 / DeepSeek V4 / Kimi K2.6 等 40+ | ★ |
+| 22 | OpenCode Zen | 工具 | DeepSeek V4 Flash Free / MiMo-V2.5 等 | ★★ |
+| 23 | 微信 AI 小程序成长计划（云开发 CloudBase） | 大模型 | Hy3 + Hy Image 3.0 · 文本/生图 | ★★★ |
+| 24 | ZenMux | 大模型 | DeepSeek V4 · Kimi K2.7 · GLM 5.2 · Step | ★★★ |
+| 25 | 腾讯云 TokenHub | 大模型 | Hy3 · DeepSeek V4 · GLM-5 · Kimi-K2.5 | ★★★ |
+| 26 | 天翼云息壤（电信） | 大模型 | GLM-5 · DeepSeek V4 · Qwen3.5 · Doubao 等 | ★★ |
+| 27 | 太行HUB（token.taiha.cn） | 大模型 | DeepSeek-V4 / 千问-Max / GLM-4 / 豆包-Pro 等 | ★★★★★ |
+| 28 | MonkeyCode（长亭） | 工具 | GLM / Kimi / MiniMax / Qwen / DeepSeek 等 | ★★★ |
 
-> 📌 **降级区说明**：第 15~25 名（BazaarLink / AtomCode / HuggingFace / 月之暗面 / 魔搭 / OpenStarry / OpenCode Zen / 微信成长计划 / ZenMux / TokenHub / 天翼云）于 **2026-08-07** 各扣两星并移至名录末位观察，恢复需重新评估。
+> 📌 **降级区说明**：第 16~26 名（BazaarLink / AtomCode / HuggingFace / 月之暗面 / 魔搭 / OpenStarry / OpenCode Zen / 微信成长计划 / ZenMux / TokenHub / 天翼云）于 **2026-08-07** 各扣两星并移至名录末位观察，恢复需重新评估。
 
 ---
 
@@ -274,6 +275,7 @@ token-fbi/
 
 ## 🔄 最近更新
 
+- **2026-08-13**：新增「DeepSeek V4 Pro（正式版）」情报卡（大模型类，旗舰正式版已可经 API 调用：输入 ¥3 / 百万 token、输出 ¥6 / 百万 token，官方测评多项超 Opus-4.8），评 5 星，浅橙色卡置 #6；总收录升至 28 张（大模型类 20 · 工具类 8）
 - **2026-08-12（晚间）**：新增「太行HUB（token.taiha.cn）」卡片（大模型类，A股上市公司旗下国产模型聚合平台，新用户送 2 元余额，价格比官网低 20%-37%），评 5 星，置 #26 倒数第二；总收录升至 27 张（大模型类 19 · 工具类 8）
 - **2026-08-12（下午）**：新增「MonkeyCode（长亭）」卡片（工具类，长亭科技出品开源 AI 编程平台，免费档每天 30M Token，签到/邀请可赚积分），评 3 星，置末尾；总收录升至 26 张（大模型类 18 · 工具类 8）
 - **2026-08-12**：新增「2026 微信小程序开发大赛」卡片（大模型类，报名大赛免费领 GLM-5.2 Coding Plan Token，200K 上下文 / 48K 输出 / 每月约 1.8 万次请求），评 4 星，置 #7；总收录升至 25 张（大模型类 18 · 工具类 7）

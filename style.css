@@ -83,6 +83,13 @@ a { color: inherit; }
 .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: color-mix(in srgb, var(--surface) 78%, transparent); box-shadow: 0 14px 34px rgba(0, 0, 0, .12); transition: border-color .2s var(--ease-out), background .2s var(--ease-out), transform .2s var(--ease-out), box-shadow .2s var(--ease-out); }
 .card:hover { border-color: color-mix(in srgb, var(--accent) 68%, var(--line)); background: var(--surface-raised); transform: translateY(-3px); box-shadow: 0 22px 46px rgba(0, 0, 0, .24); }
+
+/* 浅橙色情报卡：用于新模型上线等热点情报 */
+.card.tone-orange { background: linear-gradient(150deg, rgba(255, 166, 61, .14), rgba(255, 120, 32, .04)); border-color: rgba(255, 166, 61, .5); }
+.card.tone-orange:hover { border-color: rgba(255, 166, 61, .85); background: linear-gradient(150deg, rgba(255, 166, 61, .18), rgba(255, 120, 32, .06)); }
+.card.tone-orange .card-rating { color: #ff9f2e; }
+.card.tone-orange .card-link { border-color: #ff9f2e; background: #ff9f2e; color: #2b1602; }
+.card.tone-orange .card-link:hover { border-color: #ffb84d; background: #ffb84d; box-shadow: 0 8px 18px rgba(255, 140, 40, .28); }
 .card-badge { position: absolute; top: 14px; right: 14px; display: inline-flex; align-items: center; gap: 5px; min-height: 29px; padding: 5px 9px; border: 1px solid color-mix(in srgb, var(--accent) 70%, var(--line)); border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 800; font-variant-numeric: tabular-nums; }
 .card-badge svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
 .card.is-limited .card-top { padding-right: 92px; }
