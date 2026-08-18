@@ -188,7 +188,7 @@ Token FBI 是一张**活着的免费 AI token 名录**。
 | 25 | 天翼云息壤（电信） | 大模型 | GLM-5 · DeepSeek V4 · Qwen3.5 · Doubao 等 | ★★ |
 | 26 | 太行HUB（token.taiha.cn） | 大模型 | DeepSeek-V4 / 千问-Max / GLM-4 / 豆包-Pro 等 | ★★★★★ |
 | 27 | MonkeyCode（长亭） | 工具 | GLM / Kimi / MiniMax / Qwen / DeepSeek 等 | ★★★ |
-| 28 | 点点 AI（小红书 dots3-note-prev） | 大模型 | dots3-note-prev · 文本/图像/视频/音频多模态 MoE（512K 上下文） | ★★★★★ |
+| 28 | 点点 AI（小红书 dots3-note-prev） | 大模型 | dots3-note-prev · 文本/图像/视频/音频多模态 MoE（512K·速度快·不擅长写代码） | ★★★★★ |
 
 > 📌 **降级区说明**：第 15~25 名（BazaarLink / AtomCode / HuggingFace / 月之暗面 / 魔搭 / OpenStarry / OpenCode Zen / 微信成长计划 / ZenMux / TokenHub / 天翼云）于 **2026-08-07** 各扣两星并移至名录末位观察，恢复需重新评估。
 
