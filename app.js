@@ -69,21 +69,6 @@ const TOKENS = [
     updated: "2026-07-22"
   },
 
-  /* ========== DeepSeek V4 Pro 正式版上线（2026-08-13 情报，浅橙卡） ========== */
-
-  {
-    name: "DeepSeek V4 Pro（正式版）",
-    type: "大模型",
-    tone: "orange",
-    modality: "文本模型 · 旗舰正式版（模型名 deepseek-v4-pro）",
-    rating: 5,
-    quota: "官方 API 定价：输入 ¥3 / 百万 token、输出 ¥6 / 百万 token，命中缓存低至 ¥0.025 / 百万 token",
-    effect: "DeepSeek 家族旗舰 V4 Pro 正式版静悄悄上线，已可通过 API 调用（节点 DeepSeek-V4-Pro-0813）。官方测评：终端操作 87.9 超 Opus-4.8（85）、网络安全 83.3 全场最高、自动化任务 31.8 全场第一；修 Bug 62.7 分较预览版 12.8 分全面提升；高端开发与最强闭源模型仍差一个身位。已支持 Responses API / Anthropic API。⚠️ 官方尚未官宣，以官方后续公告为准",
-    how: "打开 DeepSeek 开放平台创建 API Key → 模型名填 deepseek-v4-pro 即可调用；今天明天各网站 / App 将陆续更新支持 DeepSeek V4 Pro，可留意各平台模型列表",
-    link: "https://platform.deepseek.com",
-    updated: "2026-08-13"
-  },
-
   {
     name: "TRAE Work",
     type: "工具",
@@ -99,11 +84,11 @@ const TOKENS = [
   {
     name: "2026 微信小程序开发大赛",
     type: "大模型",
-    modality: "GLM-5.2 · 文本模型（Coding Plan 免费 Token）",
+    modality: "DeepSeek V4 Flash / GLM-5.2 · 文本模型（Coding Plan 免费 Token）",
     rating: 4,
-    quota: "报名大赛免费领 GLM-5.2 独立 Token：输入上下文 200K、最大输出 48K、每 5 小时约 1200 次、每周约 9000 次、每月约 18000 次请求；工具调用与思考模式已开启（暂不支持图片输入）",
-    effect: "微信官方开发者大赛发放的 GLM-5.2 免费额度，OpenAI 兼容格式、即领即用，可直接填进 Cursor / Claude Code / OpenCode 等支持自定义 base_url 的编程工具；GLM-5.2 为智谱旗舰 Coding 模型，长程任务与工程接管能力强，适合小程序开发、代码重构与长文本处理",
-    how: "报名「2026 微信小程序开发大赛」→ 报名成功后约 7-10 天收到大赛组委会邮件（内含领取链接 chataPI.weixin.qq.com）→ 用报名大赛的微信扫码登录 → 点击「申请 Token」即可拿到 GLM-5.2 独立 Token（按报名顺序分批发放，首次没领到可等下一批邮件再试）",
+    quota: "报名大赛免费领独立 Token：有人发 DeepSeek V4 Flash，有人发 GLM-5.2（按抽取批次不定）；GLM-5.2 输入上下文 200K、最大输出 48K、每 5 小时约 1200 次、每周约 9000 次、每月约 18000 次请求；工具调用与思考模式已开启（暂不支持图片输入）",
+    effect: "微信官方开发者大赛发放的免费编程 Token，无论是 DeepSeek V4 Flash 还是 GLM-5.2，实际用起来都非常丝滑、效果好；OpenAI 兼容格式、即领即用，可直接填进 Cursor / Claude Code / OpenCode 等支持自定义 base_url 的编程工具；GLM-5.2 为智谱旗舰 Coding 模型，长程任务与工程接管能力强，适合小程序开发、代码重构与长文本处理",
+    how: "报名「2026 微信小程序开发大赛」→ 报名成功后约 7-10 天收到大赛组委会邮件（内含领取链接 chataPI.weixin.qq.com）→ 用报名大赛的微信扫码登录 → 点击「申请 Token」（按报名顺序分批发放，到手可能是 DeepSeek V4 Flash 或 GLM-5.2，首次没领到可等下一批邮件再试）",
     link: "https://contest.weixin.qq.com/eventDetails?id=4598379302114656257",
     updated: "2026-08-18"
   },
