@@ -97,6 +97,18 @@ const TOKENS = [
   },
 
   {
+    name: "2026 微信小程序开发大赛",
+    type: "大模型",
+    modality: "GLM-5.2 · 文本模型（Coding Plan 免费 Token）",
+    rating: 4,
+    quota: "报名大赛免费领 GLM-5.2 独立 Token：输入上下文 200K、最大输出 48K、每 5 小时约 1200 次、每周约 9000 次、每月约 18000 次请求；工具调用与思考模式已开启（暂不支持图片输入）",
+    effect: "微信官方开发者大赛发放的 GLM-5.2 免费额度，OpenAI 兼容格式、即领即用，可直接填进 Cursor / Claude Code / OpenCode 等支持自定义 base_url 的编程工具；GLM-5.2 为智谱旗舰 Coding 模型，长程任务与工程接管能力强，适合小程序开发、代码重构与长文本处理",
+    how: "报名「2026 微信小程序开发大赛」→ 报名成功后约 7-10 天收到大赛组委会邮件（内含领取链接 chataPI.weixin.qq.com）→ 用报名大赛的微信扫码登录 → 点击「申请 Token」即可拿到 GLM-5.2 独立 Token（按报名顺序分批发放，首次没领到可等下一批邮件再试）",
+    link: "https://contest.weixin.qq.com/eventDetails?id=4598379302114656257",
+    updated: "2026-08-18"
+  },
+
+  {
     name: "硅基流动 SiliconFlow",
     type: "大模型",
     modality: "GLM5.2 等全模型 · 文本/多模态",
