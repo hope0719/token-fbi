@@ -358,6 +358,20 @@ const TOKENS = [
     how: "打开链接注册即用 → 浏览器进入控制台创建开发任务 → 免费档每天 30M Token 自动到账；建议每日签到、邀请好友多攒积分",
     link: "https://monkeycode-ai.com/?ic=019fe974-4b9e-7186-b8a6-2901baec7c2e",
     updated: "2026-08-12"
+  },
+
+  /* ========== 末尾：点点 AI（小红书 dots3-note-prev，2026-08-18 新增） ========== */
+
+  {
+    name: "点点 AI（小红书 dots3-note-prev）",
+    type: "大模型",
+    modality: "dots3-note-prev · 文本 / 图像 / 视频 / 音频 多模态 MoE（512K 上下文）",
+    rating: 5,
+    quota: "限时免费公测中：20 RPM（每分钟请求）、50 万 TPM（每分钟 Token），官方暂未公布硬性上限",
+    effect: "小红书 dots 模型实验室官方 AI 平台，自研 dots3-note-prev 多模态 MoE（280B 总参 / 16B 激活，512K 超长上下文），统一理解文本 / 图像 / 视频 / 音频，针对长程 Agent 任务优化，内置 Self-Critiquing 自主纠错；小红书官方评测称其综合表现优于 GLM-5.2。国内用户小红书扫码或手机号即可登录，门槛低",
+    how: "登录 dots.ai 用小红书扫码或手机号注册 → 进入 API Key 页面创建密钥 → 客户端 base_url 填 https://note3-prev-api.askdiandian.com/v1、模型名填 dots3-note-prev（OpenAI 兼容，即插即用）",
+    link: "https://dots.ai/platform/apikeys",
+    updated: "2026-08-18"
   }
 ];
 
