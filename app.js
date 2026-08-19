@@ -534,6 +534,11 @@ const DONOTS = [
     name: "腾讯云 TokenHub",
     why: "可使用量极少，仅新用户可使用 100 万到 300 万",
     link: "https://cloud.tencent.com/product/tokenhub"
+  },
+  {
+    name: "基元律动",
+    why: "目前看起来极不稳定，且多名用户反馈体验较差",
+    link: "https://tokenrhythm.studio"
   }
 ];
 
