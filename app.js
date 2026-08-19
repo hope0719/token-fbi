@@ -357,6 +357,20 @@ const TOKENS = [
     how: "登录 dots.ai 用小红书扫码或手机号注册 → 进入 API Key 页面创建密钥 → 客户端 base_url 填 https://note3-prev-api.askdiandian.com/v1、模型名填 dots3-note-prev（OpenAI 兼容，即插即用）",
     link: "https://dots.ai/platform/apikeys",
     updated: "2026-08-18"
+  },
+
+  /* ========== 末尾：TeleAgent（星辰超级智能体，2026-08-19 新增） ========== */
+
+  {
+    name: "TeleAgent（星辰超级智能体）",
+    type: "工具",
+    modality: "中国电信星辰大模型 · 系统级 AI Agent（对话 / 编程 / 深度调研 / 文档办公）",
+    rating: 3,
+    quota: "每天 6000 万 token（官方活动口径）；桌面版本地驻留，数据存于本地硬盘，不强制上传",
+    effect: "中国电信天翼 AI 出品的「星辰超级智能体」桌面版，系统级 AI 办公助手（Windows 10+/macOS 13+）：可整理文件、Word/Excel 提取与汇总、深度调研与资讯抓取、写文档做 PPT、写代码做应用；跨软件自由穿梭（搜索网页、算 Excel、填 Word），思路透明可随时介入修正，支持可扩展 Skill、自主任务调度、持久化记忆；本地驻留适合处理财务报表、商业机密等敏感信息",
+    how: "打开天翼 AI 官网 → 选择 Windows 或 macOS 对应桌面版下载安装 → 登录中国电信账号 → 启动「星辰超级智能体」即可使用（每日 6000 万 token 额度自动到账）",
+    link: "https://www.teleai.com.cn/product/teleagent",
+    updated: "2026-08-19"
   }
 ];
 
