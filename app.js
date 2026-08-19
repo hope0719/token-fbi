@@ -11,7 +11,7 @@ const TOKENS = [
     type: "工具",
     modality: "HY3 · 混元3 · 文本模型",
     rating: 5,
-    quota: "HY3（混元3）模型限时免费，官方已宣布延长至 2026-08-31",
+    quota: "HY3（混元3）模型限时免费，官方已宣布延长至 2026-08-31；注意 HY3 有每日用量限制，重置周期为 24 小时",
     effect: "腾讯系 AI 工作台，HY3（混元3）能力可直接调用，速度很快；写代码、查资料、做自动化都好用。Hy3 限免期间连续两周全球调用量第一（周调用 11.5 万亿 Token），因用户呼声限免从 7/22 延长到 8/31",
     how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免延至 8/31，抓紧用）",
     link: "https://www.codebuddy.cn/events/invite?inviteCode=akek8mgwjqlt",
@@ -24,11 +24,11 @@ const TOKENS = [
   {
     name: "TRAE Work",
     type: "工具",
-    modality: "GLM-5.2 / Kimi K3 · 折扣价",
+    modality: "GLM-5.2 / DeepSeek V4 Flash / 千问 3.8 Max · 不支持 Kimi K3",
     rating: 4,
     quota: "通过我的分享链接登录桌面端，新注册用户一次性获得 5000 积分",
-    effect: "TraeWork AI 办公平台，可一站式搞定各类办公与创作任务。模型调用走折扣价通道，明确使用 GLM-5.2 与 Kimi K3 两款新模型，相比官方原价更低",
-    how: "打开我的分享链接 https://www.trae.cn/work-fission/H4L7Y28J694N?utm_source=copy_link&utm_medium=friends_invite → 下载并登录 TraeWork 桌面端 → 新账号自动到账 5000 积分，直接选用 GLM-5.2 / K3 模型开始使用",
+    effect: "TraeWork AI 办公平台，可一站式搞定各类办公与创作任务。模型调用走折扣价通道，支持 GLM-5.2、DeepSeek V4 Flash、千问 3.8 Max，相比官方原价更低（注意：不支持 Kimi K3）",
+    how: "打开我的分享链接 https://www.trae.cn/work-fission/H4L7Y28J694N?utm_source=copy_link&utm_medium=friends_invite → 下载并登录 TraeWork 桌面端 → 新账号自动到账 5000 积分，直接选用 GLM-5.2 / DeepSeek V4 Flash / 千问 3.8 Max 模型开始使用",
     link: "https://www.trae.cn/work-fission/H4L7Y28J694N?utm_source=copy_link&utm_medium=friends_invite",
     updated: "2026-08-19"
   },
@@ -60,10 +60,10 @@ const TOKENS = [
   {
     name: "七牛云 AI 推理",
     type: "大模型",
-    modality: "GLM5.2 · 文本模型",
+    modality: "千问 3.8 Max / DeepSeek V4 Flash / Kimi K3 · 文本模型",
     rating: 5,
-    quota: "300 万 token，新用户再送 1000 万 token（均可直接用于 GLM5.2）",
-    effect: "直接用 GLM5.2，免工具调用，注册登录即可拿 API",
+    quota: "300 万 token，新用户再送 1000 万 token（可直接用于千问 3.8 Max / DeepSeek V4 Flash / Kimi K3）",
+    effect: "直接调用千问 3.8 Max、DeepSeek V4 Flash、Kimi K3 等热门模型，免工具调用，注册登录即可拿 API",
     how: "访问 https://s.qiniu.com/VV7Zfa 注册登录，到 https://portal.qiniu.com/ai-inference/api-key 创建 API Key（注意：不要在微信内打开）",
     link: "https://s.qiniu.com/VV7Zfa",
     updated: "2026-07-14"
@@ -72,11 +72,11 @@ const TOKENS = [
   {
     name: "美团 catpaw（App）",
     type: "工具",
-    modality: "GLM 5.2 · DeepSeek V4 Pro · Kimi K3 等 · 多模型聚合",
+    modality: "LongCat 等 · 多模型聚合（LongCat 免费）",
     rating: 5,
-    quota: "新用户登录即送 1200 积分（此前为 500 次兑换额度），日常调用够用",
-    effect: "美团旗下 AI App，已接入 GLM 5.2、DeepSeek V4 Pro、Kimi K3 等热门模型；界面类 WorkBuddy / Codex，对话 + 编程场景全覆盖，Kimi K3 这类平时排队挤爆的模型这里能直接调",
-    how: "打开 catpaw.meituan.com 注册登录即领 1200 积分 → 在模型列表选 GLM 5.2 / DeepSeek V4 Pro / Kimi K3 等直接使用（注意：装 App 后若曾装过 catpaw ai，可能出现图标重复，属已知现象）",
+    quota: "新用户登录即送 1200 积分（此前为 500 次兑换额度），日常调用够用；longcat（LongCat）模型当前免费",
+    effect: "美团旗下 AI App，多模型聚合，当前 longcat（LongCat）模型免费不限量使用；界面类 WorkBuddy / Codex，对话 + 编程场景全覆盖",
+    how: "打开 catpaw.meituan.com 注册登录即领 1200 积分 → 在模型列表选 LongCat 等直接使用，LongCat 当前免费（注意：装 App 后若曾装过 catpaw ai，可能出现图标重复，属已知现象）",
     link: "https://catpaw.meituan.com/",
     updated: "2026-07-22"
   },
@@ -196,18 +196,6 @@ const TOKENS = [
   },
 
   {
-    name: "AtomCode CodingPlan",
-    type: "工具",
-    modality: "GLM-5.2 / DeepSeek-V4-Flash / Qwen3-VL · 编程模型",
-    rating: 2,
-    quota: "免费体验版每日 10:00 开抢（每日 150 个名额，Pro 体验版 150 人/日），5 小时滚动窗口无限续杯，无需绑卡",
-    effect: "开源终端 AI 编程助手（Claude Code 最佳平替），CodingPlan 免费版可调用 GLM-5.2、DeepSeek-V4-Flash、Qwen3-VL 等顶流模型，支持 Windows / macOS / Linux / 鸿蒙 PC；仅在 AtomCode 客户端内使用，不能当通用 API",
-    how: "打开 atomcode.atomgit.com 下载 AtomCode（AtomGit 账号通用）→ 进入「CodingPlan」选「GLM-5.2 免费体验版」→ 每天 10:00 准点抢名额（名额 7 天/30 天有效，可续）",
-    link: "https://atomcode.atomgit.com",
-    updated: "2026-07-24"
-  },
-
-  {
     name: "HuggingFace Inference API",
     type: "大模型",
     modality: "DeepSeek V4 / Qwen3 / Mistral 等 · 开源模型",
@@ -283,10 +271,10 @@ const TOKENS = [
   {
     name: "ZenMux",
     type: "大模型",
-    modality: "DeepSeek V4 Pro/Flash · Kimi K2.7 · GLM 5.2 · Step 3.7 Flash 等",
+    modality: "GLM 5.3 · DeepSeek V4 Pro/Flash · Kimi K2.7 · Step 3.7 Flash 等",
     rating: 3,
-    quota: "DeepSeek V4 Pro/Flash 永久免费无限调用（无上限、无需实名、无需充值）",
-    effect: "全球首个支持保险赔付机制的企业级大模型聚合平台，一个 API Key 接入 100+ 模型。目前独家开放 DeepSeek V4 Pro/Flash、Kimi K2.7 Code、GLM 5.2、Step 3.7 Flash 等永久免费通道，国内低延迟，完美适配 Claude Code、OpenClaw、Cursor 等工具",
+    quota: "GLM 5.3 限时免费一周；DeepSeek V4 Pro/Flash 永久免费无限调用（无上限、无需实名、无需充值）",
+    effect: "全球首个支持保险赔付机制的企业级大模型聚合平台，一个 API Key 接入 100+ 模型。目前 GLM 5.3 限免一周，并独家开放 DeepSeek V4 Pro/Flash、Kimi K2.7 Code、Step 3.7 Flash 等永久免费通道，国内低延迟，完美适配 Claude Code、OpenClaw、Cursor 等工具",
     how: "打开 zenmux.ai 注册（支持邮箱/GitHub/谷歌一键登录）→ 进入 PAYG API 创建密钥 → 勾选 free 模型权限（如 deepseek/deepseek-v4-pro-free）→ 复制 API Key 配置到客户端",
     link: "https://zenmux.ai",
     updated: "2026-07-19"
