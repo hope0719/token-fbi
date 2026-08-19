@@ -100,14 +100,14 @@ a { color: inherit; }
 .card-badge svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
 .card.is-limited .card-top { padding-right: 92px; }
 
-/* ========== 观望名单（行式长条矩形，一行一项） ========== */
+/* ========== 观望名单（行式长条矩形，标题/一句话/立即领取同一行） ========== */
 .watchlist-panel { padding: 58px 0 68px; }
 .watchout-rows { display: flex; flex-direction: column; gap: 10px; margin-top: 26px; }
 .row-watchout {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 16px 20px;
+  gap: 12px;
+  padding: 14px 18px;
   border-radius: 12px;
   border: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
   background: color-mix(in srgb, var(--surface) 55%, transparent);
@@ -121,14 +121,14 @@ a { color: inherit; }
 .row-watchout-main {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   flex: 1 1 auto;
   min-width: 0;
 }
 .row-watchout-num {
   flex: none;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -141,12 +141,15 @@ a { color: inherit; }
 }
 .row-watchout-name {
   margin: 0;
-  flex: none;
+  flex: 0 1 auto;
+  min-width: 0;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: -.01em;
   color: var(--ink);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .row-watchout-tag {
   flex: none;
@@ -186,11 +189,14 @@ a { color: inherit; }
 }
 .row-watchout-action svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
 .row-watchout-action:hover { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); transform: translateY(-1px); }
-@media (max-width: 720px) {
-  .row-watchout { flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 16px; }
-  .row-watchout-main { flex-wrap: wrap; gap: 8px 10px; }
-  .row-watchout-why { white-space: normal; }
-  .row-watchout-action { align-self: stretch; justify-content: center; }
+/* 窄屏仍保持同一行：压缩间距字号、隐藏序号，标题与一句话省略号截断，立即领取按钮始终可见 */
+@media (max-width: 480px) {
+  .row-watchout { gap: 8px; padding: 12px 12px; }
+  .row-watchout-main { gap: 6px; }
+  .row-watchout-num { display: none; }
+  .row-watchout-name { font-size: 14px; }
+  .row-watchout-why { font-size: 12px; }
+  .row-watchout-action { padding: 6px 10px; font-size: 12px; }
 }
 .card-top { display: grid; gap: 10px; }
 .card-name { margin: 0; font-size: 19px; line-height: 1.32; letter-spacing: -.025em; }
