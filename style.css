@@ -99,6 +99,17 @@ a { color: inherit; }
 .card-badge { position: absolute; top: 14px; right: 14px; display: inline-flex; align-items: center; gap: 5px; min-height: 29px; padding: 5px 9px; border: 1px solid color-mix(in srgb, var(--accent) 70%, var(--line)); border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 800; font-variant-numeric: tabular-nums; }
 .card-badge svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
 .card.is-limited .card-top { padding-right: 92px; }
+
+/* ========== 观望名单（不推荐优先领取的简洁极简卡） ========== */
+.watchlist-panel { padding: 58px 0 68px; }
+.card-watchout { border-color: color-mix(in srgb, var(--muted) 30%, var(--line)); background: color-mix(in srgb, var(--surface) 52%, transparent); }
+.card-watchout:hover { border-color: color-mix(in srgb, var(--muted) 55%, var(--line)); background: var(--surface-raised); box-shadow: 0 18px 38px rgba(0, 0, 0, .18); transform: translateY(-2px); }
+.card-watchout .card-top { flex-direction: row; align-items: center; gap: 10px; }
+.card-watchout-tag { flex: none; border: 1px solid color-mix(in srgb, var(--muted) 42%, var(--line)); border-radius: 999px; padding: 4px 9px; color: var(--faint); font-size: 11px; font-weight: 800; letter-spacing: .02em; }
+.watchout-why { margin-top: 10px; color: var(--faint); font-size: 14px; line-height: 1.6; }
+.watchout-footer { grid-template-columns: 1fr; padding-top: 20px; margin-top: 0; }
+.watchout-footer .card-link { grid-column: auto; justify-self: start; border-color: var(--line); background: transparent; color: var(--muted); }
+.watchout-footer .card-link:hover { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); box-shadow: 0 8px 18px rgba(16, 185, 129, .18); }
 .card-top { display: grid; gap: 10px; }
 .card-name { margin: 0; font-size: 19px; line-height: 1.32; letter-spacing: -.025em; }
 .card-tags { display: flex; align-items: flex-start; }

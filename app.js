@@ -488,6 +488,38 @@ if (wechatTrigger && qrcodeBox) {
 
 render("all");
 
+/* ========== 观望名单（不推荐优先领取） ========== */
+const DONOTS = [
+  {
+    name: "火山引擎 Ark 协作计划（字节）",
+    why: "可用模型数量、分量都比较少，性价比一般；唯一亮点是每日可重置额度",
+    link: "https://console.volcengine.com/ark/region:cn-beijing/openManagement/rewardPlan"
+  }
+];
+
+(function renderWatchout() {
+  const box = document.getElementById("watchout-cards");
+  const emptyEl = document.getElementById("watchout-empty");
+  if (!box) return;
+  if (!DONOTS.length) {
+    if (emptyEl) emptyEl.style.display = "block";
+    return;
+  }
+  if (emptyEl) emptyEl.style.display = "none";
+  box.innerHTML = DONOTS.map((item, i) => `
+    <article class="card card-watchout">
+      <div class="card-top">
+        <h3 class="card-name">${cleanText(item.name)}</h3>
+        <span class="card-modality card-watchout-tag">观望</span>
+      </div>
+      <div class="watchout-why">${cleanText(item.why)}</div>
+      <div class="card-footer watchout-footer">
+        <a class="card-link" href="${item.link}" target="_blank" rel="noopener">立即领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>
+      </div>
+    </article>
+  `).join("");
+})();
+
 /* 轻量动效：失败时页面保持完全可读，减少动态效果偏好下不执行。 */
 if (window.gsap) {
   const motion = window.gsap.matchMedia();
