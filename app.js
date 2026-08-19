@@ -159,12 +159,12 @@ const TOKENS = [
     name: "OpenRouter",
     type: "大模型",
     modality: "35+ 聚合模型（Kimi K2 / Qwen3-Next-80B / Llama 等）",
-    rating: 4,
+    rating: 3,
     quota: "注册即享永久免费模型（BYOK 用户每月 100 万次请求）；免费模型每日 50 次（充值 $10 后升至 1000 次/日）",
-    effect: "一站式聚合 500+ 模型（GPT/Claude/Gemini/Kimi/DeepSeek 等），OpenAI 兼容接口，一个 Key 切所有模型，免费层够日常原型测试",
-    how: "打开 openrouter.ai 注册（无需信用卡）→ 进入 Keys 页创建 API Key → 选 :free 后缀模型直接调用（如 kimi/kimi-k2:free）",
+    effect: "一站式聚合 500+ 模型（GPT/Claude/Gemini/Kimi/DeepSeek 等），OpenAI 兼容接口，一个 Key 切所有模型。⚠️ 实测反馈：GLM-5.2(free) 当前报 429 错误用不了（限流/上游不可用），免费模型可用性不稳定",
+    how: "打开 openrouter.ai 注册（无需信用卡）→ 进入 Keys 页创建 API Key → 选 :free 后缀模型直接调用（如 kimi/kimi-k2:free）；⚠️ GLM-5.2(free) 实测报 429 无法调用，建议优先用其他 :free 模型",
     link: "https://openrouter.ai",
-    updated: "2026-07-17"
+    updated: "2026-08-19"
   },
 
   /* ========== 末尾：阶跃星辰（活动已结束，新用户仅 10 额度，0 星） ========== */
@@ -272,12 +272,12 @@ const TOKENS = [
     name: "ZenMux",
     type: "大模型",
     modality: "GLM 5.3 · DeepSeek V4 Pro/Flash · Kimi K2.7 · Step 3.7 Flash 等",
-    rating: 3,
+    rating: 2,
     quota: "GLM 5.3 限时免费一周；DeepSeek V4 Pro/Flash 永久免费无限调用（无上限、无需实名、无需充值）",
-    effect: "全球首个支持保险赔付机制的企业级大模型聚合平台，一个 API Key 接入 100+ 模型。目前 GLM 5.3 限免一周，并独家开放 DeepSeek V4 Pro/Flash、Kimi K2.7 Code、Step 3.7 Flash 等永久免费通道，国内低延迟，完美适配 Claude Code、OpenClaw、Cursor 等工具",
-    how: "打开 zenmux.ai 注册（支持邮箱/GitHub/谷歌一键登录）→ 进入 PAYG API 创建密钥 → 勾选 free 模型权限（如 deepseek/deepseek-v4-pro-free）→ 复制 API Key 配置到客户端",
+    effect: "企业级大模型聚合平台，一个 API Key 接入 100+ 模型，国内低延迟。⚠️ 实测反馈：GLM 5.3 当前报 500 错误用不了；DeepSeek V4 Pro/Flash、Kimi K2.7 Code、Step 3.7 Flash 等永久免费通道仍可正常调用",
+    how: "打开 zenmux.ai 注册（支持邮箱/GitHub/谷歌一键登录）→ 进入 PAYG API 创建密钥 → 勾选 free 模型权限（如 deepseek/deepseek-v4-pro-free）→ 复制 API Key 配置到客户端；⚠️ GLM 5.3 实测报 500 无法调用",
     link: "https://zenmux.ai",
-    updated: "2026-07-19"
+    updated: "2026-08-19"
   },
 
   {

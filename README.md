@@ -173,7 +173,7 @@ Token FBI 是一张**活着的免费 AI token 名录**。
 | 10 | 商汤 Token Plan（sensenova） | 大模型 | SenseNova 6.7 / DeepSeek V4 Flash · 日日新 | ★★★ ⚠️|
 | 11 | Agnes AI | 大模型 | 全模态模型 | ★★★★★ |
 | 12 | 美团 longcat 大模型 | 大模型 | LongCat 文本模型 | ★★★★★ |
-| 13 | OpenRouter | 大模型 | 35+ 聚合模型（Kimi K2 / Qwen3 / Llama） | ★★★★ |
+| 13 | OpenRouter | 大模型 | 35+ 聚合模型（Kimi K2 / Qwen3 / Llama） | ★★★ |
 | 14 | 阶跃星辰 StepFun | 大模型 | 多模态大模型（活动已结束，仅新用户 10 额度） | — |
 | 15 | BazaarLink | 大模型 | DeepSeek V4 Flash · 1M 上下文 | ★★ ⚠️|
 | 16 | HuggingFace Inference API | 大模型 | DeepSeek V4 / Qwen3 / Mistral 等 | ★★ ⚠️|
@@ -182,7 +182,7 @@ Token FBI 是一张**活着的免费 AI token 名录**。
 | 19 | OpenStarry | 工具 | GLM 5.2 / DeepSeek V4 / Kimi K2.6 等 40+ | ★ ⚠️|
 | 20 | OpenCode Zen | 工具 | DeepSeek V4 Flash Free / MiMo-V2.5 等 | ★★ ⚠️|
 | 21 | 微信 AI 小程序成长计划（云开发 CloudBase） | 大模型 | Hy3 + Hy Image 3.0 · 文本/生图 | ★★★ |
-| 22 | ZenMux | 大模型 | GLM 5.3 · DeepSeek V4 Pro/Flash · Kimi K2.7 · Step（GLM5.3 限免一周） | ★★★ |
+| 22 | ZenMux | 大模型 | GLM 5.3 · DeepSeek V4 Pro/Flash · Kimi K2.7 · Step（GLM5.3 限免一周，⚠️ 实测报 500 用不了） | ★★ |
 | 23 | 腾讯云 TokenHub | 大模型 | Hy3 · DeepSeek V4 · GLM-5 · Kimi-K2.5 | ★★★ ⚠️|
 | 24 | 天翼云息壤（电信） | 大模型 | GLM-5 · DeepSeek V4 · Qwen3.5 · Doubao 等 | ★★ |
 | 25 | 太行HUB（token.taiha.cn） | 大模型 | DeepSeek-V4 / 千问-Max / GLM-4 / 豆包-Pro 等 | ★★★★★ |
@@ -275,6 +275,7 @@ token-fbi/
 
 ## 🔄 最近更新
 
+- **2026-08-19（实测反馈）**：用户实测 **ZenMux 的 GLM-5.3 报错 500 用不了**（降至 ★★ 并卡片注明，DeepSeek V4 Pro/Flash 等其它免费模型仍可用）；**OpenRouter 的 GLM-5.2(free) 报错 429 用不了**（降至 ★★★ 并卡片注明，建议改用其它 :free 模型）
 - **2026-08-19（观望名单布局微调）**：观望名单每行改为**标题、一句话介绍、「立即领取」按钮同一行**（标题/一句话超长省略号截断，窄屏压缩字号并隐藏序号，不再纵向堆叠）
 - **2026-08-19（观望名单联动大卡）**：观望名单与主列表互斥——**进入观望名单的平台，其官网大卡不再展示**。9 家（火山引擎 Ark / NVIDIA NIM / 商汤 Token Plan / BazaarLink / HuggingFace / 魔搭 / OpenStarry / OpenCode Zen / 腾讯云 TokenHub）大卡已隐藏，仅保留观望名单行式展示；站点实时展示 28 → 19 张（大模型类 13 · 工具类 6）
 - **2026-08-19（观望名单新增）**：观望名单新增 **基元律动（TokenRhythm）**（聚合网关，目前极不稳定、多名用户反馈体验较差）；观望名单累计 10 条
