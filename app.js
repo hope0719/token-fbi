@@ -557,12 +557,10 @@ render("all");
   if (emptyEl) emptyEl.style.display = "none";
   box.innerHTML = DONOTS.map((item, i) => `
     <div class="row-watchout">
-      <div class="row-watchout-main">
-        <span class="row-watchout-num">${i + 1}</span>
-        <h3 class="row-watchout-name">${cleanText(item.name)}</h3>
-        <span class="row-watchout-tag">观望</span>
-        <p class="row-watchout-why">${cleanText(item.why)}</p>
-      </div>
+      <span class="row-watchout-num">${i + 1}</span>
+      <h3 class="row-watchout-name">${cleanText(item.name)}</h3>
+      <span class="row-watchout-tag">观望</span>
+      <p class="row-watchout-why">${cleanText(item.why)}</p>
       <a class="row-watchout-action" href="${item.link || "#"}" target="_blank" rel="noopener">立即领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>
     </div>
   `).join("");
