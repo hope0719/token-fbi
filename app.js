@@ -494,6 +494,46 @@ const DONOTS = [
     name: "火山引擎 Ark 协作计划（字节）",
     why: "可用模型数量、分量都比较少，性价比一般；唯一亮点是每日可重置额度",
     link: "https://console.volcengine.com/ark/region:cn-beijing/openManagement/rewardPlan"
+  },
+  {
+    name: "NVIDIA NIM 免费 API",
+    why: "国内用户注册使用比较慢，网速也比较卡",
+    link: "https://build.nvidia.com"
+  },
+  {
+    name: "商汤 Token Plan（sensenova）",
+    why: "使用效果特别差，网速很卡",
+    link: "https://www.sensenova.cn/token-plan"
+  },
+  {
+    name: "BazaarLink",
+    why: "目前仅千问 3.7 Flash 免费",
+    link: "https://bazaarlink.ai/free"
+  },
+  {
+    name: "HuggingFace Inference API",
+    why: "未发现是否有免费额度，整个页面不方便查找",
+    link: "https://huggingface.co"
+  },
+  {
+    name: "魔搭社区 ModelScope",
+    why: "可使用的额度极小",
+    link: "https://modelscope.cn"
+  },
+  {
+    name: "OpenStarry",
+    why: "仅允许免费调用 200 次",
+    link: "https://www.openstarry.com"
+  },
+  {
+    name: "OpenCode Zen",
+    why: "这是一个软件/工具，好像没有任何免费额度",
+    link: "https://opencode.ai/zen"
+  },
+  {
+    name: "腾讯云 TokenHub",
+    why: "可使用量极少，仅新用户可使用 100 万到 300 万",
+    link: "https://cloud.tencent.com/product/tokenhub"
   }
 ];
 
