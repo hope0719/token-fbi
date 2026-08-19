@@ -401,93 +401,6 @@ function fire(rating) {
   return s;
 }
 
-/* 归类规则（只分两类）：
- *   - 工具：App 类（type === "工具"）
- *   - 大模型：其余所有模型平台
- */
-function catOf(t) {
-  if (t.type === "工具") return "工具";
-  return "大模型";
-}
-
-function render(type) {
-  const list = type === "all" ? TOKENS : TOKENS.filter(t => catOf(t) === type);
-  const emptyEl = document.getElementById("empty-state");
-  if (!list.length) {
-    cardBox.innerHTML = "";
-    if (emptyEl) emptyEl.style.display = "block";
-    return;
-  }
-  if (emptyEl) emptyEl.style.display = "none";
-  cardBox.innerHTML = list.map(t => `
-    <article class="card${t.limited ? ' is-limited' : ''}${t.tone ? ' tone-' + t.tone : ''}">
-      ${t.limited ? `<span class="card-badge" title="限时活动，截止 ${cleanText(t.limited)}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 4.25v4l2.5 1.5M13.5 8A5.5 5.5 0 1 1 2.5 8a5.5 5.5 0 0 1 11 0Z" /></svg>限时 ${fmtMd(t.limited)}</span>` : ''}
-      <div class="card-top">
-        <h3 class="card-name">${cleanText(t.name)}</h3>
-        <div class="card-tags">
-          ${t.modality ? `<span class="card-modality">${cleanText(t.modality)}</span>` : ''}
-          ${t.special ? `<span class="card-special" title="${cleanText(t.special)}">${cleanText(t.special)}</span>` : ''}
-        </div>
-      </div>
-      <div class="card-rating" title="香度 ${t.rating}/5">${fire(t.rating)} <span class="card-type">${catOf(t)}</span></div>
-      <div class="card-row"><span class="k">免费额度</span><span class="v">${cleanText(t.quota)}</span></div>
-      <div class="card-row"><span class="k">效果怎么样</span><span class="v">${cleanText(t.effect)}</span></div>
-      <div class="card-row how-row"><span class="k">怎么拿</span><span class="v">${cleanText(t.how)}</span></div>
-      <div class="card-footer">
-        <a class="card-link" href="${t.link}" target="_blank" rel="noopener">立即领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>
-        <div class="card-date">更新于 ${t.updated}</div>
-      </div>
-    </article>
-  `).join("");
-  playCardMotion();
-}
-
-filters.addEventListener("click", e => {
-  const btn = e.target.closest(".chip");
-  if (!btn) return;
-  filters.querySelectorAll(".chip").forEach(c => c.classList.remove("is-active"));
-  btn.classList.add("is-active");
-  filters.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", String(c === btn)));
-  render(btn.dataset.type);
-});
-
-/* Hero 数据大字报 */
-(function initStats() {
-  const models = TOKENS.filter(t => catOf(t) === "大模型").length;
-  const tools = TOKENS.filter(t => catOf(t) === "工具").length;
-  const limited = TOKENS.filter(t => t.limited).length;
-  const latest = TOKENS.slice().sort((a, b) => b.updated.localeCompare(a.updated))[0]?.updated || "—";
-  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-  set("stat-models", models);
-  set("stat-tools", tools);
-  set("stat-limited", limited);
-  set("stat-updated", latest);
-  set("list-total", `已收录 ${TOKENS.length} 条有效线索`);
-})();
-
-/* 回到顶部按钮 */
-const backBtn = document.getElementById("backToTop");
-const hero = document.getElementById("top");
-if (backBtn && hero && "IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(([entry]) => {
-    backBtn.classList.toggle("is-visible", !entry.isIntersecting);
-  }, { threshold: 0.08 });
-  observer.observe(hero);
-  backBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-}
-
-const wechatTrigger = document.querySelector(".wechat-trigger");
-const qrcodeBox = document.getElementById("qrcode-wechat");
-if (wechatTrigger && qrcodeBox) {
-  wechatTrigger.addEventListener("click", () => {
-    const isOpen = qrcodeBox.hasAttribute("hidden");
-    qrcodeBox.toggleAttribute("hidden", !isOpen);
-    wechatTrigger.setAttribute("aria-expanded", String(isOpen));
-  });
-}
-
-render("all");
-
 /* ========== 观望名单（不推荐优先领取） ========== */
 const DONOTS = [
   {
@@ -541,6 +454,97 @@ const DONOTS = [
     link: "https://tokenrhythm.studio"
   }
 ];
+
+/* 观望名单中的平台：其官网大卡不再展示（数据保留在 TOKENS，移出观望名单后自动恢复） */
+const DONOT_NAMES = new Set(DONOTS.map(d => d.name));
+const VISIBLE = TOKENS.filter(t => !DONOT_NAMES.has(t.name));
+
+/* 归类规则（只分两类）：
+ *   - 工具：App 类（type === "工具"）
+ *   - 大模型：其余所有模型平台
+ */
+function catOf(t) {
+  if (t.type === "工具") return "工具";
+  return "大模型";
+}
+
+function render(type) {
+  const list = type === "all" ? VISIBLE : VISIBLE.filter(t => catOf(t) === type);
+  const emptyEl = document.getElementById("empty-state");
+  if (!list.length) {
+    cardBox.innerHTML = "";
+    if (emptyEl) emptyEl.style.display = "block";
+    return;
+  }
+  if (emptyEl) emptyEl.style.display = "none";
+  cardBox.innerHTML = list.map(t => `
+    <article class="card${t.limited ? ' is-limited' : ''}${t.tone ? ' tone-' + t.tone : ''}">
+      ${t.limited ? `<span class="card-badge" title="限时活动，截止 ${cleanText(t.limited)}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 4.25v4l2.5 1.5M13.5 8A5.5 5.5 0 1 1 2.5 8a5.5 5.5 0 0 1 11 0Z" /></svg>限时 ${fmtMd(t.limited)}</span>` : ''}
+      <div class="card-top">
+        <h3 class="card-name">${cleanText(t.name)}</h3>
+        <div class="card-tags">
+          ${t.modality ? `<span class="card-modality">${cleanText(t.modality)}</span>` : ''}
+          ${t.special ? `<span class="card-special" title="${cleanText(t.special)}">${cleanText(t.special)}</span>` : ''}
+        </div>
+      </div>
+      <div class="card-rating" title="香度 ${t.rating}/5">${fire(t.rating)} <span class="card-type">${catOf(t)}</span></div>
+      <div class="card-row"><span class="k">免费额度</span><span class="v">${cleanText(t.quota)}</span></div>
+      <div class="card-row"><span class="k">效果怎么样</span><span class="v">${cleanText(t.effect)}</span></div>
+      <div class="card-row how-row"><span class="k">怎么拿</span><span class="v">${cleanText(t.how)}</span></div>
+      <div class="card-footer">
+        <a class="card-link" href="${t.link}" target="_blank" rel="noopener">立即领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>
+        <div class="card-date">更新于 ${t.updated}</div>
+      </div>
+    </article>
+  `).join("");
+  playCardMotion();
+}
+
+filters.addEventListener("click", e => {
+  const btn = e.target.closest(".chip");
+  if (!btn) return;
+  filters.querySelectorAll(".chip").forEach(c => c.classList.remove("is-active"));
+  btn.classList.add("is-active");
+  filters.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", String(c === btn)));
+  render(btn.dataset.type);
+});
+
+/* Hero 数据大字报 */
+(function initStats() {
+  const models = VISIBLE.filter(t => catOf(t) === "大模型").length;
+  const tools = VISIBLE.filter(t => catOf(t) === "工具").length;
+  const limited = VISIBLE.filter(t => t.limited).length;
+  const latest = VISIBLE.slice().sort((a, b) => b.updated.localeCompare(a.updated))[0]?.updated || "—";
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  set("stat-models", models);
+  set("stat-tools", tools);
+  set("stat-limited", limited);
+  set("stat-updated", latest);
+  set("list-total", `已收录 ${VISIBLE.length} 条有效线索`);
+})();
+
+/* 回到顶部按钮 */
+const backBtn = document.getElementById("backToTop");
+const hero = document.getElementById("top");
+if (backBtn && hero && "IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(([entry]) => {
+    backBtn.classList.toggle("is-visible", !entry.isIntersecting);
+  }, { threshold: 0.08 });
+  observer.observe(hero);
+  backBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+}
+
+const wechatTrigger = document.querySelector(".wechat-trigger");
+const qrcodeBox = document.getElementById("qrcode-wechat");
+if (wechatTrigger && qrcodeBox) {
+  wechatTrigger.addEventListener("click", () => {
+    const isOpen = qrcodeBox.hasAttribute("hidden");
+    qrcodeBox.toggleAttribute("hidden", !isOpen);
+    wechatTrigger.setAttribute("aria-expanded", String(isOpen));
+  });
+}
+
+render("all");
 
 (function renderWatchout() {
   const box = document.getElementById("watchout-cards");
