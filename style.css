@@ -45,6 +45,9 @@ a { color: inherit; }
 .site-nav a:hover { color: var(--ink); }
 .site-nav .nav-cta { color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--line)); padding: 6px 12px; border-radius: 999px; }
 .site-nav .nav-cta:hover { background: var(--accent); color: var(--accent-ink); }
+.site-nav .nav-star { color: #f5b02e; border: 1px solid rgba(245, 176, 46, .45); padding: 6px 12px; border-radius: 999px; }
+.site-nav .nav-star:hover { background: #f5b02e; color: #1a1204; }
+.site-nav .nav-star span { margin-right: 4px; }
 
 .hero { padding: clamp(70px, 9vw, 124px) 0 88px; overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(270px, .65fr); gap: clamp(40px, 7vw, 120px); align-items: end; }
@@ -57,6 +60,9 @@ a { color: inherit; }
 .btn:active, .wechat-trigger:active { transform: scale(.98); }
 .btn-primary { background: var(--accent); color: var(--accent-ink); }
 .btn-primary:hover { background: #a7f3d0; box-shadow: 0 10px 24px rgba(16, 185, 129, .2); }
+.btn-ghost { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); color: var(--accent); background: transparent; }
+.btn-ghost:hover { background: var(--accent); color: var(--accent-ink); }
+.hero-star span { margin-right: 6px; }
 .text-link { color: var(--muted); font-size: 14px; font-weight: 700; text-underline-offset: 4px; }
 .text-link:hover { color: var(--ink); }
 .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 56px 0 0; border-top: 1px solid var(--line); }
@@ -170,7 +176,7 @@ a { color: inherit; }
 
 @media (max-width: 620px) {
   .wrap { width: min(var(--max), calc(100% - 36px)); }
-  .header-inner { min-height: 60px; }.site-nav { gap: 14px; }.site-nav a:not(.nav-cta) { display: none; }
+  .header-inner { min-height: 60px; }.site-nav { gap: 12px; }.site-nav a:not(.nav-cta):not(.nav-star) { display: none; }.site-nav .nav-star { font-size: 0; }.site-nav .nav-star span { font-size: 15px; margin: 0; }
   .hero { padding: 54px 0 60px; }.hero h1 { font-size: clamp(42px, 13vw, 58px); }.hero-stats { grid-template-columns: 1fr 1fr; gap: 16px 0; margin-top: 40px; }.hero-stats div { padding-top: 0; }
   .model-list { grid-template-columns: 1fr; }.watchlist { padding-left: 20px; }
   .intelligence { padding: 58px 0 68px; }.filters { overflow-x: auto; padding-bottom: 3px; }.chip { flex: none; }.cards { grid-template-columns: 1fr; gap: 14px; }.card { padding: 20px; }
