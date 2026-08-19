@@ -162,11 +162,11 @@ Token FBI 是一张**活着的免费 AI token 名录**。
 | # | 平台 | 类型 | 核心模型 | 星级 |
 |:--:|:---|:---|:---|:--:|
 | 1 | WorkBuddy | 工具 | HY3 · 混元3（HY3 限免至 8/31） | ★★★★★ |
-| 2 | 腾讯 Marvis（马维斯） | 工具 | 混元 / DeepSeek V4 · 操作系统级 AI | ★★★★ |
-| 3 | 火山引擎 Ark 协作计划（字节） | 大模型 | GLM5.2 · 文本模型 | ★★★★★ |
-| 4 | 七牛云 AI 推理 | 大模型 | GLM5.2 · 文本模型 | ★★★★★ |
-| 5 | 美团 catpaw（App） | 工具 | GLM 5.2 · DeepSeek V4 Pro · Kimi K3 | ★★★★★ |
-| 6 | TRAE Work | 工具 | GLM-5.2 / Kimi K3 · 折扣价 | ★★★★ |
+| 2 | TRAE Work | 工具 | GLM-5.2 / Kimi K3 · 折扣价 | ★★★★ |
+| 3 | 腾讯 Marvis（马维斯） | 工具 | 混元 / DeepSeek V4 · 操作系统级 AI | ★★★★ |
+| 4 | 火山引擎 Ark 协作计划（字节） | 大模型 | GLM5.2 · 文本模型 | ★★★★★ |
+| 5 | 七牛云 AI 推理 | 大模型 | GLM5.2 · 文本模型 | ★★★★★ |
+| 6 | 美团 catpaw（App） | 工具 | GLM 5.2 · DeepSeek V4 Pro · Kimi K3 | ★★★★★ |
 | 7 | 2026 微信小程序开发大赛 | 大模型 | DeepSeek V4 Flash / GLM-5.2 · 文本模型（Coding Plan 免费 Token） | ★★★★ |
 | 8 | 硅基流动 SiliconFlow | 大模型 | GLM5.2 等全模型 · 文本/多模态 | ★★★★ |
 | 9 | NVIDIA NIM 免费 API | 大模型 | 多模型聚合（文本 / 多模态） | ★★★★★ |

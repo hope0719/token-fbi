@@ -22,6 +22,18 @@ const TOKENS = [
   /* ========== 较新 / 主力平台 ========== */
 
   {
+    name: "TRAE Work",
+    type: "工具",
+    modality: "GLM-5.2 / Kimi K3 · 折扣价",
+    rating: 4,
+    quota: "通过我的分享链接登录桌面端，新注册用户一次性获得 5000 积分",
+    effect: "TraeWork AI 办公平台，可一站式搞定各类办公与创作任务。模型调用走折扣价通道，明确使用 GLM-5.2 与 Kimi K3 两款新模型，相比官方原价更低",
+    how: "打开我的分享链接 https://www.trae.cn/work-fission/H4L7Y28J694N?utm_source=copy_link&utm_medium=friends_invite → 下载并登录 TraeWork 桌面端 → 新账号自动到账 5000 积分，直接选用 GLM-5.2 / K3 模型开始使用",
+    link: "https://www.trae.cn/work-fission/H4L7Y28J694N?utm_source=copy_link&utm_medium=friends_invite",
+    updated: "2026-08-19"
+  },
+
+  {
     name: "腾讯 Marvis（马维斯）",
     type: "工具",
     modality: "混元 / DeepSeek V4 · 操作系统级 AI 助手",
@@ -67,18 +79,6 @@ const TOKENS = [
     how: "打开 catpaw.meituan.com 注册登录即领 1200 积分 → 在模型列表选 GLM 5.2 / DeepSeek V4 Pro / Kimi K3 等直接使用（注意：装 App 后若曾装过 catpaw ai，可能出现图标重复，属已知现象）",
     link: "https://catpaw.meituan.com/",
     updated: "2026-07-22"
-  },
-
-  {
-    name: "TRAE Work",
-    type: "工具",
-    modality: "GLM-5.2 / Kimi K3 · 折扣价",
-    rating: 4,
-    quota: "通过我的分享链接登录桌面端，新注册用户一次性获得 5000 积分",
-    effect: "TraeWork AI 办公平台，可一站式搞定各类办公与创作任务。模型调用走折扣价通道，明确使用 GLM-5.2 与 Kimi K3 两款新模型，相比官方原价更低",
-    how: "打开我的分享链接 https://www.trae.cn/work-fission/H4L7Y28J694N?utm_source=copy_link&utm_medium=friends_invite → 下载并登录 TraeWork 桌面端 → 新账号自动到账 5000 积分，直接选用 GLM-5.2 / K3 模型开始使用",
-    link: "https://www.trae.cn/work-fission/H4L7Y28J694N?utm_source=copy_link&utm_medium=friends_invite",
-    updated: "2026-08-19"
   },
 
   {
