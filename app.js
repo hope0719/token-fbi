@@ -30,6 +30,9 @@ const TOKENS = [
     effect: "TraeWork AI 办公平台，可一站式搞定各类办公与创作任务。模型调用走折扣价通道，支持 GLM-5.2、DeepSeek V4 Flash、千问 3.8 Max，相比官方原价更低（注意：不支持 Kimi K3）",
     how: "打开我的分享链接 https://www.trae.cn/work-fission/PC84E6FCP64U?utm_source=copy_link&utm_medium=friends_invite → 下载并登录 TraeWork 桌面端 → 新账号自动到账 5000 积分，直接选用 GLM-5.2 / DeepSeek V4 Flash / 千问 3.8 Max 模型开始使用",
     link: "https://www.trae.cn/work-fission/PC84E6FCP64U?utm_source=copy_link&utm_medium=friends_invite",
+    /* traeLinks：TRAE 随机分流的分享码列表。多个码时每次加载随机挑一个展示，分散调用压力。
+       加第二条码只要在此数组里追加一段即可（如 "XXXX"）。 */
+    traeLinks: ["PC84E6FCP64U"],
     updated: "2026-08-19"
   },
 
@@ -477,7 +480,17 @@ function render(type) {
     return;
   }
   if (emptyEl) emptyEl.style.display = "none";
-  cardBox.innerHTML = list.map(t => `
+  cardBox.innerHTML = list.map(_t => {
+    const t = _t;
+    /* TRAE 多链接随机分流：有 traeLinks 数组时，每次加载随机挑一个码展示，
+       让不同访问者分散到不同分享码。单码时行为不变。 */
+    let link = t.link, how = t.how;
+    if (Array.isArray(t.traeLinks) && t.traeLinks.length) {
+      const code = t.traeLinks[Math.floor(Math.random() * t.traeLinks.length)];
+      link = "https://www.trae.cn/work-fission/" + code + "?utm_source=copy_link&utm_medium=friends_invite";
+      if (t.how) how = t.how.replace(/work-fission\/[A-Z0-9]+\?/i, "work-fission/" + code + "?");
+    }
+    return `
     <article class="card${t.limited ? ' is-limited' : ''}${t.tone ? ' tone-' + t.tone : ''}">
       ${t.limited ? `<span class="card-badge" title="限时活动，截止 ${cleanText(t.limited)}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 4.25v4l2.5 1.5M13.5 8A5.5 5.5 0 1 1 2.5 8a5.5 5.5 0 0 1 11 0Z" /></svg>限时 ${fmtMd(t.limited)}</span>` : ''}
       <div class="card-top">
@@ -490,13 +503,14 @@ function render(type) {
       <div class="card-rating" title="香度 ${t.rating}/5">${fire(t.rating)} <span class="card-type">${catOf(t)}</span></div>
       <div class="card-row"><span class="k">免费额度</span><span class="v">${cleanText(t.quota)}</span></div>
       <div class="card-row"><span class="k">效果怎么样</span><span class="v">${cleanText(t.effect)}</span></div>
-      <div class="card-row how-row"><span class="k">怎么拿</span><span class="v">${cleanText(t.how)}</span></div>
+      <div class="card-row how-row"><span class="k">怎么拿</span><span class="v">${cleanText(how)}</span></div>
       <div class="card-footer">
-        <a class="card-link" href="${t.link}" target="_blank" rel="noopener">立即领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>
+        <a class="card-link" href="${link}" target="_blank" rel="noopener">立即领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>
         <div class="card-date">更新于 ${t.updated}</div>
       </div>
     </article>
-  `).join("");
+  `;
+  }).join("");
   playCardMotion();
 }
 
