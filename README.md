@@ -275,6 +275,7 @@ token-fbi/
 
 ## 🔄 最近更新
 
+- **2026-08-21（TRAE Work 分享链接更新）**：TRAE Work 卡片分享链接更新为 `RN2DA3HPWQQP`（新注册用户一次性获得 5000 积分）
 - **2026-08-19（TRAE 新增 GLM-5.3）**：TRAE Work 新增可体验 **GLM-5.3** 模型，核心模型更新为 GLM-5.3 / GLM-5.2 / DeepSeek V4 Flash / 千问 3.8 Max
 - **2026-08-19（TRAE Work 分享链接更新）**：TRAE Work 卡片分享链接更新为 `PC84E6FCP64U`（新注册用户一次性获得 5000 积分）
 - **2026-08-19（实测反馈）**：用户实测 **ZenMux 的 GLM-5.3 报错 500 用不了**（降至 ★★ 并卡片注明，DeepSeek V4 Pro/Flash 等其它免费模型仍可用）；**OpenRouter 的 GLM-5.2(free) 报错 429 用不了**（降至 ★★★ 并卡片注明，建议改用其它 :free 模型）

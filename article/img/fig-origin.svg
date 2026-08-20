@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="400" viewBox="0 0 980 400" role="img" aria-label="Token FBI 项目起因流程图">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#fbbf24"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  <rect width="980" height="400" fill="url(#bg)" rx="18"/>
+  <text x="490" y="52" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" fill="#fbbf24">项目起因：一个「信息差」问题</text>
+  <text x="490" y="82" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="15" fill="#94a3b8">太多人以为大模型 API 很贵，其实主流厂商的免费额度多到用不完</text>
+
+  <!-- Node 1 -->
+  <g>
+    <rect x="40" y="130" width="158" height="150" rx="14" fill="#111a2e" stroke="#f59e0b" stroke-width="1.5"/>
+    <circle cx="119" cy="172" r="24" fill="url(#amber)"/>
+    <text x="119" y="178" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#020617">1</text>
+    <text x="119" y="222" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="600" fill="#f1f5f9">朋友不会用 AI</text>
+    <text x="119" y="248" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#94a3b8">对 API、额度、模型</text>
+    <text x="119" y="268" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#94a3b8">几乎零概念</text>
+  </g>
+  <line x1="198" y1="205" x2="238" y2="205" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Node 2 -->
+  <g>
+    <rect x="238" y="130" width="158" height="150" rx="14" fill="#111a2e" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="317" cy="172" r="24" fill="#334155"/>
+    <text x="317" y="178" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#f1f5f9">2</text>
+    <text x="317" y="222" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="600" fill="#f1f5f9">常买到付费 API</text>
+    <text x="317" y="248" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#94a3b8">买课、买会员、买中转</text>
+    <text x="317" y="268" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#94a3b8">花了不少冤枉钱</text>
+  </g>
+  <line x1="396" y1="205" x2="436" y2="205" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Node 3 -->
+  <g>
+    <rect x="436" y="130" width="158" height="150" rx="14" fill="#111a2e" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="515" cy="172" r="24" fill="#334155"/>
+    <text x="515" y="178" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#f1f5f9">3</text>
+    <text x="515" y="222" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="600" fill="#f1f5f9">其实主流模型免费</text>
+    <text x="515" y="248" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#94a3b8">DeepSeek / GLM / Kimi</text>
+    <text x="515" y="268" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#94a3b8">官方送额度成常态</text>
+  </g>
+  <line x1="594" y1="205" x2="634" y2="205" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Node 4 -->
+  <g>
+    <rect x="634" y="130" width="158" height="150" rx="14" fill="#111a2e" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="713" cy="172" r="24" fill="#334155"/>
+    <text x="713" y="178" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="700" fill="#f1f5f9">4</text>
+    <text x="713" y="222" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="600" fill="#f1f5f9">信息差 = 痛点</text>
+    <text x="713" y="248" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#94a3b8">好东西散落各处</text>
+    <text x="713" y="268" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#94a3b8">没人帮你汇总</text>
+  </g>
+  <line x1="792" y1="205" x2="832" y2="205" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Node 5 -->
+  <g>
+    <rect x="832" y="130" width="108" height="150" rx="14" fill="url(#amber)"/>
+    <text x="886" y="185" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="16" font-weight="700" fill="#020617">Token FBI</text>
+    <text x="886" y="212" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="600" fill="#431407">把免费额度</text>
+    <text x="886" y="232" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="600" fill="#431407">汇总到一页</text>
+    <text x="886" y="262" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="12" fill="#78350f">开源情报站</text>
+  </g>
+
+  <text x="490" y="348" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#64748b">一张「活着的免费 AI token 名录」：哪些平台、效果怎么样、怎么领，全部摊开给你看</text>
+</svg>

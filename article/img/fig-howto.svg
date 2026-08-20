@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360" role="img" aria-label="Token FBI 三步使用流程">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="amber3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect width="920" height="360" fill="url(#bg3)" rx="18"/>
+  <text x="460" y="50" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" fill="#fbbf24">三步用起来，全程免费</text>
+
+  <!-- Step 1 -->
+  <g>
+    <rect x="46" y="92" width="250" height="180" rx="16" fill="#111a2e" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="171" cy="140" r="26" fill="url(#amber3)"/>
+    <text x="171" y="147" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#020617">1</text>
+    <text x="171" y="196" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" fill="#f1f5f9">打开站点</text>
+    <text x="171" y="224" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#94a3b8">无需注册、无需安装、无需绑卡</text>
+    <text x="171" y="248" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#94a3b8">浏览器打开即用</text>
+  </g>
+
+  <!-- Step 2 -->
+  <g>
+    <rect x="335" y="92" width="250" height="180" rx="16" fill="#111a2e" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="460" cy="140" r="26" fill="url(#amber3)"/>
+    <text x="460" y="147" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#020617">2</text>
+    <text x="460" y="196" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" fill="#f1f5f9">筛选 + 看角标</text>
+    <text x="460" y="224" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#94a3b8">全部 / 大模型 / 工具 分类切换</text>
+    <text x="460" y="248" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#94a3b8">红色角标 = 限时活动，抓紧领</text>
+  </g>
+
+  <!-- Step 3 -->
+  <g>
+    <rect x="624" y="92" width="250" height="180" rx="16" fill="#111a2e" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="749" cy="140" r="26" fill="url(#amber3)"/>
+    <text x="749" y="147" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#020617">3</text>
+    <text x="749" y="196" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" fill="#f1f5f9">点「去领取」</text>
+    <text x="749" y="224" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#94a3b8">直达官方页面领额度</text>
+    <text x="749" y="248" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" fill="#94a3b8">拿 API Key 接入自己的项目</text>
+  </g>
+
+  <!-- 连接箭头 -->
+  <path d="M296 182 L329 182" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#a3)"/>
+  <path d="M585 182 L618 182" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#a3)"/>
+  <defs>
+    <marker id="a3" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <text x="460" y="318" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#64748b">桌面 / 平板 / 手机都适配，微信里也能直接打开</text>
+</svg>

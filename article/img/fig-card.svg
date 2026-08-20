@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="560" viewBox="0 0 820 560" role="img" aria-label="Token FBI 情报卡结构示意图">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+  <rect width="820" height="560" fill="url(#bg2)" rx="18"/>
+  <text x="410" y="48" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="700" text-anchor="middle" fill="#fbbf24">一张情报卡 = 五件事一次说清</text>
+
+  <!-- 卡片主体 -->
+  <rect x="60" y="90" width="430" height="410" rx="16" fill="#111a2e" stroke="#1e293b" stroke-width="1.5"/>
+  <!-- 头部 -->
+  <rect x="60" y="90" width="430" height="66" rx="16" fill="#0f172a"/>
+  <rect x="60" y="120" width="430" height="36" fill="#0f172a"/>
+  <text x="86" y="118" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="700" fill="#f1f5f9">硅基流动 SiliconFlow</text>
+  <rect x="86" y="128" width="64" height="24" rx="12" fill="#f59e0b"/>
+  <text x="118" y="145" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="13" font-weight="600" fill="#020617">大模型</text>
+  <text x="450" y="145" text-anchor="end" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="17" fill="#f59e0b">🔥🔥🔥🔥🔥</text>
+  <!-- 字段行 -->
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif">
+    <text x="86" y="200" font-size="13" font-weight="600" fill="#f59e0b">免费额度</text>
+    <text x="86" y="224" font-size="14" fill="#e2e8f0">GLM-5.2 等全模型 · 新用户送 2000 万 Tokens</text>
+    <text x="86" y="270" font-size="13" font-weight="600" fill="#f59e0b">效果怎么样</text>
+    <text x="86" y="294" font-size="14" fill="#e2e8f0">覆盖主流开源模型，一个 Key 调用全部，</text>
+    <text x="86" y="314" font-size="14" fill="#e2e8f0">额度日常开发够用</text>
+    <text x="86" y="360" font-size="13" font-weight="600" fill="#f59e0b">怎么拿</text>
+    <text x="86" y="384" font-size="14" fill="#e2e8f0">官网注册 → 实名 → 创建 API Key → 领额度</text>
+    <rect x="86" y="420" width="140" height="40" rx="10" fill="#f59e0b"/>
+    <text x="156" y="446" text-anchor="middle" font-size="15" font-weight="700" fill="#020617">去领取 →</text>
+  </g>
+
+  <!-- 右侧标注 -->
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif">
+    <line x1="492" y1="118" x2="580" y2="118" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <rect x="585" y="96" width="200" height="44" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+    <text x="685" y="114" text-anchor="middle" font-size="13" fill="#e2e8f0">名称 + 类型标签（大模型 / 工具）</text>
+    <text x="685" y="132" text-anchor="middle" font-size="12" fill="#94a3b8">名字只显示一行，超出自动省略</text>
+
+    <line x1="492" y1="145" x2="580" y2="196" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <rect x="585" y="176" width="200" height="40" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+    <text x="685" y="192" text-anchor="middle" font-size="13" fill="#e2e8f0">香度 🔥 1~5 星</text>
+    <text x="685" y="208" text-anchor="middle" font-size="12" fill="#94a3b8">综合额度 / 模型 / 门槛</text>
+
+    <line x1="492" y1="200" x2="580" y2="264" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <rect x="585" y="244" width="200" height="40" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+    <text x="685" y="260" text-anchor="middle" font-size="13" fill="#e2e8f0">免费额度具体多少</text>
+    <text x="685" y="276" text-anchor="middle" font-size="12" fill="#94a3b8">Token 数 / 金额 / 次数</text>
+
+    <line x1="492" y1="360" x2="580" y2="340" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <rect x="585" y="318" width="200" height="40" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+    <text x="685" y="334" text-anchor="middle" font-size="13" fill="#e2e8f0">步骤式领取指引</text>
+    <text x="685" y="350" text-anchor="middle" font-size="12" fill="#94a3b8">照着点就行</text>
+
+    <line x1="492" y1="440" x2="580" y2="410" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <rect x="585" y="392" width="200" height="40" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+    <text x="685" y="408" text-anchor="middle" font-size="13" fill="#e2e8f0">一键跳转官方领取页</text>
+    <text x="685" y="424" text-anchor="middle" font-size="12" fill="#94a3b8">不经过第三方</text>
+  </g>
+
+  <text x="410" y="536" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14" fill="#64748b">限时活动还会在右上角打上红色「限时 YYYY-MM-DD」角标，过期自动下架</text>
+</svg>
