@@ -275,6 +275,7 @@ token-fbi/
 
 ## 🔄 最近更新
 
+- **2026-08-21（TRAE 邀请池扩容）**：TRAE Work 分享链接加入邀请池（多码随机分流），现有分享码 `RN2DA3HPWQQP` / `LZYBHMFULRAZ`
 - **2026-08-21（TRAE Work 分享链接更新）**：TRAE Work 卡片分享链接更新为 `RN2DA3HPWQQP`（新注册用户一次性获得 5000 积分）
 - **2026-08-19（TRAE 新增 GLM-5.3）**：TRAE Work 新增可体验 **GLM-5.3** 模型，核心模型更新为 GLM-5.3 / GLM-5.2 / DeepSeek V4 Flash / 千问 3.8 Max
 - **2026-08-19（TRAE Work 分享链接更新）**：TRAE Work 卡片分享链接更新为 `PC84E6FCP64U`（新注册用户一次性获得 5000 积分）

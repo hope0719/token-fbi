@@ -32,7 +32,7 @@ const TOKENS = [
     link: "https://www.trae.cn/work-fission/RN2DA3HPWQQP?utm_source=copy_link&utm_medium=friends_invite",
     /* traeLinks：TRAE 随机分流的分享码列表。多个码时每次加载随机挑一个展示，分散调用压力。
        加第二条码只要在此数组里追加一段即可（如 "XXXX"）。 */
-    traeLinks: ["RN2DA3HPWQQP"],
+    traeLinks: ["RN2DA3HPWQQP", "LZYBHMFULRAZ"],
     updated: "2026-08-19"
   },
 
