@@ -322,6 +322,20 @@ const TOKENS = [
     updated: "2026-08-12"
   },
 
+  /* ========== 国家超算互联网 SCNet（2026-08-21 新增，DeepSeek V4 低价平替渠道） ========== */
+
+  {
+    name: "国家超算互联网 SCNet",
+    type: "大模型",
+    modality: "DeepSeek V4 Pro / V4 Flash · GLM-5.2 · MiniMax-M3 · Kimi-K2.6 等",
+    rating: 4,
+    quota: "Token Plan 包月：基础版 ¥30/月 → 60,000 Credits（原价 ¥50）；标准版 ¥110 → 240,000；高级版 ¥265 → 600,000。兼容 OpenAI / Anthropic 接口，Credits 按实际消耗折算抵扣",
+    effect: "科技部牵头、中科曙光支撑的国家级算力平台，把全国超算/智算中心资源统一对外；DeepSeek 涨价后最划算的官方背景平替。V4-Flash 缓存命中低至 0.012 元/百万 Token、未命中输入 0.6 元、输出 1.2 元，对比官方峰值便宜约 7-8.3 倍（V4 Pro 便宜约 1.75-7 倍）；不用对话数据训练。⚠️ 槽点：并发/稳定性一般、高峰需排队；新模型上架滞后；资源包与余额扣减逻辑绕（需关注算力券/补贴包多重叠加）。适合能接受排队、想压成本的重度调用",
+    how: "打开 scnet.cn 用手机号注册 → 登录控制台 → 左侧「模型服务」→「Token Plan」选套餐并支付（基础版 ¥30/月 → 60,000 Credits）→ 自动生成专属 API Key（sk-tp- 开头）+ Base URL https://api.scnet.cn/api/llm/v1 → 填进 Claude Code / Cursor / OpenCode / Dify 等工具即可",
+    link: "https://www.scnet.cn/",
+    updated: "2026-08-21"
+  },
+
   /* ========== 末尾：MonkeyCode（2026-08-12 新增） ========== */
 
   {
