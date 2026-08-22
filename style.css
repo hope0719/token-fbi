@@ -229,6 +229,8 @@ a { color: inherit; }
 .about-group-desc { font-size: 13px; line-height: 1.45; color: color-mix(in srgb, var(--ink) 68%, var(--line)); }
 .about-group-tag { display: inline-flex; align-items: center; padding: 2px 9px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .05em; vertical-align: middle; }
 .about-group-tag.free { background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent); }
+.about-group-note { display: flex; align-items: center; gap: 8px; margin: 4px 0 12px; font-size: 13px; color: color-mix(in srgb, var(--ink) 78%, var(--line)); }
+.about-wechat-row { display: flex; flex-wrap: wrap; gap: 12px; }
 .about-wechat-btn { appearance: none; display: inline-flex; align-items: center; gap: 9px; min-height: 44px; padding: 10px 18px; border: 1px solid var(--accent); border-radius: 999px; background: transparent; color: var(--accent); font-size: 14px; font-weight: 700; cursor: pointer; transition: background .18s var(--ease-out), color .18s var(--ease-out), border-color .18s var(--ease-out), transform .18s var(--ease-out); }
 .about-wechat-btn:hover { background: var(--accent-soft); }
 .about-wechat-btn:active { transform: scale(.98); }

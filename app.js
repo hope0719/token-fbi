@@ -621,13 +621,10 @@ if (window.gsap) {
   });
 }
 
-/* 关于区：点击按钮复制微信号（兼容旧浏览器降级） */
+/* 关于区：点击按钮复制微信号 / 复制备注（兼容旧浏览器降级） */
 (function initWechatCopy() {
-  const btn = document.getElementById("wechatCopy");
-  if (!btn) return;
-  const labelEl = btn.querySelector(".about-wechat-label");
-  const defaultLabel = labelEl ? labelEl.innerHTML : btn.innerHTML;
-  let resetTimer = null;
+  const buttons = Array.prototype.slice.call(document.querySelectorAll(".about-wechat-btn"));
+  if (!buttons.length) return;
 
   async function doCopy(text) {
     try {
@@ -649,20 +646,25 @@ if (window.gsap) {
     return ok;
   }
 
-  btn.addEventListener("click", async () => {
-    const text = btn.dataset.copy || "";
-    const ok = await doCopy(text);
-    btn.classList.toggle("is-copied", ok);
-    if (labelEl) {
-      labelEl.innerHTML = ok ? "已复制 " + text + " ✓" : "复制失败，请手动复制";
-    } else {
-      btn.innerHTML = ok ? "已复制 ✓" : "复制失败";
-    }
-    if (resetTimer) clearTimeout(resetTimer);
-    resetTimer = setTimeout(() => {
-      btn.classList.remove("is-copied");
-      if (labelEl) labelEl.innerHTML = defaultLabel;
-      else btn.innerHTML = defaultLabel;
-    }, 1800);
+  buttons.forEach((btn) => {
+    const labelEl = btn.querySelector(".about-wechat-label");
+    const defaultLabel = labelEl ? labelEl.innerHTML : btn.innerHTML;
+    let resetTimer = null;
+    btn.addEventListener("click", async () => {
+      const text = btn.dataset.copy || "";
+      const ok = await doCopy(text);
+      btn.classList.toggle("is-copied", ok);
+      if (labelEl) {
+        labelEl.innerHTML = ok ? "已复制 " + text + " ✓" : "复制失败，请手动复制";
+      } else {
+        btn.innerHTML = ok ? "已复制 ✓" : "复制失败";
+      }
+      if (resetTimer) clearTimeout(resetTimer);
+      resetTimer = setTimeout(() => {
+        btn.classList.remove("is-copied");
+        if (labelEl) labelEl.innerHTML = defaultLabel;
+        else btn.innerHTML = defaultLabel;
+      }, 1800);
+    });
   });
 })();
