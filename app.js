@@ -28,11 +28,11 @@ const TOKENS = [
     rating: 4,
     quota: "通过我的分享链接登录桌面端，新注册用户一次性获得 5000 积分",
     effect: "TraeWork AI 办公平台，可一站式搞定各类办公与创作任务。模型调用走折扣价通道，支持最新 GLM-5.3、GLM-5.2、DeepSeek V4 Flash、千问 3.8 Max，相比官方原价更低（注意：不支持 Kimi K3）",
-    how: "打开我的分享链接 https://www.trae.cn/work-fission/RN2DA3HPWQQP?utm_source=copy_link&utm_medium=friends_invite → 下载并登录 TraeWork 桌面端 → 新账号自动到账 5000 积分，直接选用 GLM-5.3 / GLM-5.2 / DeepSeek V4 Flash / 千问 3.8 Max 模型开始使用",
-    link: "https://www.trae.cn/work-fission/RN2DA3HPWQQP?utm_source=copy_link&utm_medium=friends_invite",
-    /* traeLinks：TRAE 随机分流的分享码列表。多个码时每次加载随机挑一个展示，分散调用压力。
+    how: "打开我的分享链接 https://www.trae.cn/work-fission/7MSJC6MSHPNL?utm_source=copy_link&utm_medium=friends_invite → 下载并登录 TraeWork 桌面端 → 新账号自动到账 5000 积分，直接选用 GLM-5.3 / GLM-5.2 / DeepSeek V4 Flash / 千问 3.8 Max 模型开始使用",
+    link: "https://www.trae.cn/work-fission/7MSJC6MSHPNL?utm_source=copy_link&utm_medium=friends_invite",
+    /* traeLinks：TRAE 分享码列表（当前单码）。多个码时每次加载随机挑一个展示，分散调用压力。
        加第二条码只要在此数组里追加一段即可（如 "XXXX"）。 */
-    traeLinks: ["RN2DA3HPWQQP", "LZYBHMFULRAZ"],
+    traeLinks: ["7MSJC6MSHPNL"],
     updated: "2026-08-19"
   },
 
