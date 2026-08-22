@@ -96,6 +96,18 @@ a { color: inherit; }
 .card.tone-orange .card-rating { color: #ff9f2e; }
 .card.tone-orange .card-link { border-color: #ff9f2e; background: #ff9f2e; color: #2b1602; }
 .card.tone-orange .card-link:hover { border-color: #ffb84d; background: #ffb84d; box-shadow: 0 8px 18px rgba(255, 140, 40, .28); }
+
+/* 海报弹窗（项目卡立取领取） */
+.poster-overlay { display: none; position: fixed; inset: 0; z-index: 999; align-items: center; justify-content: center; padding: 20px; }
+.poster-overlay.is-open .poster-backdrop { opacity: 1; }
+.poster-overlay.is-open .poster-dialog { transform: scale(1); opacity: 1; }
+.poster-backdrop { position: absolute; inset: 0; background: rgba(0, 0, 0, .72); opacity: 0; transition: opacity .25s ease; backdrop-filter: blur(6px); }
+.poster-dialog { position: relative; max-width: min(520px, 92vw); max-height: 90vh; display: flex; flex-direction: column; align-items: center; gap: 14px; border-radius: var(--radius); background: var(--surface-raised); box-shadow: 0 32px 64px rgba(0, 0, 0, .4); transform: scale(.94); opacity: 0; transition: transform .3s cubic-bezier(.16, 1, .3, 1), opacity .25s ease; overflow: hidden; }
+.poster-close { position: absolute; top: 10px; right: 10px; z-index: 2; width: 36px; height: 36px; border: none; border-radius: 50%; background: rgba(0, 0, 0, .45); color: #fff; cursor: pointer; display: grid; place-items: center; transition: background .18s ease; }
+.poster-close:hover { background: rgba(0, 0, 0, .7); }
+.poster-close svg { width: 18px; height: 18px; }
+.poster-img { width: 100%; height: auto; max-height: 78vh; object-fit: contain; border-radius: 6px; display: block; }
+.poster-tip { margin: 0 0 16px; color: var(--muted); font-size: 13px; text-align: center; }
 .card-badge { position: absolute; top: 14px; right: 14px; display: inline-flex; align-items: center; gap: 5px; min-height: 29px; padding: 5px 9px; border: 1px solid color-mix(in srgb, var(--accent) 70%, var(--line)); border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 800; font-variant-numeric: tabular-nums; }
 .card-badge svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
 .card.is-limited .card-top { padding-right: 92px; }

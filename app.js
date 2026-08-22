@@ -85,6 +85,20 @@ const TOKENS = [
   },
 
   {
+    name: "豆包拉新项目",
+    type: "项目",
+    modality: "网盘拉新 · 多平台带赚",
+    rating: 4,
+    quota: "豆包拉新一单 15 元，迅雷网盘一单 15 元，夸克网盘 13 元，各种拉新项目，免费带赚",
+    effect: "多平台拉新变现项目：豆包 / 迅雷网盘 / 夸克网盘等，单笔佣金 13-15 元，零门槛免费参与，扫码加微信了解详情并获取推广素材",
+    how: "点击下方「立取领取」查看海报 → 长按海报右下角二维码添加微信（备注 Token-FBI）→ 获取各平台推广链接与素材",
+    link: "#",
+    tone: "orange",
+    poster: "poster-doubao-laxin.jpg",
+    updated: "2026-08-22"
+  },
+
+  {
     name: "2026 微信小程序开发大赛",
     type: "大模型",
     modality: "DeepSeek V4 Flash / GLM-5.2 · 文本模型（Coding Plan 免费 Token）",
@@ -519,7 +533,7 @@ function render(type) {
       <div class="card-row"><span class="k">效果怎么样</span><span class="v">${cleanText(t.effect)}</span></div>
       <div class="card-row how-row"><span class="k">怎么拿</span><span class="v">${cleanText(how)}</span></div>
       <div class="card-footer">
-        <a class="card-link" href="${link}" target="_blank" rel="noopener">立即领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>
+        ${t.poster ? `<button class="card-link card-poster-trigger" type="button" data-poster="${t.poster}" aria-label="查看详情海报">立取领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></button>` : `<a class="card-link" href="${link}" target="_blank" rel="noopener">立即领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>`}
         <div class="card-date">更新于 ${t.updated}</div>
       </div>
     </article>
@@ -573,6 +587,45 @@ if (wechatTrigger && qrcodeBox) {
 }
 
 render("all");
+
+/* 海报弹窗：项目卡点击「立取领取」时弹出海报图片 */
+(function initPosterModal() {
+  const triggers = document.querySelectorAll(".card-poster-trigger");
+  if (!triggers.length) return;
+
+  let overlay = null;
+
+  function createOverlay() {
+    if (overlay) return overlay;
+    overlay = document.createElement("div");
+    overlay.className = "poster-overlay";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-label", "项目详情海报");
+    overlay.innerHTML = '<div class="poster-backdrop"></div><div class="poster-dialog"><button class="poster-close" type="button" aria-label="关闭"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button><img class="poster-img" alt="项目详情海报" /><p class="poster-tip">长按海报右下角二维码，备注「Token-FBI」</p></div>';
+    document.body.appendChild(overlay);
+
+    const close = () => { overlay.classList.remove("is-open"); setTimeout(() => { overlay.style.display = "none"; }, 220); };
+    overlay.querySelector(".poster-backdrop").addEventListener("click", close);
+    overlay.querySelector(".poster-close").addEventListener("click", close);
+    document.addEventListener("keydown", e => { if ((e.key === "Escape" || e.key === "Esc") && overlay.classList.contains("is-open")) close(); });
+
+    return overlay;
+  }
+
+  triggers.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const src = btn.dataset.poster || "";
+      if (!src) return;
+      const dlg = createOverlay();
+      const img = dlg.querySelector(".poster-img");
+      img.src = src;
+      img.onerror = () => { img.alt = "海报加载失败"; };
+      dlg.style.display = "flex";
+      requestAnimationFrame(() => { dlg.classList.add("is-open"); });
+    });
+  });
+})();
 
 (function renderWatchout() {
   const box = document.getElementById("watchout-cards");
