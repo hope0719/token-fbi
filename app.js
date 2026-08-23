@@ -32,8 +32,8 @@ const TOKENS = [
     link: "https://www.trae.cn/work-fission/L5MUTNLTP5SA?utm_source=copy_link&utm_medium=friends_invite",
     /* traeLinks：TRAE 分享码列表（当前单码）。多个码时每次加载随机挑一个展示，分散调用压力。
        加第二条码只要在此数组里追加一段即可（如 "XXXX"）。 */
-    traeLinks: ["L5MUTNLTP5SA"],
-    updated: "2026-08-19"
+    traeLinks: ["L5MUTNLTP5SA", "JGHT5X4SD92S"],
+    updated: "2026-08-23"
   },
 
   {
