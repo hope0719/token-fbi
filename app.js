@@ -37,6 +37,19 @@ const TOKENS = [
   },
 
   {
+    name: "GLM-5.3-Flash（Ox-Alpha）",
+    type: "大模型",
+    modality: "原生多模态大模型 · 300B 参数",
+    rating: 5,
+    quota: "未订阅用户免费发放 7 天体验卡（0 成本上手，每天限量 10,000 张）；Coding Plan 可用额度提升至原来的 3 倍；套餐用户账号内体验卡数量已重置",
+    effect: "智谱首个原生多模态模型，仅 300B 参数却超越上代旗舰 GLM-5.2、比肩 Opus 4.8；定价为 GLM-5.3 的 1/10（限时折扣 1/20，约 Opus 4.8 的 1/40）。能直接看界面、看渲染结果，边写代码边观察、测试、改进；进一步支持 Office、金融研究、专业文档等场景，可完整交付 PPTX / PDF / DOCX / XLSX",
+    how: "打开领取入口 https://bigmodel.cn/activity/trial-card/PU9MTWG0PM → 领取 7 天免费体验卡（每天限量 1 万张）→ 在智谱 BigModel 平台选用 GLM-5.3-Flash 开跑",
+    link: "https://bigmodel.cn/activity/trial-card/PU9MTWG0PM",
+    tone: "yellow",
+    updated: "2026-08-27"
+  },
+
+  {
     name: "腾讯 Marvis（马维斯）",
     type: "工具",
     modality: "混元 / DeepSeek V4 · 操作系统级 AI 助手",

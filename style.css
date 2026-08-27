@@ -97,6 +97,13 @@ a { color: inherit; }
 .card.tone-orange .card-link { border-color: #ff9f2e; background: #ff9f2e; color: #2b1602; }
 .card.tone-orange .card-link:hover { border-color: #ffb84d; background: #ffb84d; box-shadow: 0 8px 18px rgba(255, 140, 40, .28); }
 
+/* 黄色情报卡：用于重磅免费/上新情报（如 GLM-5.3-Flash 上线） */
+.card.tone-yellow { background: linear-gradient(150deg, rgba(250, 204, 21, .16), rgba(234, 179, 8, .04)); border-color: rgba(250, 204, 21, .55); }
+.card.tone-yellow:hover { border-color: rgba(250, 204, 21, .9); background: linear-gradient(150deg, rgba(250, 204, 21, .22), rgba(234, 179, 8, .06)); }
+.card.tone-yellow .card-rating { color: #eab308; }
+.card.tone-yellow .card-link { border-color: #facc15; background: #facc15; color: #2b1d01; }
+.card.tone-yellow .card-link:hover { border-color: #fde047; background: #fde047; box-shadow: 0 8px 18px rgba(250, 204, 21, .3); }
+
 /* 海报弹窗（项目卡立取领取） */
 .poster-overlay { display: none; position: fixed; inset: 0; z-index: 999; align-items: center; justify-content: center; padding: 20px; }
 .poster-overlay.is-open .poster-backdrop { opacity: 1; }
