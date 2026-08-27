@@ -104,6 +104,16 @@ a { color: inherit; }
 .card.tone-yellow .card-link { border-color: #facc15; background: #facc15; color: #2b1d01; }
 .card.tone-yellow .card-link:hover { border-color: #fde047; background: #fde047; box-shadow: 0 8px 18px rgba(250, 204, 21, .3); }
 
+/* 蓝紫渐变情报卡：用于微信小程序大赛等紧迫活动 */
+.card.tone-bluepurple { background: linear-gradient(150deg, rgba(99, 102, 241, .16), rgba(168, 85, 247, .06)); border-color: rgba(139, 92, 246, .55); }
+.card.tone-bluepurple:hover { border-color: rgba(139, 92, 246, .9); background: linear-gradient(150deg, rgba(99, 102, 241, .22), rgba(168, 85, 247, .1)); }
+.card.tone-bluepurple .card-rating { color: #a855f7; }
+.card.tone-bluepurple .card-link { border-color: #8b5cf6; background: #8b5cf6; color: #fff; }
+.card.tone-bluepurple .card-link:hover { border-color: #a78bfa; background: #a78bfa; box-shadow: 0 8px 18px rgba(139, 92, 246, .3); }
+
+/* 卡片右上角紧迫角标（如「时间紧迫」） */
+.card-corner-badge { position: absolute; top: 12px; right: 12px; z-index: 3; padding: 4px 10px; border-radius: 8px; background: linear-gradient(135deg, #6366f1, #a855f7); color: #fff; font-size: 12px; font-weight: 800; letter-spacing: .5px; box-shadow: 0 4px 12px rgba(139, 92, 246, .4); }
+
 /* 海报弹窗（项目卡立取领取） */
 .poster-overlay { display: none; position: fixed; inset: 0; z-index: 999; align-items: center; justify-content: center; padding: 20px; }
 .poster-overlay.is-open .poster-backdrop { opacity: 1; }
