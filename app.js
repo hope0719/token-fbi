@@ -380,6 +380,20 @@ const TOKENS = [
     how: "打开天翼 AI 官网 → 选择 Windows 或 macOS 对应桌面版下载安装 → 登录中国电信账号 → 启动「星辰超级智能体」即可使用（每日 6000 万 token 额度自动到账）",
     link: "https://www.teleai.com.cn/product/teleagent",
     updated: "2026-08-19"
+  },
+
+  /* ========== 末尾：GMI Cloud（2026-08-27 新增，minimax-3m + GLM + agens-2.5-flash 均免费） ========== */
+
+  {
+    name: "GMI Cloud（gmi-serving）",
+    type: "大模型",
+    modality: "MiniMax-3M + GLM 智谱 + agens-2.5-flash · 文本模型（均免费）",
+    rating: 5,
+    quota: "MiniMax-3M、GLM 智谱、agens-2.5-flash 当前全部免费调用（OpenAI 兼容接口，一个 Key 切多模型）",
+    effect: "GMI Cloud 的 API 网关，主打免费模型：MiniMax-3M 日常对话、写文案够用，响应快；GLM 智谱中文理解稳，总结改写很顺手；agens-2.5-flash 同样免费可用，适合高频小任务与 Agent 调用",
+    how: "打开控制台 https://console.gmicloud.ai 注册 → 创建 API Key → 接口 base_url 填 https://api.gmi-serving.com/v1，选用 minimax-3m / GLM / agens-2.5-flash 等免费模型，OpenAI 兼容即插即用",
+    link: "https://console.gmicloud.ai",
+    updated: "2026-08-27"
   }
 ];
 
