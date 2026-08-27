@@ -271,17 +271,6 @@ const TOKENS = [
     updated: "2026-07-29"
   },
 
-  {
-    name: "ZenMux",
-    type: "大模型",
-    modality: "GLM 5.3 · DeepSeek V4 Pro/Flash · Kimi K2.7 · Step 3.7 Flash 等",
-    rating: 2,
-    quota: "GLM 5.3 限时免费一周；DeepSeek V4 Pro/Flash 永久免费无限调用（无上限、无需实名、无需充值）",
-    effect: "企业级大模型聚合平台，一个 API Key 接入 100+ 模型，国内低延迟。⚠️ 实测反馈：GLM 5.3 当前报 500 错误用不了；DeepSeek V4 Pro/Flash、Kimi K2.7 Code、Step 3.7 Flash 等永久免费通道仍可正常调用",
-    how: "打开 zenmux.ai 注册（支持邮箱/GitHub/谷歌一键登录）→ 进入 PAYG API 创建密钥 → 勾选 free 模型权限（如 deepseek/deepseek-v4-pro-free）→ 复制 API Key 配置到客户端；⚠️ GLM 5.3 实测报 500 无法调用",
-    link: "https://zenmux.ai/invite/CIYB5Z",
-    updated: "2026-08-19"
-  },
 
   {
     name: "腾讯云 TokenHub",
@@ -474,6 +463,11 @@ const DONOTS = [
     name: "阶跃星辰 StepFun",
     why: "限时活动已结束，新用户仅赠 10 额度（¥10 余额），不再有大规模免费额度",
     link: "https://platform.stepfun.com/?invite_code=HMVLLXUM"
+  },
+  {
+    name: "ZenMux",
+    why: "免费额度大幅缩水，需充值解锁才能正常使用",
+    link: "https://zenmux.ai/invite/CIYB5Z"
   }
 ];
 
