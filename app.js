@@ -722,3 +722,43 @@ if (window.gsap) {
     });
   });
 })();
+
+/* 顶部分享条：点击直接复制文案 */
+(function initShareBar() {
+  const btn = document.getElementById("shareBtn");
+  if (!btn) return;
+  const defaultLabel = btn.textContent;
+  let resetTimer = null;
+
+  async function doCopy(text) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+    } catch (_) { /* 走降级 */ }
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand("copy"); } catch (_) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  btn.addEventListener("click", async () => {
+    const text = btn.dataset.copy || "";
+    const ok = await doCopy(text);
+    btn.classList.toggle("is-copied", ok);
+    btn.textContent = ok ? "已复制，去分享吧 ✓" : "复制失败，请手动复制";
+    if (resetTimer) clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => {
+      btn.classList.remove("is-copied");
+      btn.textContent = defaultLabel;
+    }, 2000);
+  });
+})();

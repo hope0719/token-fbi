@@ -34,6 +34,14 @@ a { color: inherit; }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 
 .site-header { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--canvas) 88%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--line) 82%, transparent); backdrop-filter: blur(18px); }
+
+/* 顶部分享条 */
+.share-bar { background: linear-gradient(90deg, rgba(245, 158, 11, .14), rgba(245, 176, 46, .05)); border-bottom: 1px solid rgba(245, 158, 11, .32); }
+.share-bar-inner { min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.share-bar-text { color: #f6c453; font-size: 13px; font-weight: 600; letter-spacing: .01em; }
+.share-bar-btn { border: 1px solid #f59e0b; background: #f59e0b; color: #2b1602; font: 700 13px/1 Inter, ui-sans-serif, system-ui, sans-serif; padding: 8px 16px; border-radius: 999px; cursor: pointer; white-space: nowrap; transition: background .18s var(--ease-out, ease), border-color .18s var(--ease-out, ease), box-shadow .18s var(--ease-out, ease), color .18s var(--ease-out, ease); }
+.share-bar-btn:hover { background: #ffb84d; border-color: #ffb84d; box-shadow: 0 8px 18px rgba(245, 158, 11, .3); }
+.share-bar-btn.is-copied { background: #16c784; border-color: #16c784; color: #04230f; }
 .header-inner { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; min-width: max-content; }
 .brand-mark { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: var(--accent); color: var(--accent-ink); font: 800 15px/1 Inter, ui-sans-serif, sans-serif; box-shadow: 0 8px 18px rgba(16, 185, 129, .2); }
