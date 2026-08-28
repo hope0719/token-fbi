@@ -9,14 +9,14 @@ const TOKENS = [
   {
     name: "WorkBuddy",
     type: "工具",
-    modality: "HY3 · 混元3 · 文本模型",
+    modality: "HY3（混元3） · HY4（混元4） · 文本模型",
     rating: 5,
-    quota: "HY3（混元3）模型限时免费，官方已宣布延长至 2026-08-31；注意 HY3 有每日用量限制，重置周期为 24 小时",
-    effect: "腾讯系 AI 工作台，HY3（混元3）能力可直接调用，速度很快；写代码、查资料、做自动化都好用。Hy3 限免期间连续两周全球调用量第一（周调用 11.5 万亿 Token），因用户呼声限免从 7/22 延长到 8/31",
-    how: "打开 WorkBuddy 客户端或网页版，HY3 现已开放免费调用（限免延至 8/31，抓紧用）",
+    quota: "HY3（混元3）限免延期至 2026-09-30；新出的 HY4（混元4）限免至 2026-09-10（更早截止，抓紧）",
+    effect: "腾讯系 AI 工作台，HY3（混元3）与最新 HY4（混元4）均可直接调用，速度很快；写代码、查资料、做自动化都好用。HY3 限免期间连续两周全球调用量第一（周调用 11.5 万亿 Token），因用户呼声限免从 7/22 一路延长到 9/30；HY4 新上线同样限时免费，但仅到 9/10",
+    how: "打开 WorkBuddy 客户端或网页版，HY3 / HY4 现已开放免费调用（HY3 延至 9/30，HY4 限免至 9/10，抓紧用）",
     link: "https://www.codebuddy.cn/events/invite?inviteCode=akek8mgwjqlt",
-    limited: "2026-08-31",
-    updated: "2026-08-07"
+    limited: "2026-09-10",
+    updated: "2026-08-28"
   },
 
   /* ========== 较新 / 主力平台 ========== */
@@ -76,13 +76,13 @@ const TOKENS = [
   {
     name: "七牛云 AI 推理",
     type: "大模型",
-    modality: "千问 3.8 Max / DeepSeek V4 Flash / Kimi K3 · 文本模型",
+    modality: "千问 3.8 Max / DeepSeek V4 Flash / Kimi K3 / GLM-5.3-Flash · 文本模型",
     rating: 5,
-    quota: "300 万 token，新用户再送 1000 万 token（可直接用于千问 3.8 Max / DeepSeek V4 Flash / Kimi K3）",
-    effect: "直接调用千问 3.8 Max、DeepSeek V4 Flash、Kimi K3 等热门模型，免工具调用，注册登录即可拿 API",
+    quota: "300 万 token，新用户再送 1000 万 token（可直接用于千问 3.8 Max / DeepSeek V4 Flash / Kimi K3 / GLM-5.3-Flash）",
+    effect: "直接调用千问 3.8 Max、DeepSeek V4 Flash、Kimi K3、智谱 GLM-5.3-Flash 等热门模型，免工具调用，注册登录即可拿 API；GLM-5.3-Flash 已上架，原生多模态、性价比高",
     how: "访问 https://s.qiniu.com/VV7Zfa 注册登录，到 https://portal.qiniu.com/ai-inference/api-key 创建 API Key（注意：不要在微信内打开）",
     link: "https://s.qiniu.com/VV7Zfa",
-    updated: "2026-07-14"
+    updated: "2026-08-28"
   },
 
   {
