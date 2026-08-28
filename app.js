@@ -19,6 +19,19 @@ const TOKENS = [
     updated: "2026-08-28"
   },
 
+  {
+    name: "阿里云 Qoder（灵码）",
+    type: "工具",
+    modality: "Qwen3.8-Max · 代码模型",
+    rating: 5,
+    quota: "免费领 800 次 Qwen3.8-Max 调用（8/3-9/3 新注册/付费用户，每人限 1 次，仅个人）；中国站下单再领 2000 次（8/3-9/3，仅个人）",
+    effect: "阿里云 Qoder（原灵码）编程助手，主打通义千问 Qwen3.8-Max。8/3-9/3 活动期内，新注册用户及符合条件的付费用户可免费领 800 次 Qwen3.8-Max 模型调用；同期在中国站官网下单（个人专业版 / 高级版 / 资源包，不含会员卡）可再领 2000 次，均每人限 1 次、仅限个人用户",
+    how: "升级到最新版本 → 登录 Qoder Desktop / JetBrains 插件，在端内积分用量处或右上角礼盒处领取；Qoder CLI 通过 /claim 命令领取（活动期 8/3-9/3，链接需在期内使用）",
+    link: "https://www.aliyun.com/product/lingma?userCode=ygtxup80",
+    limited: "2026-09-03",
+    updated: "2026-08-28"
+  },
+
   /* ========== 较新 / 主力平台 ========== */
 
   {
