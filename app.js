@@ -88,13 +88,14 @@ const TOKENS = [
   {
     name: "美团 catpaw（App）",
     type: "工具",
-    modality: "LongCat 等 · 多模型聚合（LongCat 免费）",
+    modality: "GLM-5.3-Flash · LongCat 等 · 多模型聚合",
     rating: 5,
-    quota: "新用户登录即送 1200 积分（此前为 500 次兑换额度），日常调用够用；longcat（LongCat）模型当前免费",
-    effect: "美团旗下 AI App，多模型聚合，当前 longcat（LongCat）模型免费不限量使用；界面类 WorkBuddy / Codex，对话 + 编程场景全覆盖",
-    how: "打开 catpaw.meituan.com 注册登录即领 1200 积分 → 在模型列表选 LongCat 等直接使用，LongCat 当前免费（注意：装 App 后若曾装过 catpaw ai，可能出现图标重复，属已知现象）",
+    tone: "green",
+    quota: "新用户登录即送 1200 积分；LongCat 免费不限量；**GLM-5.3-Flash 已上线**（通用 Agent 能力 × 美团生态深度融合）",
+    effect: "美团旗下 AI App，多模型聚合平台。GLM-5.3-Flash 正式上线 CatPaw！原生多模态、300B 参数比肩 Opus 4.8、定价仅 GLM-5.3 的 1/10。LongCat 同样免费不限量使用；界面类 WorkBuddy / Codex，对话 + 编程场景全覆盖",
+    how: "打开 catpaw.meituan.com 注册登录即领 1200 积分 → 在模型列表选 GLM-5.3-Flash 或 LongCat 直接使用（注意：装 App 后若曾装过 catpaw ai，可能出现图标重复，属已知现象）",
     link: "https://catpaw.meituan.com/",
-    updated: "2026-07-22"
+    updated: "2026-08-28"
   },
 
   {
