@@ -53,8 +53,8 @@ a { color: inherit; }
 .site-nav a:hover { color: var(--ink); }
 .site-nav .nav-cta { color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--line)); padding: 6px 12px; border-radius: 999px; }
 .site-nav .nav-cta:hover { background: var(--accent); color: var(--accent-ink); }
-.site-nav .nav-star { color: #f5b02e; border: 1px solid rgba(245, 176, 46, .45); padding: 6px 12px; border-radius: 999px; }
-.site-nav .nav-star:hover { background: #f5b02e; color: #1a1204; }
+.site-nav .nav-star { color: #f59e0b; border: 1px solid rgba(245, 158, 11, .45); padding: 6px 14px; border-radius: 999px; background: rgba(245, 158, 11, .06); }
+.site-nav .nav-star:hover { background: #f59e0b; color: #1a1204; border-color: #f59e0b; }
 .site-nav .nav-star span { margin-right: 4px; }
 
 .hero { padding: clamp(70px, 9vw, 124px) 0 88px; overflow: hidden; }
