@@ -60,6 +60,23 @@ a { color: inherit; }
 .hero { padding: clamp(70px, 9vw, 124px) 0 88px; overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(270px, .65fr); gap: clamp(40px, 7vw, 120px); align-items: end; }
 .hero-copy { max-width: 720px; }
+
+/* Hero 顶部：兄弟项目「活动雷达」特色横幅 */
+.hero-feature-wrap { margin-bottom: clamp(36px, 6vw, 64px); }
+.hero-feature { display: flex; align-items: center; gap: 16px 22px; flex-wrap: wrap; padding: 18px 22px; border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line)); border-radius: 14px; background: linear-gradient(110deg, color-mix(in srgb, var(--accent) 14%, transparent), color-mix(in srgb, var(--accent) 4%, transparent)); box-shadow: 0 18px 44px rgba(0, 0, 0, .22), inset 0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent); text-decoration: none; transition: border-color .2s var(--ease-out), transform .2s var(--ease-out), box-shadow .2s var(--ease-out), background .2s var(--ease-out); }
+.hero-feature:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 22px 52px rgba(16, 185, 129, .18), inset 0 0 0 1px color-mix(in srgb, var(--accent) 22%, transparent); background: linear-gradient(110deg, color-mix(in srgb, var(--accent) 20%, transparent), color-mix(in srgb, var(--accent) 7%, transparent)); }
+.hero-feature-tag { flex: none; align-self: center; font-size: 11px; font-weight: 800; letter-spacing: .08em; color: var(--accent-ink); background: var(--accent); padding: 5px 10px; border-radius: 999px; }
+.hero-feature-title { flex: none; align-self: center; font-size: 19px; font-weight: 800; color: var(--ink); letter-spacing: -.01em; }
+.hero-feature-desc { flex: 1 1 240px; align-self: center; min-width: 200px; color: var(--muted); font-size: 14px; line-height: 1.4; }
+.hero-feature-cta { flex: none; align-self: center; margin-left: auto; color: var(--accent); font-size: 14px; font-weight: 800; white-space: nowrap; }
+.hero-feature:hover .hero-feature-cta { color: #a7f3d0; }
+
+@media (max-width: 640px) {
+  .hero-feature { gap: 10px 14px; padding: 15px 16px; }
+  .hero-feature-title { font-size: 17px; }
+  .hero-feature-cta { margin-left: 0; width: 100%; text-align: left; }
+}
+
 .hero h1 { max-width: 690px; margin: 0; font-size: clamp(46px, 6vw, 78px); line-height: 1.06; letter-spacing: -.035em; text-wrap: balance; }
 .hero h1 span { color: var(--accent); }
 .hero-sub { max-width: 31rem; margin: 24px 0 28px; color: var(--muted); font-size: 17px; }
