@@ -14,7 +14,7 @@ const TOKENS = [
     quota: "HY3（混元3）限免延期至 2026-09-30；新出的 HY4（混元4）限免至 2026-09-10（更早截止，抓紧）",
     signup: "新用户注册送 2000 积分，折算下来新用户合计可得 3300 积分额度（含模型限免）",
     effect: "腾讯系 AI 工作台，HY3（混元3）与最新 HY4（混元4）均可直接调用，速度很快；写代码、查资料、做自动化都好用。HY3 限免期间连续两周全球调用量第一（周调用 11.5 万亿 Token），因用户呼声限免从 7/22 一路延长到 9/30；HY4 新上线同样限时免费，但仅到 9/10",
-    link: "https://www.codebuddy.cn/events/invite?inviteCode=akek8mgwjqlt",
+    link: "https://www.codebuddy.cn/events/invite?inviteCode=9dzkmk26wvzy",
     limited: "2026-09-10",
     updated: "2026-08-28",
     v2: true
@@ -521,12 +521,12 @@ const DONOTS = [
   {
     name: "阶跃星辰 StepFun",
     why: "限时活动已结束，新用户仅赠 10 额度（¥10 余额），不再有大规模免费额度",
-    link: "https://platform.stepfun.com/?invite_code=HMVLLXUM"
+    link: "https://platform.stepfun.com"
   },
   {
     name: "ZenMux",
     why: "免费额度大幅缩水，需充值解锁才能正常使用",
-    link: "https://zenmux.ai/invite/CIYB5Z"
+    link: "https://zenmux.ai"
   }
 ];
 
@@ -704,7 +704,7 @@ render("all");
       ${REGION_BY_NAME[item.name] ? `<span class="row-watchout-region">${cleanText(REGION_BY_NAME[item.name])}</span>` : ''}
       <span class="row-watchout-tag">观望</span>
       <p class="row-watchout-why">${cleanText(item.why)}</p>
-      <a class="row-watchout-action" href="${item.link || "#"}" target="_blank" rel="noopener">立即领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>
+      <a class="row-watchout-action" href="${item.link || "#"}" target="_blank" rel="noopener">查看详情 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>
     </div>
   `).join("");
 })();
