@@ -38,9 +38,9 @@ const TOKENS = [
   {
     name: "TRAE Work",
     type: "工具",
-    modality: "GLM-5.3 · GLM-5.2 / DeepSeek V4 Flash / 千问 3.8 Max · 不支持 Kimi K3",
+    modality: "GLM-5.3 / DeepSeek V4 Flash / 千问 3.8 Max · 不支持 Kimi K3",
     rating: 4,
-    quota: "通过我的分享链接登录桌面端，新注册用户一次性获得 5000 积分",
+    quota: "新用户登录送 5000 积分",
     effect: "TraeWork AI 办公平台，一站式搞定各类办公与创作任务；模型调用走折扣价通道、比官方原价更低，写文档、做表格、跑自动化流程都顺手",
     link: "https://www.trae.cn/work-fission/ESKME76PNXAY?utm_source=copy_link&utm_medium=friends_invite",
     /* traeLinks：TRAE 分享码列表（当前双码）。多个码时每次加载随机挑一个展示，分散调用压力。
@@ -133,7 +133,7 @@ const TOKENS = [
     type: "大模型",
     modality: "DeepSeek V4 Flash · 文本模型（Coding Plan 免费 Token）",
     rating: 4,
-    quota: "报名后约 7-10 天收到 tokenplan 计划卡片，内含 DeepSeek / V4 Flash 大额额度，单卡可用量高达 1 个亿",
+    quota: "报名后约 7-10 天收到 tokenplan 计划卡片，内含 DeepSeek V4 Flash 大额额度，单卡可用量高达 1 个亿",
     effect: "网站站长亲测：纯度极高、速度很好、量大管够；无需提交小程序也能领，别担心",
     link: "https://contest.weixin.qq.com/eventDetails?id=4598379302114656257",
     tone: "bluepurple",
