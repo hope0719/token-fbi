@@ -154,7 +154,7 @@ a { color: inherit; }
 .watchout-rows { display: flex; flex-direction: column; gap: 10px; margin-top: 26px; }
 .row-watchout {
   display: grid;
-  grid-template-columns: auto minmax(0, max-content) auto 1fr auto;
+  grid-template-columns: auto minmax(0, max-content) auto auto 1fr auto;
   align-items: center;
   column-gap: 12px;
   padding: 14px 18px;
@@ -203,6 +203,21 @@ a { color: inherit; }
   border-radius: 999px;
   padding: 3px 0;
   color: var(--faint);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+.row-watchout-region {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  box-sizing: border-box;
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--line));
+  border-radius: 999px;
+  padding: 3px 9px;
+  color: var(--accent);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: .02em;
@@ -257,6 +272,8 @@ a { color: inherit; }
 .card-row .v strong { color: var(--ink); font-weight: 750; }
 .how-row .v { color: var(--faint); }
 .card-footer { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 8px; margin-top: auto; padding-top: 24px; }
+.card-region { grid-column: 1; justify-self: start; align-self: center; display: inline-flex; align-items: center; gap: 5px; max-width: 100%; overflow: hidden; border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--line)); border-radius: 999px; padding: 3px 9px; color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); font-size: 11px; font-weight: 800; letter-spacing: .02em; white-space: nowrap; }
+.card-region::before { content: "◈"; font-size: 9px; opacity: .85; }
 .card-link { grid-column: 2; display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 40px; padding: 9px 14px; border: 1px solid var(--accent); border-radius: 10px; background: var(--accent); color: var(--accent-ink); font-size: 13px; font-weight: 800; text-decoration: none; white-space: nowrap; transition: background .18s var(--ease-out), border-color .18s var(--ease-out), box-shadow .18s var(--ease-out), transform .18s var(--ease-out); }
 .card-link svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; transition: transform .18s var(--ease-out); }
 .card-link:hover { border-color: #a7f3d0; background: #a7f3d0; color: var(--accent-ink); box-shadow: 0 8px 18px rgba(16, 185, 129, .2); text-decoration: none; }.card-link:hover svg { transform: translateX(2px); }

@@ -533,6 +533,21 @@ const DONOTS = [
 const DONOT_NAMES = new Set(DONOTS.map(d => d.name));
 const VISIBLE = TOKENS.filter(t => !DONOT_NAMES.has(t.name));
 
+/* 平台归属地标注（卡片左下角/观望行）：能查清的确切写国家/地区，
+   查不清主体的一律标「国外」；大陆平台不在此表、不标注。 */
+const REGION_BY_NAME = {
+  "Agnes AI": "新加坡",
+  "OpenRouter": "美国",
+  "GMI Cloud（gmi-serving）": "美国",
+  "B.AI（AI 模型聚合平台）": "国外",
+  "NVIDIA NIM 免费 API": "美国",
+  "HuggingFace Inference API": "美国",
+  "BazaarLink": "中国台湾",
+  "OpenCode Zen": "国外",
+  "基元律动": "国外",
+  "ZenMux": "国外"
+};
+
 /* 归类规则（只分两类）：
  *   - 工具：App 类（type === "工具"）
  *   - 大模型：其余所有模型平台
@@ -577,6 +592,7 @@ function render(type) {
       <div class="card-row"><span class="k">效果怎么样</span><span class="v">${cleanText(t.effect)}</span></div>
       <div class="card-row how-row"><span class="k">怎么拿</span><span class="v">${cleanText(how)}</span></div>
       <div class="card-footer">
+        ${REGION_BY_NAME[t.name] ? `<span class="card-region">${cleanText(REGION_BY_NAME[t.name])}</span>` : ''}
         ${t.poster ? `<button class="card-link card-poster-trigger" type="button" data-poster="${t.poster}" aria-label="查看详情海报">立取领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></button>` : `<a class="card-link" href="${link}" target="_blank" rel="noopener">立即领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>`}
         <div class="card-date">更新于 ${t.updated}</div>
       </div>
@@ -684,6 +700,7 @@ render("all");
     <div class="row-watchout">
       <span class="row-watchout-num">${i + 1}</span>
       <h3 class="row-watchout-name">${cleanText(item.name)}</h3>
+      ${REGION_BY_NAME[item.name] ? `<span class="row-watchout-region">${cleanText(REGION_BY_NAME[item.name])}</span>` : ''}
       <span class="row-watchout-tag">观望</span>
       <p class="row-watchout-why">${cleanText(item.why)}</p>
       <a class="row-watchout-action" href="${item.link || "#"}" target="_blank" rel="noopener">立即领取 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>
