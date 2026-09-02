@@ -530,9 +530,33 @@ const DONOTS = [
   }
 ];
 
+/* ========== 精选规则（2026-09-02 起） ==========
+ * 只展示「提供 ≥ 门槛系列模型」的卡片：门槛= index.html「优先收录」列表里的 6 个最低档型号。
+ * 同系列更高版本自动命中（DeepSeek V4 Flash/Pro、GLM-5.3-Flash、千问 3.8 Max/Flash 等）；
+ * 低于门槛的型号（DeepSeek 3.2、GLM 5/5.2、Kimi K2.6、Qwen 3.5、Hy3 等）一律不展示。
+ * 判定：卡片 name + modality 合并文本中包含任一门槛关键词（大小写、连字符、空格、· 不敏感）。
+ * 广告卡（豆包拉新）设 alwaysShow: true 绕过本规则，单独放行；UI 看起来与普通卡片无异。 */
+const FEATURED_KEYS = {
+  "DeepSeek V4":  ["deepseekv4"],
+  "GLM 5.3":      ["glm53"],
+  "Kimi K3":      ["kimik3"],
+  "千问 3.8":     ["千问38", "qwen38"],   // 同时覆盖 Max 与 Flash
+  "Hy4":          ["hy4"]
+};
+function isFeatured(t) {
+  const text = (t.name + " " + (t.modality || "")).toLowerCase().replace(/[^a-z0-9\u4e00-\u9fa5]+/g, "");
+  for (const keys of Object.values(FEATURED_KEYS)) {
+    for (const k of keys) {
+      if (text.includes(k)) return true;
+    }
+  }
+  return false;
+}
+
 /* 观望名单中的平台：其官网大卡不再展示（数据保留在 TOKENS，移出观望名单后自动恢复） */
 const DONOT_NAMES = new Set(DONOTS.map(d => d.name));
-const VISIBLE = TOKENS.filter(t => !DONOT_NAMES.has(t.name));
+/* VISIBLE：去掉观望名单 + 必须命中精选规则（alwaysShow 广告卡单独放行） */
+const VISIBLE = TOKENS.filter(t => !DONOT_NAMES.has(t.name) && (t.alwaysShow || isFeatured(t)));
 
 /* 平台归属地标注（卡片左下角/观望行）：能查清的确切写国家/地区，
    查不清主体的一律标「国外」；大陆平台不在此表、不标注。 */
