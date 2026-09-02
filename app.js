@@ -354,6 +354,20 @@ const TOKENS = [
     updated: "2026-08-21"
   },
 
+  /* ========== B.AI（孙哥 Justin Sun 的 AI 聚合平台，2026-09-02 修正：非百度 + 换邀请链接 + 前移 4 位） ========== */
+
+  {
+    name: "B.AI（AI 模型聚合平台）",
+    type: "大模型",
+    modality: "DeepSeek-V4-Flash / GLM-5.3-Flash / Qwen3.8-Flash / Hy3 / MiMo-V2.5 · 多模型免费",
+    rating: 5,
+    quota: "当前多款模型 0 Credits 免费（Chat + API 双端）：DeepSeek-V4-Flash（8/17 起全免费）、Hy3（8/21 起全免费）、MiMo-V2.5（API 已免费、Chat 8/25 开放）、GLM-5.3-Flash（API 已免费、Chat 上架后免费）、Qwen3.8-Flash（API 已免费、Chat 上架后免费）；另有 GLM-5.2 限时 6 折、GLM-5.3 限时 9 折",
+    effect: "孙哥（孙宇晨 Justin Sun）的 AI 模型聚合平台 b.ai（⚠️ 不是百度官方），聚合接入 OpenAI / Anthropic / Google / DeepSeek / 月之暗面 / 千问 / Z.ai / MiniMax 等第三方模型，走 LLM 聚合 + Web3 钱包支付路线；官方公告白纸黑字确认上述免费/折扣活动，DeepSeek-V4-Flash 与 Hy3 在 Chat 和 API 双端均按 0 Credits 结算，可以放心长期跑",
+    how: "打开分享链接 https://chat.b.ai/chat?invite_code=CQLBPC 注册登录 → 在模型列表选 DeepSeek-V4-Flash / Hy3 / MiMo-V2.5 / GLM-5.3-Flash 等免费模型直接使用，或创建 API Key 接入（OpenAI 兼容）",
+    link: "https://chat.b.ai/chat?invite_code=CQLBPC",
+    updated: "2026-09-02"
+  },
+
   /* ========== 末尾：MonkeyCode（2026-08-12 新增） ========== */
 
   {
@@ -410,19 +424,6 @@ const TOKENS = [
     updated: "2026-08-27"
   },
 
-  /* ========== 末尾：B.AI（百度大模型平台，2026-08-30 新增，多模型 0 Credits 免费） ========== */
-
-  {
-    name: "B.AI（百度大模型 API）",
-    type: "大模型",
-    modality: "DeepSeek-V4-Flash / GLM-5.3-Flash / Qwen3.8-Flash / Hy3 / MiMo-V2.5 · 多模型免费",
-    rating: 5,
-    quota: "当前多款模型 0 Credits 免费（Chat + API 双端）：DeepSeek-V4-Flash（8/17 起全免费）、Hy3（8/21 起全免费）、MiMo-V2.5（API 已免费、Chat 8/25 开放）、GLM-5.3-Flash（API 已免费、Chat 上架后免费）、Qwen3.8-Flash（API 已免费、Chat 上架后免费）；另有 GLM-5.2 限时 6 折、GLM-5.3 限时 9 折",
-    effect: "百度官方大模型平台（b.ai），官方公告页白纸黑字确认上述免费/折扣活动；DeepSeek-V4-Flash 与 Hy3 在 Chat 和 API 双端均按 0 Credits 结算，不收取单次请求/输入/缓存/输出任何费用，可以放心长期跑",
-    how: "打开 https://b.ai 注册登录 → 在模型列表选 DeepSeek-V4-Flash / Hy3 / MiMo-V2.5 / GLM-5.3-Flash 等免费模型直接使用，或创建 API Key 接入（OpenAI 兼容），活动细则以官方公告页为准",
-    link: "https://docs.b.ai/zh-Hans/llmservice/promotions-and-pricing-notices/",
-    updated: "2026-08-30"
-  }
 ];
 
 
