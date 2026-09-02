@@ -122,6 +122,8 @@ const TOKENS = [
     link: "#",
     tone: "orange",
     poster: "poster-doubao-laxin.jpg",
+    /* 广告卡片，单独管理：永远展示，不参与下方精选规则 */
+    alwaysShow: true,
     updated: "2026-08-22",
     v2: true
   },
