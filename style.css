@@ -263,7 +263,7 @@ a { color: inherit; }
 .card-name { margin: 0; font-size: 19px; line-height: 1.32; letter-spacing: -.025em; }
 .card-tags { display: flex; align-items: flex-start; }
 .card-modality { color: var(--muted); font-size: 12px; line-height: 1.5; }
-.card-rating { display: flex; align-items: center; gap: 9px; margin: 15px 0 18px; color: var(--accent); font-size: 14px; letter-spacing: 1px; }
+.card-rating { display: flex; align-items: center; gap: 9px; margin: 15px 0 0; color: var(--accent); font-size: 14px; letter-spacing: 1px; }
 .card-rating .dim { opacity: .32; }
 .card-type { color: var(--faint); font-size: 12px; font-weight: 700; letter-spacing: 0; }
 .card-row { margin-top: 16px; font-size: 13px; line-height: 1.7; }
