@@ -534,6 +534,11 @@ const DONOTS = [
     name: "美团 longcat 大模型",
     why: "目前不在精选范围（不提供 DeepSeek V4 / GLM 5.3 / Kimi K3 / 千问 3.8 / Hy4 等门槛模型）",
     link: "https://longcat.chat/platform/product"
+  },
+  {
+    name: "天翼云息壤（电信）",
+    why: "免费额度太低：DeepSeek V4 Pro/Flash 各仅 50 万 Tokens，且使用期限时 2 周",
+    link: "https://www.ctyun.cn/product/maas"
   }
 ];
 
