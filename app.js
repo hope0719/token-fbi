@@ -529,6 +529,11 @@ const DONOTS = [
     name: "ZenMux",
     why: "免费额度大幅缩水，需充值解锁才能正常使用",
     link: "https://zenmux.ai"
+  },
+  {
+    name: "美团 longcat 大模型",
+    why: "目前不在精选范围（不提供 DeepSeek V4 / GLM 5.3 / Kimi K3 / 千问 3.8 / Hy4 等门槛模型）",
+    link: "https://longcat.chat/platform/product"
   }
 ];
 
