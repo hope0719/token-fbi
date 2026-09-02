@@ -1,8 +1,8 @@
-# 🔍 Token 情报局 · Token FBI
+# 🔍 Token 情报局
 
-> **我们在调查哪家的 token 最香。**
+### Token FBI · 我们在调查哪家的 token 最香
 
-一个爱好者自发维护的**免费 AI token 情报站**——汇总现在还能免费拿到的 AI token：有哪些平台、效果怎么样、怎么领。非官方、不接暗广，只帮你看清哪家的免费额度最值得冲。
+> **免费 AI token 情报站**——汇总现在还能免费拿到的 AI token：有哪些平台、效果怎么样。非官方、不接暗广，只帮你看清哪家的免费额度最值得冲。
 
 ---
 
@@ -24,7 +24,7 @@
 
 **【免费 token 集合，WorkBuddy 直接无限 token 使用】**
 
-我们录了一份视频教程，已经 **万人观看**，带你快速上手 Token FBI、领取免费额度：
+我们录了一份视频教程，已经 **5 万人观看**，带你快速上手 Token FBI、领取免费额度：
 
 👉 [Bilibili: 免费 token 集合，WorkBuddy 直接无限 token 使用](https://www.bilibili.com/video/BV1EHM96TEWg?vd_source=849374a5ac857214c3fec62e61b03d00)
 
