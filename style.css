@@ -155,9 +155,9 @@ a { color: inherit; }
 .card-field .v { flex: 1; min-width: 0; color: var(--muted); font-size: 12.5px; line-height: 1.6; }
 .card-field .v b, .card-field .v strong { color: var(--ink); font-weight: 750; }
 .card-field .v .num { color: var(--accent); font-weight: 850; font-variant-numeric: tabular-nums; }
-.card-action { margin-top: 14px; }
-.card-action .card-link { width: 100%; }
-.card-footer { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 12px; }
+.card-action { margin-top: auto; display: flex; justify-content: flex-end; padding-top: 12px; }
+.card-action .card-link { width: 50%; }
+.card-footer { display: flex; align-items: center; gap: 8px; padding-top: 10px; }
 .card-region { display: inline-flex; align-items: center; gap: 5px; border: 1px solid rgba(245, 158, 11, .38); border-radius: 999px; padding: 3px 9px; color: var(--accent); background: rgba(245, 158, 11, .08); font-size: 11px; font-weight: 800; white-space: nowrap; flex: none; }
 .card-region::before { content: "◈"; font-size: 9px; opacity: .85; }
 .card-link { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 38px; padding: 8px 14px; border: 1px solid var(--accent); border-radius: 10px; background: var(--accent); color: var(--accent-ink); font-size: 13px; font-weight: 800; text-decoration: none; transition: all .18s var(--ease-out); }
