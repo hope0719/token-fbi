@@ -144,7 +144,9 @@ a { color: inherit; }
 .card-type { padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 11px; font-weight: 800; white-space: nowrap; }
 .card-limit-row { display: flex; align-items: center; gap: 6px; }
 .card-badge-inline { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border: 1px solid var(--accent); border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.card-name { margin: 0; font-size: 18px; line-height: 1.3; letter-spacing: -.02em; }
+.card-title-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px; }
+.card-title-row .card-name { margin: 0; flex: 1; min-width: 0; }
+.card-name { font-size: 18px; line-height: 1.3; letter-spacing: -.02em; }
 .card-modality { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
 .card-divider { height: 1px; margin: 14px 0; background: var(--line); border: none; }
 .card-field { display: flex; align-items: flex-start; gap: 8px; padding: 7px 0; }
@@ -153,8 +155,10 @@ a { color: inherit; }
 .card-field .v { flex: 1; min-width: 0; color: var(--muted); font-size: 12.5px; line-height: 1.6; }
 .card-field .v b, .card-field .v strong { color: var(--ink); font-weight: 750; }
 .card-field .v .num { color: var(--accent); font-weight: 850; font-variant-numeric: tabular-nums; }
-.card-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 16px; }
-.card-region { display: inline-flex; align-items: center; gap: 5px; border: 1px solid rgba(245, 158, 11, .38); border-radius: 999px; padding: 3px 9px; color: var(--accent); background: rgba(245, 158, 11, .08); font-size: 11px; font-weight: 800; white-space: nowrap; }
+.card-action { margin-top: 14px; }
+.card-action .card-link { width: 100%; }
+.card-footer { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 12px; }
+.card-region { display: inline-flex; align-items: center; gap: 5px; border: 1px solid rgba(245, 158, 11, .38); border-radius: 999px; padding: 3px 9px; color: var(--accent); background: rgba(245, 158, 11, .08); font-size: 11px; font-weight: 800; white-space: nowrap; flex: none; }
 .card-region::before { content: "◈"; font-size: 9px; opacity: .85; }
 .card-link { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 38px; padding: 8px 14px; border: 1px solid var(--accent); border-radius: 10px; background: var(--accent); color: var(--accent-ink); font-size: 13px; font-weight: 800; text-decoration: none; transition: all .18s var(--ease-out); }
 .card-link:hover { background: #ffb84d; border-color: #ffb84d; }
@@ -185,6 +189,7 @@ a { color: inherit; }
 .row-watchout-name { margin: 0; font-size: 15px; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .row-watchout-tag { display: inline-flex; align-items: center; justify-content: center; width: 44px; box-sizing: border-box; border: 1px solid color-mix(in srgb, var(--muted) 42%, var(--line)); border-radius: 999px; padding: 3px 0; color: var(--faint); font-size: 11px; font-weight: 800; letter-spacing: .02em; white-space: nowrap; }
 .row-watchout-region { display: inline-flex; align-items: center; justify-content: center; flex: none; box-sizing: border-box; border: 1px solid rgba(245, 158, 11, .38); border-radius: 999px; padding: 3px 9px; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .02em; white-space: nowrap; }
+.row-watchout-region.is-empty { visibility: hidden; }
 .row-watchout-why { margin: 0; color: var(--faint); font-size: 13px; line-height: 1.5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .row-watchout-action { flex: none; display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--line); color: var(--muted); font-size: 12px; font-weight: 700; text-decoration: none; background: transparent; transition: border-color .18s ease, background .18s ease, color .18s ease, transform .18s ease; }
 .row-watchout-action svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }

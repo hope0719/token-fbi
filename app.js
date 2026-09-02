@@ -443,6 +443,22 @@ const TOKENS = [
     v2: true
   },
 
+  /* ========== 秒哒（字节跳动 · AI 应用生成工具，2026-09-02 新增） ========== */
+
+  {
+    name: "秒哒（字节跳动）",
+    type: "工具",
+    modality: "AI 应用生成工具 · 一句话造应用 · 0 代码搓小程序",
+    rating: 5,
+    quota: "通过我的邀请链接注册即可领取「秒点礼包」；0 帧起手，一句话生成完整可用的应用/小程序，0 代码 0 成本，普通人都能快速上手",
+    effect: "秒哒是字节跳动的免费全能 AI 神器：可以普通、快速地做一个能直接运行的小程序——0 帧起手，一句话描述需求即可生成应用/小程序并运行，全程 0 代码 0 成本，普通人零代码也能轻轻松松搓出来",
+    link: "https://www.miaoda.cn/?invitecode=user-7a0wz6474m4k",
+    tone: "orange",
+    alwaysShow: true,
+    updated: "2026-09-02",
+    v2: true
+  },
+
 ];
 
 
@@ -660,14 +676,18 @@ function render(type) {
           ${t.limited ? `<span class="card-limit-row"><span class="card-badge-inline">⏱ 限时 ${fmtMd(t.limited)}</span></span>` : ''}
         </span>
       </div>
-      <h3 class="card-name">${cleanText(t.name)}</h3>
+      <div class="card-title-row">
+        <h3 class="card-name">${cleanText(t.name)}</h3>
+        ${region}
+      </div>
       <p class="card-modality">${cleanText(t.modality)}</p>
       <hr class="card-divider" />
       ${freeSeg ? `<div class="card-field"><span class="ico">♪</span><span class="v">${seg(freeSeg)}</span></div>` : ''}
       ${effSeg ? `<div class="card-field"><span class="ico">✦</span><span class="v">${seg(effSeg)}</span></div>` : ''}
-      <div class="card-footer">
-        ${region}
+      <div class="card-action">
         ${btn}
+      </div>
+      <div class="card-footer">
         <div class="card-date">更新于 ${t.updated}</div>
       </div>
     </article>
@@ -774,7 +794,7 @@ render("all");
     <div class="row-watchout">
       <span class="row-watchout-num">${i + 1}</span>
       <h3 class="row-watchout-name">${cleanText(item.name)}</h3>
-      ${REGION_BY_NAME[item.name] ? `<span class="row-watchout-region">${cleanText(REGION_BY_NAME[item.name])}</span>` : ''}
+      <span class="row-watchout-region${REGION_BY_NAME[item.name] ? '' : ' is-empty'}">${REGION_BY_NAME[item.name] ? cleanText(REGION_BY_NAME[item.name]) : ''}</span>
       <span class="row-watchout-tag">观望</span>
       <p class="row-watchout-why">${cleanText(item.why)}</p>
       <a class="row-watchout-action" href="${item.link || "#"}" target="_blank" rel="noopener">查看详情 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>
