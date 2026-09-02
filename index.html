@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#020617" />
+  <meta name="theme-color" content="#0a0e14" />
   <meta name="description" content="免费 AI token 情报站。查看仍可领取的额度、模型能力与领取方法。" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <title>Token FBI | 免费 AI token 情报站</title>
-  <link rel="stylesheet" href="style.css?v=2026090220" />
+  <link rel="stylesheet" href="style.css?v=2026090221" />
 </head>
 <body>
   <a class="skip-link" href="#list">跳到情报列表</a>
@@ -43,7 +43,8 @@
     <section class="hero" id="top">
       <div class="wrap hero-grid">
         <div class="hero-copy" data-reveal="hero-copy">
-          <h1>把值得领取的<br><span>AI 额度</span>放在一处。</h1>
+          <span class="hero-eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Zm0 9v4m0 0c-3.3 0-6-1.4-6-1.4V19c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.4S15.3 15 12 15Z" /></svg> 连续投喂 · 全网免费 AI token 情报</span>
+          <h1>把值得领取的<br><span class="hl">AI 额度</span>放在一处。</h1>
           <p class="hero-sub">额度、模型、领取方式和实测判断，一次查清。</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#list">查看情报</a>
@@ -52,16 +53,17 @@
             </a>
             <a class="text-link" href="#submit">提交一条新线索</a>
           </div>
-          <dl class="hero-stats" aria-label="本站数据概览" data-reveal="hero-stats">
-            <div><dt>大模型</dt><dd id="stat-models">0</dd></div>
-            <div><dt>工具</dt><dd id="stat-tools">0</dd></div>
-            <div><dt>限时活动</dt><dd id="stat-limited">0</dd></div>
-            <div><dt>最后更新</dt><dd id="stat-updated">-</dd></div>
-          </dl>
+          <div class="hero-stats" aria-label="本站数据概览" data-reveal="hero-stats">
+            <div class="hero-stat"><dt>大模型</dt><dd id="stat-models">0</dd></div>
+            <div class="hero-stat"><dt>工具</dt><dd id="stat-tools">0</dd></div>
+            <div class="hero-stat"><dt>限时活动</dt><dd id="stat-limited">0</dd></div>
+            <div class="hero-stat"><dt>最后更新</dt><dd id="stat-updated">-</dd></div>
+          </div>
         </div>
 
         <aside class="watchlist" aria-label="收录范围" data-reveal="watchlist">
           <h2>优先收录能直接调用<br>主流模型的平台</h2>
+          <span class="watchlist-gate"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.4 8.2 8 10 4.6-1.8 8-5 8-10V6l-8-3Z"/></svg> 精选门槛</span>
           <ul class="model-list">
             <li>DeepSeek V4</li>
             <li>GLM 5.3</li>
@@ -189,6 +191,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6.5 10.5 12 5l5.5 5.5" /></svg>
   </button>
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script defer src="app.js?v=2026090220"></script>
+  <script defer src="app.js?v=2026090221"></script>
 </body>
 </html>

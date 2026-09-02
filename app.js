@@ -427,6 +427,22 @@ const TOKENS = [
     v2: true
   },
 
+  /* ========== 末尾：AMD 免费 API 与开发者计划（2026-09-02 新增） ========== */
+
+  {
+    name: "AMD 免费 API 与开发者计划",
+    type: "大模型",
+    modality: "AMD 免费 API · 裸机 Instinct GPU / Fireworks 托管推理 · 开发者福利",
+    rating: 5,
+    quota: "免费 API 入口：developer.amd.com.cn/radeon/tokenfactory；AMD AI 开发者计划另给最高 $100 免费云额度（裸机 AMD Instinct GPU）、$50 Fireworks AI 额度（托管 LLM 推理）、1 个月 deeplearning.ai 私享 Discord 权限，以及活动/GPU+AI PC 抽奖资格",
+    effect: "AMD 免费 API 速度快，比英伟达免费的好用很多。开发者计划申请步骤：① 打开 studentoffers.co/offer/amd-ai-developer-program ② 加入 AMD AI 开发者计划 ③ 打开 Member Perks ④ 申请 AMD Cloud 或 Fireworks 额度 ⑤ 填写 affiliation / intended use / 公开主页 ⑥ 等待 2-3 个工作日审批。⚠️ AMD 云额度激活后 30 天过期；Fireworks 额度 90 天有效；额度审批通过后可用",
+    link: "https://developer.amd.com.cn/radeon/tokenfactory",
+    tone: "green",
+    alwaysShow: true,
+    updated: "2026-09-02",
+    v2: true
+  },
+
 ];
 
 
@@ -467,6 +483,20 @@ function fire(rating) {
   }
   return s;
 }
+
+
+function seg(t) {
+  if (!t) return "";
+  const m = t.matchAll(/(\d[.\d]*\s*(?:万|亿|千万|百万)?(?:\s*Tokens?|\s*token|\s*次|元|积分|RPM|TPM)?)/gi);
+  let out = "", last = 0;
+  for (const mo of m) {
+    out += t.slice(last, mo.index) + '<b class="num">' + mo[0] + '</b>';
+    last = mo.index + mo[0].length;
+  }
+  out += t.slice(last);
+  return out;
+}
+
 
 /* ========== 观望名单（不推荐优先领取） ========== */
 const DONOTS = [
@@ -582,7 +612,8 @@ const REGION_BY_NAME = {
   "BazaarLink": "中国台湾",
   "OpenCode Zen": "国外",
   "基元律动": "国外",
-  "ZenMux": "国外"
+  "ZenMux": "国外",
+  "AMD 免费 API 与开发者计划": "美国"
 };
 
 /* 归类规则（只分两类）：
@@ -615,21 +646,27 @@ function render(type) {
     const btn = t.poster
       ? `<button class="card-link card-poster-trigger" type="button" data-poster="${t.poster}" aria-label="查看详情海报">查看详情 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></button>`
       : `<a class="card-link" href="${link}" target="_blank" rel="noopener">查看详情 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>`;
-    /* v2 折叠式正文：免费段 = quota + signup + charge；效果段 = modality 模型 + effect */
+    /* v2 折叠式正文：免费段 = quota + signup + charge 合并；效果段 = modality 模型 + effect */
     const freeSeg = [t.quota, t.signup, t.charge].filter(Boolean).map(s => cleanText(s)).join("。");
     const effSeg = [t.modality ? "可直连模型：" + cleanText(t.modality) : null, t.effect ? cleanText(t.effect) : null].filter(Boolean).join("。");
+    const region = REGION_BY_NAME[t.name] ? `<span class="card-region">${cleanText(REGION_BY_NAME[t.name])}</span>` : '';
     return `
-    <article class="card card-v2${t.limited ? ' is-limited' : ''}${t.tone ? ' tone-' + t.tone : ''}">
+    <article class="card${t.tone ? ' tone-' + t.tone : ''}">
       ${t.badge ? `<span class="card-corner-badge">${cleanText(t.badge)}</span>` : ''}
-      ${t.limited ? `<span class="card-badge" title="限时活动，截止 ${cleanText(t.limited)}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 4.25v4l2.5 1.5M13.5 8A5.5 5.5 0 1 1 2.5 8a5.5 5.5 0 0 1 11 0Z" /></svg>限时 ${fmtMd(t.limited)}</span>` : ''}
-      <div class="card-top">
-        <h3 class="card-name">${cleanText(t.name)}</h3>
+      <div class="card-rating" title="香度 ${t.rating}/5">
+        <span class="card-stars">${fire(t.rating)}</span>
+        <span class="card-meta">
+          <span class="card-type">${catOf(t)}</span>
+          ${t.limited ? `<span class="card-limit-row"><span class="card-badge-inline">⏱ 限时 ${fmtMd(t.limited)}</span></span>` : ''}
+        </span>
       </div>
-      <div class="card-rating" title="香度 ${t.rating}/5">${fire(t.rating)} <span class="card-type">${catOf(t)}</span></div>
-      ${freeSeg ? `<div class="card-row card-row-free"><span class="k">免费额度</span><span class="v">${freeSeg}</span></div>` : ''}
-      ${effSeg ? `<div class="card-row card-row-effect"><span class="k">效果怎么样</span><span class="v">${effSeg}</span></div>` : ''}
+      <h3 class="card-name">${cleanText(t.name)}</h3>
+      <p class="card-modality">${cleanText(t.modality)}</p>
+      <hr class="card-divider" />
+      ${freeSeg ? `<div class="card-field"><span class="ico">♪</span><span class="v">${seg(freeSeg)}</span></div>` : ''}
+      ${effSeg ? `<div class="card-field"><span class="ico">✦</span><span class="v">${seg(effSeg)}</span></div>` : ''}
       <div class="card-footer">
-        ${REGION_BY_NAME[t.name] ? `<span class="card-region">${cleanText(REGION_BY_NAME[t.name])}</span>` : ''}
+        ${region}
         ${btn}
         <div class="card-date">更新于 ${t.updated}</div>
       </div>
