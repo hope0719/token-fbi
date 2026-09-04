@@ -14,9 +14,9 @@ const TOKENS = [
     quota: "HY3（混元3）限免延期至 2026-09-30；新出的 HY4（混元4）限免至 2026-09-10（更早截止，抓紧）",
     signup: "新用户注册送 2000 积分，折算下来新用户合计可得 3300 积分额度（含模型限免）",
     effect: "腾讯系 AI 工作台，HY3（混元3）与最新 HY4（混元4）均可直接调用，速度很快；写代码、查资料、做自动化都好用。HY3 限免期间连续两周全球调用量第一（周调用 11.5 万亿 Token），因用户呼声限免从 7/22 一路延长到 9/30；HY4 新上线同样限时免费，但仅到 9/10",
-    link: "https://www.codebuddy.cn/events/invite?inviteCode=9dzkmk26wvzy",
+    link: "https://curl.qcloud.com/8dvDMEyi",
     limited: "2026-09-10",
-    updated: "2026-08-28",
+    updated: "2026-09-04",
     v2: true
   },
 
