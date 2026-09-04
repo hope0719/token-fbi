@@ -145,12 +145,12 @@ const TOKENS = [
   {
     name: "硅基流动 SiliconFlow",
     type: "大模型",
-    modality: "GLM5.2 等全模型 · 文本/多模态",
+    modality: "DeepSeek V4 Pro / GLM-5.3 / Kimi K3 / 千问 3.8 等 · 全模型聚合",
     rating: 4,
     quota: "邀请好友奖励：每邀请 1 位得 14 元额度",
-    effect: "聚合多家开源大模型（含智谱 GLM5.2、DeepSeek 等），文本 / 图像多模态 API，兼容 OpenAI 格式",
+    effect: "聚合海量开源大模型，DeepSeek V4 / GLM-5.3 / Kimi / 千问 3.8 等门槛模型可直接调用，文本 / 图像多模态 API，兼容 OpenAI 格式",
     link: "https://cloud.siliconflow.cn/i/HgdEna2e",
-    updated: "2026-07-15",
+    updated: "2026-09-04",
     v2: true
   },
 
