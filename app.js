@@ -33,23 +33,6 @@ const TOKENS = [
     v2: true
   },
 
-  /* ========== 较新 / 主力平台 ========== */
-
-  {
-    name: "TRAE Work",
-    type: "工具",
-    modality: "GLM-5.3 / DeepSeek V4 Flash / 千问 3.8 Max · 不支持 Kimi K3",
-    rating: 4,
-    quota: "新用户登录送 5000 积分",
-    effect: "TraeWork AI 办公平台，一站式搞定各类办公与创作任务；模型调用走折扣价通道、比官方原价更低，写文档、做表格、跑自动化流程都顺手",
-    link: "https://www.trae.cn/work-fission/ESKME76PNXAY?utm_source=copy_link&utm_medium=friends_invite",
-    /* traeLinks：TRAE 分享码列表（当前双码）。多个码时每次加载随机挑一个展示，分散调用压力。
-       加第二条码只要在此数组里追加一段即可（如 "XXXX"）。 */
-    traeLinks: ["ESKME76PNXAY", "AQCL4ZQD6NNC"],
-    updated: "2026-08-30",
-    v2: true
-  },
-
   {
     name: "GLM-5.3-Flash（Ox-Alpha）",
     type: "大模型",
