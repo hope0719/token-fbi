@@ -442,6 +442,21 @@ const TOKENS = [
     v2: true
   },
 
+  /* ========== 小米 MiMo · 开放邀测（2026-09-09 新增） ========== */
+
+  {
+    name: "小米 MiMo（Xiaomi）",
+    type: "工具",
+    modality: "MiMo-X-Pro-Preview / MiMo-X-Flash-Preview · 混合多模态模型",
+    rating: 4,
+    quota: "桌面客户端开放邀测，限时限量免费体验；一站式写 PPT、改设计图、做数据分析、剪短视频、跑代码、生成 3D 建模",
+    effect: "小米全新 MiMo 桌面客户端：写 PPT / 改设计图 / 数据分析 / 剪短视频 / 跑代码 / 生成 3D 建模全都能干，限时限量免费邀测，长线全能型创作小助手",
+    link: "https://s.mi.cn/NNI4kZp9",
+    alwaysShow: true,
+    updated: "2026-09-09",
+    v2: true
+  }
+
 ];
 
 
