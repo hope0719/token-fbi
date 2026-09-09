@@ -345,12 +345,12 @@ const TOKENS = [
   {
     name: "B.AI（AI 模型聚合平台）",
     type: "大模型",
-    modality: "DeepSeek-V4-Flash / GLM-5.3-Flash / Qwen3.8-Flash / Hy3 / MiMo-V2.5 · 多模型免费",
+    modality: "GLM-5.3-Flash / Qwen3.8-Flash / Hy3 / MiMo-V2.5 · 多模型免费",
     rating: 5,
-    quota: "当前多款模型 0 Credits 免费（Chat + API 双端）：DeepSeek-V4-Flash（8/17 起全免费）、Hy3（8/21 起全免费）、MiMo-V2.5（API 已免费、Chat 8/25 开放）、GLM-5.3-Flash（API 已免费、Chat 上架后免费）、Qwen3.8-Flash（API 已免费、Chat 上架后免费）；另有 GLM-5.2 限时 6 折、GLM-5.3 限时 9 折",
-    effect: "孙哥（孙宇晨 Justin Sun）的 AI 模型聚合平台 b.ai（⚠️ 不是百度官方），聚合接入 OpenAI / Anthropic / Google / DeepSeek / 月之暗面 / 千问 / Z.ai / MiniMax 等第三方模型，走 LLM 聚合 + Web3 钱包支付路线；官方公告白纸黑字确认上述免费/折扣活动，DeepSeek-V4-Flash 与 Hy3 在 Chat 和 API 双端均按 0 Credits 结算，可以放心长期跑",
+    quota: "当前多款模型 0 Credits 免费（Chat + API 双端）：Hy3（8/21 起全免费）、MiMo-V2.5（API 已免费、Chat 8/25 开放）、GLM-5.3-Flash（API 已免费、Chat 上架后免费）、Qwen3.8-Flash（API 已免费、Chat 上架后免费）；另有 GLM-5.2 限时 6 折、GLM-5.3 限时 9 折；⚠️ DeepSeek-V4-Flash 已开始收费（不再 0 Credits）",
+    effect: "孙哥（孙宇晨 Justin Sun）的 AI 模型聚合平台 b.ai（⚠️ 不是百度官方），聚合接入 OpenAI / Anthropic / Google / DeepSeek / 月之暗面 / 千问 / Z.ai / MiniMax 等第三方模型，走 LLM 聚合 + Web3 钱包支付路线；官方公告确认 Hy3 与部分免费模型在 Chat 和 API 双端按 0 Credits 结算；⚠️ DeepSeek-V4-Flash 已结束免费、改为收费",
     link: "https://chat.b.ai/chat?invite_code=CQLBPC",
-    updated: "2026-09-02",
+    updated: "2026-09-09",
     v2: true
   },
 
@@ -452,6 +452,21 @@ const TOKENS = [
     quota: "桌面客户端开放邀测，限时限量免费体验；一站式写 PPT、改设计图、做数据分析、剪短视频、跑代码、生成 3D 建模",
     effect: "小米全新 MiMo 桌面客户端：写 PPT / 改设计图 / 数据分析 / 剪短视频 / 跑代码 / 生成 3D 建模全都能干，限时限量免费邀测，长线全能型创作小助手",
     link: "https://s.mi.cn/NNI4kZp9",
+    alwaysShow: true,
+    updated: "2026-09-09",
+    v2: true
+  },
+
+  /* ========== TokenRouter · GLM-5.3 免费 API（2026-09-09 新增） ========== */
+
+  {
+    name: "TokenRouter · GLM-5.3 免费 API",
+    type: "API",
+    modality: "z-ai/glm-5.3-free（GLM-5.3 · 1M 上下文）",
+    rating: 4,
+    quota: "限时免费 API：GLM-5.3 输入/输出均 $0，OpenAI 兼容，Base URL https://api.tokenrouter.com/v1",
+    effect: "第三方网关路由到智谱 GLM-5.3 旗舰，1M 上下文、标准 OpenAI 接口，可接入 WorkBuddy / Claude Code / Cursor 等；限时推广、约 8 RPM 限速、共享算力高峰排队",
+    link: "https://www.tokenrouter.com/",
     alwaysShow: true,
     updated: "2026-09-09",
     v2: true
@@ -627,7 +642,8 @@ const REGION_BY_NAME = {
   "OpenCode Zen": "国外",
   "基元律动": "国外",
   "ZenMux": "国外",
-  "AMD 免费 API 与开发者计划": "美国"
+  "AMD 免费 API 与开发者计划": "美国",
+  "TokenRouter · GLM-5.3 免费 API": "国外"
 };
 
 /* 归类规则（只分两类）：
