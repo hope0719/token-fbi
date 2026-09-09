@@ -28,6 +28,7 @@ const TOKENS = [
     quota: "免费领 800 次 Qwen3.8-Max 调用（8/3-9/3 新注册/付费用户，每人限 1 次，仅个人）；中国站下单再领 2000 次（8/3-9/3，仅个人）",
     effect: "阿里云官方编程助手（原灵码），主打通义千问旗舰 Qwen3.8-Max；桌面端 / JetBrains 插件 / CLI 全端可用，写代码、重构、答疑都稳，与阿里云生态插件配合体验顺滑",
     link: "https://www.aliyun.com/product/lingma?userCode=ygtxup80",
+    extraAction: { text: "49 元特惠", link: "https://my.feishu.cn/docx/OAqmdEMaUovF0JxsLqW6E2Fcnwf" },
     limited: "2026-09-03",
     updated: "2026-08-28",
     v2: true
@@ -699,6 +700,7 @@ function render(type) {
       ${freeSeg ? `<div class="card-field"><span class="ico">♪</span><span class="v">${seg(freeSeg)}</span></div>` : ''}
       ${effSeg ? `<div class="card-field"><span class="ico">✦</span><span class="v">${seg(effSeg)}</span></div>` : ''}
       <div class="card-action">
+        ${t.extraAction ? `<a class="card-btn-secondary" href="${t.extraAction.link}" target="_blank" rel="noopener">${cleanText(t.extraAction.text)}</a>` : ''}
         ${btn}
       </div>
       <div class="card-footer">
