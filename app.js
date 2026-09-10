@@ -471,6 +471,20 @@ const TOKENS = [
     alwaysShow: true,
     updated: "2026-09-09",
     v2: true
+  },
+
+  /* ========== LobsterAI 有道龙虾（2026-09-10 新增） ========== */
+
+  {
+    name: "LobsterAI 有道龙虾",
+    type: "工具",
+    modality: "DeepSeek-V4.1 · 文本模型",
+    rating: 4,
+    quota: "专属邀请码 SciPic；下载安装即可使用 DeepSeek-V4.1 模型",
+    effect: "网易有道出品的 AI 应用（有道龙虾），内置 DeepSeek-V4.1 等主流大模型，拿来就能对话、写内容、跑任务，上手零门槛",
+    link: "https://lobsterai.youdao.com/#/index?keyfrom=invitation",
+    updated: "2026-09-10",
+    v2: true
   }
 
 ];
