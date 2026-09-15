@@ -29,8 +29,9 @@ const TOKENS = [
     effect: "阿里云官方编程助手（原灵码），主打通义千问旗舰 Qwen3.8-Max；桌面端 / JetBrains 插件 / CLI 全端可用，写代码、重构、答疑都稳，与阿里云生态插件配合体验顺滑",
     link: "https://www.aliyun.com/product/lingma?userCode=ygtxup80",
     extraAction: { text: "49 元特惠", link: "https://my.feishu.cn/docx/OAqmdEMaUovF0JxsLqW6E2Fcnwf" },
+    badge: "九月限定",
     limited: "2026-09-03",
-    updated: "2026-08-28",
+    updated: "2026-09-15",
     v2: true
   },
 
@@ -117,12 +118,11 @@ const TOKENS = [
     type: "大模型",
     modality: "DeepSeek V4 Flash · 文本模型（Coding Plan 免费 Token）",
     rating: 4,
-    quota: "报名后约 7-10 天收到 tokenplan 计划卡片，内含 DeepSeek V4 Flash 大额额度，单卡可用量高达 1 个亿",
-    effect: "网站站长亲测：纯度极高、速度很好、量大管够；无需提交小程序也能领，别担心",
+    quota: "报名截止 10 月 17；报名后约 7-10 天收到 tokenplan 计划卡片，内含 DeepSeek V4 Flash 大额额度，单卡可用量高达 1 个亿",
+    effect: "网站站长亲测：纯度极高、速度很好、量大管够；无需提交小程序也能领，别担心。⚠️ 近期反馈：部分用户报名后未收到 tokenplan 卡片，建议先确认是否仍在活动期内",
     link: "https://contest.weixin.qq.com/eventDetails?id=4598379302114656257",
-    tone: "bluepurple",
-    badge: "时间紧迫",
-    updated: "2026-08-27",
+    limited: "2026-10-17",
+    updated: "2026-09-15",
     v2: true
   },
 
@@ -335,9 +335,9 @@ const TOKENS = [
     modality: "DeepSeek V4 Pro / V4 Flash · GLM-5.2 · MiniMax-M3 · Kimi-K2.6 等",
     rating: 4,
     quota: "Token Plan 包月：基础版 ¥30/月 → 60,000 Credits（原价 ¥50）；标准版 ¥110 → 240,000；高级版 ¥265 → 600,000。兼容 OpenAI / Anthropic 接口，Credits 按实际消耗折算抵扣",
-    effect: "科技部牵头、中科曙光支撑的国家级算力平台，把全国超算/智算中心资源统一对外；DeepSeek 涨价后最划算的官方背景平替。V4-Flash 缓存命中低至 0.012 元/百万 Token、未命中输入 0.6 元、输出 1.2 元，对比官方峰值便宜约 7-8.3 倍（V4 Pro 便宜约 1.75-7 倍）；不用对话数据训练。⚠️ 槽点：并发/稳定性一般、高峰需排队；新模型上架滞后；资源包与余额扣减逻辑绕（需关注算力券/补贴包多重叠加）。适合能接受排队、想压成本的重度调用",
+    effect: "科技部牵头、中科曙光支撑的国家级算力平台，把全国超算/智算中心资源统一对外。前段时间 DeepSeek 涨价期间，大量用户反馈 SCNet 的套餐价格相较官方渠道更划算；目前 DeepSeek 价格已回调，是否仍具成本优势需结合自身用量与官方最新定价自行衡量。V4-Flash 缓存命中低至 0.012 元/百万 Token、未命中输入 0.6 元、输出 1.2 元，对比官方峰值便宜约 7-8.3 倍（V4 Pro 便宜约 1.75-7 倍）；不用对话数据训练。⚠️ 槽点：并发/稳定性一般、高峰需排队；新模型上架滞后；资源包与余额扣减逻辑绕（需关注算力券/补贴包多重叠加）。适合能接受排队、想压成本的重度调用",
     link: "https://www.scnet.cn/",
-    updated: "2026-08-21",
+    updated: "2026-09-15",
     v2: true
   },
 
@@ -430,16 +430,16 @@ const TOKENS = [
   /* ========== 秒哒（字节跳动 · AI 应用生成工具，2026-09-02 新增） ========== */
 
   {
-    name: "秒哒（字节跳动）",
+    name: "秒哒（百度）",
     type: "工具",
     modality: "AI 应用生成工具 · 一句话造应用 · 0 代码搓小程序",
     rating: 5,
-    quota: "通过我的邀请链接注册即可领取「秒点礼包」；0 帧起手，一句话生成完整可用的应用/小程序，0 代码 0 成本，普通人都能快速上手",
-    effect: "秒哒是字节跳动的免费全能 AI 神器：可以普通、快速地做一个能直接运行的小程序——0 帧起手，一句话描述需求即可生成应用/小程序并运行，全程 0 代码 0 成本，普通人零代码也能轻轻松松搓出来",
+    quota: "一句话生成完整可用的应用/小程序，0 代码 0 成本，适合普通人快速上手",
+    effect: "百度秒哒是零代码 AI 应用生成工具，推荐给新手使用：用自然语言描述需求即可生成并运行小程序/网页应用，支持对话式迭代、组件拖拽与一键发布；没有编程基础也能把想法快速做成可运行产品",
     link: "https://www.miaoda.cn/?invitecode=user-7a0wz6474m4k",
     tone: "orange",
     alwaysShow: true,
-    updated: "2026-09-02",
+    updated: "2026-09-15",
     v2: true
   },
 
@@ -480,10 +480,22 @@ const TOKENS = [
     type: "工具",
     modality: "DeepSeek-V4.1 · 文本模型",
     rating: 4,
-    quota: "专属邀请码 SciPic；下载安装即可使用 DeepSeek-V4.1 模型",
+    quota: "下载安装即可使用 DeepSeek-V4.1 模型",
     effect: "网易有道出品的 AI 应用（有道龙虾），内置 DeepSeek-V4.1 等主流大模型，拿来就能对话、写内容、跑任务，上手零门槛",
     link: "https://lobsterai.youdao.com/#/index?keyfrom=invitation",
-    updated: "2026-09-10",
+    updated: "2026-09-15",
+    v2: true
+  },
+  {
+    name: "云工开物学生专区",
+    type: "工具",
+    modality: "智能体自主编程 · Qwen3.8 / GLM-5.3 / DeepSeek-V4 等多模型",
+    rating: 4,
+    quota: "Qoder CN 学生专享：完成阿里云学生认证，领取 300 元云工开物代金券，下单即可抵扣 1 个月专业版权益，多模型任选，每人限抵扣 1 次",
+    effect: "阿里云「云工开物」学生专区：智能体自主编程，支持 Qwen3.8、GLM-5.3、DeepSeek-V4 等多模型任选，写代码、做论文一站搞定",
+    link: "https://university.aliyun.com/course/promotion28-activity?clubTaskBiz=subTask..12836123..10290..&userCode=ygtxup80",
+    badge: "学生专享",
+    updated: "2026-09-15",
     v2: true
   }
 
