@@ -10,9 +10,9 @@
 
 **直接打开即可使用，无需注册、无需安装：**
 
-👉 **[https://tokenfbi.app.workbuddy.host/](https://tokenfbi.app.workbuddy.host/)** （国内 / 微信 / 手机浏览器均可直连，推荐）
+👉 **[https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net](https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net)** （国内 / 微信 / 手机浏览器均可直连，推荐；跟随 GitHub 自动更新）
 
-> 备用镜像：[https://hope0719.github.io/token-fbi/](https://hope0719.github.io/token-fbi/)（GitHub Pages，桌面端可访问，但国内手机 / 微信内可能打不开）
+> 备用镜像：[https://tokenfbi.app.workbuddy.host/](https://tokenfbi.app.workbuddy.host/) · [https://hope0719.github.io/token-fbi/](https://hope0719.github.io/token-fbi/)（GitHub Pages，桌面端可访问，但国内手机 / 微信内可能打不开）
 
 ![Token FBI 站点截图](screenshot.png)
 
