@@ -49,6 +49,20 @@ const TOKENS = [
   },
 
   {
+    name: "蓝博科技（lanbuff）",
+    type: "工具",
+    modality: "DeepSeek V4 / GLM-5.3 / 千问 3.8 等主流模型中转",
+    rating: 4,
+    quota: "老牌大模型中转站：聚合 DeepSeek V4、GLM-5.3、千问 3.8 等主流模型，整体价格比较实惠",
+    effect: "长期稳定运营，调用成功率较高；一个账号打通多家厂商模型，兼容 OpenAI 接口，省去逐家注册与充值的麻烦",
+    link: "https://lanbuff.app",
+    pin: 4,
+    alwaysShow: true,
+    updated: "2026-09-17",
+    v2: true
+  },
+
+  {
     name: "腾讯 Marvis（马维斯）",
     type: "工具",
     modality: "混元 / DeepSeek V4 · 操作系统级 AI 助手",
@@ -654,7 +668,22 @@ function isFeatured(t) {
 /* 观望名单中的平台：其官网大卡不再展示（数据保留在 TOKENS，移出观望名单后自动恢复） */
 const DONOT_NAMES = new Set(DONOTS.map(d => d.name));
 /* VISIBLE：去掉观望名单 + 必须命中精选规则（alwaysShow 广告卡单独放行） */
-const VISIBLE = TOKENS.filter(t => !DONOT_NAMES.has(t.name) && (t.alwaysShow || isFeatured(t)));
+const VISIBLE_RAW = TOKENS.filter(t => !DONOT_NAMES.has(t.name) && (t.alwaysShow || isFeatured(t)));
+
+/* ========== 固定位次（pin） ==========
+ * 带 pin 字段的卡会被强制排到指定显示位（1-based），不受数组顺序、
+ * 后续新增/删除卡片影响。⚠️ 未经用户明确指示，禁止改动或移除这些卡的 pin。 */
+const VISIBLE = (() => {
+  const out = VISIBLE_RAW.slice();
+  out.filter(t => t.pin).sort((a, b) => a.pin - b.pin).forEach(t => {
+    const i = out.indexOf(t);
+    if (i > -1) {
+      out.splice(i, 1);
+      out.splice(Math.min(t.pin - 1, out.length), 0, t);
+    }
+  });
+  return out;
+})();
 
 /* 平台归属地标注（卡片左下角/观望行）：能查清的确切写国家/地区，
    查不清主体的一律标「国外」；大陆平台不在此表、不标注。 */
