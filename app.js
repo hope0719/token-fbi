@@ -639,6 +639,16 @@ const DONOTS = [
     name: "天翼云息壤（电信）",
     why: "免费额度太低：DeepSeek V4 Pro/Flash 各仅 50 万 Tokens，且使用期限时 2 周",
     link: "https://www.ctyun.cn/product/maas"
+  },
+  {
+    name: "七牛云 AI 推理",
+    why: "暂移入观望：注册与开 Key 必须在浏览器操作（微信内直接打开会失败），新人上手门槛偏高，持续观察中",
+    link: "https://s.qiniu.com/VV7Zfa"
+  },
+  {
+    name: "太行HUB（token.taiha.cn）",
+    why: "暂移入观望：以低价聚合为主、免费额度偏薄（新用户仅送 2 元余额），整体性价比待进一步观察",
+    link: "https://token.taiha.cn/sign-up?aff=Ox6S"
   }
 ];
 
