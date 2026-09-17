@@ -10,11 +10,25 @@
 
 **直接打开即可使用，无需注册、无需安装：**
 
-👉 **[https://token-fbi-cn.app.workbuddy.host/](https://token-fbi-cn.app.workbuddy.host/)** （国内 / 微信 / 手机浏览器均可直连，推荐）
+👉 **[https://token-fbi-cn.app.workbuddy.host/](https://token-fbi-cn.app.workbuddy.host/)** （国内 / 微信 / 手机浏览器均可直连，**当前主站，推荐**）
 
-> 备用镜像：[https://hope0719.github.io/token-fbi/](https://hope0719.github.io/token-fbi/)（GitHub Pages） · [https://570b1bfec9714f2da647db883f639f30.app.workbuddy.host/](https://570b1bfec9714f2da647db883f639f30.app.workbuddy.host/)
+**备用镜像**
+
+| 入口 | 地址 | 状态 |
+| :--- | :--- | :--- |
+| GitHub Pages | [https://hope0719.github.io/token-fbi/](https://hope0719.github.io/token-fbi/) | ✅ 正常（桌面端可访问，微信内可能打不开） |
+| 备用沙箱镜像 | [https://570b1bfec9714f2da647db883f639f30.app.workbuddy.host/](https://570b1bfec9714f2da647db883f639f30.app.workbuddy.host/) | ✅ 正常 |
+| **原主站（已停更）** | [https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net](https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net) | ⛔ **2026-09-15 起停止维护** |
+
+> ### ⛔ 关于原主站（bj9）
 >
-> ⚠️ 原主站 `1c91cc10…bj9.agentos-app.net` 自 2026-09-15 起不再同步更新（内容停留在当日旧版），请改用上方新地址。
+> 原主站 `https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net` **自 2026-09-15 起停止维护**，链接保留在此供存照与历史访问，但：
+>
+> - **内容永久冻结在 2026-09-15 13:08**（服务器 `Last-Modified` 佐证），此后所有更新均不会出现在该站；
+> - 该站仍可打开，但看到的是**过期情报**——例如已下架的 TokenRouter 仍在列表、9/17 新增的卡片完全没有；
+> - 已通过三种方式验证其不再更新：① 强制回源（cache-buster + `no-cache`）仍返回旧版；② 向仓库推送探针文件，GitHub Pages 可取到而该站 404（证明它不拉取 GitHub）；③ 部署平台侧已无该站点实体，无法再写入。
+>
+> **请改用上方主站地址**，内容才是最新的。
 
 ![Token FBI 站点截图](screenshot.png)
 
@@ -277,6 +291,7 @@ token-fbi/
 
 ## 🔄 最近更新
 
+- **2026-09-17（访问地址变更）**：原主站 `1c91cc10…bj9.agentos-app.net` 自 **2026-09-15 起停止维护**（内容冻结在 9-15 13:08，已通过强制回源、GitHub 探针、平台侧实体缺失三项验证），链接保留为历史存照；**新主站改为 [https://token-fbi-cn.app.workbuddy.host/](https://token-fbi-cn.app.workbuddy.host/)**，GitHub Pages 与沙箱镜像继续作为备用。此前分享的旧链接请尽快替换。
 - **2026-08-21（TRAE 邀请池扩容）**：TRAE Work 分享链接加入邀请池（多码随机分流），现有分享码 `RN2DA3HPWQQP` / `LZYBHMFULRAZ`
 - **2026-08-21（TRAE Work 分享链接更新）**：TRAE Work 卡片分享链接更新为 `RN2DA3HPWQQP`（新注册用户一次性获得 5000 积分）
 - **2026-08-19（TRAE 新增 GLM-5.3）**：TRAE Work 新增可体验 **GLM-5.3** 模型，核心模型更新为 GLM-5.3 / GLM-5.2 / DeepSeek V4 Flash / 千问 3.8 Max
