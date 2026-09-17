@@ -472,21 +472,6 @@ const TOKENS = [
     v2: true
   },
 
-  /* ========== TokenRouter · GLM-5.3 免费 API（2026-09-09 新增） ========== */
-
-  {
-    name: "TokenRouter · GLM-5.3 免费 API",
-    type: "API",
-    modality: "z-ai/glm-5.3-free（GLM-5.3 · 1M 上下文）",
-    rating: 4,
-    quota: "限时免费 API：GLM-5.3 输入/输出均 $0，OpenAI 兼容，Base URL https://api.tokenrouter.com/v1",
-    effect: "第三方网关路由到智谱 GLM-5.3 旗舰，1M 上下文、标准 OpenAI 接口，可接入 WorkBuddy / Claude Code / Cursor 等；限时推广、约 8 RPM 限速、共享算力高峰排队",
-    link: "https://www.tokenrouter.com/",
-    alwaysShow: true,
-    updated: "2026-09-09",
-    v2: true
-  },
-
   /* ========== LobsterAI 有道龙虾（2026-09-10 新增） ========== */
 
   {
@@ -708,8 +693,7 @@ const REGION_BY_NAME = {
   "OpenCode Zen": "国外",
   "基元律动": "国外",
   "ZenMux": "国外",
-  "AMD 免费 API 与开发者计划": "美国",
-  "TokenRouter · GLM-5.3 免费 API": "国外"
+  "AMD 免费 API 与开发者计划": "美国"
 };
 
 /* 归类规则（只分两类）：
