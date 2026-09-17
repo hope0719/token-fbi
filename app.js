@@ -360,12 +360,12 @@ const TOKENS = [
   {
     name: "B.AI（AI 模型聚合平台）",
     type: "大模型",
-    modality: "GLM-5.3-Flash / Qwen3.8-Flash / Hy3 / MiMo-V2.5 · 多模型免费",
-    rating: 5,
-    quota: "当前多款模型 0 Credits 免费（Chat + API 双端）：Hy3（8/21 起全免费）、MiMo-V2.5（API 已免费、Chat 8/25 开放）、GLM-5.3-Flash（API 已免费、Chat 上架后免费）、Qwen3.8-Flash（API 已免费、Chat 上架后免费）；另有 GLM-5.2 限时 6 折、GLM-5.3 限时 9 折；⚠️ DeepSeek-V4-Flash 已开始收费（不再 0 Credits）",
-    effect: "孙哥（孙宇晨 Justin Sun）的 AI 模型聚合平台 b.ai（⚠️ 不是百度官方），聚合接入 OpenAI / Anthropic / Google / DeepSeek / 月之暗面 / 千问 / Z.ai / MiniMax 等第三方模型，走 LLM 聚合 + Web3 钱包支付路线；官方公告确认 Hy3 与部分免费模型在 Chat 和 API 双端按 0 Credits 结算；⚠️ DeepSeek-V4-Flash 已结束免费、改为收费",
+    modality: "GLM-5.3-Flash / Qwen3.8-Flash / Hy3 / MiMo-V2.5 · 多模型一折",
+    rating: 4,
+    quota: "免费模型已全部取消，现按原价 1 折计费：GLM-5.3-Flash、Qwen3.8-Flash、Hy3、MiMo-V2.5 等多款模型均为一折付费，平台已无任何完全免费的模型",
+    effect: "孙哥（孙宇晨 Justin Sun）的 AI 模型聚合平台 b.ai（⚠️ 不是百度官方），聚合接入 OpenAI / Anthropic / Google / DeepSeek / 月之暗面 / 千问 / Z.ai / MiniMax 等第三方模型，走 LLM 聚合 + Web3 钱包支付路线；⚠️ 2026-09 起不再有 0 Credits 免费模型，全部改为一折计费，性价比优势明显减弱，入手前请先核算实际价格",
     link: "https://chat.b.ai/chat?invite_code=CQLBPC",
-    updated: "2026-09-09",
+    updated: "2026-09-17",
     v2: true
   },
 
@@ -634,6 +634,11 @@ const DONOTS = [
     name: "太行HUB（token.taiha.cn）",
     why: "暂移入观望：以低价聚合为主、免费额度偏薄（新用户仅送 2 元余额），整体性价比待进一步观察",
     link: "https://token.taiha.cn/sign-up?aff=Ox6S"
+  },
+  {
+    name: "B.AI（AI 模型聚合平台）",
+    why: "免费模型已全部取消，改为一折计费，无免费额度可领",
+    link: "https://chat.b.ai/chat?invite_code=CQLBPC"
   }
 ];
 
