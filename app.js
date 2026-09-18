@@ -986,3 +986,50 @@ if (window.gsap) {
     }, 2000);
   });
 })();
+
+/* 顶部「保存官网 · 防止失联」：能收藏就收藏，不能则退化为复制网址 + 快捷键提示 */
+(function initSaveSite() {
+  const btn = document.getElementById("saveSiteBtn");
+  if (!btn) return;
+  const url = btn.dataset.url || "https://token-fbi.com/";
+  const title = "Token FBI · 免费 AI token 情报站";
+  const defaultLabel = btn.textContent;
+  let resetTimer = null;
+
+  function flash(text, ok) {
+    btn.classList.toggle("is-saved", !!ok);
+    btn.textContent = text;
+    if (resetTimer) clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => {
+      btn.classList.remove("is-saved");
+      btn.textContent = defaultLabel;
+    }, 2800);
+  }
+
+  btn.addEventListener("click", async () => {
+    const isMac = /Mac|iPhone|iPad|iPod/i.test(navigator.platform || navigator.userAgent);
+    const shortcut = isMac ? "⌘ + D" : "Ctrl + D";
+    try {
+      if (window.external && typeof window.external.AddFavorite === "function") {
+        window.external.AddFavorite(url, title);
+        flash("已加入收藏夹 ✓", true);
+        return;
+      }
+      if (window.sidebar && typeof window.sidebar.addPanel === "function") {
+        window.sidebar.addPanel(title, url, "");
+        flash("已加入收藏夹 ✓", true);
+        return;
+      }
+    } catch (_) { /* 现代浏览器禁止脚本写收藏夹，走降级 */ }
+
+    let ok = false;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(url);
+        ok = true;
+      }
+    } catch (_) { ok = false; }
+
+    flash(ok ? "网址已复制，按 " + shortcut + " 收藏" : "请按 " + shortcut + " 收藏官网", ok);
+  });
+})();

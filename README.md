@@ -12,6 +12,10 @@
 
 👉 **[https://token-fbi.com/](https://token-fbi.com/)** （正式域名；Cloudflare Pages 从 GitHub `main` 自动部署）
 
+> ⭐ **请保存我们的官网 `token-fbi.com`，防止失联。**
+> 本站此前因托管平台调整换过多次地址（旧链接已失效）。现在官网域名已固定，不会再变；
+> **建议立刻收藏 / 加书签：https://token-fbi.com/ ** ，以后只认这个地址。
+
 **备用镜像**
 
 | 入口 | 地址 | 状态 |
@@ -293,6 +297,7 @@ token-fbi/
 
 ## 🔄 最近更新
 
+- **2026-09-18（官网域名固定）**：正式域名 **[https://token-fbi.com/](https://token-fbi.com/)** 生效（Cloudflare，从 GitHub `main` 自动部署），**这是今后唯一官网地址，不会再变**；站点顶部新增「⭐ 保存官网 · 防止失联」按钮（可一键收藏，不支持时自动复制网址并提示快捷键），页脚同步标注官网域名。README 顶部已加保存提示。
 - **2026-09-17（访问地址变更）**：原主站 `1c91cc10…bj9.agentos-app.net` 自 **2026-09-15 起停止维护**（内容冻结在 9-15 13:08，已通过强制回源、GitHub 探针、平台侧实体缺失三项验证），链接保留为历史存照；**新主站改为 [https://token-fbi-cn.app.workbuddy.host/](https://token-fbi-cn.app.workbuddy.host/)**，GitHub Pages 与沙箱镜像继续作为备用。此前分享的旧链接请尽快替换。
 - **2026-08-21（TRAE 邀请池扩容）**：TRAE Work 分享链接加入邀请池（多码随机分流），现有分享码 `RN2DA3HPWQQP` / `LZYBHMFULRAZ`
 - **2026-08-21（TRAE Work 分享链接更新）**：TRAE Work 卡片分享链接更新为 `RN2DA3HPWQQP`（新注册用户一次性获得 5000 积分）
