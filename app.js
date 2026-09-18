@@ -23,15 +23,15 @@ const TOKENS = [
   {
     name: "阿里云 Qoder（灵码）",
     type: "工具",
-    modality: "Qwen3.8-Max · 代码模型",
+    modality: "Qwen3.8-Flash（限免中） · Qwen3.8-Max · 代码模型",
     rating: 5,
-    quota: "免费领 800 次 Qwen3.8-Max 调用（8/3-9/3 新注册/付费用户，每人限 1 次，仅个人）；中国站下单再领 2000 次（8/3-9/3，仅个人）",
-    effect: "阿里云官方编程助手（原灵码），主打通义千问旗舰 Qwen3.8-Max；桌面端 / JetBrains 插件 / CLI 全端可用，写代码、重构、答疑都稳，与阿里云生态插件配合体验顺滑",
+    quota: "官方 9/18 活动：① Qwen3.8-Flash 计费系数由 0.1× 降至 0×，9/18 10:00 - 9/30 23:59 调用不扣 Credits，Qoder 国际版与 CN 版新老个人用户均可，无需领取资格；② 每天 10:00 起登录桌面端可领 100 通用 Credits（每笔 30 天有效、未到期可累积，每轮限领一次、错过不补）",
+    effect: "阿里云官方编程助手（原灵码）。Qwen3.8-Flash 擅长代码编写、长文档处理、图像理解与工具调用，套餐额度可省给其他模型；100 Credits 计入 Add-on 资源包，桌面端 / IDE / JetBrains 插件 / CLI / 网页与移动端通用。⚠️ 免费期结束后按届时公示系数计费；每日奖励需在桌面端左下角「用量面板 → 🎁 礼物图标」手动领取",
     link: "https://www.aliyun.com/product/lingma?userCode=ygtxup80",
     extraAction: { text: "49 元特惠", link: "https://my.feishu.cn/docx/OAqmdEMaUovF0JxsLqW6E2Fcnwf" },
     badge: "九月限定",
-    limited: "2026-09-03",
-    updated: "2026-09-15",
+    limited: "2026-09-30",
+    updated: "2026-09-18",
     v2: true
   },
 
