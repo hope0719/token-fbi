@@ -102,9 +102,11 @@ a { color: inherit; }
 .watchlist h2 { max-width: 18ch; margin: 0; font-size: clamp(24px, 2.4vw, 30px); line-height: 1.24; letter-spacing: -.03em; }
 .watchlist-gate { margin-top: 14px; display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 800; }
 .watchlist-gate svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.8; }
-.model-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; padding: 22px 0 16px; margin: 0; list-style: none; color: var(--muted); font-size: 13px; }
-.model-list li { display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
-.model-list li::before { content: "✓"; color: var(--accent); font-weight: 800; }
+.model-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; padding: 22px 0 16px; margin: 0; list-style: none; color: var(--muted); font-size: 13px; }
+.model-list li { position: relative; padding: 0 0 8px 18px; border-bottom: 1px solid var(--line); }
+.model-list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 800; }
+.model-list .model-name { display: block; font-weight: 700; color: var(--ink); }
+.model-list .model-note { display: block; margin-top: 2px; font-size: 11.5px; line-height: 1.4; color: var(--faint); }
 .watchlist-note { max-width: 30ch; margin: 0; color: var(--faint); font-size: 13px; }
 
 .intelligence { padding: 84px 0 96px; }

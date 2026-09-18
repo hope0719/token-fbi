@@ -191,7 +191,7 @@ const TOKENS = [
   {
     name: "美团 longcat 大模型",
     type: "大模型",
-    modality: "文本模型",
+    modality: "LongCat 2.0 · 文本模型",
     rating: 5,
     quota: "新用户免费 1000 万 token，很耐用；续购 9.9 元买 5000 万",
     effect: "美团旗下大模型，免费额度大方、性价比高，适合长期日常高频使用",
@@ -616,11 +616,6 @@ const DONOTS = [
     link: "https://zenmux.ai"
   },
   {
-    name: "美团 longcat 大模型",
-    why: "目前不在精选范围（不提供 DeepSeek V4 / GLM 5.3 / Kimi K3 / 千问 3.8 / Hy4 等门槛模型）",
-    link: "https://longcat.chat/platform/product"
-  },
-  {
     name: "天翼云息壤（电信）",
     why: "免费额度太低：DeepSeek V4 Pro/Flash 各仅 50 万 Tokens，且使用期限时 2 周",
     link: "https://www.ctyun.cn/product/maas"
@@ -642,27 +637,25 @@ const DONOTS = [
   }
 ];
 
-/* ========== 精选规则（2026-09-02 起） ==========
- * 只展示「提供 ≥ 门槛系列模型」的卡片：门槛= index.html「优先收录」列表里的 6 个最低档型号。
- * 同系列更高版本自动命中（DeepSeek V4 Flash/Pro、GLM-5.3-Flash、千问 3.8 Max/Flash 等）；
- * 低于门槛的型号（DeepSeek 3.2、GLM 5/5.2、Kimi K2.6、Qwen 3.5、Hy3 等）一律不展示。
- * 判定：卡片 name + modality 合并文本中包含任一门槛关键词（大小写、连字符、空格、· 不敏感）。
+/* ========== 精选规则（2026-09-19 起，与 README「精选模型与收录标准」对齐） ==========
+ * 只展示「提供 ≥ 门槛型号」的卡片。门槛即首页「精选门槛」6 个型号：
+ *   DeepSeek V4 · GLM 5.2 · Kimi K3 · 千问 3.8 Max · Hy3 · LongCat 2.0
+ * 同系列更高版本自动命中（DeepSeek V4.1/Pro/Flash、GLM-5.3-Flash、千问 3.8 Max/Flash、Hy4 等）；
+ * 低于门槛的型号（DeepSeek 3.2、GLM 5/5.1、Kimi K2.6、Qwen 3.5、Hy2 等）一律不展示。
+ * 判定：卡片 name + modality 归一化（转小写、去掉空格/连字符/点/·）后匹配正则。
+ * ⚠️ 改动门槛请同步改 index.html 的 .model-list 与 README 的收录标准表格，三处必须一致。
  * 广告卡（豆包拉新）设 alwaysShow: true 绕过本规则，单独放行；UI 看起来与普通卡片无异。 */
-const FEATURED_KEYS = {
-  "DeepSeek V4":  ["deepseekv4"],
-  "GLM 5.3":      ["glm53"],
-  "Kimi K3":      ["kimik3"],
-  "千问 3.8":     ["千问38", "qwen38"],   // 同时覆盖 Max 与 Flash
-  "Hy4":          ["hy4"]
-};
+const FEATURED_RULES = [
+  { label: "DeepSeek V4",   re: /deepseekv(?:[4-9]|1\d)/ },
+  { label: "GLM 5.2",       re: /glm5(?:[2-9]|1\d)|glm[6-9]/ },
+  { label: "Kimi K3",       re: /kimik(?:[3-9]|1\d)/ },
+  { label: "千问 3.8 Max",  re: /(?:千问|qwen)3(?:[8-9]|1\d)|(?:千问|qwen)[4-9]/ },
+  { label: "Hy3",           re: /hy(?:[3-9]|1\d)/ },
+  { label: "LongCat 2.0",   re: /longcat/ }
+];
 function isFeatured(t) {
   const text = (t.name + " " + (t.modality || "")).toLowerCase().replace(/[^a-z0-9\u4e00-\u9fa5]+/g, "");
-  for (const keys of Object.values(FEATURED_KEYS)) {
-    for (const k of keys) {
-      if (text.includes(k)) return true;
-    }
-  }
-  return false;
+  return FEATURED_RULES.some(r => r.re.test(text));
 }
 
 /* 观望名单中的平台：其官网大卡不再展示（数据保留在 TOKENS，移出观望名单后自动恢复） */
