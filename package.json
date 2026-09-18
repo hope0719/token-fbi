@@ -1,0 +1,8 @@
+{
+  "name": "token-fbi",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "check": "node --check app.js && node scripts/build-site.mjs"
+  }
+}
