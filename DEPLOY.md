@@ -21,7 +21,15 @@ Cloudflare Pages 已连接 `hope0719/token-fbi`，当前设置：
 
 根域名在 Pages 的「自定义域名」中绑定，DNS 记录为代理的 `CNAME @ → token-fbi.pages.dev`。发布前应检查域名状态、HTTPS 证书、首页与资源文件，并确认页面分享地址指向正式域名。
 
-Cloudflare Git 集成会在 `main` 有新提交时自动重新构建并发布。构建脚本只把运行站点必需的五个文件复制到 `dist/`；仓库中的文章、草稿、工具和本地素材不会成为 Pages 站点文件。
+Cloudflare Git 集成会在 `main` 有新提交时自动重新构建并发布。构建脚本复制运行站点必需的五个源文件，并额外生成可直接抓取的首页卡片、`robots.txt`、`sitemap.xml`、`llms.txt`、IndexNow 验证文件和部署版本文件；仓库中的文章、草稿、工具和本地素材不会成为 Pages 站点文件。
+
+## 搜索引擎发现
+
+- 正式域名 `https://token-fbi.com/` 是首页的 canonical URL。Cloudflare Pages、GitHub Pages 等其他地址的相同页面也指向它。
+- 构建时从 `app.js` 的现有卡片数据与筛选规则生成静态 HTML，搜索引擎不用执行 JavaScript 就能看到当前卡片。浏览器运行 JavaScript 后仍使用原有交互。
+- `robots.txt` 放行抓取并声明 `sitemap.xml`；站点地图目前只包含唯一的公开首页。
+- GitHub Actions 的 `indexnow.yml` 等待 Cloudflare Pages 发布同一提交后，将首页变更通知 IndexNow 参与的搜索引擎。IndexNow 的接收回执不等于已收录。
+- Google Search Console 与 Bing Webmaster Tools 的站点验证及 sitemap 提交需要在对应账号中完成；站点文件上线本身不保证收录或排名。
 
 ## 日常更新
 

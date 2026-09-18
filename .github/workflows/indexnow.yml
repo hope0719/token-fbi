@@ -1,0 +1,53 @@
+name: Notify IndexNow after Pages deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - app.js
+      - style.css
+      - package.json
+      - scripts/**
+      - .indexnow-key
+      - .github/workflows/indexnow.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-production
+  cancel-in-progress: true
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for matching Cloudflare Pages deployment
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          for attempt in {1..30}; do
+            deployed_sha=$(curl -fsS --max-time 10 https://token-fbi.com/_version.txt || true)
+            if [ "$deployed_sha" = "$EXPECTED_SHA" ]; then
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "Cloudflare Pages did not publish this commit in time" >&2
+          exit 1
+      - name: Notify participating search engines
+        run: |
+          key=$(cat .indexnow-key)
+          status=$(curl -sS --max-time 20 -o /dev/null -w '%{http_code}' --get \
+            --data-urlencode 'url=https://token-fbi.com/' \
+            --data-urlencode "key=$key" \
+            https://api.indexnow.org/indexnow)
+          if [ "$status" != 200 ] && [ "$status" != 202 ]; then
+            echo "IndexNow returned HTTP $status" >&2
+            exit 1
+          fi
+          echo "IndexNow accepted homepage update (HTTP $status)"
