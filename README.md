@@ -10,7 +10,7 @@
 
 **直接打开即可使用，无需注册、无需安装：**
 
-👉 **[https://token-fbi-cn.app.workbuddy.host/](https://token-fbi-cn.app.workbuddy.host/)** （国内 / 微信 / 手机浏览器均可直连，**当前主站，推荐**）
+👉 **[https://token-fbi.com/](https://token-fbi.com/)** （正式域名；Cloudflare Pages 从 GitHub `main` 自动部署）
 
 **备用镜像**
 
@@ -18,6 +18,7 @@
 | :--- | :--- | :--- |
 | Cloudflare Pages | [https://token-fbi.pages.dev/](https://token-fbi.pages.dev/) | ✅ 连接 GitHub `main` 自动构建；公开页面与资源已核对 |
 | GitHub Pages | [https://hope0719.github.io/token-fbi/](https://hope0719.github.io/token-fbi/) | ✅ 正常（桌面端可访问，微信内可能打不开） |
+| WorkBuddy 旧主站 | [https://token-fbi-cn.app.workbuddy.host/](https://token-fbi-cn.app.workbuddy.host/) | 独立发布链路；不保证随 GitHub 推送自动更新 |
 | 备用沙箱镜像 | [https://570b1bfec9714f2da647db883f639f30.app.workbuddy.host/](https://570b1bfec9714f2da647db883f639f30.app.workbuddy.host/) | ✅ 正常 |
 | **原主站（已停更）** | [https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net](https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net) | ⛔ **2026-09-15 起停止维护** |
 
