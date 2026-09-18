@@ -3,11 +3,12 @@
 ## 现有公开地址
 
 - GitHub Pages：`https://hope0719.github.io/token-fbi/`，从本仓库 `main` 分支根目录自动发布。
+- Cloudflare Pages：`https://token-fbi.pages.dev/`，已连接本仓库 `main` 分支，以 `npm run build` 构建 `dist/`。公开页面与全部五个资源文件已核对。
 - README 中的 WorkBuddy 主站是另一条发布链路。不能仅凭当前页面一致，就认定它会随 GitHub 推送自动更新；每次更新需单独核对。
 
-## 接入 Cloudflare Pages
+## Cloudflare Pages 构建设置
 
-在 Cloudflare Pages 选择「导入现有 Git 仓库」，连接 `hope0719/token-fbi`。设置：
+Cloudflare Pages 已连接 `hope0719/token-fbi`，当前设置：
 
 | 项目 | 值 |
 | --- | --- |
@@ -17,7 +18,7 @@
 | 构建输出目录 | `dist` |
 | 根目录 | 仓库根目录 |
 
-首次构建成功后，先访问 Cloudflare 提供的 `*.pages.dev` 地址，检查首页、筛选、二维码和海报。之后在 Pages 的「自定义域名」中添加正式域名，并按向导配置 DNS。域名生效及线上内容核对通过后，再把 README 和页面分享文案中的主地址改成正式域名。
+绑定正式域名时，在 Pages 的「自定义域名」中添加，并按向导配置 DNS。域名生效及线上内容核对通过后，再把 README 和页面分享文案中的主地址改成正式域名。
 
 Cloudflare Git 集成会在 `main` 有新提交时自动重新构建并发布。构建脚本只把运行站点必需的五个文件复制到 `dist/`；仓库中的文章、草稿、工具和本地素材不会成为 Pages 站点文件。
 
