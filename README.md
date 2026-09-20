@@ -22,19 +22,15 @@
 | :--- | :--- | :--- |
 | Cloudflare Pages | [https://token-fbi.pages.dev/](https://token-fbi.pages.dev/) | ✅ 连接 GitHub `main` 自动构建；公开页面与资源已核对 |
 | GitHub Pages | [https://hope0719.github.io/token-fbi/](https://hope0719.github.io/token-fbi/) | ✅ 正常（桌面端可访问，微信内可能打不开） |
-| WorkBuddy 镜像（现用） | [https://e8e6b4805f0047529578b50c0389a7a3.app.workbuddy.host/](https://e8e6b4805f0047529578b50c0389a7a3.app.workbuddy.host/) | ✅ 2026-09-19 重新发布，内容为最新；独立发布链路，不随 GitHub 推送自动更新 |
+| WorkBuddy 镜像（bj9，现用） | [https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net](https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net) | ✅ **2026-09-20 恢复发布**，内容为最新；独立发布链路，不随 GitHub 推送自动更新 |
+| WorkBuddy 沙箱镜像（旧） | [https://e8e6b4805f0047529578b50c0389a7a3.app.workbuddy.host/](https://e8e6b4805f0047529578b50c0389a7a3.app.workbuddy.host/) | ✅ 2026-09-19 发布，内容为最新（bj9 恢复后仅作备用） |
 | 只读旧版沙箱 | [https://570b1bfec9714f2da647db883f639f30.app.workbuddy.host/](https://570b1bfec9714f2da647db883f639f30.app.workbuddy.host/) | ⛔ 平台侧已无法再更新，内容停留在 2026-09-17 |
-| **原主站（已停更）** | [https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net](https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net) | ⛔ **2026-09-15 起停止维护** |
 
-> ### ⛔ 关于原主站（bj9）
+> ### ✅ 原主站（bj9）已于 2026-09-20 恢复
 >
-> 原主站 `https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net` **自 2026-09-15 起停止维护**，链接保留在此供存照与历史访问，但：
+> 原主站 `https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net` 曾于 2026-09-15 起停止维护，经与平台方（腾讯云工单 202609176240）协作，**已于 2026-09-20 恢复发布**，当前内容为最新版。
 >
-> - **内容永久冻结在 2026-09-15 13:08**（服务器 `Last-Modified` 佐证），此后所有更新均不会出现在该站；
-> - 该站仍可打开，但看到的是**过期情报**——例如已下架的 TokenRouter 仍在列表、9/17 新增的卡片完全没有；
-> - 已通过三种方式验证其不再更新：① 强制回源（cache-buster + `no-cache`）仍返回旧版；② 向仓库推送探针文件，GitHub Pages 可取到而该站 404（证明它不拉取 GitHub）；③ 部署平台侧已无该站点实体，无法再写入。
->
-> **请改用上方主站地址**，内容才是最新的。
+> 该域名此后保持稳定，后续更新通过发布链路写入；日常内容仍以 GitHub `main` 自动同步的官网 `token-fbi.com` 为准。
 
 ![Token FBI 站点截图](screenshot.png)
 
