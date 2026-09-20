@@ -63,6 +63,25 @@ const TOKENS = [
   },
 
   {
+    name: "阶跃星辰 StepFun",
+    type: "大模型",
+    modality: "step-5-preview · step-3.7-flash · step-3.5-flash · step-router-v1 · 全模态（文本/图像/语音）",
+    rating: 4,
+    quota: "Step Plan 免费体验回归：注册即送 15 天，用完再送 15 天（合计约 1 个月）；每成功邀请 1 位好友再 +15 天，最高累计 90 天。免费档 Flash Mini 每月 400M Credits（4 亿积分），旗舰模型通用",
+    effect: "阶跃星辰自研全模态平台，免费档可用 step-5-preview、step-3.7-flash、step-3.5-flash、step-router-v1 等模型，覆盖文本 / 视觉理解 / 图像编辑 / 语音（stepaudio-2.5 系列）。API 兼容 OpenAI 与 Claude 格式，改个 Base URL 就能接进 Cursor、Claude Code、Cherry Studio、NextChat 等工具。实测：step-3.7-flash 文本约 2s、视觉 OCR 正确；step-3.5-flash 约 1.3s 适合高频任务；step-5-preview 冷启动偏慢（约 30s+）。⚠️ 免费额度用尽直接返回 429，不会自动扣余额；step-router-v1 不支持图像输入",
+    link: "https://platform.stepfun.com",
+    /* ↓↓↓ 多邀请码自动轮换：后期要加码 / 换码，只动下面这个数组，别的代码都不用改 ↓↓↓
+       失效或不想用的码直接从数组里删掉即可，轮换会自动跳过。 */
+    inviteBase: "https://platform.stepfun.com/",
+    inviteCodes: ["AATGOEHF", "KLXGHREZ", "UVGCGRGG"],
+    inviteParam: "invite_code_v2",
+    pin: 5,
+    alwaysShow: true,
+    updated: "2026-09-20",
+    v2: true
+  },
+
+  {
     name: "腾讯 Marvis（马维斯）",
     type: "工具",
     modality: "混元 / DeepSeek V4 · 操作系统级 AI 助手",
@@ -606,11 +625,6 @@ const DONOTS = [
     link: "https://tokenrhythm.studio"
   },
   {
-    name: "阶跃星辰 StepFun",
-    why: "限时活动已结束，新用户仅赠 10 额度（¥10 余额），不再有大规模免费额度",
-    link: "https://platform.stepfun.com"
-  },
-  {
     name: "ZenMux",
     why: "免费额度大幅缩水，需充值解锁才能正常使用",
     link: "https://zenmux.ai"
@@ -656,6 +670,36 @@ const FEATURED_RULES = [
 function isFeatured(t) {
   const text = (t.name + " " + (t.modality || "")).toLowerCase().replace(/[^a-z0-9\u4e00-\u9fa5]+/g, "");
   return FEATURED_RULES.some(r => r.re.test(text));
+}
+
+/* ========== 邀请码自动轮换（inviteBase + inviteCodes）==========
+ * 卡片只要带这两个字段就会自动轮换邀请码。**后期要加码 / 换码，只改 inviteCodes 数组，
+ * 其它代码一行都不用动**；某个码失效或被平台停用了，直接从数组里删掉即可，轮换会自动跳过。
+ *   inviteBase:  "https://platform.stepfun.com/"   基础地址（不带参数）
+ *   inviteCodes: ["AATGOEHF", "KLXGHREZ", ...]     邀请码池
+ *   inviteParam: "invite_code_v2"                  可省略，默认 invite_code_v2
+ * 轮换策略：按「自然日」轮换——同一天内所有访客拿到同一个码（方便判断哪个码在起作用），
+ *   每天 0 点自动切到下一个；当天结果存 localStorage，刷新页面不跳码。
+ *   只有一个码时，行为与写死 link 完全一致。 */
+function pickInvite(t) {
+  const codes = t.inviteCodes;
+  if (!t.inviteBase || !Array.isArray(codes) || !codes.length) return null;
+  const dayNo = Math.floor(Date.now() / 86400000);   // UTC 自然日序号
+  const byDay = () => codes[((dayNo % codes.length) + codes.length) % codes.length];
+  let code = null;
+  try {
+    const KEY = "tfb_invite_" + t.name;
+    const saved = JSON.parse(localStorage.getItem(KEY) || "null");
+    if (saved && saved.day === dayNo && codes.indexOf(saved.code) > -1) {
+      code = saved.code;                              // 当天已选过，保持不变
+    } else {
+      code = byDay();
+      localStorage.setItem(KEY, JSON.stringify({ day: dayNo, code: code }));
+    }
+  } catch (e) {
+    code = byDay();                                   // 隐私模式 / 禁用存储时按天兜底
+  }
+  return t.inviteBase + "?" + (t.inviteParam || "invite_code_v2") + "=" + encodeURIComponent(code);
 }
 
 /* 观望名单中的平台：其官网大卡不再展示（数据保留在 TOKENS，移出观望名单后自动恢复） */
@@ -721,6 +765,9 @@ function render(type) {
       const code = t.traeLinks[Math.floor(Math.random() * t.traeLinks.length)];
       link = "https://www.trae.cn/work-fission/" + code + "?utm_source=copy_link&utm_medium=friends_invite";
     }
+    /* 邀请码自动轮换（优先于写死的 link） */
+    const inv = pickInvite(t);
+    if (inv) link = inv;
     const btn = t.poster
       ? `<button class="card-link card-poster-trigger" type="button" data-poster="${t.poster}" aria-label="查看详情海报">查看详情 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></button>`
       : `<a class="card-link" href="${link}" target="_blank" rel="noopener">查看详情 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>`;
