@@ -67,7 +67,7 @@ const TOKENS = [
     type: "大模型",
     modality: "step-5-preview · step-3.7-flash · step-3.5-flash · step-router-v1 · 全模态（文本/图像/语音）",
     rating: 4,
-    quota: "Step Plan 免费体验回归：注册即送 15 天，用完再送 15 天（合计约 1 个月）；每成功邀请 1 位好友再 +15 天，最高累计 90 天。免费档 Flash Mini 每月 400M Credits（4 亿积分），旗舰模型通用",
+    quota: "Step Plan 免费体验回归：注册即送 15 天，用完再送 15 天（合计约 1 个月）；每成功邀请 1 位好友再 +15 天，最高累计 90 天。免费档 Flash Mini 每月 400M Credits（4 亿积分），旗舰模型通用。⚠️ 每天名额有限，当天领完需等第二天再领",
     effect: "阶跃星辰自研全模态平台，免费档可用 step-5-preview、step-3.7-flash、step-3.5-flash、step-router-v1 等模型，覆盖文本 / 视觉理解 / 图像编辑 / 语音（stepaudio-2.5 系列）。API 兼容 OpenAI 与 Claude 格式，改个 Base URL 就能接进 Cursor、Claude Code、Cherry Studio、NextChat 等工具。实测：step-3.7-flash 文本约 2s、视觉 OCR 正确；step-3.5-flash 约 1.3s 适合高频任务；step-5-preview 冷启动偏慢（约 30s+）。⚠️ 免费额度用尽直接返回 429，不会自动扣余额；step-router-v1 不支持图像输入",
     link: "https://platform.stepfun.com",
     /* ↓↓↓ 多邀请码自动轮换：后期要加码 / 换码，只动下面这个数组，别的代码都不用改 ↓↓↓
@@ -77,7 +77,40 @@ const TOKENS = [
     inviteParam: "invite_code_v2",
     pin: 5,
     alwaysShow: true,
-    updated: "2026-09-20",
+    updated: "2026-09-23",
+    v2: true
+  },
+  {
+    name: "Cline",
+    type: "工具",
+    modality: "DeepSeek-V4.1-Flash · GLM-5.3-Flash · Muse Spark 1.3 · 文本模型",
+    rating: 4,
+    quota: "免费模型不绑信用卡即可直接用，有额度限制但日常 coding 够用",
+    effect: "开源编程 Agent（VS Code 插件）。免费档直连 DeepSeek-V4.1-Flash、GLM-5.3-Flash、Muse Spark 1.3，不需绑卡。进阶玩法：注册后拿到 API Key，经 9router 等中转接进其他工具，等于把客户端内的免费额度解放出来用",
+    link: "https://cline.bot",
+    updated: "2026-09-23",
+    v2: true
+  },
+  {
+    name: "Kilo Code",
+    type: "工具",
+    modality: "NVIDIA Nemotron 3 Ultra（550B） · Nex-N2.5-Pro · MiniMax M2.7 · Laguna S 2.1 · 腾讯混元 Hy3 等 16 个免费模型",
+    rating: 4,
+    quota: "16 个免费模型长期可用（真免费、非试用期），不要 API key、不要信用卡，注册即用；有新模型上线会自动进列表",
+    effect: "开源 AI 编程 Agent，VS Code / JetBrains / CLI 全支持。免费模型含腾讯混元 Hy3 与 NVIDIA Nemotron 3 Ultra（550B），覆盖门槛型号，可直接当日常主力，列表实时更新",
+    link: "https://kilocode.ai",
+    updated: "2026-09-23",
+    v2: true
+  },
+  {
+    name: "Verdent AI",
+    type: "工具",
+    modality: "GLM-5.3-Flash · DeepSeek V4 Flash（0731） · 另有 Claude / GPT / Gemini 等旗舰模型（需付费额度）",
+    rating: 3,
+    quota: "GLM-5.3-Flash 与 DeepSeek V4 Flash 当前完全免费，按 5 小时 / 每周滚动限额（非硬性上限，日常编码基本打不满）；新用户另赠 7 天 + 100 credits 试用旗舰模型，付费档 $19/月起",
+    effect: "多智能体并行编程平台（桌面端 + VS Code / JetBrains 扩展），每个 agent 跑在独立 git worktree 里互不冲突，自带 Plan Mode、Verifier 子智能体校验与 DiffLens 可视化 diff。GLM-5.3-Flash 会看图自检前端渲染结果再改，DeepSeek V4 Flash 偏重推理与 agentic 任务，两只分工基本覆盖日常编码。⚠️ 免费仅限这两只 flash 模型，旗舰模型要消耗 credits",
+    link: "https://verdent.ai",
+    updated: "2026-09-23",
     v2: true
   },
 
@@ -298,12 +331,12 @@ const TOKENS = [
   {
     name: "OpenCode Zen",
     type: "工具",
-    modality: "DeepSeek V4 Flash Free / MiMo-V2.5 Free / Nemotron 3 Ultra Free / Big Pickle 等",
-    rating: 2,
+    modality: "DeepSeek V4 Flash Free / MiMo-V2.5 Free / LongCat-2.0 Free / Nemotron 3 Ultra Free / Big Pickle 等",
+    rating: 3,
     quota: "多个精选模型限时免费（DeepSeek V4 Flash Free、MiMo-V2.5 Free、North Mini Code Free、Nemotron 3 Ultra Free、Big Pickle），无需付费；余额低于 $5 才自动充值",
     effect: "OpenCode（16 万+ Star 开源编程 Agent）自带的 Zen 模型网关，专为 coding agent 基准测试挑选并验证的模型，OpenAI 兼容接口，可配到任意编程客户端",
     link: "https://opencode.ai/zen",
-    updated: "2026-07-23",
+    updated: "2026-09-23",
     v2: true
   },
 
@@ -576,7 +609,7 @@ function seg(t) {
 const DONOTS = [
   {
     name: "火山引擎 Ark 协作计划（字节）",
-    why: "可用模型数量、分量都比较少，性价比一般；唯一亮点是每日可重置额度",
+    why: "可用模型数量、分量都比较少，性价比一般；唯一亮点是每日可重置额度（单模型最高 500 万 Token/天，Doubao-Seed-2.1-pro 同档，申请后最高可提到 5000 万/天）",
     link: "https://console.volcengine.com/ark/region:cn-beijing/openManagement/rewardPlan"
   },
   {
@@ -608,11 +641,6 @@ const DONOTS = [
     name: "OpenStarry",
     why: "仅允许免费调用 200 次",
     link: "https://www.openstarry.com"
-  },
-  {
-    name: "OpenCode Zen",
-    why: "这是一个软件/工具，好像没有任何免费额度",
-    link: "https://opencode.ai/zen"
   },
   {
     name: "腾讯云 TokenHub",
@@ -648,6 +676,41 @@ const DONOTS = [
     name: "B.AI（AI 模型聚合平台）",
     why: "免费模型已全部取消，改为一折计费，无免费额度可领",
     link: "https://chat.b.ai/chat?invite_code=CQLBPC"
+  },
+  {
+    name: "Google Gemini API",
+    why: "长期免费层很稳（AI Studio 免费用 Flash / Pro、Gemini CLI 每天 1000 次请求），但 Gemini 系列不在本站精选门槛内，暂列观望",
+    link: "https://aistudio.google.com/"
+  },
+  {
+    name: "GitHub Copilot Free",
+    why: "每月 2000 次代码补全 + 50 次 Chat，模型为 GPT-4o / Claude Sonnet，均不在精选门槛内；轻度用户够用，暂列观望",
+    link: "https://github.com/features/copilot"
+  },
+  {
+    name: "Groq",
+    why: "自研 LPU 推理极快（500+ tokens/s），免费层每天 1000 次请求 / 20 万 Token，但托管的开源模型不在精选门槛内，暂列观望",
+    link: "https://console.groq.com"
+  },
+  {
+    name: "Cerebras",
+    why: "每天 100 万 Token、约 3000 tokens/s，但仅 Llama 4 Scout / Qwen3 32B 且上下文只有 8192，不在精选门槛内，暂列观望",
+    link: "https://inference.cerebras.ai"
+  },
+  {
+    name: "阿里云百炼",
+    why: "新用户 100 万 Token 永久有效、通义千问代码模型每日 100 万，但未明确开放本站门槛型号，暂列观望",
+    link: "https://bailian.console.aliyun.com"
+  },
+  {
+    name: "腾讯云混元",
+    why: "100 万 Token/年、按年发放，额度偏少且需实名开通，暂列观望",
+    link: "https://cloud.tencent.com/product/hunyuan"
+  },
+  {
+    name: "百度千帆",
+    why: "每个模型 100 万 Token、有效期 3 个月，需逐个模型分别领取，上手成本偏高，暂列观望",
+    link: "https://console.bce.baidu.com/qianfan"
   }
 ];
 
@@ -735,7 +798,14 @@ const REGION_BY_NAME = {
   "OpenCode Zen": "国外",
   "基元律动": "国外",
   "ZenMux": "国外",
-  "AMD 免费 API 与开发者计划": "美国"
+  "AMD 免费 API 与开发者计划": "美国",
+  "Cline": "国外",
+  "Kilo Code": "国外",
+  "Verdent AI": "国外",
+  "Google Gemini API": "美国",
+  "GitHub Copilot Free": "美国",
+  "Groq": "美国",
+  "Cerebras": "美国"
 };
 
 /* 归类规则（只分两类）：

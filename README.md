@@ -34,7 +34,7 @@
 
 ![Token FBI 站点截图](screenshot.png)
 
-站点实时展示 **大模型类 8 家、工具类 9 家、项目类 1 家**（共 18 张）的最新免费 token 情报，支持按分类筛选（全部 / 大模型 / 工具），限时活动会标注截止日期角标。进入「观望名单」的平台已不再展示官网大卡。
+站点实时展示 **大模型类 8 家、工具类 13 家、项目类 1 家**（共 22 张）的最新免费 token 情报，支持按分类筛选（全部 / 大模型 / 工具），限时活动会标注截止日期角标。进入「观望名单」的平台已不再展示官网大卡。
 
 ---
 
@@ -173,9 +173,9 @@ Token FBI 是一张**活着的免费 AI token 名录**。
 
 ---
 
-## 🏢 已收录平台（大模型类 8 · 工具类 9 · 项目类 1，共 18 张卡展示）
+## 🏢 已收录平台（大模型类 8 · 工具类 13 · 项目类 1，共 22 张卡展示）
 
-以下为截至 **2026-09-20** 的官网展示清单，按卡片实际展示顺序排列（星级 ★ 随体验动态变化；第 4、5 位为固定位）。**进入「观望名单」的 15 家已不展示官网大卡**（数据保留，仅在站内观望名单区展示）：
+以下为截至 **2026-09-23** 的官网展示清单，按卡片实际展示顺序排列（星级 ★ 随体验动态变化；第 4、5 位为固定位）。**进入「观望名单」的 21 家已不展示官网大卡**（数据保留，仅在站内观望名单区展示）：
 
 | # | 平台 | 类型 | 核心模型 | 星级 |
 |:--:|:---|:---|:---|:--:|
@@ -184,21 +184,27 @@ Token FBI 是一张**活着的免费 AI token 名录**。
 | 3 | GLM-5.3-Flash（Ox-Alpha） | 大模型 | 原生多模态大模型 · 300B 参数 | ★★★★★ |
 | 4 | 蓝博科技（lanbuff） | 工具 | DeepSeek V4 / GLM-5.3 / 千问 3.8 等主流模型中转（固定第 4 位） | ★★★★ |
 | 5 | 阶跃星辰 StepFun | 大模型 | step-5-preview · step-3.7-flash · step-3.5-flash · step-router-v1 全模态（固定第 5 位） | ★★★★ |
-| 6 | 腾讯 Marvis（马维斯） | 工具 | 混元 / DeepSeek V4 · 操作系统级 AI 助手 | ★★★★ |
-| 7 | 美团 catpaw（App） | 工具 | GLM-5.3-Flash · LongCat 等 · 多模型聚合 | ★★★★★ |
-| 8 | 豆包拉新项目 | 项目 | 网盘拉新 · 多平台带赚 | ★★★★ |
-| 9 | 2026 微信小程序开发大赛 | 大模型 | DeepSeek V4 Flash · Coding Plan 免费 Token（报名截止 10/17） | ★★★★ |
-| 10 | 硅基流动 SiliconFlow | 大模型 | DeepSeek V4 Pro / GLM-5.3 / Kimi K3 / 千问 3.8 等 | ★★★★ |
-| 11 | 美团 longcat 大模型 | 大模型 | LongCat 2.0 · 文本模型 | ★★★★★ |
-| 12 | 微信 AI 小程序成长计划（云开发 CloudBase） | 大模型 | Hy3 + Hy Image 3.0 · 文本/生图（限时至 12/31） | ★★★ |
-| 13 | 国家超算互联网 SCNet | 大模型 | DeepSeek V4 Pro / V4 Flash · GLM-5.2 · MiniMax-M3 · Kimi-K2.6 | ★★★★ |
-| 14 | AMD 免费 API 与开发者计划 | 大模型 | 裸机 Instinct GPU / Fireworks 托管推理 · 开发者福利 | ★★★★★ |
-| 15 | 秒哒（百度） | 工具 | AI 应用生成工具 · 一句话造应用 | ★★★★★ |
-| 16 | 小米 MiMo（Xiaomi） | 工具 | MiMo-X-Pro-Preview / MiMo-X-Flash-Preview | ★★★★ |
-| 17 | LobsterAI 有道龙虾 | 工具 | DeepSeek-V4.1 · 文本模型 | ★★★★ |
-| 18 | 云工开物学生专区 | 工具 | Qwen3.8 / GLM-5.3 / DeepSeek-V4 等多模型 | ★★★★ |
+| 6 | Cline | 工具 | DeepSeek-V4.1-Flash · GLM-5.3-Flash · Muse Spark 1.3（免费不绑卡） | ★★★★ |
+| 7 | Kilo Code | 工具 | Nemotron 3 Ultra（550B） · MiniMax M2.7 · 腾讯混元 Hy3 等 16 个免费模型 | ★★★★ |
+| 8 | Verdent AI | 工具 | GLM-5.3-Flash · DeepSeek V4 Flash 免费（5 小时 / 每周滚动限额） | ★★★ |
+| 9 | 腾讯 Marvis（马维斯） | 工具 | 混元 / DeepSeek V4 · 操作系统级 AI 助手 | ★★★★ |
+| 10 | 美团 catpaw（App） | 工具 | GLM-5.3-Flash · LongCat 等 · 多模型聚合 | ★★★★★ |
+| 11 | 豆包拉新项目 | 项目 | 网盘拉新 · 多平台带赚 | ★★★★ |
+| 12 | 2026 微信小程序开发大赛 | 大模型 | DeepSeek V4 Flash · Coding Plan 免费 Token（报名截止 10/17） | ★★★★ |
+| 13 | 硅基流动 SiliconFlow | 大模型 | DeepSeek V4 Pro / GLM-5.3 / Kimi K3 / 千问 3.8 等 | ★★★★ |
+| 14 | 美团 longcat 大模型 | 大模型 | LongCat 2.0 · 文本模型 | ★★★★★ |
+| 15 | OpenCode Zen | 工具 | DeepSeek V4 Flash Free / MiMo-V2.5 Free / LongCat-2.0 Free 等 | ★★★ |
+| 16 | 微信 AI 小程序成长计划（云开发 CloudBase） | 大模型 | Hy3 + Hy Image 3.0 · 文本/生图（限时至 12/31） | ★★★ |
+| 17 | 国家超算互联网 SCNet | 大模型 | DeepSeek V4 Pro / V4 Flash · GLM-5.2 · MiniMax-M3 · Kimi-K2.6 | ★★★★ |
+| 18 | AMD 免费 API 与开发者计划 | 大模型 | 裸机 Instinct GPU / Fireworks 托管推理 · 开发者福利 | ★★★★★ |
+| 19 | 秒哒（百度） | 工具 | AI 应用生成工具 · 一句话造应用 | ★★★★★ |
+| 20 | 小米 MiMo（Xiaomi） | 工具 | MiMo-X-Pro-Preview / MiMo-X-Flash-Preview | ★★★★ |
+| 21 | LobsterAI 有道龙虾 | 工具 | DeepSeek-V4.1 · 文本模型 | ★★★★ |
+| 22 | 云工开物学生专区 | 工具 | Qwen3.8 / GLM-5.3 / DeepSeek-V4 等多模型 | ★★★★ |
 
-> 📌 **观望名单 15 家**：火山引擎 Ark / NVIDIA NIM / 商汤 Token Plan / BazaarLink / HuggingFace / 魔搭 / OpenStarry / OpenCode Zen / 腾讯云 TokenHub / 基元律动 / ZenMux / 天翼云息壤 / 七牛云 / 太行HUB / B.AI —— 官网大卡不再展示，仅保留观望区一行说明。
+> 📌 **观望名单 21 家**：火山引擎 Ark / NVIDIA NIM / 商汤 Token Plan / BazaarLink / HuggingFace / 魔搭 / OpenStarry / 腾讯云 TokenHub / 基元律动 / ZenMux / 天翼云息壤 / 七牛云 / 太行HUB / B.AI / **Google Gemini API** / **GitHub Copilot Free** / **Groq** / **Cerebras** / **阿里云百炼** / **腾讯云混元** / **百度千帆** —— 官网大卡不再展示，仅保留观望区一行说明。
+>
+> 📌 **2026-09-23 情报扩充**：新增 **Cline**、**Kilo Code**、**Verdent AI** 三张卡（均命中精选门槛），**OpenCode Zen** 经实测复核后移出观望、回归大卡；同时把 7 家暂不满足门槛的渠道（Gemini / Copilot Free / Groq / Cerebras / 百炼 / 混元 / 千帆）纳入观望名单。展示卡 18 → 22 张；阶跃星辰卡补充「每天名额有限」提示。
 >
 > 📌 **2026-09-19 门槛变更**：精选门槛由「DeepSeek V4 / GLM 5.3 / Kimi K3 / 千问 3.8 / Hy4」改为「DeepSeek V4 / GLM 5.2 / Kimi K3 / 千问 3.8 Max / Hy3 / LongCat 2.0」（与上方收录标准一致，同系列更高版本自动命中）。受此影响：**微信 AI 小程序成长计划（Hy3）**、**美团 longcat 大模型（LongCat 2.0）** 重新回到展示列表；展示卡 15 → 17 张。
 
@@ -285,6 +291,8 @@ token-fbi/
 
 ## 🔄 最近更新
 
+- **2026-09-23（情报扩充 · 新增 3 卡）**：依据外部实测情报，新增 **Cline**（免费不绑卡，DeepSeek-V4.1-Flash / GLM-5.3-Flash / Muse Spark 1.3）、**Kilo Code**（16 个真免费模型含腾讯混元 Hy3、Nemotron 3 Ultra 550B）、**Verdent AI**（GLM-5.3-Flash + DeepSeek V4 Flash 免费，5 小时 / 每周滚动限额）三张卡；**OpenCode Zen** 复核后移出观望回归大卡。Gemini / GitHub Copilot Free / Groq / Cerebras / 阿里云百炼 / 腾讯云混元 / 百度千帆 7 家暂不满足门槛，纳入观望名单。阶跃星辰卡补充「每天名额有限」提示。展示卡 18 → 22 张，观望 15 → 21 家。
+- **2026-09-20（原主站 bj9 恢复）**：经与平台方协作（腾讯云工单 202609176240），原主站 `1c91cc10…bj9.agentos-app.net` **已恢复发布**，内容为最新版且后续更新不再变化，重新作为 WorkBuddy 镜像使用；同期阶跃星辰 StepFun 从观望名单移回大卡并固定第 5 位，上线邀请码自动轮换机制。展示卡 17 → 18 张，观望 16 → 15 家。
 - **2026-09-20（阶跃星辰回归大卡 · 第 5 位）**：Step Plan 免费体验活动回归（注册送 15 天 + 用完再送 15 天，邀好友最高 90 天），**阶跃星辰 StepFun 从观望名单移回大卡并固定第 5 位**（第 4 位仍为蓝博科技）。同时上线 **邀请码自动轮换**：卡片带 `inviteBase` + `inviteCodes` 即按自然日自动换码（当天稳定、每天 0 点切下一个），后期加码 / 删码只改 `inviteCodes` 数组即可，无需改动其它逻辑。展示卡 17 → 18 张，观望 16 → 15 家
 
 - **2026-09-19（收录门槛对齐）**：首页「精选门槛」与筛选逻辑同步为最新 6 个前沿模型 —— **DeepSeek V4 / GLM 5.2 / Kimi K3 / 千问 3.8 Max / Hy3 / LongCat 2.0**（此前代码门槛仍停在 GLM 5.3 / Hy4）。三处已统一：README 收录标准、首页门槛列表、`app.js` 判定规则；同系列更高版本自动命中，低于门槛的旧代际不展示。**微信 AI 小程序成长计划（Hy3）** 与 **美团 longcat 大模型（LongCat 2.0）** 重新进入展示列表，展示卡 15 → 17 张。
