@@ -22,8 +22,8 @@
 | :--- | :--- | :--- |
 | Cloudflare Pages | [https://token-fbi.pages.dev/](https://token-fbi.pages.dev/) | ✅ 连接 GitHub `main` 自动构建；公开页面与资源已核对 |
 | GitHub Pages | [https://hope0719.github.io/token-fbi/](https://hope0719.github.io/token-fbi/) | ✅ 正常（桌面端可访问，微信内可能打不开） |
-| WorkBuddy 镜像（bj9，现用） | [https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net](https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net) | ✅ **2026-09-20 恢复发布**，内容为最新；独立发布链路，不随 GitHub 推送自动更新 |
-| WorkBuddy 沙箱镜像（旧） | [https://e8e6b4805f0047529578b50c0389a7a3.app.workbuddy.host/](https://e8e6b4805f0047529578b50c0389a7a3.app.workbuddy.host/) | ✅ 2026-09-19 发布，内容为最新（bj9 恢复后仅作备用） |
+| WorkBuddy 镜像（bj9） | [https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net](https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net) | ⏸️ **2026-09-20 恢复发布**；内容截至 2026-09-20（18 张卡），暂缓同步以保证域名绑定稳定 |
+| WorkBuddy 沙箱镜像（旧） | [https://e8e6b4805f0047529578b50c0389a7a3.app.workbuddy.host/](https://e8e6b4805f0047529578b50c0389a7a3.app.workbuddy.host/) | ⏸️ 内容为 2026-09-20 版本；未随本次更新同步 |
 | 只读旧版沙箱 | [https://570b1bfec9714f2da647db883f639f30.app.workbuddy.host/](https://570b1bfec9714f2da647db883f639f30.app.workbuddy.host/) | ⛔ 平台侧已无法再更新，内容停留在 2026-09-17 |
 
 > ### ✅ 原主站（bj9）已于 2026-09-20 恢复
