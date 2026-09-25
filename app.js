@@ -556,24 +556,6 @@ const TOKENS = [
 
 /* ---- 渲染逻辑（一般不用改） ---- */
 const MAX = 5;
-const cardBox = document.getElementById("cards");
-const filters = document.getElementById("filters");
-let motionReady = false;
-
-function playCardMotion() {
-  if (!motionReady || !window.gsap) return;
-  const cards = cardBox.querySelectorAll(".card");
-  if (!cards.length) return;
-  window.gsap.from(cards, {
-    autoAlpha: 0,
-    y: 12,
-    duration: 0.32,
-    ease: "power2.out",
-    stagger: { amount: Math.min(cards.length * 0.028, 0.42) },
-    clearProps: "transform,visibility,opacity"
-  });
-}
-
 function fmtMd(d) {
   const p = d.split("-");
   return parseInt(p[1], 10) + "/" + parseInt(p[2], 10);
@@ -626,6 +608,11 @@ const DONOTS = [
     name: "BazaarLink",
     why: "目前仅千问 3.7 Flash 免费",
     link: "https://bazaarlink.ai/free"
+  },
+  {
+    name: "点点 AI（小红书 dots3-note-prev）",
+    why: "日常工作可以，深度编程能力不足",
+    link: "https://dots.ai/platform/apikeys"
   },
   {
     name: "HuggingFace Inference API",
@@ -813,333 +800,408 @@ const REGION_BY_NAME = {
  *   - 大模型：其余所有模型平台
  */
 function catOf(t) {
+  if (t.type === "项目") return "项目";
   if (t.type === "工具") return "工具";
   return "大模型";
 }
 
-function render(type) {
-  const list = type === "all" ? VISIBLE : VISIBLE.filter(t => catOf(t) === type);
-  const emptyEl = document.getElementById("empty-state");
-  if (!list.length) {
-    cardBox.innerHTML = "";
-    if (emptyEl) emptyEl.style.display = "block";
-    return;
-  }
-  if (emptyEl) emptyEl.style.display = "none";
-  cardBox.innerHTML = list.map(_t => {
-    const t = _t;
-    /* TRAE 多链接随机分流：有 traeLinks 数组时，每次加载随机挑一个码展示，
-       让不同访问者分散到不同分享码。单码时行为不变。 */
-    let link = t.link;
-    if (Array.isArray(t.traeLinks) && t.traeLinks.length) {
-      const code = t.traeLinks[Math.floor(Math.random() * t.traeLinks.length)];
-      link = "https://www.trae.cn/work-fission/" + code + "?utm_source=copy_link&utm_medium=friends_invite";
-    }
-    /* 邀请码自动轮换（优先于写死的 link） */
-    const inv = pickInvite(t);
-    if (inv) link = inv;
-    const btn = t.poster
-      ? `<button class="card-link card-poster-trigger" type="button" data-poster="${t.poster}" aria-label="查看详情海报">查看详情 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></button>`
-      : `<a class="card-link" href="${link}" target="_blank" rel="noopener">查看详情 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>`;
-    /* v2 折叠式正文：免费段 = quota + signup + charge 合并；效果段 = modality 模型 + effect */
-    const freeSeg = [t.quota, t.signup, t.charge].filter(Boolean).map(s => cleanText(s)).join("。");
-    const effSeg = [t.modality ? "可直连模型：" + cleanText(t.modality) : null, t.effect ? cleanText(t.effect) : null].filter(Boolean).join("。");
-    const region = REGION_BY_NAME[t.name] ? `<span class="card-region">${cleanText(REGION_BY_NAME[t.name])}</span>` : '';
-    return `
-    <article class="card${t.tone ? ' tone-' + t.tone : ''}">
-      ${t.badge ? `<span class="card-corner-badge">${cleanText(t.badge)}</span>` : ''}
-      <div class="card-rating" title="香度 ${t.rating}/5">
-        <span class="card-stars">${fire(t.rating)}</span>
-        <span class="card-meta">
-          <span class="card-type">${catOf(t)}</span>
-          ${t.limited ? `<span class="card-limit-row"><span class="card-badge-inline">⏱ 限时 ${fmtMd(t.limited)}</span></span>` : ''}
-        </span>
-      </div>
-      <div class="card-title-row">
-        <h3 class="card-name">${cleanText(t.name)}</h3>
-        ${region}
-      </div>
-      <p class="card-modality">${cleanText(t.modality)}</p>
-      <hr class="card-divider" />
-      ${freeSeg ? `<div class="card-field"><span class="ico">♪</span><span class="v">${seg(freeSeg)}</span></div>` : ''}
-      ${effSeg ? `<div class="card-field"><span class="ico">✦</span><span class="v">${seg(effSeg)}</span></div>` : ''}
-      <div class="card-action">
-        ${t.extraAction ? `<a class="card-btn-secondary" href="${t.extraAction.link}" target="_blank" rel="noopener">${cleanText(t.extraAction.text)}</a>` : ''}
-        ${btn}
-      </div>
-      <div class="card-footer">
-        <div class="card-date">更新于 ${t.updated}</div>
-      </div>
-    </article>
-  `;
-  }).join("");
-  playCardMotion();
+const LOGO_RULES = [
+  [/workbuddy/i, "workbuddy"],
+  [/qoder|灵码/i, "qoder"],
+  [/glm|智谱|z\.ai/i, "zhipu"],
+  [/蓝博|lanbuff/i, "lanbuff"],
+  [/阶跃|stepfun/i, "stepfun"],
+  [/cline/i, "cline"],
+  [/kilo/i, "kilo"],
+  [/verdent/i, "verdent"],
+  [/marvis|马维斯/i, "marvis"],
+  [/catpaw/i, "catpaw"],
+  [/微信|小程序/i, "wechat"],
+  [/硅基|siliconflow/i, "siliconflow"],
+  [/longcat/i, "meituan"],
+  [/opencode/i, "opencode"],
+  [/cloudbase|腾讯云混元|tokenhub/i, "tencent"],
+  [/scnet|超算/i, "scnet"],
+  [/amd/i, "amd"],
+  [/秒哒|百度|千帆/i, "baidu"],
+  [/小米|mimo/i, "xiaomi"],
+  [/有道|lobster/i, "youdao"],
+  [/阿里|百炼|云工/i, "aliyun"],
+  [/nvidia/i, "nvidia"],
+  [/google|gemini/i, "google"],
+  [/github|copilot/i, "github"],
+  [/groq/i, "groq"],
+  [/cerebras/i, "cerebras"],
+  [/七牛/i, "qiniu"],
+  [/火山/i, "volcengine"],
+  [/huggingface/i, "huggingface"],
+  [/魔搭|modelscope/i, "modelscope"],
+  [/腾讯|混元|hy3|hy4/i, "tencent"],
+  [/美团/i, "meituan"]
+];
+
+function logoFor(item) {
+  const name = item.name || "";
+  if (/workbuddy/i.test(name)) return "assets/logos/workbuddy-official.png";
+  if (/qoder|灵码/i.test(name)) return "assets/logos/qoder-ui.svg";
+  if (/glm|智谱|z\.ai/i.test(name)) return "assets/logos/zhipu-ui.svg";
+  if (/stepfun|阶跃/i.test(name)) return "assets/logos/stepfun-ui.svg";
+  const details = `${item.modality || ""} ${item.effect || ""}`;
+  const hit = LOGO_RULES.find(([re]) => re.test(name)) || LOGO_RULES.find(([re]) => re.test(details));
+  return `assets/logos/${hit ? hit[1] : "tencent"}.png`;
 }
 
-filters.addEventListener("click", e => {
-  const btn = e.target.closest(".chip");
-  if (!btn) return;
-  filters.querySelectorAll(".chip").forEach(c => c.classList.remove("is-active"));
-  btn.classList.add("is-active");
-  filters.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", String(c === btn)));
-  render(btn.dataset.type);
+function displayName(item) {
+  const name = cleanText(item.name);
+  if (/qoder|灵码/i.test(name)) return "Qoder";
+  if (/stepfun|阶跃/i.test(name)) return "StepFun";
+  if (/siliconflow|硅基/i.test(name)) return "SiliconFlow";
+  return name.replace(/（.*?）/g, "");
+}
+
+function brandName(item) {
+  const name = cleanText(item.name);
+  if (/glm|智谱/i.test(name)) return "智谱清言";
+  if (/stepfun|阶跃/i.test(name)) return "阶跃星辰";
+  if (/siliconflow|硅基/i.test(name)) return "硅基流动";
+  return displayName(item);
+}
+
+const CARD_COPY_RULES = [
+  [/workbuddy/i, "HY3 / HY4 / DeepSeek-V4.1", "新用户可领多模型免费额度，开箱即用。"],
+  [/qoder|灵码/i, "Qwen3.8-Flash / Qwen3.8-Max", "限时模型免费，适合日常 AI 编程。"],
+  [/glm-5\.3|智谱/i, "GLM-5.3-Flash", "注册可领体验卡，适合开发与日常使用。"],
+  [/stepfun|阶跃/i, "Step-5 / Step-Audio", "注册送免费体验期，支持多模态模型。"],
+  [/siliconflow|硅基/i, "Qwen / Llama / DeepSeek 等", "注册即得免费额度，支持多种开源模型。"],
+  [/kilo/i, "Claude 4 / GPT-4.1 / 免费模型", "多款模型长期免费，无需信用卡。"],
+  [/cline/i, "DeepSeek-V4.1 / GLM-5.3", "开源 AI 编程助手，免费模型直接使用。"],
+  [/verdent/i, "GLM-5.3 / DeepSeek V4", "双 Flash 模型免费，适合日常编码。"],
+  [/lanbuff|蓝博/i, "DeepSeek V4 / GLM-5.3 / Qwen", "多模型统一接入，适合 API 开发测试。"],
+  [/catpaw/i, "GLM-5.3 / LongCat", "登录即送积分，LongCat 免费使用。"],
+  [/longcat/i, "LongCat 2.0", "新用户可领大额 Token，适合高频使用。"],
+  [/opencode/i, "DeepSeek / MiMo / LongCat", "多款精选模型可免费用于编程任务。"],
+  [/小米|mimo/i, "MiMo-X-Pro / MiMo-X-Flash", "限时免费体验，覆盖多种创作任务。"],
+  [/有道|lobster/i, "DeepSeek-V4.1", "下载安装即可使用，适合对话与任务处理。"],
+  [/云工开物/i, "Qwen / GLM / DeepSeek", "学生认证可领取专业版权益。"],
+  [/微信.*小程序|cloudbase/i, "HY3 / Hy Image 3.0", "开发者计划提供 Token 与生图额度。"],
+  [/nvidia/i, "Llama / Gemma / DeepSeek 等", "免费推理接口，适合个人测试。"],
+  [/七牛/i, "Qwen / DeepSeek / Kimi / GLM", "新用户可领多模型调用额度。"],
+  [/amd/i, "AMD 免费 API", "提供免费接口与开发者云额度。"]
+];
+
+function compactCardCopy(item) {
+  const hit = CARD_COPY_RULES.find(([re]) => re.test(item.name));
+  if (hit) return { models: hit[1], summary: hit[2] };
+  const models = shortText(cleanText(item.modality || "AI 模型与工具").split("·")[0], 32);
+  const summary = item.limited
+    ? "限时免费开放，领取方式以平台规则为准。"
+    : "注册可用免费额度，适合日常体验与开发。";
+  return { models, summary };
+}
+
+function resolvedLink(t) {
+  if (Array.isArray(t.traeLinks) && t.traeLinks.length) {
+    const code = t.traeLinks[Math.floor(Math.random() * t.traeLinks.length)];
+    return `https://www.trae.cn/work-fission/${code}?utm_source=copy_link&utm_medium=friends_invite`;
+  }
+  return pickInvite(t) || t.link;
+}
+
+function shortText(value, max = 92) {
+  const clean = cleanText(value || "").replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  return clean.slice(0, max).replace(/[，。；、\s]+$/g, "") + "…";
+}
+
+function freeLabel(t) {
+  if (t.limited) return `限时 ${fmtMd(t.limited)}`;
+  if (/不限|长期|永久免费|真免费/i.test(`${t.quota || ""} ${t.effect || ""}`)) return "长期免费";
+  return "免费额度";
+}
+
+function heroTitle(t, index) {
+  if (/workbuddy/i.test(t.name)) return '更强的 AI 工作空间，<span>从免费开始</span>';
+  if (/qoder|灵码/i.test(t.name)) return '为真实开发而生的<br><span>AI 编程伙伴</span>';
+  return index === 0 ? '高价值额度，<span>先领先用</span>' : '可靠模型，<span>免费开用</span>';
+}
+
+function cardLink(t, className = "card-action") {
+  if (t.poster) return `<button class="${className} poster-button" type="button" data-poster="${t.poster}">查看海报</button>`;
+  return `<a class="${className}" href="${resolvedLink(t)}" target="_blank" rel="noopener noreferrer">立即领取</a>`;
+}
+
+function featuredTemplate(t, index) {
+  const facts = ["免费额度", index === 0 ? "新用户领取" : "注册即送", `已验证 ${t.updated}`];
+  const summary = index === 0
+    ? "集成多模型的生产力平台，注册即送可观免费额度。"
+    : "支持多模型，免费额度助你更高效地完成项目。";
+  const variant = index === 0 ? "is-workbuddy" : "is-qoder";
+  const art = index === 0
+    ? `<div class="featured-art" aria-hidden="true"><div class="art-card one"><span>混元 HY3</span><span>混元 HY4</span><span>DeepSeek-V4.1</span><span>更多模型</span></div><div class="art-card two"></div><div class="art-card three"></div></div>`
+    : `<div class="featured-art" aria-hidden="true"><div class="qoder-window"><strong>Code<br>with Qoder.</strong><span>Qwen3.8-Flash</span><span>Qwen3.8-Max</span><span>GLM-5.3</span><span>DeepSeek-V4</span></div></div>`;
+  return `<article class="featured-card ${variant}">
+    <div class="featured-content">
+      <div class="product-line"><img src="${logoFor(t)}" alt="${cleanText(t.name)} Logo"><strong>${cleanText(t.name)}</strong></div>
+      <h3>${heroTitle(t, index)}</h3>
+      <p class="summary">${summary}</p>
+      <div class="featured-action">${cardLink(t)}<span>最后核验 ${t.updated}</span></div>
+    </div>
+    ${art}${index === 1 ? '<span class="editor-badge">编程工具精选</span>' : ''}
+    <div class="featured-facts">${facts.map(f => `<span>${f}</span>`).join("")}</div>
+  </article>`;
+}
+
+function cardTemplate(t) {
+  const limited = Boolean(t.limited);
+  const badge = limited ? `<span class="limited-label">${freeLabel(t)}</span>` : `<span class="free-label">${freeLabel(t)}</span>`;
+  const validity = limited ? `限时 ${fmtMd(t.limited)}` : "长期有效";
+  const copy = compactCardCopy(t);
+  return `<article class="intel-card" data-kind="${catOf(t)}" data-search="${cleanText(`${t.name} ${t.modality} ${t.quota} ${t.effect}`).toLowerCase()}">
+    <div class="card-visual">${badge}<img src="${logoFor(t)}" alt="${cleanText(t.name)} Logo"><span class="visual-brand">${brandName(t)}</span></div>
+    <div class="card-body">
+      <div class="card-title-row"><h3>${displayName(t)}</h3></div>
+      <p class="model-line">${copy.models}</p>
+      <p class="quota-summary">${copy.summary}</p>
+      <div class="card-meta-row"><span><b>${validity}</b></span><span>已验证 ${t.updated}</span></div>
+      <div class="card-footer"><span class="rating" aria-label="香度 ${t.rating}/5">${fire(t.rating)}</span>${cardLink(t)}</div>
+    </div>
+  </article>`;
+}
+
+const editorial = VISIBLE.filter(t => catOf(t) !== "项目");
+const partners = VISIBLE.filter(t => catOf(t) === "项目");
+const latest = editorial.slice().sort((a, b) => b.updated.localeCompare(a.updated))[0]?.updated || "—";
+let currentType = "all";
+let currentQuery = "";
+const expanded = { models: false, tools: false };
+let watchExpanded = false;
+
+const els = {
+  featured: document.getElementById("featuredGrid"),
+  models: document.getElementById("modelCards"),
+  tools: document.getElementById("toolCards"),
+  partners: document.getElementById("partnerCards"),
+  modelSection: document.getElementById("models"),
+  toolSection: document.getElementById("tools"),
+  resultCount: document.getElementById("resultCount"),
+  modelCount: document.getElementById("modelCount"),
+  toolCount: document.getElementById("toolCount"),
+  latestUpdate: document.getElementById("latestUpdate")
+};
+
+function matchesFilter(t) {
+  const text = `${t.name} ${t.modality || ""} ${t.quota || ""} ${t.effect || ""}`.toLowerCase();
+  if (currentQuery && !text.includes(currentQuery)) return false;
+  if (currentType === "大模型" || currentType === "工具") return catOf(t) === currentType;
+  if (currentType === "limited") return Boolean(t.limited);
+  if (currentType === "productivity") return /办公|工作台|agent|智能体|生产力|文档|ppt|excel/i.test(text);
+  if (currentType === "image") return /图像|生图|视觉|图片|多模态/i.test(text);
+  if (currentType === "audio") return /语音|音频|声音|step-audio/i.test(text);
+  if (currentType === "data") return /数据|分析|研究|报表|金融/i.test(text);
+  if (currentType === "platform") return /api|平台|开发者|openai|网关/i.test(text);
+  return true;
+}
+
+function renderCatalog() {
+  const visible = editorial.filter(matchesFilter);
+  const priorityModels = [/glm-5\.3/i, /stepfun|阶跃/i, /siliconflow|硅基/i];
+  const priorityTools = [/workbuddy/i, /qoder|灵码/i, /kilo/i, /cline/i, /verdent/i];
+  const rank = (item, rules) => {
+    const index = rules.findIndex(re => re.test(item.name));
+    return index < 0 ? 999 : index;
+  };
+  const modelItems = visible
+    .filter(t => catOf(t) === "大模型")
+    .sort((a, b) => rank(a, priorityModels) - rank(b, priorityModels));
+  const toolItems = visible
+    .filter(t => catOf(t) === "工具")
+    .sort((a, b) => rank(a, priorityTools) - rank(b, priorityTools));
+  const searching = Boolean(currentQuery) || currentType !== "all";
+  const modelLimit = expanded.models || searching ? modelItems.length : 4;
+  const toolLimit = expanded.tools || searching ? toolItems.length : 4;
+
+  els.models.innerHTML = modelItems.slice(0, modelLimit).map(cardTemplate).join("") || '<p class="empty-state">没有匹配的大模型情报。</p>';
+  els.tools.innerHTML = toolItems.slice(0, toolLimit).map(cardTemplate).join("") || '<p class="empty-state">没有匹配的工具情报。</p>';
+  els.modelSection.classList.toggle("is-hidden", currentType === "工具" && !currentQuery);
+  els.toolSection.classList.toggle("is-hidden", currentType === "大模型" && !currentQuery);
+  els.resultCount.textContent = `找到 ${visible.length} 条情报`;
+  els.modelCount.textContent = `${modelItems.length} 个平台`;
+  els.toolCount.textContent = `${toolItems.length} 个工具`;
+
+  document.querySelectorAll("[data-expand]").forEach(btn => {
+    const key = btn.dataset.expand;
+    const list = key === "models" ? modelItems : toolItems;
+    btn.hidden = searching || list.length <= 4;
+    btn.textContent = expanded[key] ? "收起" : "查看全部";
+  });
+  bindPosterButtons();
+}
+
+function renderPartners() {
+  els.partners.innerHTML = partners.map(t => `<article class="partner-card">
+    <img src="${logoFor(t)}" alt="${cleanText(t.name)} Logo">
+    <div><div class="product-line"><h3>${cleanText(t.name)}</h3><span class="promoted">推广</span></div><p>${shortText(t.quota, 64)}</p></div>
+    ${cardLink(t, "poster-button")}
+  </article>`).join("") || '<p class="empty-state">当前没有合作内容。</p>';
+  bindPosterButtons();
+}
+
+function renderWatchout() {
+  const items = watchExpanded ? DONOTS : DONOTS.slice(0, 5);
+  const box = document.getElementById("watchoutCards");
+  box.innerHTML = items.map(item => `<article class="watch-row"><strong>${cleanText(item.name)}</strong><p>${cleanText(item.why)}</p><a href="${item.link}" target="_blank" rel="noopener noreferrer">查看平台</a></article>`).join("");
+  const toggle = document.getElementById("watchToggle");
+  toggle.textContent = watchExpanded ? "收起名单" : `展开全部 ${DONOTS.length} 条`;
+}
+
+els.featured.innerHTML = editorial.slice(0, 2).map(featuredTemplate).join("");
+els.latestUpdate.textContent = "2026-09-25";
+renderCatalog();
+renderPartners();
+renderWatchout();
+
+const filters = document.getElementById("filters");
+filters.addEventListener("click", event => {
+  const button = event.target.closest(".chip");
+  if (!button) return;
+  currentType = button.dataset.type;
+  filters.querySelectorAll(".chip").forEach(chip => {
+    const active = chip === button;
+    chip.classList.toggle("is-active", active);
+    chip.setAttribute("aria-pressed", String(active));
+  });
+  renderCatalog();
 });
 
-/* Hero 数据大字报 */
-(function initStats() {
-  const models = VISIBLE.filter(t => catOf(t) === "大模型").length;
-  const tools = VISIBLE.filter(t => catOf(t) === "工具").length;
-  const limited = VISIBLE.filter(t => t.limited).length;
-  const latest = VISIBLE.slice().sort((a, b) => b.updated.localeCompare(a.updated))[0]?.updated || "—";
-  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-  set("stat-models", models);
-  set("stat-tools", tools);
-  set("stat-limited", limited);
-  set("stat-updated", latest);
-  set("list-total", `已收录 ${VISIBLE.length} 条有效线索`);
-})();
-
-/* 回到顶部按钮 */
-const backBtn = document.getElementById("backToTop");
-const hero = document.getElementById("top");
-if (backBtn && hero && "IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(([entry]) => {
-    backBtn.classList.toggle("is-visible", !entry.isIntersecting);
-  }, { threshold: 0.08 });
-  observer.observe(hero);
-  backBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-}
-
-const wechatTrigger = document.querySelector(".wechat-trigger");
-const qrcodeBox = document.getElementById("qrcode-wechat");
-if (wechatTrigger && qrcodeBox) {
-  wechatTrigger.addEventListener("click", () => {
-    const isOpen = qrcodeBox.hasAttribute("hidden");
-    qrcodeBox.toggleAttribute("hidden", !isOpen);
-    wechatTrigger.setAttribute("aria-expanded", String(isOpen));
+document.querySelectorAll("[data-expand]").forEach(button => {
+  button.addEventListener("click", () => {
+    expanded[button.dataset.expand] = !expanded[button.dataset.expand];
+    renderCatalog();
   });
-}
+});
 
-render("all");
+document.getElementById("globalSearch").addEventListener("input", event => {
+  currentQuery = event.target.value.trim().toLowerCase();
+  renderCatalog();
+});
 
-/* 海报弹窗：项目卡点击「立取领取」时弹出海报图片 */
-(function initPosterModal() {
-  const triggers = document.querySelectorAll(".card-poster-trigger");
-  if (!triggers.length) return;
-
-  let overlay = null;
-
-  function createOverlay() {
-    if (overlay) return overlay;
-    overlay = document.createElement("div");
-    overlay.className = "poster-overlay";
-    overlay.setAttribute("role", "dialog");
-    overlay.setAttribute("aria-modal", "true");
-    overlay.setAttribute("aria-label", "项目详情海报");
-    overlay.innerHTML = '<div class="poster-backdrop"></div><div class="poster-dialog"><button class="poster-close" type="button" aria-label="关闭"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button><img class="poster-img" alt="项目详情海报" /><p class="poster-tip">长按海报右下角二维码，备注「Token-FBI」</p></div>';
-    document.body.appendChild(overlay);
-
-    const close = () => { overlay.classList.remove("is-open"); setTimeout(() => { overlay.style.display = "none"; }, 220); };
-    overlay.querySelector(".poster-backdrop").addEventListener("click", close);
-    overlay.querySelector(".poster-close").addEventListener("click", close);
-    document.addEventListener("keydown", e => { if ((e.key === "Escape" || e.key === "Esc") && overlay.classList.contains("is-open")) close(); });
-
-    return overlay;
+document.addEventListener("keydown", event => {
+  if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+    event.preventDefault();
+    document.getElementById("globalSearch").focus();
   }
+});
 
-  triggers.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const src = btn.dataset.poster || "";
-      if (!src) return;
-      const dlg = createOverlay();
-      const img = dlg.querySelector(".poster-img");
-      img.src = src;
-      img.onerror = () => { img.alt = "海报加载失败"; };
-      dlg.style.display = "flex";
-      requestAnimationFrame(() => { dlg.classList.add("is-open"); });
-    });
-  });
-})();
+document.getElementById("watchToggle").addEventListener("click", () => {
+  watchExpanded = !watchExpanded;
+  renderWatchout();
+});
 
-(function renderWatchout() {
-  const box = document.getElementById("watchout-cards");
-  const emptyEl = document.getElementById("watchout-empty");
-  if (!box) return;
-  if (!DONOTS.length) {
-    if (emptyEl) emptyEl.style.display = "block";
-    return;
+const menuToggle = document.getElementById("menuToggle");
+const sidebar = document.getElementById("sidebar");
+function setMenuOpen(open) {
+  document.body.classList.toggle("menu-open", open);
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute("aria-label", open ? "关闭导航" : "打开导航");
+}
+menuToggle.addEventListener("click", () => setMenuOpen(!document.body.classList.contains("menu-open")));
+document.querySelectorAll(".side-nav a").forEach(link => link.addEventListener("click", () => {
+  setMenuOpen(false);
+}));
+document.addEventListener("click", event => {
+  if (!document.body.classList.contains("menu-open")) return;
+  if (sidebar.contains(event.target) || menuToggle.contains(event.target)) return;
+  setMenuOpen(false);
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && document.body.classList.contains("menu-open")) {
+    setMenuOpen(false);
+    menuToggle.focus();
   }
-  if (emptyEl) emptyEl.style.display = "none";
-  box.innerHTML = DONOTS.map((item, i) => `
-    <div class="row-watchout">
-      <span class="row-watchout-num">${i + 1}</span>
-      <h3 class="row-watchout-name">${cleanText(item.name)}</h3>
-      <span class="row-watchout-region${REGION_BY_NAME[item.name] ? '' : ' is-empty'}">${REGION_BY_NAME[item.name] ? cleanText(REGION_BY_NAME[item.name]) : ''}</span>
-      <span class="row-watchout-tag">观望</span>
-      <p class="row-watchout-why">${cleanText(item.why)}</p>
-      <a class="row-watchout-action" href="${item.link || "#"}" target="_blank" rel="noopener">查看详情 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" /></svg></a>
-    </div>
-  `).join("");
-})();
+});
 
-/* 轻量动效：失败时页面保持完全可读，减少动态效果偏好下不执行。 */
-if (window.gsap) {
-  const motion = window.gsap.matchMedia();
-  motion.add("(prefers-reduced-motion: no-preference)", () => {
-    motionReady = true;
-    window.gsap.from("[data-reveal='hero-copy'], [data-reveal='watchlist']", {
-      autoAlpha: 0,
-      y: 18,
-      duration: 0.54,
-      stagger: 0.1,
-      ease: "power3.out",
-      clearProps: "transform,visibility,opacity"
+function syncInitialHash() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (!target) return;
+  const scrollToTarget = () => {
+    const offset = window.innerWidth <= 900 ? 76 : 22;
+    window.scrollTo({
+      top: Math.max(0, target.getBoundingClientRect().top + window.scrollY - offset),
+      behavior: "instant"
     });
-    window.gsap.from("[data-reveal='hero-stats'] > div", {
-      autoAlpha: 0,
-      y: 10,
-      duration: 0.35,
-      stagger: 0.055,
-      delay: 0.18,
-      ease: "power2.out",
-      clearProps: "transform,visibility,opacity"
-    });
-    playCardMotion();
-    return () => { motionReady = false; };
-  });
+  };
+  requestAnimationFrame(() => requestAnimationFrame(scrollToTarget));
+  window.addEventListener("load", scrollToTarget, { once: true });
+}
+syncInitialHash();
+
+const toast = document.getElementById("toast");
+let toastTimer = null;
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add("is-visible");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 1800);
 }
 
-/* 关于区：点击按钮复制微信号 / 复制备注（兼容旧浏览器降级） */
-(function initWechatCopy() {
-  const buttons = Array.prototype.slice.call(document.querySelectorAll(".about-wechat-btn"));
-  if (!buttons.length) return;
-
-  async function doCopy(text) {
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(text);
-        return true;
-      }
-    } catch (_) { /* 走降级 */ }
-    const ta = document.createElement("textarea");
-    ta.value = text;
-    ta.setAttribute("readonly", "");
-    ta.style.position = "fixed";
-    ta.style.left = "-9999px";
-    document.body.appendChild(ta);
-    ta.select();
-    let ok = false;
-    try { ok = document.execCommand("copy"); } catch (_) { ok = false; }
-    document.body.removeChild(ta);
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (_) {
+    const input = document.createElement("textarea");
+    input.value = text;
+    input.style.position = "fixed";
+    input.style.opacity = "0";
+    document.body.appendChild(input);
+    input.select();
+    const ok = document.execCommand("copy");
+    input.remove();
     return ok;
   }
+}
 
-  buttons.forEach((btn) => {
-    const labelEl = btn.querySelector(".about-wechat-label");
-    const defaultLabel = labelEl ? labelEl.innerHTML : btn.innerHTML;
-    let resetTimer = null;
-    btn.addEventListener("click", async () => {
-      const text = btn.dataset.copy || "";
-      const ok = await doCopy(text);
-      btn.classList.toggle("is-copied", ok);
-      if (labelEl) {
-        labelEl.innerHTML = ok ? "已复制 " + text + " ✓" : "复制失败，请手动复制";
-      } else {
-        btn.innerHTML = ok ? "已复制 ✓" : "复制失败";
-      }
-      if (resetTimer) clearTimeout(resetTimer);
-      resetTimer = setTimeout(() => {
-        btn.classList.remove("is-copied");
-        if (labelEl) labelEl.innerHTML = defaultLabel;
-        else btn.innerHTML = defaultLabel;
-      }, 1800);
+document.querySelectorAll("[data-copy]").forEach(button => {
+  button.addEventListener("click", async () => showToast(await copyText(button.dataset.copy) ? `已复制：${button.dataset.copy}` : "复制失败，请手动复制"));
+});
+
+const posterOverlay = document.getElementById("posterOverlay");
+const posterImage = posterOverlay.querySelector(".poster-img");
+let posterReturnFocus = null;
+function closePoster() {
+  posterOverlay.hidden = true;
+  document.body.style.overflow = "";
+  posterReturnFocus?.focus();
+}
+function bindPosterButtons() {
+  document.querySelectorAll("[data-poster]").forEach(button => {
+    if (button.dataset.bound) return;
+    button.dataset.bound = "true";
+    button.addEventListener("click", () => {
+      posterReturnFocus = button;
+      posterImage.src = button.dataset.poster;
+      posterOverlay.hidden = false;
+      document.body.style.overflow = "hidden";
+      posterOverlay.querySelector(".poster-close").focus();
     });
   });
-})();
+}
+posterOverlay.querySelector(".poster-backdrop").addEventListener("click", closePoster);
+posterOverlay.querySelector(".poster-close").addEventListener("click", closePoster);
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && !posterOverlay.hidden) closePoster();
+});
+bindPosterButtons();
 
-/* 顶部分享条：点击直接复制文案 */
-(function initShareBar() {
-  const btn = document.getElementById("shareBtn");
-  if (!btn) return;
-  const defaultLabel = btn.textContent;
-  let resetTimer = null;
-
-  async function doCopy(text) {
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(text);
-        return true;
-      }
-    } catch (_) { /* 走降级 */ }
-    const ta = document.createElement("textarea");
-    ta.value = text;
-    ta.setAttribute("readonly", "");
-    ta.style.position = "fixed";
-    ta.style.left = "-9999px";
-    document.body.appendChild(ta);
-    ta.select();
-    let ok = false;
-    try { ok = document.execCommand("copy"); } catch (_) { ok = false; }
-    document.body.removeChild(ta);
-    return ok;
-  }
-
-  btn.addEventListener("click", async () => {
-    const text = btn.dataset.copy || "";
-    const ok = await doCopy(text);
-    btn.classList.toggle("is-copied", ok);
-    btn.textContent = ok ? "已复制，去分享吧 ✓" : "复制失败，请手动复制";
-    if (resetTimer) clearTimeout(resetTimer);
-    resetTimer = setTimeout(() => {
-      btn.classList.remove("is-copied");
-      btn.textContent = defaultLabel;
-    }, 2000);
-  });
-})();
-
-/* 顶部「保存官网 · 防止失联」：能收藏就收藏，不能则退化为复制网址 + 快捷键提示 */
-(function initSaveSite() {
-  const btn = document.getElementById("saveSiteBtn");
-  if (!btn) return;
-  const url = btn.dataset.url || "https://token-fbi.com/";
-  const title = "Token FBI · 免费 AI token 情报站";
-  const defaultLabel = btn.textContent;
-  let resetTimer = null;
-
-  function flash(text, ok) {
-    btn.classList.toggle("is-saved", !!ok);
-    btn.textContent = text;
-    if (resetTimer) clearTimeout(resetTimer);
-    resetTimer = setTimeout(() => {
-      btn.classList.remove("is-saved");
-      btn.textContent = defaultLabel;
-    }, 2800);
-  }
-
-  btn.addEventListener("click", async () => {
-    const isMac = /Mac|iPhone|iPad|iPod/i.test(navigator.platform || navigator.userAgent);
-    const shortcut = isMac ? "⌘ + D" : "Ctrl + D";
-    try {
-      if (window.external && typeof window.external.AddFavorite === "function") {
-        window.external.AddFavorite(url, title);
-        flash("已加入收藏夹 ✓", true);
-        return;
-      }
-      if (window.sidebar && typeof window.sidebar.addPanel === "function") {
-        window.sidebar.addPanel(title, url, "");
-        flash("已加入收藏夹 ✓", true);
-        return;
-      }
-    } catch (_) { /* 现代浏览器禁止脚本写收藏夹，走降级 */ }
-
-    let ok = false;
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(url);
-        ok = true;
-      }
-    } catch (_) { ok = false; }
-
-    flash(ok ? "网址已复制，按 " + shortcut + " 收藏" : "请按 " + shortcut + " 收藏官网", ok);
-  });
-})();
+if ("IntersectionObserver" in window) {
+  const navLinks = [...document.querySelectorAll(".side-nav a")];
+  const sections = ["top", "models", "tools", "watchout"].map(id => document.getElementById(id)).filter(Boolean);
+  const observer = new IntersectionObserver(entries => {
+    const active = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!active) return;
+    navLinks.forEach(link => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
+  }, { rootMargin: "-20% 0px -65%", threshold: [0, .2, .5] });
+  sections.forEach(section => observer.observe(section));
+}

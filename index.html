@@ -3,208 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0a0e14" />
-  <meta name="description" content="Token FBI 汇总免费 AI Token 与模型额度情报：查看可领取的平台、额度说明、支持模型、领取入口和更新日期。持续核对，直接跳转官方页面。" />
+  <meta name="theme-color" content="#090d12" />
+  <meta name="description" content="Token FBI 汇总并核验免费 AI Token、模型额度与 AI 工具福利，提供额度、门槛、截止时间、支持模型和官方入口。" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://token-fbi.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:site_name" content="Token FBI" />
-  <meta property="og:title" content="Token FBI｜免费 AI Token 与模型额度情报" />
-  <meta property="og:description" content="查看免费 AI Token 平台、额度说明、支持模型和领取入口。" />
+  <meta property="og:title" content="Token FBI｜免费 AI 额度情报库" />
+  <meta property="og:description" content="持续核验可领取的免费 AI Token、模型平台和开发工具。" />
   <meta property="og:url" content="https://token-fbi.com/" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <title>免费 AI Token 额度与模型平台导航｜Token FBI</title>
-  <link rel="stylesheet" href="style.css?v=2026092309" />
+  <link rel="icon" href="assets/brand/token-fbi-mark-v2-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/brand/token-fbi-mark-v2-192.png" />
+  <title>免费 AI Token 额度情报库｜Token FBI</title>
+  <link rel="stylesheet" href="style.css?v=2026092503" />
 </head>
 <body>
-  <a class="skip-link" href="#list">跳到情报列表</a>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
 
-  <div class="share-bar">
-    <div class="wrap share-bar-inner">
-      <span class="share-bar-text">官网已固定在 <strong class="share-bar-domain">token-fbi.com</strong>，建议保存，防止失联</span>
-      <div class="share-bar-actions">
-        <button class="share-bar-btn is-ghost" id="saveSiteBtn" type="button" data-url="https://token-fbi.com/" title="把官网存进浏览器收藏夹，换地址也不怕走丢">⭐ 保存官网 · 防止失联</button>
-        <button class="share-bar-btn" id="shareBtn" type="button" data-copy="我正在使用这个网站寻找免费 token，快来一起使用吧，项目地址：https://token-fbi.com/">分享好友</button>
-      </div>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#top" aria-label="Token FBI 首页">
+      <img class="brand-mark" src="assets/brand/token-fbi-mark-v2.png" alt="" aria-hidden="true" />
+      <span class="brand-copy"><strong>Token 情报局</strong></span>
+    </a>
+    <nav class="side-nav" aria-label="情报分类">
+      <a class="is-active" href="#top"><img src="assets/icons/house.svg" alt="" />情报首页</a>
+      <a href="#models"><img src="assets/icons/robot.svg" alt="" />大模型</a>
+      <a href="#tools"><img src="assets/icons/code.svg" alt="" />编程工具</a>
+      <a href="#limited"><img src="assets/icons/clock.svg" alt="" />限时活动</a>
+      <a href="#watchout"><img src="assets/icons/star.svg" alt="" />观望名单</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <section class="side-panel partner-intro" aria-label="合作情报说明">
+        <span class="panel-kicker">合作情报 <b>推广</b></span>
+        <p>优质 AI 产品，也值得被更多人看到。</p>
+        <a href="#partners">联系合作</a>
+      </section>
+      <section class="side-panel community-intro">
+        <img src="assets/icons/users.svg" alt="" />
+        <strong>加入社区</strong>
+        <p>获取最新 AI 额度情报<br />与同好一起交流。</p>
+        <button type="button" data-copy="lmfh2022">立即加入</button>
+      </section>
+      <p class="side-foot">Token FBI<br />让优质的 AI 资源触手可及<br />© 2026 Token FBI</p>
     </div>
-  </div>
+  </aside>
 
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="#top" aria-label="Token FBI 首页">
-        <span class="brand-mark" aria-hidden="true">T</span>
-        <span class="brand-text"><strong>Token FBI</strong><em>Token 情报局</em></span>
-      </a>
-      <nav class="site-nav" aria-label="主导航">
-        <a href="#list">情报列表</a>
-        <a href="#about">关于本站</a>
-        <a class="nav-external" href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener noreferrer" title="活动雷达：兄弟项目，AI 活动/黑客松/免费额度情报聚合">📡 活动雷达</a>
-        <a class="nav-star" href="https://github.com/hope0719/token-fbi" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 为 Token FBI 点星">
-          <span aria-hidden="true">★</span> 给项目点星
-        </a>
-        <a class="nav-cta" href="#submit">投稿情报</a>
-      </nav>
-    </div>
+  <header class="mobile-header">
+    <a class="brand" href="#top" aria-label="Token FBI 首页">
+      <img class="brand-mark" src="assets/brand/token-fbi-mark-v2.png" alt="" aria-hidden="true" />
+      <span class="brand-copy"><strong>Token 情报局</strong></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="打开导航" aria-expanded="false"><span></span><span></span></button>
   </header>
 
-  <main>
-    <section class="hero" id="top">
-      <div class="wrap hero-grid">
-        <div class="hero-copy" data-reveal="hero-copy">
-          <span class="hero-eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Zm0 9v4m0 0c-3.3 0-6-1.4-6-1.4V19c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.4S15.3 15 12 15Z" /></svg> 连续投喂 · 全网免费 AI token 情报</span>
-          <h1>把值得领取的<br><span class="hl">AI 额度</span>放在一处。</h1>
-          <p class="hero-sub">额度、模型、领取方式和实测判断，一次查清。</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#list">查看情报</a>
-            <a class="btn btn-ghost hero-star" href="https://github.com/hope0719/token-fbi" target="_blank" rel="noopener noreferrer">
-              <span aria-hidden="true">★</span> 给项目点星
-            </a>
-            <a class="text-link" href="#submit">提交一条新线索</a>
-          </div>
-          <div class="hero-stats" aria-label="本站数据概览" data-reveal="hero-stats">
-            <div class="hero-stat"><dt>大模型</dt><dd id="stat-models">0</dd></div>
-            <div class="hero-stat"><dt>工具</dt><dd id="stat-tools">0</dd></div>
-            <div class="hero-stat"><dt>限时活动</dt><dd id="stat-limited">0</dd></div>
-            <div class="hero-stat"><dt>最后更新</dt><dd id="stat-updated">-</dd></div>
-          </div>
-        </div>
-
-        <aside class="watchlist" aria-label="收录范围" data-reveal="watchlist">
-          <h2>优先收录能直接调用<br>前沿模型的平台</h2>
-          <span class="watchlist-gate"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.4 8.2 8 10 4.6-1.8 8-5 8-10V6l-8-3Z"/></svg> 精选门槛</span>
-          <ul class="model-list">
-            <li><span class="model-name">DeepSeek V4</span><span class="model-note">国产顶级开源模型，2026-04 发布</span></li>
-            <li><span class="model-name">GLM 5.2</span><span class="model-note">智谱新一代，1M 无损上下文，MIT 开源</span></li>
-            <li><span class="model-name">Kimi K3</span><span class="model-note">月之暗面 2.8T 旗舰，2026-07 全量开源</span></li>
-            <li><span class="model-name">千问 3.8 Max</span><span class="model-note">阿里 Qwen3.8-Max（当前主力）</span></li>
-            <li><span class="model-name">Hy3</span><span class="model-note">腾讯混元 3，2026-04 preview，开源 256K</span></li>
-            <li><span class="model-name">LongCat 2.0</span><span class="model-note">美团 1.6T 模型，2026-06-30 发布</span></li>
-          </ul>
-          <p class="watchlist-note">多模态与高价值聚合平台，也会持续核验收录。</p>
-        </aside>
-      </div>
-    </section>
-
-    <section class="wrap intelligence" id="list" aria-labelledby="list-title">
-      <div class="list-head">
+  <main class="main" id="main-content">
+    <section class="page-head" id="top">
+      <div class="headline-row">
         <div>
-          <h2 id="list-title">还有效的免费额度</h2>
+          <h1>免费 <span>AI 额度</span><br class="mobile-break" />情报库</h1>
+          <p>收录可直接使用的免费 AI 模型额度、开发工具和平台活动，一次查清。</p>
         </div>
-        <p class="list-status" id="list-total" aria-live="polite">正在载入</p>
+        <div class="update-status"><span>最后更新</span><strong id="latestUpdate">—</strong><small>持续追踪，手动验证，真实可用</small></div>
       </div>
-      <div class="filters" id="filters" aria-label="按类别筛选">
-        <button class="chip is-active" data-type="all" type="button" aria-pressed="true">全部</button>
-        <button class="chip" data-type="大模型" type="button" aria-pressed="false">大模型</button>
-        <button class="chip" data-type="工具" type="button" aria-pressed="false">工具</button>
-      </div>
-      <div class="cards" id="cards">
-        <!-- STATIC_CARDS -->
-        <div class="empty-state" id="empty-state" style="display:none;">
-          <p>这类暂时还没有情报，欢迎投稿补充。</p>
+      <label class="search-box" for="globalSearch">
+        <img src="assets/icons/magnifying-glass.svg" alt="" />
+        <input id="globalSearch" type="search" autocomplete="off" placeholder="搜索模型、平台或关键词" />
+        <kbd>⌘ K</kbd>
+      </label>
+      <div class="toolbar">
+        <div class="filters" id="filters" aria-label="按类别筛选">
+          <button class="chip is-active" data-type="all" type="button" aria-pressed="true">全部</button>
+          <button class="chip" data-type="大模型" type="button" aria-pressed="false">大模型</button>
+          <button class="chip" data-type="工具" type="button" aria-pressed="false">编程工具</button>
+          <button class="chip" data-type="productivity" type="button" aria-pressed="false">生产力</button>
+          <button class="chip" data-type="image" type="button" aria-pressed="false">图像生成</button>
+          <button class="chip" data-type="audio" type="button" aria-pressed="false">语音音频</button>
+          <button class="chip" data-type="data" type="button" aria-pressed="false">数据分析</button>
+          <button class="chip" data-type="platform" type="button" aria-pressed="false">开发平台</button>
+          <button class="chip" data-type="limited" type="button" aria-pressed="false">限时活动</button>
         </div>
+        <button class="sort-control" type="button" aria-label="当前按最新优先排序">最新优先⌄</button>
+        <span class="result-count" id="resultCount" aria-live="polite">正在整理情报</span>
       </div>
     </section>
 
-    <section class="wrap watchlist-panel" id="watchout" aria-labelledby="watchout-title">
-      <div class="list-head">
-        <div>
-          <h2 id="watchout-title">观望名单</h2>
-        </div>
-        <p class="list-status">不建议优先去领</p>
+    <section class="featured-section" id="limited" aria-labelledby="featuredTitle">
+      <h2 class="visually-hidden" id="featuredTitle">本周精选额度</h2>
+      <div class="featured-grid" id="featuredGrid"></div>
+    </section>
+
+    <section class="catalog-section" id="models" aria-labelledby="modelsTitle">
+      <div class="section-head">
+        <div class="title-line"><h2 id="modelsTitle">大模型</h2><span id="modelCount"></span></div>
+        <p>精选可直接调用前沿模型的平台与免费 API。</p>
+        <button class="section-more" type="button" data-expand="models">查看全部</button>
       </div>
-      <div class="watchout-rows" id="watchout-cards">
-        <!-- STATIC_WATCHOUT -->
-        <div class="empty-state" id="watchout-empty" style="display:none;">
-          <p>暂时没有需要回避的平台。</p>
-        </div>
+      <div class="catalog-grid" id="modelCards"></div>
+    </section>
+
+    <section class="catalog-section" id="tools" aria-labelledby="toolsTitle">
+      <div class="section-head">
+        <div class="title-line"><h2 id="toolsTitle">编程工具</h2><span id="toolCount"></span></div>
+        <p>提升开发效率的 AI 工具、Agent 与工作台。</p>
+        <button class="section-more" type="button" data-expand="tools">查看全部</button>
+      </div>
+      <div class="catalog-grid" id="toolCards"></div>
+    </section>
+
+    <section class="partner-section" id="partners" aria-labelledby="partnersTitle">
+      <div class="section-head">
+        <div><span class="section-kicker">商业合作 · 明确标注</span><h2 id="partnersTitle">合作情报</h2></div>
+        <p>推广内容不参与编辑评分和自然排序。</p>
+      </div>
+      <div class="partner-grid" id="partnerCards"></div>
+      <p class="disclosure">带“推广”标识的内容可能为站点带来收益；所有合作关系都会公开披露。</p>
+    </section>
+
+    <section class="watch-section" id="watchout" aria-labelledby="watchTitle">
+      <div class="section-head">
+        <div><span class="section-kicker">谨慎领取</span><h2 id="watchTitle">观望名单</h2></div>
+        <p>额度偏少、体验不稳定或领取门槛较高的平台。</p>
+        <button class="section-more" type="button" id="watchToggle">展开名单</button>
+      </div>
+      <div class="watch-grid" id="watchoutCards"></div>
+    </section>
+
+    <section class="conversion" id="about">
+      <div><span class="section-kicker">持续更新</span><h2>别错过下一批免费额度</h2><p>加入 Token 情报群，接收新增、变更和即将失效提醒。</p></div>
+      <div class="conversion-actions">
+        <button class="primary-action" type="button" data-copy="lmfh2022">复制微信号 lmfh2022</button>
+        <a href="https://github.com/hope0719/token-fbi/issues" target="_blank" rel="noopener noreferrer">投稿一条情报</a>
       </div>
     </section>
 
-    <section class="wrap about" id="about">
-      <div class="about-lead">
-        <h2>一个人可以走得很快，<br>但一群人走得远。</h2>
-      </div>
-      <div class="about-copy">
-        <p>如果你想交流，这里有 4 类群可以选择，请加我微信：</p>
-        <p class="about-group-note"><span class="about-group-tag free">免费</span> 首个群加入免费</p>
-        <ul class="about-groups">
-          <li>
-            <span class="about-group-no">01</span>
-            <span class="about-group-body">
-              <strong class="about-group-name">AI 编程交流群</strong>
-              <span class="about-group-desc">用 AI 写代码、搭应用，交流各家免费 API 与工具，欢迎新手与老手</span>
-            </span>
-          </li>
-          <li>
-            <span class="about-group-no">02</span>
-            <span class="about-group-body">
-              <strong class="about-group-name">AI 自媒体群</strong>
-              <span class="about-group-desc">用 AI 做短视频 / 公众号 / 小红书，脚本、口播、素材一锅端</span>
-            </span>
-          </li>
-          <li>
-            <span class="about-group-no">03</span>
-            <span class="about-group-body">
-              <strong class="about-group-name">WorkBuddy 学习群</strong>
-              <span class="about-group-desc">一起玩转 WorkBuddy / Codebuddy，Agent 工作流与实战技巧</span>
-            </span>
-          </li>
-          <li>
-            <span class="about-group-no">04</span>
-            <span class="about-group-body">
-              <strong class="about-group-name">Codex 学习交流</strong>
-              <span class="about-group-desc">专聊 Codex / Claude 编程，Prompt 与项目落地经验分享</span>
-            </span>
-          </li>
-        </ul>
-        <div class="about-wechat-row">
-          <button class="about-wechat-btn" type="button" data-copy="lmfh2022" aria-live="polite">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.5 7.2c-3 0-5.5 2-5.5 4.5 0 1.4.8 2.7 2.1 3.5l-.5 1.6 1.9-1c.6.2 1.3.3 2 .3.3 0 .6 0 .9-.1-.2-.5-.3-1-.3-1.6 0-2.6 2.5-4.7 5.5-4.7.3 0 .6 0 .9.1-.6-1.6-2.5-2.6-5-2.6Zm-2 1.5a.7.7 0 1 1 0 1.4.7.7 0 0 1 0-1.4Zm4 0a.7.7 0 1 1 0 1.4.7.7 0 0 1 0-1.4Zm4.4 2.4c-2.6 0-4.7 1.7-4.7 3.9 0 2.2 2.1 3.9 4.7 3.9.5 0 1-.1 1.5-.2l1.6.8-.4-1.3c1.2-.7 1.9-1.9 1.9-3.2 0-2.2-2.1-3.9-4.6-3.9Zm-1.6 1.3a.6.6 0 1 1 0 1.2.6.6 0 0 1 0-1.2Zm3.2 0a.6.6 0 1 1 0 1.2.6.6 0 0 1 0-1.2Z" /></svg>
-            <span class="about-wechat-label">复制微信号 <span class="about-wechat-id">lmfh2022</span></span>
-          </button>
-          <button class="about-wechat-btn" type="button" data-copy="Token-FBI" aria-live="polite">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 0H6a2 2 0 0 0-2 2v12a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H7Zm9 7h-8a1 1 0 1 1 0-2h8a1 1 0 1 1 0 2Zm-1.5 3.5 1.2 1.8-3.7 2.2-3.7-2.2 1.2-1.8h5Z" /></svg>
-            <span class="about-wechat-label">复制备注</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="submit" id="submit">
-      <div class="wrap submit-inner">
-        <div class="submit-copy">
-          <h2>发现新额度？<br>让更多人看到。</h2>
-        </div>
-        <div class="submit-action-block">
-          <p>通过 GitHub Issue 或微信群提交线索。我们会核验后整理入库。</p>
-          <div class="submit-actions">
-            <a class="btn btn-primary" href="https://github.com/hope0719/token-fbi/issues" target="_blank" rel="noopener">去 GitHub 投稿</a>
-            <button class="wechat-trigger" type="button" aria-expanded="false" aria-controls="qrcode-wechat">微信群投稿</button>
-          </div>
-          <div class="qrcode-box" id="qrcode-wechat" hidden>
-            <img src="qrcode-wechat.jpg" alt="微信二维码。添加好友时请备注 Token FBI。" width="220" height="220" />
-            <p>扫码添加微信好友，备注「Token FBI」，拉你进群交流免费 token 情报。</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <footer class="site-footer">
+      <div><strong>Token FBI</strong><span>免费 AI token 情报站</span></div>
+      <nav aria-label="页脚导航"><a href="#top">回到顶部</a><a href="#partners">合作说明</a><a href="https://github.com/hope0719/token-fbi/issues" target="_blank" rel="noopener noreferrer">投稿情报</a></nav>
+      <p>非官方爱好者项目 · 信息以平台最新规则为准</p>
+    </footer>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <div><strong>Token FBI</strong><span>免费 AI token 情报站</span></div>
-      <span class="footer-domain">官网 <a href="https://token-fbi.com/" target="_blank" rel="noopener noreferrer">token-fbi.com</a> · 保存收藏，防止失联</span>
-      <span>非官方爱好者项目</span>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="poster-overlay" id="posterOverlay" hidden>
+    <button class="poster-backdrop" type="button" aria-label="关闭海报"></button>
+    <div class="poster-dialog" role="dialog" aria-modal="true" aria-label="合作项目海报">
+      <button class="poster-close" type="button" aria-label="关闭">×</button>
+      <img class="poster-img" alt="合作项目详情海报" />
+      <p>长按海报二维码，备注「Token-FBI」</p>
     </div>
-  </footer>
-
-  <button class="back-to-top" id="backToTop" type="button" aria-label="回到顶部" title="回到顶部">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6.5 10.5 12 5l5.5 5.5" /></svg>
-  </button>
-  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script defer src="app.js?v=2026092309"></script>
+  </div>
+  <script defer src="app.js?v=2026092507"></script>
 </body>
 </html>
