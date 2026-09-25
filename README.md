@@ -198,7 +198,7 @@ Token FBI 是一张**活着的免费 AI token 名录**。
 | 17 | 国家超算互联网 SCNet | 大模型 | DeepSeek V4 Pro / V4 Flash · GLM-5.2 · MiniMax-M3 · Kimi-K2.6 | ★★★★ |
 | 18 | AMD 免费 API 与开发者计划 | 大模型 | 裸机 Instinct GPU / Fireworks 托管推理 · 开发者福利 | ★★★★★ |
 | 19 | 秒哒（百度） | 工具 | AI 应用生成工具 · 一句话造应用 | ★★★★★ |
-| 20 | 小米 MiMo（Xiaomi） | 工具 | MiMo-X-Pro-Preview / MiMo-X-Flash-Preview | ★★★★ |
+| 20 | 小米 MiMo（Xiaomi） | 大模型 | MiMo-X-Pro-Preview / MiMo-X-Flash-Preview | ★★★★ |
 | 21 | LobsterAI 有道龙虾 | 工具 | DeepSeek-V4.1 · 文本模型 | ★★★★ |
 | 22 | 云工开物学生专区 | 工具 | Qwen3.8 / GLM-5.3 / DeepSeek-V4 等多模型 | ★★★★ |
 

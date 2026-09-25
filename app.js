@@ -513,7 +513,7 @@ const TOKENS = [
 
   {
     name: "小米 MiMo（Xiaomi）",
-    type: "工具",
+    type: "大模型",
     modality: "MiMo-X-Pro-Preview / MiMo-X-Flash-Preview · 混合多模态模型",
     rating: 4,
     quota: "桌面客户端开放邀测，限时限量免费体验；一站式写 PPT、改设计图、做数据分析、剪短视频、跑代码、生成 3D 建模",
@@ -925,9 +925,34 @@ function heroTitle(t, index) {
   return index === 0 ? '高价值额度，<span>先领先用</span>' : '可靠模型，<span>免费开用</span>';
 }
 
+const DETAIL_SLUG_RULES = [
+  [/workbuddy/i, "workbuddy"], [/qoder|灵码/i, "qoder"], [/glm-5\.3|ox-alpha/i, "glm-5-3-flash"],
+  [/蓝博|lanbuff/i, "lanbuff"], [/阶跃|stepfun/i, "stepfun"], [/^cline$/i, "cline"],
+  [/kilo/i, "kilo-code"], [/verdent/i, "verdent"], [/marvis|马维斯/i, "marvis"],
+  [/catpaw/i, "catpaw"], [/小程序开发大赛/i, "wechat-miniprogram-contest"],
+  [/硅基|siliconflow/i, "siliconflow"], [/longcat/i, "longcat"], [/opencode/i, "opencode-zen"],
+  [/成长计划|cloudbase/i, "cloudbase-growth-plan"], [/scnet|超算/i, "scnet"],
+  [/amd/i, "amd-developer-program"], [/秒哒/i, "miaoda"], [/小米|mimo/i, "xiaomi-mimo"],
+  [/有道|lobster/i, "lobsterai"], [/云工开物/i, "aliyun-student"]
+];
+
+function detailSlug(name) {
+  const match = DETAIL_SLUG_RULES.find(([rule]) => rule.test(name));
+  if (match) return match[1];
+  let hash = 2166136261;
+  for (const char of name) hash = Math.imul(hash ^ char.charCodeAt(0), 16777619);
+  return `item-${(hash >>> 0).toString(36)}`;
+}
+
+function detailLink(t) {
+  return `/intel/${detailSlug(t.name)}/`;
+}
+
 function cardLink(t, className = "card-action") {
   if (t.poster) return `<button class="${className} poster-button" type="button" data-poster="${t.poster}">查看海报</button>`;
-  return `<a class="${className}" href="${resolvedLink(t)}" target="_blank" rel="noopener noreferrer">立即领取</a>`;
+  const link = resolvedLink(t);
+  const referral = /invite|usercode|[?&]aff=|qcloud\.com|work-fission|s\.mi\.cn/i.test(link);
+  return `<a class="${className}" href="${link}" target="_blank" rel="${referral ? "sponsored nofollow " : ""}noopener noreferrer">立即领取</a>`;
 }
 
 function featuredTemplate(t, index) {
@@ -941,7 +966,7 @@ function featuredTemplate(t, index) {
     : `<div class="featured-art" aria-hidden="true"><div class="qoder-window"><strong>Code<br>with Qoder.</strong><span>Qwen3.8-Flash</span><span>Qwen3.8-Max</span><span>GLM-5.3</span><span>DeepSeek-V4</span></div></div>`;
   return `<article class="featured-card ${variant}">
     <div class="featured-content">
-      <div class="product-line"><img src="${logoFor(t)}" alt="${cleanText(t.name)} Logo"><strong>${cleanText(t.name)}</strong></div>
+      <div class="product-line"><img src="${logoFor(t)}" alt="${cleanText(t.name)} Logo"><strong><a href="${detailLink(t)}">${cleanText(t.name)}</a></strong></div>
       <h3>${heroTitle(t, index)}</h3>
       <p class="summary">${summary}</p>
       <div class="featured-action">${cardLink(t)}<span>最后核验 ${t.updated}</span></div>
@@ -959,7 +984,7 @@ function cardTemplate(t) {
   return `<article class="intel-card" data-kind="${catOf(t)}" data-search="${cleanText(`${t.name} ${t.modality} ${t.quota} ${t.effect}`).toLowerCase()}">
     <div class="card-visual">${badge}<img src="${logoFor(t)}" alt="${cleanText(t.name)} Logo"><span class="visual-brand">${brandName(t)}</span></div>
     <div class="card-body">
-      <div class="card-title-row"><h3>${displayName(t)}</h3></div>
+      <div class="card-title-row"><h3><a href="${detailLink(t)}">${displayName(t)}</a></h3></div>
       <p class="model-line">${copy.models}</p>
       <p class="quota-summary">${copy.summary}</p>
       <div class="card-meta-row"><span><b>${validity}</b></span><span>已验证 ${t.updated}</span></div>
@@ -1105,7 +1130,9 @@ function setMenuOpen(open) {
   menuToggle.setAttribute("aria-label", open ? "关闭导航" : "打开导航");
 }
 menuToggle.addEventListener("click", () => setMenuOpen(!document.body.classList.contains("menu-open")));
-document.querySelectorAll(".side-nav a").forEach(link => link.addEventListener("click", () => {
+const sideNavLinks = [...document.querySelectorAll(".side-nav a")];
+sideNavLinks.forEach(link => link.addEventListener("click", () => {
+  sideNavLinks.forEach(item => item.classList.toggle("is-active", item === link));
   setMenuOpen(false);
 }));
 document.addEventListener("click", event => {
@@ -1194,14 +1221,3 @@ document.addEventListener("keydown", event => {
   if (event.key === "Escape" && !posterOverlay.hidden) closePoster();
 });
 bindPosterButtons();
-
-if ("IntersectionObserver" in window) {
-  const navLinks = [...document.querySelectorAll(".side-nav a")];
-  const sections = ["top", "models", "tools", "watchout"].map(id => document.getElementById(id)).filter(Boolean);
-  const observer = new IntersectionObserver(entries => {
-    const active = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (!active) return;
-    navLinks.forEach(link => link.classList.toggle("is-active", link.getAttribute("href") === `#${active.target.id}`));
-  }, { rootMargin: "-20% 0px -65%", threshold: [0, .2, .5] });
-  sections.forEach(section => observer.observe(section));
-}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#090d12" />
+  <meta name="theme-color" content="#090c0a" />
   <meta name="description" content="Token FBI 汇总并核验免费 AI Token、模型额度与 AI 工具福利，提供额度、门槛、截止时间、支持模型和官方入口。" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://token-fbi.com/" />
@@ -16,7 +16,7 @@
   <link rel="icon" href="assets/brand/token-fbi-mark-v2-192.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/brand/token-fbi-mark-v2-192.png" />
   <title>免费 AI Token 额度情报库｜Token FBI</title>
-  <link rel="stylesheet" href="style.css?v=2026092503" />
+  <link rel="stylesheet" href="style.css?v=2026092508" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳到主要内容</a>
@@ -27,10 +27,9 @@
       <span class="brand-copy"><strong>Token 情报局</strong></span>
     </a>
     <nav class="side-nav" aria-label="情报分类">
-      <a class="is-active" href="#top"><img src="assets/icons/house.svg" alt="" />情报首页</a>
+      <a href="#top"><img src="assets/icons/house.svg" alt="" />情报首页</a>
       <a href="#models"><img src="assets/icons/robot.svg" alt="" />大模型</a>
       <a href="#tools"><img src="assets/icons/code.svg" alt="" />编程工具</a>
-      <a href="#limited"><img src="assets/icons/clock.svg" alt="" />限时活动</a>
       <a href="#watchout"><img src="assets/icons/star.svg" alt="" />观望名单</a>
     </nav>
     <div class="sidebar-bottom">
@@ -40,8 +39,10 @@
         <a href="#partners">联系合作</a>
       </section>
       <section class="side-panel community-intro">
-        <img src="assets/icons/users.svg" alt="" />
-        <strong>加入社区</strong>
+        <div class="community-title">
+          <strong>加入社区</strong>
+          <img src="assets/icons/users.svg" alt="" />
+        </div>
         <p>获取最新 AI 额度情报<br />与同好一起交流。</p>
         <button type="button" data-copy="lmfh2022">立即加入</button>
       </section>
@@ -73,7 +74,7 @@
       </label>
       <div class="toolbar">
         <div class="filters" id="filters" aria-label="按类别筛选">
-          <button class="chip is-active" data-type="all" type="button" aria-pressed="true">全部</button>
+          <button class="chip" data-type="all" type="button" aria-pressed="false">全部</button>
           <button class="chip" data-type="大模型" type="button" aria-pressed="false">大模型</button>
           <button class="chip" data-type="工具" type="button" aria-pressed="false">编程工具</button>
           <button class="chip" data-type="productivity" type="button" aria-pressed="false">生产力</button>
@@ -139,7 +140,7 @@
 
     <footer class="site-footer">
       <div><strong>Token FBI</strong><span>免费 AI token 情报站</span></div>
-      <nav aria-label="页脚导航"><a href="#top">回到顶部</a><a href="#partners">合作说明</a><a href="https://github.com/hope0719/token-fbi/issues" target="_blank" rel="noopener noreferrer">投稿情报</a></nav>
+      <nav aria-label="页脚导航"><a href="#top">回到顶部</a><a href="/about/">关于本站</a><a href="/editorial-policy/">编辑规则</a><a href="/privacy/">隐私政策</a><a href="/contact/">联系投稿</a></nav>
       <p>非官方爱好者项目 · 信息以平台最新规则为准</p>
     </footer>
   </main>
@@ -153,6 +154,6 @@
       <p>长按海报二维码，备注「Token-FBI」</p>
     </div>
   </div>
-  <script defer src="app.js?v=2026092507"></script>
+  <script defer src="app.js?v=2026092508"></script>
 </body>
 </html>

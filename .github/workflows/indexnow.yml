@@ -42,12 +42,31 @@ jobs:
       - name: Notify participating search engines
         run: |
           key=$(cat .indexnow-key)
-          status=$(curl -sS --max-time 20 -o /dev/null -w '%{http_code}' --get \
-            --data-urlencode 'url=https://token-fbi.com/' \
-            --data-urlencode "key=$key" \
+          INDEXNOW_KEY="$key" python3 - <<'PY'
+          import json
+          import os
+          import urllib.request
+          import xml.etree.ElementTree as ET
+
+          sitemap = urllib.request.urlopen('https://token-fbi.com/sitemap.xml', timeout=20).read()
+          root = ET.fromstring(sitemap)
+          urls = [node.text for node in root.findall('{http://www.sitemaps.org/schemas/sitemap/0.9}url/{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
+          payload = {
+              'host': 'token-fbi.com',
+              'key': os.environ['INDEXNOW_KEY'],
+              'keyLocation': f"https://token-fbi.com/{os.environ['INDEXNOW_KEY']}.txt",
+              'urlList': urls,
+          }
+          with open('/tmp/indexnow.json', 'w', encoding='utf-8') as file:
+              json.dump(payload, file, ensure_ascii=False)
+          print(f'Prepared {len(urls)} URLs for IndexNow')
+          PY
+          status=$(curl -sS --max-time 20 -o /dev/null -w '%{http_code}' \
+            -X POST -H 'Content-Type: application/json; charset=utf-8' \
+            --data-binary @/tmp/indexnow.json \
             https://api.indexnow.org/indexnow)
           if [ "$status" != 200 ] && [ "$status" != 202 ]; then
             echo "IndexNow returned HTTP $status" >&2
             exit 1
           fi
-          echo "IndexNow accepted homepage update (HTTP $status)"
+          echo "IndexNow accepted sitemap URL batch (HTTP $status)"
