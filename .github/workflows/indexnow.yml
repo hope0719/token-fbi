@@ -42,14 +42,13 @@ jobs:
       - name: Notify participating search engines
         run: |
           key=$(cat .indexnow-key)
+          curl -fsS --max-time 20 https://token-fbi.com/sitemap.xml -o /tmp/sitemap.xml
           INDEXNOW_KEY="$key" python3 - <<'PY'
           import json
           import os
-          import urllib.request
           import xml.etree.ElementTree as ET
 
-          sitemap = urllib.request.urlopen('https://token-fbi.com/sitemap.xml', timeout=20).read()
-          root = ET.fromstring(sitemap)
+          root = ET.parse('/tmp/sitemap.xml').getroot()
           urls = [node.text for node in root.findall('{http://www.sitemaps.org/schemas/sitemap/0.9}url/{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
           payload = {
               'host': 'token-fbi.com',
