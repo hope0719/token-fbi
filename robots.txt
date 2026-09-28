@@ -1,0 +1,53 @@
+# Token FBI (Token 情报局) robots.txt — GEO 全量放行版
+# 目的：让所有主流 AI 引擎爬虫都能索引本站，被生成式答案引用（GEO）。
+# 注意：须同时开启各平台"AI 索引/引用权限"（豆包后台、百度搜索资源平台等）。
+
+User-agent: *
+Allow: /
+
+# —— OpenAI / ChatGPT ——
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+# —— Anthropic / Claude ——
+User-agent: ClaudeBot
+Allow: /
+
+# —— Perplexity ——
+User-agent: PerplexityBot
+Allow: /
+
+# —— Google (Gemini / AI Overviews) ——
+User-agent: Google-Extended
+Allow: /
+User-agent: Googlebot
+Allow: /
+
+# —— Apple (Applebot-Extended, Siri/AE) ——
+User-agent: Applebot-Extended
+Allow: /
+
+# —— Microsoft (Copilot / Bing) ——
+User-agent: Bingbot
+Allow: /
+
+# —— 字节 / 豆包（Bytespider 是豆包抓取核心，务必放行）——
+User-agent: Bytespider
+Allow: /
+
+# —— 百度（文心 / 百度搜索）——
+User-agent: Baiduspider
+Allow: /
+
+# —— 搜狗 / 360（Kimi/DeepSeek 间接信源底盘）——
+User-agent: Sogou web spider
+Allow: /
+User-agent: 360Spider
+Allow: /
+
+# —— 通用兜底 ——
+Sitemap: https://token-fbi.com/sitemap.xml

@@ -1,41 +1,75 @@
-# Token FBI 自动发布
+# Token FBI 部署说明
 
-## 现有公开地址
+## 站点结构
 
-- GitHub Pages：`https://hope0719.github.io/token-fbi/`，从本仓库 `main` 分支根目录自动发布。
-- Cloudflare Pages：`https://token-fbi.pages.dev/`，已连接本仓库 `main` 分支，以 `npm run build` 构建 `dist/`。公开页面与全部五个资源文件已核对。
-- 正式域名：`https://token-fbi.com/`，在同一 Cloudflare 帐户的 Pages 项目中绑定根域；域名可用后作为站内分享地址。
-- README 中的 WorkBuddy 主站是另一条发布链路。不能仅凭当前页面一致，就认定它会随 GitHub 推送自动更新；每次更新需单独核对。
+本站由 `build.py`（纯 Python 标准库，无第三方依赖）从 `data.json` 生成静态站点到 `dist/`。
 
-## Cloudflare Pages 构建设置
+| 文件 | 作用 |
+| --- | --- |
+| `data.json` | 唯一数据真源：`items`（编辑收录 + 赞助位）、`retired`（下架名单） |
+| `build.py` | 构建器：生成首页、`intel/item-NNN/` 详情页、`table/`、`about/`、`sponsor/`、404、`robots.txt`、`sitemap.xml`、`llms.txt`、`llms-full.txt`、公开 `data.json`、IndexNow 密钥、`_version.txt` |
+| `assets/` | 图片素材，整体复制到 `dist/img/`（36 张 OG 分享图 + favicon 全套 + logo） |
+| `poster-doubao-laxin.jpg` | 豆包拉新海报，复制到 `dist/` 根目录（`data.json` 的 `poster_url` 以绝对路径引用它） |
 
-Cloudflare Pages 已连接 `hope0719/token-fbi`，当前设置：
+构建命令（本地与 Cloudflare 一致）：
+
+```
+python3 build.py
+```
+
+## 公开地址
+
+- 正式域名：`https://token-fbi.com/`
+- Cloudflare Pages 生产别名：`https://token-fbi.pages.dev/`
+- 预览分支：`https://<分支名>.token-fbi.pages.dev`
+
+## Cloudflare Pages 设置
+
+已连接 `hope0719/token-fbi`，当前设置（**无需改动**）：
 
 | 项目 | 值 |
 | --- | --- |
 | 生产分支 | `main` |
 | 框架预设 | 无 / None |
-| 构建命令 | `npm run build` |
+| 构建命令 | `npm run build` → `python3 build.py` |
 | 构建输出目录 | `dist` |
 | 根目录 | 仓库根目录 |
 
-根域名在 Pages 的「自定义域名」中绑定，DNS 记录为代理的 `CNAME @ → token-fbi.pages.dev`。发布前应检查域名状态、HTTPS 证书、首页与资源文件，并确认页面分享地址指向正式域名。
+自定义域名 `token-fbi.com` 通过代理的 `CNAME @ → token-fbi.pages.dev` 绑定。
 
-Cloudflare Git 集成会在 `main` 有新提交时自动重新构建并发布。构建脚本会生成可直接抓取的首页卡片、分类页、情报详情页、对比页、站点政策页、`robots.txt`、多 URL `sitemap.xml`、`llms.txt`、`llms-full.txt`、IndexNow 验证文件和部署版本文件；仓库中的草稿、工具和未纳入 Git 的本地素材不会成为 Pages 站点文件。
+## 部署流程
+
+1. 修改 `data.json`（新收录条目一律追加到 `items` 数组末尾）。
+2. 本地验证：`python3 build.py`，检查 `dist/` 产物完整。
+3. 提交并推送到 `main`；Cloudflare Git 集成会自动重建并发布。
+4. 验证线上：`curl https://token-fbi.com/_version.txt` 应等于本次提交 SHA。未核对前不称"已上线"。
+
+> 推送到非 `main` 分支会生成预览部署，不影响生产。
+
+## 图片素材
+
+- `assets/og/*.jpg`：1200×630 分享图（站点默认图 + 每条详情页专属图）
+- `assets/logo.png`：512×512 站点 logo
+- `assets/favicon.ico`、`favicon-16x16.png`、`favicon-32x32.png`、`apple-touch-icon.png`、`icon-192.png`、`icon-512.png`
+
+素材由 `gen_og_images.py` 在本地用 headless Chrome 生成。**该脚本依赖 Chrome，不在 Cloudflare 构建阶段运行**，因此图片必须先在本地生成并提交进仓库。数据变动后的完整流程：
+
+```
+python3 gen_og_images.py && python3 build.py
+```
 
 ## 搜索引擎发现
 
-- 正式域名 `https://token-fbi.com/` 是首页的 canonical URL。Cloudflare Pages、GitHub Pages 等其他地址的相同页面也指向它。
-- 构建时从 `app.js` 的现有卡片数据与筛选规则生成静态 HTML，搜索引擎不用执行 JavaScript 就能看到首页卡片和详情正文。浏览器运行 JavaScript 后仍使用原有交互。
-- `robots.txt` 放行通用抓取并显式放行 OAI-SearchBot 与 ChatGPT-User；`sitemap.xml` 自动包含首页、分类、详情、对比、政策和更新日志页面，并输出 `lastmod`。
-- GitHub Actions 的 `indexnow.yml` 等待 Cloudflare Pages 发布同一提交后，从线上 sitemap 读取全部 URL，并批量通知 IndexNow 参与的搜索引擎。IndexNow 的接收回执不等于已收录。
-- Google Search Console 与 Bing Webmaster Tools 的站点验证及 sitemap 提交需要在对应账号中完成；站点文件上线本身不保证收录或排名。
+- 正式域名是首页 canonical；`robots.txt` 放行全部主流 AI 爬虫（含 GPTBot、ClaudeBot、PerplexityBot、OAI-SearchBot、Bytespider、Baiduspider）。
+- `sitemap.xml` 含首页、详情页、完整情报表、合作赞助页。
+- `llms.txt` / `llms-full.txt` 提供 AI 可直接引用的全量条目（含已下架名单与下架原因）。
+- `.github/workflows/indexnow.yml` 在 `main` 有新提交时轮询线上 `/_version.txt`，与本次提交 SHA 一致后从线上 `sitemap.xml` 批量推送 IndexNow。
 
-## 日常更新
+## IndexNow 密钥
 
-1. 根据官方来源核对情报，在 `app.js` 的 `TOKENS` 中新增或修改卡片，并更新该卡的 `updated` 日期；必要时同步 README 更新记录。
-2. 在仓库目录运行 `npm run check`，确认脚本语法和发布文件完整。
-3. 提交并推送到 `main`。GitHub Pages 会自动发布；接入 Git 集成后的 Cloudflare Pages 也会自动发布。
-4. 查看两处部署结果，并以线上 `app.js` 内容或哈希与本地文件对比，确认公开页面确实更新。未完成这一步时，不把更新称作已上线。
+密钥同时写在两处，必须保持一致：
+
+- `build.py` 的 `INDEXNOW_KEY` 常量（构建时输出到 `dist/<key>.txt`）
+- 仓库根目录 `.indexnow-key`（供 GitHub Actions 读取）
 
 参考：[Cloudflare Pages Git 集成](https://developers.cloudflare.com/pages/configuration/git-integration/) · [Cloudflare Pages 自定义域名](https://developers.cloudflare.com/pages/configuration/custom-domains/)

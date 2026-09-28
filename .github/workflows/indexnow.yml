@@ -4,11 +4,11 @@ on:
   push:
     branches: [main]
     paths:
-      - index.html
-      - app.js
-      - style.css
+      - data.json
+      - build.py
+      - robots.txt
+      - assets/**
       - package.json
-      - scripts/**
       - .indexnow-key
       - .github/workflows/indexnow.yml
   workflow_dispatch:

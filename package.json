@@ -2,7 +2,7 @@
   "name": "token-fbi",
   "private": true,
   "scripts": {
-    "build": "node scripts/build-site.mjs",
-    "check": "node --check app.js && node scripts/build-site.mjs"
+    "build": "python3 build.py || python build.py",
+    "check": "python3 -m py_compile build.py && python3 build.py"
   }
 }
