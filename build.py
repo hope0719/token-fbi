@@ -238,7 +238,7 @@ for r in retired:
 retired_html = f'''
 <section class="section" id="retired"><div class="wrap">
   <h2 class="sec-title">下架名单</h2>
-  <p class="sec-sub">这些平台已不再收录，保留官网入口并写明下架原因。</p>
+  <p class="sec-sub">以下 {len(retired)} 个平台已不再提供或已收紧免费额度，本站不再收录；每条附下架原因与官网入口。</p>
   <ul class="retired">
     {chr(10).join("    " + x for x in retired_rows)}
   </ul>
@@ -266,9 +266,14 @@ data_table_html = "\n".join(data_rows)
 itemlist = [{"@type": "ListItem", "position": p + 1,
              "name": it.get("name"), "url": f"{SITE}{name2href.get(it.get('name'), '/')}"}
             for p, it in enumerate(editorial)]
+# 作者实体（Person）：结构化数据中的署名信号，须与页面署名保持一致
+AUTHOR_LD = {"@type": "Person", "name": "刘同学", "alternateName": "liu classmates",
+             "url": f"{SITE}/about/", "sameAs": ["https://github.com/hope0719"]}
+
 org_ld = {"@type": "Organization", "@id": f"{SITE}#org", "name": "Token FBI（Token 情报局）",
           "url": SITE, "description": "开源、免费的 AI token 情报站，汇总当前仍可领取的免费大模型 API 与工具额度。",
           "image": OG_IMAGE_DEFAULT,
+          "founder": AUTHOR_LD,
           "sameAs": ["https://github.com/hope0719/token-fbi"]}
 if OG_LOGO:
     org_ld["logo"] = {"@type": "ImageObject", "url": OG_LOGO, "width": 512, "height": 512}
@@ -320,9 +325,9 @@ TEMPLATE = r'''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Token FBI · 免费 AI 额度情报站</title>
+<title>Token FBI · 免费 AI 额度情报站｜免费大模型 API 汇总</title>
 <meta name="description" content="开源、免费的 AI token 情报站，汇总当前仍可领取的免费大模型 API 与工具额度。无需注册、无需绑卡，浏览器打开即用。">
-<meta name="author" content="Token FBI（Token 情报局）">
+<meta name="author" content="刘同学">
 <link rel="canonical" href="https://token-fbi.com/">
 {OG}
 <script type="application/ld+json">{JSONLD}</script>
@@ -404,14 +409,15 @@ img{max-width:100%}
 .section{padding:46px 0}
 .sec-title{font-size:26px;font-weight:850;text-align:center;margin-bottom:8px}
 .sec-sub{text-align:center;color:var(--text2);margin-bottom:26px}
+.sec-lead{color:var(--text2);font-size:14.5px;line-height:1.65;margin:-6px 0 18px;max-width:760px}
 .faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
 .faq-item{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px}
-.faq-item h4{font-size:15.5px;font-weight:750;display:flex;gap:9px;align-items:baseline}
-.faq-item h4 .q{color:var(--accent-deep);font-family:var(--mono);font-size:14px}
+.faq-item h3{font-size:15.5px;font-weight:750;display:flex;gap:9px;align-items:baseline}
+.faq-item h3 .q{color:var(--accent-deep);font-family:var(--mono);font-size:14px}
 .faq-item p{margin-top:7px;color:var(--text2);font-size:14px}
 .footer{background:var(--bg3);border-top:1px solid var(--line);padding:38px 0 30px;margin-top:30px}
 .footer-in{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:26px}
-.footer h5{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-bottom:12px}
+.footer h2{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-bottom:12px}
 .footer a{display:block;color:var(--text2);font-size:14px;padding:3px 0}
 .footer a:hover{color:var(--accent-deep)}
 .footer .disc{font-size:12.5px;color:var(--text3);line-height:1.6;margin-top:14px}
@@ -508,6 +514,7 @@ img{max-width:100%}
 
 <main class="wrap" id="list">
   <h2 class="sec-title" style="text-align:left;font-size:23px;margin-bottom:20px">全部情报</h2>
+  <p class="sec-lead">以下 {N_TOTAL} 个渠道当前均可免费领取大模型或工具额度，无需付费、无需绑卡；限时活动已标注截止时间。</p>
   <div class="grid" id="grid">
     {CARDS}
   </div>
@@ -529,11 +536,11 @@ img{max-width:100%}
   <h2 class="sec-title">常见问题</h2>
   <p class="sec-sub">关于收录、更新与使用的核心问题</p>
   <div class="faq">
-    <div class="faq-item"><h4><span class="q">Q1</span>Token FBI 要钱吗？需要注册吗？</h4><p>不要钱，也不需要注册。站点是无登录的纯静态站，不收集个人信息。所有领取操作都跳转到平台官方页面完成。</p></div>
-    <div class="faq-item"><h4><span class="q">Q2</span>你们的收录标准是什么？</h4><p>优先收录能直接调用前沿模型的平台；多模态或聚合价值高的作为保留。只挂冷门自研/旧代际模型的平台会被下架。</p></div>
-    <div class="faq-item"><h4><span class="q">Q3</span>信息更新频率怎么样？免费额度会一直有效吗？</h4><p>数据每日更新。免费额度本身有时效，平台可能随时调整或取消，请以各平台官方页面为准。</p></div>
-    <div class="faq-item"><h4><span class="q">Q4</span>我领不到 / 链接失效 / 额度过期了怎么办？</h4><p>去 GitHub 仓库提 Issue 反馈，我们会复核并修正；或加微信群直接反馈。</p></div>
-    <div class="faq-item"><h4><span class="q">Q5</span>能帮我接入 API、写代码吗？</h4><p>不会。这是情报站，不是代写代跑服务。我们只告诉你哪家免费、怎么领，不替你接入。</p></div>
+    <div class="faq-item"><h3><span class="q">Q1</span>Token FBI 要钱吗？需要注册吗？</h3><p>不要钱，也不需要注册。站点是无登录的纯静态站，不收集个人信息。所有领取操作都跳转到平台官方页面完成。</p></div>
+    <div class="faq-item"><h3><span class="q">Q2</span>你们的收录标准是什么？</h3><p>优先收录能直接调用前沿模型的平台；多模态或聚合价值高的作为保留。只挂冷门自研/旧代际模型的平台会被下架。</p></div>
+    <div class="faq-item"><h3><span class="q">Q3</span>信息更新频率怎么样？免费额度会一直有效吗？</h3><p>数据每日更新。免费额度本身有时效，平台可能随时调整或取消，请以各平台官方页面为准。</p></div>
+    <div class="faq-item"><h3><span class="q">Q4</span>我领不到 / 链接失效 / 额度过期了怎么办？</h3><p>去 GitHub 仓库提 Issue 反馈，我们会复核并修正；或加微信群直接反馈。</p></div>
+    <div class="faq-item"><h3><span class="q">Q5</span>能帮我接入 API、写代码吗？</h3><p>不会。这是情报站，不是代写代跑服务。我们只告诉你哪家免费、怎么领，不替你接入。</p></div>
   </div>
 </div></section>
 
@@ -567,7 +574,7 @@ img{max-width:100%}
       <p class="disc">开源、免费的 AI token 情报站。业余维护、零软文；广告位明码标价、单独标注，不参与任何核验与收录判断。所有链接直达平台官方页面。</p>
     </div>
     <div>
-      <h5>资源</h5>
+      <h2>资源</h2>
       <a href="/table/">完整情报表</a>
       <a href="https://github.com/hope0719/token-fbi" target="_blank" rel="noopener">GitHub 仓库</a>
       <a href="/data.json" target="_blank" rel="noopener">开放数据 data.json</a>
@@ -575,8 +582,9 @@ img{max-width:100%}
       <a href="/robots.txt" target="_blank" rel="noopener">robots.txt</a>
     </div>
     <div>
-      <h5>参与</h5>
+      <h2>参与</h2>
       <a href="/about/">关于本站</a>
+      <a href="/privacy/">隐私政策</a>
       <a href="/sponsor/">合作赞助</a>
       <a href="https://github.com/hope0719/token-fbi/issues" target="_blank" rel="noopener">提交情报（Issue）</a>
       <a href="https://github.com/hope0719/token-fbi" target="_blank" rel="noopener">提 PR 修正</a>
@@ -590,7 +598,7 @@ img{max-width:100%}
 </html>'''
 
 og_home = og_block(
-    "Token FBI · 免费 AI 额度情报站",
+    "Token FBI · 免费 AI 额度情报站｜免费大模型 API 汇总",
     "开源、免费的 AI token 情报站，汇总当前仍可领取的免费大模型 API 与工具额度。无需注册、无需绑卡，浏览器打开即用。",
     SITE + "/")
 
@@ -720,7 +728,7 @@ for i, it in enumerate(items):
         "datePublished": last,
         "inLanguage": "zh-CN",
         "image": {"@type": "ImageObject", "url": og_img, "width": 1200, "height": 630},
-        "author": {"@type": "Organization", "name": "Token FBI（Token 情报局）"},
+        "author": AUTHOR_LD,
         "publisher": {"@type": "Organization", "name": "Token FBI（Token 情报局）", "url": SITE}
     }, ensure_ascii=False)
     breadcrumb_ld = json.dumps({
@@ -802,7 +810,7 @@ with open(os.path.join(DIST, "robots.txt"), "w", encoding="utf-8") as f:
     f.write(robotxt)
 
 # ---------- sitemap.xml ----------
-urls = [f"{SITE}/", f"{SITE}/table/", f"{SITE}/about/", f"{SITE}/sponsor/", f"{SITE}/data.json", f"{SITE}/llms.txt", f"{SITE}/llms-full.txt"]
+urls = [f"{SITE}/", f"{SITE}/table/", f"{SITE}/about/", f"{SITE}/sponsor/", f"{SITE}/privacy/", f"{SITE}/data.json", f"{SITE}/llms.txt", f"{SITE}/llms-full.txt"]
 urls += [f"{SITE}/intel/{slug(i, it.get('name',''))}/" for i, it in enumerate(items) if not it.get("ad_only")]
 sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for u in urls:
@@ -812,7 +820,7 @@ with open(os.path.join(DIST, "sitemap.xml"), "w", encoding="utf-8") as f:
     f.write(sitemap)
 
 # ---------- llms.txt / llms-full.txt ----------
-llms = f"# Token 情报局\n\n> 面向中文用户的免费 AI Token、模型额度与开发工具情报目录。本站只整理、核验并链接到平台入口，不代跑、不镜像。\n\n## 核心页面\n\n- [首页]({SITE}/): 最新免费额度、工具与观望名单。\n- [完整情报表]({SITE}/table/): 逐条列出免费类型、额度摘要、适用地区与截止时间。\n- [关于与核验方法论]({SITE}/about/): 运营主体、核验流程、收录标准与数据开放说明。\n- [合作赞助]({SITE}/sponsor/): 首页广告位刊例价（99 元/月）、投稿邮箱与合作流程。\n- [完整机器可读目录]({SITE}/llms-full.txt): 当前全部有效条目。\n- [开放数据]({SITE}/data.json): 全量结构化 JSON。\n\n## 使用边界\n\n- 额度、价格、模型和截止时间会变化，以平台最新页面为准。\n- 推广内容单独标注，不参与排序与收录判断。\n"
+llms = f"# Token 情报局\n\n> 面向中文用户的免费 AI Token、模型额度与开发工具情报目录。本站只整理、核验并链接到平台入口，不代跑、不镜像。\n\n## 核心页面\n\n- [首页]({SITE}/): 最新免费额度、工具与下架名单。\n- [完整情报表]({SITE}/table/): 逐条列出免费类型、额度摘要、适用地区与截止时间。\n- [关于与核验方法论]({SITE}/about/): 运营主体、核验流程、收录标准与数据开放说明。\n- [合作赞助]({SITE}/sponsor/): 首页广告位刊例价（99 元/月）、投稿邮箱与合作流程。\n- [隐私政策]({SITE}/privacy/): 数据处理与免责说明（无登录、不收集个人信息、不设跟踪 Cookie）。\n- [完整机器可读目录]({SITE}/llms-full.txt): 当前全部有效条目。\n- [开放数据]({SITE}/data.json): 全量结构化 JSON。\n\n## 使用边界\n\n- 额度、价格、模型和截止时间会变化，以平台最新页面为准。\n- 推广内容单独标注，不参与排序与收录判断。\n"
 llms_full = f"# Token 情报局完整目录\n\n最后更新：{anchored}\n\n## 当前有效情报（{len(editorial)} 条）\n\n"
 for it in editorial:
     u = f"{SITE}{name2href.get(it.get('name'), '/')}"
@@ -865,7 +873,7 @@ about_ld = json.dumps({
                    "url": SITE, "sameAs": ["https://github.com/hope0719/token-fbi"]}
 }, ensure_ascii=False)
 og_about = og_block(
-    "关于 Token FBI · 核验方法论与数据开放",
+    "关于 Token FBI · 核验方法论、收录标准与数据开放",
     "开源、免费的 AI token 情报站。说明运营主体、情报核验方法论、更新频率、收录标准、赞助透明机制与开放数据授权。",
     SITE + "/about/")
 ABOUT = r'''<!DOCTYPE html>
@@ -873,7 +881,7 @@ ABOUT = r'''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>关于 Token FBI · 核验方法论与数据开放</title>
+<title>关于 Token FBI · 核验方法论、收录标准与数据开放</title>
 <meta name="description" content="Token FBI 是开源、免费的 AI token 情报站。本页说明运营主体、情报核验方法论、更新频率、收录标准、赞助透明机制与开放数据授权。">
 <link rel="canonical" href="https://token-fbi.com/about/">
 {OG}
@@ -908,6 +916,7 @@ h1{font-size:30px;line-height:1.2;margin-bottom:8px}
 <div class="card">
   <h2>我们是谁</h2>
   <p>Token FBI 是一个由个人与开源社区业余维护的情报项目，<b>零软文；广告位明码标价、单独标注，不参与任何核验与收录判断</b>。所有链接均直达平台官方页面，不经过任何第三方中转。我们相信「免费额度」这类信息应当被透明、可审计地汇总。</p>
+  <p style="margin-top:10px">本站由 <b>刘同学</b>（liu classmates）发起并维护，构建脚本与全量数据在 <a href="https://github.com/hope0719/token-fbi" target="_blank" rel="noopener">GitHub 开源</a>，任何人可逐条复核。</p>
 </div>
 
 <div class="card">
@@ -919,6 +928,17 @@ h1{font-size:30px;line-height:1.2;margin-bottom:8px}
     <li><b>决定上架</b>：由人工判断是否入库——只保留<b>当前真实可用</b>的免费入口或明确限时活动，核验通过才上架。</li>
   </ul>
   <p style="margin-top:10px">免费额度本身随时可能调整或取消，<b>以各平台官方页面为准</b>。我们只做事实核验与信息汇总，<b>不对平台评分、不做主观点评</b>。</p>
+</div>
+
+<div class="card">
+  <h2>信息来源与核验方法</h2>
+  <p>本站所有额度口径均以<b>平台官方页面</b>为唯一事实来源，不采用二手转述、截图或自媒体说法。核验时主要查阅以下公开来源：</p>
+  <ul>
+    <li><b>官方定价与额度页</b>：如 <a href="https://platform.openai.com/docs/pricing" target="_blank" rel="noopener">OpenAI Pricing</a>、<a href="https://api-docs.deepseek.com/quick_start/pricing" target="_blank" rel="noopener">DeepSeek 开放平台价格文档</a>、<a href="https://help.aliyun.com/zh/model-studio/models" target="_blank" rel="noopener">阿里云百炼模型文档</a>；</li>
+    <li><b>官方开发者文档</b>：各平台 API 文档中的免费额度（Free Tier / Quota）说明章节；</li>
+    <li><b>官方活动公告</b>：限时活动的规则页与公告原文，用于核对起止时间与领取门槛。</li>
+  </ul>
+  <p style="margin-top:10px">引用第三方数据时我们会注明来源；开放数据中保留可复核的原始入口。任何与官方页面冲突的信息，<b>一律以官方为准</b>。</p>
 </div>
 
 <div class="card">
@@ -952,7 +972,7 @@ h1{font-size:30px;line-height:1.2;margin-bottom:8px}
 </div>
 
 <div class="cta"><a class="btn" href="/">查看全部免费额度 →</a><a href="https://github.com/hope0719/token-fbi" target="_blank" rel="noopener">GitHub 仓库</a></div>
-<p class="disc">免责声明：本站仅作情报汇总，不替代各平台官方政策；所有免费额度、价格、模型与活动时间以平台最新页面为准。本站不对因使用第三方服务产生的任何结果负责。</p>
+<p class="disc">免责声明：本站仅作情报汇总，不替代各平台官方政策；所有免费额度、价格、模型与活动时间以平台最新页面为准。本站不对因使用第三方服务产生的任何结果负责。关于本站如何处理数据与隐私，见 <a href="/privacy/">隐私政策</a>。</p>
 </div></body></html>'''
 about_html = (ABOUT
     .replace("{OG}", og_about).replace("{LD}", about_ld)
@@ -960,6 +980,105 @@ about_html = (ABOUT
 os.makedirs(os.path.join(DIST, "about"), exist_ok=True)
 with open(os.path.join(DIST, "about", "index.html"), "w", encoding="utf-8") as f:
     f.write(about_html)
+
+# ---------- 隐私政策页（信任信号：SEO/GEO 审计明确要求的合规入口） ----------
+privacy_ld = json.dumps({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "隐私政策 · Token FBI",
+    "url": f"{SITE}/privacy/",
+    "description": "Token FBI 隐私政策：本站为无登录纯静态站，不收集个人信息、不设置跟踪 Cookie；说明外部链接、广告位标注、邮件与微信的使用范围。",
+    "isPartOf": {"@id": f"{SITE}#website"},
+    "publisher": {"@id": f"{SITE}#org"},
+    "dateModified": anchored,
+    "inLanguage": "zh-CN"
+}, ensure_ascii=False)
+og_privacy = og_block(
+    "隐私政策 · Token FBI 数据处理、Cookie 与免责说明",
+    "本站为无登录纯静态站，不收集个人信息、不设置跟踪 Cookie。本页说明外部链接、广告位标注、邮件与微信的使用范围。",
+    SITE + "/privacy/")
+PRIVACY = r'''<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私政策 · Token FBI 数据处理、Cookie 与免责说明</title>
+<meta name="description" content="Token FBI 隐私政策：本站为无登录纯静态站，不收集个人信息、不设置跟踪 Cookie；说明外部链接、广告位标注、邮件与微信的使用范围。">
+<link rel="canonical" href="https://token-fbi.com/privacy/">
+{OG}
+<script type="application/ld+json">{LD}</script>
+<style>
+:root{--bg:#F5F1E8;--bg2:#fff;--line:rgba(34,52,58,.14);--text:#1F2A2E;--text2:#4C5A5E;--accent:#9EC7D8;--accent-deep:#2F6F82;--accent-soft:rgba(158,199,216,.22);--r:16px;--sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;padding:40px 22px}
+.wrap{max-width:840px;margin:0 auto}
+a{color:var(--accent-deep);text-decoration:none;font-weight:700}
+.back{display:inline-block;margin-bottom:22px;color:var(--text2);font-weight:600}
+h1{font-size:30px;line-height:1.2;margin-bottom:8px}
+.lead{color:var(--text2);font-size:16px;margin:12px 0 28px}
+.kicker{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.05em;color:#fff;background:var(--accent-deep);padding:4px 11px;border-radius:8px;margin-bottom:14px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin:16px 0;box-shadow:0 10px 30px rgba(34,52,58,.08)}
+.card h2{font-size:19px;color:var(--accent-deep);margin-bottom:10px}
+.card p,.card li{color:var(--text2);font-size:15px}
+.card ul{margin:8px 0 0 20px}
+.card li{margin:5px 0}
+.disc{font-size:13px;color:var(--text2);border-top:1px solid var(--line);padding-top:16px;margin-top:24px}
+</style>
+</head>
+<body><div class="wrap">
+<a class="back" href="/">← 返回 Token FBI 全部情报</a>
+<span class="kicker">隐私政策</span>
+<h1>隐私政策与数据处理说明</h1>
+<p class="lead">一句话结论：<b>本站不收集你的个人信息</b>。这是一个无登录、无账号、无表单的纯静态站，浏览它不需要提交任何数据。</p>
+
+<div class="card">
+  <h2>我们收集什么</h2>
+  <p><b>不收集。</b>本站没有注册、登录、评论或表单提交功能，不要求你提供姓名、手机号、邮箱或任何身份信息，也不建立用户画像。全站页面均为预生成的静态 HTML，不存在数据库与用户账户体系。</p>
+</div>
+
+<div class="card">
+  <h2>Cookie 与跟踪</h2>
+  <p>本站自身<b>不设置任何 Cookie</b>，不嵌入第三方广告 SDK、统计脚本或社交追踪像素，不做跨站跟踪与再营销。</p>
+  <p style="margin-top:10px">本站托管于 Cloudflare Pages。作为 CDN 与安全防护的一部分，托管商可能按行业惯例处理基础访问日志（如 IP、User-Agent、请求时间），用于安全防护与流量统计。这部分由 Cloudflare 依其自身隐私政策处理，本站不单独留存，也不用于识别个人身份。</p>
+</div>
+
+<div class="card">
+  <h2>外部链接</h2>
+  <p>本站所有「点击领取 / 前往」按钮均直达<b>平台官方页面</b>。点击后你即离开本站，此后你的访问行为适用<b>该平台自己的隐私政策与用户协议</b>，本站无法控制、也不承担其数据处理责任。请在第三方平台提交任何信息前，自行阅读其条款。</p>
+</div>
+
+<div class="card">
+  <h2>广告位与赞助</h2>
+  <p>本站首页设有明码标价的广告位（刊例与流程见 <a href="/sponsor/">合作赞助</a>）。<b>所有赞助内容均单独标注</b>，不混入自然情报列表，也不参与收录与排序判断。广告位仅做图文展示与跳转，<b>不携带任何跟踪脚本</b>，赞助方不会因此获得你的任何个人数据。</p>
+</div>
+
+<div class="card">
+  <h2>邮件与微信</h2>
+  <p>你可以自愿通过邮箱或微信联系我们提交情报、反馈错误。你主动提供的内容（邮箱地址、微信 ID、你发送的信息）<b>仅用于回复你本人与核实信息</b>，不用于营销推送，不出售、不转让给任何第三方。</p>
+  <p style="margin-top:10px">加入免费微信群或付费社群时，你在群内的发言由你自行决定；社群平台（腾讯）依其自身政策处理相关数据。</p>
+</div>
+
+<div class="card">
+  <h2>开放数据</h2>
+  <p>本站情报以 <a href="/data.json">/data.json</a> 与 <a href="/llms-full.txt">llms-full.txt</a> 完全开放，内容均为公开的平台额度信息，<b>不含任何个人信息</b>。欢迎在注明来源的前提下引用与复用。</p>
+</div>
+
+<div class="card">
+  <h2>未成年人</h2>
+  <p>本站面向开发者与 AI 工具使用者，不针对未成年人设计，也不会有意收集未成年人的任何信息。</p>
+</div>
+
+<div class="card">
+  <h2>政策更新与联系方式</h2>
+  <p>本政策如发生实质性变更，会在本页更新。任何隐私相关疑问、数据删除请求或合作咨询，可邮件至 <a href="mailto:1821522570@qq.com">1821522570@qq.com</a>。</p>
+</div>
+
+<p class="disc">本政策适用于 token-fbi.com 及其所有子页面。本站为开源、业余维护的情报汇总项目，不替代任何平台官方的隐私政策与用户协议。</p>
+</div></body></html>'''
+privacy_html = PRIVACY.replace("{OG}", og_privacy).replace("{LD}", privacy_ld)
+os.makedirs(os.path.join(DIST, "privacy"), exist_ok=True)
+with open(os.path.join(DIST, "privacy", "index.html"), "w", encoding="utf-8") as f:
+    f.write(privacy_html)
 
 # ---------- 合作赞助 / 广告位刊例页（首页「合作赞助 →」的落地页） ----------
 SPONSOR_PRICE = "99"
@@ -985,7 +1104,7 @@ sponsor_ld = json.dumps({
     }
 }, ensure_ascii=False)
 og_sponsor = og_block(
-    "合作赞助 · Token FBI 广告位刊例与流程",
+    "合作赞助 · Token FBI 首页广告位刊例与投放流程",
     f"首页广告位合作赞助说明：刊例价 {SPONSOR_PRICE} 元/月，先发邮件到 {SPONSOR_MAIL}，审核通过后再协商赞助事宜。",
     SITE + "/sponsor/")
 SPONSOR = r'''<!DOCTYPE html>
@@ -993,7 +1112,7 @@ SPONSOR = r'''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>合作赞助 · 广告位刊例与流程｜Token FBI</title>
+<title>合作赞助 · Token FBI 首页广告位刊例与投放流程</title>
 <meta name="description" content="Token FBI 首页广告位合作赞助说明：刊例价 99 元/月，先发送邮件说明，经审核后再协商赞助事宜。">
 <link rel="canonical" href="https://token-fbi.com/sponsor/">
 {OG}
@@ -1127,7 +1246,7 @@ table_ld = json.dumps({
     "publisher": {"@id": f"{SITE}#org"}
 }, ensure_ascii=False)
 og_table = og_block(
-    "完整情报表 · Token FBI 免费 AI 额度情报",
+    "完整情报表 · 全部免费 AI 额度一览｜Token FBI",
     f"当前收录的 {len(editorial)} 条免费 AI 额度情报一览：免费类型、额度摘要、适用地区与截止时间，附直达平台入口。",
     SITE + "/table/")
 TABLE = r'''<!DOCTYPE html>
@@ -1135,7 +1254,7 @@ TABLE = r'''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>完整情报表 · 免费 AI 额度一览｜Token FBI</title>
+<title>完整情报表 · 全部免费 AI 额度一览｜Token FBI</title>
 <meta name="description" content="当前收录的免费 AI 额度情报一览表：免费类型、额度摘要、适用地区与截止时间，附直达平台入口。">
 <link rel="canonical" href="https://token-fbi.com/table/">
 {OG}
