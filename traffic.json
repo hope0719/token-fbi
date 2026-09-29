@@ -1,0 +1,33 @@
+{
+  "_readme": "流量透明页 /traffic/ 的数据源。改完这里跑一次 python3 build.py 即可更新页面；页面数字在每次部署时刷新，不是实时数据。",
+  "_source_note": "所有数字都必须是站长第一方统计（Cloudflare 控制台的访问统计 / Cloudflare Web Analytics），不得填入第三方估算值（AITDK、SimilarWeb 等）。",
+  "_counting_note_rule": "counting_note 必须与该页实际数据来源口径一致：边缘日志计数包含爬虫，就必须写明包含；换成浏览器端统计（已过滤机器人）后才能写「已过滤」。不得为了好看而抬高口径。",
+
+  "period_label": "近 7 天",
+  "range_label": "2026-09-22 – 2026-09-28",
+  "source": "Cloudflare 控制台访问统计",
+
+  "counting_note": "这些数字来自 Cloudflare 边缘节点的逐次请求计数：不是抽样插件，也不是估算模型外推的结果。但有一点必须说清楚 —— 边缘日志按请求计数，其中会包含搜索引擎爬虫与预渲染请求，所以我们不会把它当成「纯人类访客数」来宣传。真正衡量合作效果时，我们更愿意看可核验的转化：广告位点击量、新客注册数，而不是一个好看的数字。",
+
+  "similarweb_url": "https://www.similarweb.com/website/token-fbi.com/",
+  "live_dashboard_url": "",
+  "live_dashboard_label": "",
+
+  "metrics": [
+    { "label": "访问次数", "value": "1,710", "hint": "区间内合计" },
+    { "label": "日均访问", "value": "244", "hint": "按区间折算" },
+    { "label": "月折算访问", "value": "≈ 7,300", "hint": "按当前日均推算" },
+    { "label": "峰值单日", "value": "541", "hint": "内容被转发当天" }
+  ],
+
+  "sources": [
+    {
+      "name": "Cloudflare 控制台访问统计",
+      "desc": "Cloudflare 边缘节点逐请求计数（非抽样、非估算），本页数字即取自这里。它按请求计入，因此包含爬虫与预渲染流量 —— 如需一份「已过滤机器人」的口径，可另开 Cloudflare Web Analytics（浏览器端统计，不加 Cookie、不做指纹）。"
+    },
+    {
+      "name": "Google Analytics 4",
+      "desc": "以「公开验证」方式关联至第三方流量平台 SimilarWeb，任何人（含广告主）都能在该平台直接核对本站访问数，而不必依赖它的估算模型。"
+    }
+  ]
+}

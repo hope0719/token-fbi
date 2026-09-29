@@ -5,7 +5,13 @@
   - index.html          首页（Hero / 赞助位 / 全部情报卡片 / 完整情报表 CTA / 下架名单 / FAQ / 页脚）
                         注：完整情报表不在首页渲染，仅保留 `.datacta` CTA 入口
   - table/index.html    完整情报表独立页（CollectionPage + ItemList JSON-LD，名称内链到详情页）
-  - sponsor/index.html  合作赞助 / 广告位刊例页（WebPage + Offer JSON-LD；首页「合作赞助 →」的落地页）
+  - sponsor/index.html  合作赞助 / 广告位刊例页（WebPage + AggregateOffer JSON-LD；首页「合作赞助 →」的落地页）
+                        档位与价格集中在文件顶部 AD_TIERS，改价只改一处，页面/JSON-LD/meta/llms.txt 全部同步
+  - subscribe/index.html 订阅页（免费微信群 / 邮件 / 付费社群三个通道，用于把脉冲流量沉淀进私域）
+  - traffic/index.html  流量透明页（数据源 traffic.json：第一方访问快照 + 统计口径 + 「第三方工具为何显示 0」的机制说明）
+                        另见文件顶部 GA4_ID / CF_BEACON_TOKEN 两个统计开关（默认留空＝不注入任何脚本）
+  - go/<slug>/index.html 推广外链中转页 + dist/_redirects（Cloudflare 原生 302）
+                        条目带 promo_url 时全站 CTA 自动改走 /go/<slug>/；robots 对每个 UA 分组 Disallow
   - intel/item-NNN/index.html 每卡详情页（带 Article + BreadcrumbList JSON-LD，GEO 高 ROI）
   - robots.txt          全量 AI 爬虫放行（含 Bytespider/Baiduspider）
   - sitemap.xml         首页 + 详情页 + 开放数据
@@ -25,6 +31,80 @@ IMG_OUT = os.path.join(DIST, "img")
 SITE = "https://token-fbi.com"
 # 付费社群入口（小报童「AI 笔记」，带作者 refer 参数）
 PAID_GROUP_URL = "https://xiaobot.net/p/ainote01?refer=06461113-647f-4f7c-895b-24864027dadd"
+# 联系方式（首页「联系方式」区块 / 「订阅」页 / 刊例页共用同一组，改这里即可全站同步）
+WECHAT_ID = "lmfh2022"          # 免费微信群：加这个微信号，备注「情报」
+CONTACT_MAIL = "1821522570@qq.com"
+SPONSOR_MAIL = CONTACT_MAIL     # 合作赞助咨询邮箱
+
+# ---------- 访问统计（默认关闭：两项都留空时，全站不注入任何统计脚本，站点维持隐私优先） ----------
+# GA4_ID：Google Analytics 4 的衡量 ID（形如 G-XXXXXXXXXX）。
+#   填上后重跑 build.py，全站页面自动挂 gtag。
+#   挂 GA4 的**唯一目的**是可以在 similarweb.com「Claim Your Website → Connect Google Analytics」
+#   里**公开接入**，让 SimilarWeb / AITDK 这类第三方工具显示你的真实访问数（带「已验证」徽章）。
+GA4_ID = "G-D06YK62XCD"
+# CF_BEACON_TOKEN：Cloudflare Web Analytics 的 beacon token（CF 后台 → Web Analytics 获取）。
+#   无 Cookie、不写本地存储，中国大陆可正常统计 —— 作为**你自己的真实数字**（Media Kit / 招商用），
+#   不用来喂第三方估算工具。
+#
+# ⚠️ 本站**不要填这个值**：站点托管在 Cloudflare Pages，且已在「项目 → Metrics → Web Analytics」
+#    开启了**项目级**自动注入 —— CF 会在每次**部署时**自动往 </body> 前插入同一段 beacon 脚本
+#    （形如 <!-- Cloudflare Pages Analytics --><script defer src='.../beacon.min.js' data-cf-beacon=...>）。
+#    这里若再手填一次，beacon 会被加载两遍 → **访问数/浏览量重复计数**。
+#    该开关仅保留给「非 CF Pages 托管」的场景。验收脚本会检查 beacon 是否恰好 1 份。
+CF_BEACON_TOKEN = ""
+
+
+def _analytics_block():
+    """按配置生成统计脚本片段；两个开关都没开时返回空串（页面输出完全不变）。"""
+    parts = []
+    if GA4_ID:
+        parts.append(
+            '<!-- Google Analytics 4：仅用于基础访问统计，并公开接入 SimilarWeb 以验证流量 -->\n'
+            f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA4_ID}"></script>\n'
+            "<script>window.dataLayer=window.dataLayer||[];"
+            "function gtag(){dataLayer.push(arguments);}"
+            "gtag('js',new Date());"
+            f"gtag('config','{GA4_ID}');</script>"
+        )
+    if CF_BEACON_TOKEN:
+        parts.append(
+            '<!-- Cloudflare Web Analytics：无 Cookie 的访问统计 -->\n'
+            '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" '
+            f"data-cf-beacon='{{\"token\":\"{CF_BEACON_TOKEN}\"}}'></script>"
+        )
+    return "\n".join(parts)
+
+
+ANALYTICS_BLOCK = _analytics_block()
+# 判断「是否已经注入过」用的特征串
+_ANALYTICS_MARK = "googletagmanager" if GA4_ID else ("cloudflareinsights" if CF_BEACON_TOKEN else "")
+
+# ---------- 广告位档位与价格（集中配置：改价只改这里，页面 / JSON-LD / meta / llms 全部同步） ----------
+# 折扣口径：季付≈月价×2.4（约 8 折）、年付≈月价×8（约 6.7 折）。
+# 页面上的「省 X%」由 _save_pct() 现算，不手写，改价后自动跟着变。
+AD_TIERS = [
+    {"code": "A", "name": "首屏主位", "month": 499, "quarter": 1199, "year": 3999,
+     "stock": "1 个 / 期",
+     "desc": "广告位第一格，深青底反白设计、面积约为常规位 1.25 倍，进页第一眼即见，适合发布期与新品首发。"},
+    {"code": "B", "name": "常规位", "month": 299, "quarter": 699, "year": 2399,
+     "stock": "2 个 / 期",
+     "desc": "广告位第二、三格，与主位同屏展示，单价最低，适合做长期品牌曝光与新客持续获取。"},
+    {"code": "C", "name": "专题冠名", "month": 899, "quarter": 2199, "year": 7499,
+     "stock": "按需定制",
+     "desc": "为你的品类单独制作一页比价／选购专题（如算力租赁、API 中转、编程工具），首页与合作页各挂一处入口。"},
+]
+AD_PRICE_FROM = min(t["month"] for t in AD_TIERS)
+AD_PRICE_TO = max(t["month"] for t in AD_TIERS)
+
+def _yuan(n):
+    """人民币千分位。"""
+    return f"{int(n):,}"
+
+def _save_pct(paid, full):
+    """相对月付一次买满的省钱幅度（取整到 10%）。"""
+    if full <= 0:
+        return 0
+    return max(0, int(round((1 - paid / full) * 100 / 10) * 10))
 # 重建前清空旧 intel（旧版为 .html 平铺，现改为目录式 index.html，避免 404 残留）
 shutil.rmtree(INTEL, ignore_errors=True)
 os.makedirs(INTEL, exist_ok=True)
@@ -122,6 +202,36 @@ def slug(i, name):
     base = base or f"item"
     return f"item-{i:03d}-{base}"
 
+# ---------- 外链出口层 /go/<slug>/（推广/返佣链接的统一改造点） ----------
+# 存在的意义：
+#   ① 换链不动页面 —— 注册联盟拿到专属链接后，只改 data.json 的 promo_url，全站 CTA 自动切换；
+#   ② 与内容页彻底分离 —— /go/ 在 robots 整体 Disallow，跳转层不会污染索引与 GEO 信号；
+#   ③ 归因与叠加参数只改一处 —— 后续要加 UTM / 渠道码，改这里即可。
+# 条目只要带 promo_url，全站所有「点击领取 / 前往平台入口 / 广告 CTA」都会自动走中转。
+GO_NAME = "go"
+go_map = {}          # {go_slug: 目标真实链接}，用于生成中转页与 _redirects
+
+def go_slug(name):
+    """中转路径名：与详情页 slug 同源但不带序号，便于人工读写与手工投放。"""
+    base = re.sub(r"[^\w\u4e00-\u9fa5]+", "-", str(name or "")).strip("-").lower()
+    return base or "link"
+
+def out_link(it):
+    """统一外链出口，返回 (href, sponsored)。
+
+    - 条目带 `promo_url`（联盟 / 邀请 / 返佣链接）→ 走站内中转 `/<GO_NAME>/<slug>/`，sponsored=True
+    - 否则直连 `entry_url`，sponsored=False
+    sponsored 只用于决定 rel 标注，不影响链接可点击性。
+    """
+    promo = (it.get("promo_url") or "").strip()
+    if promo:
+        gs = go_slug(it.get("name"))
+        go_map[gs] = {"url": promo,
+                      "name": str(it.get("name") or "").strip(),
+                      "net": str(it.get("promo_net") or "").strip()}
+        return f"/{GO_NAME}/{gs}/", True
+    return ((it.get("entry_url") or "").strip() or "#"), False
+
 # 内部详情页链接映射（用于首页/推荐/赞助位内部链接 + GEO 发现）
 # 纯广告位（ad_only）不生成详情页，故不进入映射，避免内链 404
 hrefs = {i: f"/intel/{slug(i, it.get('name',''))}/" for i, it in enumerate(items)}
@@ -138,7 +248,9 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
     quota = esc(it.get("quota", "")).replace("\n", "<br>")
     gates = it.get("gates", []) or []
     sponsored = it.get("sponsored", False)
-    entry = esc(it.get("entry_url", "#"))
+    entry_raw, entry_spon = out_link(it)
+    entry = esc(entry_raw)
+    entry_rel = "noopener nofollow sponsored" if entry_spon else "noopener"
     intel = esc(it.get("intel_url", "#"))
     catlabel = CAT_LABEL.get(cat, cat)
     freetag = FREE_LABEL.get(free, free)
@@ -162,7 +274,7 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
       <div class="chips">{gate_chips}</div>
       <div class="c-actions">
         <a class="btn sm ghost" href="{href}" rel="bookmark">查看详情</a>
-        <a class="btn sm primary" href="{entry}" target="_blank" rel="noopener">点击领取 →</a>
+        <a class="btn sm primary" href="{entry}" target="_blank" rel="{entry_rel}">点击领取 →</a>
       </div>
     </article>'''
 
@@ -173,7 +285,8 @@ def render_ad(it):
     hook = esc(it.get("ad_hook", ""))
     desc = esc(it.get("ad_desc", ""))
     cta = esc(it.get("ad_cta", "") or "了解更多")
-    url = (it.get("entry_url", "") or "").strip()
+    url, _ = out_link(it)
+    url = url.strip()
     detail = name2href.get(it.get("name"), "")
     featured = " featured" if it.get("ad_featured") else ""
     if url and url != "#":
@@ -253,13 +366,15 @@ for it in editorial:
     quota = esc(it.get("quota", "")).replace("\n", "<br>")
     region = esc(it.get("region", ""))
     valid = esc(it.get("validity", "")) or "长期（以平台为准）"
-    entry = esc(it.get("entry_url", "#"))
+    entry_raw, entry_spon = out_link(it)
+    entry = esc(entry_raw)
+    entry_rel = "noopener nofollow sponsored" if entry_spon else "noopener"
     inner = name2href.get(it.get("name"), "")
     nm_html = (f'<a class="dt-name" href="{inner}">{nm}</a>' if inner and inner != "#" else nm)
     data_rows.append(
         f'<tr><td class="dn">{nm_html}</td><td>{catlabel}</td><td>{freetag}</td>'
         f'<td class="dq">{quota}</td><td>{region}</td><td>{valid}</td>'
-        f'<td><a class="dt-link" href="{entry}" target="_blank" rel="noopener">点击领取 →</a></td></tr>')
+        f'<td><a class="dt-link" href="{entry}" target="_blank" rel="{entry_rel}">点击领取 →</a></td></tr>')
 data_table_html = "\n".join(data_rows)
 
 # ---------- JSON-LD（首页） ----------
@@ -456,6 +571,10 @@ img{max-width:100%}
 .reco-card::before{opacity:1}
 .chip.reco{background:var(--accent-deep);color:#fff;border-color:var(--accent-deep)}
 .datacta{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+.subbar{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;background:linear-gradient(135deg,rgba(158,199,216,.30),rgba(158,199,216,.10));border:1px solid var(--accent);border-radius:var(--r);padding:20px 22px}
+.subbar-main{display:flex;flex-direction:column;gap:3px}
+.subbar-main strong{font-size:17px;font-weight:850}
+.subbar-main span{font-size:14px;color:var(--text2)}
 .datacta-main{display:flex;flex-direction:column;gap:4px;min-width:220px;flex:1}
 .datacta-main strong{font-size:17px;font-weight:800;color:var(--text)}
 .datacta-main span{font-size:13.5px;color:var(--text2)}
@@ -530,6 +649,16 @@ img{max-width:100%}
   </div>
 </div></section>
 
+<section class="section"><div class="wrap">
+  <div class="subbar">
+    <div class="subbar-main">
+      <strong>新额度提醒</strong>
+      <span>新上架情报、额度临时变更、限时活动截止 —— 第一时间发到微信群与邮箱。</span>
+    </div>
+    <a class="btn primary sm" href="/subscribe/">订阅提醒 →</a>
+  </div>
+</div></section>
+
 {OFFICIAL}
 
 <section class="section" id="faq"><div class="wrap">
@@ -546,16 +675,16 @@ img{max-width:100%}
 
 <section class="section" id="contact"><div class="wrap">
   <h2 class="sec-title">联系方式</h2>
-  <p class="sec-lead" style="text-align:center;max-width:820px;margin:0 auto 22px">想加群交流、提交情报或系统学习，可以直接联系站长：微信 <b>lmfh2022</b>、邮箱 <b>1821522570@qq.com</b>；付费社群 99 元/年。</p>
+  <p class="sec-lead" style="text-align:center;max-width:820px;margin:0 auto 22px">想加群交流、提交情报或系统学习，可以直接联系站长：微信 <b>{WECHAT_ID}</b>、邮箱 <b>{CONTACT_MAIL}</b>；付费社群 99 元/年。</p>
   <div class="contact-row">
     <div class="contact-card">
       <span class="ct-tag">免费微信群</span>
-      <span class="ct-main">微信 <span class="ct-code">lmfh2022</span></span>
+      <span class="ct-main">微信 <span class="ct-code">{WECHAT_ID}</span></span>
       <span class="ct-desc">添加我的微信，加入「Token 情报局」免费微信群。</span>
     </div>
     <div class="contact-card">
       <span class="ct-tag">提交情报</span>
-      <span class="ct-main"><a href="mailto:1821522570@qq.com">1821522570@qq.com</a></span>
+      <span class="ct-main"><a href="mailto:{CONTACT_MAIL}">{CONTACT_MAIL}</a></span>
       <span class="ct-desc">如果你有有效的价值信息想要提交，也可以发送邮件给我。</span>
     </div>
     <div class="contact-card">
@@ -583,10 +712,12 @@ img{max-width:100%}
     </div>
     <div>
       <h2>参与</h2>
+      <a href="/subscribe/">订阅新额度提醒</a>
       <a href="/about/">关于本站</a>
       <a href="/privacy/">隐私政策</a>
       <a href="/terms/">服务条款</a>
       <a href="/sponsor/">合作赞助</a>
+      <a href="/traffic/">流量数据公开说明</a>
       <a href="https://github.com/hope0719/token-fbi/issues" target="_blank" rel="noopener">提交情报（Issue）</a>
       <a href="https://github.com/hope0719/token-fbi" target="_blank" rel="noopener">提 PR 修正</a>
       <a href="#list">回到列表</a>
@@ -615,6 +746,8 @@ index_html = (TEMPLATE
        .replace("{N_TOOL}", str(n_tool))
        .replace("{N_EVENT}", str(n_event))
        .replace("{PAID_GROUP_URL}", PAID_GROUP_URL)
+       .replace("{WECHAT_ID}", WECHAT_ID)
+       .replace("{CONTACT_MAIL}", CONTACT_MAIL)
        .replace("{ANCHOR}", anchored))
 
 # ---------- 每卡详情页 ----------
@@ -731,7 +864,8 @@ for i, it in enumerate(items):
     last = esc(it.get("last_verified", ""))
     region = esc(it.get("region", "")) or "不限"
     validity_txt = esc(it.get("validity", "")) or "长期（以平台为准）"
-    entry = esc(it.get("entry_url", "#"))
+    entry, entry_spon = out_link(it)
+    entry_rel = "noopener nofollow sponsored" if entry_spon else "noopener"
     canon = f"{SITE}/intel/{s}/"
     desc = meta_desc_for(it)
     og_img = og_image_for(i)
@@ -807,9 +941,9 @@ for i, it in enumerate(items):
         .replace("{POSTER_SEC}", poster_sec_html)
         # 注意：详情页不展示官网链接（用户明确要求），事实卡不放官网入口
         # entry_url 缺失 / 为 "#"（如纯海报类条目）时不渲染「前往平台入口」按钮，避免死链
-        .replace("{ENTRY_BTN}", (f'<a class="btn" href="{entry}" target="_blank" rel="noopener">'
+        .replace("{ENTRY_BTN}", (f'<a class="btn" href="{esc(entry)}" target="_blank" rel="{entry_rel}">'
                                  f'前往平台入口 →</a>') if entry and entry != "#" else "")
-        .replace("{ENTRY}", entry).replace("{CANON}", canon)
+        .replace("{ENTRY}", esc(entry)).replace("{CANON}", canon)
         .replace("{LD}", ld).replace("{BREAD}", breadcrumb_ld).replace("{OG}", og_detail)
         .replace("{DESC}", esc(desc)))
     os.makedirs(os.path.join(INTEL, s), exist_ok=True)
@@ -820,6 +954,67 @@ for i, it in enumerate(items):
 with open(os.path.join(DIST, "index.html"), "w", encoding="utf-8") as f:
     f.write(index_html)
 
+# ---------- /go/<slug>/ 外链中转层 + Cloudflare _redirects ----------
+# 目的：把「站内 CTA → 推广/返佣链接」抽成独立的一跳，换链无需改动任何内容页。
+# 双保险实现：
+#   ① _redirects  —— Cloudflare Pages 原生 302（真实 HTTP 跳转，最快、无闪白）
+#   ② index.html  —— 本地预览 / 非 CF 环境的兜底（meta refresh + 手动链接）
+# 整个 /go/ 目录在 robots.txt 里整体 Disallow，跳转层不被抓取、不污染索引。
+# 先清掉上一轮产物：某条 promo_url 被取消后，旧的跳转页与 _redirects 必须同步下线。
+shutil.rmtree(os.path.join(DIST, GO_NAME), ignore_errors=True)
+_redir_path = os.path.join(DIST, "_redirects")
+if os.path.exists(_redir_path):
+    os.remove(_redir_path)
+if go_map:
+    go_root = os.path.join(DIST, GO_NAME)
+    os.makedirs(go_root, exist_ok=True)
+    redirect_lines = [
+        "# 推广 / 返佣外链中转层（由 build.py 自动生成，勿手工编辑）",
+        "# data.json 里给条目加 promo_url 后，全站 CTA 自动改走 /go/<slug>/",
+        "",
+    ]
+    for _gs in sorted(go_map):
+        _info = go_map[_gs]
+        _url = _info["url"]
+        redirect_lines.append(f"/{GO_NAME}/{_gs}/ {_url} 302")
+        _dir = os.path.join(go_root, _gs)
+        os.makedirs(_dir, exist_ok=True)
+        _net = f'<p class="net">合作渠道：{esc(_info["net"])}</p>' if _info["net"] else ""
+        _page = f'''<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>正在前往 {esc(_info["name"])}｜Token FBI</title>
+<meta http-equiv="refresh" content="0;url={esc(_url)}">
+<style>
+:root{{--bg:#F5F1E8;--bg2:#fff;--line:rgba(34,52,58,.14);--text:#1F2A2E;--text2:#4C5A5E;--accent:#9EC7D8;--accent-deep:#2F6F82;--r:16px;--sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}}
+*{{margin:0;padding:0;box-sizing:border-box}}
+body{{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:22px}}
+.box{{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;max-width:440px;width:100%;text-align:center;box-shadow:0 10px 30px rgba(34,52,58,.08)}}
+h1{{font-size:18px;margin-bottom:10px}}
+p{{color:var(--text2);font-size:14px;margin:6px 0}}
+.net{{font-size:12.5px;color:var(--text2)}}
+a{{display:inline-block;margin-top:16px;font-weight:800;color:#0E2A33;background:var(--accent);border-radius:99px;padding:10px 22px;text-decoration:none}}
+.back{{display:block;margin-top:12px;font-size:13px;color:var(--text2);text-decoration:none}}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>正在前往 {esc(_info["name"])}</h1>
+  <p>本链接为站内推广跳转，内容与额度以平台官方页面为准。</p>
+  {_net}
+  <a href="{esc(_url)}" rel="noopener nofollow sponsored">没有自动跳转？点这里继续 →</a>
+  <a class="back" href="/">← 返回 Token FBI 情报列表</a>
+</div>
+</body>
+</html>'''
+        with open(os.path.join(_dir, "index.html"), "w", encoding="utf-8") as f:
+            f.write(_page)
+    with open(os.path.join(DIST, "_redirects"), "w", encoding="utf-8") as f:
+        f.write("\n".join(redirect_lines) + "\n")
+
 # ---------- robots.txt（复制已含全量放行的版本） ----------
 with open(os.path.join(HERE, "robots.txt"), encoding="utf-8") as f:
     robotxt = f.read()
@@ -827,7 +1022,7 @@ with open(os.path.join(DIST, "robots.txt"), "w", encoding="utf-8") as f:
     f.write(robotxt)
 
 # ---------- sitemap.xml ----------
-urls = [f"{SITE}/", f"{SITE}/table/", f"{SITE}/about/", f"{SITE}/sponsor/", f"{SITE}/privacy/", f"{SITE}/terms/", f"{SITE}/data.json", f"{SITE}/llms.txt", f"{SITE}/llms-full.txt"]
+urls = [f"{SITE}/", f"{SITE}/table/", f"{SITE}/about/", f"{SITE}/sponsor/", f"{SITE}/subscribe/", f"{SITE}/traffic/", f"{SITE}/privacy/", f"{SITE}/terms/", f"{SITE}/data.json", f"{SITE}/llms.txt", f"{SITE}/llms-full.txt"]
 urls += [f"{SITE}/intel/{slug(i, it.get('name',''))}/" for i, it in enumerate(items) if not it.get("ad_only")]
 sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for u in urls:
@@ -837,7 +1032,7 @@ with open(os.path.join(DIST, "sitemap.xml"), "w", encoding="utf-8") as f:
     f.write(sitemap)
 
 # ---------- llms.txt / llms-full.txt ----------
-llms = f"# Token 情报局\n\n> 面向中文用户的免费 AI Token、模型额度与开发工具情报目录。本站只整理、核验并链接到平台入口，不代跑、不镜像。\n\n## 核心页面\n\n- [首页]({SITE}/): 最新免费额度、工具与下架名单。\n- [完整情报表]({SITE}/table/): 逐条列出免费类型、额度摘要、适用地区与截止时间。\n- [关于与核验方法论]({SITE}/about/): 运营主体、核验流程、收录标准与数据开放说明。\n- [合作赞助]({SITE}/sponsor/): 首页广告位刊例价（99 元/月）、投稿邮箱与合作流程。\n- [隐私政策]({SITE}/privacy/): 数据处理与免责说明（无登录、不收集个人信息、不设跟踪 Cookie）。\n- [服务条款]({SITE}/terms/): 使用规则、知识产权、第三方链接、广告位标注、免责与责任限制。\n- [完整机器可读目录]({SITE}/llms-full.txt): 当前全部有效条目。\n- [开放数据]({SITE}/data.json): 全量结构化 JSON。\n\n## 使用边界\n\n- 额度、价格、模型和截止时间会变化，以平台最新页面为准。\n- 推广内容单独标注，不参与排序与收录判断。\n"
+llms = f"# Token 情报局\n\n> 面向中文用户的免费 AI Token、模型额度与开发工具情报目录。本站只整理、核验并链接到平台入口，不代跑、不镜像。\n\n## 核心页面\n\n- [首页]({SITE}/): 最新免费额度、工具与下架名单。\n- [完整情报表]({SITE}/table/): 逐条列出免费类型、额度摘要、适用地区与截止时间。\n- [关于与核验方法论]({SITE}/about/): 运营主体、核验流程、收录标准与数据开放说明。\n- [合作赞助]({SITE}/sponsor/): 首页广告位刊例价 ¥{AD_PRICE_FROM} / 月起（首屏主位 / 常规位 / 专题冠名三档，季付约 8 折、年付约 6.7 折）、投稿邮箱与合作流程。\n- [订阅新额度提醒]({SITE}/subscribe/): 免费微信群、邮件订阅与作者付费社群三种触达方式，用于接收新上架额度与活动变更提醒。\n- [流量透明]({SITE}/traffic/): 本站访问数据的统计方式、统计区间与当前数值，以及 AITDK / SimilarWeb 等第三方工具为何显示 0 的机制说明（面板样本偏差与 5,000 次展示门槛）。\n- [隐私政策]({SITE}/privacy/): 数据处理与免责说明（无登录、不收集个人信息，仅做匿名访问统计）。\n- [服务条款]({SITE}/terms/): 使用规则、知识产权、第三方链接、广告位标注、免责与责任限制。\n- [完整机器可读目录]({SITE}/llms-full.txt): 当前全部有效条目。\n- [开放数据]({SITE}/data.json): 全量结构化 JSON。\n\n## 使用边界\n\n- 额度、价格、模型和截止时间会变化，以平台最新页面为准。\n- 推广内容单独标注，不参与排序与收录判断。\n"
 llms_full = f"# Token 情报局完整目录\n\n最后更新：{anchored}\n\n## 当前有效情报（{len(editorial)} 条）\n\n"
 for it in editorial:
     u = f"{SITE}{name2href.get(it.get('name'), '/')}"
@@ -858,8 +1053,8 @@ with open(os.path.join(DIST, "llms-full.txt"), "w", encoding="utf-8") as f:
 
 # ---------- 公开 data.json（仅开放编辑收录的情报；赞助条目不进入数据集）----------
 pub = dict(d)
-# 开放数据集只保留编辑字段，剔除专属邀请等推广字段
-PROMO_FIELDS = ("invite_text", "invite_url", "invite_code")
+# 开放数据集只保留编辑字段，剔除专属邀请与推广/返佣字段（不属于公开情报口径）
+PROMO_FIELDS = ("invite_text", "invite_url", "invite_code", "promo_url", "promo_net")
 pub["items"] = [{k: v for k, v in it.items() if k not in PROMO_FIELDS} for it in editorial]
 with open(os.path.join(DIST, "data.json"), "w", encoding="utf-8") as f:
     json.dump(pub, f, ensure_ascii=False, indent=2)
@@ -1004,7 +1199,7 @@ privacy_ld = json.dumps({
     "@type": "WebPage",
     "name": "隐私政策 · Token FBI",
     "url": f"{SITE}/privacy/",
-    "description": "Token FBI 隐私政策：本站为无登录、无账号的纯静态站，不收集个人信息、不设置跟踪 Cookie。本页说明托管日志、外部链接、广告位标注、邮件与微信的使用范围，以及你的权利与联系方式。",
+    "description": "Token FBI 隐私政策：本站为无登录、无账号的纯静态站，不收集个人信息。本页说明访问统计方式（含基于 Cloudflare 边缘日志的匿名统计与用于公开验证流量的 GA4）、Cookie 与跟踪、托管日志、外部链接与跳转层、广告位标注、邮件与微信的使用范围及联系方式。",
     "isPartOf": {"@id": f"{SITE}#website"},
     "publisher": {"@id": f"{SITE}#org"},
     "dateModified": anchored,
@@ -1012,7 +1207,7 @@ privacy_ld = json.dumps({
 }, ensure_ascii=False)
 og_privacy = og_block(
     "隐私政策 · Token FBI 数据处理、Cookie 与免责说明",
-    "Token FBI 隐私政策：本站为无登录、无账号的纯静态站，不收集个人信息、不设置跟踪 Cookie。本页说明托管日志、外部链接、广告位标注、邮件与微信的使用范围，以及你的权利与联系方式。",
+    "Token FBI 隐私政策：本站为无登录、无账号的纯静态站，不收集个人信息。本页说明访问统计方式（含基于 Cloudflare 边缘日志的匿名统计与用于公开验证流量的 GA4）、Cookie 与跟踪、托管日志、外部链接与跳转层、广告位标注、邮件与微信的使用范围及联系方式。",
     SITE + "/privacy/")
 PRIVACY = r'''<!DOCTYPE html>
 <html lang="zh-CN">
@@ -1020,7 +1215,7 @@ PRIVACY = r'''<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>隐私政策 · Token FBI 数据处理、Cookie 与免责说明</title>
-<meta name="description" content="Token FBI 隐私政策：本站为无登录、无账号的纯静态站，不收集个人信息、不设置跟踪 Cookie。本页说明托管日志、外部链接、广告位标注、邮件与微信的使用范围，以及你的权利与联系方式。">
+<meta name="description" content="Token FBI 隐私政策：本站为无登录、无账号的纯静态站，不收集个人信息。本页说明访问统计方式（含基于 Cloudflare 边缘日志的匿名统计与用于公开验证流量的 GA4）、Cookie 与跟踪、托管日志、外部链接与跳转层、广告位标注、邮件与微信的使用范围及联系方式。">
 <link rel="canonical" href="https://token-fbi.com/privacy/">
 {OG}
 <script type="application/ld+json">{LD}</script>
@@ -1050,18 +1245,23 @@ h1{font-size:30px;line-height:1.2;margin-bottom:8px}
 
 <div class="card">
   <h2>我们收集什么</h2>
-  <p><b>不收集。</b>本站没有注册、登录、评论或表单提交功能，不要求你提供姓名、手机号、邮箱或任何身份信息，也不建立用户画像。全站页面均为预生成的静态 HTML，不存在数据库与用户账户体系。</p>
+  <p><b>不收集任何可识别到你个人的信息。</b>本站没有注册、登录、评论或表单提交功能，不要求你提供姓名、手机号、邮箱或任何身份信息，也不建立用户画像。全站页面均为预生成的静态 HTML，不存在数据库与用户账户体系。</p>
+  <p style="margin-top:10px">唯一例外是<b>匿名访问统计</b>（见下节）：它只记录聚合的访问次数、来源与地区，用于判断内容是否有人看，不与你的身份关联，也不用于投放。</p>
 </div>
 
 <div class="card">
   <h2>Cookie 与跟踪</h2>
-  <p>本站自身<b>不设置任何 Cookie</b>，不嵌入第三方广告 SDK、统计脚本或社交追踪像素，不做跨站跟踪与再营销。</p>
+  <p>本站<b>不嵌入广告 SDK 或社交追踪像素</b>，不做跨站跟踪，也不做再营销。</p>
+  <p style="margin-top:10px"><b>访问统计：</b>本站的访问数据来自托管商 <b>Cloudflare</b> 的统计服务（基于边缘节点的逐请求计数）。这类统计不设置 Cookie、不使用 localStorage、不做设备指纹，也不做跨站跟踪；只产出聚合的访问数、来源与地区，仅用于本站自身的流量判断，不用于广告。</p>
+  <p style="margin-top:10px"><b>流量公开验证：</b>为便于合作方核实本站流量的真实性，本站另行启用 <b>Google Analytics 4</b>，并将其数据以<b>「公开验证」</b>的方式关联至第三方流量平台（SimilarWeb）—— 也就是说，任何人（包括广告主）都能在该平台看到本站的真实访问数，而不是只能看估算值。GA4 会在你的浏览器写入一枚用于区分会话的 Cookie（<b>_ga</b> 系列），<b>仅用于统计</b>，不用于广告投放或跨站追踪，本站也不会把它与任何身份信息关联。</p>
+  <p style="margin-top:10px">除上述两项统计之外，本站不设置任何其他 Cookie。你可以在浏览器中随时清除或拦截这些 Cookie —— 本站全部功能都不依赖登录与 Cookie，拦截后浏览体验不受任何影响。</p>
   <p style="margin-top:10px">本站托管于 Cloudflare Pages。作为 CDN 与安全防护的一部分，托管商可能按行业惯例处理基础访问日志（如 IP、User-Agent、请求时间），用于安全防护与流量统计。这部分由 Cloudflare 依其自身隐私政策处理，本站不单独留存，也不用于识别个人身份。</p>
 </div>
 
 <div class="card">
   <h2>外部链接</h2>
-  <p>本站所有「点击领取 / 前往」按钮均直达<b>平台官方页面</b>。点击后你即离开本站，此后你的访问行为适用<b>该平台自己的隐私政策与用户协议</b>，本站无法控制、也不承担其数据处理责任。请在第三方平台提交任何信息前，自行阅读其条款。</p>
+  <p>本站所有「点击领取 / 前往」按钮最终都指向<b>平台官方页面</b>；其中标注为推广合作的部分，会先经由站内的 <b>/go/ 跳转层</b>中转一次再到达官方页面，以便区分合作来源、并在链接失效时及时更换。</p>
+  <p>该跳转层<b>不设置 Cookie、不注入任何脚本</b>，也不会记录你的个人身份信息。<b>点击后你即离开本站</b>，此后你的访问行为适用<b>该平台自己的隐私政策与用户协议</b>，本站无法控制、也不承担其数据处理责任。请在第三方平台提交任何信息前，自行阅读其条款。</p>
 </div>
 
 <div class="card">
@@ -1201,31 +1401,56 @@ with open(os.path.join(DIST, "terms", "index.html"), "w", encoding="utf-8") as f
     f.write(terms_html)
 
 # ---------- 合作赞助 / 广告位刊例页（首页「合作赞助 →」的落地页） ----------
-SPONSOR_PRICE = "99"
-SPONSOR_MAIL = "1821522570@qq.com"
+# ---------- 广告位档位渲染（档位数据在文件顶部 AD_TIERS 配置） ----------
+_ad_cards = []
+for _t in AD_TIERS:
+    _q = _save_pct(_t["quarter"], _t["month"] * 3)
+    _y = _save_pct(_t["year"], _t["month"] * 12)
+    _ad_cards.append(f'''    <div class="tier">
+      <div class="t-head"><span class="t-code">{_t["code"]}</span><span class="t-name">{_t["name"]}</span><span class="t-stock">档期 {_t["stock"]}</span></div>
+      <div class="t-price"><span class="num">{_yuan(_t["month"])}</span><span class="unit">元 / 月</span></div>
+      <p class="t-desc">{esc(_t["desc"])}</p>
+      <ul class="t-opt">
+        <li><span>月付</span><b>¥{_yuan(_t["month"])}</b></li>
+        <li><span>季付 · 省 {_q}%</span><b>¥{_yuan(_t["quarter"])}</b></li>
+        <li><span>年付 · 省 {_y}%</span><b>¥{_yuan(_t["year"])}</b></li>
+      </ul>
+    </div>''')
+AD_TIERS_HTML = "\n".join(_ad_cards)
+AD_OFFERS_LD = [
+    {"@type": "Offer", "name": f'{t["name"]}（{t["code"]} 档）', "price": str(t["month"]),
+     "priceCurrency": "CNY",
+     "priceSpecification": {"@type": "UnitPriceSpecification", "price": str(t["month"]),
+                            "priceCurrency": "CNY",
+                            "referenceQuantity": {"@type": "QuantitativeValue", "value": 1, "unitCode": "MON"}},
+     "availability": "https://schema.org/InStock"}
+    for t in AD_TIERS
+]
+SPONSOR_LD_DESC = (f"Token FBI 首页广告位合作赞助说明：刊例价 ¥{AD_PRICE_FROM}–{AD_PRICE_TO} / 月，"
+                   f"分首屏主位、常规位、专题冠名三档，季付约 8 折、年付约 6.7 折。"
+                   f"合作方式是先发邮件说明需求，经审核通过后再协商档期；广告位单独标注，不参与情报排序与收录判断。")
 sponsor_ld = json.dumps({
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "合作赞助 · Token FBI 广告位刊例与流程",
+    "name": "合作赞助 · Token FBI 广告位刊例与投放流程",
     "url": f"{SITE}/sponsor/",
-    "description": f"Token FBI 首页广告位合作赞助说明：刊例价 {SPONSOR_PRICE} 元/月，一行三格展示。合作方式是先发邮件说明需求，经审核通过后再协商赞助事宜；广告位单独标注，不参与情报排序与收录判断。",
+    "description": SPONSOR_LD_DESC,
     "isPartOf": {"@id": f"{SITE}#website"},
     "mainEntity": {
-        "@type": "Offer",
-        "name": "首页广告位（赞助展示）",
-        "price": SPONSOR_PRICE,
+        "@type": "AggregateOffer",
+        "name": "Token FBI 首页广告位",
         "priceCurrency": "CNY",
-        "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": SPONSOR_PRICE, "priceCurrency": "CNY",
-            "referenceQuantity": {"@type": "QuantitativeValue", "value": 1, "unitCode": "MON"}},
+        "lowPrice": str(AD_PRICE_FROM),
+        "highPrice": str(AD_PRICE_TO),
+        "offerCount": len(AD_TIERS),
         "availability": "https://schema.org/InStock",
-        "seller": {"@type": "Organization", "name": "Token FBI（Token 情报局）", "url": SITE}
+        "seller": {"@type": "Organization", "name": "Token FBI（Token 情报局）", "url": SITE},
+        "offers": AD_OFFERS_LD
     }
 }, ensure_ascii=False)
 og_sponsor = og_block(
     "合作赞助 · Token FBI 首页广告位刊例与投放流程",
-    f"Token FBI 首页广告位合作赞助说明：刊例价 {SPONSOR_PRICE} 元/月，一行三格展示。合作方式是先发邮件说明需求，经审核通过后再协商赞助事宜；广告位单独标注，不参与情报排序与收录判断。",
+    SPONSOR_LD_DESC,
     SITE + "/sponsor/")
 SPONSOR = r'''<!DOCTYPE html>
 <html lang="zh-CN">
@@ -1233,7 +1458,7 @@ SPONSOR = r'''<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>合作赞助 · Token FBI 首页广告位刊例与投放流程</title>
-<meta name="description" content="Token FBI 首页广告位合作赞助说明：刊例价 99 元/月，一行三格展示。合作方式是先发邮件说明需求，经审核通过后再协商赞助事宜；广告位单独标注，不参与情报排序与收录判断。">
+<meta name="description" content="{SPONSOR_DESC}">
 <link rel="canonical" href="https://token-fbi.com/sponsor/">
 {OG}
 <script type="application/ld+json">{LD}</script>
@@ -1265,6 +1490,23 @@ h1{font-size:clamp(26px,4vw,36px);line-height:1.22;font-weight:850}
 .price .num{font-size:44px;font-weight:850;color:var(--accent-deep);line-height:1}
 .price .unit{font-size:15px;color:var(--text2);font-weight:700}
 .price-note{font-size:13.5px;color:var(--text2);margin-top:10px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+.tier{background:var(--bg3);border:1px solid var(--line);border-radius:14px;padding:16px}
+.t-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.t-code{font-size:12px;font-weight:850;color:#fff;background:var(--accent-deep);width:20px;height:20px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.t-name{font-weight:850;font-size:15px;color:var(--text)}
+.t-stock{margin-left:auto;font-size:11.5px;color:var(--accent-deep);background:var(--accent-soft);border-radius:99px;padding:2px 9px;white-space:nowrap}
+.t-price{display:flex;align-items:baseline;gap:6px}
+.t-price .num{font-size:32px;font-weight:850;color:var(--accent-deep);line-height:1}
+.t-price .unit{font-size:13px;color:var(--text2);font-weight:700}
+.t-desc{font-size:13px;color:var(--text2);margin:9px 0 0}
+.t-opt{list-style:none;margin:12px 0 0;padding:0}
+.t-opt li{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--text2);padding:6px 0;border-top:1px dashed var(--line)}
+.t-opt li b{color:var(--text);font-weight:800;white-space:nowrap}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+.fact-i{background:var(--bg3);border:1px solid var(--line);border-radius:12px;padding:13px 14px}
+.fact-i .fv{font-size:22px;font-weight:850;color:var(--accent-deep);line-height:1.1}
+.fact-i .fl{font-size:12.5px;color:var(--text2);margin-top:4px}
 .steps{counter-reset:s;list-style:none;margin:6px 0 0}
 .steps li{counter-increment:s;position:relative;padding-left:40px;margin:14px 0}
 .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--accent-soft);border:1px solid var(--accent);color:var(--accent-deep);font-weight:850;font-size:13.5px;display:flex;align-items:center;justify-content:center}
@@ -1275,7 +1517,7 @@ h1{font-size:clamp(26px,4vw,36px);line-height:1.22;font-weight:850}
 .cta a{display:inline-flex;align-items:center;gap:7px;font-weight:800;border-radius:99px;padding:12px 22px;color:var(--text2);border:1px solid var(--line);background:var(--bg2)}
 .cta a:hover{color:var(--accent-deep);border-color:var(--accent-deep)}
 .disc{font-size:13px;color:var(--text2);border-top:1px solid var(--line);padding:18px 0 42px;margin-top:26px}
-@media(max-width:820px){.nav-in{gap:14px}.nav-links{gap:14px}}
+@media(max-width:820px){.nav-in{gap:14px}.nav-links{gap:14px}.tiers{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.nav-links{display:none}}
 @media(max-width:600px){.nav-right .btn{padding:8px 14px}}
 </style>
@@ -1296,9 +1538,30 @@ h1{font-size:clamp(26px,4vw,36px);line-height:1.22;font-weight:850}
 <main><div class="wrap">
 
   <div class="card">
-    <h2>刊例价格</h2>
-    <div class="price"><span class="num">99</span><span class="unit">元 / 月</span></div>
-    <p class="price-note">对应的就是首页当前展示的那种赞助位（一行三格，含右上角「赞助」标注）。按月计费，连续投放或多期打包可在协商时另议。</p>
+    <h2>刊例与档期</h2>
+    <p class="price-note">位置不同、价格不同；同一档位一次买满一期更便宜 —— 季付约 8 折、年付约 6.7 折，优惠已直接算进下表。</p>
+    <div class="tiers">
+{AD_TIERS}
+    </div>
+    <p class="price-note">价格为人民币含税刊例，含一次文案排版与上线；<b>不做文案代写、不承诺效果</b>。多档位打包或连续投放两期以上，可在协商时另议。</p>
+  </div>
+
+  <div class="card">
+    <h2>这些位子被谁看到</h2>
+    <p>本站只做一件事：把「现在还能领取的 AI 额度」整理成一张随时可查的表。来访者带着明确的领取意图，不是泛流量。</p>
+    <div class="facts">
+      <div class="fact-i"><div class="fv">{N_EDIT}</div><div class="fl">在架收录渠道</div></div>
+      <div class="fact-i"><div class="fv">{N_PAGES}</div><div class="fl">静态页面</div></div>
+      <div class="fact-i"><div class="fv">14+</div><div class="fl">放行的 AI 引擎爬虫</div></div>
+      <div class="fact-i"><div class="fv">3</div><div class="fl">机器可读数据出口</div></div>
+    </div>
+    <ul>
+      <li><b>受众</b>：AI 应用开发者、独立开发者与创业者、高校科研人员、正在做技术选型的企业工程师。</li>
+      <li><b>流量属性</b>：为「领取免费额度」而来，注册与试用意向强，适合按新客转化衡量的产品。</li>
+      <li><b>流量数据</b>：访问数与统计口径公开在 <a href="/traffic/">流量透明页</a>，并已接入 GA4 用于向第三方平台公开验证流量 —— 验证生效后可在 SimilarWeb 上直接核对，不必依赖其估算。</li>
+      <li><b>GEO 结构</b>：全站结构化数据 + llms.txt / llms-full.txt + 开放 data.json，内容可被 AI 引擎直接引证。</li>
+      <li><b>内容沉淀</b>：每条情报有独立详情页，长期可被搜索与 AI 答案引用，曝光不随档期结束而消失。</li>
+    </ul>
   </div>
 
   <div class="card">
@@ -1316,7 +1579,7 @@ h1{font-size:clamp(26px,4vw,36px);line-height:1.22;font-weight:850}
       <li>产品 / 品牌名称与官网地址；</li>
       <li>计划投放的落地页链接（不接受短链跳转到非官方页面）；</li>
       <li>一句话卖点（建议不超过 40 字）与一张主视觉素材；</li>
-      <li>期望投放档期与时长（按月计）；</li>
+      <li>期望档位（A 首屏主位 / B 常规位 / C 专题冠名）与投放时长（月 / 季 / 年）；</li>
       <li>你的联系方式（微信号或手机号），便于审核通过后沟通。</li>
     </ul>
   </div>
@@ -1338,6 +1601,8 @@ h1{font-size:clamp(26px,4vw,36px);line-height:1.22;font-weight:850}
 
   <div class="cta">
     <a class="mail" href="mailto:{SPONSOR_MAIL}?subject=合作赞助咨询">邮件联系 {SPONSOR_MAIL} →</a>
+    <a href="/traffic/">我们的流量数据 →</a>
+    <a href="/subscribe/">订阅新额度提醒</a>
     <a href="/">返回情报列表</a>
     <a href="/about/">关于本站</a>
   </div>
@@ -1347,10 +1612,314 @@ h1{font-size:clamp(26px,4vw,36px);line-height:1.22;font-weight:850}
 </body></html>'''
 sponsor_html = (SPONSOR
     .replace("{OG}", og_sponsor).replace("{LD}", sponsor_ld)
+    .replace("{SPONSOR_DESC}", esc(SPONSOR_LD_DESC))
+    .replace("{AD_TIERS}", AD_TIERS_HTML)
+    .replace("{N_EDIT}", str(len(editorial)))
+    .replace("{N_PAGES}", str(8 + len(name2href)))
     .replace("{SPONSOR_MAIL}", SPONSOR_MAIL))
 os.makedirs(os.path.join(DIST, "sponsor"), exist_ok=True)
 with open(os.path.join(DIST, "sponsor", "index.html"), "w", encoding="utf-8") as f:
     f.write(sponsor_html)
+
+# ---------- 订阅页（把脉冲流量沉淀进私域：微信群 / 邮件 / 付费社群） ----------
+# 为什么需要它：情报站天然是「脉冲流量」——一条情报被转发，48 小时内涌进来一批人，
+# 之后归零。只有把这一批人接进可持续触达的通道（群 / 邮箱），流量才不是一次性的。
+SUB_DESC = ("Token FBI 新额度提醒订阅：新上架情报、额度临时变更、限时活动截止第一时间推送。"
+            "提供免费微信群、邮件订阅与作者付费社群三种方式，本站无账号体系、不收集个人信息，随时可退出。")
+subscribe_ld = json.dumps({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "订阅新额度提醒 · Token FBI",
+    "url": f"{SITE}/subscribe/",
+    "description": SUB_DESC,
+    "isPartOf": {"@id": f"{SITE}#website"},
+    "publisher": {"@id": f"{SITE}#org"}
+}, ensure_ascii=False)
+og_subscribe = og_block("订阅新额度提醒 · Token FBI", SUB_DESC, SITE + "/subscribe/")
+SUBSCRIBE = r'''<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>订阅新额度提醒 · Token FBI</title>
+<meta name="description" content="{DESC}">
+<link rel="canonical" href="https://token-fbi.com/subscribe/">
+{OG}
+<script type="application/ld+json">{LD}</script>
+<style>
+:root{--bg:#F5F1E8;--bg2:#fff;--bg3:#EFEAE0;--line:rgba(34,52,58,.14);--text:#1F2A2E;--text2:#4C5A5E;--accent:#9EC7D8;--accent-deep:#2F6F82;--accent-soft:rgba(158,199,216,.22);--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--r:16px;--shadow:0 10px 30px rgba(34,52,58,.08);--sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--accent-deep);text-decoration:none;font-weight:700}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px}
+.nav{position:sticky;top:0;z-index:20;background:rgba(245,241,232,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:9px;font-weight:850;font-size:17px;white-space:nowrap;flex-shrink:0}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--accent);display:inline-block;flex-shrink:0}
+.nav-links{display:flex;gap:20px;font-size:14px;font-weight:700;white-space:nowrap}
+.nav-links a{color:var(--text2);white-space:nowrap}
+.nav-right{flex-shrink:0}
+.nav-right .btn{display:inline-flex;align-items:center;gap:7px;font-weight:800;border-radius:99px;padding:9px 18px;background:var(--accent);color:#0E2A33;white-space:nowrap}
+.hd{padding:44px 0 8px}
+.kicker{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.05em;color:#fff;background:var(--accent-deep);padding:4px 11px;border-radius:8px;margin-bottom:14px}
+h1{font-size:clamp(26px,4vw,36px);line-height:1.22;font-weight:850}
+.lead{color:var(--text2);font-size:16px;margin:14px 0 0}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:22px;margin:16px 0;box-shadow:var(--shadow)}
+.card h2{font-size:19px;color:var(--accent-deep);margin-bottom:12px}
+.card p,.card li{color:var(--text2);font-size:15px}
+.card ul{margin:8px 0 0 20px}
+.card li{margin:6px 0}
+.code{font-family:var(--mono);font-size:19px;font-weight:800;letter-spacing:.02em;background:var(--accent-soft);color:var(--accent-deep);padding:6px 14px;border-radius:9px;display:inline-block}
+.code-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0 4px}
+.copy-btn{font-family:var(--sans);font-size:13.5px;font-weight:800;border:1px solid var(--accent-deep);background:var(--bg2);color:var(--accent-deep);border-radius:99px;padding:8px 16px;cursor:pointer}
+.copy-btn:hover{background:var(--accent-soft)}
+.mail{display:inline-flex;align-items:center;gap:8px;font-weight:800;border-radius:99px;padding:12px 24px;background:var(--accent);color:#0E2A33;margin-top:10px}
+.email{font-family:var(--mono);background:var(--accent-soft);color:var(--accent-deep);padding:2px 8px;border-radius:6px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 0}
+.cta a{display:inline-flex;align-items:center;gap:7px;font-weight:800;border-radius:99px;padding:12px 22px;color:var(--text2);border:1px solid var(--line);background:var(--bg2)}
+.cta a:hover{color:var(--accent-deep);border-color:var(--accent-deep)}
+.disc{font-size:13px;color:var(--text2);border-top:1px solid var(--line);padding:18px 0 42px;margin-top:26px}
+@media(max-width:820px){.nav-in{gap:14px}.nav-links{gap:14px}}
+@media(max-width:700px){.nav-links{display:none}}
+@media(max-width:600px){.nav-right .btn{padding:8px 14px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-in">
+  <div class="brand"><span class="dot"></span>Token FBI</div>
+  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/about/">关于</a></div>
+  <div class="nav-right"><a class="btn" href="/">← 返回情报列表</a></div>
+</div></nav>
+
+<div class="wrap hd">
+  <span class="kicker">订阅</span>
+  <h1>新额度提醒</h1>
+  <p class="lead">情报站的内容更新是脉冲式的：一条额度被转发，人会集中涌进来一批。想要不错过，就把它接进一个能持续触达你的通道。</p>
+</div>
+
+<main><div class="wrap">
+
+  <div class="card">
+    <h2>① 免费微信群（最快）</h2>
+    <p>加站长微信，备注「情报」，我拉你进「Token 情报局」免费微信群。群里发得比站内快：额度临时变更、活动提前结束、刚上线的限时活动，都是先在群里说。</p>
+    <div class="code-row">
+      <span class="code" id="wx">{WECHAT_ID}</span>
+      <button class="copy-btn" data-copy="{WECHAT_ID}" type="button">复制微信号</button>
+    </div>
+    <p style="font-size:13.5px">已在微信里？直接在「添加朋友」搜索这串字符即可。</p>
+  </div>
+
+  <div class="card">
+    <h2>② 邮件订阅（不占手机）</h2>
+    <p>不想加群可以走邮箱。点下面的按钮，会打开你的邮件客户端并自动填好标题，直接发送即可；我只用它发情报更新，不发广告、不外借、随时可退。</p>
+    <a class="mail" href="mailto:{CONTACT_MAIL}?subject=%E8%AE%A2%E9%98%85%20Token%20FBI%20%E9%A2%9D%E5%BA%A6%E6%8F%90%E9%86%92&amp;body=%E6%88%91%E6%83%B3%E8%AE%A2%E9%98%85%E6%96%B0%E9%A2%9D%E5%BA%A6%E6%8F%90%E9%86%92%EF%BC%8C%E8%AF%B7%E6%8A%8A%E6%88%91%E5%8A%A0%E8%BF%9B%E5%88%97%E8%A1%A8%EF%BC%9A">邮件订阅 <span class="email">{CONTACT_MAIL}</span></a>
+    <p style="font-size:13.5px;margin-top:10px">也可以把邮箱直接发给这个地址，标题写「订阅」两个字就行。</p>
+  </div>
+
+  <div class="card">
+    <h2>③ 付费社群（进一步学习）</h2>
+    <p>免费群只发情报。如果你想学的是「怎么把这些额度变成自己的产出」——工作流、Agent、变现路径，可以加入作者付费社群。</p>
+    <p style="margin-top:8px"><b>99 元 / 年</b>，内容与免费群完全分开，不重复。</p>
+    <a class="mail" href="{PAID_GROUP_URL}" target="_blank" rel="noopener">了解付费社群 →</a>
+  </div>
+
+  <div class="card">
+    <h2>我会发什么，不会发什么</h2>
+    <ul>
+      <li><b>会发</b>：新上架的可白嫖额度、额度或价格临时变更、活动截止倒计时、下架提醒。</li>
+      <li><b>会发</b>：发现某条情报写错了、链接失效了，在群里同步更正。</li>
+      <li><b>不发</b>：与 AI 额度无关的广告、拉人头返利、需要你先付钱才能"领取"的东西。</li>
+      <li><b>不发</b>：打扰式轰炸。只在真有情报时出现，一周没东西就一周不出现。</li>
+    </ul>
+    <p style="margin-top:10px;font-size:13.5px">关于数据处理方式，见 <a href="/privacy/">隐私政策</a>：本站不设账号体系、不收集个人信息，只做匿名访问统计。</p>
+  </div>
+
+  <div class="cta">
+    <a href="/">← 返回 Token FBI 情报列表</a>
+    <a href="/table/">查看完整情报表</a>
+    <a href="/sponsor/">合作赞助</a>
+  </div>
+
+  <p class="disc">微信群与邮件的联系人是站长本人，不是客服机器人；消息不一定秒回，但一定有人看。</p>
+</div></main>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.getAttribute('data-copy'),old=b.textContent;
+    var ok=function(){b.textContent='已复制 ✓';setTimeout(function(){b.textContent=old;},1600);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){});}
+  });
+});
+</script>
+</body></html>'''
+subscribe_html = (SUBSCRIBE
+    .replace("{OG}", og_subscribe).replace("{LD}", subscribe_ld)
+    .replace("{DESC}", esc(SUB_DESC))
+    .replace("{WECHAT_ID}", WECHAT_ID)
+    .replace("{CONTACT_MAIL}", CONTACT_MAIL)
+    .replace("{PAID_GROUP_URL}", PAID_GROUP_URL))
+os.makedirs(os.path.join(DIST, "subscribe"), exist_ok=True)
+with open(os.path.join(DIST, "subscribe", "index.html"), "w", encoding="utf-8") as f:
+    f.write(subscribe_html)
+
+# ---------- 流量透明页（/traffic/） ----------
+# 为什么要有这一页：广告主查站会用 AITDK / SimilarWeb，而这类工具在流量低于
+# 「5,000 次 / 设备 / 国家」时不展示任何数据，且面板样本偏欧美，中文站常被显示为 0。
+# 与其被动挨一个「0」，不如主动把第一方数据和机制一起讲清楚 —— 这本身就是信任信号。
+# 数据源：token-fbi-next/traffic.json（改完跑 build.py 即更新页面）。
+TRAFFIC_DESC = ("Token FBI 流量透明说明：公开本站访问数据的统计方式、统计区间与当前数值，"
+                "并解释为何 AITDK、SimilarWeb 等第三方工具会显示 0 —— 它们按「设备 × 国家」"
+                "设有 5,000 次访问的展示门槛，且面板样本偏欧美，中文站点因此常被误判为没有流量。"
+                "本页同时给出可自行核验的入口。")
+with open(os.path.join(HERE, "traffic.json"), encoding="utf-8") as _f:
+    _tj = json.load(_f)
+
+_TMETRICS = "".join(
+    f'<div class="mt"><div class="mt-v">{esc(m.get("value", ""))}</div>'
+    f'<div class="mt-l">{esc(m.get("label", ""))}</div>'
+    f'<div class="mt-h">{esc(m.get("hint", ""))}</div></div>'
+    for m in _tj.get("metrics", []))
+_TSOURCES = "".join(
+    f'<li><b>{esc(s.get("name", ""))}</b>：{esc(s.get("desc", ""))}</li>'
+    for s in _tj.get("sources", []))
+_TLIVE = ""
+if _tj.get("live_dashboard_url"):
+    _TLIVE = (f'<li><b>{esc(_tj.get("live_dashboard_label") or "公开看板")}</b>：'
+              f'<a href="{esc(_tj["live_dashboard_url"])}" target="_blank" rel="noopener nofollow">'
+              f'查看实时公开数据 →</a>（第三方托管，链接可直接分享给合作方）</li>')
+_TSW = esc(_tj.get("similarweb_url", ""))
+
+traffic_ld = json.dumps({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "流量透明 · Token FBI 访问数据与统计口径说明",
+    "url": f"{SITE}/traffic/",
+    "description": TRAFFIC_DESC,
+    "isPartOf": {"@id": f"{SITE}#website"},
+    "publisher": {"@id": f"{SITE}#org"},
+    "inLanguage": "zh-CN"
+}, ensure_ascii=False)
+og_traffic = og_block("流量透明 · Token FBI 访问数据与统计口径说明", TRAFFIC_DESC, SITE + "/traffic/")
+
+TRAFFIC = r'''<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>流量透明 · Token FBI 访问数据与统计口径说明</title>
+<meta name="description" content="{DESC}">
+<link rel="canonical" href="https://token-fbi.com/traffic/">
+{OG}
+<script type="application/ld+json">{LD}</script>
+<style>
+:root{--bg:#F5F1E8;--bg2:#fff;--bg3:#EFEAE0;--line:rgba(34,52,58,.14);--text:#1F2A2E;--text2:#4C5A5E;--accent:#9EC7D8;--accent-deep:#2F6F82;--accent-soft:rgba(158,199,216,.22);--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--r:16px;--shadow:0 10px 30px rgba(34,52,58,.08);--sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--accent-deep);text-decoration:none;font-weight:700}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px}
+.nav{position:sticky;top:0;z-index:20;background:rgba(245,241,232,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:9px;font-weight:850;font-size:17px;white-space:nowrap;flex-shrink:0}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--accent);display:inline-block;flex-shrink:0}
+.nav-links{display:flex;gap:20px;font-size:14px;font-weight:700;white-space:nowrap}
+.nav-links a{color:var(--text2);white-space:nowrap}
+.nav-right{flex-shrink:0}
+.nav-right .btn{display:inline-flex;align-items:center;gap:7px;font-weight:800;border-radius:99px;padding:9px 18px;background:var(--accent);color:#0E2A33;white-space:nowrap}
+.hd{padding:44px 0 8px}
+.kicker{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.05em;color:#fff;background:var(--accent-deep);padding:4px 11px;border-radius:8px;margin-bottom:14px}
+h1{font-size:clamp(26px,4vw,36px);line-height:1.22;font-weight:850}
+.lead{color:var(--text2);font-size:16px;margin:14px 0 0}
+.mt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0 0}
+.mt{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+.mt-v{font-size:30px;font-weight:850;color:var(--accent-deep);line-height:1.1;font-variant-numeric:tabular-nums}
+.mt-l{font-size:14px;font-weight:800;margin-top:8px}
+.mt-h{font-size:12.5px;color:var(--text2);margin-top:3px}
+.meta{font-size:13px;color:var(--text2);margin-top:10px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:22px;margin:16px 0;box-shadow:var(--shadow)}
+.card h2{font-size:19px;color:var(--accent-deep);margin-bottom:12px}
+.card p,.card li{color:var(--text2);font-size:15px}
+.card ul{margin:8px 0 0 20px}
+.card li{margin:7px 0}
+.warn{background:var(--accent-soft);border:1px solid rgba(47,111,130,.28);border-radius:12px;padding:16px 18px;margin:14px 0 0}
+.warn p{color:var(--text);font-weight:700;font-size:15px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 0}
+.cta a{display:inline-flex;align-items:center;gap:7px;font-weight:800;border-radius:99px;padding:12px 22px;color:var(--text2);border:1px solid var(--line);background:var(--bg2)}
+.cta a:hover{color:var(--accent-deep);border-color:var(--accent-deep)}
+.disc{font-size:13px;color:var(--text2);border-top:1px solid var(--line);padding:18px 0 42px;margin-top:26px}
+@media(max-width:820px){.nav-in{gap:14px}.nav-links{gap:14px}.mt-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.nav-links{display:none}}
+@media(max-width:600px){.nav-right .btn{padding:8px 14px}}
+@media(max-width:520px){.mt-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-in">
+  <div class="brand"><span class="dot"></span>Token FBI</div>
+  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/sponsor/">合作赞助</a><a href="/about/">关于</a></div>
+  <div class="nav-right"><a class="btn" href="/">← 返回情报列表</a></div>
+</div></nav>
+
+<div class="wrap hd">
+  <span class="kicker">流量透明</span>
+  <h1>本站流量数据公开说明</h1>
+  <p class="lead">这一页放两样东西：我们后台的真实访问数据，以及为什么第三方工具查这个站会显示 0。两件事要放在一起看，否则很容易误判。</p>
+</div>
+
+<main><div class="wrap">
+
+  <div class="mt-grid">{TMETRICS}</div>
+  <p class="meta">统计区间 {RANGE}（{PERIOD}）· 数据来源 {SOURCE} · 本页数字随部署刷新，非实时数据。</p>
+
+  <div class="card">
+    <h2>这些数字是怎么来的</h2>
+    <ul>{TSOURCES}</ul>
+    <p style="margin-top:12px">{COUNTING_NOTE}</p>
+  </div>
+
+  <div class="card">
+    <h2>为什么第三方工具显示 0</h2>
+    <p>如果你用 AITDK、SimilarWeb 这类工具查 token-fbi.com，看到「0」或「数据不足」，这<b>不代表没有流量</b>，而是这类工具的机制决定的：</p>
+    <ul>
+      <li><b>它们是估算工具，不是测量工具。</b>只有站长在页面里装了统计代码才拿得到准确数据，第三方只能靠「面板样本 + 算法外推」去猜。样本里没有你，你就等于 0。</li>
+      <li><b>它们有一条公开的展示门槛。</b>SimilarWeb 官方说明写明：按「设备 × 国家」维度，<b>上月访问量需达到 5,000 次</b>才会展示任何数字，低于这条线一律显示「数据不足」。</li>
+      <li><b>它们的样本严重偏欧美。</b>本站读者以中文用户为主，恰好落在这类工具的面板盲区 —— 所以即使真实流量已经越过门槛，估算值仍可能贴近 0。</li>
+    </ul>
+    <div class="warn"><p>所以「第三方显示 0」这件事，我们选择主动写出来，而不是等你去发现。</p></div>
+  </div>
+
+  <div class="card">
+    <h2>你可以怎么自行核验</h2>
+    <ul>
+      <li><b>第三方平台比对</b>：<a href="{SIMILARWEB}" target="_blank" rel="noopener nofollow">在 SimilarWeb 查看 token-fbi.com →</a>。我们已接入 GA4 用于「公开验证」，验证生效后该页面显示的访问数将直接来自我们的 Google Analytics，而不是它的估算模型。</li>
+      {TLIVE}
+      <li><b>向我们要原始数据</b>：需要哪个统计区间、按什么维度拆（来源 / 地区 / 页面），发邮件到 <a href="mailto:{SPONSOR_MAIL}?subject=%E6%B5%81%E9%87%8F%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82">{SPONSOR_MAIL}</a>，我导出后台原始记录给你。</li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <a href="/sponsor/">合作赞助与广告位 →</a>
+    <a href="/table/">查看完整情报表</a>
+    <a href="/privacy/">隐私政策 · 统计口径</a>
+  </div>
+
+  <p class="disc">本页数字为站长第一方统计，不等同于任何第三方估算平台的数值；两者口径不同，出现差异属正常现象。关于统计的完整说明见 <a href="/privacy/">隐私政策</a>。</p>
+</div></main>
+</body></html>'''
+traffic_html = (TRAFFIC
+    .replace("{OG}", og_traffic).replace("{LD}", traffic_ld)
+    .replace("{DESC}", esc(TRAFFIC_DESC))
+    .replace("{TMETRICS}", _TMETRICS)
+    .replace("{TSOURCES}", _TSOURCES)
+    .replace("{TLIVE}", _TLIVE)
+    .replace("{SIMILARWEB}", _TSW)
+    .replace("{RANGE}", esc(_tj.get("range_label", "")))
+    .replace("{PERIOD}", esc(_tj.get("period_label", "")))
+    .replace("{COUNTING_NOTE}", esc(_tj.get("counting_note", "")))
+    .replace("{SOURCE}", esc(_tj.get("source", "")))
+    .replace("{SPONSOR_MAIL}", SPONSOR_MAIL))
+os.makedirs(os.path.join(DIST, "traffic"), exist_ok=True)
+with open(os.path.join(DIST, "traffic", "index.html"), "w", encoding="utf-8") as f:
+    f.write(traffic_html)
 
 # ---------- 完整情报表（独立页面，首页仅留入口） ----------
 table_ld = json.dumps({
@@ -1523,6 +2092,7 @@ def _inject_head(txt, block):
 
 _fav_patched = 0
 _author_patched = 0
+_stat_patched = 0
 for _root, _dirs, _files in os.walk(DIST):
     for _fn in _files:
         if not _fn.endswith(".html"):
@@ -1540,8 +2110,13 @@ for _root, _dirs, _files in os.walk(DIST):
             if _ok:
                 _fav_patched += 1
                 _changed = True
+        if ANALYTICS_BLOCK and _ANALYTICS_MARK not in _txt:
+            _txt, _ok = _inject_head(_txt, ANALYTICS_BLOCK)
+            if _ok:
+                _stat_patched += 1
+                _changed = True
         if _changed:
             with open(_fp, "w", encoding="utf-8") as f:
                 f.write(_txt)
 
-print(f"built: index + {detail_written} detail pages + table/sponsor/about/privacy/terms/404 + robots/sitemap/llms/data.json/indexnow | items={len(items)} anchor={anchored} | favicon={_fav_patched} author={_author_patched} pages")
+print(f"built: index + {detail_written} detail pages + table/sponsor/about/privacy/terms/404 + robots/sitemap/llms/data.json/indexnow | items={len(items)} anchor={anchored} | favicon={_fav_patched} author={_author_patched} stats={_stat_patched} pages")
