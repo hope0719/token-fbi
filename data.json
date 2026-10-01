@@ -1,42 +1,53 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-09-28",
-  "total": 36,
+  "last_updated": "2026-10-02",
+  "total": 40,
   "items": [
     {
       "name": "WorkBuddy",
       "vendor": "",
       "category": "tool",
       "free_type": "限时活动",
-      "quota": "HY3 限免至 2026-09-30；HY4 preview 新用户首开对话起 14 天内免费。",
-      "validity": "2026-10-10",
+      "quota": "HY3 免费至 10 月 31 日；HY4 preview 按体验记录享免费额度。",
+      "validity": "2026-10-31",
       "region": "",
       "gates": [],
       "note": "",
       "sponsored": false,
-      "entry_url": "https://curl.qcloud.com/8dvDMEyi",
-      "intel_url": "https://curl.qcloud.com/8dvDMEyi",
-      "last_verified": "2026-09-28",
+      "entry_url": "https://www.codebuddy.cn/events/invite?inviteCode=3g5i964bgg0sknpi",
+      "intel_url": "https://www.codebuddy.cn/events/invite?inviteCode=3g5i964bgg0sknpi",
+      "last_verified": "2026-10-02",
       "modality": "HY3 · HY4 preview · DeepSeek-V4.1-Flash",
-      "signup": "新用户注册送 2000 积分；HY4 preview 新用户（含此前没体验过的老用户）首次开启后享 14 天每日免费额度"
+      "signup": "新用户注册送 2000 积分；HY4 preview 首次体验用户须在 10 月 10 日 23:59 前开启对话。",
+      "activity_rules": [
+        "HY3：本轮限免延长至 2026 年 10 月 31 日。",
+        "HY4 preview 已体验用户：每天 23:00—次日 08:00 可继续使用免费额度。",
+        "HY4 preview 从未体验用户（包括此前未体验过该模型的老账号）：在 2026 年 10 月 10 日 23:59 前首次开启一次 HY4 preview 对话，从开启当天起享连续 14 天的每日免费额度。",
+        "每日免费额度不等于不限量；额度数值和时间口径以客户端活动说明为准。"
+      ],
+      "update_source": "用户补充，2026-10-02"
     },
     {
       "name": "Qoder cn",
       "vendor": "",
       "category": "tool",
       "free_type": "限时活动",
-      "quota": "Qwen3.8-Flash 活动期调用不扣 Credits；活动 9 月 18 日–30 日，每天登录另赠 100 Credits（30 天有效）。",
-      "validity": "2026-09-30",
+      "quota": "千问 Qwen3.8-Flash 限免至 10 月 31 日。",
+      "validity": "2026-10-31",
       "region": "",
       "gates": [],
       "note": "",
       "sponsored": false,
-      "entry_url": "https://www.aliyun.com/product/lingma?userCode=ygtxup80",
-      "intel_url": "https://www.aliyun.com/product/lingma?userCode=ygtxup80",
-      "last_verified": "2026-09-28",
+      "entry_url": "https://t.aliyun.com/U/Ob4f6l",
+      "intel_url": "https://t.aliyun.com/U/Ob4f6l",
+      "last_verified": "2026-10-02",
       "modality": "Qwen3.8-Flash · Qwen3.8-Max",
-      "signup": ""
+      "signup": "",
+      "activity_rules": [
+        "Qwen3.8-Flash 免费使用延长至 2026 年 10 月 31 日；具体额度以客户端活动说明为准。"
+      ],
+      "update_source": "用户补充，2026-10-02"
     },
     {
       "name": "ZCode",
@@ -636,6 +647,107 @@
       "modality": "",
       "signup": "",
       "ad_badge": false
+    },
+    {
+      "vendor": "",
+      "category": "tool",
+      "free_type": "限时活动",
+      "region": "国际版",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "last_verified": "2026-10-02",
+      "signup": "",
+      "update_source": "用户补充，2026-10-02",
+      "name": "WorkBuddy 国际版",
+      "quota": "DeepSeek V4.1 Flash 免费至 10 月 9 日。",
+      "validity": "2026-10-09",
+      "modality": "DeepSeek V4.1 Flash",
+      "entry_url": "https://workbuddy.ai/invite?code=3V5YNJCC",
+      "intel_url": "https://workbuddy.ai/invite?code=3V5YNJCC",
+      "activity_rules": [
+        "下载 WorkBuddy 国际版客户端并注册或登录账号。",
+        "新建任务，在模型选择器中选择 DeepSeek V4.1 Flash。",
+        "免费期截至 2026 年 10 月 9 日；使用前确认客户端仍显示免费，国内版与国际版活动不同。"
+      ]
+    },
+    {
+      "vendor": "MiniMax",
+      "category": "tool",
+      "free_type": "限时活动",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "last_verified": "2026-10-02",
+      "signup": "",
+      "update_source": "用户补充，2026-10-02",
+      "name": "MiniMax Code 国庆签到",
+      "quota": "9 月 28 日—10 月 7 日，每日签到积分翻倍，新老用户均可参加。",
+      "validity": "2026-10-07",
+      "modality": "MiniMax Code",
+      "entry_url": "https://agent.minimax.cn/",
+      "intel_url": "https://agent.minimax.cn/",
+      "activity_rules": [
+        "活动时间：2026 年 9 月 28 日—10 月 7 日。",
+        "打开 MiniMax Code 并登录账号。",
+        "找到每日签到入口，每天签到一次，领取双倍积分。",
+        "新老用户均可参加；双倍积分不代表 Token 用量或所有模型均免费。"
+      ]
+    },
+    {
+      "name": "华为云码道",
+      "vendor": "华为云",
+      "category": "tool",
+      "free_type": "每日赠送",
+      "quota": "每天赠送 1000 万 Token，当天有效，支持三款福利模型。",
+      "validity": "每日额度当天有效；活动截止时间未注明",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://edu.huaweicloud.com/signup/00ce9d4a32584039a9741d8488d16711?channelCode=edu&medium=share_kfzlb&invitation=ae0390096b6645e1825b6b01e4cb04ec",
+      "intel_url": "https://edu.huaweicloud.com/signup/00ce9d4a32584039a9741d8488d16711?channelCode=edu&medium=share_kfzlb&invitation=ae0390096b6645e1825b6b01e4cb04ec",
+      "last_verified": "2026-10-02",
+      "modality": "GLM-5.3 Flash · DeepSeek V4 系列",
+      "signup": "通过活动入口领取，具体资格以活动页面为准。",
+      "activity_rules": [
+        "每天赠送 1000 万 Token，当天有效。",
+        "专属福利模型：deepseek-v4.1-flash、glm-5.3-flash、deepseek-v4-flash-0731。",
+        "上述三款专属模型只消耗这批福利 Token；其他模型不属于此福利口径。",
+        "通过领取入口查看活动并按页面指引参与；每日免费额度不等于无限使用。"
+      ],
+      "update_source": "用户补充，2026-10-02"
+    },
+    {
+      "name": "Google Antigravity（反重力）",
+      "vendor": "Google",
+      "category": "tool",
+      "free_type": "免费层",
+      "quota": "每周提供免费使用额度，支持 Gemini、Claude 等模型。",
+      "validity": "每周免费额度；以官方当前方案为准",
+      "region": "",
+      "gates": [
+        "Google 账号"
+      ],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://antigravity.google/download",
+      "intel_url": "https://antigravity.google/pricing",
+      "last_verified": "2026-10-02",
+      "modality": "Gemini · Claude · GPT-OSS",
+      "signup": "下载客户端并使用 Google 账号登录，选择免费个人方案。",
+      "activity_rules": [
+        "免费个人方案为 0 美元/月，提供基础周使用限额；官方未在定价页公布固定 Token 数量。",
+        "可选 Gemini 3.8 Flash、Gemini 3.7 Flash、Gemini 3.6 Flash、Gemini 3.1 Pro。",
+        "可选 Claude Sonnet 4.6（Thinking）、Claude Opus 4.6（Thinking）和 GPT-OSS 120B。",
+        "下载并登录客户端，在模型选择器中切换模型；剩余额度、重置时间及可用模型以账号实际显示为准。"
+      ],
+      "source_urls": [
+        "https://antigravity.google/pricing",
+        "https://antigravity.google/docs/models/"
+      ],
+      "update_source": "官方定价页与模型文档，2026-10-02"
     }
   ],
   "retired": [

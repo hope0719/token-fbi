@@ -314,7 +314,7 @@ def render_ad(it):
 </article>'''
 
 # ---------- 站长推荐（仅作标识，不再单列板块）----------
-RECO_NAMES = ["阶跃星辰 StepFun", "美团 longcat 大模型"]
+RECO_NAMES = ["阶跃星辰 StepFun", "美团 longcat 大模型", "Google Antigravity（反重力）"]
 RECO_SET = set(RECO_NAMES)
 
 # 编辑列表口径：赞助条目只出现在赞助位，不进入「全部情报」与情报表
@@ -710,6 +710,8 @@ img{max-width:100%}
       <a href="/data.json" target="_blank" rel="noopener">开放数据 data.json</a>
       <a href="/llms.txt" target="_blank" rel="noopener">llms.txt</a>
       <a href="/robots.txt" target="_blank" rel="noopener">robots.txt</a>
+      <h2 style="margin-top:20px">友情链接</h2>
+      <a href="https://jikemax.com/" target="_blank" rel="noopener">极客 max</a>
     </div>
     <div>
       <h2>参与</h2>
@@ -811,6 +813,7 @@ section p{color:var(--text2);font-size:15px}
 {POSTER_SEC}
 <section><h2>免费额度与活动口径</h2><p>{QUOTA}</p></section>
 {NOTE_SEC}
+{ACTIVITY_RULES}
 {EFFECT_SEC}
 <section><h2>核验说明</h2><p>本页由 Token 情报局根据公开页面与实际入口进行人工整理。额度、模型和活动时间可能变化，请在领取前再次查看平台页面。</p></section>
 {INVITE_SEC}
@@ -901,6 +904,10 @@ for i, it in enumerate(items):
     lead_html = f'<p class="lead">{effect}</p>' if effect else ""
     effect_sec_html = (f'<section><h2>使用判断与限制</h2><p>{effect}</p></section>'
                        if effect else "")
+    rules = it.get("activity_rules") or []
+    activity_rules_html = ("<section><h2>活动规则与领取方式</h2><ul>" +
+                           "".join(f"<li>{esc(rule)}</li>" for rule in rules) +
+                           "</ul></section>") if rules else ""
     # 备注（仅当条目显式提供时渲染）
     note_txt = esc(it.get("note", "")).strip()
     note_sec_html = f'<p class="note-warn">{note_txt}</p>' if note_txt else ""
@@ -939,6 +946,7 @@ for i, it in enumerate(items):
         .replace("{REGION}", region).replace("{VALIDITY_TXT}", validity_txt)
         .replace("{LEAD}", lead_html).replace("{EFFECT_SEC}", effect_sec_html)
         .replace("{INVITE_SEC}", invite_sec_html).replace("{NOTE_SEC}", note_sec_html)
+        .replace("{ACTIVITY_RULES}", activity_rules_html)
         .replace("{POSTER_SEC}", poster_sec_html)
         # 注意：详情页不展示官网链接（用户明确要求），事实卡不放官网入口
         # entry_url 缺失 / 为 "#"（如纯海报类条目）时不渲染「前往平台入口」按钮，避免死链
@@ -1045,6 +1053,8 @@ for it in editorial:
     u = f"{SITE}{name2href.get(it.get('name'), '/')}"
     qt = (it.get('quota', '') or '').replace("\n", " ")
     llms_full += f"- [{it.get('name','')}]({u}): {qt}\n"
+    for rule in it.get("activity_rules") or []:
+        llms_full += f"  - {rule}\n"
 # 已下架名单：让 AI 引擎能直接回答「XX 还能免费领吗」，避免引用过期情报
 if retired:
     llms_full += (f"\n## 已下架（{len(retired)} 条）\n\n"
