@@ -16,22 +16,6 @@
 > 本站此前因托管平台调整换过多次地址（旧链接已失效）。现在官网域名已固定，不会再变；
 > **建议立刻收藏 / 加书签：https://token-fbi.com/ ** ，以后只认这个地址。
 
-**备用镜像**
-
-| 入口 | 地址 | 状态 |
-| :--- | :--- | :--- |
-| Cloudflare Pages | [https://token-fbi.pages.dev/](https://token-fbi.pages.dev/) | ✅ 连接 GitHub `main` 自动构建；公开页面与资源已核对 |
-| GitHub Pages | [https://hope0719.github.io/token-fbi/](https://hope0719.github.io/token-fbi/) | ✅ 正常（桌面端可访问，微信内可能打不开） |
-| WorkBuddy 镜像（bj9） | [https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net](https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net) | ⏸️ **2026-09-20 恢复发布**；内容截至 2026-09-20（18 张卡），暂缓同步以保证域名绑定稳定 |
-| WorkBuddy 沙箱镜像（旧） | [https://e8e6b4805f0047529578b50c0389a7a3.app.workbuddy.host/](https://e8e6b4805f0047529578b50c0389a7a3.app.workbuddy.host/) | ⏸️ 内容为 2026-09-20 版本；未随本次更新同步 |
-| 只读旧版沙箱 | [https://570b1bfec9714f2da647db883f639f30.app.workbuddy.host/](https://570b1bfec9714f2da647db883f639f30.app.workbuddy.host/) | ⛔ 平台侧已无法再更新，内容停留在 2026-09-17 |
-
-> ### ✅ 原主站（bj9）已于 2026-09-20 恢复
->
-> 原主站 `https://1c91cc10f9bc4d9ca5f98f41481b615c.bj9.agentos-app.net` 曾于 2026-09-15 起停止维护，经与平台方（腾讯云工单 202609176240）协作，**已于 2026-09-20 恢复发布**，当前内容为最新版。
->
-> 该域名此后保持稳定，后续更新通过发布链路写入；日常内容仍以 GitHub `main` 自动同步的官网 `token-fbi.com` 为准。
-
 ![Token FBI 站点截图](screenshot.png)
 
 站点实时展示 **大模型类 8 家、工具类 13 家、项目类 1 家**（共 22 张）的最新免费 token 情报，支持按分类筛选（全部 / 大模型 / 工具），限时活动会标注截止日期角标。进入「观望名单」的平台已不再展示官网大卡。
