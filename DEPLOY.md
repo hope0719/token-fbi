@@ -20,8 +20,15 @@ python3 build.py
 ## 公开地址
 
 - 正式域名：`https://token-fbi.com/`
-- Cloudflare Pages 生产别名：`https://token-fbi.pages.dev/`
-- 预览分支：`https://<分支名>.token-fbi.pages.dev`
+- Cloudflare Pages 生产别名：`https://token-fbi.pages.dev/`，301 跳转到正式域名，保留路径和查询参数。
+- 预览分支：`https://<分支名>.token-fbi.pages.dev`，已开启 Cloudflare Access 登录访问限制。
+
+## 部署平台与归档
+
+- **唯一正式部署平台：Cloudflare Pages**，GitHub `main` 提交自动构建并发布。
+- **GitHub Pages 已于 2026-10-02 关闭**；历史 Actions 与 deployment 记录只作历史记录，不代表仍在发布。
+- `.github/workflows/indexnow.yml` 保留，用于主站上线后的搜索引擎通知，不负责站点部署。
+- 旧 `.edgeone/` 已完整归档到 `archive/edgeone-legacy/`，仅用于历史追溯，不参与当前构建或部署。
 
 ## Cloudflare Pages 设置
 
