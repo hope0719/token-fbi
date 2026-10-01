@@ -2,71 +2,55 @@
 # 目的：让所有主流 AI 引擎爬虫都能索引本站，被生成式答案引用（GEO）。
 # 注意：须同时开启各平台"AI 索引/引用权限"（豆包后台、百度搜索资源平台等）。
 #
-# 唯一例外：/go/ 是推广与返佣外链的中转跳转层（内容页 CTA → 合作方链接），
-# 不属于本站内容，一律 Disallow，避免跳转层进入索引、稀释 GEO 信号。
-# 注意 robots.txt 的分组规则：爬虫只遵守「最匹配它的那一组」，
-# 因此每个 UA 分组都需要各自写明 Disallow: /go/，不能只写在 * 组里。
+# /go/ 为推广外链中转层：允许抓取，让爬虫读取 noindex 或 302。
+# 跳转 URL 不进入 sitemap；静态兜底页声明 noindex。
 
 User-agent: *
 Allow: /
-Disallow: /go/
 
 # —— OpenAI / ChatGPT ——
 User-agent: GPTBot
 Allow: /
-Disallow: /go/
 User-agent: ChatGPT-User
 Allow: /
-Disallow: /go/
 User-agent: OAI-SearchBot
 Allow: /
-Disallow: /go/
 
 # —— Anthropic / Claude ——
 User-agent: ClaudeBot
 Allow: /
-Disallow: /go/
 
 # —— Perplexity ——
 User-agent: PerplexityBot
 Allow: /
-Disallow: /go/
 
 # —— Google (Gemini / AI Overviews) ——
 User-agent: Google-Extended
 Allow: /
-Disallow: /go/
 User-agent: Googlebot
 Allow: /
-Disallow: /go/
 
 # —— Apple (Applebot-Extended, Siri/AE) ——
 User-agent: Applebot-Extended
 Allow: /
-Disallow: /go/
 
 # —— Microsoft (Copilot / Bing) ——
 User-agent: Bingbot
 Allow: /
-Disallow: /go/
 
 # —— 字节 / 豆包（Bytespider 是豆包抓取核心，务必放行）——
 User-agent: Bytespider
 Allow: /
-Disallow: /go/
 
 # —— 百度（文心 / 百度搜索）——
 User-agent: Baiduspider
 Allow: /
-Disallow: /go/
 
 # —— 搜狗 / 360（Kimi/DeepSeek 间接信源底盘）——
 User-agent: Sogou web spider
 Allow: /
-Disallow: /go/
 User-agent: 360Spider
 Allow: /
-Disallow: /go/
 
 # —— 通用兜底 ——
 Sitemap: https://token-fbi.com/sitemap.xml

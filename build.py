@@ -11,7 +11,7 @@
   - traffic/index.html  流量透明页（数据源 traffic.json：第一方访问快照 + 统计口径 + 「第三方工具为何显示 0」的机制说明）
                         另见文件顶部 GA4_ID / CF_BEACON_TOKEN 两个统计开关（默认留空＝不注入任何脚本）
   - go/<slug>/index.html 推广外链中转页 + dist/_redirects（Cloudflare 原生 302）
-                        条目带 promo_url 时全站 CTA 自动改走 /go/<slug>/；robots 对每个 UA 分组 Disallow
+                        条目带 promo_url 时全站 CTA 自动改走 /go/<slug>/；robots 允许抓取；中转页 noindex
   - intel/item-NNN/index.html 每卡详情页（带 Article + BreadcrumbList JSON-LD，GEO 高 ROI）
   - robots.txt          全量 AI 爬虫放行（含 Bytespider/Baiduspider）
   - sitemap.xml         首页 + 详情页 + 开放数据
@@ -21,6 +21,7 @@
 本脚本不依赖网络、不推送任何仓库——产出自包含于 dist/，供后续"直接覆盖"旧站。
 """
 import json, html, os, re, shutil
+from urllib.parse import quote
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "data.json")
@@ -205,7 +206,7 @@ def slug(i, name):
 # ---------- 外链出口层 /go/<slug>/（推广/返佣链接的统一改造点） ----------
 # 存在的意义：
 #   ① 换链不动页面 —— 注册联盟拿到专属链接后，只改 data.json 的 promo_url，全站 CTA 自动切换；
-#   ② 与内容页彻底分离 —— /go/ 在 robots 整体 Disallow，跳转层不会污染索引与 GEO 信号；
+#   ② 与内容页彻底分离 —— /go/ 允许抓取，使用 302 与 noindex 中转页避免进入索引；
 #   ③ 归因与叠加参数只改一处 —— 后续要加 UTM / 渠道码，改这里即可。
 # 条目只要带 promo_url，全站所有「点击领取 / 前往平台入口 / 广告 CTA」都会自动走中转。
 GO_NAME = "go"
@@ -959,7 +960,7 @@ with open(os.path.join(DIST, "index.html"), "w", encoding="utf-8") as f:
 # 双保险实现：
 #   ① _redirects  —— Cloudflare Pages 原生 302（真实 HTTP 跳转，最快、无闪白）
 #   ② index.html  —— 本地预览 / 非 CF 环境的兜底（meta refresh + 手动链接）
-# 整个 /go/ 目录在 robots.txt 里整体 Disallow，跳转层不被抓取、不污染索引。
+# /go/ 允许抓取；原生 302 跳转，兜底页通过 meta 与 X-Robots-Tag 声明 noindex。
 # 先清掉上一轮产物：某条 promo_url 被取消后，旧的跳转页与 _redirects 必须同步下线。
 shutil.rmtree(os.path.join(DIST, GO_NAME), ignore_errors=True)
 _redir_path = os.path.join(DIST, "_redirects")
@@ -1021,12 +1022,18 @@ with open(os.path.join(HERE, "robots.txt"), encoding="utf-8") as f:
 with open(os.path.join(DIST, "robots.txt"), "w", encoding="utf-8") as f:
     f.write(robotxt)
 
+# /go/ 的静态兜底页允许爬虫访问，但不进入索引。
+# Pages 的 _headers 不作用于 _redirects 生成的 302；302 由目标 URL 承接，
+# HTML 兜底页另有 meta robots noindex，不把 /go/ 写入 sitemap。
+with open(os.path.join(DIST, "_headers"), "w", encoding="utf-8") as f:
+    f.write("/go/*\n  X-Robots-Tag: noindex\n")
+
 # ---------- sitemap.xml ----------
 urls = [f"{SITE}/", f"{SITE}/table/", f"{SITE}/about/", f"{SITE}/sponsor/", f"{SITE}/subscribe/", f"{SITE}/traffic/", f"{SITE}/privacy/", f"{SITE}/terms/", f"{SITE}/data.json", f"{SITE}/llms.txt", f"{SITE}/llms-full.txt"]
 urls += [f"{SITE}/intel/{slug(i, it.get('name',''))}/" for i, it in enumerate(items) if not it.get("ad_only")]
 sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for u in urls:
-    sitemap += f'  <url><loc>{esc(u)}</loc><lastmod>{anchored}</lastmod></url>\n'
+    sitemap += f'  <url><loc>{esc(quote(u, safe=":/?#[]@!$&'()*+,;=%"))}</loc><lastmod>{anchored}</lastmod></url>\n'
 sitemap += '</urlset>\n'
 with open(os.path.join(DIST, "sitemap.xml"), "w", encoding="utf-8") as f:
     f.write(sitemap)
