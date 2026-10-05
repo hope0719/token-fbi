@@ -1,9 +1,51 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-04",
-  "total": 44,
+  "last_updated": "2026-10-05",
+  "total": 46,
   "items": [
+    {
+      "name": "APMIX",
+      "vendor": "",
+      "category": "model",
+      "free_type": "限时活动",
+      "quota": "限时共享活动池 100 亿加权 Tokens（模型 gpt-6-luna-free）；共享池先到先得，耗尽即止，不消耗账号常规额度。",
+      "validity": "2026-10-31",
+      "region": "",
+      "gates": [],
+      "note": "共享池为活动专用（非每人 100 亿）；2026-10-02 17:00 UTC 已开启；海外服务，需海外网络环境。",
+      "sponsored": false,
+      "entry_url": "https://apmix.ai/event",
+      "intel_url": "https://apmix.ai/event",
+      "last_verified": "2026-10-05",
+      "modality": "gpt-6-luna-free",
+      "signup": "注册 APMIX 账号（免费档即可，无需付费计划）并创建 API Key；活动开启后配置 base_url=https://api.apmix.ai/v1、model=gpt-6-luna-free。",
+      "activity_rules": [
+        "活动时间：2026-10-02 17:00 UTC 开启，共享池 100 亿加权 Tokens 先到先得。",
+        "模型：gpt-6-luna-free；OpenAI 兼容（https://api.apmix.ai/v1）与 Anthropic 兼容双接口。",
+        "免费 / Starter / Pro / Max 账号均可参与，不消耗账号常规额度，无需付费计划。",
+        "共享池可能提前耗尽或提前结束；使用前查看官方活动页倒计时与最新条件。"
+      ],
+      "update_source": "全网搜索补充，2026-10-05"
+    },
+    {
+      "name": "智谱AI（Z.AI 开放平台）",
+      "vendor": "智谱",
+      "category": "model",
+      "free_type": "长期免费",
+      "quota": "新用户注册送 2000 万 Tokens（长期有效）；GLM-4.7-Flash / GLM-4.5-Flash / GLM-4.6V-Flash 等注册即免、不限 Token；并发上限 30。",
+      "validity": "",
+      "region": "",
+      "gates": [],
+      "note": "国内直连、中文能力强；GLM-5.x 主力模型按赠额/计费使用，Flash 系列长期免费不限量。",
+      "sponsored": false,
+      "entry_url": "https://open.bigmodel.cn",
+      "intel_url": "https://open.bigmodel.cn",
+      "last_verified": "2026-10-05",
+      "modality": "GLM-5 / GLM-5.1 / GLM-5.2 / GLM-4.7-Flash / GLM-4.5-Flash",
+      "signup": "手机号注册 open.bigmodel.cn，无需信用卡；实名后创建 API Key，base_url=https://open.bigmodel.cn/api/paas/v4/。",
+      "update_source": "全网搜索补充，2026-10-05"
+    },
     {
       "name": "WorkBuddy",
       "vendor": "",
