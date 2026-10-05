@@ -315,8 +315,8 @@ def render_ad(it):
   <div class="ad-foot">{main_cta}{more}</div>
 </article>'''
 
-# ---------- 站长推荐（仅作标识，不再单列板块）----------
-RECO_NAMES = ["阶跃星辰 StepFun", "美团 longcat 大模型", "Google Antigravity（反重力）"]
+# ---------- 站长推荐（已关闭：不再显示任何卡片的「站长推荐」角标）----------
+RECO_NAMES = []
 RECO_SET = set(RECO_NAMES)
 
 # 编辑列表口径：赞助条目只出现在赞助位，不进入「全部情报」与情报表
