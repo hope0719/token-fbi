@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-05",
-  "total": 46,
+  "last_updated": "2026-10-06",
+  "total": 44,
   "items": [
     {
       "name": "APMIX",
@@ -69,42 +69,6 @@
         "每日免费额度不等于不限量；额度数值和时间口径以客户端活动说明为准。"
       ],
       "update_source": "用户补充，2026-10-02"
-    },
-    {
-      "name": "腾讯元器",
-      "vendor": "腾讯",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "新用户直送 1 亿 Token；个人 / 小微 10 万次/月免费 API 调用，不绑卡、长期有效。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://yuanqi.tencent.com",
-      "intel_url": "https://yuanqi.tencent.com",
-      "last_verified": "2026-10-04",
-      "modality": "混元 Hunyuan · 元器 API 分发",
-      "signup": "注册并创建智能体，在「元器 API 分发」入口领取 1 亿免费 Token，无需绑卡。",
-      "update_source": "全网搜索补充，2026-10-04"
-    },
-    {
-      "name": "DeepSeek 开放平台",
-      "vendor": "DeepSeek",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "新开发者账号赠 500 万 Tokens（30 天）；网页 / App 对话长期免费。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "API 免费额度有时效（30 天）；网页 / App 端对话长期免费；额度以平台当前活动为准。",
-      "sponsored": false,
-      "entry_url": "https://platform.deepseek.com",
-      "intel_url": "https://platform.deepseek.com",
-      "last_verified": "2026-10-04",
-      "modality": "DeepSeek V4 · V4.1-Flash",
-      "signup": "注册开发者账号即送免费额度；网页 / App 直接对话无需额度。",
-      "update_source": "全网搜索补充，2026-10-04"
     },
     {
       "name": "Qoder cn",
@@ -865,6 +829,16 @@
     }
   ],
   "retired": [
+    {
+      "name": "腾讯元器",
+      "url": "https://yuanqi.tencent.com",
+      "reason": "用户明确要求永不上架（2026-10-06）"
+    },
+    {
+      "name": "DeepSeek 开放平台",
+      "url": "https://platform.deepseek.com",
+      "reason": "用户明确要求永不上架（2026-10-06）"
+    },
     {
       "name": "GLM-5.3-Flash（Ox-Alpha）",
       "url": "https://zcode.z.ai/cn",
