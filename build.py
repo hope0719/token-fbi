@@ -131,6 +131,8 @@ d = json.load(open(SRC, encoding="utf-8"))
 items = d.get("items", [])
 # 已下架 / 已停收的平台（保留官网链接 + 下架原因，首页「下架名单」区块渲染）
 retired = d.get("retired", [])
+# 观望区：暂时从首页撤下、持续观察是否恢复免费额度的平台
+watchlist = d.get("watchlist", [])
 anchored = d.get("last_updated") or max((it.get("last_verified", "") for it in items), default="")
 
 CAT_LABEL = {"model": "大模型", "tool": "工具", "event": "限时活动"}
@@ -337,6 +339,26 @@ sponsor_html = f'''
     {sponsor_cards}
   </div>
 </div></section>'''
+
+# ---------- 观望区 ----------
+# 来自 data.json 的 watchlist 数组：暂时从首页撤下、持续观察是否恢复免费额度
+watchlist_rows = []
+for w in watchlist:
+    wu = (w.get("url") or "").strip()
+    watchlist_rows.append(
+        f'<li><div class="r-top"><span class="r-name">{esc(w.get("name", ""))}</span>'
+        f'<a class="r-url" href="{esc(wu)}" target="_blank" rel="noopener nofollow">'
+        f'{esc(host_of(wu))} ↗</a></div>'
+        f'<p class="r-why"><b>观望原因</b>{esc(w.get("reason", ""))}</p></li>')
+
+watchlist_html = f'''
+<section class="section" id="watchlist"><div class="wrap">
+  <h2 class="sec-title">观望区</h2>
+  <p class="sec-sub">以下 {len(watchlist)} 个平台暂从首页撤下，持续观察其免费额度是否恢复或政策是否明朗；保留官网入口。</p>
+  <ul class="retired">
+    {chr(10).join("    " + x for x in watchlist_rows)}
+  </ul>
+</div></section>''' if watchlist else ""
 
 # ---------- 下架名单 ----------
 # 来自 data.json 的 retired 数组：保留官网入口 + 写明下架原因
@@ -660,6 +682,8 @@ img{max-width:100%}
   </div>
 </div></section>
 
+{WATCHLIST}
+
 {OFFICIAL}
 
 <section class="section" id="faq"><div class="wrap">
@@ -742,6 +766,7 @@ index_html = (TEMPLATE
        .replace("{OG}", og_home)
        .replace("{CARDS}", "\n".join(cards_html))
        .replace("{SPONSOR}", sponsor_html)
+       .replace("{WATCHLIST}", watchlist_html)
        .replace("{OFFICIAL}", retired_html)
        .replace("{DATA_TABLE}", data_table_html)
        .replace("{N_TOTAL}", str(len(editorial)))

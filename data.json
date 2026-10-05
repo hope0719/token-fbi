@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-10-06",
-  "total": 44,
+  "total": 43,
   "items": [
     {
       "name": "APMIX",
@@ -229,23 +229,6 @@
       "intel_url": "https://console.volcengine.com/ark/region:cn-beijing/openManagement/rewardPlan",
       "last_verified": "2026-09-28",
       "modality": "豆包 Doubao 系列（Seed / Pro）",
-      "signup": ""
-    },
-    {
-      "name": "七牛云 AI 推理",
-      "vendor": "",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "送 300 万 token，新用户再送 1000 万；长期有效、无截止时间。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://s.qiniu.com/VV7Zfa",
-      "intel_url": "https://s.qiniu.com/VV7Zfa",
-      "last_verified": "2026-08-28",
-      "modality": "千问 3.8 Max · DeepSeek V4 Flash · Kimi K3 · GLM-5.3-Flash",
       "signup": ""
     },
     {
@@ -913,6 +896,13 @@
       "name": "GitHub Copilot Free",
       "url": "https://github.com/features/copilot",
       "reason": "免费额度偏小（每月 2000 次补全 + 50 次对话），实际可用量有限。"
+    }
+  ],
+  "watchlist": [
+    {
+      "name": "七牛云 AI 推理",
+      "url": "https://s.qiniu.com/VV7Zfa",
+      "reason": "用户于 2026-10-06 要求移入观望区，待观察免费额度政策是否稳定。"
     }
   ]
 }
