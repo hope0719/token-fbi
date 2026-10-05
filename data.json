@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-10-06",
-  "total": 43,
+  "total": 41,
   "items": [
     {
       "name": "APMIX",
@@ -773,42 +773,6 @@
         "https://antigravity.google/docs/models/"
       ],
       "update_source": "官方定价页与模型文档，2026-10-02"
-    },
-    {
-      "name": "百度千帆（文心）",
-      "vendor": "百度",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "ERNIE-Speed / Lite 长期免费（有 QPS 限制）；新用户每模型赠 100 万 Tokens（有效期 3 个月）。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://qianfan.cloud.baidu.com",
-      "intel_url": "https://qianfan.cloud.baidu.com",
-      "last_verified": "2026-10-04",
-      "modality": "文心 ERNIE-Speed · ERNIE-Lite · ERNIE 系列",
-      "signup": "百度智能云控制台开通千帆，ERNIE-Speed / Lite 直接免费调用；新用户赠每模型 100 万 Tokens。",
-      "update_source": "全网搜索补充，2026-10-04"
-    },
-    {
-      "name": "讯飞星火（开放平台）",
-      "vendor": "讯飞",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "Spark Lite 永久免费 API；星辰 MaaS 开源模型 0 元无限量。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://www.xfyun.cn",
-      "intel_url": "https://www.xfyun.cn",
-      "last_verified": "2026-10-04",
-      "modality": "星火 Spark Lite · 星辰 MaaS 开源模型",
-      "signup": "讯飞开放平台注册后，Spark Lite 直接免费调用，无需购买套餐。",
-      "update_source": "全网搜索补充，2026-10-04"
     }
   ],
   "retired": [
@@ -903,6 +867,16 @@
       "name": "七牛云 AI 推理",
       "url": "https://s.qiniu.com/VV7Zfa",
       "reason": "用户于 2026-10-06 要求移入观望区，待观察免费额度政策是否稳定。"
+    },
+    {
+      "name": "百度千帆（文心）",
+      "url": "https://qianfan.cloud.baidu.com",
+      "reason": "用户于 2026-10-06 要求移入观望区，待观察免费额度政策是否稳定"
+    },
+    {
+      "name": "讯飞星火（开放平台）",
+      "url": "https://www.xfyun.cn",
+      "reason": "用户于 2026-10-06 要求移入观望区，待观察免费额度政策是否稳定"
     }
   ]
 }
