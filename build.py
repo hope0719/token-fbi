@@ -735,6 +735,7 @@ img{max-width:100%}
       <a href="/llms.txt" target="_blank" rel="noopener">llms.txt</a>
       <a href="/robots.txt" target="_blank" rel="noopener">robots.txt</a>
       <h2 style="margin-top:20px">友情链接</h2>
+      <a href="https://jikemax.com/" target="_blank" rel="noopener">极客 max</a>
       <a href="https://token-fbi.com/" target="_blank" rel="noopener">Token FBI</a>
     </div>
     <div>
