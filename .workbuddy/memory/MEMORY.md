@@ -1,12 +1,22 @@
 # Token FBI 项目长期记忆
 
-## 数据来源
-- app.js 中 TOKENS 数组是唯一数据源，所有卡片字段：name / type / modality / rating / quota / effect / how / link / updated / limited（可选）
-- 分类规则：type="工具" → 工具；modality 含 GLM5.2 → GLM5.2；其余 → 大模型
+## 数据来源（2026-10-07 纠正）
+- **唯一数据源是 `data.json` 的 `items` 数组**（早期 app.js 时代已废弃，本站改由 `build.py` 从 `data.json` 生成 `dist/` 静态站，Cloudflare Pages 自动构建）。
+- 每张卡字段（data.json 现行 schema）：`name` / `vendor` / `category`（model|tool|event）/ `free_type`（长期免费|注册赠送|限时活动|每日赠送|免费层|付费中转）/ `quota` / `validity`（限时活动 ISO 截止日）/ `region`（国内留空|国际）/ `gates`（绑卡/手机号等门槛）/ `note` / `sponsored`（赞助位标记）/ `entry_url` / `intel_url` / `signup` / `modality` / `last_verified` / `update_source`。
+- 另设 `watchlist`（观望区）与 `retired`（下架名单）两个独立数组，均不计入 `total`，不进首页卡片与完整情报表。
+- 分类规则（`build.py` 的 `catOf`）：`category="tool"` → 工具；`modality` 含 GLM5.2 → GLM5.2；其余 → 大模型。
+
+## 收录硬门槛（2026-10-07 新增，任一不满足即不收或先入 watchlist）
+1. 确有**可公开领取**的真实免费额度；**排除**付费抵扣券、绑卡付费、纯赞助（赞助位单独隔离，禁止标「免费」）。
+2. 限时活动（`free_type=限时活动` 或 `category=event`）**必须带 `validity` ISO 截止日**，构建时自动加「限时」角标。
+3. 国内可直连优先；「国际」only 且需海外网络环境的单独标注，不与国内卡混排。
+4. 同构聚合器（OpenRouter 式）只保留 1–2 个代表，不堆量。
+5. 来源须经过滤：**禁止从竞品 GitHub `awesome-free-llm` 类清单整批灌入**；每条须人工核验免费额度口径后再入 `items`。
 
 ## 排序列规则
 - "前"：较新模型（GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 / MiniMax-M3 等同期或更晚）
 - "后"：在这些模型之前发布的模型
+- 现由 `build.py` 的 `editorial` 顺序人工维护位置（新模型段在前、老模型段在后）。
 
 ## 2026-07-19 新增条目
 - ZenMux（DeepSeek V4 Pro/Flash 永久免费无限调用，无需实名，国内低延迟）
@@ -46,3 +56,8 @@
 - 智谱 GLM-4.7-Flash（完全免费永久，替代 GLM-4.5-Flash）
 - CometAPI（Kimi K2 每月 10万输入+100万输出，免费层）
 - OpenRouter（35+ 免费模型聚合，BYOK 每月 100 万次）
+
+## 近期问题复盘（2026-10-07）
+- 10-04 曾从 `候选来源.md` 整批拉取 3 个竞品 GitHub `awesome-free-llm` 仓库做差集灌入，门槛仅为 `✅/⚠️` 松判断，导致随后 `retired` 累积至 17、`watchlist` 至 9（一边收一边砍）。
+- **约定**：今后新增一律走「收录硬门槛」逐条核验，不再整批灌；海外-only、付费中转、试用额度过小、返佣聚合的不收或先入 watchlist。
+- 当前 44 条中仍有边界项待你确认是否清理：蓝博科技（lanbuff，`付费中转`+赞助）、腾讯云服务器（空 `free_type`+赞助）、Token Harbor/OrcaRouter/UnoRouter（三个同构国际聚合器）。
