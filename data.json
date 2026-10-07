@@ -1,9 +1,116 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-06",
-  "total": 45,
+  "last_updated": "2026-10-07",
+  "total": 50,
   "items": [
+    {
+      "name": "Token Harbor",
+      "vendor": "",
+      "category": "model",
+      "free_type": "长期免费",
+      "quota": "每月免费额度（按 7 天滚动窗口发放，4 窗/月，未用不结转），当前覆盖 DeepSeek V4 Flash、DeepSeek V4.1 Flash、MiMo V2.6 Flash、TH-Rudder 等；单一 OpenAI 兼容 API，无需信用卡。",
+      "validity": "",
+      "region": "国际",
+      "gates": [],
+      "note": "免费额度按官方单价折算（非钱包余额）；需海外网络环境；免费路由的提示可能用于诊断与产品优化。",
+      "sponsored": false,
+      "entry_url": "https://tokenharbor.ai",
+      "intel_url": "https://tokenharbor.ai/pricing",
+      "last_verified": "2026-10-07",
+      "modality": "DeepSeek V4 Flash · DeepSeek V4.1 Flash · MiMo V2.6 Flash · TH-Rudder",
+      "signup": "注册 tokenharbor.ai 账号（无需信用卡），在控制台开启免费模型并创建 API Key；base_url=https://tokenharbor.ai/v1（OpenAI 兼容）。",
+      "update_source": "全网搜索补充，2026-10-07",
+      "source_urls": [
+        "https://tokenharbor.ai/pricing",
+        "https://aifree.dev/offer/token-harbor-free"
+      ]
+    },
+    {
+      "name": "OrcaRouter",
+      "vendor": "",
+      "category": "model",
+      "free_type": "长期免费",
+      "quota": "免费档无需信用卡：调用 orcarouter/free 按难度自动路由到免费模型（DeepSeek V4 Flash Free、DeepSeek V4 Pro Free、Qwen3.8 27B Free 等），模型本身 $0，按请求速率限制、额度不耗尽。",
+      "validity": "",
+      "region": "国际",
+      "gates": [],
+      "note": "单一 OpenAI 兼容网关、0% token 加价；免费档按请求速率限流（超阈返回 429，自动恢复）；需海外网络环境。",
+      "sponsored": false,
+      "entry_url": "https://www.orcarouter.ai",
+      "intel_url": "https://www.orcarouter.ai/models/orcarouter/free",
+      "last_verified": "2026-10-07",
+      "modality": "DeepSeek V4 Flash Free · DeepSeek V4 Pro Free · Qwen3.8 27B Free",
+      "signup": "注册 orcarouter.ai（免费档无需信用卡）并创建 API Key；base_url=https://api.orcarouter.ai/v1，model=orcarouter/free（OpenAI 兼容）。",
+      "update_source": "全网搜索补充，2026-10-07",
+      "source_urls": [
+        "https://www.orcarouter.ai/models/orcarouter/free"
+      ]
+    },
+    {
+      "name": "UnoRouter",
+      "vendor": "",
+      "category": "model",
+      "free_type": "长期免费",
+      "quota": "219+ 免费模型（无需信用卡）：单一 OpenAI 兼容端点聚合 Groq / Gemini / NVIDIA / SiliconFlow / Z.ai 等 18 家免费上游，含 GLM 5.3、DeepSeek V4、Qwen3.8、MiniMax-M3 等；每免费模型约 1 请求/分钟（共享池）。",
+      "validity": "",
+      "region": "国际",
+      "gates": [],
+      "note": "聚合多家官方永久免费额度，统一一个 Key 调用；免费档为共享容量、受上游限流（429 自动恢复）；需海外网络环境。",
+      "sponsored": false,
+      "entry_url": "https://unorouter.com",
+      "intel_url": "https://unorouter.com/en/blog/free-models-aggregated",
+      "last_verified": "2026-10-07",
+      "modality": "GLM 5.3 · DeepSeek V4 Flash · Qwen3.8 Flash · MiniMax-M3 · Gemini 3.8 Flash 等 219+ 免费模型",
+      "signup": "注册 unorouter.com（无需信用卡）获取 API Key；base_url=https://api.unorouter.com/v1，调用 *:free 模型（OpenAI 兼容）。",
+      "update_source": "全网搜索补充，2026-10-07",
+      "source_urls": [
+        "https://unorouter.com/en/blog/free-models-aggregated",
+        "https://www.llmperks.com/unorouter"
+      ]
+    },
+    {
+      "name": "Novita AI",
+      "vendor": "",
+      "category": "model",
+      "free_type": "长期免费",
+      "quota": "常驻 $0 模型（轮换）：Qwen3.5-Plus、Qwen3.6-Plus、Bunny 等按 0/0 输入-输出计价；新用户欢迎额度（促销期 $10、基线 $0.50，自动到账、无需信用卡）；referral 计划双方各 $10 额度。",
+      "validity": "",
+      "region": "国际",
+      "gates": [],
+      "note": "200+ 模型（文本/图像/视频/音频/embedding）单一 OpenAI 兼容 API；常驻 $0 模型随新品上线轮换；需海外网络环境。",
+      "sponsored": false,
+      "entry_url": "https://novita.ai",
+      "intel_url": "https://novita.ai",
+      "last_verified": "2026-10-07",
+      "modality": "Qwen3.5-Plus · Qwen3.6-Plus · Bunny · Llama · DeepSeek · GLM 等 200+ 模型",
+      "signup": "注册 novita.ai（Google/GitHub/邮箱，无需信用卡），欢迎额度自动到账；base_url=https://api.novita.ai/openai/v1（OpenAI 兼容）。",
+      "update_source": "全网搜索补充，2026-10-07",
+      "source_urls": [
+        "https://blogs.novita.ai/are-there-any-open-source-llm-api-keys-available/"
+      ]
+    },
+    {
+      "name": "Fireworks AI",
+      "vendor": "",
+      "category": "model",
+      "free_type": "注册赠送",
+      "quota": "新账号赠送 $1 免费额度（自动到账，无需信用卡即可开始）；覆盖文本/视觉/图像/语音/embedding 等开源模型，按 token 计费。",
+      "validity": "",
+      "region": "国际",
+      "gates": [],
+      "note": "无卡限速 10 RPM；美国 inference 平台、OpenAI 兼容；需海外网络环境。",
+      "sponsored": false,
+      "entry_url": "https://fireworks.ai",
+      "intel_url": "https://fireworks.ai/pricing",
+      "last_verified": "2026-10-07",
+      "modality": "DeepSeek · Llama · Qwen · GLM · FLUX · Whisper 等开源模型",
+      "signup": "注册 fireworks.ai（Google SSO/邮箱，无卡送 $1），创建 API Key；base_url=https://api.fireworks.ai/inference/v1（OpenAI 兼容）。",
+      "update_source": "全网搜索补充，2026-10-07",
+      "source_urls": [
+        "https://fireworks.ai/pricing"
+      ]
+    },
     {
       "name": "APMIX",
       "vendor": "",
