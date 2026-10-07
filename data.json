@@ -2,115 +2,8 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-10-07",
-  "total": 44,
+  "total": 39,
   "items": [
-    {
-      "name": "Token Harbor",
-      "vendor": "",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "每月免费额度（按 7 天滚动窗口发放，4 窗/月，未用不结转），当前覆盖 DeepSeek V4 Flash、DeepSeek V4.1 Flash、MiMo V2.6 Flash、TH-Rudder 等；单一 OpenAI 兼容 API，无需信用卡。",
-      "validity": "",
-      "region": "国际",
-      "gates": [],
-      "note": "免费额度按官方单价折算（非钱包余额）；需海外网络环境；免费路由的提示可能用于诊断与产品优化。",
-      "sponsored": false,
-      "entry_url": "https://tokenharbor.ai",
-      "intel_url": "https://tokenharbor.ai/pricing",
-      "last_verified": "2026-10-07",
-      "modality": "DeepSeek V4 Flash · DeepSeek V4.1 Flash · MiMo V2.6 Flash · TH-Rudder",
-      "signup": "注册 tokenharbor.ai 账号（无需信用卡），在控制台开启免费模型并创建 API Key；base_url=https://tokenharbor.ai/v1（OpenAI 兼容）。",
-      "update_source": "全网搜索补充，2026-10-07",
-      "source_urls": [
-        "https://tokenharbor.ai/pricing",
-        "https://aifree.dev/offer/token-harbor-free"
-      ]
-    },
-    {
-      "name": "OrcaRouter",
-      "vendor": "",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "免费档无需信用卡：调用 orcarouter/free 按难度自动路由到免费模型（DeepSeek V4 Flash Free、DeepSeek V4 Pro Free、Qwen3.8 27B Free 等），模型本身 $0，按请求速率限制、额度不耗尽。",
-      "validity": "",
-      "region": "国际",
-      "gates": [],
-      "note": "单一 OpenAI 兼容网关、0% token 加价；免费档按请求速率限流（超阈返回 429，自动恢复）；需海外网络环境。",
-      "sponsored": false,
-      "entry_url": "https://www.orcarouter.ai",
-      "intel_url": "https://www.orcarouter.ai/models/orcarouter/free",
-      "last_verified": "2026-10-07",
-      "modality": "DeepSeek V4 Flash Free · DeepSeek V4 Pro Free · Qwen3.8 27B Free",
-      "signup": "注册 orcarouter.ai（免费档无需信用卡）并创建 API Key；base_url=https://api.orcarouter.ai/v1，model=orcarouter/free（OpenAI 兼容）。",
-      "update_source": "全网搜索补充，2026-10-07",
-      "source_urls": [
-        "https://www.orcarouter.ai/models/orcarouter/free"
-      ]
-    },
-    {
-      "name": "UnoRouter",
-      "vendor": "",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "219+ 免费模型（无需信用卡）：单一 OpenAI 兼容端点聚合 Groq / Gemini / NVIDIA / SiliconFlow / Z.ai 等 18 家免费上游，含 GLM 5.3、DeepSeek V4、Qwen3.8、MiniMax-M3 等；每免费模型约 1 请求/分钟（共享池）。",
-      "validity": "",
-      "region": "国际",
-      "gates": [],
-      "note": "聚合多家官方永久免费额度，统一一个 Key 调用；免费档为共享容量、受上游限流（429 自动恢复）；需海外网络环境。",
-      "sponsored": false,
-      "entry_url": "https://unorouter.com",
-      "intel_url": "https://unorouter.com/en/blog/free-models-aggregated",
-      "last_verified": "2026-10-07",
-      "modality": "GLM 5.3 · DeepSeek V4 Flash · Qwen3.8 Flash · MiniMax-M3 · Gemini 3.8 Flash 等 219+ 免费模型",
-      "signup": "注册 unorouter.com（无需信用卡）获取 API Key；base_url=https://api.unorouter.com/v1，调用 *:free 模型（OpenAI 兼容）。",
-      "update_source": "全网搜索补充，2026-10-07",
-      "source_urls": [
-        "https://unorouter.com/en/blog/free-models-aggregated",
-        "https://www.llmperks.com/unorouter"
-      ]
-    },
-    {
-      "name": "Novita AI",
-      "vendor": "",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "常驻 $0 模型（轮换）：Qwen3.5-Plus、Qwen3.6-Plus、Bunny 等按 0/0 输入-输出计价；新用户欢迎额度（促销期 $10、基线 $0.50，自动到账、无需信用卡）；referral 计划双方各 $10 额度。",
-      "validity": "",
-      "region": "国际",
-      "gates": [],
-      "note": "200+ 模型（文本/图像/视频/音频/embedding）单一 OpenAI 兼容 API；常驻 $0 模型随新品上线轮换；需海外网络环境。",
-      "sponsored": false,
-      "entry_url": "https://novita.ai",
-      "intel_url": "https://novita.ai",
-      "last_verified": "2026-10-07",
-      "modality": "Qwen3.5-Plus · Qwen3.6-Plus · Bunny · Llama · DeepSeek · GLM 等 200+ 模型",
-      "signup": "注册 novita.ai（Google/GitHub/邮箱，无需信用卡），欢迎额度自动到账；base_url=https://api.novita.ai/openai/v1（OpenAI 兼容）。",
-      "update_source": "全网搜索补充，2026-10-07",
-      "source_urls": [
-        "https://blogs.novita.ai/are-there-any-open-source-llm-api-keys-available/"
-      ]
-    },
-    {
-      "name": "Fireworks AI",
-      "vendor": "",
-      "category": "model",
-      "free_type": "注册赠送",
-      "quota": "新账号赠送 $1 免费额度（自动到账，无需信用卡即可开始）；覆盖文本/视觉/图像/语音/embedding 等开源模型，按 token 计费。",
-      "validity": "",
-      "region": "国际",
-      "gates": [],
-      "note": "无卡限速 10 RPM；美国 inference 平台、OpenAI 兼容；需海外网络环境。",
-      "sponsored": false,
-      "entry_url": "https://fireworks.ai",
-      "intel_url": "https://fireworks.ai/pricing",
-      "last_verified": "2026-10-07",
-      "modality": "DeepSeek · Llama · Qwen · GLM · FLUX · Whisper 等开源模型",
-      "signup": "注册 fireworks.ai（Google SSO/邮箱，无卡送 $1），创建 API Key；base_url=https://api.fireworks.ai/inference/v1（OpenAI 兼容）。",
-      "update_source": "全网搜索补充，2026-10-07",
-      "source_urls": [
-        "https://fireworks.ai/pricing"
-      ]
-    },
     {
       "name": "WorkBuddy",
       "vendor": "",
@@ -133,7 +26,15 @@
         "HY4 preview 从未体验用户（包括此前未体验过该模型的老账号）：在 2026 年 10 月 10 日 23:59 前首次开启一次 HY4 preview 对话，从开启当天起享连续 14 天的每日免费额度。",
         "每日免费额度不等于不限量；额度数值和时间口径以客户端活动说明为准。"
       ],
-      "update_source": "用户补充，2026-10-02"
+      "update_source": "用户补充，2026-10-02",
+      "detail_slug": "0001hgwg",
+      "legacy_detail_paths": [
+        "/intel/item-000-workbuddy/",
+        "/intel/item-002-workbuddy/",
+        "/intel/item-004-workbuddy/",
+        "/intel/item-005-workbuddy/",
+        "/intel/item-009-workbuddy/"
+      ]
     },
     {
       "name": "Qoder cn",
@@ -154,7 +55,15 @@
       "activity_rules": [
         "Qwen3.8-Flash 免费使用延长至 2026 年 10 月 31 日；具体额度以客户端活动说明为准。"
       ],
-      "update_source": "用户补充，2026-10-02"
+      "update_source": "用户补充，2026-10-02",
+      "detail_slug": "0002eanr",
+      "legacy_detail_paths": [
+        "/intel/item-001-qoder-cn/",
+        "/intel/item-003-qoder-cn/",
+        "/intel/item-005-qoder-cn/",
+        "/intel/item-006-qoder-cn/",
+        "/intel/item-010-qoder-cn/"
+      ]
     },
     {
       "name": "ZCode",
@@ -171,7 +80,15 @@
       "intel_url": "https://bigmodel.cn/activity/trial-card/PU9MTWG0PM",
       "last_verified": "2026-09-28",
       "modality": "GLM-5.3 · GLM-5.3-Flash",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0003dfyo",
+      "legacy_detail_paths": [
+        "/intel/item-002-zcode/",
+        "/intel/item-004-zcode/",
+        "/intel/item-006-zcode/",
+        "/intel/item-007-zcode/",
+        "/intel/item-011-zcode/"
+      ]
     },
     {
       "name": "蓝博科技（lanbuff）",
@@ -192,7 +109,15 @@
       "ad_brand": "蓝博科技",
       "ad_hook": "商业 API 中转 · 按量付费",
       "ad_desc": "单价低于官方直充；非免费渠道，本卡为赞助展示。",
-      "ad_cta": "前往官网"
+      "ad_cta": "前往官网",
+      "detail_slug": "0004sags",
+      "legacy_detail_paths": [
+        "/intel/item-003-蓝博科技-lanbuff/",
+        "/intel/item-005-蓝博科技-lanbuff/",
+        "/intel/item-007-蓝博科技-lanbuff/",
+        "/intel/item-008-蓝博科技-lanbuff/",
+        "/intel/item-012-蓝博科技-lanbuff/"
+      ]
     },
     {
       "name": "阶跃星辰 StepFun",
@@ -209,7 +134,15 @@
       "intel_url": "https://platform.stepfun.com",
       "last_verified": "2026-09-28",
       "modality": "step-5-preview · step-3.7-flash",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0005ebrx",
+      "legacy_detail_paths": [
+        "/intel/item-004-阶跃星辰-stepfun/",
+        "/intel/item-006-阶跃星辰-stepfun/",
+        "/intel/item-008-阶跃星辰-stepfun/",
+        "/intel/item-009-阶跃星辰-stepfun/",
+        "/intel/item-013-阶跃星辰-stepfun/"
+      ]
     },
     {
       "name": "Cline",
@@ -226,7 +159,15 @@
       "intel_url": "https://cline.bot",
       "last_verified": "2026-09-23",
       "modality": "DeepSeek-V4.1-Flash · GLM-5.3-Flash · Muse Spark 1.3",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0006ipub",
+      "legacy_detail_paths": [
+        "/intel/item-005-cline/",
+        "/intel/item-007-cline/",
+        "/intel/item-009-cline/",
+        "/intel/item-010-cline/",
+        "/intel/item-014-cline/"
+      ]
     },
     {
       "name": "Kilo Code",
@@ -243,7 +184,15 @@
       "intel_url": "https://kilocode.ai",
       "last_verified": "2026-09-23",
       "modality": "Nemotron 3 Ultra · Nex-N2.5-Pro · MiniMax M2.7 · Laguna S 2.1 · 混元 Hy3 等 16 个免费模型",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0007bpct",
+      "legacy_detail_paths": [
+        "/intel/item-006-kilo-code/",
+        "/intel/item-008-kilo-code/",
+        "/intel/item-010-kilo-code/",
+        "/intel/item-011-kilo-code/",
+        "/intel/item-015-kilo-code/"
+      ]
     },
     {
       "name": "Verdent AI",
@@ -260,7 +209,15 @@
       "intel_url": "https://verdent.ai",
       "last_verified": "2026-09-23",
       "modality": "GLM-5.3-Flash · DeepSeek V4 Flash",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0008iiuz",
+      "legacy_detail_paths": [
+        "/intel/item-007-verdent-ai/",
+        "/intel/item-009-verdent-ai/",
+        "/intel/item-011-verdent-ai/",
+        "/intel/item-012-verdent-ai/",
+        "/intel/item-016-verdent-ai/"
+      ]
     },
     {
       "name": "腾讯 Marvis（马维斯）",
@@ -277,7 +234,15 @@
       "intel_url": "https://marvis.qq.com",
       "last_verified": "2026-07-24",
       "modality": "混元 · DeepSeek V4",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0009cwfz",
+      "legacy_detail_paths": [
+        "/intel/item-008-腾讯-marvis-马维斯/",
+        "/intel/item-010-腾讯-marvis-马维斯/",
+        "/intel/item-012-腾讯-marvis-马维斯/",
+        "/intel/item-013-腾讯-marvis-马维斯/",
+        "/intel/item-017-腾讯-marvis-马维斯/"
+      ]
     },
     {
       "name": "火山引擎 Ark 协作计划（字节）",
@@ -294,7 +259,15 @@
       "intel_url": "https://console.volcengine.com/ark/region:cn-beijing/openManagement/rewardPlan",
       "last_verified": "2026-09-28",
       "modality": "豆包 Doubao 系列（Seed / Pro）",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0010wxvr",
+      "legacy_detail_paths": [
+        "/intel/item-009-火山引擎-ark-协作计划-字节/",
+        "/intel/item-011-火山引擎-ark-协作计划-字节/",
+        "/intel/item-013-火山引擎-ark-协作计划-字节/",
+        "/intel/item-014-火山引擎-ark-协作计划-字节/",
+        "/intel/item-018-火山引擎-ark-协作计划-字节/"
+      ]
     },
     {
       "name": "美团 catpaw（App）",
@@ -311,7 +284,16 @@
       "intel_url": "https://catpaw.meituan.com/",
       "last_verified": "2026-08-28",
       "modality": "GLM-5.3-Flash · LongCat",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0011zwrf",
+      "legacy_detail_paths": [
+        "/intel/item-011-美团-catpaw-app/",
+        "/intel/item-012-美团-catpaw-app/",
+        "/intel/item-013-美团-catpaw-app/",
+        "/intel/item-014-美团-catpaw-app/",
+        "/intel/item-015-美团-catpaw-app/",
+        "/intel/item-019-美团-catpaw-app/"
+      ]
     },
     {
       "name": "豆包拉新项目",
@@ -335,7 +317,16 @@
       "ad_cta": "查看详情",
       "poster_url": "https://token-fbi.com/poster-doubao-laxin.jpg",
       "poster_alt": "豆包拉新项目 · 网盘拉新活动海报",
-      "poster_caption": "长按识别海报中的二维码，查看项目详情与参与方式。"
+      "poster_caption": "长按识别海报中的二维码，查看项目详情与参与方式。",
+      "detail_slug": "0012ocut",
+      "legacy_detail_paths": [
+        "/intel/item-012-豆包拉新项目/",
+        "/intel/item-013-豆包拉新项目/",
+        "/intel/item-014-豆包拉新项目/",
+        "/intel/item-015-豆包拉新项目/",
+        "/intel/item-016-豆包拉新项目/",
+        "/intel/item-020-豆包拉新项目/"
+      ]
     },
     {
       "name": "硅基流动 SiliconFlow",
@@ -352,7 +343,16 @@
       "intel_url": "https://cloud.siliconflow.cn/i/HgdEna2e",
       "last_verified": "2026-09-28",
       "modality": "DeepSeek V4 Pro · GLM-5.3 · Kimi K3 · 千问 3.8 等",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0013uppn",
+      "legacy_detail_paths": [
+        "/intel/item-013-硅基流动-siliconflow/",
+        "/intel/item-014-硅基流动-siliconflow/",
+        "/intel/item-015-硅基流动-siliconflow/",
+        "/intel/item-016-硅基流动-siliconflow/",
+        "/intel/item-017-硅基流动-siliconflow/",
+        "/intel/item-021-硅基流动-siliconflow/"
+      ]
     },
     {
       "name": "NVIDIA NIM 免费 API",
@@ -369,7 +369,16 @@
       "intel_url": "https://build.nvidia.com",
       "last_verified": "2026-07-15",
       "modality": "MiniMax M2.7 · GLM-5.1 · Kimi K2.5 · DeepSeek V3.2 · Gemma 4 · Llama 4",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0014jyev",
+      "legacy_detail_paths": [
+        "/intel/item-014-nvidia-nim-免费-api/",
+        "/intel/item-015-nvidia-nim-免费-api/",
+        "/intel/item-016-nvidia-nim-免费-api/",
+        "/intel/item-017-nvidia-nim-免费-api/",
+        "/intel/item-018-nvidia-nim-免费-api/",
+        "/intel/item-022-nvidia-nim-免费-api/"
+      ]
     },
     {
       "name": "商汤 Token Plan（sensenova）",
@@ -386,7 +395,16 @@
       "intel_url": "https://www.sensenova.cn/token-plan",
       "last_verified": "2026-09-29",
       "modality": "DeepSeek V4",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0015ebfj",
+      "legacy_detail_paths": [
+        "/intel/item-015-商汤-token-plan-sensenova/",
+        "/intel/item-016-商汤-token-plan-sensenova/",
+        "/intel/item-017-商汤-token-plan-sensenova/",
+        "/intel/item-018-商汤-token-plan-sensenova/",
+        "/intel/item-019-商汤-token-plan-sensenova/",
+        "/intel/item-023-商汤-token-plan-sensenova/"
+      ]
     },
     {
       "name": "Agnes AI",
@@ -403,7 +421,16 @@
       "intel_url": "https://platform.agnes-ai.com",
       "last_verified": "2026-08-03",
       "modality": "Agnes-3.0-Flash · Agnes-Image-2.0 · Agnes-Video-2.5",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0016rexg",
+      "legacy_detail_paths": [
+        "/intel/item-016-agnes-ai/",
+        "/intel/item-017-agnes-ai/",
+        "/intel/item-018-agnes-ai/",
+        "/intel/item-019-agnes-ai/",
+        "/intel/item-020-agnes-ai/",
+        "/intel/item-024-agnes-ai/"
+      ]
     },
     {
       "name": "美团 longcat 大模型",
@@ -423,7 +450,16 @@
       "signup": "",
       "invite_text": "我在用 LongCat AI 开放平台，体验 LongCat 最新模型，编程、推理、Agent 工具调用能力持续进化！通过我的链接完成实名认证，你我各得 1000 万 Tokens（叠加平台新人礼包最高可得 2000 万）；首购下单即可返实付金额 5%！",
       "invite_url": "https://longcat.chat/platform/product?inviteCode=CNOXBVA4",
-      "invite_code": "CNOXBVA4"
+      "invite_code": "CNOXBVA4",
+      "detail_slug": "0017onfn",
+      "legacy_detail_paths": [
+        "/intel/item-017-美团-longcat-大模型/",
+        "/intel/item-018-美团-longcat-大模型/",
+        "/intel/item-019-美团-longcat-大模型/",
+        "/intel/item-020-美团-longcat-大模型/",
+        "/intel/item-021-美团-longcat-大模型/",
+        "/intel/item-025-美团-longcat-大模型/"
+      ]
     },
     {
       "name": "OpenRouter",
@@ -440,7 +476,16 @@
       "intel_url": "https://openrouter.ai",
       "last_verified": "2026-08-19",
       "modality": "Kimi K2 · Qwen3-Next-80B · Llama 等 35+ 模型",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0018bing",
+      "legacy_detail_paths": [
+        "/intel/item-018-openrouter/",
+        "/intel/item-019-openrouter/",
+        "/intel/item-020-openrouter/",
+        "/intel/item-021-openrouter/",
+        "/intel/item-022-openrouter/",
+        "/intel/item-026-openrouter/"
+      ]
     },
     {
       "name": "BazaarLink",
@@ -457,7 +502,16 @@
       "intel_url": "https://bazaarlink.ai/free",
       "last_verified": "2026-07-31",
       "modality": "DeepSeek V4 Flash",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0019vbsm",
+      "legacy_detail_paths": [
+        "/intel/item-019-bazaarlink/",
+        "/intel/item-020-bazaarlink/",
+        "/intel/item-021-bazaarlink/",
+        "/intel/item-022-bazaarlink/",
+        "/intel/item-023-bazaarlink/",
+        "/intel/item-027-bazaarlink/"
+      ]
     },
     {
       "name": "魔搭社区 ModelScope",
@@ -474,7 +528,16 @@
       "intel_url": "https://modelscope.cn",
       "last_verified": "2026-09-28",
       "modality": "Qwen 系列 · LUX · Stable Diffusion 等",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0020xrne",
+      "legacy_detail_paths": [
+        "/intel/item-020-魔搭社区-modelscope/",
+        "/intel/item-021-魔搭社区-modelscope/",
+        "/intel/item-022-魔搭社区-modelscope/",
+        "/intel/item-023-魔搭社区-modelscope/",
+        "/intel/item-024-魔搭社区-modelscope/",
+        "/intel/item-028-魔搭社区-modelscope/"
+      ]
     },
     {
       "name": "OpenCode Zen",
@@ -491,7 +554,16 @@
       "intel_url": "https://opencode.ai/zen",
       "last_verified": "2026-09-28",
       "modality": "DeepSeek V4 Flash Free · MiMo-V2.5 Free · LongCat-2.0 Free · Nemotron 3 Ultra Free · Big Pickle",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0021agqn",
+      "legacy_detail_paths": [
+        "/intel/item-021-opencode-zen/",
+        "/intel/item-022-opencode-zen/",
+        "/intel/item-023-opencode-zen/",
+        "/intel/item-024-opencode-zen/",
+        "/intel/item-025-opencode-zen/",
+        "/intel/item-029-opencode-zen/"
+      ]
     },
     {
       "name": "微信 AI 小程序成长计划（云开发 CloudBase）",
@@ -508,7 +580,16 @@
       "intel_url": "https://cloud.tencent.com/developer/article/2705075",
       "last_verified": "2026-07-29",
       "modality": "Hy3 · Hy Image 3.0",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0022behf",
+      "legacy_detail_paths": [
+        "/intel/item-022-微信-ai-小程序成长计划-云开发-cloudbase/",
+        "/intel/item-023-微信-ai-小程序成长计划-云开发-cloudbase/",
+        "/intel/item-024-微信-ai-小程序成长计划-云开发-cloudbase/",
+        "/intel/item-025-微信-ai-小程序成长计划-云开发-cloudbase/",
+        "/intel/item-026-微信-ai-小程序成长计划-云开发-cloudbase/",
+        "/intel/item-030-微信-ai-小程序成长计划-云开发-cloudbase/"
+      ]
     },
     {
       "name": "天翼云息壤（电信）",
@@ -525,7 +606,16 @@
       "intel_url": "https://www.ctyun.cn/product/maas",
       "last_verified": "2026-07-19",
       "modality": "GLM-5 · DeepSeek V4 · Qwen3.5 · Doubao 等约 18 个模型",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0023klwn",
+      "legacy_detail_paths": [
+        "/intel/item-023-天翼云息壤-电信/",
+        "/intel/item-024-天翼云息壤-电信/",
+        "/intel/item-025-天翼云息壤-电信/",
+        "/intel/item-026-天翼云息壤-电信/",
+        "/intel/item-027-天翼云息壤-电信/",
+        "/intel/item-031-天翼云息壤-电信/"
+      ]
     },
     {
       "name": "国家超算互联网 SCNet",
@@ -542,7 +632,16 @@
       "intel_url": "https://www.scnet.cn/",
       "last_verified": "2026-09-15",
       "modality": "DeepSeek V4 Pro · V4 Flash · GLM-5.2 · MiniMax-M3 · Kimi-K2.6",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0024dpvl",
+      "legacy_detail_paths": [
+        "/intel/item-024-国家超算互联网-scnet/",
+        "/intel/item-025-国家超算互联网-scnet/",
+        "/intel/item-026-国家超算互联网-scnet/",
+        "/intel/item-027-国家超算互联网-scnet/",
+        "/intel/item-028-国家超算互联网-scnet/",
+        "/intel/item-032-国家超算互联网-scnet/"
+      ]
     },
     {
       "name": "MonkeyCode（长亭）",
@@ -559,7 +658,16 @@
       "intel_url": "https://monkeycode-ai.com/?ic=019fe974-4b9e-7186-b8a6-2901baec7c2e",
       "last_verified": "2026-08-12",
       "modality": "GLM · Kimi · MiniMax · Qwen · DeepSeek",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0025yihe",
+      "legacy_detail_paths": [
+        "/intel/item-025-monkeycode-长亭/",
+        "/intel/item-026-monkeycode-长亭/",
+        "/intel/item-027-monkeycode-长亭/",
+        "/intel/item-028-monkeycode-长亭/",
+        "/intel/item-029-monkeycode-长亭/",
+        "/intel/item-033-monkeycode-长亭/"
+      ]
     },
     {
       "name": "点点 AI（小红书 dots3-note-prev）",
@@ -576,7 +684,16 @@
       "intel_url": "https://dots.ai/platform/apikeys",
       "last_verified": "2026-08-18",
       "modality": "dots3-note-prev",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0026psaf",
+      "legacy_detail_paths": [
+        "/intel/item-026-点点-ai-小红书-dots3-note-prev/",
+        "/intel/item-027-点点-ai-小红书-dots3-note-prev/",
+        "/intel/item-028-点点-ai-小红书-dots3-note-prev/",
+        "/intel/item-029-点点-ai-小红书-dots3-note-prev/",
+        "/intel/item-030-点点-ai-小红书-dots3-note-prev/",
+        "/intel/item-034-点点-ai-小红书-dots3-note-prev/"
+      ]
     },
     {
       "name": "TeleAgent（星辰超级智能体）",
@@ -593,7 +710,16 @@
       "intel_url": "https://www.teleai.com.cn/product/teleagent",
       "last_verified": "2026-08-19",
       "modality": "中国电信星辰大模型",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0027rkdv",
+      "legacy_detail_paths": [
+        "/intel/item-027-teleagent-星辰超级智能体/",
+        "/intel/item-028-teleagent-星辰超级智能体/",
+        "/intel/item-029-teleagent-星辰超级智能体/",
+        "/intel/item-030-teleagent-星辰超级智能体/",
+        "/intel/item-031-teleagent-星辰超级智能体/",
+        "/intel/item-035-teleagent-星辰超级智能体/"
+      ]
     },
     {
       "name": "AMD 免费 API 与开发者计划",
@@ -610,7 +736,16 @@
       "intel_url": "https://developer.amd.com.cn/radeon/tokenfactory",
       "last_verified": "2026-09-02",
       "modality": "AMD 免费 API · Fireworks 托管推理",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0028ekrf",
+      "legacy_detail_paths": [
+        "/intel/item-028-amd-免费-api-与开发者计划/",
+        "/intel/item-029-amd-免费-api-与开发者计划/",
+        "/intel/item-030-amd-免费-api-与开发者计划/",
+        "/intel/item-031-amd-免费-api-与开发者计划/",
+        "/intel/item-032-amd-免费-api-与开发者计划/",
+        "/intel/item-036-amd-免费-api-与开发者计划/"
+      ]
     },
     {
       "name": "小米 MiMo（Xiaomi）",
@@ -627,7 +762,16 @@
       "intel_url": "https://s.mi.cn/NNI4kZp9",
       "last_verified": "2026-09-09",
       "modality": "MiMo-X-Pro-Preview · MiMo-X-Flash-Preview",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0029iqhg",
+      "legacy_detail_paths": [
+        "/intel/item-029-小米-mimo-xiaomi/",
+        "/intel/item-030-小米-mimo-xiaomi/",
+        "/intel/item-031-小米-mimo-xiaomi/",
+        "/intel/item-032-小米-mimo-xiaomi/",
+        "/intel/item-033-小米-mimo-xiaomi/",
+        "/intel/item-037-小米-mimo-xiaomi/"
+      ]
     },
     {
       "name": "LobsterAI 有道龙虾",
@@ -644,7 +788,16 @@
       "intel_url": "https://lobsterai.youdao.com/#/index?keyfrom=invitation",
       "last_verified": "2026-09-15",
       "modality": "DeepSeek-V4.1",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0030rauu",
+      "legacy_detail_paths": [
+        "/intel/item-030-lobsterai-有道龙虾/",
+        "/intel/item-031-lobsterai-有道龙虾/",
+        "/intel/item-032-lobsterai-有道龙虾/",
+        "/intel/item-033-lobsterai-有道龙虾/",
+        "/intel/item-034-lobsterai-有道龙虾/",
+        "/intel/item-038-lobsterai-有道龙虾/"
+      ]
     },
     {
       "name": "云工开物学生专区",
@@ -661,7 +814,16 @@
       "intel_url": "https://university.aliyun.com/course/promotion28-activity?clubTaskBiz=subTask..12836123..10290..&userCode=ygtxup80",
       "last_verified": "2026-09-15",
       "modality": "Qwen3.8 · GLM-5.3 · DeepSeek-V4",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0031rtun",
+      "legacy_detail_paths": [
+        "/intel/item-031-云工开物学生专区/",
+        "/intel/item-032-云工开物学生专区/",
+        "/intel/item-033-云工开物学生专区/",
+        "/intel/item-034-云工开物学生专区/",
+        "/intel/item-035-云工开物学生专区/",
+        "/intel/item-039-云工开物学生专区/"
+      ]
     },
     {
       "name": "字节 TRAE（AI IDE）",
@@ -678,7 +840,16 @@
       "intel_url": "https://www.trae.cn",
       "last_verified": "2026-09-28",
       "modality": "GPT-4o · Doubao-1.5-pro · DeepSeek",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0032tvoc",
+      "legacy_detail_paths": [
+        "/intel/item-032-字节-trae-ai-ide/",
+        "/intel/item-033-字节-trae-ai-ide/",
+        "/intel/item-034-字节-trae-ai-ide/",
+        "/intel/item-035-字节-trae-ai-ide/",
+        "/intel/item-036-字节-trae-ai-ide/",
+        "/intel/item-040-字节-trae-ai-ide/"
+      ]
     },
     {
       "name": "阿里云百炼（DashScope）",
@@ -695,7 +866,16 @@
       "intel_url": "https://dashscope.console.aliyun.com",
       "last_verified": "2026-09-28",
       "modality": "Qwen 全系 · DeepSeek · Kimi · GLM · Baichuan · Llama 等 70+ 模型",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0033dkpk",
+      "legacy_detail_paths": [
+        "/intel/item-033-阿里云百炼-dashscope/",
+        "/intel/item-034-阿里云百炼-dashscope/",
+        "/intel/item-035-阿里云百炼-dashscope/",
+        "/intel/item-036-阿里云百炼-dashscope/",
+        "/intel/item-037-阿里云百炼-dashscope/",
+        "/intel/item-041-阿里云百炼-dashscope/"
+      ]
     },
     {
       "name": "书生·端砚 墨点计划（上海AI实验室）",
@@ -712,7 +892,16 @@
       "intel_url": "https://discovery.intern-ai.org.cn/token-plan/home",
       "last_verified": "2026-09-28",
       "modality": "DeepSeek-V4-Flash · V4-Pro · GLM-5.3 · Kimi-K2.6 · MiniMax-M3 · Qwen3.8 · 书生-S2 · Agents-A1 · Atria-Dawn",
-      "signup": ""
+      "signup": "",
+      "detail_slug": "0034yvdj",
+      "legacy_detail_paths": [
+        "/intel/item-034-书生-端砚-墨点计划-上海ai实验室/",
+        "/intel/item-035-书生-端砚-墨点计划-上海ai实验室/",
+        "/intel/item-036-书生-端砚-墨点计划-上海ai实验室/",
+        "/intel/item-037-书生-端砚-墨点计划-上海ai实验室/",
+        "/intel/item-038-书生-端砚-墨点计划-上海ai实验室/",
+        "/intel/item-042-书生-端砚-墨点计划-上海ai实验室/"
+      ]
     },
     {
       "name": "腾讯云服务器",
@@ -736,7 +925,11 @@
       "last_verified": "2026-09-29",
       "modality": "",
       "signup": "",
-      "ad_badge": false
+      "ad_badge": false,
+      "detail_slug": "0035amvo",
+      "legacy_detail_paths": [
+        "/intel/item-039-腾讯云服务器/"
+      ]
     },
     {
       "vendor": "",
@@ -759,6 +952,15 @@
         "下载 WorkBuddy 国际版客户端并注册或登录账号。",
         "新建任务，在模型选择器中选择 DeepSeek V4.1 Flash。",
         "免费期截至 2026 年 10 月 9 日；使用前确认客户端仍显示免费，国内版与国际版活动不同。"
+      ],
+      "detail_slug": "0036xxzt",
+      "legacy_detail_paths": [
+        "/intel/item-036-workbuddy-国际版/",
+        "/intel/item-037-workbuddy-国际版/",
+        "/intel/item-038-workbuddy-国际版/",
+        "/intel/item-039-workbuddy-国际版/",
+        "/intel/item-040-workbuddy-国际版/",
+        "/intel/item-044-workbuddy-国际版/"
       ]
     },
     {
@@ -783,6 +985,15 @@
         "打开 MiniMax Code 并登录账号。",
         "找到每日签到入口，每天签到一次，领取双倍积分。",
         "新老用户均可参加；双倍积分不代表 Token 用量或所有模型均免费。"
+      ],
+      "detail_slug": "0037dxuu",
+      "legacy_detail_paths": [
+        "/intel/item-037-minimax-code-国庆签到/",
+        "/intel/item-038-minimax-code-国庆签到/",
+        "/intel/item-039-minimax-code-国庆签到/",
+        "/intel/item-040-minimax-code-国庆签到/",
+        "/intel/item-041-minimax-code-国庆签到/",
+        "/intel/item-045-minimax-code-国庆签到/"
       ]
     },
     {
@@ -807,7 +1018,16 @@
         "上述三款专属模型只消耗这批福利 Token；其他模型不属于此福利口径。",
         "通过领取入口查看活动并按页面指引参与；每日免费额度不等于无限使用。"
       ],
-      "update_source": "用户补充，2026-10-02"
+      "update_source": "用户补充，2026-10-02",
+      "detail_slug": "0038rlna",
+      "legacy_detail_paths": [
+        "/intel/item-038-华为云码道/",
+        "/intel/item-039-华为云码道/",
+        "/intel/item-040-华为云码道/",
+        "/intel/item-041-华为云码道/",
+        "/intel/item-042-华为云码道/",
+        "/intel/item-046-华为云码道/"
+      ]
     },
     {
       "name": "Google Antigravity（反重力）",
@@ -837,141 +1057,375 @@
         "https://antigravity.google/pricing",
         "https://antigravity.google/docs/models/"
       ],
-      "update_source": "官方定价页与模型文档，2026-10-02"
+      "update_source": "官方定价页与模型文档，2026-10-02",
+      "detail_slug": "0039ysko",
+      "legacy_detail_paths": [
+        "/intel/item-039-google-antigravity-反重力/",
+        "/intel/item-040-google-antigravity-反重力/",
+        "/intel/item-041-google-antigravity-反重力/",
+        "/intel/item-042-google-antigravity-反重力/",
+        "/intel/item-043-google-antigravity-反重力/",
+        "/intel/item-047-google-antigravity-反重力/"
+      ]
     }
   ],
   "retired": [
     {
       "name": "腾讯元器",
       "url": "https://yuanqi.tencent.com",
-      "reason": "用户明确要求永不上架（2026-10-06）"
+      "reason": "用户明确要求永不上架（2026-10-06）",
+      "detail_slug": "0054junq",
+      "legacy_detail_paths": [
+        "/intel/item-001-腾讯元器/",
+        "/intel/item-003-腾讯元器/"
+      ]
     },
     {
       "name": "DeepSeek 开放平台",
       "url": "https://platform.deepseek.com",
-      "reason": "用户明确要求永不上架（2026-10-06）"
+      "reason": "用户明确要求永不上架（2026-10-06）",
+      "detail_slug": "0055jsxc",
+      "legacy_detail_paths": [
+        "/intel/item-002-deepseek-开放平台/",
+        "/intel/item-004-deepseek-开放平台/"
+      ]
     },
     {
       "name": "GLM-5.3-Flash（Ox-Alpha）",
       "url": "https://zcode.z.ai/cn",
-      "reason": "已并入 ZCode 条目（同一平台的免费活动），不再单独收录。"
+      "reason": "已并入 ZCode 条目（同一平台的免费活动），不再单独收录。",
+      "detail_slug": "0056eyiw",
+      "legacy_detail_paths": []
     },
     {
       "name": "阿里云 Qoder（灵码）",
       "url": "https://www.aliyun.com/product/lingma",
-      "reason": "已改写为「Qoder cn」条目，不再重复收录。"
+      "reason": "已改写为「Qoder cn」条目，不再重复收录。",
+      "detail_slug": "0057nljh",
+      "legacy_detail_paths": []
     },
     {
       "name": "2026 微信小程序开发大赛",
       "url": "https://contest.weixin.qq.com",
-      "reason": "限时活动已结束（报名截止 10 月 17 日），名额发放不稳定。"
+      "reason": "限时活动已结束（报名截止 10 月 17 日），名额发放不稳定。",
+      "detail_slug": "0058rifa",
+      "legacy_detail_paths": []
     },
     {
       "name": "腾讯云 TokenHub",
       "url": "https://cloud.tencent.com/product/tokenhub",
-      "reason": "限时免费活动已收口，入口与额度口径调整，不再具备稳定免费额度。"
+      "reason": "限时免费活动已收口，入口与额度口径调整，不再具备稳定免费额度。",
+      "detail_slug": "0059aqey",
+      "legacy_detail_paths": []
     },
     {
       "name": "HuggingFace Inference API",
       "url": "https://huggingface.co",
-      "reason": "免费共享推理端点限流过紧，已不足以支撑实际使用（更高额度需订阅 PRO）。"
+      "reason": "免费共享推理端点限流过紧，已不足以支撑实际使用（更高额度需订阅 PRO）。",
+      "detail_slug": "0060hjdp",
+      "legacy_detail_paths": []
     },
     {
       "name": "月之暗面 Kimi 开放平台",
       "url": "https://platform.moonshot.cn",
-      "reason": "仅有一次性新用户体验金，用尽后无持续免费额度。"
+      "reason": "仅有一次性新用户体验金，用尽后无持续免费额度。",
+      "detail_slug": "0061stqi",
+      "legacy_detail_paths": []
     },
     {
       "name": "OpenStarry",
       "url": "https://www.openstarry.com",
-      "reason": "模型聚合中转平台，仅 200 次试用额度，不属于官方免费渠道。"
+      "reason": "模型聚合中转平台，仅 200 次试用额度，不属于官方免费渠道。",
+      "detail_slug": "0062vnaj",
+      "legacy_detail_paths": []
     },
     {
       "name": "太行HUB",
       "url": "https://token.taiha.cn",
-      "reason": "中转聚合平台，以 ?aff= 返佣链接推广，非官方免费额度来源。"
+      "reason": "中转聚合平台，以 ?aff= 返佣链接推广，非官方免费额度来源。",
+      "detail_slug": "0063dugd",
+      "legacy_detail_paths": []
     },
     {
       "name": "B.AI（AI 模型聚合平台）",
       "url": "https://chat.b.ai",
-      "reason": "免费模型已全部取消，改为全站一折付费，平台内已无免费额度。"
+      "reason": "免费模型已全部取消，改为全站一折付费，平台内已无免费额度。",
+      "detail_slug": "0064odpj",
+      "legacy_detail_paths": []
     },
     {
       "name": "GMI Cloud（gmi-serving）",
       "url": "https://console.gmicloud.ai",
-      "reason": "此前免费的 MiniMax-3M / GLM / agens 模型已下线，入口转付费。"
+      "reason": "此前免费的 MiniMax-3M / GLM / agens 模型已下线，入口转付费。",
+      "detail_slug": "0065uafc",
+      "legacy_detail_paths": []
     },
     {
       "name": "秒哒（百度）",
       "url": "https://www.miaoda.cn",
-      "reason": "邀请链接推广性质，免费生成额度已收回、转为付费。"
+      "reason": "邀请链接推广性质，免费生成额度已收回、转为付费。",
+      "detail_slug": "0066bpmu",
+      "legacy_detail_paths": []
     },
     {
       "name": "Groq 免费 API",
       "url": "https://console.groq.com",
-      "reason": "海外服务，注册与调用需海外网络环境；免费档仅覆盖开源模型。"
+      "reason": "海外服务，注册与调用需海外网络环境；免费档仅覆盖开源模型。",
+      "detail_slug": "0067safl",
+      "legacy_detail_paths": []
     },
     {
       "name": "Cloudflare Workers AI",
       "url": "https://developers.cloudflare.com/workers-ai",
-      "reason": "海外服务，需海外账号与网络；每日 Neurons 免费额度对实际使用偏紧。"
+      "reason": "海外服务，需海外账号与网络；每日 Neurons 免费额度对实际使用偏紧。",
+      "detail_slug": "0068pcwg",
+      "legacy_detail_paths": []
     },
     {
       "name": "Google Gemini API（AI Studio）",
       "url": "https://aistudio.google.com",
-      "reason": "中国大陆地区不可用（区域限制）。"
+      "reason": "中国大陆地区不可用（区域限制）。",
+      "detail_slug": "0069hiaq",
+      "legacy_detail_paths": []
     },
     {
       "name": "GitHub Copilot Free",
       "url": "https://github.com/features/copilot",
-      "reason": "免费额度偏小（每月 2000 次补全 + 50 次对话），实际可用量有限。"
+      "reason": "免费额度偏小（每月 2000 次补全 + 50 次对话），实际可用量有限。",
+      "detail_slug": "0070dahl",
+      "legacy_detail_paths": []
     }
   ],
   "watchlist": [
     {
       "name": "七牛云 AI 推理",
       "url": "https://s.qiniu.com/VV7Zfa",
-      "reason": "用户于 2026-10-06 要求移入观望区，待观察免费额度政策是否稳定。"
+      "reason": "用户于 2026-10-06 要求移入观望区，待观察免费额度政策是否稳定。",
+      "detail_slug": "0040fdzy",
+      "legacy_detail_paths": [
+        "/intel/item-010-七牛云-ai-推理/",
+        "/intel/item-012-七牛云-ai-推理/",
+        "/intel/item-014-七牛云-ai-推理/"
+      ]
     },
     {
       "name": "百度千帆（文心）",
       "url": "https://qianfan.cloud.baidu.com",
-      "reason": "用户于 2026-10-06 要求移入观望区，待观察免费额度政策是否稳定"
+      "reason": "用户于 2026-10-06 要求移入观望区，待观察免费额度政策是否稳定",
+      "detail_slug": "0041dmlq",
+      "legacy_detail_paths": [
+        "/intel/item-041-百度千帆-文心/",
+        "/intel/item-042-百度千帆-文心/",
+        "/intel/item-044-百度千帆-文心/"
+      ]
     },
     {
       "name": "讯飞星火（开放平台）",
       "url": "https://www.xfyun.cn",
-      "reason": "用户于 2026-10-06 要求移入观望区，待观察免费额度政策是否稳定"
+      "reason": "用户于 2026-10-06 要求移入观望区，待观察免费额度政策是否稳定",
+      "detail_slug": "0042nwsg",
+      "legacy_detail_paths": [
+        "/intel/item-042-讯飞星火-开放平台/",
+        "/intel/item-043-讯飞星火-开放平台/",
+        "/intel/item-045-讯飞星火-开放平台/"
+      ]
     },
     {
       "name": "APMIX",
       "url": "https://apmix.ai/event",
-      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。"
+      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。",
+      "detail_slug": "0043vwjg",
+      "legacy_detail_paths": [
+        "/intel/item-000-apmix/",
+        "/intel/item-005-apmix/"
+      ]
     },
     {
       "name": "智谱AI（Z.AI 开放平台）",
       "url": "https://open.bigmodel.cn",
-      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。"
+      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。",
+      "detail_slug": "0044xxum",
+      "legacy_detail_paths": [
+        "/intel/item-001-智谱ai-z-ai-开放平台/",
+        "/intel/item-006-智谱ai-z-ai-开放平台/"
+      ]
     },
     {
       "name": "Mistral La Plateforme",
       "url": "https://console.mistral.ai",
-      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。"
+      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。",
+      "detail_slug": "0045iyos",
+      "legacy_detail_paths": [
+        "/intel/item-002-mistral-la-plateforme/",
+        "/intel/item-007-mistral-la-plateforme/"
+      ]
     },
     {
       "name": "xAI Grok（console.x.ai）",
       "url": "https://console.x.ai",
-      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。"
+      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。",
+      "detail_slug": "0046tvjl",
+      "legacy_detail_paths": [
+        "/intel/item-003-xai-grok-console-x-ai/",
+        "/intel/item-008-xai-grok-console-x-ai/"
+      ]
     },
     {
       "name": "Cohere Trial Key",
       "url": "https://dashboard.cohere.com",
-      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。"
+      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。",
+      "detail_slug": "0047ynzt",
+      "legacy_detail_paths": [
+        "/intel/item-043-cohere-trial-key/",
+        "/intel/item-048-cohere-trial-key/"
+      ]
     },
     {
       "name": "腾讯云混元大模型",
       "url": "https://cloud.tencent.com/product/hunyuan",
-      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。"
+      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。",
+      "detail_slug": "0048ascj",
+      "legacy_detail_paths": [
+        "/intel/item-044-腾讯云混元大模型/",
+        "/intel/item-049-腾讯云混元大模型/"
+      ]
+    },
+    {
+      "name": "Token Harbor",
+      "vendor": "",
+      "category": "model",
+      "free_type": "长期免费",
+      "quota": "每月免费额度（按 7 天滚动窗口发放，4 窗/月，未用不结转），当前覆盖 DeepSeek V4 Flash、DeepSeek V4.1 Flash、MiMo V2.6 Flash、TH-Rudder 等；单一 OpenAI 兼容 API，无需信用卡。",
+      "validity": "",
+      "region": "国际",
+      "gates": [],
+      "note": "免费额度按官方单价折算（非钱包余额）；需海外网络环境；免费路由的提示可能用于诊断与产品优化。",
+      "sponsored": false,
+      "entry_url": "https://tokenharbor.ai",
+      "intel_url": "https://tokenharbor.ai/pricing",
+      "last_verified": "2026-10-07",
+      "modality": "DeepSeek V4 Flash · DeepSeek V4.1 Flash · MiMo V2.6 Flash · TH-Rudder",
+      "signup": "注册 tokenharbor.ai 账号（无需信用卡），在控制台开启免费模型并创建 API Key；base_url=https://tokenharbor.ai/v1（OpenAI 兼容）。",
+      "update_source": "全网搜索补充，2026-10-07",
+      "source_urls": [
+        "https://tokenharbor.ai/pricing",
+        "https://aifree.dev/offer/token-harbor-free"
+      ],
+      "detail_slug": "0049ppka",
+      "url": "https://tokenharbor.ai",
+      "reason": "暂列观望，待进一步观察免费额度政策与实际可用性。",
+      "legacy_detail_paths": [
+        "/intel/item-000-token-harbor/"
+      ]
+    },
+    {
+      "name": "OrcaRouter",
+      "vendor": "",
+      "category": "model",
+      "free_type": "长期免费",
+      "quota": "免费档无需信用卡：调用 orcarouter/free 按难度自动路由到免费模型（DeepSeek V4 Flash Free、DeepSeek V4 Pro Free、Qwen3.8 27B Free 等），模型本身 $0，按请求速率限制、额度不耗尽。",
+      "validity": "",
+      "region": "国际",
+      "gates": [],
+      "note": "单一 OpenAI 兼容网关、0% token 加价；免费档按请求速率限流（超阈返回 429，自动恢复）；需海外网络环境。",
+      "sponsored": false,
+      "entry_url": "https://www.orcarouter.ai",
+      "intel_url": "https://www.orcarouter.ai/models/orcarouter/free",
+      "last_verified": "2026-10-07",
+      "modality": "DeepSeek V4 Flash Free · DeepSeek V4 Pro Free · Qwen3.8 27B Free",
+      "signup": "注册 orcarouter.ai（免费档无需信用卡）并创建 API Key；base_url=https://api.orcarouter.ai/v1，model=orcarouter/free（OpenAI 兼容）。",
+      "update_source": "全网搜索补充，2026-10-07",
+      "source_urls": [
+        "https://www.orcarouter.ai/models/orcarouter/free"
+      ],
+      "detail_slug": "0050sdny",
+      "url": "https://www.orcarouter.ai",
+      "reason": "暂列观望，待进一步观察免费额度政策与实际可用性。",
+      "legacy_detail_paths": [
+        "/intel/item-001-orcarouter/"
+      ]
+    },
+    {
+      "name": "UnoRouter",
+      "vendor": "",
+      "category": "model",
+      "free_type": "长期免费",
+      "quota": "219+ 免费模型（无需信用卡）：单一 OpenAI 兼容端点聚合 Groq / Gemini / NVIDIA / SiliconFlow / Z.ai 等 18 家免费上游，含 GLM 5.3、DeepSeek V4、Qwen3.8、MiniMax-M3 等；每免费模型约 1 请求/分钟（共享池）。",
+      "validity": "",
+      "region": "国际",
+      "gates": [],
+      "note": "聚合多家官方永久免费额度，统一一个 Key 调用；免费档为共享容量、受上游限流（429 自动恢复）；需海外网络环境。",
+      "sponsored": false,
+      "entry_url": "https://unorouter.com",
+      "intel_url": "https://unorouter.com/en/blog/free-models-aggregated",
+      "last_verified": "2026-10-07",
+      "modality": "GLM 5.3 · DeepSeek V4 Flash · Qwen3.8 Flash · MiniMax-M3 · Gemini 3.8 Flash 等 219+ 免费模型",
+      "signup": "注册 unorouter.com（无需信用卡）获取 API Key；base_url=https://api.unorouter.com/v1，调用 *:free 模型（OpenAI 兼容）。",
+      "update_source": "全网搜索补充，2026-10-07",
+      "source_urls": [
+        "https://unorouter.com/en/blog/free-models-aggregated",
+        "https://www.llmperks.com/unorouter"
+      ],
+      "detail_slug": "0051fhfk",
+      "url": "https://unorouter.com",
+      "reason": "暂列观望，待进一步观察免费额度政策与实际可用性。",
+      "legacy_detail_paths": [
+        "/intel/item-002-unorouter/"
+      ]
+    },
+    {
+      "name": "Novita AI",
+      "vendor": "",
+      "category": "model",
+      "free_type": "长期免费",
+      "quota": "常驻 $0 模型（轮换）：Qwen3.5-Plus、Qwen3.6-Plus、Bunny 等按 0/0 输入-输出计价；新用户欢迎额度（促销期 $10、基线 $0.50，自动到账、无需信用卡）；referral 计划双方各 $10 额度。",
+      "validity": "",
+      "region": "国际",
+      "gates": [],
+      "note": "200+ 模型（文本/图像/视频/音频/embedding）单一 OpenAI 兼容 API；常驻 $0 模型随新品上线轮换；需海外网络环境。",
+      "sponsored": false,
+      "entry_url": "https://novita.ai",
+      "intel_url": "https://novita.ai",
+      "last_verified": "2026-10-07",
+      "modality": "Qwen3.5-Plus · Qwen3.6-Plus · Bunny · Llama · DeepSeek · GLM 等 200+ 模型",
+      "signup": "注册 novita.ai（Google/GitHub/邮箱，无需信用卡），欢迎额度自动到账；base_url=https://api.novita.ai/openai/v1（OpenAI 兼容）。",
+      "update_source": "全网搜索补充，2026-10-07",
+      "source_urls": [
+        "https://blogs.novita.ai/are-there-any-open-source-llm-api-keys-available/"
+      ],
+      "detail_slug": "0052dnop",
+      "url": "https://novita.ai",
+      "reason": "暂列观望，待进一步观察免费额度政策与实际可用性。",
+      "legacy_detail_paths": [
+        "/intel/item-003-novita-ai/"
+      ]
+    },
+    {
+      "name": "Fireworks AI",
+      "vendor": "",
+      "category": "model",
+      "free_type": "注册赠送",
+      "quota": "新账号赠送 $1 免费额度（自动到账，无需信用卡即可开始）；覆盖文本/视觉/图像/语音/embedding 等开源模型，按 token 计费。",
+      "validity": "",
+      "region": "国际",
+      "gates": [],
+      "note": "无卡限速 10 RPM；美国 inference 平台、OpenAI 兼容；需海外网络环境。",
+      "sponsored": false,
+      "entry_url": "https://fireworks.ai",
+      "intel_url": "https://fireworks.ai/pricing",
+      "last_verified": "2026-10-07",
+      "modality": "DeepSeek · Llama · Qwen · GLM · FLUX · Whisper 等开源模型",
+      "signup": "注册 fireworks.ai（Google SSO/邮箱，无卡送 $1），创建 API Key；base_url=https://api.fireworks.ai/inference/v1（OpenAI 兼容）。",
+      "update_source": "全网搜索补充，2026-10-07",
+      "source_urls": [
+        "https://fireworks.ai/pricing"
+      ],
+      "detail_slug": "0053bqtz",
+      "url": "https://fireworks.ai",
+      "reason": "暂列观望，待进一步观察免费额度政策与实际可用性。",
+      "legacy_detail_paths": [
+        "/intel/item-004-fireworks-ai/"
+      ]
     }
   ]
 }

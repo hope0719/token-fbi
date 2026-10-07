@@ -46,7 +46,7 @@ python3 build.py
 
 ## 部署流程
 
-1. 修改 `data.json`（新收录条目一律追加到 `items` 数组末尾）。
+1. 修改 `data.json`，新条目运行 `python3 scripts/assign_detail_ids.py` 分配固定详情 ID。
 2. 本地验证：`python3 build.py`，检查 `dist/` 产物完整。
 3. 提交并推送到 `main`；Cloudflare Git 集成会自动重建并发布。
 4. 验证线上：`curl https://token-fbi.com/_version.txt` 应等于本次提交 SHA。未核对前不称"已上线"。
@@ -80,3 +80,12 @@ python3 gen_og_images.py && python3 build.py
 - 仓库根目录 `.indexnow-key`（供 GitHub Actions 读取）
 
 参考：[Cloudflare Pages Git 集成](https://developers.cloudflare.com/pages/configuration/git-integration/) · [Cloudflare Pages 自定义域名](https://developers.cloudflare.com/pages/configuration/custom-domains/)
+
+## 永久详情网址
+
+- 每个条目的 `detail_slug` 固定为 **4 位序号 + 4 位小写英文字母**，共 8 位，例如 `/intel/0001abcd/`。
+- ID 写入 `data.json` 后永久保留；排序、改名或移入观望区都不重新编号，不复用已分配的 ID。
+- 添加新条目后先运行 `python3 scripts/assign_detail_ids.py`，再运行 `npm run check`。构建会拒绝缺失、重复或格式错误的 ID。
+- `legacy_detail_paths` 保存旧详情路径，构建为 Cloudflare Pages `dist/_redirects` 中的 301 规则；保留原推广 302 规则。
+- 首页、详情 canonical、结构化数据、情报表、sitemap 与 llms 输出使用同一个固定 ID。
+- 观望与下架条目保留状态说明页，历史链接可以继续定位到对应条目。

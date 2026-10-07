@@ -200,10 +200,17 @@ def og_block(title, desc, url, image=None, ogtype="website"):
             f'<meta name="twitter:description" content="{d}">\n'
             f'<meta name="twitter:image" content="{img}">')
 
+# 所有条目固定使用 8 位 ASCII 标识；新条目先分配 ID，禁止回退到列表序号。
+all_detail_entries = items + watchlist + retired
+DETAIL_BY_NAME = {it["name"]: it for it in all_detail_entries}
+_detail_ids = [it.get("detail_slug", "") for it in all_detail_entries]
+if any(not re.fullmatch(r"[0-9]{4}[a-z]{4}", value) for value in _detail_ids):
+    raise ValueError("详情页 ID 必须为 4 位数字 + 4 位小写字母；请运行 python3 scripts/assign_detail_ids.py")
+if len(_detail_ids) != len(set(_detail_ids)):
+    raise ValueError("详情页 ID 重复")
+
 def slug(i, name):
-    base = re.sub(r"[^\w\u4e00-\u9fa5]+", "-", name).strip("-").lower()
-    base = base or f"item"
-    return f"item-{i:03d}-{base}"
+    return DETAIL_BY_NAME[name]["detail_slug"]
 
 # ---------- 外链出口层 /go/<slug>/（推广/返佣链接的统一改造点） ----------
 # 存在的意义：
@@ -880,7 +887,15 @@ def meta_desc_for(it):
 
 
 detail_written = 0
-for i, it in enumerate(items):
+# 观望/下架条目也保留说明页，旧分享链接有明确归宿。
+archive_details = [dict(it, entry_url=it.get("url", it.get("entry_url", "")),
+                        free_type="观望" if it in watchlist else "已下架",
+                        quota="该条目目前不在有效推荐列表，请以官网最新政策为准。",
+                        validity="观望中" if it in watchlist else "已下架",
+                        note=it.get("reason", ""), effect="", activity_rules=[],
+                        invite_text="", invite_url="", poster_url="", promo_url="")
+                   for it in watchlist + retired]
+for i, it in enumerate(items + archive_details):
     if it.get("ad_only"):
         continue  # 纯广告位不生成详情页
     s = slug(i, it.get("name", ""))
@@ -898,7 +913,7 @@ for i, it in enumerate(items):
     entry_rel = "noopener nofollow sponsored" if entry_spon else "noopener"
     canon = f"{SITE}/intel/{s}/"
     desc = meta_desc_for(it)
-    og_img = og_image_for(i)
+    og_img = og_image_for(i) if i < len(items) else OG_IMAGE_DEFAULT
     ld = json.dumps({
         "@context": "https://schema.org",
         "@type": "Article",
@@ -1049,6 +1064,28 @@ a{{display:inline-block;margin-top:16px;font-weight:800;color:#0E2A33;background
             f.write(_page)
     with open(os.path.join(DIST, "_redirects"), "w", encoding="utf-8") as f:
         f.write("\n".join(redirect_lines) + "\n")
+
+# 历史详情地址一跳 301 到固定 ID（不按序号猜目标，也不跳首页）。
+_detail_redirects = {}
+for it in all_detail_entries:
+    if it.get("ad_only"):
+        continue
+    target = f"/intel/{it['detail_slug']}/"
+    for source in it.get("legacy_detail_paths", []):
+        if not source.startswith("/intel/") or any(c in source for c in "?#\n\r"):
+            raise ValueError(f"非法旧详情路径：{source}")
+        source = quote(source, safe="/%")
+        if source in _detail_redirects and _detail_redirects[source] != target:
+            raise ValueError(f"旧路径映射冲突：{source}")
+        _detail_redirects[source] = target
+        # 兼容省略末尾斜杠的旧分享地址。
+        _detail_redirects[source.rstrip("/")] = target
+_existing_redirects = open(_redir_path, encoding="utf-8").read() if os.path.exists(_redir_path) else ""
+with open(_redir_path, "w", encoding="utf-8") as f:
+    f.write("# 历史详情地址到固定 ID\n")
+    for source, target in sorted(_detail_redirects.items()):
+        f.write(f"{source} {target} 301\n")
+    f.write(_existing_redirects)
 
 # ---------- robots.txt（复制已含全量放行的版本） ----------
 with open(os.path.join(HERE, "robots.txt"), encoding="utf-8") as f:
