@@ -13,6 +13,14 @@
 4. 同构聚合器（OpenRouter 式）只保留 1–2 个代表，不堆量。
 5. 来源须经过滤：**禁止从竞品 GitHub `awesome-free-llm` 类清单整批灌入**；每条须人工核验免费额度口径后再入 `items`。
 
+## 详情页永久 ID 体系（2026-10-07 新推送 3abf809，必读）
+- 每个条目（items + watchlist + retired 全部）必须带 `detail_slug`：**4 位数字 + 4 位小写字母**，共 8 位，例如 `/intel/0001hgwg/`。
+- ID 写入 `data.json` 后**永久保留**；排序、改名、移入观望区/下架都不重新编号，已分配 ID 不复用。
+- **强制流程（新增条目时）**：先 `python3 scripts/assign_detail_ids.py` 分配 ID → 再 `npm run check`（即 `build.py`）。`build.py` 会在以下情况**直接报错中断**：缺 `detail_slug` / 格式不符 `/^[0-9]{4}[a-z]{4}$/` / ID 重复。脚本按现有最大序号 +1 顺延，后缀由 name 的 sha256 派生，保留已有 ID。
+- **展望/下架条目也保留状态说明页**（free_type 标「观望」/「已下架」、note=原 reason），旧分享链接有归宿，不再跳首页或 404。
+- `legacy_detail_paths`（旧详情路径数组）由构建写入 `dist/_redirects` 为 **301 一跳到固定 ID**；路径须以 `/intel/` 开头且不含 `?#\n\r`。
+- DEPLOY.md 已同步：新条目流程改为「分配 ID → npm run check → build → 推送」。
+
 ## 排序列规则
 - "前"：较新模型（GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 / MiniMax-M3 等同期或更晚）
 - "后"：在这些模型之前发布的模型
@@ -61,3 +69,4 @@
 - 10-04 曾从 `候选来源.md` 整批拉取 3 个竞品 GitHub `awesome-free-llm` 仓库做差集灌入，门槛仅为 `✅/⚠️` 松判断，导致随后 `retired` 累积至 17、`watchlist` 至 9（一边收一边砍）。
 - **约定**：今后新增一律走「收录硬门槛」逐条核验，不再整批灌；海外-only、付费中转、试用额度过小、返佣聚合的不收或先入 watchlist。
 - 当前 44 条中仍有边界项待你确认是否清理：蓝博科技（lanbuff，`付费中转`+赞助）、腾讯云服务器（空 `free_type`+赞助）、Token Harbor/OrcaRouter/UnoRouter（三个同构国际聚合器）。
+- **2026-10-07 22:33 推送（3abf809）已落实上述收紧**：Token Harbor / OrcaRouter / UnoRouter / Novita AI / Fireworks AI 五个同构国际聚合器已移入 watchlist（reason：「暂列观望，待进一步观察免费额度政策与实际可用性」）；items 44→39，watchlist 9→14。蓝博科技、腾讯云服务器仍保留（赞助位，待你最终裁定）。
