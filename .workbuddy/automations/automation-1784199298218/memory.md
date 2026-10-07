@@ -22,3 +22,7 @@
 - 新增 3 条情报：智谱 GLM-4.7-Flash（永久免费）、CometAPI（Kimi K2 免费层）、OpenRouter（35+ 免费模型聚合）
 - 站点验证：HTTP 200
 - Git commit：87d6e67
+## 2026-10-07
+- 用户会话（非定时搜索）：用户截图指定 6 个平台移入观望区（APMIX / 智谱AI Z.AI 开放平台 / Mistral La Plateforme / xAI Grok console.x.ai / Cohere Trial Key / 腾讯云混元大模型）。
+- data.json：items 50→44，watchlist 3→9，total 重算；build.py 重建 → commit a9cc43e → push main → Cloudflare Pages 构建完成，_version.txt 与提交 SHA 一致，首页 200，观望区渲染验证通过。
+- 本日未执行例行全网搜索新增（会话为用户指定的观望区调整）。
