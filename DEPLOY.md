@@ -46,7 +46,7 @@ python3 build.py
 
 ## 部署流程
 
-1. 修改 `data.json`，新条目运行 `python3 scripts/assign_detail_ids.py` 分配固定详情 ID。
+1. 修改 `data.json`，新条目运行 `python3 scripts/assign_detail_ids.py` 分配固定详情 ID（该脚本同时为新条目写入 `added`＝当天日期，供首页「新增」五角星使用）。
 2. 本地验证：`python3 build.py`，检查 `dist/` 产物完整。
 3. 提交并推送到 `main`；Cloudflare Git 集成会自动重建并发布。
 4. 验证线上：`curl https://token-fbi.com/_version.txt` 应等于本次提交 SHA。未核对前不称"已上线"。
@@ -89,3 +89,12 @@ python3 gen_og_images.py && python3 build.py
 - `legacy_detail_paths` 保存旧详情路径，构建为 Cloudflare Pages `dist/_redirects` 中的 301 规则；保留原推广 302 规则。
 - 首页、详情 canonical、结构化数据、情报表、sitemap 与 llms 输出使用同一个固定 ID。
 - 观望与下架条目保留状态说明页，历史链接可以继续定位到对应条目。
+
+## 首页「新增」五角星
+
+- 条目在 `data.json` 里带 `added`（首次收录日期，`YYYY-MM-DD`）且距今不足 `NEW_DAYS` 天时，首页卡片**右上角**显示一枚金色五角星 ★。
+- `added` 由 `scripts/assign_detail_ids.py` 在分配详情 ID 时**自动写入当天日期**，不要手工维护；缺失 `added` 的条目（2026-10-07 之前收录的历史条目）一律视为非新增，不会显示星标。
+- 星标只出现在首页情报卡，不进完整情报表、不进详情页；页面不显示任何日期，"3 天" 仅是星标的存活窗口。
+- 静态站只在 push 时重建，因此星标由页面内一小段脚本按 `data-exp`（到期时刻）自行摘除，避免超过 3 天后仍未重新部署的页面把星标一直挂着。
+- 调整保留天数：改 `build.py` 顶部的 `NEW_DAYS`（默认 3）。
+- 校验：构建日志末尾的 `newstar=N` 为注入自摘脚本的页面数（正常为 1，即首页）；或直接跑 `python3 scripts/check_star.py`（比对 `data.json` 的 `added` 口径与首页实际渲染结果，不符即非 0 退出）。

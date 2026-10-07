@@ -21,6 +21,7 @@
 本脚本不依赖网络、不推送任何仓库——产出自包含于 dist/，供后续"直接覆盖"旧站。
 """
 import json, html, os, re, shutil
+from datetime import date, datetime, time, timedelta
 from urllib.parse import quote
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -247,6 +248,43 @@ def out_link(it):
 hrefs = {i: f"/intel/{slug(i, it.get('name',''))}/" for i, it in enumerate(items)}
 name2href = {it.get("name"): hrefs[i] for i, it in enumerate(items) if not it.get("ad_only")}
 
+# ---------- 「新增」五角星（卡片右上角，收录后保留 3 天）----------
+# 口径：条目在 data.json 里带 `added`（首次收录日期，YYYY-MM-DD）且距今不足 NEW_DAYS 天时，
+#       首页卡片右上角渲染一枚五角星；到期后星标消失。
+#   · 星标由页面脚本按 `data-exp`（到期时间戳）自行摘除 —— 因为静态站只在 push 时重建，
+#     若只靠构建期判断，超过 3 天后未重新部署的页面会把星标一直挂着。
+#   · `added` 由 scripts/assign_detail_ids.py 在分配详情 ID 时自动写入，无需手工维护。
+#   · 页面不显示任何日期，"3 天" 只是星标的存活窗口。
+NEW_DAYS = 3
+_BUILD_DATE = date.today()
+
+
+def added_on(it):
+    """条目首次收录日期；字段缺失或格式非法一律返回 None（视为非新增）。"""
+    raw = str(it.get("added") or "").strip()[:10]
+    if not raw:
+        return None
+    try:
+        return date.fromisoformat(raw)
+    except ValueError:
+        return None
+
+
+def is_new(it):
+    """是否处于「新增」窗口内：收录当天算第 1 天，共 NEW_DAYS 天。"""
+    d0 = added_on(it)
+    return bool(d0) and 0 <= (_BUILD_DATE - d0).days < NEW_DAYS
+
+
+def new_star_expiry(it):
+    """星标失效时刻（Unix 秒）：收录日 + NEW_DAYS 天的 00:00。"""
+    d0 = added_on(it)
+    if not d0:
+        return 0
+    end = datetime.combine(d0 + timedelta(days=NEW_DAYS), time.min)
+    return int(end.timestamp())
+
+
 # ---------- 卡片渲染 ----------
 def render_card(it, recommended=False, sponsor=False, href="#"):
     cat = it.get("category", "")
@@ -270,8 +308,14 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
     reco = '<span class="chip reco">⭐ 站长推荐</span>' if recommended else ""
     # 备注：仅当该条目显式提供时渲染（默认全站无备注）
     note_block = f'<div class="c-note">{esc(it.get("note","")).strip()}</div>' if (it.get("note") or "").strip() else ""
+    # 新增星标：收录 3 天内在卡片右上角固定显示（不占文档流，不遮挡标签与按钮）
+    star = ""
+    if is_new(it):
+        star = (f'<span class="new-star" data-exp="{new_star_expiry(it)}" '
+                f'title="新增" aria-label="新增">★</span>')
     return f'''
-    <article class="card{' reco-card' if recommended else ''}{' sponsor-card' if sponsor else ''}" data-cat="{cat}" data-limited="{"1" if is_limited else "0"}">
+    <article class="card{' reco-card' if recommended else ''}{' sponsor-card' if sponsor else ''}{' has-new' if star else ''}" data-cat="{cat}" data-limited="{"1" if is_limited else "0"}">
+      {star}
       <div class="c-top">
         <span class="cat-tag cat-{cat}">{catlabel}</span>
         <span class="free-tag{freebadge_cls(free)}">{freetag}</span>
@@ -600,6 +644,9 @@ img{max-width:100%}
 .reco-card{border-color:var(--accent)}
 .reco-card::before{opacity:1}
 .chip.reco{background:var(--accent-deep);color:#fff;border-color:var(--accent-deep)}
+/* 新增五角星：条目收录后 3 天内在卡片右上角显示，到期由页面脚本自动摘除 */
+.new-star{position:absolute;top:0;right:0;z-index:3;display:flex;align-items:center;justify-content:center;width:38px;height:32px;font-size:16px;line-height:1;color:#fff;background:linear-gradient(135deg,#E6B04C,#C08A2E);border-radius:0 var(--r) 0 13px;box-shadow:0 4px 12px rgba(192,138,46,.28);pointer-events:none}
+.card.has-new .c-top{padding-right:34px}
 .datacta{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
 .subbar{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;background:linear-gradient(135deg,rgba(158,199,216,.30),rgba(158,199,216,.10));border:1px solid var(--accent);border-radius:var(--r);padding:20px 22px}
 .subbar-main{display:flex;flex-direction:column;gap:3px}
@@ -2170,9 +2217,23 @@ def _inject_head(txt, block):
     return txt, False
 
 
+# 「新增」星标的到点自摘：站点只在 push 时重建，过了 3 天的旧页面必须由浏览器自己摘掉星标
+_NEW_STAR_MARK = "tf-new-star-sweep"
+NEW_STAR_SWEEP = (
+    f"<script>/*{_NEW_STAR_MARK}*/"
+    "(function(){function s(){var n=Date.now()/1000,"
+    "e=document.querySelectorAll('.new-star[data-exp]');"
+    "for(var i=0;i<e.length;i++){var t=e[i];"
+    "if(+t.getAttribute('data-exp')<=n){"
+    "var c=t.closest('.card');if(c)c.classList.remove('has-new');t.remove();}}}"
+    "if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',s);else s();})();</script>"
+)
+
+
 _fav_patched = 0
 _author_patched = 0
 _stat_patched = 0
+_new_patched = 0
 for _root, _dirs, _files in os.walk(DIST):
     for _fn in _files:
         if not _fn.endswith(".html"):
@@ -2195,8 +2256,13 @@ for _root, _dirs, _files in os.walk(DIST):
             if _ok:
                 _stat_patched += 1
                 _changed = True
+        if NEW_STAR_SWEEP and "new-star" in _txt and _NEW_STAR_MARK not in _txt:
+            _txt, _ok = _inject_head(_txt, NEW_STAR_SWEEP)
+            if _ok:
+                _new_patched += 1
+                _changed = True
         if _changed:
             with open(_fp, "w", encoding="utf-8") as f:
                 f.write(_txt)
 
-print(f"built: index + {detail_written} detail pages + table/sponsor/about/privacy/terms/404 + robots/sitemap/llms/data.json/indexnow | items={len(items)} anchor={anchored} | favicon={_fav_patched} author={_author_patched} stats={_stat_patched} pages")
+print(f"built: index + {detail_written} detail pages + table/sponsor/about/privacy/terms/404 + robots/sitemap/llms/data.json/indexnow | items={len(items)} anchor={anchored} | favicon={_fav_patched} author={_author_patched} stats={_stat_patched} newstar={_new_patched} pages")

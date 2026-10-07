@@ -1,4 +1,9 @@
-"""为新条目分配永久详情 ID；保留现有 ID，不根据排序重新编号。"""
+"""为新条目分配永久详情 ID；保留现有 ID，不根据排序重新编号。
+
+同时给这批新条目写入 `added`（首次收录日期，YYYY-MM-DD）——它是首页卡片
+右上角「新增」五角星的唯一依据：收录当天算第 1 天，满 3 天后星标消失。
+"""
+import datetime
 import hashlib
 import json
 import re
@@ -13,7 +18,9 @@ if any(not re.fullmatch(r"[0-9]{4}[a-z]{4}", value) for value in existing):
 if len(existing) != len(set(existing)):
     raise ValueError("现有 ID 重复")
 serial = max((int(value[:4]) for value in existing), default=0)
+today = datetime.date.today().isoformat()
 assigned = 0
+stamped = 0
 for entry in entries:
     if entry.get("detail_slug"):
         continue
@@ -23,7 +30,10 @@ for entry in entries:
     suffix = "".join(chr(97 + value % 26) for value in
                      hashlib.sha256(entry["name"].encode()).digest()[:4])
     entry["detail_slug"] = f"{serial:04d}{suffix}"
+    if not entry.get("added"):
+        entry["added"] = today
+        stamped += 1
     assigned += 1
 if assigned:
     source.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-print(f"分配 {assigned} 个新 ID；现有 ID 保持不变")
+print(f"分配 {assigned} 个新 ID（其中 {stamped} 条写入 added={today}）；现有 ID 保持不变")

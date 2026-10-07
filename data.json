@@ -961,7 +961,8 @@
         "/intel/item-039-workbuddy-国际版/",
         "/intel/item-040-workbuddy-国际版/",
         "/intel/item-044-workbuddy-国际版/"
-      ]
+      ],
+      "added": "2026-10-07"
     },
     {
       "vendor": "MiniMax",
@@ -994,7 +995,8 @@
         "/intel/item-040-minimax-code-国庆签到/",
         "/intel/item-041-minimax-code-国庆签到/",
         "/intel/item-045-minimax-code-国庆签到/"
-      ]
+      ],
+      "added": "2026-10-07"
     },
     {
       "name": "华为云码道",
@@ -1027,7 +1029,8 @@
         "/intel/item-041-华为云码道/",
         "/intel/item-042-华为云码道/",
         "/intel/item-046-华为云码道/"
-      ]
+      ],
+      "added": "2026-10-07"
     },
     {
       "name": "Google Antigravity（反重力）",
@@ -1066,7 +1069,8 @@
         "/intel/item-042-google-antigravity-反重力/",
         "/intel/item-043-google-antigravity-反重力/",
         "/intel/item-047-google-antigravity-反重力/"
-      ]
+      ],
+      "added": "2026-10-07"
     }
   ],
   "retired": [
