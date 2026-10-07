@@ -22,9 +22,9 @@
 - DEPLOY.md 已同步：新条目流程改为「分配 ID → npm run check → build → 推送」。
 
 ## 排序列规则
-- "前"：较新模型（GLM-5.x / Kimi K2.x / Hy3 / DeepSeek V4 / MiniMax-M3 等同期或更晚）
-- "后"：在这些模型之前发布的模型
-- 现由 `build.py` 的 `editorial` 顺序人工维护位置（新模型段在前、老模型段在后）。
+- **新增一律追加到 `items` 数组末尾，不插入前面**（用户 2026-10-07 明确指示：「之后再发现新的，补到后面，不要插到前面」）。
+- `build.py` 的 `editorial = [it for it in items if not it.get("sponsored")]` 直接按 `data.json` 的 `items` 数组**自然顺序**渲染，**无额外排序逻辑**；因此自动化/手动新增条目只需 `append` 到 `items` 末尾即落在页面最后（赞助位仍按自身逻辑置顶/置底，不受此影响）。
+- 历史已存在的「新模型段在前、老模型段在后」顺序**保持现状**，不再为后续新增刻意前置；如需整体重排，再单独处理。
 
 ## 2026-07-19 新增条目
 - ZenMux（DeepSeek V4 Pro/Flash 永久免费无限调用，无需实名，国内低延迟）
