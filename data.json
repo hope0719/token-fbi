@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-10-07",
-  "total": 50,
+  "total": 44,
   "items": [
     {
       "name": "Token Harbor",
@@ -110,86 +110,6 @@
       "source_urls": [
         "https://fireworks.ai/pricing"
       ]
-    },
-    {
-      "name": "APMIX",
-      "vendor": "",
-      "category": "model",
-      "free_type": "限时活动",
-      "quota": "限时共享活动池 100 亿加权 Tokens（模型 gpt-6-luna-free）；共享池先到先得，耗尽即止，不消耗账号常规额度。",
-      "validity": "2026-10-31",
-      "region": "",
-      "gates": [],
-      "note": "共享池为活动专用（非每人 100 亿）；2026-10-02 17:00 UTC 已开启；海外服务，需海外网络环境。",
-      "sponsored": false,
-      "entry_url": "https://apmix.ai/event",
-      "intel_url": "https://apmix.ai/event",
-      "last_verified": "2026-10-05",
-      "modality": "gpt-6-luna-free",
-      "signup": "注册 APMIX 账号（免费档即可，无需付费计划）并创建 API Key；活动开启后配置 base_url=https://api.apmix.ai/v1、model=gpt-6-luna-free。",
-      "activity_rules": [
-        "活动时间：2026-10-02 17:00 UTC 开启，共享池 100 亿加权 Tokens 先到先得。",
-        "模型：gpt-6-luna-free；OpenAI 兼容（https://api.apmix.ai/v1）与 Anthropic 兼容双接口。",
-        "免费 / Starter / Pro / Max 账号均可参与，不消耗账号常规额度，无需付费计划。",
-        "共享池可能提前耗尽或提前结束；使用前查看官方活动页倒计时与最新条件。"
-      ],
-      "update_source": "全网搜索补充，2026-10-05"
-    },
-    {
-      "name": "智谱AI（Z.AI 开放平台）",
-      "vendor": "智谱",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "新用户注册送 2000 万 Tokens（长期有效）；GLM-4.7-Flash / GLM-4.5-Flash / GLM-4.6V-Flash 等注册即免、不限 Token；并发上限 30。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "国内直连、中文能力强；GLM-5.x 主力模型按赠额/计费使用，Flash 系列长期免费不限量。",
-      "sponsored": false,
-      "entry_url": "https://open.bigmodel.cn",
-      "intel_url": "https://open.bigmodel.cn",
-      "last_verified": "2026-10-05",
-      "modality": "GLM-5 / GLM-5.1 / GLM-5.2 / GLM-4.7-Flash / GLM-4.5-Flash",
-      "signup": "手机号注册 open.bigmodel.cn，无需信用卡；实名后创建 API Key，base_url=https://open.bigmodel.cn/api/paas/v4/。",
-      "update_source": "全网搜索补充，2026-10-05"
-    },
-    {
-      "name": "Mistral La Plateforme",
-      "vendor": "Mistral AI",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "Experiment 实验计划：全模型免费用量（约 1B tokens/月/模型，~1–2 RPS、500K TPM），无需信用卡；需手机号验证。覆盖 Mistral Large 3 / Small / Medium、Codestral、Pixtral 等。",
-      "validity": "",
-      "region": "国际",
-      "gates": [
-        "手机号验证"
-      ],
-      "note": "欧洲数据合规（法国托管）；免费档数据可能用于模型改进，可在设置中关闭。",
-      "sponsored": false,
-      "entry_url": "https://console.mistral.ai",
-      "intel_url": "https://console.mistral.ai",
-      "last_verified": "2026-10-06",
-      "modality": "Mistral Large 3 · Mistral Small · Codestral · Pixtral",
-      "signup": "注册 console.mistral.ai 并完成邮箱 + 短信验证；在 Subscription 选择 Experiment for free 后创建 API Key；base_url=https://api.mistral.ai/v1（OpenAI SDK 兼容）。",
-      "update_source": "全网搜索补充，2026-10-06"
-    },
-    {
-      "name": "xAI Grok（console.x.ai）",
-      "vendor": "xAI",
-      "category": "model",
-      "free_type": "注册赠送",
-      "quota": "新账号赠送 $25 试用额度（约 5000 万 input tokens @Grok 4.1 Fast），无需绑卡即可开始；额度自注册起 30 天有效、不结转。",
-      "validity": "",
-      "region": "国际",
-      "gates": [],
-      "note": "独立于 X Premium；可用邮箱或 X 账号注册。数据分享计划额外 $150/月需先消费 $5，非必须。",
-      "sponsored": false,
-      "entry_url": "https://console.x.ai",
-      "intel_url": "https://console.x.ai",
-      "last_verified": "2026-10-06",
-      "modality": "Grok 4.x · Grok 4.1 Fast",
-      "signup": "注册 console.x.ai，完成新手引导后 $25 额度自动到账；创建 API Key，base_url=https://api.x.ai/v1（OpenAI SDK 兼容）。",
-      "update_source": "全网搜索补充，2026-10-06"
     },
     {
       "name": "WorkBuddy",
@@ -918,42 +838,6 @@
         "https://antigravity.google/docs/models/"
       ],
       "update_source": "官方定价页与模型文档，2026-10-02"
-    },
-    {
-      "name": "Cohere Trial Key",
-      "vendor": "Cohere",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "Trial Key：限频但无过期（约 5–20 req/min、1000 次/月），覆盖 Command R / R+ / Embed v3 / Rerank v3；无需信用卡。",
-      "validity": "",
-      "region": "国际",
-      "gates": [],
-      "note": "限频较严，适合 Embedding / Rerank / RAG 原型验证；官方标注为非商用。",
-      "sponsored": false,
-      "entry_url": "https://dashboard.cohere.com",
-      "intel_url": "https://docs.cohere.com",
-      "last_verified": "2026-10-06",
-      "modality": "Command R · Command R+ · Embed v3 · Rerank v3",
-      "signup": "注册 dashboard.cohere.com 后创建 Trial Key，按官方 SDK 调用。",
-      "update_source": "全网搜索补充，2026-10-06"
-    },
-    {
-      "name": "腾讯云混元大模型",
-      "vendor": "腾讯",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "hunyuan-lite 永久免费（通用，不限 Token）；新用户开通赠 100 万 Token（1 年有效期）；Embedding 另赠 100 万 Token。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "微信生态直连首选，适配小程序/公众号；与已下架的腾讯云 TokenHub 为不同产品。",
-      "sponsored": false,
-      "entry_url": "https://cloud.tencent.com/product/hunyuan",
-      "intel_url": "https://cloud.tencent.com/document/product/1729",
-      "last_verified": "2026-10-06",
-      "modality": "hunyuan-lite · hunyuan-pro · Hunyuan-T1 · Hunyuan-TurboS",
-      "signup": "登录腾讯云控制台 → 混元大模型 → 开通服务，资源包自动到账；创建应用获取 SecretId/SecretKey。",
-      "update_source": "全网搜索补充，2026-10-06"
     }
   ],
   "retired": [
@@ -1058,6 +942,36 @@
       "name": "讯飞星火（开放平台）",
       "url": "https://www.xfyun.cn",
       "reason": "用户于 2026-10-06 要求移入观望区，待观察免费额度政策是否稳定"
+    },
+    {
+      "name": "APMIX",
+      "url": "https://apmix.ai/event",
+      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。"
+    },
+    {
+      "name": "智谱AI（Z.AI 开放平台）",
+      "url": "https://open.bigmodel.cn",
+      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。"
+    },
+    {
+      "name": "Mistral La Plateforme",
+      "url": "https://console.mistral.ai",
+      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。"
+    },
+    {
+      "name": "xAI Grok（console.x.ai）",
+      "url": "https://console.x.ai",
+      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。"
+    },
+    {
+      "name": "Cohere Trial Key",
+      "url": "https://dashboard.cohere.com",
+      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。"
+    },
+    {
+      "name": "腾讯云混元大模型",
+      "url": "https://cloud.tencent.com/product/hunyuan",
+      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。"
     }
   ]
 }
