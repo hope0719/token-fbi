@@ -21,7 +21,7 @@
 本脚本不依赖网络、不推送任何仓库——产出自包含于 dist/，供后续"直接覆盖"旧站。
 """
 import json, html, os, re, shutil
-from datetime import date, datetime, time, timedelta
+from datetime import date, datetime, time, timedelta, timezone
 from urllib.parse import quote
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -255,8 +255,13 @@ name2href = {it.get("name"): hrefs[i] for i, it in enumerate(items) if not it.ge
 #     若只靠构建期判断，超过 3 天后未重新部署的页面会把星标一直挂着。
 #   · `added` 由 scripts/assign_detail_ids.py 在分配详情 ID 时自动写入，无需手工维护。
 #   · 页面不显示任何日期，"3 天" 只是星标的存活窗口。
+#   · 【必须按北京时间判定】构建机时区不可控（本机 CST / Cloudflare 构建机 UTC），
+#     若用本地时间会出现两个偏差：① 到期时刻随构建机漂移 8 小时；
+#     ② 北京时间 00:00–08:00 之间构建时 UTC 仍停在前一天，导致当天新条目不出星。
+#     故统一显式锚定 UTC+8。
 NEW_DAYS = 3
-_BUILD_DATE = date.today()
+_TZ = timezone(timedelta(hours=8))
+_BUILD_DATE = datetime.now(_TZ).date()
 
 
 def added_on(it):
@@ -277,11 +282,14 @@ def is_new(it):
 
 
 def new_star_expiry(it):
-    """星标失效时刻（Unix 秒）：收录日 + NEW_DAYS 天的 00:00。"""
+    """星标失效时刻（Unix 秒）：收录日 + NEW_DAYS 天的北京时间 00:00。
+
+    显式带 tzinfo，保证与本机 / CI（UTC）构建结果完全一致，不随时区漂移。
+    """
     d0 = added_on(it)
     if not d0:
         return 0
-    end = datetime.combine(d0 + timedelta(days=NEW_DAYS), time.min)
+    end = datetime.combine(d0 + timedelta(days=NEW_DAYS), time.min, tzinfo=_TZ)
     return int(end.timestamp())
 
 
