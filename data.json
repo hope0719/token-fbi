@@ -41,11 +41,11 @@
       "vendor": "百度",
       "category": "tool",
       "free_type": "每日赠送",
-      "quota": "每日登录 +50 积分、完成一次对话 +50 积分，合计每天可领 100 积分；DeepSeek V4.1 按 0.16 倍率消耗。首次下载登录另送 500 积分。",
+      "quota": "每日登录 +50 积分、完成一次对话 +50 积分，合计每天可领 100 积分；DeepSeek V4.1 按 0.16 倍率消耗。",
       "validity": "每日额度以平台显示为准；免费领积分活动第 4 期至 2026-10-10",
       "region": "",
       "gates": [],
-      "note": "邀请新用户登录电脑版，每日可再多得 300 积分；积分可抵扣 DeepSeek、GLM、文心、Kimi 等模型调用。",
+      "note": "",
       "sponsored": false,
       "entry_url": "https://kuku.baidu.com/genflowpro?invite_code=4Y2ZUZE3&action=download",
       "intel_url": "https://kuku.baidu.com",
@@ -54,7 +54,6 @@
       "signup": "打开邀请链接下载并登录库库 AI 客户端，进入「免费领积分」页，完成每日登录与一次对话即可领取积分。",
       "activity_rules": [
         "每日登录 +50 积分、完成一次对话 +50 积分，单账号每日合计 100 积分（活动页口径上限更高，以页面显示为准）。",
-        "首次下载登录送 500 积分；邀请新用户登录电脑版，每日可再多得 300 积分。",
         "积分用于抵扣模型调用：DeepSeek V4.1 约 0.16 倍率，GLM-5.3-Flash 低至 0.07 倍率；可选 DeepSeek-V4.1/Pro、GLM-5.3/5.2/5.1、文心 5.1、Kimi-K3/K2.7/K2.6、MiniMax-M3 等。",
         "免费领积分活动分期限时发放（第 4 期至 2026-10-10 结束），后续是否续期以官方活动页为准。"
       ],
