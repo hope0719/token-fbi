@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-07",
-  "total": 39,
+  "last_updated": "2026-10-08",
+  "total": 41,
   "items": [
     {
       "name": "WorkBuddy",
@@ -1071,6 +1071,71 @@
         "/intel/item-047-google-antigravity-反重力/"
       ],
       "added": "2026-10-07"
+    },
+    {
+      "name": "腾讯 LightVela",
+      "vendor": "腾讯轻量云",
+      "category": "tool",
+      "free_type": "注册赠送",
+      "quota": "新用户免费体验 1 个月，赠送 4500 AI 积分（模型积分，用于模型调用与功能解锁）。",
+      "validity": "",
+      "region": "",
+      "gates": [
+        "实名认证"
+      ],
+      "note": "官网首页与旧版套餐文档口径不完全一致；最终到手权益以登录账号后的权益页显示为准。",
+      "sponsored": false,
+      "entry_url": "https://lightvela.com/subscribe",
+      "intel_url": "https://lightvela.com",
+      "last_verified": "2026-10-08",
+      "modality": "Hermes Agent · 可接入主流模型 API",
+      "signup": "注册或登录 LightVela 账号 → 完成实名认证 → 进入订阅或权益页 → 按提示完成 0 元支付 → 核对免费体验时长与 4500 积分到账。",
+      "activity_rules": [
+        "新用户免费体验 1 个月，赠送 4500 AI 积分；积分用于模型调用与功能解锁。",
+        "首次开通任意套餐前需完成实名认证，并按页面提示完成 0 元支付（不产生实际扣费）。",
+        "官网首页与部分旧版套餐文档的活动口径并不完全一致，最终到手权益以登录账号后的权益页为准。",
+        "免费权益到期后按订阅页价格计费；国内站另设启航 Launch、巡游 Cruise 等付费套餐。"
+      ],
+      "source_urls": [
+        "https://lightvela.com",
+        "https://lightvela.com/subscribe",
+        "https://lightvela.com/docs/overview/"
+      ],
+      "update_source": "官网首页与产品文档，2026-10-08",
+      "detail_slug": "0071koiu",
+      "added": "2026-10-08"
+    },
+    {
+      "name": "Freebuff",
+      "vendor": "CodebuffAI",
+      "category": "tool",
+      "free_type": "每日赠送",
+      "quota": "Free 方案 0 美元/月、无需信用卡：每天自动补充 1.5 美元用量，约合 GLM 5.3 Flash 或 DeepSeek V4.1 Flash 每天 10 小时（月度上限约 46.5 美元）。",
+      "validity": "每日额度当天有效、不累计；Free 方案长期有效",
+      "region": "国际",
+      "gates": [],
+      "note": "广告资助的免费 coding agent；额度按地区分配，非完整访问地区与 VPN 用户额度更低。",
+      "sponsored": false,
+      "entry_url": "https://freebuff.com",
+      "intel_url": "https://freebuff.com/plans",
+      "last_verified": "2026-10-08",
+      "modality": "GLM 5.3 Flash · DeepSeek V4.1 Flash · MiMo 2.6 Flash · Solar Mini 4 · Muse Spark 1.3",
+      "signup": "打开 freebuff.com 直接使用（CLI / 桌面端 / Web / 云端 IDE / Chat）；无需注册、无需 API Key、无需信用卡。",
+      "activity_rules": [
+        "Free 方案 0 美元/月，无需信用卡；每天自动补充 1.5 美元用量额度，未用完不累计。",
+        "按官方定价页：每天约可用 GLM 5.3 Flash 10 小时，或 DeepSeek V4.1 Flash 10 小时；单会话消息数不限。",
+        "用量以 Freebucks 计量，按模型的每小时单价折算；每日额度在你所在时区零点重置。",
+        "额度按地区分配：受支持地区为完整额度，其他地区与 VPN 用户额度更低；Starter 及以上套餐才是全地区模型。",
+        "Beta 期间模型定价与额度可能调整，公平使用限制下会话可能被暂停。"
+      ],
+      "source_urls": [
+        "https://freebuff.com/plans",
+        "https://freebuff.com",
+        "https://github.com/CodebuffAI/freebuff"
+      ],
+      "update_source": "官方定价页与项目主页，2026-10-08",
+      "detail_slug": "0072kitf",
+      "added": "2026-10-08"
     }
   ],
   "retired": [
@@ -1430,6 +1495,18 @@
       "legacy_detail_paths": [
         "/intel/item-004-fireworks-ai/"
       ]
+    },
+    {
+      "name": "Coderblock",
+      "url": "https://coderblock.ai",
+      "reason": "免费 Community 计划仅 20 个一次性 AI 积分、2 个 AI 辅助项目，额度过小；平台 2026-09-30 才开放注册，待观察免费额度是否加码。",
+      "detail_slug": "0073pdst"
+    },
+    {
+      "name": "百度 AI Studio",
+      "url": "https://aistudio.baidu.com",
+      "reason": "官方称每位开发者赠 100 万免费 Tokens，但同厂商百度千帆已在观望区，积分与有效期口径待核实。",
+      "detail_slug": "0074paln"
     }
   ]
 }
