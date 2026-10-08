@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-10-08",
-  "total": 40,
+  "total": 39,
   "items": [
     {
       "name": "WorkBuddy",
@@ -1066,39 +1066,6 @@
         "/intel/item-047-google-antigravity-反重力/"
       ],
       "added": "2026-10-07"
-    },
-    {
-      "name": "腾讯 LightVela",
-      "vendor": "腾讯轻量云",
-      "category": "tool",
-      "free_type": "注册赠送",
-      "quota": "新用户免费体验 1 个月，赠送 4500 AI 积分（模型积分，用于模型调用与功能解锁）。",
-      "validity": "",
-      "region": "",
-      "gates": [
-        "实名认证"
-      ],
-      "note": "官网首页与旧版套餐文档口径不完全一致；最终到手权益以登录账号后的权益页显示为准。",
-      "sponsored": false,
-      "entry_url": "https://lightvela.com/?ref=6GBEZ5CUKD",
-      "intel_url": "https://lightvela.com",
-      "last_verified": "2026-10-08",
-      "modality": "Hermes Agent · 可接入主流模型 API",
-      "signup": "注册或登录 LightVela 账号 → 完成实名认证 → 进入订阅或权益页 → 按提示完成 0 元支付 → 核对免费体验时长与 4500 积分到账。",
-      "activity_rules": [
-        "新用户免费体验 1 个月，赠送 4500 AI 积分；积分用于模型调用与功能解锁。",
-        "首次开通任意套餐前需完成实名认证，并按页面提示完成 0 元支付（不产生实际扣费）。",
-        "官网首页与部分旧版套餐文档的活动口径并不完全一致，最终到手权益以登录账号后的权益页为准。",
-        "免费权益到期后按订阅页价格计费；国内站另设启航 Launch、巡游 Cruise 等付费套餐。"
-      ],
-      "source_urls": [
-        "https://lightvela.com",
-        "https://lightvela.com/subscribe",
-        "https://lightvela.com/docs/overview/"
-      ],
-      "update_source": "官网首页与产品文档，2026-10-08",
-      "detail_slug": "0071koiu",
-      "added": "2026-10-08"
     }
   ],
   "retired": [
@@ -1540,6 +1507,12 @@
       "added": "2026-10-08",
       "url": "https://freebuff.com",
       "reason": "国际平台、额度按地区分配（非完整访问地区与 VPN 用户额度更低），待观察免费额度政策与实际可用性。"
+    },
+    {
+      "name": "腾讯 LightVela",
+      "url": "https://lightvela.com",
+      "reason": "用户于 2026-10-08 要求移入观望区：模型能力一般、仅适用于聊天场景，待观察其能力表现与免费额度政策。",
+      "detail_slug": "0071koiu"
     }
   ]
 }
