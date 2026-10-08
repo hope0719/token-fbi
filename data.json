@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-10-08",
-  "total": 42,
+  "total": 40,
   "items": [
     {
       "name": "WorkBuddy",
@@ -994,40 +994,6 @@
       "added": "2026-10-07"
     },
     {
-      "vendor": "MiniMax",
-      "category": "tool",
-      "free_type": "限时活动",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "last_verified": "2026-10-02",
-      "signup": "",
-      "update_source": "用户补充，2026-10-02",
-      "name": "MiniMax Code 国庆签到",
-      "quota": "9 月 28 日—10 月 7 日，每日签到积分翻倍，新老用户均可参加。",
-      "validity": "2026-10-07",
-      "modality": "MiniMax Code",
-      "entry_url": "https://agent.minimax.cn/",
-      "intel_url": "https://agent.minimax.cn/",
-      "activity_rules": [
-        "活动时间：2026 年 9 月 28 日—10 月 7 日。",
-        "打开 MiniMax Code 并登录账号。",
-        "找到每日签到入口，每天签到一次，领取双倍积分。",
-        "新老用户均可参加；双倍积分不代表 Token 用量或所有模型均免费。"
-      ],
-      "detail_slug": "0037dxuu",
-      "legacy_detail_paths": [
-        "/intel/item-037-minimax-code-国庆签到/",
-        "/intel/item-038-minimax-code-国庆签到/",
-        "/intel/item-039-minimax-code-国庆签到/",
-        "/intel/item-040-minimax-code-国庆签到/",
-        "/intel/item-041-minimax-code-国庆签到/",
-        "/intel/item-045-minimax-code-国庆签到/"
-      ],
-      "added": "2026-10-07"
-    },
-    {
       "name": "华为云码道",
       "vendor": "华为云",
       "category": "tool",
@@ -1132,38 +1098,6 @@
       ],
       "update_source": "官网首页与产品文档，2026-10-08",
       "detail_slug": "0071koiu",
-      "added": "2026-10-08"
-    },
-    {
-      "name": "Freebuff",
-      "vendor": "CodebuffAI",
-      "category": "tool",
-      "free_type": "每日赠送",
-      "quota": "Free 方案 0 美元/月、无需信用卡：每天自动补充 1.5 美元用量，约合 GLM 5.3 Flash 或 DeepSeek V4.1 Flash 每天 10 小时（月度上限约 46.5 美元）。",
-      "validity": "每日额度当天有效、不累计；Free 方案长期有效",
-      "region": "国际",
-      "gates": [],
-      "note": "广告资助的免费 coding agent；额度按地区分配，非完整访问地区与 VPN 用户额度更低。",
-      "sponsored": false,
-      "entry_url": "https://freebuff.com",
-      "intel_url": "https://freebuff.com/plans",
-      "last_verified": "2026-10-08",
-      "modality": "GLM 5.3 Flash · DeepSeek V4.1 Flash · MiMo 2.6 Flash · Solar Mini 4 · Muse Spark 1.3",
-      "signup": "打开 freebuff.com 直接使用（CLI / 桌面端 / Web / 云端 IDE / Chat）；无需注册、无需 API Key、无需信用卡。",
-      "activity_rules": [
-        "Free 方案 0 美元/月，无需信用卡；每天自动补充 1.5 美元用量额度，未用完不累计。",
-        "按官方定价页：每天约可用 GLM 5.3 Flash 10 小时，或 DeepSeek V4.1 Flash 10 小时；单会话消息数不限。",
-        "用量以 Freebucks 计量，按模型的每小时单价折算；每日额度在你所在时区零点重置。",
-        "额度按地区分配：受支持地区为完整额度，其他地区与 VPN 用户额度更低；Starter 及以上套餐才是全地区模型。",
-        "Beta 期间模型定价与额度可能调整，公平使用限制下会话可能被暂停。"
-      ],
-      "source_urls": [
-        "https://freebuff.com/plans",
-        "https://freebuff.com",
-        "https://github.com/CodebuffAI/freebuff"
-      ],
-      "update_source": "官方定价页与项目主页，2026-10-08",
-      "detail_slug": "0072kitf",
       "added": "2026-10-08"
     }
   ],
@@ -1536,6 +1470,76 @@
       "url": "https://aistudio.baidu.com",
       "reason": "官方称每位开发者赠 100 万免费 Tokens，但同厂商百度千帆已在观望区，积分与有效期口径待核实。",
       "detail_slug": "0074paln"
+    },
+    {
+      "vendor": "MiniMax",
+      "category": "tool",
+      "free_type": "限时活动",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "last_verified": "2026-10-02",
+      "signup": "",
+      "update_source": "用户补充，2026-10-02",
+      "name": "MiniMax Code 国庆签到",
+      "quota": "9 月 28 日—10 月 7 日，每日签到积分翻倍，新老用户均可参加。",
+      "validity": "2026-10-07",
+      "modality": "MiniMax Code",
+      "entry_url": "https://agent.minimax.cn/",
+      "intel_url": "https://agent.minimax.cn/",
+      "activity_rules": [
+        "活动时间：2026 年 9 月 28 日—10 月 7 日。",
+        "打开 MiniMax Code 并登录账号。",
+        "找到每日签到入口，每天签到一次，领取双倍积分。",
+        "新老用户均可参加；双倍积分不代表 Token 用量或所有模型均免费。"
+      ],
+      "detail_slug": "0037dxuu",
+      "legacy_detail_paths": [
+        "/intel/item-037-minimax-code-国庆签到/",
+        "/intel/item-038-minimax-code-国庆签到/",
+        "/intel/item-039-minimax-code-国庆签到/",
+        "/intel/item-040-minimax-code-国庆签到/",
+        "/intel/item-041-minimax-code-国庆签到/",
+        "/intel/item-045-minimax-code-国庆签到/"
+      ],
+      "added": "2026-10-07",
+      "url": "https://agent.minimax.cn/",
+      "reason": "签到积分翻倍活动已于 2026-10-07 结束（9月28日—10月7日），移入观望区，待观察是否开启新一期活动。"
+    },
+    {
+      "name": "Freebuff",
+      "vendor": "CodebuffAI",
+      "category": "tool",
+      "free_type": "每日赠送",
+      "quota": "Free 方案 0 美元/月、无需信用卡：每天自动补充 1.5 美元用量，约合 GLM 5.3 Flash 或 DeepSeek V4.1 Flash 每天 10 小时（月度上限约 46.5 美元）。",
+      "validity": "每日额度当天有效、不累计；Free 方案长期有效",
+      "region": "国际",
+      "gates": [],
+      "note": "广告资助的免费 coding agent；额度按地区分配，非完整访问地区与 VPN 用户额度更低。",
+      "sponsored": false,
+      "entry_url": "https://freebuff.com",
+      "intel_url": "https://freebuff.com/plans",
+      "last_verified": "2026-10-08",
+      "modality": "GLM 5.3 Flash · DeepSeek V4.1 Flash · MiMo 2.6 Flash · Solar Mini 4 · Muse Spark 1.3",
+      "signup": "打开 freebuff.com 直接使用（CLI / 桌面端 / Web / 云端 IDE / Chat）；无需注册、无需 API Key、无需信用卡。",
+      "activity_rules": [
+        "Free 方案 0 美元/月，无需信用卡；每天自动补充 1.5 美元用量额度，未用完不累计。",
+        "按官方定价页：每天约可用 GLM 5.3 Flash 10 小时，或 DeepSeek V4.1 Flash 10 小时；单会话消息数不限。",
+        "用量以 Freebucks 计量，按模型的每小时单价折算；每日额度在你所在时区零点重置。",
+        "额度按地区分配：受支持地区为完整额度，其他地区与 VPN 用户额度更低；Starter 及以上套餐才是全地区模型。",
+        "Beta 期间模型定价与额度可能调整，公平使用限制下会话可能被暂停。"
+      ],
+      "source_urls": [
+        "https://freebuff.com/plans",
+        "https://freebuff.com",
+        "https://github.com/CodebuffAI/freebuff"
+      ],
+      "update_source": "官方定价页与项目主页，2026-10-08",
+      "detail_slug": "0072kitf",
+      "added": "2026-10-08",
+      "url": "https://freebuff.com",
+      "reason": "国际平台、额度按地区分配（非完整访问地区与 VPN 用户额度更低），待观察免费额度政策与实际可用性。"
     }
   ]
 }
