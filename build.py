@@ -44,6 +44,12 @@ SPONSOR_MAIL = CONTACT_MAIL     # 合作赞助咨询邮箱
 #   挂 GA4 的**唯一目的**是可以在 similarweb.com「Claim Your Website → Connect Google Analytics」
 #   里**公开接入**，让 SimilarWeb / AITDK 这类第三方工具显示你的真实访问数（带「已验证」徽章）。
 GA4_ID = "G-D06YK62XCD"
+# AdSense 发布商 ID；清空可停用广告脚本与 ads.txt 输出。
+ADSENSE_ID = "ca-pub-8898409337979578"
+ADSENSE_BLOCK = (
+    f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_ID}" crossorigin="anonymous"></script>'
+    if ADSENSE_ID else ""
+)
 # CF_BEACON_TOKEN：Cloudflare Web Analytics 的 beacon token（CF 后台 → Web Analytics 获取）。
 #   无 Cookie、不写本地存储，中国大陆可正常统计 —— 作为**你自己的真实数字**（Media Kit / 招商用），
 #   不用来喂第三方估算工具。
@@ -1381,15 +1387,15 @@ h1{font-size:30px;line-height:1.2;margin-bottom:8px}
 <div class="card">
   <h2>我们收集什么</h2>
   <p><b>不收集任何可识别到你个人的信息。</b>本站没有注册、登录、评论或表单提交功能，不要求你提供姓名、手机号、邮箱或任何身份信息，也不建立用户画像。全站页面均为预生成的静态 HTML，不存在数据库与用户账户体系。</p>
-  <p style="margin-top:10px">唯一例外是<b>匿名访问统计</b>（见下节）：它只记录聚合的访问次数、来源与地区，用于判断内容是否有人看，不与你的身份关联，也不用于投放。</p>
+  <p style="margin-top:10px">本站还使用访问统计与 Google AdSense 广告服务（见下节）。第三方可能处理 Cookie、IP 地址及设备信息，本站不将这些信息与用户账户关联。</p>
 </div>
 
 <div class="card">
   <h2>Cookie 与跟踪</h2>
-  <p>本站<b>不嵌入广告 SDK 或社交追踪像素</b>，不做跨站跟踪，也不做再营销。</p>
+  <p>本站已接入 <b>Google AdSense</b> 广告代码，用于网站验证及审核通过后的广告展示。Google 及其合作伙伴可能设置和读取 Cookie、使用网络信标，并处理 IP 地址及设备信息，用于广告投放、衡量和防止无效流量。</p>
   <p style="margin-top:10px"><b>访问统计：</b>本站的访问数据来自托管商 <b>Cloudflare</b> 的统计服务（基于边缘节点的逐请求计数）。这类统计不设置 Cookie、不使用 localStorage、不做设备指纹，也不做跨站跟踪；只产出聚合的访问数、来源与地区，仅用于本站自身的流量判断，不用于广告。</p>
   <p style="margin-top:10px"><b>流量公开验证：</b>为便于合作方核实本站流量的真实性，本站另行启用 <b>Google Analytics 4</b>，并将其数据以<b>「公开验证」</b>的方式关联至第三方流量平台（SimilarWeb）—— 也就是说，任何人（包括广告主）都能在该平台看到本站的真实访问数，而不是只能看估算值。GA4 会在你的浏览器写入一枚用于区分会话的 Cookie（<b>_ga</b> 系列），<b>仅用于统计</b>，不用于广告投放或跨站追踪，本站也不会把它与任何身份信息关联。</p>
-  <p style="margin-top:10px">除上述两项统计之外，本站不设置任何其他 Cookie。你可以在浏览器中随时清除或拦截这些 Cookie —— 本站全部功能都不依赖登录与 Cookie，拦截后浏览体验不受任何影响。</p>
+  <p style="margin-top:10px">你可以在浏览器中清除或拦截 Cookie，并通过 <a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer">Google 我的广告中心</a>管理个性化广告设置。第三方如何处理数据详见 <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Google 合作伙伴网站数据说明</a>。本站核心情报浏览功能不依赖登录或广告 Cookie。</p>
   <p style="margin-top:10px">本站托管于 Cloudflare Pages。作为 CDN 与安全防护的一部分，托管商可能按行业惯例处理基础访问日志（如 IP、User-Agent、请求时间），用于安全防护与流量统计。这部分由 Cloudflare 依其自身隐私政策处理，本站不单独留存，也不用于识别个人身份。</p>
 </div>
 
@@ -1401,7 +1407,7 @@ h1{font-size:30px;line-height:1.2;margin-bottom:8px}
 
 <div class="card">
   <h2>广告位与赞助</h2>
-  <p>本站首页设有明码标价的广告位（刊例与流程见 <a href="/sponsor/">合作赞助</a>）。<b>所有赞助内容均单独标注</b>，不混入自然情报列表，也不参与收录与排序判断。广告位仅做图文展示与跳转，<b>不携带任何跟踪脚本</b>，赞助方不会因此获得你的任何个人数据。</p>
+  <p>本站首页设有明码标价的广告位（刊例与流程见 <a href="/sponsor/">合作赞助</a>）。<b>所有赞助内容均单独标注</b>，不混入自然情报列表，也不参与收录与排序判断。直接赞助位仅做图文展示与跳转，不向赞助方提供个人数据。另行接入的 Google AdSense 自动广告由 Google 提供与管理，其数据处理方式见上述说明。</p>
 </div>
 
 <div class="card">
@@ -2263,6 +2269,10 @@ body.site-promo-notfound>.wrap{margin:auto;padding:80px 24px}
 </style>'''
 
 
+if ADSENSE_ID:
+    with open(os.path.join(DIST, "ads.txt"), "w", encoding="utf-8") as f:
+        f.write(f"google.com, {ADSENSE_ID.removeprefix('ca-')}, DIRECT, f08c47fec0942fa0\n")
+
 _fav_patched = 0
 _author_patched = 0
 _stat_patched = 0
@@ -2284,6 +2294,10 @@ for _root, _dirs, _files in os.walk(DIST):
             _txt = _txt.replace('</head>', PROMO_STYLE + '\n</head>', 1)
             _txt = _txt.replace('<body>', '<body' + _body_class + '>' + PROMO_BAR, 1)
             _changed = True
+        # 广告仅接入内容页；404 与外链跳转页不请求广告。
+        if ADSENSE_BLOCK and _fn != '404.html' and '/go/' not in _fp.replace(os.sep, '/') and 'pagead/js/adsbygoogle.js' not in _txt:
+            _txt, _ok = _inject_head(_txt, ADSENSE_BLOCK)
+            _changed = _changed or _ok
         if 'name="author"' not in _txt:
             _txt, _ok = _inject_head(_txt, _AUTHOR_META)
             if _ok:
