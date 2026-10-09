@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-08",
-  "total": 39,
+  "last_updated": "2026-10-09",
+  "total": 41,
   "items": [
     {
       "name": "WorkBuddy",
@@ -1066,6 +1066,46 @@
         "/intel/item-047-google-antigravity-反重力/"
       ],
       "added": "2026-10-07"
+    },
+    {
+      "name": "豆包工作（30 天订阅）",
+      "vendor": "",
+      "category": "event",
+      "free_type": "限时活动",
+      "quota": "全用户登录电脑版即可领 30 天订阅；上一轮领过的可继续续领，付费订阅时长自动顺延。",
+      "validity": "2026-10-17",
+      "region": "",
+      "gates": [],
+      "note": "字节跳动豆包工作电脑版活动，登录后按客户端内提示领取；设置 → 订阅与额度管理 → 订阅记录可核对到期时间。",
+      "sponsored": false,
+      "entry_url": "https://www.doubao.com/download",
+      "intel_url": "https://post.m.smzdm.com/p/awwoe9zm",
+      "signup": "",
+      "modality": "豆包工作 · Agent 云端工作台",
+      "last_verified": "2026-10-09",
+      "update_source": "自动更新 2026-10-09",
+      "detail_slug": "0076drty",
+      "added": "2026-10-09"
+    },
+    {
+      "name": "OVHcloud AI Endpoints",
+      "vendor": "",
+      "category": "model",
+      "free_type": "免费层",
+      "quota": "匿名档免注册、免 API Key 直接调用（约 2 次/分钟）；注册账号后额度更高。免费覆盖 Qwen3.8-27B、Qwen3.5-397B-A17B、Mistral-Small-3.2-24B、Llama-3.3-70B 等 8 款开源模型。",
+      "validity": "",
+      "region": "国际",
+      "gates": [],
+      "note": "欧洲机房（法国）托管，OpenAI 兼容；需海外网络、延迟偏高，适合测试与轻量调用。",
+      "sponsored": false,
+      "entry_url": "https://endpoints.ai.cloud.ovh.net/",
+      "intel_url": "https://freellm.net/providers/ovhcloud-ai-endpoints",
+      "signup": "",
+      "modality": "Qwen3.8-27B · Qwen3.5-397B-A17B · Mistral-Small-3.2-24B · Llama-3.3-70B",
+      "last_verified": "2026-10-09",
+      "update_source": "自动更新 2026-10-09",
+      "detail_slug": "0077hrui",
+      "added": "2026-10-09"
     }
   ],
   "retired": [
@@ -1513,6 +1553,27 @@
       "url": "https://lightvela.com",
       "reason": "用户于 2026-10-08 要求移入观望区：模型能力一般、仅适用于聊天场景，待观察其能力表现与免费额度政策。",
       "detail_slug": "0071koiu"
+    },
+    {
+      "name": "LLM7.io",
+      "url": "https://llm7.io",
+      "reason": "2026-10-09 自动更新移入：国际独立聚合器，邮箱注册免卡、11 款免费模型（含 GPT-4o-mini、DeepSeek V4 Pro），体量小、长期稳定性待观察。",
+      "detail_slug": "0078eqld",
+      "added": "2026-10-09"
+    },
+    {
+      "name": "FreeTheAI",
+      "url": "https://freetheai.org",
+      "reason": "2026-10-09 自动更新移入：社区运营的模型聚合站，每日签到领 50 次免费请求，可靠性待观察。",
+      "detail_slug": "0079xmrz",
+      "added": "2026-10-09"
+    },
+    {
+      "name": "Codiv.ai（OpenJev）",
+      "url": "https://codiv.ai",
+      "reason": "2026-10-09 自动更新移入：个人 GPU 托管的免费 API 实验（每账户 1 亿输入 Tokens），非商业实体运营，稳定性待观察。",
+      "detail_slug": "0080nlwp",
+      "added": "2026-10-09"
     }
   ]
 }
