@@ -2238,6 +2238,31 @@ NEW_STAR_SWEEP = (
 )
 
 
+
+# 全站推广横条：统一生成，保持各页面内容与网址不变。
+PROMO_BAR = '''<aside class="site-promo-bar" aria-label="推广入口">
+<a href="https://www.16688.com.cn/shop/K4399" target="_blank" rel="sponsored nofollow noopener noreferrer">
+<span class="site-promo-label">推广</span>
+<span class="site-promo-title">Codex 充值快车道</span>
+<span class="site-promo-price">月 Plus 仅需 138</span>
+<span class="site-promo-arrow" aria-hidden="true">↗</span>
+</a></aside>'''
+PROMO_STYLE = '''<style id="site-promo-style">
+.site-promo-bar{width:100%;background:#E3EEF2;border-bottom:1px solid #CBDDE4;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;text-align:center}
+.site-promo-bar a{display:flex;align-items:center;justify-content:center;gap:14px;min-height:44px;padding:9px 20px;color:#244F5E;text-decoration:none;font-size:15px;line-height:1.5}
+.site-promo-bar a:hover{background:#D8E9EF}
+.site-promo-bar a:focus-visible{outline:2px solid #2F6F82;outline-offset:-3px}
+.site-promo-label{font-size:11px;font-weight:400;line-height:1.5;border:1px solid #ACC5CE;border-radius:4px;padding:0 5px;color:#526F79;white-space:nowrap}
+.site-promo-title{font-weight:700}.site-promo-price{font-weight:500}.site-promo-arrow{font-size:18px}
+body.site-promo-padded{padding:0}
+body.site-promo-padded>.wrap{padding:40px 22px;box-sizing:content-box}
+body.site-promo-notfound{display:block;padding:0}
+body.site-promo-notfound>.wrap{margin:auto;padding:80px 24px}
+@media(max-width:540px){.site-promo-bar a{gap:8px;padding:9px 12px;font-size:13px;min-height:42px}.site-promo-label{font-size:10px}.site-promo-arrow{font-size:16px}}
+@media(max-width:360px){.site-promo-bar a{gap:6px;font-size:12px}.site-promo-label{padding:0 3px}}
+</style>'''
+
+
 _fav_patched = 0
 _author_patched = 0
 _stat_patched = 0
@@ -2249,6 +2274,16 @@ for _root, _dirs, _files in os.walk(DIST):
         _fp = os.path.join(_root, _fn)
         _txt = open(_fp, encoding="utf-8").read()
         _changed = False
+        # 外链跳转页无需推广横条，所有内容页面与 404 均覆盖。
+        if '<body>' in _txt and '/go/' not in _fp.replace(os.sep, '/'):
+            _body_class = ''
+            if _fn == '404.html':
+                _body_class = ' class="site-promo-notfound"'
+            elif 'padding:40px 22px' in _txt:
+                _body_class = ' class="site-promo-padded"'
+            _txt = _txt.replace('</head>', PROMO_STYLE + '\n</head>', 1)
+            _txt = _txt.replace('<body>', '<body' + _body_class + '>' + PROMO_BAR, 1)
+            _changed = True
         if 'name="author"' not in _txt:
             _txt, _ok = _inject_head(_txt, _AUTHOR_META)
             if _ok:
