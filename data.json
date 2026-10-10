@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-09",
-  "total": 41,
+  "last_updated": "2026-10-10",
+  "total": 42,
   "items": [
     {
       "name": "WorkBuddy",
@@ -1106,6 +1106,28 @@
       "update_source": "自动更新 2026-10-09",
       "detail_slug": "0077hrui",
       "added": "2026-10-09"
+    },
+    {
+      "name": "Step 5 Preview 限时免费（Nous Portal / OpenCode）",
+      "vendor": "阶跃星辰 StepFun",
+      "category": "event",
+      "free_type": "限时活动",
+      "quota": "Step 5 Preview 旗舰模型一周内全免费调用（$0.00/百万 token，原价 $1.00 输入 / $2.70 输出）；同一免费通道 Step-3.7-Flash 亦为 $0。支持 1M 上下文、多模态输入。",
+      "validity": "2026-10-15",
+      "region": "国际",
+      "gates": [
+        "需注册 Nous Portal / OpenCode 账号"
+      ],
+      "note": "阶跃星辰 600B/27B MoE 旗舰模型在海外第三方平台（Nous Portal、OpenCode）开放的一周限时免费，2026-10-08 起至 10-15；非厂商自有平台，免费额度受标准速率限制约束，到期后转按量付费（$1.00 / $2.70 每百万 token）。",
+      "sponsored": false,
+      "entry_url": "https://portal.nousresearch.com/",
+      "intel_url": "https://www.orcarouter.ai/blog/step-5-preview-nous-portal-free-week",
+      "signup": "",
+      "modality": "Step 5 Preview · Step-3.7-Flash",
+      "last_verified": "2026-10-10",
+      "update_source": "自动更新 2026-10-10",
+      "detail_slug": "0081fhdd",
+      "added": "2026-10-10"
     }
   ],
   "retired": [
@@ -1574,6 +1596,27 @@
       "reason": "2026-10-09 自动更新移入：个人 GPU 托管的免费 API 实验（每账户 1 亿输入 Tokens），非商业实体运营，稳定性待观察。",
       "detail_slug": "0080nlwp",
       "added": "2026-10-09"
+    },
+    {
+      "name": "Nous Portal",
+      "url": "https://portal.nousresearch.com/",
+      "reason": "2026-10-10 自动更新移入：Nous Research 官方推理聚合门户，$0 免费计划含 Step 5 Preview、LongCat 2.5 Preview、Ling 3.1 Flash 等 9 款 :free 模型；但部分资料称注册 $0 计划需绑定支付方式（实际 0 扣费），聚合器稳定性与门槛待观察。",
+      "detail_slug": "0082ulck",
+      "added": "2026-10-10"
+    },
+    {
+      "name": "Cerebras Cloud",
+      "url": "https://cloud.cerebras.ai",
+      "reason": "2026-10-10 自动更新移入：免费层政策收紧，2026 年 7 月起改为需绑定支付方式才发放一次性 $5 试用额度（30 天），不再是无卡长期免费层，待政策明朗。",
+      "detail_slug": "0083yrsy",
+      "added": "2026-10-10"
+    },
+    {
+      "name": "Kite AI Marathon",
+      "url": "https://marathon.build",
+      "reason": "2026-10-10 自动更新移入：注册赠最高 4560 万推理 token（一次性 signup credit），主体为加密 / AI 代理支付基础设施，国内可用性与长期稳定性待观察。",
+      "detail_slug": "0084fhfw",
+      "added": "2026-10-10"
     }
   ]
 }
