@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-10",
-  "total": 42,
+  "last_updated": "2026-10-11",
+  "total": 43,
   "items": [
     {
       "name": "WorkBuddy",
@@ -1128,6 +1128,28 @@
       "update_source": "自动更新 2026-10-10",
       "detail_slug": "0081fhdd",
       "added": "2026-10-10"
+    },
+    {
+      "name": "智谱 AutoClaw 每周登录福利（GLM-5.3-Flash）",
+      "vendor": "",
+      "category": "event",
+      "free_type": "限时活动",
+      "quota": "10/12 登录领 10,000 Credits（约 1 亿 GLM-5.3-Flash Tokens）；10/13–10/16 每天登录领 800 Credits（约 800 万 Tokens），合计最高约 1.32 亿 Tokens。",
+      "validity": "2026-10-16",
+      "region": "",
+      "gates": [
+        "需下载客户端"
+      ],
+      "note": "智谱 AI 桌面 Agent「AutoClaw」每周登录福利：登录客户端即可领，当日额度当天 24:00 过期需即领即用；付费会员另有每日加赠。国内入口 autoclaw.zhipuai.cn（国际版 autoclaw.z.ai），与 ZCode 为同厂不同产品。",
+      "sponsored": false,
+      "entry_url": "https://autoclaw.zhipuai.cn",
+      "intel_url": "https://autoclaw.z.ai/blog/news/Weekly-Perks-M10W2/",
+      "signup": "",
+      "modality": "GLM-5.3-Flash · 桌面 Agent",
+      "last_verified": "2026-10-11",
+      "update_source": "自动更新 2026-10-11",
+      "detail_slug": "0085puck",
+      "added": "2026-10-11"
     }
   ],
   "retired": [
@@ -1617,6 +1639,20 @@
       "reason": "2026-10-10 自动更新移入：注册赠最高 4560 万推理 token（一次性 signup credit），主体为加密 / AI 代理支付基础设施，国内可用性与长期稳定性待观察。",
       "detail_slug": "0084fhfw",
       "added": "2026-10-10"
+    },
+    {
+      "name": "AionClaw（杭州趣猿）",
+      "url": "https://www.hzopenclaw.com/",
+      "reason": "2026-10-11 自动更新移入：新上线的国产 OpenClaw 发行版（杭州趣猿人工智能），官网称注册限时赠 5000 万 Token；但独立来源以 SEO 推广稿为主、额度口径未获第三方验证，先列观望待核。",
+      "detail_slug": "0086gdab",
+      "added": "2026-10-11"
+    },
+    {
+      "name": "Claude Max / Team（月度 API 额度）",
+      "url": "https://www.anthropic.com/pricing",
+      "reason": "2026-10-11 自动更新移入：Anthropic 打通订阅与开发者 API，Max 5x 每月送 $100、Max 20x 送 $200、Team 按席位最高 $500；但须先持有付费订阅才能领取，属付费附赠、非公开免费额度，按收录门槛不入 items。",
+      "detail_slug": "0087wudj",
+      "added": "2026-10-11"
     }
   ]
 }
