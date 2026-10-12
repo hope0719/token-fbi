@@ -2,6 +2,10 @@
 
 同时给这批新条目写入 `added`（首次收录日期，YYYY-MM-DD）——它是首页卡片
 右上角「新增」五角星的唯一依据：收录当天算第 1 天，满 3 天后星标消失。
+
+扫描范围覆盖 items / watchlist / retired / hidden 四个数组：
+`hidden` 是不参与渲染的暂存区（用户要求「直接不展示、也不放观望区」的条目），
+其中的 ID 仍在下方唯一性校验与序号顺延范围内，确保「已分配 ID 永不复用」。
 """
 import datetime
 import hashlib
@@ -11,7 +15,8 @@ from pathlib import Path
 
 source = Path(__file__).resolve().parents[1] / "data.json"
 data = json.loads(source.read_text(encoding="utf-8"))
-entries = data.get("items", []) + data.get("watchlist", []) + data.get("retired", [])
+entries = (data.get("items", []) + data.get("watchlist", [])
+           + data.get("retired", []) + data.get("hidden", []))
 existing = [entry["detail_slug"] for entry in entries if entry.get("detail_slug")]
 if any(not re.fullmatch(r"[0-9]{4}[a-z]{4}", value) for value in existing):
     raise ValueError("现有 ID 格式不正确，禁止自动覆盖")

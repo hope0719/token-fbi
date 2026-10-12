@@ -1194,6 +1194,9 @@ with open(os.path.join(DIST, "llms-full.txt"), "w", encoding="utf-8") as f:
 
 # ---------- 公开 data.json（仅开放编辑收录的情报；赞助条目不进入数据集）----------
 pub = dict(d)
+# `hidden` 是「暂不展示、不进观望区」的不渲染暂存区（条目本身由用户要求下架），
+# 一律不进入公开数据集，避免下架条目仍被 /data.json 暴露。
+pub.pop("hidden", None)
 # 开放数据集只保留编辑字段，剔除专属邀请与推广/返佣字段（不属于公开情报口径）
 PROMO_FIELDS = ("invite_text", "invite_url", "invite_code", "promo_url", "promo_net")
 pub["items"] = [{k: v for k, v in it.items() if k not in PROMO_FIELDS} for it in editorial]
