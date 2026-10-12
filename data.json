@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-11",
-  "total": 43,
+  "last_updated": "2026-10-12",
+  "total": 44,
   "items": [
     {
       "name": "WorkBuddy",
@@ -1150,6 +1150,37 @@
       "update_source": "自动更新 2026-10-11",
       "detail_slug": "0085puck",
       "added": "2026-10-11"
+    },
+    {
+      "name": "联通云 Coding Plan（免费体验）",
+      "vendor": "联通云",
+      "category": "tool",
+      "free_type": "免费层",
+      "quota": "Coding Plan Lite 免费体验 ¥0/月，额度 1.8 万次/月；Pro 免费体验 ¥0/月，额度最高 9 万次/月。Lite 与 Pro 合计 12,000 个专属免费名额、先到先得；领取后生成的 API Key 有效期 31 天。",
+      "validity": "免费名额限量 12,000 个、先到先得，官方未公布活动截止日",
+      "region": "",
+      "gates": [
+        "需注册联通云账号并实名认证"
+      ],
+      "note": "联通云（中国联通）官方 Coding Plan 免费体验：OpenAI 兼容接口，控制台直接给出 Base URL 与 API Key，可接入 OpenClaw / Cline / Continue 等任意支持自定义端点的客户端；无需绑定支付方式、无自动续费。Pro 名额基本领完，当前主要可领 Lite。",
+      "sponsored": false,
+      "entry_url": "https://www.cucloud.cn/",
+      "intel_url": "https://coding-plans.jqknono.com/",
+      "last_verified": "2026-10-12",
+      "modality": "GLM-5 · MiniMax-M2.5 · Qwen3.5-397B-A17B · DeepSeek-V3.1 · Qwen3-235B-A22B",
+      "signup": "注册联通云账号并完成实名认证，进入控制台「Coding Plan」入口领取免费体验套餐并生成 API Key；将控制台给出的 Base URL 与 Key 填入支持 OpenAI 兼容端点的客户端。",
+      "activity_rules": [
+        "Coding Plan Lite 免费体验 ¥0/月，额度 1.8 万次/月；Pro 免费体验 ¥0/月，额度最高 9 万次/月；Lite 与 Pro 合计 12,000 个专属免费名额，先到先得。",
+        "与 AI 云桌面、AI 云主机、AI 云容器活动联动；领取无需绑卡，也无强制自动续费。",
+        "领取后生成的 API Key 有效期 31 天；可用模型、单次抵扣次数与剩余额度以控制台实时显示为准。"
+      ],
+      "source_urls": [
+        "https://coding-plans.jqknono.com/",
+        "http://www.mzlw.cn/news/133190"
+      ],
+      "update_source": "自动更新 2026-10-12",
+      "detail_slug": "0088pexh",
+      "added": "2026-10-12"
     }
   ],
   "retired": [
@@ -1653,6 +1684,20 @@
       "reason": "2026-10-11 自动更新移入：Anthropic 打通订阅与开发者 API，Max 5x 每月送 $100、Max 20x 送 $200、Team 按席位最高 $500；但须先持有付费订阅才能领取，属付费附赠、非公开免费额度，按收录门槛不入 items。",
       "detail_slug": "0087wudj",
       "added": "2026-10-11"
+    },
+    {
+      "name": "Heicode 智能研发平台",
+      "url": "https://code.heicode.cc/",
+      "reason": "2026-10-12 自动更新移入：国产「智能研发平台」冷启动技术内测，PC 桌面端 + 浏览器控制台双端开放，注册登录即赠基础版/团队版连续工作额度（含免费测试 Token）；但公开来源以推广稿为主、额度口径与运营主体资质未获第三方验证，先列观望待核。",
+      "detail_slug": "0089dcan",
+      "added": "2026-10-12"
+    },
+    {
+      "name": "Tokenator API",
+      "url": "https://tokenator.cloud/",
+      "reason": "2026-10-12 自动更新移入：国际聚合网关，免费档可用 GPT-6 Astra（每日 300 万 Tokens / 45 次请求，不扣减付费额度）；属 OpenRouter 式同构聚合器且需海外网络环境，按收录惯例不进 items，先列观望。",
+      "detail_slug": "0090zloz",
+      "added": "2026-10-12"
     }
   ]
 }
