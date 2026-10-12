@@ -67,31 +67,6 @@
       ]
     },
     {
-      "name": "ZCode",
-      "vendor": "",
-      "category": "tool",
-      "free_type": "长期免费",
-      "quota": "免费额度包：9 月 28 日–10 月 7 日，每天发放 10 万份、每份 1 亿 Token。",
-      "validity": "2026-10-07（活动截止）",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://zcode.z.ai/cn",
-      "intel_url": "https://bigmodel.cn/activity/trial-card/PU9MTWG0PM",
-      "last_verified": "2026-09-28",
-      "modality": "GLM-5.3 · GLM-5.3-Flash",
-      "signup": "",
-      "detail_slug": "0003dfyo",
-      "legacy_detail_paths": [
-        "/intel/item-002-zcode/",
-        "/intel/item-004-zcode/",
-        "/intel/item-006-zcode/",
-        "/intel/item-007-zcode/",
-        "/intel/item-011-zcode/"
-      ]
-    },
-    {
       "name": "蓝博科技（lanbuff）",
       "vendor": "",
       "category": "tool",
@@ -1153,6 +1128,38 @@
       "update_source": "自动更新 2026-10-12",
       "detail_slug": "0088pexh",
       "added": "2026-10-12"
+    },
+    {
+      "name": "ZCode",
+      "vendor": "",
+      "category": "tool",
+      "free_type": "长期免费",
+      "quota": "每天的免费额度 800 万 Token；周五、周六、周日有概率额外赠送 1 亿 Token。",
+      "validity": "",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://zcode.z.ai/cn",
+      "intel_url": "https://bigmodel.cn/activity/trial-card/PU9MTWG0PM",
+      "last_verified": "2026-10-12",
+      "modality": "GLM-5.3 · GLM-5.3-Flash",
+      "signup": "",
+      "activity_rules": [
+        "每日免费额度 800 万 Token，按日重置。",
+        "周五 / 周六 / 周日有概率额外赠送 1 亿 Token（随机发放，非必得）。",
+        "首发额度包（9 月 28 日–10 月 7 日，每天 10 万份 × 1 亿 Token）已结束；现行口径为每日免费额度 + 周末概率大额赠送。",
+        "具体额度与发放概率以官方活动页 / 客户端实时显示为准。"
+      ],
+      "update_source": "用户补充，2026-10-12",
+      "detail_slug": "0003dfyo",
+      "legacy_detail_paths": [
+        "/intel/item-002-zcode/",
+        "/intel/item-004-zcode/",
+        "/intel/item-006-zcode/",
+        "/intel/item-007-zcode/",
+        "/intel/item-011-zcode/"
+      ]
     }
   ],
   "retired": [
