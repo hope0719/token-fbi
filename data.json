@@ -9,7 +9,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "限时活动",
-      "quota": "HY3 免费至 10 月 31 日；HY4 preview 按体验记录享免费额度。",
+      "quota": "Step 5 Preview 免费至 10 月 25 日；HY3 免费至 10 月 31 日；HY4 preview 按体验记录享免费额度。",
       "validity": "2026-10-31",
       "region": "",
       "gates": [],
@@ -17,16 +17,17 @@
       "sponsored": false,
       "entry_url": "https://www.codebuddy.cn/events/invite?inviteCode=3g5i964bgg0sknpi",
       "intel_url": "https://www.codebuddy.cn/events/invite?inviteCode=3g5i964bgg0sknpi",
-      "last_verified": "2026-10-02",
-      "modality": "HY3 · HY4 preview · DeepSeek-V4.1-Flash",
-      "signup": "新用户注册送 2000 积分；HY4 preview 首次体验用户须在 10 月 10 日 23:59 前开启对话。",
+      "last_verified": "2026-10-12",
+      "modality": "Step 5 Preview · HY3 · HY4 preview · DeepSeek-V4.1-Flash",
+      "signup": "新用户注册送 2000 积分；Step 5 Preview 于 2026 年 10 月 12 日上线、限时免费至 10 月 25 日；HY4 preview 首次体验用户须在 10 月 10 日 23:59 前开启对话。",
       "activity_rules": [
+        "Step 5 Preview：2026 年 10 月 12 日上线，限时免费至 2026 年 10 月 25 日。",
         "HY3：本轮限免延长至 2026 年 10 月 31 日。",
         "HY4 preview 已体验用户：每天 23:00—次日 08:00 可继续使用免费额度。",
         "HY4 preview 从未体验用户（包括此前未体验过该模型的老账号）：在 2026 年 10 月 10 日 23:59 前首次开启一次 HY4 preview 对话，从开启当天起享连续 14 天的每日免费额度。",
         "每日免费额度不等于不限量；额度数值和时间口径以客户端活动说明为准。"
       ],
-      "update_source": "用户补充，2026-10-02",
+      "update_source": "用户补充，2026-10-12",
       "detail_slug": "0001hgwg",
       "legacy_detail_paths": [
         "/intel/item-000-workbuddy/",
@@ -70,7 +71,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "限时活动",
-      "quota": "千问 Qwen3.8-Flash 限免至 10 月 31 日。",
+      "quota": "千问 Qwen3.8-Flash 限免至 10 月 31 日，且无隐藏的每日调用上限。",
       "validity": "2026-10-31",
       "region": "",
       "gates": [],
@@ -78,13 +79,13 @@
       "sponsored": false,
       "entry_url": "https://t.aliyun.com/U/Ob4f6l",
       "intel_url": "https://t.aliyun.com/U/Ob4f6l",
-      "last_verified": "2026-10-02",
+      "last_verified": "2026-10-12",
       "modality": "Qwen3.8-Flash · Qwen3.8-Max",
       "signup": "",
       "activity_rules": [
-        "Qwen3.8-Flash 免费使用延长至 2026 年 10 月 31 日；具体额度以客户端活动说明为准。"
+        "Qwen3.8-Flash 免费使用延长至 2026 年 10 月 31 日；经确认无隐藏的每日调用上限，实际额度以客户端活动说明为准。"
       ],
-      "update_source": "用户补充，2026-10-02",
+      "update_source": "用户补充，2026-10-12",
       "detail_slug": "0002eanr",
       "legacy_detail_paths": [
         "/intel/item-001-qoder-cn/",
