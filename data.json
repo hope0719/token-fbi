@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-12",
+  "last_updated": "2026-10-13",
   "total": 43,
   "items": [
     {
@@ -313,11 +313,11 @@
       "validity": "",
       "region": "",
       "gates": [],
-      "note": "",
+      "note": "2026-10-13 复核：官方模型页需登录方可查看，未能直接核实免费清单。多家第三方免费权益清单（2026-09~10）称对话类小模型永久免费已取消、现仅 embedding/语音/OCR/翻译/Kolors 免费，并称「注册送 2000 万 token」无官方出处；但 free-llm.com（2026-10）仍称保留滚动更新的永久免费小模型（Qwen3-8B、DeepSeek-R1-Distill-Qwen-7B）。请以控制台实时免费清单为准。",
       "sponsored": false,
       "entry_url": "https://cloud.siliconflow.cn/i/HgdEna2e",
       "intel_url": "https://cloud.siliconflow.cn/i/HgdEna2e",
-      "last_verified": "2026-09-28",
+      "last_verified": "2026-10-13",
       "modality": "DeepSeek V4 Pro · GLM-5.3 · Kimi K3 · 千问 3.8 等",
       "signup": "",
       "detail_slug": "0013uppn",
@@ -1677,6 +1677,20 @@
       "reason": "2026-10-12 自动更新移入：国际聚合网关，免费档可用 GPT-6 Astra（每日 300 万 Tokens / 45 次请求，不扣减付费额度）；属 OpenRouter 式同构聚合器且需海外网络环境，按收录惯例不进 items，先列观望。",
       "detail_slug": "0090zloz",
       "added": "2026-10-12"
+    },
+    {
+      "name": "京东云 JoyCode（团队版限时免费）",
+      "url": "https://www.jdcloud.com/cn/products/joycode",
+      "reason": "2026-10-13 自动更新移入：京东云 AI 编码平台，官网产品页在线；第三方攻略称「团队版限时免费、注册赠 5 万积分、原价 49 元/用户/月」，但额度口径存在 5000/50000 积分两种冲突说法，来源以 SEO 站点与联盟域名为主、未见官方明文，先列观望待核。",
+      "detail_slug": "0091fxiq",
+      "added": "2026-10-13"
+    },
+    {
+      "name": "Gonka Broker",
+      "url": "https://gonkabroker.com/",
+      "reason": "2026-10-13 自动更新移入：去中心化 GPU 网络 Gonka 的国际推理转售 API，免费档每月约 1M–1.25M Tokens（DeepSeek V4 Flash / GLM-5.3-Flash / MiniMax M2.7），免绑卡；但需手机验证且实测拒收中国大陆 +86 号段，全账户仅 6 RPM，折算额度≈$0.25/月，属国际小型聚合器，按门槛先列观望。",
+      "detail_slug": "0092onmi",
+      "added": "2026-10-13"
     }
   ],
   "hidden": [
