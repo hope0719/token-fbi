@@ -1189,7 +1189,10 @@
         "/intel/item-006-zcode/",
         "/intel/item-007-zcode/",
         "/intel/item-011-zcode/"
-      ]
+      ],
+      "invite_text": "通过专属邀请链接注册并绑定邀请码，完成绑定邀请码、登录客户端、发送消息三个新手任务，即可领取「夜间蹭蹭卡」1 亿 GLM-5.3-Flash Token。",
+      "invite_url": "https://zcode.z.ai/invite/MWE6YM36",
+      "invite_code": "MWE6YM36"
     }
   ],
   "retired": [
