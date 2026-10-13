@@ -36,5 +36,5 @@
 
 ## 关键历史约定（近期）
 - 同厂不同产品可各自成卡（AutoClaw `0085puck` ≠ ZCode）；同一平台的免费活动一般不单独成卡（CodeBuddy 国内版不单独成卡，与站点 WorkBuddy 同属 codebuddy.cn）。
-- ZCode（`0003dfyo`）2026-10-12 已移至 items 末位；hidden 案例：库库 AI（`0075fcju`）；观望区近期新增：Heicode（`0089dcan`）、Tokenator API（`0090zloz`）。
+- ZCode（`0003dfyo`）2026-10-12 已移至 items 末位；库库 AI（`0075fcju`，百度）2026-10-12 曾下架入 hidden，**2026-10-13 用户指示恢复并移至 items 首位**（打破"严禁插前"默认，属手动恢复特例）；观望区近期新增：Heicode（`0089dcan`）、Tokenator API（`0090zloz`）。
 - 边界待用户裁定保留项：蓝博科技（lanbuff，付费中转+赞助）、腾讯云服务器（空 free_type+赞助）、Token Harbor/OrcaRouter/UnoRouter（已在 watchlist）。
