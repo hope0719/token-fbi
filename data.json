@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-13",
-  "total": 44,
+  "last_updated": "2026-10-14",
+  "total": 46,
   "items": [
     {
       "name": "库库 AI",
@@ -1193,6 +1193,52 @@
       "invite_text": "通过专属邀请链接注册并绑定邀请码，完成绑定邀请码、登录客户端、发送消息三个新手任务，即可领取「夜间蹭蹭卡」1 亿 GLM-5.3-Flash Token。",
       "invite_url": "https://zcode.z.ai/invite/MWE6YM36",
       "invite_code": "MWE6YM36"
+    },
+    {
+      "name": "Loomy（科大讯飞）",
+      "vendor": "科大讯飞",
+      "category": "tool",
+      "free_type": "每日赠送",
+      "quota": "新用户注册到账 5000 积分；免费用户每天登录再送 5000 积分（次日自动补满、不累积），约可执行 50 次办公任务（简单问答约 10–20 积分、文档处理约 50–100 积分）。",
+      "validity": "",
+      "region": "",
+      "gates": [
+        "需下载桌面客户端（Windows x64 / 苹果芯片 macOS）",
+        "需授权工作目录并绑定 IM（飞书 / 钉钉 / 微信 / QQ）后才可执行本机任务"
+      ],
+      "note": "科大讯飞桌面级 AI 工作搭子，模型可在讯飞星火 X2.5、DeepSeek V4 Flash、通义千问等之间按任务切换；亦可填入自有 API Key，自建模型调用不扣平台积分。每日 5000 积分为当日有效、零点刷新不累积；具体额度以客户端实时显示为准。",
+      "sponsored": false,
+      "entry_url": "https://loomy.xunfei.cn",
+      "intel_url": "https://loomy.xunfei.cn",
+      "signup": "",
+      "modality": "讯飞星火 X2.5 · DeepSeek V4 Flash · 通义千问",
+      "last_verified": "2026-10-14",
+      "update_source": "自动更新 2026-10-14",
+      "detail_slug": "0093mxzf",
+      "added": "2026-10-14"
+    },
+    {
+      "name": "UOS AI（deepin）免费 DeepSeek 账号",
+      "vendor": "统信 / deepin 社区",
+      "category": "tool",
+      "free_type": "免费层",
+      "quota": "可免费领取 DeepSeek 账号，每月 50 次文本对话额度（历史账号同样适用）；当月额度用尽后可参考官方《UOS AI 大模型账号申请攻略》自行申请。",
+      "validity": "",
+      "region": "",
+      "gates": [
+        "需 deepin 23 / 25 社区版，或统信 UOS 专业版 / 教育版（1070 及以上系统）",
+        "需安装 UOS AI（V20 为 2.6.000、V23 为 2.6.300）"
+      ],
+      "note": "官方活动页口径：免费账号领取时间截止 2026-12-31（活动期间不限领取人数，进入活动入口点击即可领取），账号有效期至 2027-06-30。每月对话额度以官方页为准（官方写明 50 次/月；部分第三方清单写作 200 次，未采用）。",
+      "sponsored": false,
+      "entry_url": "https://www.deepin.org/zh/ai-free-experience/",
+      "intel_url": "https://www.deepin.org/zh/ai-free-experience/",
+      "signup": "",
+      "modality": "DeepSeek",
+      "last_verified": "2026-10-14",
+      "update_source": "自动更新 2026-10-14",
+      "detail_slug": "0094zgpv",
+      "added": "2026-10-14"
     }
   ],
   "retired": [
@@ -1724,6 +1770,27 @@
       "reason": "2026-10-13 自动更新移入：去中心化 GPU 网络 Gonka 的国际推理转售 API，免费档每月约 1M–1.25M Tokens（DeepSeek V4 Flash / GLM-5.3-Flash / MiniMax M2.7），免绑卡；但需手机验证且实测拒收中国大陆 +86 号段，全账户仅 6 RPM，折算额度≈$0.25/月，属国际小型聚合器，按门槛先列观望。",
       "detail_slug": "0092onmi",
       "added": "2026-10-13"
+    },
+    {
+      "name": "Sarashina（SB Intuitions / 软银）",
+      "url": "https://sarashina.ai",
+      "reason": "2026-10-14 自动更新移入：软银旗下 SB Intuitions 于 2026-10-13 开放 Sarashina 免费 beta（网页聊天 + 6 模型 API：mini / nano / embedding / rerank / guard / translate），Google 账号登录即可、免申请、免绑卡。但服务条款将使用资格限定为居住在日本或总部设在日本的用户，免费账号无法选择退出数据训练、速率上限亦未公布，属地域限定类，按门槛先列观望。",
+      "detail_slug": "0095mrua",
+      "added": "2026-10-14"
+    },
+    {
+      "name": "极智智能体平台（中国电科）",
+      "url": "https://jz.cetccity.com",
+      "reason": "2026-10-14 自动更新移入：中国电科所属电科太极自研智能体平台，赛事期间向「网信杯」人工智能创新大赛参赛选手免费开放全模块，并免费调用已接入的 DeepSeek、通义千问等大模型 Token。权益与参赛资格绑定（非全国公开无门槛可领），按门槛先列观望。",
+      "detail_slug": "0096vfgj",
+      "added": "2026-10-14"
+    },
+    {
+      "name": "Free Claude Code（FCC）",
+      "url": "https://github.com/Alishahryar1/free-claude-code",
+      "reason": "2026-10-14 自动更新移入：GitHub 开源项目（约 5.9 万 Star），通过本地代理 + Admin UI 汇总 61 家合规提供商、宣称每月 13 亿+ 免费 Token，统一接入 Claude Code / Codex / Cline / Aider 等 11 个客户端（多编排器 + 多模型）。本身不含额度、依赖各上游供应商政策且可随时变更，属 OpenRouter 式同构聚合器，不进 items，先列观望。",
+      "detail_slug": "0097lyfk",
+      "added": "2026-10-14"
     }
   ],
   "hidden": []
