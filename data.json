@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-15",
-  "total": 53,
+  "last_updated": "2026-10-16",
+  "total": 56,
   "items": [
     {
       "name": "库库 AI",
@@ -1428,6 +1428,87 @@
       ],
       "detail_slug": "0104skjl",
       "added": "2026-10-15"
+    },
+    {
+      "name": "云知声 U2-Flash（Unisound MaaS）",
+      "vendor": "云知声（Unisound）",
+      "category": "model",
+      "free_type": "限时活动",
+      "quota": "活动期内 U2-Flash 输入、输出、缓存命中三档全部 0 元且不限量，不绑卡、不充值，注册登录 MaaS 平台即自动发放免费额度。",
+      "validity": "2026-10-31",
+      "region": "",
+      "gates": [
+        "需注册并登录云知声 MaaS 平台账号（不绑卡、不充值）",
+        "需在控制台「API Key 管理」自行创建 API Key"
+      ],
+      "note": "云知声（港股 AGI 第一股）MaaS 平台限时免费活动，窗口 2026-09-30 至 2026-10-31。U2-Flash 为稀疏 MoE 架构（总参数约 266B、单次仅激活约 10B），DeepSWE v1.1 编程跑分 64.6，高于 DeepSeek-V4-Flash 的 54.4，并支持 none / low / high / max 四档思考强度。同时兼容 OpenAI 与 Anthropic 两套协议，官方给出 Claude Code / Cursor / Cline / TRAE 等接入方式，改 Base URL + Key + 模型 ID 即可接入任意支持自定义模型的工作台。",
+      "sponsored": false,
+      "entry_url": "https://maas.unisound.com/",
+      "intel_url": "https://maas.unisound.com/models/u2-flash",
+      "signup": "访问 maas.unisound.com 注册登录，系统自动发放免费额度；进入「控制台 → API Key 管理 → 创建 API Key」，Base URL 为 https://maas-api.unisound.com/v1。",
+      "modality": "U2-Flash · U2 · U2-Med · U2-Decision",
+      "last_verified": "2026-10-16",
+      "update_source": "自动更新 2026-10-16",
+      "source_urls": [
+        "https://maas.unisound.com/models/u2-flash",
+        "https://m.toutiao.com/article/7690902463473402419"
+      ],
+      "detail_slug": "0108rkie",
+      "added": "2026-10-16"
+    },
+    {
+      "name": "百度文心快码 Comate",
+      "vendor": "百度",
+      "category": "tool",
+      "free_type": "免费层",
+      "quota": "个人标准版 ¥0：代码补全、代码解释、注释生成等基础能力长期免费；首次注册另赠 ¥10 模型额度，额度用尽后自动切换免费模式（150k tokens/小时）；高级能力（多文件修改、智能体、代码库分析）每周发放免费额度，用尽后等待下周重置。",
+      "validity": "",
+      "region": "",
+      "gates": [
+        "需用百度账号登录（个人非商用免费，企业商用须单独购买授权）",
+        "以 IDE 插件形态使用时需在 VSCode / JetBrains 插件市场安装；独立 AI IDE 需另行下载客户端"
+      ],
+      "note": "百度 Comate（文心快码）个人标准版长期免费，是站内 Cline / Kilo Code / TRAE / Qoder CN / ZCode 之外又一 coding assistant 免费入口。支持 VSCode、JetBrains 全家桶、Visual Studio、Xcode、Eclipse，含 MCP、代码库检索与终端执行。原「不限量 Token」限时活动已结束，当前口径为「永久免费补全 + 每周高级额度」。",
+      "sponsored": false,
+      "entry_url": "https://comate.baidu.com/zh",
+      "intel_url": "https://comate.baidu.com/zh",
+      "signup": "在 VSCode / JetBrains 插件市场搜索「Baidu Comate」安装，重启 IDE 后登录百度账号即可使用；或前往官网下载独立 AI IDE 客户端。",
+      "modality": "文心（ERNIE）系列 · 代码补全 / 多文件编辑 / Agent",
+      "last_verified": "2026-10-16",
+      "update_source": "自动更新 2026-10-16",
+      "source_urls": [
+        "https://comate.baidu.com/zh",
+        "https://www.yeyulingfeng.com/a/1159580.html"
+      ],
+      "detail_slug": "0109tdmg",
+      "added": "2026-10-16"
+    },
+    {
+      "name": "AWS Kiro",
+      "vendor": "亚马逊云科技（AWS）",
+      "category": "tool",
+      "free_type": "免费层",
+      "quota": "Kiro Free：$0/月，每月 50 credits（按月重置、不结转），可使用 Claude Sonnet 4.5 与 Qwen3 Coder Next、DeepSeek 3.2 等开源权重模型；首次升级付费档额外赠 $20 credit 抵扣订阅费。",
+      "validity": "",
+      "region": "国际",
+      "gates": [
+        "需用社交账号（GitHub / Google）或 AWS Builder ID 登录，无需信用卡",
+        "超额调用需另行开通 add-on（$0.04/credit），默认关闭、不会自动扣费"
+      ],
+      "note": "AWS 出品的 spec-driven（规格驱动）智能体 IDE / CLI：先产出 requirements + design + tasks 文档，再交由 Agent 实现，另支持 Agent Hooks 自动化测试与文档。免费层即含 Claude Sonnet 4.5，在同类免费档中较为少见。学生 1,000 credits/月（一年）与初创至 Series A 的 Pro+ 免费一年属身份限定类权益，按站内口径不单列。",
+      "sponsored": false,
+      "entry_url": "https://kiro.dev/",
+      "intel_url": "https://kiro.dev/pricing/",
+      "signup": "从 kiro.dev 下载 IDE（macOS / Windows / Linux），用 GitHub / Google 或 AWS Builder ID 登录即进入 Free 档。",
+      "modality": "Claude Sonnet 4.5 · Qwen3 Coder Next · DeepSeek 3.2 · Auto 模式",
+      "last_verified": "2026-10-16",
+      "update_source": "自动更新 2026-10-16",
+      "source_urls": [
+        "https://kiro.dev/pricing/",
+        "https://aiagentswatch.com/brands/kiro"
+      ],
+      "detail_slug": "0110oxyf",
+      "added": "2026-10-16"
     }
   ],
   "retired": [
@@ -2001,6 +2082,20 @@
       "reason": "免费层按 starter 模型赠送按 token 计量的 starter 用量，自注册日起按月重置；国际服务，且仅覆盖 starter 模型、本地运行才是完全免费。待核额度数值后决定是否收录。2026-10-15 自动更新。",
       "detail_slug": "0107hqzp",
       "added": "2026-10-15"
+    },
+    {
+      "name": "Vercel AI Gateway",
+      "url": "https://vercel.com/ai-gateway",
+      "reason": "每个 Vercel 团队每月赠 $5 AI Gateway Credits（每 30 天重置、不结转），另有约 8 款 $0 免费模型（如 nvidia/nemotron-3.5-lightning-free，1M 上下文）。属 OpenRouter 式同构聚合器，站内已有 OpenRouter 作为代表，按「聚合器只留 1–2 个代表」先入观望区。2026-10-16 自动更新。",
+      "detail_slug": "0111vlhe",
+      "added": "2026-10-16"
+    },
+    {
+      "name": "Kimi Work（月之暗面）",
+      "url": "https://www.kimi.com/",
+      "reason": "月之暗面桌面级 Agent「Kimi Work」公测期免费版可用，免费用户最多 2 个定时任务 / 小组件任务，高峰时段限流；官方未公示 token / 积分额度口径，待核后决定是否收录。与 retired 中的「月之暗面 Kimi 开放平台」为不同产品。2026-10-16 自动更新。",
+      "detail_slug": "0112soyt",
+      "added": "2026-10-16"
     }
   ],
   "hidden": []
