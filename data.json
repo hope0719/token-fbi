@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-16",
-  "total": 56,
+  "last_updated": "2026-10-17",
+  "total": 58,
   "items": [
     {
       "name": "库库 AI",
@@ -1509,6 +1509,64 @@
       ],
       "detail_slug": "0110oxyf",
       "added": "2026-10-16"
+    },
+    {
+      "name": "华为云果办 OfficeAce",
+      "vendor": "华为云",
+      "category": "tool",
+      "free_type": "注册赠送",
+      "quota": "个人体验版 ¥0：首次注册登录赠 4,000 积分，每日登录再赠 1,000 积分；积分按任务复杂度扣减，覆盖 PC（鸿蒙 / Windows / macOS）、移动端（鸿蒙 / 安卓）与微信小程序多端。",
+      "validity": "",
+      "region": "",
+      "gates": [
+        "需注册华为账号并登录客户端（微信小程序端可直接使用），无需绑卡",
+        "积分按活动页规则发放，当日未用完是否结转以官方活动页为准",
+        "官网个人体验版套餐卡片标注「首次体验送 500 积分」，与页面顶部横幅、官方活动页的 4,000 积分口径不一致，实际以活动页到账为准"
+      ],
+      "note": "华为云面向办公场景的桌面级 Agent（「果办」），与站内「华为云码道」（Coding）为不同产品线。卖点是 AI 专家思辨团（多智能体交叉质疑）与溯源深度研究（每条结论可跳转来源）、事实核查报告，可直接产出汇报材料、清洗 Excel、OCR 发票、微信远程取文件。同类积分制办公 Agent 可对照站内千问办公 / 百度搭子。付费档 ¥98–498/月，个人体验版长期 ¥0。",
+      "sponsored": false,
+      "entry_url": "https://www.huaweicloud.com/product/officeace.html",
+      "intel_url": "https://activity.huaweicloud.com/officeace.html",
+      "signup": "搜索「华为云果办 OfficeAce」或访问产品页下载客户端（鸿蒙 / Windows / macOS / 安卓 / 微信小程序），注册登录即到账新人积分。",
+      "modality": "华为云 MaaS 预置模型 · 专家思辨团 · 深度研究 · 事实核查",
+      "last_verified": "2026-10-17",
+      "update_source": "自动更新 2026-10-17",
+      "source_urls": [
+        "https://www.huaweicloud.com/product/officeace.html",
+        "https://support.huaweicloud.com/qs-officeace/introduction.html",
+        "https://m.163.com/dy/article/L8Q92HLS0538E4EY.html"
+      ],
+      "detail_slug": "0113atdn",
+      "added": "2026-10-17"
+    },
+    {
+      "name": "华为云 AgentArts（智果）体验版",
+      "vendor": "华为云",
+      "category": "tool",
+      "free_type": "免费层",
+      "quota": "体验版免费开通（默认 1 个月、自动续期，AgentArts 侧不计费）：预置 MaaS 模型 2,000,000 tokens 免费额度，用于模型调测与智能体试运行；升级后另赠 20 CU（计算单元）。",
+      "validity": "",
+      "region": "",
+      "gates": [
+        "需华为账号并完成个人实名认证",
+        "平台处于公测，需在控制台提交「申请公测」，审核约 5 个工作日",
+        "2,000,000 tokens 仅在平台内调测 / 试运行消耗，不发放独立 API Key；通过 API 调用智能体需另行开通 MaaS 并按量计费"
+      ],
+      "note": "华为云企业级智能体托管运行平台（智果 AgentArts，开源版 openJiuwen）：支持把各类框架写的智能体一键托管，附带记忆、网关、可观测、评估等运行时能力，内置资产广场模板可零代码搭建。与站内「华为云码道」（Coding Agent）不是同一条产品线。免费额度属平台内调测性质，量级 200 万 tokens，适合验证 Agent 流程而非长期作为 API 燃料。",
+      "sponsored": false,
+      "entry_url": "https://www.huaweicloud.com/product/agentarts.html",
+      "intel_url": "https://support.huaweicloud.com/qs-agentarts/agentarts_04_0000.html",
+      "signup": "华为云控制台搜索 AgentArts → 申请公测 → 审核通过后登录平台，在「欢迎体验 AgentArts 体验版」弹窗点「免费开通」。",
+      "modality": "华为云 MaaS 预置模型 · 多智能体编排 · MCP 托管",
+      "last_verified": "2026-10-17",
+      "update_source": "自动更新 2026-10-17",
+      "source_urls": [
+        "https://support.huaweicloud.com/qs-agentarts/agentarts_04_0000.html",
+        "https://www.huaweicloud.com/product/agentarts.html",
+        "https://support.huaweicloud.com/how-to-choose-ai/ai_0001.html"
+      ],
+      "detail_slug": "0114fvah",
+      "added": "2026-10-17"
     }
   ],
   "retired": [
@@ -2096,6 +2154,20 @@
       "reason": "月之暗面桌面级 Agent「Kimi Work」公测期免费版可用，免费用户最多 2 个定时任务 / 小组件任务，高峰时段限流；官方未公示 token / 积分额度口径，待核后决定是否收录。与 retired 中的「月之暗面 Kimi 开放平台」为不同产品。2026-10-16 自动更新。",
       "detail_slug": "0112soyt",
       "added": "2026-10-16"
+    },
+    {
+      "name": "LLM Tech（llmtech.eu）",
+      "url": "https://llmtech.eu/docs/",
+      "reason": "波兰个人运营的欧盟推理服务，官网 quickstart 直接公布公共试用 Key（无需注册账号）：每日 2,000,000 tokens / IP、4 并发，单模型 Qwen3.8-27B（131K 上下文），OpenAI 兼容、Cline 已内置该 provider。免费量级可观且零门槛，但属单一模型的小型海外服务、国内直连稳定性与长期存续未验证，先入观望区。2026-10-17 自动更新。",
+      "detail_slug": "0115mcyv",
+      "added": "2026-10-17"
+    },
+    {
+      "name": "Aion Labs（aionlabs.ai）",
+      "url": "https://www.aionlabs.ai/pricing/",
+      "reason": "美国小型推理服务商，$0 Free 档按日发放 credit（官方未公布金额），限制 15 RPM / 20,000 TPM / 20,000 tokens 每日，无需绑卡，提供 aion-3.5 等 6 个自有模型。额度偏小且模型能力未上榜，信息源来自第三方免费 API 目录（已核对官方 pricing 页），先观望。region=国际。2026-10-17 自动更新。",
+      "detail_slug": "0116rxoc",
+      "added": "2026-10-17"
     }
   ],
   "hidden": []
