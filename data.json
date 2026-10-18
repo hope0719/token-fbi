@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-17",
+  "last_updated": "2026-10-18",
   "total": 58,
   "items": [
     {
@@ -2168,6 +2168,20 @@
       "reason": "美国小型推理服务商，$0 Free 档按日发放 credit（官方未公布金额），限制 15 RPM / 20,000 TPM / 20,000 tokens 每日，无需绑卡，提供 aion-3.5 等 6 个自有模型。额度偏小且模型能力未上榜，信息源来自第三方免费 API 目录（已核对官方 pricing 页），先观望。region=国际。2026-10-17 自动更新。",
       "detail_slug": "0116rxoc",
       "added": "2026-10-17"
+    },
+    {
+      "name": "码上飞 CodeFlying",
+      "url": "https://www.codeflying.net/",
+      "reason": "国内「文生软件」平台（多智能体自动生成应用，可发布微信小程序/APP/H5），免费版每天更新积分、邀请好友可赚积分，实测每日积分够跑 2-3 个小应用。与站内已收录的积分制 Agent（千问办公/百度搭子/Loomy）同类，但官方未公布免费积分具体数字（第三方称会员档为每日 100 积分基础），额度口径待核，先入观望区。2026-10-18 自动更新。",
+      "detail_slug": "0117yrgy",
+      "added": "2026-10-18"
+    },
+    {
+      "name": "AkashML（Akash Network）",
+      "url": "https://playground.akashml.com/",
+      "reason": "Akash Network 的去中心化推理服务，新账号自动获得 $100 AI token credits（一次性、无需绑卡、无公布过期日），OpenAI 兼容，可调 Qwen3.8-27B、GLM 5.3、GPT-OSS-120B、Llama 3.3 70B 等开源模型。额度真实且量级大，但属国际平台、$100 为一次性注册赠送（同类 signup credit 此前多不进 items），且第三方称部分领取需企业信息核验，口径有歧义，先观望。region=国际。2026-10-18 自动更新。",
+      "detail_slug": "0118nzmx",
+      "added": "2026-10-18"
     }
   ],
   "hidden": []
