@@ -67,6 +67,40 @@
       ]
     },
     {
+      "name": "字节 TRAE（AI IDE）",
+      "vendor": "",
+      "category": "tool",
+      "free_type": "长期免费",
+      "quota": "基础版长期免费（覆盖约 90% 个人开发场景），SOLO 模式 0 元使用；新用户通过分享链接注册并登录桌面端，可一次性获得 5,000 积分（500 积分注册奖励 + 4,500 积分新人福利）。",
+      "validity": "",
+      "region": "",
+      "gates": [
+        "5,000 积分需注册后登录桌面端领取，网页端不计入，一次性发放",
+        "积分用于抵扣 TRAE 内模型的调用消耗，用完后仍可使用免费基础模型"
+      ],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://www.trae.cn",
+      "intel_url": "https://www.trae.cn",
+      "last_verified": "2026-10-19",
+      "modality": "GPT-4o · Doubao-1.5-pro · DeepSeek",
+      "signup": "",
+      "detail_slug": "0032tvoc",
+      "legacy_detail_paths": [
+        "/intel/item-032-字节-trae-ai-ide/",
+        "/intel/item-033-字节-trae-ai-ide/",
+        "/intel/item-034-字节-trae-ai-ide/",
+        "/intel/item-035-字节-trae-ai-ide/",
+        "/intel/item-036-字节-trae-ai-ide/",
+        "/intel/item-040-字节-trae-ai-ide/"
+      ],
+      "card_promo": "🎁 新用户送 5,000 积分",
+      "invite_text": "我在用 TRAE AI 编程工具，搞定各类任务。通过我的分享链接注册并登录桌面端，新用户一次性获得 5,000 积分！",
+      "invite_url": "https://www.trae.cn/events/code-fission/PBUXWVH6P439?utm_source=copy_link&utm_medium=code_fission",
+      "invite_code": "PBUXWVH6P439",
+      "update_source": "用户补充，2026-10-19（补专属邀请链接与积分口径，移至第 3 位）"
+    },
+    {
       "name": "Qoder cn",
       "vendor": "",
       "category": "tool",
@@ -828,32 +862,6 @@
         "/intel/item-034-云工开物学生专区/",
         "/intel/item-035-云工开物学生专区/",
         "/intel/item-039-云工开物学生专区/"
-      ]
-    },
-    {
-      "name": "字节 TRAE（AI IDE）",
-      "vendor": "",
-      "category": "tool",
-      "free_type": "长期免费",
-      "quota": "基础版免费（覆盖约 90% 个人开发场景）；SOLO 模式 0 元使用；无截止时间。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://www.trae.cn",
-      "intel_url": "https://www.trae.cn",
-      "last_verified": "2026-09-28",
-      "modality": "GPT-4o · Doubao-1.5-pro · DeepSeek",
-      "signup": "",
-      "detail_slug": "0032tvoc",
-      "legacy_detail_paths": [
-        "/intel/item-032-字节-trae-ai-ide/",
-        "/intel/item-033-字节-trae-ai-ide/",
-        "/intel/item-034-字节-trae-ai-ide/",
-        "/intel/item-035-字节-trae-ai-ide/",
-        "/intel/item-036-字节-trae-ai-ide/",
-        "/intel/item-040-字节-trae-ai-ide/"
       ]
     },
     {
