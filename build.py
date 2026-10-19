@@ -320,6 +320,10 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
     gate_chips = "".join(f'<span class="chip">{esc(g)}</span>' for g in gates)
     spon = '<span class="chip spon">赞助</span>' if (sponsor or sponsored) else ""
     reco = '<span class="chip reco">⭐ 站长推荐</span>' if recommended else ""
+    # 教程角标：条目带 guide（详情页领取教程）时显示，提示卡内附图文步骤
+    guide_chip = '<span class="chip guide-chip">📖 领取教程</span>' if it.get("guide") else ""
+    # 视觉强调：card_style="red" 时卡片整块填充红色（用于重点教程/主推条目）
+    red_cls = " card-red" if (it.get("card_style") == "red") else ""
     # 备注：仅当该条目显式提供时渲染（默认全站无备注）
     note_block = f'<div class="c-note">{esc(it.get("note","")).strip()}</div>' if (it.get("note") or "").strip() else ""
     # 新增星标：收录 3 天内在卡片右上角固定显示（不占文档流，不遮挡标签与按钮）
@@ -328,12 +332,12 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
         star = (f'<span class="new-star" data-exp="{new_star_expiry(it)}" '
                 f'title="新增" aria-label="新增">★</span>')
     return f'''
-    <article class="card{' reco-card' if recommended else ''}{' sponsor-card' if sponsor else ''}{' has-new' if star else ''}" data-cat="{cat}" data-limited="{"1" if is_limited else "0"}">
+    <article class="card{' reco-card' if recommended else ''}{' sponsor-card' if sponsor else ''}{' has-new' if star else ''}{red_cls}" data-cat="{cat}" data-limited="{"1" if is_limited else "0"}">
       {star}
       <div class="c-top">
         <span class="cat-tag cat-{cat}">{catlabel}</span>
         <span class="free-tag{freebadge_cls(free)}">{freetag}</span>
-        {reco}{spon}
+        {reco}{spon}{guide_chip}
       </div>
       <h3 class="c-name"><a class="c-link" href="{href}">{name}</a></h3>
       <div class="c-vendor">{sub}</div>
@@ -658,6 +662,23 @@ img{max-width:100%}
 .reco-card{border-color:var(--accent)}
 .reco-card::before{opacity:1}
 .chip.reco{background:var(--accent-deep);color:#fff;border-color:var(--accent-deep)}
+/* 整卡填充红色：条目设 card_style="red" 时生效（当前仅「华为云码道」带领取教程的重点卡） */
+.card.card-red{background:linear-gradient(152deg,#D8382C 0%,#B92A20 52%,#97190F 100%);border-color:transparent;box-shadow:0 16px 36px rgba(150,25,15,.26)}
+.card.card-red::before{display:none}
+.card.card-red .c-name,.card.card-red .c-name a{color:#fff}
+.card.card-red .c-name a:hover{color:#FFE3DF}
+.card.card-red .c-vendor{color:rgba(255,255,255,.76)}
+.card.card-red .c-quota{color:rgba(255,255,255,.94)}
+.card.card-red .c-note{background:rgba(255,255,255,.18);color:#fff}
+.card.card-red .cat-tag,.card.card-red .free-tag{background:rgba(255,255,255,.18);color:#fff}
+.card.card-red .chip{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.42)}
+.card.card-red .chip.guide-chip{background:#fff;color:#B92A20;border-color:#fff;font-weight:800}
+.card.card-red .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.62)}
+.card.card-red .btn.ghost:hover{background:rgba(255,255,255,.16);border-color:#fff;color:#fff}
+.card.card-red .btn.primary{background:#fff;color:#B92A20;box-shadow:0 6px 18px rgba(0,0,0,.14)}
+.card.card-red .btn.primary:hover{background:#FFE9E6;color:#8F1D17}
+.card.card-red:hover{border-color:transparent;transform:translateY(-3px)}
+.chip.guide-chip{background:var(--ok-soft);color:var(--ok);border-color:rgba(63,143,107,.45)}
 /* 新增五角星：条目收录后 3 天内在卡片右上角显示，到期由页面脚本自动摘除 */
 .new-star{position:absolute;top:0;right:0;z-index:3;display:flex;align-items:center;justify-content:center;width:38px;height:32px;font-size:16px;line-height:1;color:#fff;background:linear-gradient(135deg,#E6B04C,#C08A2E);border-radius:0 var(--r) 0 13px;box-shadow:0 4px 12px rgba(192,138,46,.28);pointer-events:none}
 .card.has-new .c-top{padding-right:34px}
@@ -889,6 +910,25 @@ section p{color:var(--text2);font-size:15px}
 .poster-box{display:flex;justify-content:center;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
 .poster-box img{display:block;width:100%;max-width:420px;height:auto;border-radius:10px}
 .poster-cap{text-align:center;font-size:13px;color:var(--text2);margin-top:10px}
+/* 领取教程（条目 guide 字段）：编号步骤 + 可选截图 + 提示 */
+.guide{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+.guide .g-flag{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.05em;color:#fff;background:#B92A20;padding:3px 10px;border-radius:7px;margin-bottom:10px}
+.guide h2{margin-bottom:6px}
+.guide-intro{color:var(--text2);font-size:14.5px}
+.guide-facts{margin-top:8px;padding:10px 13px;border-radius:10px;background:rgba(158,199,216,.16);font-size:14px;color:var(--text2)}
+.guide-steps{list-style:none;counter-reset:g;display:grid;gap:16px;margin-top:16px;padding:0}
+.guide-steps>li{counter-increment:g;position:relative;padding-left:36px}
+.guide-steps>li::before{content:counter(g);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--accent-deep);color:#fff;font-family:var(--mono);font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1}
+.guide-steps h3{font-size:15.5px;color:var(--text);margin:0 0 4px;line-height:1.45}
+.guide-steps p{font-size:14.5px;color:var(--text2);margin:0}
+.guide-steps p+p{margin-top:6px}
+.guide-code{background:rgba(34,52,58,.05);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:8px 12px;margin-top:7px;font-family:var(--mono);font-size:13px;color:var(--text);white-space:pre-wrap;word-break:break-word;line-height:1.6}
+.guide-fig{margin-top:9px}
+.guide-fig img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.guide-fig figcaption{font-size:12.5px;color:var(--text2);margin-top:5px}
+.guide-tips{margin-top:16px;padding:12px 14px;border-radius:12px;background:var(--warn-soft);color:#8A6117;font-size:13.8px;line-height:1.7}
+.guide-tips b{color:var(--warn)}
+.guide-src{margin-top:12px;font-size:12.5px;color:var(--text2)}
 @media(min-width:601px){.fact>div:last-child:nth-child(odd){grid-column:1/-1}}
 @media(max-width:600px){.fact{grid-template-columns:1fr}.poster-box{padding:10px}}
 </style>
@@ -906,6 +946,7 @@ section p{color:var(--text2);font-size:15px}
 </dl>
 {POSTER_SEC}
 <section><h2>免费额度与活动口径</h2><p>{QUOTA}</p></section>
+{GUIDE_SEC}
 {NOTE_SEC}
 {ACTIVITY_RULES}
 {EFFECT_SEC}
@@ -945,6 +986,60 @@ def meta_desc_for(it):
     tail = (f"适用地区{region}，类型为{free}；附平台直达入口、使用限制与核验说明，"
             "信息按平台官方页面整理。")
     return clip_desc(head + tail, 120)
+
+
+def render_guide(g):
+    """把条目的 guide（图文领取教程）渲染成详情页板块。
+
+    结构：标题 + 一句话简介 + 规格/要点 + 编号步骤（可带代码块与截图）+ 提示 + 来源。
+    所有文本走 esc()，链接只允许 http(s)，截图走站内 /img/ 绝对路径。
+    """
+    if not isinstance(g, dict):
+        return ""
+    def safe_url(u):
+        u = (u or "").strip()
+        return u if re.match(r"^https?://", u) else ""
+    title = esc(g.get("title") or "领取教程")
+    intro = esc(g.get("intro") or "")
+    facts = [esc(x) for x in (g.get("facts") or []) if (x or "").strip()]
+    steps_html = []
+    for i, st in enumerate(g.get("steps") or [], 1):
+        head = esc(st.get("t") or f"第 {i} 步")
+        body = esc(st.get("d") or "").replace("\n", "<br>")
+        part = [f"<li><h3>{head}</h3>"]
+        if body:
+            part.append(f"<p>{body}</p>")
+        url = safe_url(st.get("url"))
+        if url:
+            label = esc(st.get("url_text") or url)
+            part.append(f'<p class="guide-link"><a href="{esc(url)}" target="_blank" '
+                        f'rel="noopener nofollow">{label} ↗</a></p>')
+        code = (st.get("code") or "").strip()
+        if code:
+            part.append(f'<div class="guide-code">{esc(code)}</div>')
+        for im in (st.get("imgs") or []):
+            src = (im.get("src") or "").strip()
+            if not src.startswith("/img/"):
+                continue
+            cap = esc(im.get("cap") or "")
+            cap_html = f"<figcaption>{cap}</figcaption>" if cap else ""
+            part.append(f'<figure class="guide-fig"><img src="{esc(src)}" '
+                        f'alt="{cap or head}" loading="lazy" decoding="async">{cap_html}</figure>')
+        part.append("</li>")
+        steps_html.append("".join(part))
+    facts_html = f'<div class="guide-facts">{facts[0]}</div>' if len(facts) == 1 else ""
+    if len(facts) > 1:
+        facts_html = '<div class="guide-facts">' + "".join(f"<div>· {f}</div>" for f in facts) + "</div>"
+    tips = [esc(x) for x in (g.get("tips") or []) if (x or "").strip()]
+    tips_html = ('<div class="guide-tips"><b>注意</b>' + "".join(f"<div>· {t}</div>" for t in tips)
+                 + "</div>") if tips else ""
+    src = esc(g.get("source") or "")
+    src_html = f'<p class="guide-src">教程来源：{src}</p>' if src else ""
+    return (f'<section class="guide"><span class="g-flag">图文教程</span>'
+            f'<h2>{title}</h2>'
+            + (f'<p class="guide-intro">{intro}</p>' if intro else "") + facts_html
+            + f'<ol class="guide-steps">{"".join(steps_html)}</ol>'
+            + tips_html + src_html + "</section>")
 
 
 detail_written = 0
@@ -1013,6 +1108,8 @@ for i, it in enumerate(items + archive_details):
     # 备注（仅当条目显式提供时渲染）
     note_txt = esc(it.get("note", "")).strip()
     note_sec_html = f'<p class="note-warn">{note_txt}</p>' if note_txt else ""
+    # 图文领取教程（仅当条目显式提供 guide 时渲染）
+    guide_sec_html = render_guide(it.get("guide"))
     # 专属邀请（仅详情页渲染；卡片/领取入口不出现邀请码）
     invite_text = esc(it.get("invite_text", ""))
     invite_url = esc(it.get("invite_url", ""))
@@ -1048,6 +1145,7 @@ for i, it in enumerate(items + archive_details):
         .replace("{REGION}", region).replace("{VALIDITY_TXT}", validity_txt)
         .replace("{LEAD}", lead_html).replace("{EFFECT_SEC}", effect_sec_html)
         .replace("{INVITE_SEC}", invite_sec_html).replace("{NOTE_SEC}", note_sec_html)
+        .replace("{GUIDE_SEC}", guide_sec_html)
         .replace("{ACTIVITY_RULES}", activity_rules_html)
         .replace("{POSTER_SEC}", poster_sec_html)
         # 注意：详情页不展示官网链接（用户明确要求），事实卡不放官网入口

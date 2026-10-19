@@ -982,7 +982,7 @@
       "sponsored": false,
       "entry_url": "https://edu.huaweicloud.com/signup/00ce9d4a32584039a9741d8488d16711?channelCode=edu&medium=share_kfzlb&invitation=ae0390096b6645e1825b6b01e4cb04ec",
       "intel_url": "https://edu.huaweicloud.com/signup/00ce9d4a32584039a9741d8488d16711?channelCode=edu&medium=share_kfzlb&invitation=ae0390096b6645e1825b6b01e4cb04ec",
-      "last_verified": "2026-10-02",
+      "last_verified": "2026-10-19",
       "modality": "GLM-5.3 Flash · DeepSeek V4 系列",
       "signup": "通过活动入口领取，具体资格以活动页面为准。",
       "activity_rules": [
@@ -991,7 +991,7 @@
         "上述三款专属模型只消耗这批福利 Token；其他模型不属于此福利口径。",
         "通过领取入口查看活动并按页面指引参与；每日免费额度不等于无限使用。"
       ],
-      "update_source": "用户补充，2026-10-02",
+      "update_source": "用户补充，2026-10-19（附图文领取教程）",
       "detail_slug": "0038rlna",
       "legacy_detail_paths": [
         "/intel/item-038-华为云码道/",
@@ -1001,7 +1001,117 @@
         "/intel/item-042-华为云码道/",
         "/intel/item-046-华为云码道/"
       ],
-      "added": "2026-10-07"
+      "added": "2026-10-07",
+      "card_style": "red",
+      "guide": {
+        "title": "华为云 6 个月服务器领取教程",
+        "intro": "华为云「6 个月服务器」活动新老用户都能参加，也可以给老服务器续费。路径是「报名 → 在云码道里让 Agent 代领 200 元券 → 下单抵扣」，实测下单价 ¥197.64，用券后实付 ¥0.00。",
+        "facts": [
+          "可领规格：国内服务器 6 个月（中国国内）；国外服务器 1 个月（中国香港 / 墨西哥 / 新加坡）",
+          "领券路径：华为云学堂报名 → 云码道让 Agent 代办 200 元代金券 → 下单时勾选抵扣",
+          "实测账单：Flexus 应用服务器 2核2G（40G 系统盘 / 2Mbps / 100G 流量）¥32.94/月 × 6 个月 = ¥197.64，券后应付 ¥0.00"
+        ],
+        "steps": [
+          {
+            "t": "第 1 步：打开活动页并报名",
+            "d": "进入华为云学堂「0 元领华为云 AI 认证证书、300 元云资源券和每日千万 Token 限时领取」活动页，注册 / 登录后点击报名。页面显示「已报名」即生效，报名人数、剩余时间以页面为准。",
+            "url": "https://edu.huaweicloud.com/signup/00ce9d4a32584039a9741d8488d16711?channelCode=edu&medium=share_kfzlb&invitation=ae0390096b6645e1825b6b01e4cb04ec",
+            "url_text": "华为云学堂活动入口（本站领取入口）",
+            "imgs": [
+              {
+                "src": "/img/guide/huawei-server/01-activity.jpg",
+                "cap": "活动页：报名后显示「已报名」，下方列出 AI 认证证书、300 元资源券、每日千万 Token 三项福利"
+              }
+            ]
+          },
+          {
+            "t": "第 2 步：报名「华为开发者大赛·小红书 Skill 创新赛」",
+            "d": "200 元券由该赛事发放，需先提交赛事报名表。注意页面提示：报名信息一经提交无法修改，姓名、手机号、邮箱请核对后再提交。",
+            "url": "https://developer.huaweicloud.com/competition/information/1300000350/html1",
+            "url_text": "赛事报名页",
+            "imgs": [
+              {
+                "src": "/img/guide/huawei-server/02-signup.jpg",
+                "cap": "赛事报名页：姓名、手机、邮箱、职业、行业"
+              }
+            ]
+          },
+          {
+            "t": "第 3 步：打开「云码道」在线体验，无需安装",
+            "d": "用浏览器打开云码道对话页即可，模型保持默认（glm-5.3-flash）。左侧任务列表是历史记录，不影响本次操作。",
+            "url": "https://devcloud.cn-north-4.huaweicloud.com/chat/home",
+            "url_text": "云码道在线体验",
+            "imgs": [
+              {
+                "src": "/img/guide/huawei-server/03-yundao-home.jpg",
+                "cap": "云码道对话页：直接在输入框发指令即可"
+              }
+            ]
+          },
+          {
+            "t": "第 4 步：让云码道安装 HuaweiCloud Devkit 插件",
+            "d": "在对话框原样发送下面这句话，等 Agent 回报「Devkit 插件 v1.1.8 已注册可用 / KooCLI v7.2.12 已安装 / 认证状态 ok」再进入下一步。",
+            "code": "安装 HuaweiCloud Devkit插件",
+            "imgs": [
+              {
+                "src": "/img/guide/huawei-server/04-plugin.jpg",
+                "cap": "安装完成：插件、KooCLI、隐私协议、认证状态四项全部就绪"
+              }
+            ]
+          },
+          {
+            "t": "第 5 步：让云码道代领 200 元代金券",
+            "d": "发送第二条消息，机器人会索要登录凭据。按「控制台 → 我的凭证 → 访问密钥 → 新增访问密钥 → 勾选最下方「同意」→ 下一步 → 下载 txt」获取，再把 txt 全文贴进对话。\n注意：这一步等同于把账号最高权限交给 Agent，领完券请立刻轮换密钥（见文末提示）。",
+            "code": "帮我领取华为开发者大赛·小红书skill创新赛华为云代金券",
+            "url": "https://console.huaweicloud.com/iam/?region=cn-east-3#/mine/accessKey",
+            "url_text": "新增访问密钥（AK/SK）",
+            "imgs": [
+              {
+                "src": "/img/guide/huawei-server/05-accesskey.jpg",
+                "cap": "新增访问密钥：选「其他」→ 勾选「我理解上述建议」→ 下一步"
+              },
+              {
+                "src": "/img/guide/huawei-server/06-coupon.jpg",
+                "cap": "领取成功：200 元华为云代金券（券号已打码）"
+              }
+            ]
+          },
+          {
+            "t": "第 6 步：选购国内服务器（6 个月）",
+            "d": "用下方链接进入 Flexus 应用服务器购买页，地域选华北-北京四，规格选 2核2GiB（40G 系统盘 / 2Mbps / 100G 流量，¥32.94/月），买 6 个月合计 ¥197.64。本步只提交订单，先别付款。",
+            "url": "https://auth.huaweicloud.com/authui/login.html?service=https%3A%2F%2Fconsole.huaweicloud.com%2Fsmb%2F%3Fregion%3Dcn-north-4%26cloud_route_state%3D%2Fcreate%2Fhecs-light%3Fperiod%3Dmonth_1%26plan%3Dbasic_v1%26image_name%3DOpenClaw#/login",
+            "url_text": "国内服务器选购（6 个月）",
+            "imgs": [
+              {
+                "src": "/img/guide/huawei-server/07-hecs-spec.jpg",
+                "cap": "实例规格：2核2GiB ¥32.94/月，是 6 个月白嫖的最低价档"
+              }
+            ]
+          },
+          {
+            "t": "第 7 步：选购国外服务器（1 个月，二选一）",
+            "d": "国内 / 国外只能二选一。要海外节点（中国香港 / 墨西哥 / 新加坡）就用这条链接，但只能领 1 个月。",
+            "url": "https://auth.huaweicloud.com/authui/login.html?service=https%3A%2F%2Fconsole.huaweicloud.com%2Fhecsx%2F%3Fregion%3Dcn-north-4%26cloud_route_state%3D%2Fhecsx%2Fcreate#/login",
+            "url_text": "国外服务器选购（1 个月）"
+          },
+          {
+            "t": "第 8 步：提交订单，用 200 元券付款",
+            "d": "确认配置后提交订单，在「华为云代金券」栏勾选 ¥200 券，应付金额会变成 ¥0.00，再点「确认付款」。订单 7 天内不支付会自动取消，别只下单不付款。",
+            "imgs": [
+              {
+                "src": "/img/guide/huawei-server/08-order.jpg",
+                "cap": "券后应付 ¥0.00：勾选 200 元券后点确认付款"
+              }
+            ]
+          }
+        ],
+        "tips": [
+          "200 元券有效期至 2026-12-18，到账当天就能用，别拖到过期；活动页标注周期为 2026-09-15 至 2026-10-31，额度和券的发放口径可能随时收紧，以控制台到账为准。",
+          "AK/SK 是账号最高权限凭据。领完券立刻回控制台「我的凭证 → 访问密钥」停用并重建密钥，txt 也不要发给官方 Agent 以外的任何人。",
+          "券只抵扣「适用产品 / 适用范围」内的订单，下单前点「详细规则」确认机型在范围内，否则应付金额不会归零。"
+        ],
+        "source": "飞书文档《华为云 6 个月服务器领取教程》（用户提供），截图已裁剪打码，隐去账号、任务列表、券号与订单号"
+      }
     },
     {
       "name": "Google Antigravity（反重力）",
