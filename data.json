@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-18",
-  "total": 58,
+  "last_updated": "2026-10-19",
+  "total": 59,
   "items": [
     {
       "name": "库库 AI",
@@ -1567,6 +1567,35 @@
       ],
       "detail_slug": "0114fvah",
       "added": "2026-10-17"
+    },
+    {
+      "name": "摩尔线程 AI Coding Plan",
+      "vendor": "摩尔线程（Moore Threads）",
+      "category": "tool",
+      "free_type": "免费层",
+      "quota": "Free Trial ¥0：每日限量 100 名开发者，领取日起 30 天有效，与 Lite 套餐用量相当（文档中心「套餐概览」标每 5 小时约 40 次 prompts，Lite 为约 120 次）；付费档 Lite ¥120/季度、Pro ¥600/季度、Max ¥1200/季度。",
+      "validity": "",
+      "region": "",
+      "gates": [
+        "需注册摩尔线程 AI Coding Plan 账号后点击「立即免费领取」，无需绑卡",
+        "每日限量 100 名、先到先得（页面标「体验爆满，扩容中」），同一账号不可重复领取",
+        "额度仅限指定编程工具内使用（Claude Code / Cursor / OpenCode / Cline / Kilo Code / Roo Code），不支持任意 API 外接"
+      ],
+      "note": "首个基于国产全功能 GPU（MTT S5000）的 Coding Plan：推理框架由摩尔线程与硅基流动联合优化，代码模型为 GLM-4.7（Code Arena 开源及国产第一梯队）。接入方式与替换 API 端点一致，配置后终端出现「GLM-4.7 · API Usage Billing」即生效。官网标「限时免费」但未公布活动截止日，名额每日限量。",
+      "sponsored": false,
+      "entry_url": "https://code.mthreads.com",
+      "intel_url": "https://docs.mthreads.com/kuaecloud/kuaecloud-doc-online/coding_plan/plan_overview/",
+      "signup": "访问 code.mthreads.com 注册登录，点击「立即免费领取」即发放 Free Trial 权益；随后在 API Keys 页创建 Key，按文档把 Base URL 与 Key 填入 Claude Code / Cursor / OpenCode / Cline 等工具。",
+      "modality": "GLM-4.7",
+      "last_verified": "2026-10-19",
+      "update_source": "自动更新 2026-10-19",
+      "source_urls": [
+        "https://code.mthreads.com",
+        "https://docs.mthreads.com/kuaecloud/kuaecloud-doc-online/coding_plan/plan_overview/",
+        "https://www.mthreads.com/news/277"
+      ],
+      "detail_slug": "0119yljj",
+      "added": "2026-10-19"
     }
   ],
   "retired": [
@@ -2182,6 +2211,13 @@
       "reason": "Akash Network 的去中心化推理服务，新账号自动获得 $100 AI token credits（一次性、无需绑卡、无公布过期日），OpenAI 兼容，可调 Qwen3.8-27B、GLM 5.3、GPT-OSS-120B、Llama 3.3 70B 等开源模型。额度真实且量级大，但属国际平台、$100 为一次性注册赠送（同类 signup credit 此前多不进 items），且第三方称部分领取需企业信息核验，口径有歧义，先观望。region=国际。2026-10-18 自动更新。",
       "detail_slug": "0118nzmx",
       "added": "2026-10-18"
+    },
+    {
+      "name": "Together AI",
+      "url": "https://www.together.ai/",
+      "reason": "国际推理平台，第三方免费 API 索引（llmperks，2026-10-18 更新）称 GLM-5.2-FP8 等开源权重模型在 Together 提供 fair-use 免费端点、无需绑卡，1M 上下文、OpenAI 兼容。但其免费额度向以「注册送 $1 + 绑卡」为主，第三方标注与官方定价页口径不一致，且属国际平台，先入观望区待核官方额度口径。2026-10-19 自动更新。",
+      "detail_slug": "0120vdvm",
+      "added": "2026-10-19"
     }
   ],
   "hidden": []
