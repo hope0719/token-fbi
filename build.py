@@ -326,6 +326,9 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
     red_cls = " card-red" if (it.get("card_style") == "red") else ""
     # 备注：仅当该条目显式提供时渲染（默认全站无备注）
     note_block = f'<div class="c-note">{esc(it.get("note","")).strip()}</div>' if (it.get("note") or "").strip() else ""
+    # 卡片卖点条：条目设 card_promo 时在名称下方显示一行高亮文案（用于「送 6 个月服务器」这类一句话钩子）
+    promo_txt = (it.get("card_promo") or "").strip()
+    promo_block = f'<div class="c-promo">{esc(promo_txt)}</div>' if promo_txt else ""
     # 新增星标：收录 3 天内在卡片右上角固定显示（不占文档流，不遮挡标签与按钮）
     star = ""
     if is_new(it):
@@ -341,6 +344,7 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
       </div>
       <h3 class="c-name"><a class="c-link" href="{href}">{name}</a></h3>
       <div class="c-vendor">{sub}</div>
+      {promo_block}
       <div class="c-quota">{quota}</div>
       {note_block}
       <div class="chips">{gate_chips}</div>
@@ -608,6 +612,8 @@ img{max-width:100%}
 .c-name a:hover{color:var(--accent-deep)}
 .c-vendor{font-size:13px;color:var(--text3);display:flex;align-items:center;gap:7px}
 .c-quota{font-size:13.5px;color:var(--text2);line-height:1.5}
+/* 卡片卖点条：一句话钩子，字号比 quota 大一档、加粗，便于扫读 */
+.c-promo{display:inline-block;align-self:flex-start;font-size:14.5px;font-weight:850;line-height:1.35;letter-spacing:-.01em;color:var(--accent-deep);background:var(--accent-soft);border:1px solid var(--accent);border-radius:9px;padding:5px 11px}
 .c-note{background:var(--warn-soft);color:var(--warn);border-radius:9px;padding:9px 11px;font-size:13px;font-weight:750;line-height:1.55}
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:2px}
 .chip{font-size:11px;padding:2px 8px;border-radius:6px;background:var(--accent-soft);color:var(--accent-deep);border:1px solid var(--accent)}
@@ -669,6 +675,7 @@ img{max-width:100%}
 .card.card-red .c-name a:hover{color:#FFE3DF}
 .card.card-red .c-vendor{color:rgba(255,255,255,.76)}
 .card.card-red .c-quota{color:rgba(255,255,255,.94)}
+.card.card-red .c-promo{color:#B92A20;background:#fff;border-color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.14)}
 .card.card-red .c-note{background:rgba(255,255,255,.18);color:#fff}
 .card.card-red .cat-tag,.card.card-red .free-tag{background:rgba(255,255,255,.18);color:#fff}
 .card.card-red .chip{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.42)}

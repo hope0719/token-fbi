@@ -134,3 +134,66 @@
   - **搜索源已高度饱和**：smzdm「全网 AI 产品免费权益清单」（每日更新）、freellm.net、free-llm.com、models.hummingg.com、toolfreebie.com 是主要线索源；国内厂商（阿里/火山/商汤/讯飞/腾讯/智谱）免费额度近两周无实质变化，后续「零新增」将成常态，不必强行凑条目。
   - **判定沿用**：消费级免费（ChatGPT 免费层/腾讯元宝）与折扣（TraeCode 1 折、MiniMax 首月 5 折）不进 items；需订阅在效的活动（MiniMax Code 10/10–10/18 签到送 Reset Card）不收；返还代金券（阿里 AI 用量加速）与无门槛代金券（硅基流动 16 元）属抵扣券，排除。
   - 记忆治理：本次已将项目 `MEMORY.md` 由 18.2KB 精简重写至约 3KB（含观望区清单合并），后续新条目只需在其中追加一行。
+
+## 2026-10-14（09:00 定时自动更新）
+- **状态**：成功。构建通过（`check_star.py` 3 星标）、推送成功（`ac685ff..47232a4`，无 rebase）、线上首页 200 且 `/_version.txt`=47232a4、新增详情页 200。
+- **新增 2 条情报**（append 到 items 末尾，未插队）：Loomy（科大讯飞）— tool / 每日赠送 / 新户 5000 积分 + 每日登录 5000 积分（次日刷新不累积）/ 国内 / `0093mxzf`；UOS AI（deepin）免费 DeepSeek 账号 — tool / 免费层 / 每月 50 次文本对话、领取截止 2026-12-31、账号有效期至 2027-06-30 / 国内 / `0094zgpv`。另加 3 条观望：Sarashina（软银，地域限日本）`0095mrua`、极智智能体平台（中国电科，参赛限定）`0096vfgj`、Free Claude Code（FCC 开源聚合器）`0097lyfk`。
+- **数据变更**：items 44→46，total=46（线上公开 43 = 46 剔 3 赞助），watchlist 31→34，last_updated=2026-10-14。
+- **关键注意（下次先看）**：
+  - **QClaw（腾讯电脑管家，每日 4000 万 Token）已关停，勿收录**：多篇 8 月攻略仍在推荐，但掘金有「QClaw 关停」实帖，团队 7/20 已并入 WorkBuddy 所在部门。
+  - **接入 WorkBuddy 的模型级限免继续不单独成卡**：本次的「Step 5 Preview × WorkBuddy 独家限免（10/12–10/25、零积分）」沿用 Hy3/Hy4 的处理方式（站内已有 WorkBuddy 卡 + Step 5 Preview 卡）。
+  - **官方页 > 第三方清单**：UOS AI 额度官方写 50 次/月，smzdm 写 200 次，已按官方口径收录并在 note 标注冲突。
+  - **smzdm「全网 AI 产品免费权益清单」（每日更新，10/14 版为 /p/arzr0vxx）仍是最有效的单一线索源**；其「今日新增」多为已收录或已排除项，需逐条比对 items/watchlist 后再定。
+  - 排除判定沿用：需订阅才送的签到活动（MiniMax Code 重置卡）、同平台模型级活动（Fledge Alpha @ OpenCode Zen）、已收录平台的新活动（书生·端砚墨点计划 = 站内 `0034yvdj`）、地方/企业定向算力券。
+  - 本次远端与本地同起点，推送一次成功；data.json 单文件提交即可（dist 被 .gitignore 忽略，memory 文件不并入同一次提交以免 `git add` 被忽略规则打断 `&&` 链）。
+
+## 2026-10-15（09:00 定时自动更新）
+- **状态**：成功。构建通过（`check_star.py` 9 星标）、推送成功（`47232a4..f53b05b`，无 rebase）、线上首页 200 且 `/_version.txt`=f53b05b、7 个新详情页均 200。
+- **新增 7 条情报**（全部 append 到 items 末尾）：千问办公 QwenWork（阿里，tool/注册赠送，免费版 ¥0 + 注册 2000 积分 + 每日 100 积分）`0098zpea`；百度搭子 DuMate（百度智能云，tool/每日赠送，免费版 + 每日签到 500 积分）`0099bcrh`；移动云 MoMA（中国移动，model/注册赠送，新户 2500 万 Tokens·30 天·活动至 2026-12-31）`0100xzno`；百川智能开放平台（model/注册赠送，新户 1000 万 tokens 赠送金·3 个月）`0101smoc`；蚂蚁百灵 Ling Studio（model/每日赠送，每天 50 万计算单元）`0102isrz`；AtomGit AtomCode CodingPlan（开放原子/CSDN，tool/免费层，Lite 1000 人/日·30 天）`0103wunm`；书生 Intern AI（上海 AI 实验室，model/免费层，每月 9000 万输入 + 9000 万输出、Anthropic 兼容）`0104skjl`。另加 3 条观望：快手万擎 StreamLake `0105ggiq`、华为云盘古 ModelArts MaaS `0106unaw`、Ollama Cloud `0107hqzp`。
+- **数据变更**：items 46→53，total=53（线上公开 50 = 53 剔 3 赞助），watchlist 34→37，last_updated=2026-10-15。
+- **关键注意（下次先看）**：
+  - **本次线索主力源变了**：`夜雨聆风 yeyulingfeng.com/a/1159580.html`（《AI 免费 Token 地图 2026.10 版》，不定期更新、只收录国内可直连且当日有效的额度）一次贡献了 7 条中的 6 条，比 smzdm 清单信息密度更高，**优先读它**。注意其中夹带的黑名单项（腾讯元器）与已停止购买项（阶跃 Step Plan）需剔除。
+  - **积分制 Agent 可以收录**：千问办公 / 百度搭子这类「免费版 + 注册赠积分 + 每日签到积分」的桌面 Agent，与站内 库库 AI / Loomy / 华为云码道 同类，按积分口径收录（积分是平台计费单位，不是代金券）。第三方实测换算供参考：千问办公 1 积分 ≈ 1600 Token。
+  - **运营商额度不一律排除**：判断标准是「是否面向全网个人开放」。移动云 MoMA 官方明确支持互联网账号 → 收录；上海张江 / 江苏省级定向券 → 仍排除。
+  - **`scripts/assign_detail_ids.py` 的打印不可全信**：本次首跑打印「分配 0 个新 ID」，但实际已正确写入 7 个 ID 与 added。以 data.json 实际内容 + `check_star.py` 为准。
+  - 排除判定沿用：代金券（派欧云 PPIO ¥5）、无独立免费额度的聚合平台（京东 JoyAgent Hub）、同生态不单独成卡（CodeBuddy 个人 Free 版 ↔ 站内 WorkBuddy）。
+
+## 2026-10-16（09:00 定时自动更新）
+- **状态**：成功。构建通过（`items=56`、111 详情页；`check_star.py` 12 星标）、推送成功（`f53b05b..ef90087`，无 rebase）、线上首页 200 且 `/_version.txt`=`ef90087...`（完整 SHA，非短 SHA，比对时须前缀匹配）、5 个新详情页均 200。
+- **新增 3 条情报**（append 到 items 末尾）：云知声 U2-Flash（Unisound MaaS，model/**限时活动** validity=2026-10-31，输入输出缓存三档全 0 元不限量、不绑卡，兼容 OpenAI+Anthropic）`0108rkie`；百度文心快码 Comate（tool/免费层，个人标准版 ¥0 + 补全永久免费 + 注册赠 ¥10）`0109tdmg`；AWS Kiro（tool/免费层/region=国际，每月 50 credits 含 Claude Sonnet 4.5，Builder ID 免信用卡）`0110oxyf`。另加 2 条观望：Vercel AI Gateway `0111vlhe`、Kimi Work（月之暗面）`0112soyt`。
+- **数据变更**：items 53→56，total=56（线上公开 53 = 56 剔 3 赞助），watchlist 37→39，last_updated=2026-10-16。
+- **关键注意（下次先看）**：
+  - **新线索源：腾讯云开发者社区「赛博鸡蛋」免费 AI 模型清单**（`cloud.tencent.com/developer/article/2762018`，约 21 条、持续核实、卡片带「免费/折扣/限时」标签）——云知声 U2-Flash 由其率先带出，建议与夜雨聆风并列为主力源。它同时是「OpenCode Go 限时免费模型」的可靠信源。
+  - **天翼云 Token Plan（新户 2,500 万 Tokens / 2 周）属同平台延续活动，不单独成卡**：天翼云已在 items（息壤 MaaS），与「腾讯云 TokenHub 活动不单独成卡」同处理。
+  - **`/_version.txt` 写的是完整 40 位 SHA**：验证脚本若与短 SHA 直接比较会一直轮询不到，须用 `case "$V" in ef90087*)` 之类前缀匹配，或直接比完整 SHA。
+  - 排除判定新增：充值型中转站（基元律动 TokenRhythm，充值赠额 + 新户 18 元）、需付费订阅在效（Devin Desktop SWE-2 免费至 10/16、Lovable 每日免费对话至 10/31）、绑定支付的 signup credit（Lightning AI、fal.ai、Liner API $15）、非通用 token 额度（Voyage AI embedding、AI Horde/Pollinations 社区算力、Kaggle/Modal 纯 GPU）。
+  - 站内聚合器已足量（OpenRouter / BazaarLink / Kilo Gateway / OpenCode Zen），**Vercel AI Gateway 等新聚合器一律先入 watchlist**。
+
+## 2026-10-18（09:00 定时自动更新）
+- **状态**：成功。构建（items=58、117 详情页、`check_star.py` 5 星标）、推送成功（`5054650..d4c61d1`，无 rebase）、线上首页 200 且 `/_version.txt`=`d4c61d1...`、2 个新观望详情页 200、线上 data.json last_updated=2026-10-18。
+- **items 零新增**：约 8 轮搜索未发现满足硬门槛的新平台（夜雨聆风已迁 www 域名、赛博鸡蛋可读 raw offers.json、smzdm 10/17 版 /p/arzrqn2w）。**watchlist +2**：码上飞 CodeFlying（`0117yrgy`，每日积分制文生软件平台、官方未公布积分数字待核）、AkashML（`0118nzmx`，新号 $100 token credits 免绑卡、国际、一次性 signup credit 口径有歧义）。
+- **数据变更**：watchlist 41→43，items 58 不变，total=58。
+- **关键注意（下次先看）**：
+  - **check_star.py 必须在 build.py 之后跑**：它校验 dist HTML，旧 dist 过期星标会误报 FAIL，重建后即通过。
+  - 排除：Photon 2.0（消息基础设施额度非 LLM token）、Muse Spark Open @ Together（当日到期+需绑卡购 $15）、decision-model-preview（仅第三方信源）、AWS Free Tier（云体验金）、OpenCSG ¥99（抵扣券）、ima×MiMo-V2.6 夜间限免（模型级活动惯例不收）。
+
+## 2026-10-17（09:00 定时自动更新）
+- **状态**：成功。构建（items=58、115 详情页、`check_star.py` 12 星标）、推送成功（`ef90087..5054650`，无 rebase）、线上首页 200 且 `/_version.txt`=`5054650...`、2 个新详情页 200、线上 data.json total=58。
+- **新增 2 条**（append 末尾）：华为云果办 OfficeAce（tool/注册赠送，首次注册 4,000 积分 + 每日登录 1,000 积分，个人体验版 ¥0，多端含微信小程序）`0113atdn`；华为云 AgentArts 智果体验版（tool/免费层，预置 MaaS 200 万 tokens 调测额度 + 20CU，需实名 + 申请公测约 5 工作日）`0114fvah`。观望区 +2：LLM Tech（llmtech.eu，公共试用 Key 每日 200 万 tokens/IP、Qwen3.8-27B）`0115mcyv`、Aion Labs（每日 2 万 tokens、15 RPM）`0116rxoc`。
+- **数据变更**：items 56→58，total=58（线上公开 55 = 58 剔 3 赞助），watchlist 39→41，last_updated=2026-10-17。
+- **关键注意（下次先看）**：
+  - **华为开发者空间不收录**：官网首页公告「原开发者空间业务预计 10.30 前陆续下线」。虽有第三方盘点称每周 200 万 MaaS Tokens + 180 小时云开发环境，但业务将下线，收录即过期。
+  - **华为云产品线可各自成卡**：果办 OfficeAce（办公 Agent，消费者侧）、AgentArts（智能体托管，开发者侧）、码道（Coding Agent）分属不同产品线；盘古 MaaS 的「首次开通每模型 200 万 tokens」仍留在 watchlist，与 AgentArts 的 200 万 tokens 非同源（后者为平台内调测额度）。
+  - **官方页内部口径冲突要写进 gates**：果办 OfficeAce 官网套餐卡写「首次体验送 500 积分」，而页面横幅与 activity.huaweicloud.com/officeace.html 写 4,000 积分；已在 gates 标注「以活动页到账为准」，未自行取舍。
+  - **国内 token 侧本周实质零新增**：smzdm 10/16 版明确「阿里/字节/百度/智谱/MiniMax/腾讯/DeepSeek 的 Token 活动没有新增，只有自然倒计时」，其「今日新增」全部是双11 电商 AI 导购（消费者侧、非 token），不属本站定位。后续零新增将常态化。
+  - **疑似中转站营销稿不入库**：Terrapolis（info35 SEO 稿，注册赠 1500 万 tokens、声称直连 Claude/GPT/Gemini）无官方可核来源，按「返佣/中转站不收录」排除。
+  - 本次远端与本地同起点，单文件（data.json）提交并 push 一次成功；`.workbuddy/memory/*` 仍有历史未提交改动，未并入本次提交。
+
+## 2026-10-19（09:00 定时自动更新）
+- **状态**：成功。构建（items=59、119 详情页、`check_star.py` 3 星标）、推送成功（`d4c61d1..87be37d`，无 rebase）、线上首页 200 且 `/_version.txt`=`87be37d...`、新详情页 200、线上 data.json total=59。
+- **新增 1 条**（append 末尾）：摩尔线程 AI Coding Plan（tool/免费层，Free Trial ¥0、每日限量 100 名、30 天有效、GLM-4.7、支持 Claude Code/Cursor/OpenCode/Cline/Kilo Code/Roo Code，无需绑卡）`0119yljj`。**watchlist +1**：Together AI（`0120vdvm`，国际，第三方称开源模型 fair-use 免费端点免绑卡，与官方「$1+绑卡」口径冲突待核）。
+- **关键注意（下次先看）**：
+  - **国产算力厂商的 Coding Plan 是新品类**：摩尔线程（code.mthreads.com，MTT S5000 + 硅基流动推理框架 + GLM-4.7）此前从未出现在任何清单里，靠「AI Coding Plan + 免费」交叉搜索才挖出；后续可沿「国产 GPU 厂商（沐曦/燧原/海光/摩尔线程）× Coding Plan 免费」方向继续搜。
+  - **官网套餐页与文档中心口径冲突**：套餐页写 Free Trial「与 Lite Plan 用量相当」，文档中心写 Free Trial 每 5 小时约 40 次 prompts、Lite 约 120 次；已在 quota 中双向标注、未自行取舍。
+  - **本次搜索源高度饱和**：夜雨聆风（yeyulingfeng.com，10-12 版已读）、smzdm 10-16 版（/p/avgpxnk9）、aiaiai.help/free 与 /radar（新增的免费额度监控站，71 平台、每日 3 次扫描、带核验时间戳，**建议列入常规信源**）、llmperks（按模型列免费端点）——命中项全部已收录或在 watchlist。
+  - 排除：蚂蚁百灵 20 元 Token 券（代金券 + 同平台已有卡）、云知声 U2-Decision（专用决策模型，沿用 HAL-X 判定）、智谱推荐有礼（同平台，且 BigModel 在 watchlist）、DeepSeek Search/Fetch 免至 11-01（黑名单平台）、基元律动充值赠额（充值型中转站）、京东 JoyAI 商家包（企业定向）。
