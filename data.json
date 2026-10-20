@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-10-20",
-  "total": 54,
+  "total": 47,
   "items": [
     {
       "name": "库库 AI",
@@ -1313,30 +1313,6 @@
       "added": "2026-10-15"
     },
     {
-      "name": "AtomGit AtomCode CodingPlan（开放原子 / CSDN）",
-      "vendor": "开放原子开源基金会 / CSDN（AtomGit）",
-      "category": "tool",
-      "free_type": "免费层",
-      "quota": "AtomCode 客户端 CodingPlan 免费领取，额度按 5 小时滚动窗口计量：Lite 体验版限量 1,000 人/日、30 天有效，最多约 500 次调用 / 5 小时；Pro 体验版每日 10:00 限量 100 人、7 天有效，最多约 800 次调用 / 5 小时并额外解锁 GLM-5.2；Pro（30 天）需向活动仓库合入 PR。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://ai.atomgit.com/serverless-api",
-      "intel_url": "https://atomcode.atomgit.com/docs/zh/login.html",
-      "signup": "下载安装 AtomCode 客户端；首次启动在向导中选「用 AtomGit CodingPlan 一键接入」，或登录后在 TUI 内执行 /login 完成授权与额度申领。",
-      "modality": "qwen3.8-27b · glm5.3-flash · deepseek-flash · GLM-5.2（Pro 档）",
-      "last_verified": "2026-10-15",
-      "update_source": "自动更新 2026-10-15",
-      "source_urls": [
-        "https://atomcode.atomgit.com/docs/zh/login.html",
-        "https://ai.atomgit.com/serverless-api"
-      ],
-      "detail_slug": "0103wunm",
-      "added": "2026-10-15"
-    },
-    {
       "name": "书生 Intern AI（上海 AI 实验室）",
       "vendor": "上海人工智能实验室",
       "category": "model",
@@ -1385,129 +1361,6 @@
       "added": "2026-10-16"
     },
     {
-      "name": "百度文心快码 Comate",
-      "vendor": "百度",
-      "category": "tool",
-      "free_type": "免费层",
-      "quota": "个人标准版 ¥0：代码补全、代码解释、注释生成等基础能力长期免费；首次注册另赠 ¥10 模型额度，额度用尽后自动切换免费模式（150k tokens/小时）；高级能力（多文件修改、智能体、代码库分析）每周发放免费额度，用尽后等待下周重置。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://comate.baidu.com/zh",
-      "intel_url": "https://comate.baidu.com/zh",
-      "signup": "在 VSCode / JetBrains 插件市场搜索「Baidu Comate」安装，重启 IDE 后登录百度账号即可使用；或前往官网下载独立 AI IDE 客户端。",
-      "modality": "文心（ERNIE）系列 · 代码补全 / 多文件编辑 / Agent",
-      "last_verified": "2026-10-16",
-      "update_source": "自动更新 2026-10-16",
-      "source_urls": [
-        "https://comate.baidu.com/zh",
-        "https://www.yeyulingfeng.com/a/1159580.html"
-      ],
-      "detail_slug": "0109tdmg",
-      "added": "2026-10-16"
-    },
-    {
-      "name": "AWS Kiro",
-      "vendor": "亚马逊云科技（AWS）",
-      "category": "tool",
-      "free_type": "免费层",
-      "quota": "Kiro Free：$0/月，每月 50 credits（按月重置、不结转），可使用 Claude Sonnet 4.5 与 Qwen3 Coder Next、DeepSeek 3.2 等开源权重模型；首次升级付费档额外赠 $20 credit 抵扣订阅费。",
-      "validity": "",
-      "region": "国际",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://kiro.dev/",
-      "intel_url": "https://kiro.dev/pricing/",
-      "signup": "从 kiro.dev 下载 IDE（macOS / Windows / Linux），用 GitHub / Google 或 AWS Builder ID 登录即进入 Free 档。",
-      "modality": "Claude Sonnet 4.5 · Qwen3 Coder Next · DeepSeek 3.2 · Auto 模式",
-      "last_verified": "2026-10-16",
-      "update_source": "自动更新 2026-10-16",
-      "source_urls": [
-        "https://kiro.dev/pricing/",
-        "https://aiagentswatch.com/brands/kiro"
-      ],
-      "detail_slug": "0110oxyf",
-      "added": "2026-10-16"
-    },
-    {
-      "name": "华为云果办 OfficeAce",
-      "vendor": "华为云",
-      "category": "tool",
-      "free_type": "注册赠送",
-      "quota": "个人体验版 ¥0：首次注册登录赠 4,000 积分，每日登录再赠 1,000 积分；积分按任务复杂度扣减，覆盖 PC（鸿蒙 / Windows / macOS）、移动端（鸿蒙 / 安卓）与微信小程序多端。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://www.huaweicloud.com/product/officeace.html",
-      "intel_url": "https://activity.huaweicloud.com/officeace.html",
-      "signup": "搜索「华为云果办 OfficeAce」或访问产品页下载客户端（鸿蒙 / Windows / macOS / 安卓 / 微信小程序），注册登录即到账新人积分。",
-      "modality": "华为云 MaaS 预置模型 · 专家思辨团 · 深度研究 · 事实核查",
-      "last_verified": "2026-10-17",
-      "update_source": "自动更新 2026-10-17",
-      "source_urls": [
-        "https://www.huaweicloud.com/product/officeace.html",
-        "https://support.huaweicloud.com/qs-officeace/introduction.html",
-        "https://m.163.com/dy/article/L8Q92HLS0538E4EY.html"
-      ],
-      "detail_slug": "0113atdn",
-      "added": "2026-10-17"
-    },
-    {
-      "name": "华为云 AgentArts（智果）体验版",
-      "vendor": "华为云",
-      "category": "tool",
-      "free_type": "免费层",
-      "quota": "体验版免费开通（默认 1 个月、自动续期，AgentArts 侧不计费）：预置 MaaS 模型 2,000,000 tokens 免费额度，用于模型调测与智能体试运行；升级后另赠 20 CU（计算单元）。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://www.huaweicloud.com/product/agentarts.html",
-      "intel_url": "https://support.huaweicloud.com/qs-agentarts/agentarts_04_0000.html",
-      "signup": "华为云控制台搜索 AgentArts → 申请公测 → 审核通过后登录平台，在「欢迎体验 AgentArts 体验版」弹窗点「免费开通」。",
-      "modality": "华为云 MaaS 预置模型 · 多智能体编排 · MCP 托管",
-      "last_verified": "2026-10-17",
-      "update_source": "自动更新 2026-10-17",
-      "source_urls": [
-        "https://support.huaweicloud.com/qs-agentarts/agentarts_04_0000.html",
-        "https://www.huaweicloud.com/product/agentarts.html",
-        "https://support.huaweicloud.com/how-to-choose-ai/ai_0001.html"
-      ],
-      "detail_slug": "0114fvah",
-      "added": "2026-10-17"
-    },
-    {
-      "name": "摩尔线程 AI Coding Plan",
-      "vendor": "摩尔线程（Moore Threads）",
-      "category": "tool",
-      "free_type": "免费层",
-      "quota": "Free Trial ¥0：每日限量 100 名开发者，领取日起 30 天有效，与 Lite 套餐用量相当（文档中心「套餐概览」标每 5 小时约 40 次 prompts，Lite 为约 120 次）；付费档 Lite ¥120/季度、Pro ¥600/季度、Max ¥1200/季度。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://code.mthreads.com",
-      "intel_url": "https://docs.mthreads.com/kuaecloud/kuaecloud-doc-online/coding_plan/plan_overview/",
-      "signup": "访问 code.mthreads.com 注册登录，点击「立即免费领取」即发放 Free Trial 权益；随后在 API Keys 页创建 Key，按文档把 Base URL 与 Key 填入 Claude Code / Cursor / OpenCode / Cline 等工具。",
-      "modality": "GLM-4.7",
-      "last_verified": "2026-10-19",
-      "update_source": "自动更新 2026-10-19",
-      "source_urls": [
-        "https://code.mthreads.com",
-        "https://docs.mthreads.com/kuaecloud/kuaecloud-doc-online/coding_plan/plan_overview/",
-        "https://www.mthreads.com/news/277"
-      ],
-      "detail_slug": "0119yljj",
-      "added": "2026-10-19"
-    },
-    {
       "name": "Inception Labs（Mercury 3 扩散式大模型）",
       "vendor": "Inception Labs",
       "category": "model",
@@ -1530,30 +1383,6 @@
         "https://www.inceptionlabs.ai/models"
       ],
       "detail_slug": "0121rbso",
-      "added": "2026-10-20"
-    },
-    {
-      "name": "WorkBuddy 教育公益版（教师积分普惠计划）",
-      "vendor": "腾讯",
-      "category": "tool",
-      "free_type": "免费层",
-      "quota": "在职教师每月 2000 积分、连续 12 个月，每月 1 日自动补满；积分用尽后仍可用免费模型。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://www.codebuddy.cn/",
-      "intel_url": "https://news.qq.com/rain/a/20261019A06RX200",
-      "signup": "在「腾讯 SSV」或「WorkBuddy」微信公众号菜单栏进入申领入口，填写教师身份信息，审核通过后 3 个工作日内开通；单位可统一报送名单。登录时用报名手机号验证码登录并选择「教育公益版」账号。",
-      "modality": "混元 4（预览版） · 混元 3 · DeepSeek-V4.1-Flash · GLM-5.3-Flash · MiniMax-M3 · Kimi-K2.8-Preview",
-      "last_verified": "2026-10-20",
-      "update_source": "自动更新 2026-10-20",
-      "source_urls": [
-        "https://news.qq.com/rain/a/20261019A06RX200",
-        "https://www.toutiao.com/article/7698237702883672616/"
-      ],
-      "detail_slug": "0124njuf",
       "added": "2026-10-20"
     }
   ],
@@ -2287,6 +2116,55 @@
       "detail_slug": "0015ebfj",
       "reviewed_at": "2026-10-20",
       "note": "用的人比较多，高峰期有时不太好用，会经常出现 429 限流。"
+    },
+    {
+      "name": "AtomGit AtomCode CodingPlan（开放原子 / CSDN）",
+      "url": "https://ai.atomgit.com/serverless-api",
+      "reason": "非模型额度：属 Coding Plan / IDE 插件 / 办公 Agent 类工具，按现行上架口径（只收可直接调用大模型额度的平台）暂不收录。",
+      "detail_slug": "0103wunm",
+      "reviewed_at": "2026-10-20"
+    },
+    {
+      "name": "百度文心快码 Comate",
+      "url": "https://comate.baidu.com/zh",
+      "reason": "非模型额度：属 Coding Plan / IDE 插件 / 办公 Agent 类工具，按现行上架口径（只收可直接调用大模型额度的平台）暂不收录。",
+      "detail_slug": "0109tdmg",
+      "reviewed_at": "2026-10-20"
+    },
+    {
+      "name": "AWS Kiro",
+      "url": "https://kiro.dev/",
+      "reason": "非模型额度：属 Coding Plan / IDE 插件 / 办公 Agent 类工具，按现行上架口径（只收可直接调用大模型额度的平台）暂不收录。",
+      "detail_slug": "0110oxyf",
+      "reviewed_at": "2026-10-20"
+    },
+    {
+      "name": "华为云果办 OfficeAce",
+      "url": "https://www.huaweicloud.com/product/officeace.html",
+      "reason": "非模型额度：属 Coding Plan / IDE 插件 / 办公 Agent 类工具，按现行上架口径（只收可直接调用大模型额度的平台）暂不收录。",
+      "detail_slug": "0113atdn",
+      "reviewed_at": "2026-10-20"
+    },
+    {
+      "name": "华为云 AgentArts（智果）体验版",
+      "url": "https://www.huaweicloud.com/product/agentarts.html",
+      "reason": "非模型额度：属 Coding Plan / IDE 插件 / 办公 Agent 类工具，按现行上架口径（只收可直接调用大模型额度的平台）暂不收录。",
+      "detail_slug": "0114fvah",
+      "reviewed_at": "2026-10-20"
+    },
+    {
+      "name": "摩尔线程 AI Coding Plan",
+      "url": "https://code.mthreads.com",
+      "reason": "非模型额度：属 Coding Plan / IDE 插件 / 办公 Agent 类工具，按现行上架口径（只收可直接调用大模型额度的平台）暂不收录。",
+      "detail_slug": "0119yljj",
+      "reviewed_at": "2026-10-20"
+    },
+    {
+      "name": "WorkBuddy 教育公益版（教师积分普惠计划）",
+      "url": "https://www.codebuddy.cn/",
+      "reason": "非模型额度：属 Coding Plan / IDE 插件 / 办公 Agent 类工具，按现行上架口径（只收可直接调用大模型额度的平台）暂不收录。",
+      "detail_slug": "0124njuf",
+      "reviewed_at": "2026-10-20"
     }
   ],
   "hidden": []
