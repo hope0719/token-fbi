@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-10-20",
-  "total": 58,
+  "total": 57,
   "items": [
     {
       "name": "库库 AI",
@@ -231,31 +231,6 @@
         "/intel/item-011-verdent-ai/",
         "/intel/item-012-verdent-ai/",
         "/intel/item-016-verdent-ai/"
-      ]
-    },
-    {
-      "name": "腾讯 Marvis（马维斯）",
-      "vendor": "",
-      "category": "tool",
-      "free_type": "长期免费",
-      "quota": "每人每天 1000 万免费 Token；当前完全免费、无需邀请码；无截止时间。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://marvis.qq.com",
-      "intel_url": "https://marvis.qq.com",
-      "last_verified": "2026-07-24",
-      "modality": "混元 · DeepSeek V4",
-      "signup": "",
-      "detail_slug": "0009cwfz",
-      "legacy_detail_paths": [
-        "/intel/item-008-腾讯-marvis-马维斯/",
-        "/intel/item-010-腾讯-marvis-马维斯/",
-        "/intel/item-012-腾讯-marvis-马维斯/",
-        "/intel/item-013-腾讯-marvis-马维斯/",
-        "/intel/item-017-腾讯-marvis-马维斯/"
       ]
     },
     {
@@ -2359,6 +2334,13 @@
       "url": "https://platform.stepfun.com",
       "reason": "暂时无免费额度。",
       "detail_slug": "0005ebrx",
+      "reviewed_at": "2026-10-20"
+    },
+    {
+      "name": "腾讯 Marvis（马维斯）",
+      "url": "https://marvis.qq.com",
+      "reason": "新手适合，老手别用。",
+      "detail_slug": "0009cwfz",
       "reviewed_at": "2026-10-20"
     }
   ],
