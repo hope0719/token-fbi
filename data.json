@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-19",
-  "total": 59,
+  "last_updated": "2026-10-20",
+  "total": 60,
   "items": [
     {
       "name": "库库 AI",
@@ -1225,26 +1225,32 @@
       "added": "2026-10-10"
     },
     {
-      "name": "智谱 AutoClaw 每周登录福利（GLM-5.3-Flash）",
+      "name": "智谱 AutoClaw 登录送 Token 福利（GLM-5.3-Flash）",
       "vendor": "",
       "category": "event",
       "free_type": "限时活动",
-      "quota": "10/12 登录领 10,000 Credits（约 1 亿 GLM-5.3-Flash Tokens）；10/13–10/16 每天登录领 800 Credits（约 800 万 Tokens），合计最高约 1.32 亿 Tokens。",
-      "validity": "2026-10-16",
+      "quota": "M10W3 每日登录（10/19–10/25）：10/19 领 3,000 Credits（约 3,000 万 Tokens），10/20–10/25 每天领 500 Credits（约 500 万 Tokens），整期合计约 6,000 万 Tokens；另有 v2.1.0 焕新一次性福利，10/15–10/21 任一天登录领 20,000 Credits（约 2 亿 Tokens，领后 7 天有效），两套可叠加。官方口径 1 Credit = 1 万 Tokens。",
+      "validity": "2026-10-25",
       "region": "",
       "gates": [
-        "需下载客户端"
+        "需下载并登录桌面客户端",
+        "每日额度当天 24:00 清零，不累计不补发",
+        "2 亿 Tokens 一次性福利需在 10/21 前登录领取，领后 7 天内用完"
       ],
-      "note": "智谱 AI 桌面 Agent「AutoClaw」每周登录福利：登录客户端即可领，当日额度当天 24:00 过期需即领即用；付费会员另有每日加赠。国内入口 autoclaw.zhipuai.cn（国际版 autoclaw.z.ai），与 ZCode 为同厂不同产品。",
+      "note": "智谱 AI 桌面 Agent「AutoClaw」登录福利，分两套独立活动：M10W3 每日登录（10/19–10/25，当天额度当天清零）与 v2.1.0 一次性 2 亿 Tokens（10/15–10/21 领取，7 天有效）。新老用户均可、不用拉新、不用实名、不用绑卡。国内入口 autoclaw.zhipuai.cn（国际版 autoclaw.z.ai），与 ZCode 为同厂不同产品。",
       "sponsored": false,
       "entry_url": "https://autoclaw.zhipuai.cn",
       "intel_url": "https://autoclaw.z.ai/blog/news/Weekly-Perks-M10W2/",
       "signup": "",
       "modality": "GLM-5.3-Flash · 桌面 Agent",
-      "last_verified": "2026-10-11",
-      "update_source": "自动更新 2026-10-11",
+      "last_verified": "2026-10-20",
+      "update_source": "自动更新 2026-10-20（M10W3 新一轮续期）",
       "detail_slug": "0085puck",
-      "added": "2026-10-11"
+      "added": "2026-10-11",
+      "source_urls": [
+        "https://autoclaw.zhipuai.cn",
+        "https://autoclaw.z.ai/blog/news/Weekly-Perks-M10W3/"
+      ]
     },
     {
       "name": "联通云 Coding Plan（免费体验）",
@@ -1715,6 +1721,35 @@
       ],
       "detail_slug": "0119yljj",
       "added": "2026-10-19"
+    },
+    {
+      "name": "Inception Labs（Mercury 3 扩散式大模型）",
+      "vendor": "Inception Labs",
+      "category": "model",
+      "free_type": "注册赠送",
+      "quota": "每个新账户一次性赠送 1 亿 Tokens（全模型共享，不按模型分别发放），无需绑定支付方式；Mercury 3 上线 5 折：输入 $0.10 / 输出 $0.35 每百万 Tokens（原价 $0.20 / $0.70），缓存读取 $0.01。1M 上下文、单次最多 131,072 输出 Tokens。",
+      "validity": "",
+      "region": "国际",
+      "gates": [
+        "邮箱 / Google / GitHub 注册即可，无需信用卡",
+        "1 亿额度为一次性发放，用尽后需在 Billing 添加支付方式才可继续调用",
+        "Mercury 2 / 2.5 已对新用户关闭，仅 Mercury 3 等当前代模型可用"
+      ],
+      "note": "扩散（diffusion）架构 LLM，非自回归逐 Token 生成，官方实测 1,068 tokens/s、TTFT 低于 300ms，对标 GPT-6 Luna / Claude Haiku 5.5 一档的速度型模型。OpenAI 兼容，可直接作为 Claude Code / Cursor / LiteLLM / LangChain 的 Base URL 替换。不支持图片输入、embedding 与微调。",
+      "sponsored": false,
+      "entry_url": "https://platform.inceptionlabs.ai/",
+      "intel_url": "https://docs.inceptionlabs.ai/resources/faq",
+      "signup": "访问 platform.inceptionlabs.ai 用邮箱 / Google / GitHub 注册，进入 API Keys 创建 Key，Base URL 填 https://api.inceptionlabs.ai/v1，模型名填 mercury-3。",
+      "modality": "mercury-3 · mercury-decide · mercury-voice",
+      "last_verified": "2026-10-20",
+      "update_source": "自动更新 2026-10-20",
+      "source_urls": [
+        "https://docs.inceptionlabs.ai/get-started",
+        "https://docs.inceptionlabs.ai/resources/faq",
+        "https://www.inceptionlabs.ai/models"
+      ],
+      "detail_slug": "0121rbso",
+      "added": "2026-10-20"
     }
   ],
   "retired": [
@@ -2337,6 +2372,20 @@
       "reason": "国际推理平台，第三方免费 API 索引（llmperks，2026-10-18 更新）称 GLM-5.2-FP8 等开源权重模型在 Together 提供 fair-use 免费端点、无需绑卡，1M 上下文、OpenAI 兼容。但其免费额度向以「注册送 $1 + 绑卡」为主，第三方标注与官方定价页口径不一致，且属国际平台，先入观望区待核官方额度口径。2026-10-19 自动更新。",
       "detail_slug": "0120vdvm",
       "added": "2026-10-19"
+    },
+    {
+      "name": "IteraCompute",
+      "url": "https://iteracompute.com/free",
+      "reason": "2026-10-20 发现：免费层 Qwen3.8-27B 每月 3,000 万 Tokens（无卡、邮箱或 Google 登录、160K TPM），OpenAI 兼容，额度按月重置。但运营主体未披露、域名 2026-08 才注册，第三方核验站明确提示「按不可信基础设施对待」；充值档为一次性累计充值而非月费。待观察主体资质与额度稳定性，暂不进 items。",
+      "detail_slug": "0122mclg",
+      "added": "2026-10-20"
+    },
+    {
+      "name": "Dahl Inference（Gonka 去中心化网关）",
+      "url": "https://inference.dahl.global/",
+      "reason": "2026-10-20 发现：注册仅需用户名、一次性 1 亿 Tokens，可调 GLM-5.3-Flash / DeepSeek V4 Flash / MiniMax M2.7，OpenAI 兼容。属 Gonka 去中心化 GPU 网络（FROMZERO OÜ），后续充值走加密货币，与已在观望区的 Gonka Broker 同网络不同产品；免费额度需在账户页手动分配到每个 Key，新 Key 默认 402。待观察网络稳定性与国内可直连情况，暂不进 items。",
+      "detail_slug": "0123ugxl",
+      "added": "2026-10-20"
     }
   ],
   "hidden": []
