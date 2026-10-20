@@ -373,14 +373,13 @@
       "vendor": "",
       "category": "model",
       "free_type": "长期免费",
-      "quota": "部分小模型永久免费、不限量；新用户赠 2000 万 token——两项均需登录控制台核实。",
+      "quota": "部分小模型长期免费、不限量；新用户注册赠 16 元代金券，可抵扣付费模型。",
       "validity": "",
       "region": "",
       "gates": [
-        "免费清单需登录控制台核对，第三方清单口径不一",
-        "部分清单称对话类小模型永久免费已取消、现仅 embedding / 语音 / OCR / 翻译 / Kolors 免费"
+        "免费清单以登录后控制台实时显示为准"
       ],
-      "note": "官方模型页需登录后方可查看，免费清单以控制台实时为准；「注册送 2000 万 token」未见官方公示。",
+      "note": "官方模型页需登录后查看，免费清单以控制台实时显示为准。新用户注册赠 16 元代金券，可抵扣付费模型调用；轻量对话、翻译、OCR 类小模型长期免费。",
       "sponsored": false,
       "entry_url": "https://cloud.siliconflow.cn/i/HgdEna2e",
       "intel_url": "https://cloud.siliconflow.cn/i/HgdEna2e",
@@ -396,7 +395,7 @@
         "/intel/item-017-硅基流动-siliconflow/",
         "/intel/item-021-硅基流动-siliconflow/"
       ],
-      "update_source": "自动更新 2026-10-20（移除卡面核验日期表述）"
+      "update_source": "自动更新 2026-10-20（补充新用户 16 元代金券口径）"
     },
     {
       "name": "NVIDIA NIM 免费 API",
@@ -667,37 +666,6 @@
       ]
     },
     {
-      "name": "国家超算互联网 SCNet",
-      "vendor": "",
-      "category": "model",
-      "free_type": "注册赠送",
-      "quota": "新注册用户领 1000 万 Tokens + 200 卡时算力 + 500G 存储，到账后 30 天有效；活动至 11 月 10 日。",
-      "validity": "2026-11-10",
-      "region": "",
-      "gates": [],
-      "note": "仅限 2026-08-13 至 11-10 期间新注册用户，每账号 1 次、先到先得；赠送额度用完自动扣现金余额，不弹窗确认。付费的 Token Plan 订阅 Key（sk-tp- 前缀）仅限编程 / 智能体工具交互式使用，Dify、Postman、cURL 属违规。",
-      "sponsored": false,
-      "entry_url": "https://www.scnet.cn/",
-      "intel_url": "https://www.scnet.cn/",
-      "last_verified": "2026-10-20",
-      "modality": "DeepSeek V4 Pro · V4 Flash · GLM-5.2 · MiniMax-M3 · Kimi-K2.6",
-      "signup": "",
-      "detail_slug": "0024dpvl",
-      "legacy_detail_paths": [
-        "/intel/item-024-国家超算互联网-scnet/",
-        "/intel/item-025-国家超算互联网-scnet/",
-        "/intel/item-026-国家超算互联网-scnet/",
-        "/intel/item-027-国家超算互联网-scnet/",
-        "/intel/item-028-国家超算互联网-scnet/",
-        "/intel/item-032-国家超算互联网-scnet/"
-      ],
-      "update_source": "自动更新 2026-10-20（新户普惠包恢复登记，修正长期免费错标）",
-      "source_urls": [
-        "https://www.scnet.cn/",
-        "https://www.3520.net/free-cargo/18392.html"
-      ]
-    },
-    {
       "name": "MonkeyCode（长亭）",
       "vendor": "",
       "category": "tool",
@@ -852,6 +820,33 @@
         "/intel/item-034-lobsterai-有道龙虾/",
         "/intel/item-038-lobsterai-有道龙虾/"
       ]
+    },
+    {
+      "name": "云工开物学生专区",
+      "vendor": "",
+      "category": "tool",
+      "free_type": "注册赠送",
+      "quota": "阿里云学生认证可领 300 元代金券，可抵扣 1 个月 Qoder CN 专业版；每人限 1 次，无截止时间。",
+      "validity": "",
+      "region": "",
+      "gates": [],
+      "note": "阿里云高校计划的学生权益入口，认证在校身份后领取代金券，可用于 Qoder CN 专业版等付费产品抵扣；券按账号限领 1 次。",
+      "sponsored": false,
+      "entry_url": "https://university.aliyun.com/course/promotion28-activity?clubTaskBiz=subTask..12836123..10290..&userCode=ygtxup80",
+      "intel_url": "https://university.aliyun.com/course/promotion28-activity?clubTaskBiz=subTask..12836123..10290..&userCode=ygtxup80",
+      "last_verified": "2026-10-20",
+      "modality": "Qwen3.8 · GLM-5.3 · DeepSeek-V4",
+      "signup": "",
+      "detail_slug": "0031rtun",
+      "legacy_detail_paths": [
+        "/intel/item-031-云工开物学生专区/",
+        "/intel/item-032-云工开物学生专区/",
+        "/intel/item-033-云工开物学生专区/",
+        "/intel/item-034-云工开物学生专区/",
+        "/intel/item-035-云工开物学生专区/",
+        "/intel/item-039-云工开物学生专区/"
+      ],
+      "update_source": "自动更新 2026-10-20（按用户指示恢复收录）"
     },
     {
       "name": "阿里云百炼（DashScope）",
@@ -1885,20 +1880,6 @@
       "reason": "一周限免已于 2026-10-15 结束；Step 5 Preview 同日开源，海外第三方平台的免费通道未续期，阶跃自有入口见「阶跃星辰 StepFun」条目。",
       "detail_slug": "0081fhdd",
       "legacy_detail_paths": []
-    },
-    {
-      "name": "云工开物学生专区",
-      "url": "https://university.aliyun.com/course/promotion28-activity?clubTaskBiz=subTask..12836123..10290..&userCode=ygtxup80",
-      "reason": "无免费模型：学生认证仅得 300 元代金券（属付费抵扣券，按收录门槛排除），且链接带推广 userCode。",
-      "detail_slug": "0031rtun",
-      "legacy_detail_paths": [
-        "/intel/item-031-云工开物学生专区/",
-        "/intel/item-032-云工开物学生专区/",
-        "/intel/item-033-云工开物学生专区/",
-        "/intel/item-034-云工开物学生专区/",
-        "/intel/item-035-云工开物学生专区/",
-        "/intel/item-039-云工开物学生专区/"
-      ]
     }
   ],
   "watchlist": [
@@ -2453,6 +2434,13 @@
       "reason": "2026-10-20 发现：注册仅需用户名、一次性 1 亿 Tokens，可调 GLM-5.3-Flash / DeepSeek V4 Flash / MiniMax M2.7，OpenAI 兼容。属 Gonka 去中心化 GPU 网络（FROMZERO OÜ），后续充值走加密货币，与已在观望区的 Gonka Broker 同网络不同产品；免费额度需在账户页手动分配到每个 Key，新 Key 默认 402。待观察网络稳定性与国内可直连情况，暂不进 items。",
       "detail_slug": "0123ugxl",
       "added": "2026-10-20",
+      "reviewed_at": "2026-10-20"
+    },
+    {
+      "name": "国家超算互联网 SCNet",
+      "url": "https://www.scnet.cn/",
+      "reason": "新户普惠包仅对 2026-08-13 至 11-10 期间的新注册账号发放、到账 30 天即失效，老用户没有持续免费额度；待观察是否恢复常态化赠送。",
+      "detail_slug": "0024dpvl",
       "reviewed_at": "2026-10-20"
     }
   ],
