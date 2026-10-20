@@ -10,26 +10,26 @@
       "category": "tool",
       "free_type": "每日赠送",
       "quota": "每日登录 +50 积分、完成一次对话 +50 积分，合计每天可领 100 积分；DeepSeek V4.1 按 0.16 倍率消耗。",
-      "validity": "每日额度以平台显示为准；免费领积分活动第 4 期至 2026-10-10",
+      "validity": "每日额度以平台显示为准",
       "region": "",
       "gates": [],
       "note": "",
       "sponsored": false,
       "entry_url": "https://kuku.baidu.com/genflowpro?invite_code=4Y2ZUZE3&action=download",
       "intel_url": "https://kuku.baidu.com",
-      "last_verified": "2026-10-13",
+      "last_verified": "2026-10-20",
       "modality": "DeepSeek V4.1 · GLM-5.3 / 5.2 / 5.1 · 文心 5.1 · Kimi-K3",
       "signup": "打开邀请链接下载并登录库库 AI 客户端，进入「免费领积分」页，完成每日登录与一次对话即可领取积分。",
       "activity_rules": [
         "每日登录 +50 积分、完成一次对话 +50 积分，单账号每日合计 100 积分（活动页口径上限更高，以页面显示为准）。",
         "积分用于抵扣模型调用：DeepSeek V4.1 约 0.16 倍率，GLM-5.3-Flash 低至 0.07 倍率；可选 DeepSeek-V4.1/Pro、GLM-5.3/5.2/5.1、文心 5.1、Kimi-K3/K2.7/K2.6、MiniMax-M3 等。",
-        "免费领积分活动分期限时发放（第 4 期至 2026-10-10 结束），后续是否续期以官方活动页为准。"
+        "免费领积分活动分期限时发放，本期是否续期以官方活动页为准。"
       ],
       "source_urls": [
         "https://kuku.baidu.com/landing/tscp_doc/241ee0e211f5585043d18609e5269ca1",
         "https://kuku.baidu.com"
       ],
-      "update_source": "用户补充 + 官方活动页核实，2026-10-08",
+      "update_source": "自动更新 2026-10-20（清理已到期的第 4 期表述）",
       "detail_slug": "0075fcju",
       "added": "2026-10-08"
     },
@@ -950,21 +950,23 @@
       "free_type": "限时活动",
       "region": "国际版",
       "gates": [],
-      "note": "",
+      "note": "国际版 DeepSeek-V4.1-Flash 自 9 月 11 日起免费，官方已将截止日延长至 10 月 31 日；10 月 17 日更新到 1017 版本，混元 Hy3 同期同样限时免费。仅国际版适用。",
       "sponsored": false,
-      "last_verified": "2026-10-02",
+      "last_verified": "2026-10-20",
       "signup": "",
-      "update_source": "用户补充，2026-10-02",
+      "update_source": "自动更新 2026-10-20（官方续期至 10-31）",
       "name": "WorkBuddy 国际版",
-      "quota": "DeepSeek V4.1 Flash 免费至 10 月 9 日。",
-      "validity": "2026-10-09",
+      "quota": "DeepSeek-V4.1-Flash-1017 与混元 Hy3 限时免费至 10 月 31 日，调用不扣积分、不设额度上限。",
+      "validity": "2026-10-31",
       "modality": "DeepSeek V4.1 Flash",
       "entry_url": "https://workbuddy.ai/invite?code=3V5YNJCC",
       "intel_url": "https://workbuddy.ai/invite?code=3V5YNJCC",
       "activity_rules": [
         "下载 WorkBuddy 国际版客户端并注册或登录账号。",
-        "新建任务，在模型选择器中选择 DeepSeek V4.1 Flash。",
-        "免费期截至 2026 年 10 月 9 日；使用前确认客户端仍显示免费，国内版与国际版活动不同。"
+        "新建任务，在模型选择器中选择 DeepSeek-V4.1-Flash-1017 或混元 Hy3。",
+        "免费期截至 2026 年 10 月 31 日，期间积分消耗倍率记 0、不设额度上限。",
+        "账户积分余额为 0 时免费模型同样无法调用，建议号上留少量底。",
+        "国内版与国际版活动规则不同，两套额度不通用。"
       ],
       "detail_slug": "0036xxzt",
       "legacy_detail_paths": [
@@ -975,7 +977,11 @@
         "/intel/item-040-workbuddy-国际版/",
         "/intel/item-044-workbuddy-国际版/"
       ],
-      "added": "2026-10-07"
+      "added": "2026-10-07",
+      "source_urls": [
+        "https://www.toutiao.com/a7698041018058342953",
+        "https://cloud.tencent.com/developer/article/2762018"
+      ]
     },
     {
       "name": "华为云码道",
@@ -1165,20 +1171,20 @@
     {
       "name": "豆包工作（30 天订阅）",
       "vendor": "",
-      "category": "event",
-      "free_type": "限时活动",
-      "quota": "全用户登录电脑版即可领 30 天订阅；上一轮领过的可继续续领，付费订阅时长自动顺延。",
-      "validity": "2026-10-17",
+      "category": "tool",
+      "free_type": "免费层",
+      "quota": "登录电脑版即可领 30 天标准订阅，到期可再续领一次（合计最多 60 天），付费订阅时长自动顺延。",
+      "validity": "",
       "region": "",
       "gates": [],
-      "note": "字节跳动豆包工作电脑版活动，登录后按客户端内提示领取；设置 → 订阅与额度管理 → 订阅记录可核对到期时间。",
+      "note": "字节跳动豆包工作电脑版权益，按客户端内提示领取；设置 → 订阅与额度管理 → 订阅记录可核对到期时间。首轮已于 10 月 17 日前后到期，现为滚动续领、无固定截止日。",
       "sponsored": false,
       "entry_url": "https://www.doubao.com/download",
       "intel_url": "https://post.m.smzdm.com/p/awwoe9zm",
       "signup": "",
       "modality": "豆包工作 · Agent 云端工作台",
-      "last_verified": "2026-10-09",
-      "update_source": "自动更新 2026-10-09",
+      "last_verified": "2026-10-20",
+      "update_source": "自动更新 2026-10-20（首轮到期，改为滚动续领口径）",
       "detail_slug": "0076drty",
       "added": "2026-10-09"
     },
@@ -1201,28 +1207,6 @@
       "update_source": "自动更新 2026-10-09",
       "detail_slug": "0077hrui",
       "added": "2026-10-09"
-    },
-    {
-      "name": "Step 5 Preview 限时免费（Nous Portal / OpenCode）",
-      "vendor": "阶跃星辰 StepFun",
-      "category": "event",
-      "free_type": "限时活动",
-      "quota": "Step 5 Preview 旗舰模型一周内全免费调用（$0.00/百万 token，原价 $1.00 输入 / $2.70 输出）；同一免费通道 Step-3.7-Flash 亦为 $0。支持 1M 上下文、多模态输入。",
-      "validity": "2026-10-15",
-      "region": "国际",
-      "gates": [
-        "需注册 Nous Portal / OpenCode 账号"
-      ],
-      "note": "阶跃星辰 600B/27B MoE 旗舰模型在海外第三方平台（Nous Portal、OpenCode）开放的一周限时免费，2026-10-08 起至 10-15；非厂商自有平台，免费额度受标准速率限制约束，到期后转按量付费（$1.00 / $2.70 每百万 token）。",
-      "sponsored": false,
-      "entry_url": "https://portal.nousresearch.com/",
-      "intel_url": "https://www.orcarouter.ai/blog/step-5-preview-nous-portal-free-week",
-      "signup": "",
-      "modality": "Step 5 Preview · Step-3.7-Flash",
-      "last_verified": "2026-10-10",
-      "update_source": "自动更新 2026-10-10",
-      "detail_slug": "0081fhdd",
-      "added": "2026-10-10"
     },
     {
       "name": "智谱 AutoClaw 登录送 Token 福利（GLM-5.3-Flash）",
@@ -1750,6 +1734,34 @@
       ],
       "detail_slug": "0121rbso",
       "added": "2026-10-20"
+    },
+    {
+      "name": "WorkBuddy 教育公益版（教师积分普惠计划）",
+      "vendor": "腾讯",
+      "category": "tool",
+      "free_type": "免费层",
+      "quota": "在职教师每月 2000 积分、连续 12 个月，每月 1 日自动补满；积分用尽后仍可用免费模型。",
+      "validity": "",
+      "region": "",
+      "gates": [
+        "需在职教师身份，提交信息经审核后 3 个工作日内开通",
+        "个人版与教育公益版是两个独立账号，登录时须手动选择「教育公益版」",
+        "积分用尽后仅剩免费模型，混元 3 暂不限量"
+      ],
+      "note": "腾讯 SSV 数字教育实验室与 WorkBuddy 团队联合推出，面向全国在职教师、不限地区与学段。2026 年 10–12 月为试点期，2000 积分全模型通用；试点期结束后改为混元 4 独享 1600 积分、其他模型 400 积分。内置 100 多位教育专家与 5 个教学工具，数据与个人版不互通。",
+      "sponsored": false,
+      "entry_url": "https://www.codebuddy.cn/",
+      "intel_url": "https://news.qq.com/rain/a/20261019A06RX200",
+      "signup": "在「腾讯 SSV」或「WorkBuddy」微信公众号菜单栏进入申领入口，填写教师身份信息，审核通过后 3 个工作日内开通；单位可统一报送名单。登录时用报名手机号验证码登录并选择「教育公益版」账号。",
+      "modality": "混元 4（预览版） · 混元 3 · DeepSeek-V4.1-Flash · GLM-5.3-Flash · MiniMax-M3 · Kimi-K2.8-Preview",
+      "last_verified": "2026-10-20",
+      "update_source": "自动更新 2026-10-20",
+      "source_urls": [
+        "https://news.qq.com/rain/a/20261019A06RX200",
+        "https://www.toutiao.com/article/7698237702883672616/"
+      ],
+      "detail_slug": "0124njuf",
+      "added": "2026-10-20"
     }
   ],
   "retired": [
@@ -1876,6 +1888,13 @@
       "url": "https://github.com/features/copilot",
       "reason": "免费额度偏小（每月 2000 次补全 + 50 次对话），实际可用量有限。",
       "detail_slug": "0070dahl",
+      "legacy_detail_paths": []
+    },
+    {
+      "name": "Step 5 Preview 限时免费（Nous Portal / OpenCode）",
+      "url": "https://portal.nousresearch.com/",
+      "reason": "一周限免已于 2026-10-15 结束；Step 5 Preview 同日开源，海外第三方平台的免费通道未续期，阶跃自有入口见「阶跃星辰 StepFun」条目。",
+      "detail_slug": "0081fhdd",
       "legacy_detail_paths": []
     }
   ],
