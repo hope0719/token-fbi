@@ -418,10 +418,13 @@ sponsor_html = f'''
 watchlist_rows = []
 for w in watchlist:
     wu = (w.get("url") or "").strip()
+    reviewed = (w.get("reviewed_at") or "").strip()
+    date_html = (f'<span class="r-date">复核 {esc(reviewed)}</span>' if reviewed
+                 else '<span class="r-date">待复核</span>')
     watchlist_rows.append(
         f'<li><div class="r-top"><span class="r-name">{esc(w.get("name", ""))}</span>'
         f'<a class="r-url" href="{esc(wu)}" target="_blank" rel="noopener nofollow">'
-        f'{esc(host_of(wu))} ↗</a></div>'
+        f'{esc(host_of(wu))} ↗</a>{date_html}</div>'
         f'<p class="r-why"><b>观望原因</b>{esc(w.get("reason", ""))}</p></li>')
 
 watchlist_html = f'''
@@ -705,6 +708,7 @@ img{max-width:100%}
 .r-url:hover{color:var(--accent-deep);text-decoration:underline}
 .r-why{margin-top:6px;font-size:13px;color:var(--text2);line-height:1.65}
 .r-why b{display:inline-block;margin-right:7px;font-size:11px;font-weight:800;letter-spacing:.04em;color:var(--warn);background:var(--warn-soft);border-radius:6px;padding:2px 7px}
+.r-date{margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--text3);white-space:nowrap}
 .contact-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .contact-card{display:flex;flex-direction:column;gap:8px;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);transition:.18s}
 .contact-card:hover{border-color:var(--accent);transform:translateY(-2px)}
@@ -884,6 +888,7 @@ DETAIL = r'''<!DOCTYPE html>
 <title>{NAME} 免费额度与活动详情｜Token FBI</title>
 <meta name="description" content="{DESC}">
 <link rel="canonical" href="{CANON}">
+{ROBOTS}
 {OG}
 <script type="application/ld+json">{LD}</script>
 <script type="application/ld+json">{BREAD}</script>
@@ -1146,6 +1151,9 @@ for i, it in enumerate(items + archive_details):
                            f'<div class="poster-box">{poster_img}</div>{poster_cap_html}</section>')
     else:
         poster_sec_html = ""
+    # 非在架详情页（观望 / 已下架）不进索引：旧链接仍可打开，但不再作为可检索内容参与 GEO
+    robots_meta = ('<meta name="robots" content="noindex, follow">'
+                   if i >= len(items) else "")
     html_doc = (DETAIL
         .replace("{NAME}", name).replace("{CAT}", cat).replace("{FREE}", free)
         .replace("{LAST}", last).replace("{MODALITY}", modality).replace("{QUOTA}", quota)
@@ -1160,6 +1168,7 @@ for i, it in enumerate(items + archive_details):
         .replace("{ENTRY_BTN}", (f'<a class="btn" href="{esc(entry)}" target="_blank" rel="{entry_rel}">'
                                  f'前往平台入口 →</a>') if entry and entry != "#" else "")
         .replace("{ENTRY}", esc(entry)).replace("{CANON}", canon)
+        .replace("{ROBOTS}", robots_meta)
         .replace("{LD}", ld).replace("{BREAD}", breadcrumb_ld).replace("{OG}", og_detail)
         .replace("{DESC}", esc(desc)))
     os.makedirs(os.path.join(INTEL, s), exist_ok=True)
@@ -2015,7 +2024,7 @@ with open(os.path.join(DIST, "subscribe", "index.html"), "w", encoding="utf-8") 
 # 为什么要有这一页：广告主查站会用 AITDK / SimilarWeb，而这类工具在流量低于
 # 「5,000 次 / 设备 / 国家」时不展示任何数据，且面板样本偏欧美，中文站常被显示为 0。
 # 与其被动挨一个「0」，不如主动把第一方数据和机制一起讲清楚 —— 这本身就是信任信号。
-# 数据源：token-fbi-next/traffic.json（改完跑 build.py 即更新页面）。
+# 数据源：本仓库根目录 traffic.json（唯一生产仓库，改完跑 build.py 即更新页面）。
 TRAFFIC_DESC = ("Token FBI 流量透明说明：公开本站访问数据的统计方式、统计区间与当前数值，"
                 "并解释为何 AITDK、SimilarWeb 等第三方工具会显示 0 —— 它们按「设备 × 国家」"
                 "设有 5,000 次访问的展示门槛，且面板样本偏欧美，中文站点因此常被误判为没有流量。"

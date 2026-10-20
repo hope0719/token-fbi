@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-10-20",
-  "total": 60,
+  "total": 59,
   "items": [
     {
       "name": "库库 AI",
@@ -337,7 +337,7 @@
     {
       "name": "豆包拉新项目",
       "vendor": "",
-      "category": "event",
+      "category": "tool",
       "free_type": "长期免费",
       "quota": "非模型 / API：拉新推广变现项目（豆包 15 元/单、迅雷网盘 15 元/单、夸克网盘 13 元/单）；零门槛免费参与，无截止时间。",
       "validity": "",
@@ -365,22 +365,26 @@
         "/intel/item-015-豆包拉新项目/",
         "/intel/item-016-豆包拉新项目/",
         "/intel/item-020-豆包拉新项目/"
-      ]
+      ],
+      "update_source": "自动更新 2026-10-20（分类由活动改为工具，避免与长期免费标签冲突）"
     },
     {
       "name": "硅基流动 SiliconFlow",
       "vendor": "",
       "category": "model",
       "free_type": "长期免费",
-      "quota": "9B 以下模型永久免费、不限量；新用户赠 2000 万 token（长期有效）；无截止时间。",
+      "quota": "部分小模型永久免费、不限量；新用户赠 2000 万 token——两项均需登录控制台核实。",
       "validity": "",
       "region": "",
-      "gates": [],
-      "note": "2026-10-13 复核：官方模型页需登录方可查看，未能直接核实免费清单。多家第三方免费权益清单（2026-09~10）称对话类小模型永久免费已取消、现仅 embedding/语音/OCR/翻译/Kolors 免费，并称「注册送 2000 万 token」无官方出处；但 free-llm.com（2026-10）仍称保留滚动更新的永久免费小模型（Qwen3-8B、DeepSeek-R1-Distill-Qwen-7B）。请以控制台实时免费清单为准。",
+      "gates": [
+        "免费清单需登录控制台核对，第三方清单口径不一",
+        "部分清单称对话类小模型永久免费已取消、现仅 embedding / 语音 / OCR / 翻译 / Kolors 免费"
+      ],
+      "note": "官方模型页需登录后方可查看，免费清单以控制台实时为准；「注册送 2000 万 token」未见官方公示。",
       "sponsored": false,
       "entry_url": "https://cloud.siliconflow.cn/i/HgdEna2e",
       "intel_url": "https://cloud.siliconflow.cn/i/HgdEna2e",
-      "last_verified": "2026-10-13",
+      "last_verified": "2026-10-20",
       "modality": "DeepSeek V4 Pro · GLM-5.3 · Kimi K3 · 千问 3.8 等",
       "signup": "",
       "detail_slug": "0013uppn",
@@ -391,7 +395,8 @@
         "/intel/item-016-硅基流动-siliconflow/",
         "/intel/item-017-硅基流动-siliconflow/",
         "/intel/item-021-硅基流动-siliconflow/"
-      ]
+      ],
+      "update_source": "自动更新 2026-10-20（移除卡面核验日期表述）"
     },
     {
       "name": "NVIDIA NIM 免费 API",
@@ -582,17 +587,17 @@
       "name": "OpenCode Zen",
       "vendor": "",
       "category": "tool",
-      "free_type": "长期免费",
-      "quota": "精选模型限时免费；其中 LongCat-2.5 限免至约 10 月 11 日；无固定截止时间。",
-      "validity": "",
+      "free_type": "免费层",
+      "quota": "免费模型已扩至 15 个（含 DeepSeek V4.1 Flash、GLM-5.3-Flash 免费档），限时开放、官方未公布截止日。",
+      "validity": "免费名单滚动轮换，以 /models 实时列表为准",
       "region": "",
       "gates": [],
-      "note": "",
+      "note": "免费档均带 -free 后缀，与付费同款不同配额；名单随时轮换（Cat Jam、Step 5 Preview 已撤）。部分免费档的数据会被用于训练，敏感代码建议只在零保留档（GLM-5.3-Flash Free / DeepSeek V4.1 Flash Free / Space Bunny Free / LongCat-2.5 Preview Free）中使用。",
       "sponsored": false,
       "entry_url": "https://opencode.ai/zen",
       "intel_url": "https://opencode.ai/zen",
-      "last_verified": "2026-09-28",
-      "modality": "DeepSeek V4 Flash Free · MiMo-V2.5 Free · LongCat-2.0 Free · Nemotron 3 Ultra Free · Big Pickle",
+      "last_verified": "2026-10-20",
+      "modality": "DeepSeek V4.1 Flash Free · GLM-5.3-Flash Free · MiMo-V2.5 Free · LongCat-2.5 Preview Free · Nemotron 3 Ultra Free · Big Pickle",
       "signup": "",
       "detail_slug": "0021agqn",
       "legacy_detail_paths": [
@@ -602,6 +607,11 @@
         "/intel/item-024-opencode-zen/",
         "/intel/item-025-opencode-zen/",
         "/intel/item-029-opencode-zen/"
+      ],
+      "update_source": "自动更新 2026-10-20（免费模型扩至 15 个，清理 LongCat 过期日期）",
+      "source_urls": [
+        "https://opencode.ai/zen",
+        "https://www.logeshwaran.org/2026/10/opencode-install-zen-go-pricing-ollama.html"
       ]
     },
     {
@@ -660,16 +670,16 @@
       "name": "国家超算互联网 SCNet",
       "vendor": "",
       "category": "model",
-      "free_type": "长期免费",
-      "quota": "无免费模型：Token Plan 包月（基础版 ¥30/月 起）；国家级算力平台，DeepSeek V4-Flash 缓存命中低至 0.012 元/百万 Token；无截止时间。",
-      "validity": "",
+      "free_type": "注册赠送",
+      "quota": "新注册用户领 1000 万 Tokens + 200 卡时算力 + 500G 存储，到账后 30 天有效；活动至 11 月 10 日。",
+      "validity": "2026-11-10",
       "region": "",
       "gates": [],
-      "note": "",
+      "note": "仅限 2026-08-13 至 11-10 期间新注册用户，每账号 1 次、先到先得；赠送额度用完自动扣现金余额，不弹窗确认。付费的 Token Plan 订阅 Key（sk-tp- 前缀）仅限编程 / 智能体工具交互式使用，Dify、Postman、cURL 属违规。",
       "sponsored": false,
       "entry_url": "https://www.scnet.cn/",
       "intel_url": "https://www.scnet.cn/",
-      "last_verified": "2026-09-15",
+      "last_verified": "2026-10-20",
       "modality": "DeepSeek V4 Pro · V4 Flash · GLM-5.2 · MiniMax-M3 · Kimi-K2.6",
       "signup": "",
       "detail_slug": "0024dpvl",
@@ -680,6 +690,11 @@
         "/intel/item-027-国家超算互联网-scnet/",
         "/intel/item-028-国家超算互联网-scnet/",
         "/intel/item-032-国家超算互联网-scnet/"
+      ],
+      "update_source": "自动更新 2026-10-20（新户普惠包恢复登记，修正长期免费错标）",
+      "source_urls": [
+        "https://www.scnet.cn/",
+        "https://www.3520.net/free-cargo/18392.html"
       ]
     },
     {
@@ -836,32 +851,6 @@
         "/intel/item-033-lobsterai-有道龙虾/",
         "/intel/item-034-lobsterai-有道龙虾/",
         "/intel/item-038-lobsterai-有道龙虾/"
-      ]
-    },
-    {
-      "name": "云工开物学生专区",
-      "vendor": "",
-      "category": "tool",
-      "free_type": "长期免费",
-      "quota": "无免费模型：阿里云学生认证领 300 元代金券，可抵扣 1 个月 Qoder CN 专业版；每人限 1 次，无截止时间。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://university.aliyun.com/course/promotion28-activity?clubTaskBiz=subTask..12836123..10290..&userCode=ygtxup80",
-      "intel_url": "https://university.aliyun.com/course/promotion28-activity?clubTaskBiz=subTask..12836123..10290..&userCode=ygtxup80",
-      "last_verified": "2026-09-15",
-      "modality": "Qwen3.8 · GLM-5.3 · DeepSeek-V4",
-      "signup": "",
-      "detail_slug": "0031rtun",
-      "legacy_detail_paths": [
-        "/intel/item-031-云工开物学生专区/",
-        "/intel/item-032-云工开物学生专区/",
-        "/intel/item-033-云工开物学生专区/",
-        "/intel/item-034-云工开物学生专区/",
-        "/intel/item-035-云工开物学生专区/",
-        "/intel/item-039-云工开物学生专区/"
       ]
     },
     {
@@ -1177,14 +1166,14 @@
       "validity": "",
       "region": "",
       "gates": [],
-      "note": "字节跳动豆包工作电脑版权益，按客户端内提示领取；设置 → 订阅与额度管理 → 订阅记录可核对到期时间。首轮已于 10 月 17 日前后到期，现为滚动续领、无固定截止日。",
+      "note": "字节跳动豆包工作电脑版权益，按客户端内提示领取；设置 → 订阅与额度管理 → 订阅记录可核对到期时间。权益按滚动方式发放，到期后可再续领一次。",
       "sponsored": false,
       "entry_url": "https://www.doubao.com/download",
       "intel_url": "https://post.m.smzdm.com/p/awwoe9zm",
       "signup": "",
       "modality": "豆包工作 · Agent 云端工作台",
       "last_verified": "2026-10-20",
-      "update_source": "自动更新 2026-10-20（首轮到期，改为滚动续领口径）",
+      "update_source": "自动更新 2026-10-20（去掉首轮到期叙述）",
       "detail_slug": "0076drty",
       "added": "2026-10-09"
     },
@@ -1213,7 +1202,7 @@
       "vendor": "",
       "category": "event",
       "free_type": "限时活动",
-      "quota": "M10W3 每日登录（10/19–10/25）：10/19 领 3,000 Credits（约 3,000 万 Tokens），10/20–10/25 每天领 500 Credits（约 500 万 Tokens），整期合计约 6,000 万 Tokens；另有 v2.1.0 焕新一次性福利，10/15–10/21 任一天登录领 20,000 Credits（约 2 亿 Tokens，领后 7 天有效），两套可叠加。官方口径 1 Credit = 1 万 Tokens。",
+      "quota": "10/20–10/25 每天登录领 500 Credits（约 500 万 Tokens）；v2.1.0 焕新一次性 2 亿 Tokens 领取至 10/21，两套可叠加。",
       "validity": "2026-10-25",
       "region": "",
       "gates": [
@@ -1221,14 +1210,14 @@
         "每日额度当天 24:00 清零，不累计不补发",
         "2 亿 Tokens 一次性福利需在 10/21 前登录领取，领后 7 天内用完"
       ],
-      "note": "智谱 AI 桌面 Agent「AutoClaw」登录福利，分两套独立活动：M10W3 每日登录（10/19–10/25，当天额度当天清零）与 v2.1.0 一次性 2 亿 Tokens（10/15–10/21 领取，7 天有效）。新老用户均可、不用拉新、不用实名、不用绑卡。国内入口 autoclaw.zhipuai.cn（国际版 autoclaw.z.ai），与 ZCode 为同厂不同产品。",
+      "note": "智谱 AI 桌面 Agent「AutoClaw」登录福利，分两套独立活动：M10W3 每日登录（10/19–10/25，当天额度当天清零，首日 3,000 Credits 已结束）与 v2.1.0 一次性 2 亿 Tokens（10/15–10/21 领取，7 天有效）。新老用户均可、不用拉新、不用实名、不用绑卡。国内入口 autoclaw.zhipuai.cn（国际版 autoclaw.z.ai），与 ZCode 为同厂不同产品。",
       "sponsored": false,
       "entry_url": "https://autoclaw.zhipuai.cn",
       "intel_url": "https://autoclaw.z.ai/blog/news/Weekly-Perks-M10W2/",
       "signup": "",
       "modality": "GLM-5.3-Flash · 桌面 Agent",
       "last_verified": "2026-10-20",
-      "update_source": "自动更新 2026-10-20（M10W3 新一轮续期）",
+      "update_source": "自动更新 2026-10-20（首日福利已结束，改写为当前档）",
       "detail_slug": "0085puck",
       "added": "2026-10-11",
       "source_urls": [
@@ -1896,6 +1885,20 @@
       "reason": "一周限免已于 2026-10-15 结束；Step 5 Preview 同日开源，海外第三方平台的免费通道未续期，阶跃自有入口见「阶跃星辰 StepFun」条目。",
       "detail_slug": "0081fhdd",
       "legacy_detail_paths": []
+    },
+    {
+      "name": "云工开物学生专区",
+      "url": "https://university.aliyun.com/course/promotion28-activity?clubTaskBiz=subTask..12836123..10290..&userCode=ygtxup80",
+      "reason": "无免费模型：学生认证仅得 300 元代金券（属付费抵扣券，按收录门槛排除），且链接带推广 userCode。",
+      "detail_slug": "0031rtun",
+      "legacy_detail_paths": [
+        "/intel/item-031-云工开物学生专区/",
+        "/intel/item-032-云工开物学生专区/",
+        "/intel/item-033-云工开物学生专区/",
+        "/intel/item-034-云工开物学生专区/",
+        "/intel/item-035-云工开物学生专区/",
+        "/intel/item-039-云工开物学生专区/"
+      ]
     }
   ],
   "watchlist": [
@@ -1908,7 +1911,8 @@
         "/intel/item-010-七牛云-ai-推理/",
         "/intel/item-012-七牛云-ai-推理/",
         "/intel/item-014-七牛云-ai-推理/"
-      ]
+      ],
+      "reviewed_at": "2026-10-06"
     },
     {
       "name": "百度千帆（文心）",
@@ -1919,7 +1923,8 @@
         "/intel/item-041-百度千帆-文心/",
         "/intel/item-042-百度千帆-文心/",
         "/intel/item-044-百度千帆-文心/"
-      ]
+      ],
+      "reviewed_at": "2026-10-06"
     },
     {
       "name": "讯飞星火（开放平台）",
@@ -1930,7 +1935,8 @@
         "/intel/item-042-讯飞星火-开放平台/",
         "/intel/item-043-讯飞星火-开放平台/",
         "/intel/item-045-讯飞星火-开放平台/"
-      ]
+      ],
+      "reviewed_at": "2026-10-06"
     },
     {
       "name": "APMIX",
@@ -1940,7 +1946,8 @@
       "legacy_detail_paths": [
         "/intel/item-000-apmix/",
         "/intel/item-005-apmix/"
-      ]
+      ],
+      "reviewed_at": "2026-10-07"
     },
     {
       "name": "智谱AI（Z.AI 开放平台）",
@@ -1950,7 +1957,8 @@
       "legacy_detail_paths": [
         "/intel/item-001-智谱ai-z-ai-开放平台/",
         "/intel/item-006-智谱ai-z-ai-开放平台/"
-      ]
+      ],
+      "reviewed_at": "2026-10-07"
     },
     {
       "name": "Mistral La Plateforme",
@@ -1960,7 +1968,8 @@
       "legacy_detail_paths": [
         "/intel/item-002-mistral-la-plateforme/",
         "/intel/item-007-mistral-la-plateforme/"
-      ]
+      ],
+      "reviewed_at": "2026-10-07"
     },
     {
       "name": "xAI Grok（console.x.ai）",
@@ -1970,7 +1979,8 @@
       "legacy_detail_paths": [
         "/intel/item-003-xai-grok-console-x-ai/",
         "/intel/item-008-xai-grok-console-x-ai/"
-      ]
+      ],
+      "reviewed_at": "2026-10-07"
     },
     {
       "name": "Cohere Trial Key",
@@ -1980,7 +1990,8 @@
       "legacy_detail_paths": [
         "/intel/item-043-cohere-trial-key/",
         "/intel/item-048-cohere-trial-key/"
-      ]
+      ],
+      "reviewed_at": "2026-10-07"
     },
     {
       "name": "腾讯云混元大模型",
@@ -1990,7 +2001,8 @@
       "legacy_detail_paths": [
         "/intel/item-044-腾讯云混元大模型/",
         "/intel/item-049-腾讯云混元大模型/"
-      ]
+      ],
+      "reviewed_at": "2026-10-07"
     },
     {
       "name": "Token Harbor",
@@ -2018,7 +2030,8 @@
       "reason": "暂列观望，待进一步观察免费额度政策与实际可用性。",
       "legacy_detail_paths": [
         "/intel/item-000-token-harbor/"
-      ]
+      ],
+      "reviewed_at": "2026-10-07"
     },
     {
       "name": "OrcaRouter",
@@ -2045,7 +2058,8 @@
       "reason": "暂列观望，待进一步观察免费额度政策与实际可用性。",
       "legacy_detail_paths": [
         "/intel/item-001-orcarouter/"
-      ]
+      ],
+      "reviewed_at": "2026-10-07"
     },
     {
       "name": "UnoRouter",
@@ -2073,7 +2087,8 @@
       "reason": "暂列观望，待进一步观察免费额度政策与实际可用性。",
       "legacy_detail_paths": [
         "/intel/item-002-unorouter/"
-      ]
+      ],
+      "reviewed_at": "2026-10-07"
     },
     {
       "name": "Novita AI",
@@ -2100,7 +2115,8 @@
       "reason": "暂列观望，待进一步观察免费额度政策与实际可用性。",
       "legacy_detail_paths": [
         "/intel/item-003-novita-ai/"
-      ]
+      ],
+      "reviewed_at": "2026-10-07"
     },
     {
       "name": "Fireworks AI",
@@ -2127,19 +2143,22 @@
       "reason": "暂列观望，待进一步观察免费额度政策与实际可用性。",
       "legacy_detail_paths": [
         "/intel/item-004-fireworks-ai/"
-      ]
+      ],
+      "reviewed_at": "2026-10-07"
     },
     {
       "name": "Coderblock",
       "url": "https://coderblock.ai",
       "reason": "免费 Community 计划仅 20 个一次性 AI 积分、2 个 AI 辅助项目，额度过小；平台 2026-09-30 才开放注册，待观察免费额度是否加码。",
-      "detail_slug": "0073pdst"
+      "detail_slug": "0073pdst",
+      "reviewed_at": "2026-09-30"
     },
     {
       "name": "百度 AI Studio",
       "url": "https://aistudio.baidu.com",
       "reason": "官方称每位开发者赠 100 万免费 Tokens，但同厂商百度千帆已在观望区，积分与有效期口径待核实。",
-      "detail_slug": "0074paln"
+      "detail_slug": "0074paln",
+      "reviewed_at": ""
     },
     {
       "vendor": "MiniMax",
@@ -2175,7 +2194,8 @@
       ],
       "added": "2026-10-07",
       "url": "https://agent.minimax.cn/",
-      "reason": "签到积分翻倍活动已于 2026-10-07 结束（9月28日—10月7日），移入观望区，待观察是否开启新一期活动。"
+      "reason": "签到积分翻倍活动已于 2026-10-07 结束（9月28日—10月7日），移入观望区，待观察是否开启新一期活动。",
+      "reviewed_at": "2026-10-02"
     },
     {
       "name": "Freebuff",
@@ -2209,202 +2229,231 @@
       "detail_slug": "0072kitf",
       "added": "2026-10-08",
       "url": "https://freebuff.com",
-      "reason": "国际平台、额度按地区分配（非完整访问地区与 VPN 用户额度更低），待观察免费额度政策与实际可用性。"
+      "reason": "国际平台、额度按地区分配（非完整访问地区与 VPN 用户额度更低），待观察免费额度政策与实际可用性。",
+      "reviewed_at": "2026-10-08"
     },
     {
       "name": "腾讯 LightVela",
       "url": "https://lightvela.com",
       "reason": "用户于 2026-10-08 要求移入观望区：模型能力一般、仅适用于聊天场景，待观察其能力表现与免费额度政策。",
-      "detail_slug": "0071koiu"
+      "detail_slug": "0071koiu",
+      "reviewed_at": "2026-10-08"
     },
     {
       "name": "LLM7.io",
       "url": "https://llm7.io",
       "reason": "2026-10-09 自动更新移入：国际独立聚合器，邮箱注册免卡、11 款免费模型（含 GPT-4o-mini、DeepSeek V4 Pro），体量小、长期稳定性待观察。",
       "detail_slug": "0078eqld",
-      "added": "2026-10-09"
+      "added": "2026-10-09",
+      "reviewed_at": "2026-10-09"
     },
     {
       "name": "FreeTheAI",
       "url": "https://freetheai.org",
       "reason": "2026-10-09 自动更新移入：社区运营的模型聚合站，每日签到领 50 次免费请求，可靠性待观察。",
       "detail_slug": "0079xmrz",
-      "added": "2026-10-09"
+      "added": "2026-10-09",
+      "reviewed_at": "2026-10-09"
     },
     {
       "name": "Codiv.ai（OpenJev）",
       "url": "https://codiv.ai",
       "reason": "2026-10-09 自动更新移入：个人 GPU 托管的免费 API 实验（每账户 1 亿输入 Tokens），非商业实体运营，稳定性待观察。",
       "detail_slug": "0080nlwp",
-      "added": "2026-10-09"
+      "added": "2026-10-09",
+      "reviewed_at": "2026-10-09"
     },
     {
       "name": "Nous Portal",
       "url": "https://portal.nousresearch.com/",
       "reason": "2026-10-10 自动更新移入：Nous Research 官方推理聚合门户，$0 免费计划含 Step 5 Preview、LongCat 2.5 Preview、Ling 3.1 Flash 等 9 款 :free 模型；但部分资料称注册 $0 计划需绑定支付方式（实际 0 扣费），聚合器稳定性与门槛待观察。",
       "detail_slug": "0082ulck",
-      "added": "2026-10-10"
+      "added": "2026-10-10",
+      "reviewed_at": "2026-10-10"
     },
     {
       "name": "Cerebras Cloud",
       "url": "https://cloud.cerebras.ai",
       "reason": "2026-10-10 自动更新移入：免费层政策收紧，2026 年 7 月起改为需绑定支付方式才发放一次性 $5 试用额度（30 天），不再是无卡长期免费层，待政策明朗。",
       "detail_slug": "0083yrsy",
-      "added": "2026-10-10"
+      "added": "2026-10-10",
+      "reviewed_at": "2026-10-10"
     },
     {
       "name": "Kite AI Marathon",
       "url": "https://marathon.build",
       "reason": "2026-10-10 自动更新移入：注册赠最高 4560 万推理 token（一次性 signup credit），主体为加密 / AI 代理支付基础设施，国内可用性与长期稳定性待观察。",
       "detail_slug": "0084fhfw",
-      "added": "2026-10-10"
+      "added": "2026-10-10",
+      "reviewed_at": "2026-10-10"
     },
     {
       "name": "AionClaw（杭州趣猿）",
       "url": "https://www.hzopenclaw.com/",
       "reason": "2026-10-11 自动更新移入：新上线的国产 OpenClaw 发行版（杭州趣猿人工智能），官网称注册限时赠 5000 万 Token；但独立来源以 SEO 推广稿为主、额度口径未获第三方验证，先列观望待核。",
       "detail_slug": "0086gdab",
-      "added": "2026-10-11"
+      "added": "2026-10-11",
+      "reviewed_at": "2026-10-11"
     },
     {
       "name": "Claude Max / Team（月度 API 额度）",
       "url": "https://www.anthropic.com/pricing",
       "reason": "2026-10-11 自动更新移入：Anthropic 打通订阅与开发者 API，Max 5x 每月送 $100、Max 20x 送 $200、Team 按席位最高 $500；但须先持有付费订阅才能领取，属付费附赠、非公开免费额度，按收录门槛不入 items。",
       "detail_slug": "0087wudj",
-      "added": "2026-10-11"
+      "added": "2026-10-11",
+      "reviewed_at": "2026-10-11"
     },
     {
       "name": "Heicode 智能研发平台",
       "url": "https://code.heicode.cc/",
       "reason": "2026-10-12 自动更新移入：国产「智能研发平台」冷启动技术内测，PC 桌面端 + 浏览器控制台双端开放，注册登录即赠基础版/团队版连续工作额度（含免费测试 Token）；但公开来源以推广稿为主、额度口径与运营主体资质未获第三方验证，先列观望待核。",
       "detail_slug": "0089dcan",
-      "added": "2026-10-12"
+      "added": "2026-10-12",
+      "reviewed_at": "2026-10-12"
     },
     {
       "name": "Tokenator API",
       "url": "https://tokenator.cloud/",
       "reason": "2026-10-12 自动更新移入：国际聚合网关，免费档可用 GPT-6 Astra（每日 300 万 Tokens / 45 次请求，不扣减付费额度）；属 OpenRouter 式同构聚合器且需海外网络环境，按收录惯例不进 items，先列观望。",
       "detail_slug": "0090zloz",
-      "added": "2026-10-12"
+      "added": "2026-10-12",
+      "reviewed_at": "2026-10-12"
     },
     {
       "name": "京东云 JoyCode（团队版限时免费）",
       "url": "https://www.jdcloud.com/cn/products/joycode",
       "reason": "2026-10-13 自动更新移入：京东云 AI 编码平台，官网产品页在线；第三方攻略称「团队版限时免费、注册赠 5 万积分、原价 49 元/用户/月」，但额度口径存在 5000/50000 积分两种冲突说法，来源以 SEO 站点与联盟域名为主、未见官方明文，先列观望待核。",
       "detail_slug": "0091fxiq",
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "reviewed_at": "2026-10-13"
     },
     {
       "name": "Gonka Broker",
       "url": "https://gonkabroker.com/",
       "reason": "2026-10-13 自动更新移入：去中心化 GPU 网络 Gonka 的国际推理转售 API，免费档每月约 1M–1.25M Tokens（DeepSeek V4 Flash / GLM-5.3-Flash / MiniMax M2.7），免绑卡；但需手机验证且实测拒收中国大陆 +86 号段，全账户仅 6 RPM，折算额度≈$0.25/月，属国际小型聚合器，按门槛先列观望。",
       "detail_slug": "0092onmi",
-      "added": "2026-10-13"
+      "added": "2026-10-13",
+      "reviewed_at": "2026-10-13"
     },
     {
       "name": "Sarashina（SB Intuitions / 软银）",
       "url": "https://sarashina.ai",
       "reason": "2026-10-14 自动更新移入：软银旗下 SB Intuitions 于 2026-10-13 开放 Sarashina 免费 beta（网页聊天 + 6 模型 API：mini / nano / embedding / rerank / guard / translate），Google 账号登录即可、免申请、免绑卡。但服务条款将使用资格限定为居住在日本或总部设在日本的用户，免费账号无法选择退出数据训练、速率上限亦未公布，属地域限定类，按门槛先列观望。",
       "detail_slug": "0095mrua",
-      "added": "2026-10-14"
+      "added": "2026-10-14",
+      "reviewed_at": "2026-10-14"
     },
     {
       "name": "极智智能体平台（中国电科）",
       "url": "https://jz.cetccity.com",
       "reason": "2026-10-14 自动更新移入：中国电科所属电科太极自研智能体平台，赛事期间向「网信杯」人工智能创新大赛参赛选手免费开放全模块，并免费调用已接入的 DeepSeek、通义千问等大模型 Token。权益与参赛资格绑定（非全国公开无门槛可领），按门槛先列观望。",
       "detail_slug": "0096vfgj",
-      "added": "2026-10-14"
+      "added": "2026-10-14",
+      "reviewed_at": "2026-10-14"
     },
     {
       "name": "Free Claude Code（FCC）",
       "url": "https://github.com/Alishahryar1/free-claude-code",
       "reason": "2026-10-14 自动更新移入：GitHub 开源项目（约 5.9 万 Star），通过本地代理 + Admin UI 汇总 61 家合规提供商、宣称每月 13 亿+ 免费 Token，统一接入 Claude Code / Codex / Cline / Aider 等 11 个客户端（多编排器 + 多模型）。本身不含额度、依赖各上游供应商政策且可随时变更，属 OpenRouter 式同构聚合器，不进 items，先列观望。",
       "detail_slug": "0097lyfk",
-      "added": "2026-10-14"
+      "added": "2026-10-14",
+      "reviewed_at": "2026-10-14"
     },
     {
       "name": "快手万擎 StreamLake",
       "url": "https://www.streamlake.com/",
       "reason": "KAT-Coder-Air-V1 输入输出全免费、官方承诺永久免费（第三方汇总 2026-10-11 仍列有效），但官网活动页「千万 Tokens 免费体验」显示的时间窗为 2025-09-28 至 2025-11-16 已过期，新客 2000 万 Tokens 口径亦仅有第三方来源，官方现行额度待人工复核后再决定是否收录。2026-10-15 自动更新。",
       "detail_slug": "0105ggiq",
-      "added": "2026-10-15"
+      "added": "2026-10-15",
+      "reviewed_at": "2026-10-15"
     },
     {
       "name": "华为云盘古 ModelArts MaaS",
       "url": "https://www.huaweicloud.com/product/modelarts/studio.html",
       "reason": "首次开通每模型赠 200 万 tokens 推理额度（一次性，用完转付费，退订重开后不再赠送）。与站内已有「华为云码道」为不同产品线；额度为一次性开通礼、非可持续免费额度，待观察是否值得单列。2026-10-15 自动更新。",
       "detail_slug": "0106unaw",
-      "added": "2026-10-15"
+      "added": "2026-10-15",
+      "reviewed_at": "2026-10-15"
     },
     {
       "name": "Ollama Cloud",
       "url": "https://ollama.com/",
       "reason": "免费层按 starter 模型赠送按 token 计量的 starter 用量，自注册日起按月重置；国际服务，且仅覆盖 starter 模型、本地运行才是完全免费。待核额度数值后决定是否收录。2026-10-15 自动更新。",
       "detail_slug": "0107hqzp",
-      "added": "2026-10-15"
+      "added": "2026-10-15",
+      "reviewed_at": "2026-10-15"
     },
     {
       "name": "Vercel AI Gateway",
       "url": "https://vercel.com/ai-gateway",
       "reason": "每个 Vercel 团队每月赠 $5 AI Gateway Credits（每 30 天重置、不结转），另有约 8 款 $0 免费模型（如 nvidia/nemotron-3.5-lightning-free，1M 上下文）。属 OpenRouter 式同构聚合器，站内已有 OpenRouter 作为代表，按「聚合器只留 1–2 个代表」先入观望区。2026-10-16 自动更新。",
       "detail_slug": "0111vlhe",
-      "added": "2026-10-16"
+      "added": "2026-10-16",
+      "reviewed_at": "2026-10-16"
     },
     {
       "name": "Kimi Work（月之暗面）",
       "url": "https://www.kimi.com/",
       "reason": "月之暗面桌面级 Agent「Kimi Work」公测期免费版可用，免费用户最多 2 个定时任务 / 小组件任务，高峰时段限流；官方未公示 token / 积分额度口径，待核后决定是否收录。与 retired 中的「月之暗面 Kimi 开放平台」为不同产品。2026-10-16 自动更新。",
       "detail_slug": "0112soyt",
-      "added": "2026-10-16"
+      "added": "2026-10-16",
+      "reviewed_at": "2026-10-16"
     },
     {
       "name": "LLM Tech（llmtech.eu）",
       "url": "https://llmtech.eu/docs/",
       "reason": "波兰个人运营的欧盟推理服务，官网 quickstart 直接公布公共试用 Key（无需注册账号）：每日 2,000,000 tokens / IP、4 并发，单模型 Qwen3.8-27B（131K 上下文），OpenAI 兼容、Cline 已内置该 provider。免费量级可观且零门槛，但属单一模型的小型海外服务、国内直连稳定性与长期存续未验证，先入观望区。2026-10-17 自动更新。",
       "detail_slug": "0115mcyv",
-      "added": "2026-10-17"
+      "added": "2026-10-17",
+      "reviewed_at": "2026-10-17"
     },
     {
       "name": "Aion Labs（aionlabs.ai）",
       "url": "https://www.aionlabs.ai/pricing/",
       "reason": "美国小型推理服务商，$0 Free 档按日发放 credit（官方未公布金额），限制 15 RPM / 20,000 TPM / 20,000 tokens 每日，无需绑卡，提供 aion-3.5 等 6 个自有模型。额度偏小且模型能力未上榜，信息源来自第三方免费 API 目录（已核对官方 pricing 页），先观望。region=国际。2026-10-17 自动更新。",
       "detail_slug": "0116rxoc",
-      "added": "2026-10-17"
+      "added": "2026-10-17",
+      "reviewed_at": "2026-10-17"
     },
     {
       "name": "码上飞 CodeFlying",
       "url": "https://www.codeflying.net/",
       "reason": "国内「文生软件」平台（多智能体自动生成应用，可发布微信小程序/APP/H5），免费版每天更新积分、邀请好友可赚积分，实测每日积分够跑 2-3 个小应用。与站内已收录的积分制 Agent（千问办公/百度搭子/Loomy）同类，但官方未公布免费积分具体数字（第三方称会员档为每日 100 积分基础），额度口径待核，先入观望区。2026-10-18 自动更新。",
       "detail_slug": "0117yrgy",
-      "added": "2026-10-18"
+      "added": "2026-10-18",
+      "reviewed_at": "2026-10-18"
     },
     {
       "name": "AkashML（Akash Network）",
       "url": "https://playground.akashml.com/",
       "reason": "Akash Network 的去中心化推理服务，新账号自动获得 $100 AI token credits（一次性、无需绑卡、无公布过期日），OpenAI 兼容，可调 Qwen3.8-27B、GLM 5.3、GPT-OSS-120B、Llama 3.3 70B 等开源模型。额度真实且量级大，但属国际平台、$100 为一次性注册赠送（同类 signup credit 此前多不进 items），且第三方称部分领取需企业信息核验，口径有歧义，先观望。region=国际。2026-10-18 自动更新。",
       "detail_slug": "0118nzmx",
-      "added": "2026-10-18"
+      "added": "2026-10-18",
+      "reviewed_at": "2026-10-18"
     },
     {
       "name": "Together AI",
       "url": "https://www.together.ai/",
       "reason": "国际推理平台，第三方免费 API 索引（llmperks，2026-10-18 更新）称 GLM-5.2-FP8 等开源权重模型在 Together 提供 fair-use 免费端点、无需绑卡，1M 上下文、OpenAI 兼容。但其免费额度向以「注册送 $1 + 绑卡」为主，第三方标注与官方定价页口径不一致，且属国际平台，先入观望区待核官方额度口径。2026-10-19 自动更新。",
       "detail_slug": "0120vdvm",
-      "added": "2026-10-19"
+      "added": "2026-10-19",
+      "reviewed_at": "2026-10-19"
     },
     {
       "name": "IteraCompute",
       "url": "https://iteracompute.com/free",
       "reason": "2026-10-20 发现：免费层 Qwen3.8-27B 每月 3,000 万 Tokens（无卡、邮箱或 Google 登录、160K TPM），OpenAI 兼容，额度按月重置。但运营主体未披露、域名 2026-08 才注册，第三方核验站明确提示「按不可信基础设施对待」；充值档为一次性累计充值而非月费。待观察主体资质与额度稳定性，暂不进 items。",
       "detail_slug": "0122mclg",
-      "added": "2026-10-20"
+      "added": "2026-10-20",
+      "reviewed_at": "2026-10-20"
     },
     {
       "name": "Dahl Inference（Gonka 去中心化网关）",
       "url": "https://inference.dahl.global/",
       "reason": "2026-10-20 发现：注册仅需用户名、一次性 1 亿 Tokens，可调 GLM-5.3-Flash / DeepSeek V4 Flash / MiniMax M2.7，OpenAI 兼容。属 Gonka 去中心化 GPU 网络（FROMZERO OÜ），后续充值走加密货币，与已在观望区的 Gonka Broker 同网络不同产品；免费额度需在账户页手动分配到每个 Key，新 Key 默认 402。待观察网络稳定性与国内可直连情况，暂不进 items。",
       "detail_slug": "0123ugxl",
-      "added": "2026-10-20"
+      "added": "2026-10-20",
+      "reviewed_at": "2026-10-20"
     }
   ],
   "hidden": []
