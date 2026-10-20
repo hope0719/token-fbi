@@ -376,10 +376,8 @@
       "quota": "部分小模型长期免费、不限量；新用户注册赠 16 元代金券，可抵扣付费模型。",
       "validity": "",
       "region": "",
-      "gates": [
-        "免费清单以登录后控制台实时显示为准"
-      ],
-      "note": "官方模型页需登录后查看，免费清单以控制台实时显示为准。新用户注册赠 16 元代金券，可抵扣付费模型调用；轻量对话、翻译、OCR 类小模型长期免费。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://cloud.siliconflow.cn/i/HgdEna2e",
       "intel_url": "https://cloud.siliconflow.cn/i/HgdEna2e",
@@ -591,7 +589,7 @@
       "validity": "免费名单滚动轮换，以 /models 实时列表为准",
       "region": "",
       "gates": [],
-      "note": "免费档均带 -free 后缀，与付费同款不同配额；名单随时轮换（Cat Jam、Step 5 Preview 已撤）。部分免费档的数据会被用于训练，敏感代码建议只在零保留档（GLM-5.3-Flash Free / DeepSeek V4.1 Flash Free / Space Bunny Free / LongCat-2.5 Preview Free）中使用。",
+      "note": "",
       "sponsored": false,
       "entry_url": "https://opencode.ai/zen",
       "intel_url": "https://opencode.ai/zen",
@@ -830,7 +828,7 @@
       "validity": "",
       "region": "",
       "gates": [],
-      "note": "阿里云高校计划的学生权益入口，认证在校身份后领取代金券，可用于 Qoder CN 专业版等付费产品抵扣；券按账号限领 1 次。",
+      "note": "",
       "sponsored": false,
       "entry_url": "https://university.aliyun.com/course/promotion28-activity?clubTaskBiz=subTask..12836123..10290..&userCode=ygtxup80",
       "intel_url": "https://university.aliyun.com/course/promotion28-activity?clubTaskBiz=subTask..12836123..10290..&userCode=ygtxup80",
@@ -934,7 +932,7 @@
       "free_type": "限时活动",
       "region": "国际版",
       "gates": [],
-      "note": "国际版 DeepSeek-V4.1-Flash 自 9 月 11 日起免费，官方已将截止日延长至 10 月 31 日；10 月 17 日更新到 1017 版本，混元 Hy3 同期同样限时免费。仅国际版适用。",
+      "note": "",
       "sponsored": false,
       "last_verified": "2026-10-20",
       "signup": "",
@@ -1161,7 +1159,7 @@
       "validity": "",
       "region": "",
       "gates": [],
-      "note": "字节跳动豆包工作电脑版权益，按客户端内提示领取；设置 → 订阅与额度管理 → 订阅记录可核对到期时间。权益按滚动方式发放，到期后可再续领一次。",
+      "note": "",
       "sponsored": false,
       "entry_url": "https://www.doubao.com/download",
       "intel_url": "https://post.m.smzdm.com/p/awwoe9zm",
@@ -1181,7 +1179,7 @@
       "validity": "",
       "region": "国际",
       "gates": [],
-      "note": "欧洲机房（法国）托管，OpenAI 兼容；需海外网络、延迟偏高，适合测试与轻量调用。",
+      "note": "",
       "sponsored": false,
       "entry_url": "https://endpoints.ai.cloud.ovh.net/",
       "intel_url": "https://freellm.net/providers/ovhcloud-ai-endpoints",
@@ -1200,12 +1198,8 @@
       "quota": "10/20–10/25 每天登录领 500 Credits（约 500 万 Tokens）；v2.1.0 焕新一次性 2 亿 Tokens 领取至 10/21，两套可叠加。",
       "validity": "2026-10-25",
       "region": "",
-      "gates": [
-        "需下载并登录桌面客户端",
-        "每日额度当天 24:00 清零，不累计不补发",
-        "2 亿 Tokens 一次性福利需在 10/21 前登录领取，领后 7 天内用完"
-      ],
-      "note": "智谱 AI 桌面 Agent「AutoClaw」登录福利，分两套独立活动：M10W3 每日登录（10/19–10/25，当天额度当天清零，首日 3,000 Credits 已结束）与 v2.1.0 一次性 2 亿 Tokens（10/15–10/21 领取，7 天有效）。新老用户均可、不用拉新、不用实名、不用绑卡。国内入口 autoclaw.zhipuai.cn（国际版 autoclaw.z.ai），与 ZCode 为同厂不同产品。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://autoclaw.zhipuai.cn",
       "intel_url": "https://autoclaw.z.ai/blog/news/Weekly-Perks-M10W2/",
@@ -1228,10 +1222,8 @@
       "quota": "Coding Plan Lite 免费体验 ¥0/月，额度 1.8 万次/月；Pro 免费体验 ¥0/月，额度最高 9 万次/月。Lite 与 Pro 合计 12,000 个专属免费名额、先到先得；领取后生成的 API Key 有效期 31 天。",
       "validity": "免费名额限量 12,000 个、先到先得，官方未公布活动截止日",
       "region": "",
-      "gates": [
-        "需注册联通云账号并实名认证"
-      ],
-      "note": "联通云（中国联通）官方 Coding Plan 免费体验：OpenAI 兼容接口，控制台直接给出 Base URL 与 API Key，可接入 OpenClaw / Cline / Continue 等任意支持自定义端点的客户端；无需绑定支付方式、无自动续费。Pro 名额基本领完，当前主要可领 Lite。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://www.cucloud.cn/",
       "intel_url": "https://coding-plans.jqknono.com/",
@@ -1295,11 +1287,8 @@
       "quota": "新用户注册到账 5000 积分；免费用户每天登录再送 5000 积分（次日自动补满、不累积），约可执行 50 次办公任务（简单问答约 10–20 积分、文档处理约 50–100 积分）。",
       "validity": "",
       "region": "",
-      "gates": [
-        "需下载桌面客户端（Windows x64 / 苹果芯片 macOS）",
-        "需授权工作目录并绑定 IM（飞书 / 钉钉 / 微信 / QQ）后才可执行本机任务"
-      ],
-      "note": "科大讯飞桌面级 AI 工作搭子，模型可在讯飞星火 X2.5、DeepSeek V4 Flash、通义千问等之间按任务切换；亦可填入自有 API Key，自建模型调用不扣平台积分。每日 5000 积分为当日有效、零点刷新不累积；具体额度以客户端实时显示为准。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://loomy.xunfei.cn",
       "intel_url": "https://loomy.xunfei.cn",
@@ -1318,11 +1307,8 @@
       "quota": "可免费领取 DeepSeek 账号，每月 50 次文本对话额度（历史账号同样适用）；当月额度用尽后可参考官方《UOS AI 大模型账号申请攻略》自行申请。",
       "validity": "",
       "region": "",
-      "gates": [
-        "需 deepin 23 / 25 社区版，或统信 UOS 专业版 / 教育版（1070 及以上系统）",
-        "需安装 UOS AI（V20 为 2.6.000、V23 为 2.6.300）"
-      ],
-      "note": "官方活动页口径：免费账号领取时间截止 2026-12-31（活动期间不限领取人数，进入活动入口点击即可领取），账号有效期至 2027-06-30。每月对话额度以官方页为准（官方写明 50 次/月；部分第三方清单写作 200 次，未采用）。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://www.deepin.org/zh/ai-free-experience/",
       "intel_url": "https://www.deepin.org/zh/ai-free-experience/",
@@ -1341,11 +1327,8 @@
       "quota": "个人免费版 ¥0：首次注册限时赠 2,000 积分（自发放起 3 个月有效）；每日登录限时再赠 100 积分（仅当日有效、次日清零）。按第三方实测 1 积分 ≈ 1,600 Token 折算，2,000 积分约合 320 万 Token 量级。",
       "validity": "",
       "region": "",
-      "gates": [
-        "需注册千问办公账号（个人空间）；同一手机号 / 邮箱 / 实名信息仅可享一次",
-        "桌面端需下载独立 PC 客户端，网页版可直接使用"
-      ],
-      "note": "阿里 QwenWork（由 QoderWork、MuleRun、悟空三款产品整合而来）的一站式 AI 办公 Agent，覆盖数据分析、PPT 生成、视频剪辑与网页搭建，并深度接入钉钉生态。免费版另含 10 个并行任务、5 个可发布网页、1G 云盘空间。积分是平台统一计费单位（0.05 元/积分），非代金券；积分消耗遵循「最快过期优先」。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://www.qwenwork.cn/",
       "intel_url": "https://help.aliyun.com/zh/qwenwork/qwenwork-is-live",
@@ -1368,11 +1351,8 @@
       "quota": "个人体验版 ¥0/月、全量功能开放：全部用户（含免费版）限时每日签到可领 500 积分；积分按失效时间排序优先扣减，逾期清零。",
       "validity": "",
       "region": "",
-      "gates": [
-        "需下载桌面客户端（Windows 10+ / macOS Intel 与 Apple 芯片）或 Android 版",
-        "需登录百度账号；高风险操作（删文件、外发数据）会二次确认"
-      ],
-      "note": "百度智能云桌面级 AI 工作搭子（DuMate），本地沙箱运行、数据不出设备，可操作本机软件与文件、串联飞书 / 微信 / 钉钉等 IM，支持自定义技能扩展。个人体验版完全免费，高峰时段按优先级响应；Pro ¥59/月（25,000 积分/月）、Max ¥129/月（100,000 积分/月）为付费档。日签到积分为限时活动，机制以客户端内实际发放为准。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://www.dumate.cn/",
       "intel_url": "https://cloud.baidu.com/doc/Dumate/s/nmnevrk0l",
@@ -1395,11 +1375,8 @@
       "quota": "每位新用户一次性 2,500 万 Tokens 免费体验额度（限移动云自营模型），自领取起 30 天有效；限流 3,000 tokens/分钟。",
       "validity": "",
       "region": "",
-      "gates": [
-        "需注册移动云主账号并完成实名认证（互联网账号与政企账号均支持）",
-        "需在控制台手动领取，同一身份限领 1 次"
-      ],
-      "note": "活动截止 2026-12-31：移动云九天人工智能「模型服务平台 MoMA」为每位用户提供 2500 万 tokens 免费体验额度，覆盖 DeepSeek、Kimi、通义千问等自营模型系列；机密模型与第三方服务商模型不适用，支持范围以模型广场为准。额度耗尽或超 30 天即终止，超出后按量计费。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://ecloud.10086.cn/",
       "intel_url": "https://ecloud.10086.cn/op-help-center/doc/article/91181",
@@ -1422,11 +1399,8 @@
       "quota": "新用户注册即自动下发 1,000 万 tokens 赠送金（官方按 Baichuan2-Turbo 折算约 80 元），自领取起 3 个月有效。",
       "validity": "",
       "region": "",
-      "gates": [
-        "需注册百川开发者中心账号（手机号 / 邮箱）",
-        "需完成实名认证后方可充值付费与获得更高 RPM"
-      ],
-      "note": "百川智能开发者中心（platform.baichuan-ai.com），OpenAI 兼容接口（https://api.baichuan-ai.com/v1），请求带 X-BC-Request-Id。赠送金在工作台「账户充值」页可查；Assistants API 另有限时免费公测。旗舰 Baichuan4-Air 为付费模型，赠送金主要按 Baichuan2-Turbo / Baichuan3-Turbo 口径折算。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://platform.baichuan-ai.com/",
       "intel_url": "https://platform.baichuan-ai.com/docs/guide",
@@ -1449,11 +1423,8 @@
       "quota": "每个账号每天赠送 50 万免费计算单元（含输入与输出），每天 02:00 前完成刷新，当日未用完不结转。",
       "validity": "",
       "region": "",
-      "gates": [
-        "需注册并登录蚂蚁百灵账号（Web 平台或 API）",
-        "API 首次使用前需用支付宝完成小程序云余额扣款授权"
-      ],
-      "note": "蚂蚁百灵官方 Web 交互平台与 API（Ling Studio / 支付宝百宝箱）。调用时优先消耗每日免费额度，额度与账户余额均用尽后服务关停；当日额度到账前产生的调用会先扣账户余额。开放 Ling-3.0-flash-VL、Ring-2.5-1T、Ming-flash-omni 等全模态模型，官方已沉淀 Dify / Cline / Codex / Cherry Studio 等三方接入文档。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://ling.tbox.cn/",
       "intel_url": "https://alipaytbox.yuque.com/sxs0ba/ling/pricing",
@@ -1476,11 +1447,8 @@
       "quota": "AtomCode 客户端 CodingPlan 免费领取，额度按 5 小时滚动窗口计量：Lite 体验版限量 1,000 人/日、30 天有效，最多约 500 次调用 / 5 小时；Pro 体验版每日 10:00 限量 100 人、7 天有效，最多约 800 次调用 / 5 小时并额外解锁 GLM-5.2；Pro（30 天）需向活动仓库合入 PR。",
       "validity": "",
       "region": "",
-      "gates": [
-        "需下载 AtomCode 客户端并登录 AtomGit 账号完成 OAuth 授权",
-        "每日限量发放、先到先得（系统自动发放当前可获得的最高档权益）"
-      ],
-      "note": "AtomGit 是 CSDN / 开放原子开源基金会旗下的开源代码托管平台，AtomCode 为其 AI 编码客户端。登录命令 /login 一次完成 OAuth 授权 + 免费额度申领 + provider 与模型自动配置（v4.25.0 起 /codingplan 已并入 /login）。额度仅限客户端内使用，5 小时滚动重置、不必一次性消耗。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://ai.atomgit.com/serverless-api",
       "intel_url": "https://atomcode.atomgit.com/docs/zh/login.html",
@@ -1503,11 +1471,8 @@
       "quota": "每月 9,000 万输入 + 9,000 万输出 tokens 免费额度（各自独立计数、按自然月刷新），默认速率限制 30 次/分钟。",
       "validity": "",
       "region": "",
-      "gates": [
-        "需邮箱注册 Intern AI 账号（不绑卡、不充值）",
-        "需在 API Token 页自行生成 Key"
-      ],
-      "note": "上海 AI 实验室书生大模型官方 API 平台（chat.intern-ai.org.cn），同时兼容 OpenAI 与 Anthropic 两套协议——Anthropic 兼容档在免费平台里较为稀缺，可直接作为 Claude Code / Cline 等客户端的后端。开放 intern-s2、intern-s2-preview-397b、internvl3.5-241b-a28b 等模型；其中 intern-s2-preview-397b 将于 2026-10-31 下线，建议改用 intern-s2。与站内「书生·端砚 墨点计划」同属上海 AI 实验室，但为两个独立平台。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://internlm.intern-ai.org.cn/api/tokens",
       "intel_url": "https://internlm.intern-ai.org.cn/",
@@ -1530,11 +1495,8 @@
       "quota": "活动期内 U2-Flash 输入、输出、缓存命中三档全部 0 元且不限量，不绑卡、不充值，注册登录 MaaS 平台即自动发放免费额度。",
       "validity": "2026-10-31",
       "region": "",
-      "gates": [
-        "需注册并登录云知声 MaaS 平台账号（不绑卡、不充值）",
-        "需在控制台「API Key 管理」自行创建 API Key"
-      ],
-      "note": "云知声（港股 AGI 第一股）MaaS 平台限时免费活动，窗口 2026-09-30 至 2026-10-31。U2-Flash 为稀疏 MoE 架构（总参数约 266B、单次仅激活约 10B），DeepSWE v1.1 编程跑分 64.6，高于 DeepSeek-V4-Flash 的 54.4，并支持 none / low / high / max 四档思考强度。同时兼容 OpenAI 与 Anthropic 两套协议，官方给出 Claude Code / Cursor / Cline / TRAE 等接入方式，改 Base URL + Key + 模型 ID 即可接入任意支持自定义模型的工作台。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://maas.unisound.com/",
       "intel_url": "https://maas.unisound.com/models/u2-flash",
@@ -1557,11 +1519,8 @@
       "quota": "个人标准版 ¥0：代码补全、代码解释、注释生成等基础能力长期免费；首次注册另赠 ¥10 模型额度，额度用尽后自动切换免费模式（150k tokens/小时）；高级能力（多文件修改、智能体、代码库分析）每周发放免费额度，用尽后等待下周重置。",
       "validity": "",
       "region": "",
-      "gates": [
-        "需用百度账号登录（个人非商用免费，企业商用须单独购买授权）",
-        "以 IDE 插件形态使用时需在 VSCode / JetBrains 插件市场安装；独立 AI IDE 需另行下载客户端"
-      ],
-      "note": "百度 Comate（文心快码）个人标准版长期免费，是站内 Cline / Kilo Code / TRAE / Qoder CN / ZCode 之外又一 coding assistant 免费入口。支持 VSCode、JetBrains 全家桶、Visual Studio、Xcode、Eclipse，含 MCP、代码库检索与终端执行。原「不限量 Token」限时活动已结束，当前口径为「永久免费补全 + 每周高级额度」。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://comate.baidu.com/zh",
       "intel_url": "https://comate.baidu.com/zh",
@@ -1584,11 +1543,8 @@
       "quota": "Kiro Free：$0/月，每月 50 credits（按月重置、不结转），可使用 Claude Sonnet 4.5 与 Qwen3 Coder Next、DeepSeek 3.2 等开源权重模型；首次升级付费档额外赠 $20 credit 抵扣订阅费。",
       "validity": "",
       "region": "国际",
-      "gates": [
-        "需用社交账号（GitHub / Google）或 AWS Builder ID 登录，无需信用卡",
-        "超额调用需另行开通 add-on（$0.04/credit），默认关闭、不会自动扣费"
-      ],
-      "note": "AWS 出品的 spec-driven（规格驱动）智能体 IDE / CLI：先产出 requirements + design + tasks 文档，再交由 Agent 实现，另支持 Agent Hooks 自动化测试与文档。免费层即含 Claude Sonnet 4.5，在同类免费档中较为少见。学生 1,000 credits/月（一年）与初创至 Series A 的 Pro+ 免费一年属身份限定类权益，按站内口径不单列。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://kiro.dev/",
       "intel_url": "https://kiro.dev/pricing/",
@@ -1611,12 +1567,8 @@
       "quota": "个人体验版 ¥0：首次注册登录赠 4,000 积分，每日登录再赠 1,000 积分；积分按任务复杂度扣减，覆盖 PC（鸿蒙 / Windows / macOS）、移动端（鸿蒙 / 安卓）与微信小程序多端。",
       "validity": "",
       "region": "",
-      "gates": [
-        "需注册华为账号并登录客户端（微信小程序端可直接使用），无需绑卡",
-        "积分按活动页规则发放，当日未用完是否结转以官方活动页为准",
-        "官网个人体验版套餐卡片标注「首次体验送 500 积分」，与页面顶部横幅、官方活动页的 4,000 积分口径不一致，实际以活动页到账为准"
-      ],
-      "note": "华为云面向办公场景的桌面级 Agent（「果办」），与站内「华为云码道」（Coding）为不同产品线。卖点是 AI 专家思辨团（多智能体交叉质疑）与溯源深度研究（每条结论可跳转来源）、事实核查报告，可直接产出汇报材料、清洗 Excel、OCR 发票、微信远程取文件。同类积分制办公 Agent 可对照站内千问办公 / 百度搭子。付费档 ¥98–498/月，个人体验版长期 ¥0。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://www.huaweicloud.com/product/officeace.html",
       "intel_url": "https://activity.huaweicloud.com/officeace.html",
@@ -1640,12 +1592,8 @@
       "quota": "体验版免费开通（默认 1 个月、自动续期，AgentArts 侧不计费）：预置 MaaS 模型 2,000,000 tokens 免费额度，用于模型调测与智能体试运行；升级后另赠 20 CU（计算单元）。",
       "validity": "",
       "region": "",
-      "gates": [
-        "需华为账号并完成个人实名认证",
-        "平台处于公测，需在控制台提交「申请公测」，审核约 5 个工作日",
-        "2,000,000 tokens 仅在平台内调测 / 试运行消耗，不发放独立 API Key；通过 API 调用智能体需另行开通 MaaS 并按量计费"
-      ],
-      "note": "华为云企业级智能体托管运行平台（智果 AgentArts，开源版 openJiuwen）：支持把各类框架写的智能体一键托管，附带记忆、网关、可观测、评估等运行时能力，内置资产广场模板可零代码搭建。与站内「华为云码道」（Coding Agent）不是同一条产品线。免费额度属平台内调测性质，量级 200 万 tokens，适合验证 Agent 流程而非长期作为 API 燃料。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://www.huaweicloud.com/product/agentarts.html",
       "intel_url": "https://support.huaweicloud.com/qs-agentarts/agentarts_04_0000.html",
@@ -1669,12 +1617,8 @@
       "quota": "Free Trial ¥0：每日限量 100 名开发者，领取日起 30 天有效，与 Lite 套餐用量相当（文档中心「套餐概览」标每 5 小时约 40 次 prompts，Lite 为约 120 次）；付费档 Lite ¥120/季度、Pro ¥600/季度、Max ¥1200/季度。",
       "validity": "",
       "region": "",
-      "gates": [
-        "需注册摩尔线程 AI Coding Plan 账号后点击「立即免费领取」，无需绑卡",
-        "每日限量 100 名、先到先得（页面标「体验爆满，扩容中」），同一账号不可重复领取",
-        "额度仅限指定编程工具内使用（Claude Code / Cursor / OpenCode / Cline / Kilo Code / Roo Code），不支持任意 API 外接"
-      ],
-      "note": "首个基于国产全功能 GPU（MTT S5000）的 Coding Plan：推理框架由摩尔线程与硅基流动联合优化，代码模型为 GLM-4.7（Code Arena 开源及国产第一梯队）。接入方式与替换 API 端点一致，配置后终端出现「GLM-4.7 · API Usage Billing」即生效。官网标「限时免费」但未公布活动截止日，名额每日限量。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://code.mthreads.com",
       "intel_url": "https://docs.mthreads.com/kuaecloud/kuaecloud-doc-online/coding_plan/plan_overview/",
@@ -1698,12 +1642,8 @@
       "quota": "每个新账户一次性赠送 1 亿 Tokens（全模型共享，不按模型分别发放），无需绑定支付方式；Mercury 3 上线 5 折：输入 $0.10 / 输出 $0.35 每百万 Tokens（原价 $0.20 / $0.70），缓存读取 $0.01。1M 上下文、单次最多 131,072 输出 Tokens。",
       "validity": "",
       "region": "国际",
-      "gates": [
-        "邮箱 / Google / GitHub 注册即可，无需信用卡",
-        "1 亿额度为一次性发放，用尽后需在 Billing 添加支付方式才可继续调用",
-        "Mercury 2 / 2.5 已对新用户关闭，仅 Mercury 3 等当前代模型可用"
-      ],
-      "note": "扩散（diffusion）架构 LLM，非自回归逐 Token 生成，官方实测 1,068 tokens/s、TTFT 低于 300ms，对标 GPT-6 Luna / Claude Haiku 5.5 一档的速度型模型。OpenAI 兼容，可直接作为 Claude Code / Cursor / LiteLLM / LangChain 的 Base URL 替换。不支持图片输入、embedding 与微调。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://platform.inceptionlabs.ai/",
       "intel_url": "https://docs.inceptionlabs.ai/resources/faq",
@@ -1727,12 +1667,8 @@
       "quota": "在职教师每月 2000 积分、连续 12 个月，每月 1 日自动补满；积分用尽后仍可用免费模型。",
       "validity": "",
       "region": "",
-      "gates": [
-        "需在职教师身份，提交信息经审核后 3 个工作日内开通",
-        "个人版与教育公益版是两个独立账号，登录时须手动选择「教育公益版」",
-        "积分用尽后仅剩免费模型，混元 3 暂不限量"
-      ],
-      "note": "腾讯 SSV 数字教育实验室与 WorkBuddy 团队联合推出，面向全国在职教师、不限地区与学段。2026 年 10–12 月为试点期，2000 积分全模型通用；试点期结束后改为混元 4 独享 1600 积分、其他模型 400 积分。内置 100 多位教育专家与 5 个教学工具，数据与个人版不互通。",
+      "gates": [],
+      "note": "",
       "sponsored": false,
       "entry_url": "https://www.codebuddy.cn/",
       "intel_url": "https://news.qq.com/rain/a/20261019A06RX200",

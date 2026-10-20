@@ -308,7 +308,10 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
     modality = esc(it.get("modality", ""))
     sub = vendor or modality
     quota = esc(it.get("quota", "")).replace("\n", "<br>")
-    gates = it.get("gates", []) or []
+    # 提示位（蓝框 gates / 黄底 note）只允许人工录入：
+    # 自动更新来源的条目一律不渲染，避免脚本往卡片里塞读者不需要的补充说明。
+    auto_src = str(it.get("update_source") or "").startswith("自动更新")
+    gates = [] if auto_src else (it.get("gates", []) or [])
     sponsored = it.get("sponsored", False)
     entry_raw, entry_spon = out_link(it)
     entry = esc(entry_raw)
@@ -324,8 +327,9 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
     guide_chip = '<span class="chip guide-chip">📖 领取教程</span>' if it.get("guide") else ""
     # 视觉强调：card_style="red" 时卡片整块填充红色（用于重点教程/主推条目）
     red_cls = " card-red" if (it.get("card_style") == "red") else ""
-    # 备注：仅当该条目显式提供时渲染（默认全站无备注）
-    note_block = f'<div class="c-note">{esc(it.get("note","")).strip()}</div>' if (it.get("note") or "").strip() else ""
+    # 备注：仅当该条目显式提供且非自动更新来源时渲染（人工提示位）
+    note_text = "" if auto_src else (it.get("note") or "").strip()
+    note_block = f'<div class="c-note">{esc(note_text)}</div>' if note_text else ""
     # 卡片卖点条：条目设 card_promo 时在名称下方显示一行高亮文案（用于「送 6 个月服务器」这类一句话钩子）
     promo_txt = (it.get("card_promo") or "").strip()
     promo_block = f'<div class="c-promo">{esc(promo_txt)}</div>' if promo_txt else ""
@@ -1117,8 +1121,9 @@ for i, it in enumerate(items + archive_details):
     activity_rules_html = ("<section><h2>活动规则与领取方式</h2><ul>" +
                            "".join(f"<li>{esc(rule)}</li>" for rule in rules) +
                            "</ul></section>") if rules else ""
-    # 备注（仅当条目显式提供时渲染）
-    note_txt = esc(it.get("note", "")).strip()
+    # 备注（人工提示位；自动更新来源的条目不渲染）
+    note_txt = ("" if str(it.get("update_source") or "").startswith("自动更新")
+                else esc(it.get("note", "")).strip())
     note_sec_html = f'<p class="note-warn">{note_txt}</p>' if note_txt else ""
     # 图文领取教程（仅当条目显式提供 guide 时渲染）
     guide_sec_html = render_guide(it.get("guide"))
