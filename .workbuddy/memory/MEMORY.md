@@ -4,6 +4,7 @@
 - 唯一数据源 `data.json` 的 `items`（`build.py` 生成 `dist/`，Cloudflare Pages 自动构建）。
 - 四个容器：`items`（收录）/ `watchlist`（观望，渲染官网+原因）/ `retired`（下架，渲染官网+原因）/ `hidden`（暂存，**完全不渲染**、不进 sitemap/情报表/公开 data.json）。后三者不计 `total`。
 - 卡片字段：name/vendor/category(model|tool|event)/free_type(长期免费|注册赠送|限时活动|每日赠送|免费层|付费中转)/quota/validity/region(国内留空|国际)/gates/note/sponsored/entry_url/intel_url/signup/modality/last_verified/update_source/detail_slug/added。
+- **卡片视觉字段**：`card_style:"red"` → 整卡红色渐变填充（白字/白底按钮）；`card_promo`（字符串）→ 名称下方一行高亮卖点 pill（如「🎁 送 6 个月服务器」），红卡自动转白底红字；`guide` → 详情页「图文教程」+ 自动 📖 领取教程 chip。
 - **邀请码渲染**：`signup` 字段是死字段（build.py 不渲染）；用户邀请码/邀请链接须用 `invite_text` + `invite_url` + `invite_code` 三字段，详情页渲染「专属邀请」区块，卡片/领取入口不出现邀请码（build.py ~L1017）。
 - 分类 `catOf`：category=tool → 工具；modality 含 GLM5.2 → GLM5.2；其余 → 大模型。
 - hidden 写入：整条迁入 `hidden`，保留全部字段 + `hidden_at` + `hidden_reason`，`total` 减 1；配套 `build.py` 的 `pub.pop("hidden")` 与 assign 脚本扫描含 hidden。
@@ -31,6 +32,7 @@
 
 ## 部署
 - `python3 build.py` → `git add data.json`（+其他改动）→ commit → `git push -u origin main` → 等 CF 重建 → `curl` 首页 200 且 `/_version.txt` = 提交 SHA。
+- **挪位特例**：用户可指定既有条目位置（如 2026-10-19 TRAE 移至第 3 位，排在 库库 AI / WorkBuddy 之后）。挪位不产生新 `detail_slug`、不用跑 `assign_detail_ids.py`、`added` 不变（不触发星标）。
 - 远端常领先本地：push 被拒先 `git fetch`；若仅非 data.json 变化 → `git rebase origin/main`（勿手工解 data.json 冲突）；被已跟踪的 memory 文件挡住先 `git stash push -- <file>`（rebase 后 pop）。
 - 老详情链接：`legacy_detail_paths` 由构建写入 `dist/_redirects` 301 跳固定 ID。CF 边缘缓存不随文件删除失效（s-maxage≈7 天），需 Dashboard 手动 Purge。
 - 构建 Python 需 managed 3.13（系统 3.9 不支持新 f-string PEP 701）。
@@ -48,5 +50,17 @@
 - **站内聚合器已足量**（OpenRouter / BazaarLink / Kilo Gateway / OpenCode Zen / 硅基流动），2026-10-16 起新出现的 OpenRouter 式聚合器（如 Vercel AI Gateway）一律先入 watchlist，不进 items。
 - **同平台延续活动不单独成卡（补例）**：天翼云 Token Plan（新户 2,500 万 Tokens / 2 周）归入已收录的天翼云息壤卡；阿里云「7000 万 tokens 组合权益」归入百炼卡；OpenCode Go 三款限时免费模型归入 OpenCode Zen 卡。
 - 2026-10-19：items +1 摩尔线程 AI Coding Plan（`0119yljj`，tool/免费层，Free Trial ¥0 每日限量 100 名·30 天·GLM-4.7）；watchlist +1 Together AI（`0120vdvm`）。新线索源：`aiaiai.help/free` 与 `/free` 雷达页（71 平台、每日 3 次扫描、带核验时间戳）。口径冲突处理：官网套餐页 vs 文档中心额度不一致时双向标注、不自行取舍。
+- 2026-10-20：items +1 Inception Labs / Mercury 3（`0121rbso`，model/注册赠送/region=国际，新账户一次性 1 亿 Tokens 全模型共享、无需绑卡，diffusion 架构 1068 tok/s、1M 上下文、OpenAI 兼容；官方 docs FAQ+Quick Start 双确认）；watchlist +2 IteraCompute（`0122mclg`，3000 万 Tokens/月但主体未披露）、Dahl Inference（`0123ugxl`，Gonka 网络网关，1 亿 Tokens 一次性）。既有卡 AutoClaw `0085puck` 续期至 2026-10-25（M10W3 每日 500 万 + v2.1.0 一次性 2 亿），name 去掉「每周」。
+- 收录边界补例（2026-10-20）：**国际「运营主体未披露 / 域名新注册」的小型推理站一律先入 watchlist**（IteraCompute 即按此处理）；**去中心化 GPU 网络网关（Gonka/Dahl）同入 watchlist**，因其充值走加密货币、Key 需手动分配额度。
 - **教程与卡片强调（2026-10-19 新增 schema）**：条目可带 `guide`（{title,intro,facts[],steps[{t,d,url,url_text,code,imgs[{src,cap}]}],tips[],source}）→ 详情页渲染「图文教程」编号步骤；`card_style:"red"` → 卡片整块红色填充。带 guide 的卡片自动加「📖 领取教程」chip。教程截图放 `assets/guide/<主题>/`（构建复制到 `/img/guide/...`），发布前必须裁剪/打码账号名、任务列表、券号、订单号。首个用例：华为云码道 `0038rlna`。
 - `/intel/<slug>/` 详情页与 `/_version.txt` 校验：`_version.txt` 写的是**完整 40 位 SHA**，比较时须前缀匹配（如 `case "$V" in ef90087*)`），不可与短 SHA 直接相等判断。
+- **唯一工作目录（2026-10-20 收敛）**：只认 `/Users/hope/Desktop/token 情报局/生产仓库-token-fbi`（详见仓库内 `WORKDIR.md`）。归档克隆（`归档-历史副本/token-fbi-2026-09-25`、`-maintenance-2026-10-20`）远端已改名 `archived-donot-push` 且 push URL 为 `no-push://`，禁止在其中改数据或推送；旧流水线 `数据与构建/token-fbi-data`（41 条，`build_site.py`）已冻结。
+- **非在架详情页 noindex（2026-10-20）**：`DETAIL` 模板含 `{ROBOTS}` 占位，构建时对 `watchlist + retired`（即 `i >= len(items)`）注入 `<meta name="robots" content="noindex, follow">`；在架条目不注入。sitemap 只收在架详情（`urls += [intel... for i, it in enumerate(items) if not ad_only]`），改详情页逻辑时两处要同步。
+- **观望区 schema 新增 `reviewed_at`**：观望区渲染「复核 YYYY-MM-DD」，来源优先 `last_verified` → `added` → reason 里的日期；无来源日期显示「待复核」，禁止编造。
+- **/traffic/ 数据纪律**：数字只能是 Cloudflare 第一方统计；本机默认无 CF 凭据（`wrangler whoami` 未登录），拿不到就改标签不编数。`period_label` 不要写「近 7 天」这类相对表述，除非区间确实是最近 7 天。
+- **卡面标签一致性**：`无免费模型` 的条目 free_type 不得为 `长期免费`（国家超算/云工开物 2026-10-20 已修）；`category=event` 会渲染成「限时活动」，与 free_type=`长期免费` 冲突，长期项目一律用 `tool`。
+- **收录总原则（2026-10-20 用户明确，优先于此前所有门槛细则）**：本站有成本、靠邀请码/返佣维持，**「带邀请码 / 返佣链接 / affiliate」本身不是排除理由，也不是下架理由**；带了也不影响收录与排序，只需在字段上如实呈现。不要用「属付费抵扣券 / 推广链接」这类理由把用户想留的条目砍掉。原有「排除付费抵扣券、纯赞助/返佣」的收紧口径作废，改为：有免费或近乎免费的可用权益（含代金券、学生认证、新户礼）即可收，能否获利不参与判断。此类条目的 quota 不写「无免费模型：」开头（会与 free_type 冲突），直接写能拿到什么。
+- 状态变更实例（2026-10-20）：国家超算 SCNet `0024dpvl` 移入 watchlist（新户包限时 30 天、老用户无持续额度）；云工开物学生专区 `0031rtun` 恢复 items 原位（index 30，LobsterAI 之后、阿里云百炼之前），free_type 改注册赠送；硅基流动 `0013uppn` 长期免费成立，补「新用户注册赠 16 元代金券」口径。
+- **卡片提示位只许人工写入（2026-10-20 用户明确，最高优先级）**：卡片上的**蓝框 = `gates`**、**黄底块 = `note`** 都是人工提示位。自动更新**一律留空**，不得写「需实名 / 需下载客户端 / 当天清零 / 以页面为准 / 用完仍可用基础模型」这类补充说明；只有用户说「这条加一句 XX」才填，并在 `update_source` 标「用户指定」。`build.py` 已加渲染层拦截：`render_card` 与详情页对 `update_source` 以「自动更新」开头的条目，`gates` / `note` 一律不渲染（`auto_src` 变量）。用户认可的标准示例是「字节 TRAE」卡片（2 条蓝框、由用户 2026-10-19 亲自给出）。2026-10-20 已清空 20 条自动更新条目的 gates、25 条 note；现存仅 TRAE(2)+Antigravity(1) 蓝框、商汤+微信云开发(2) 黄块，均为人工内容。
+- **永不上架黑名单（`build.py` 顶部 `NEVER_RELIST`，2026-10-20 起硬约束）**：腾讯元器、DeepSeek 开放平台、**百度搭子 DuMate**。命中即 `raise SystemExit` 中断构建并打印平台名，自动更新无法把它们塞回 `items`。新增只能靠用户明确点名；`retired` 里对应 reason 写「用户明确要求永不上架（YYYY-MM-DD）」。已验证：临时把 DuMate 写回 items → 构建 exit=1 并输出提示。
+- **蓝字卖点条 = `card_promo`（2026-10-20 用户指出，与 gates/note 同属人工提示位）**：渲染为 `.c-promo`（浅蓝底 + 蓝字 + 蓝边框），位于名称下方。自动更新一律不得写；`build.py` 已按 `auto_src` 同规则拦截（`update_source` 以「自动更新」开头的条目不渲染）。现存仅「华为云码道」一条为人工内容（🎁 送 6 个月服务器）。

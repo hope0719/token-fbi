@@ -328,10 +328,11 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
     sub = '<span class="v-dot">·</span>'.join(sub_bits)
     sub_title = esc(" · ".join(x for x in (it.get("vendor", ""), it.get("modality", "")) if x))
     quota = esc(it.get("quota", "")).replace("\n", "<br>")
-    # 提示位（蓝框 gates / 黄底 note）只允许人工录入：
-    # 自动更新来源的条目一律不渲染，避免脚本往卡片里塞读者不需要的补充说明。
+    # 【硬规则】卡片内一律不渲染补充说明块（蓝框 gates / 黄底 note / 蓝字 card_promo）。
+    # 用户 2026-10-20 明确：这类提示块只有本人点名要加时才允许出现，脚本与数据都不许自动带出。
+    # gates 字段在 data.json 里仍保留（供内部溯源），但永不进入卡片 HTML。
     auto_src = str(it.get("update_source") or "").startswith("自动更新")
-    gates = [] if auto_src else (it.get("gates", []) or [])
+    gates = []
     sponsored = it.get("sponsored", False)
     entry_raw, entry_spon = out_link(it)
     entry = esc(entry_raw)
@@ -341,6 +342,7 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
     freetag = FREE_LABEL.get(free, free)
     is_limited = (free == "限时活动") or (cat == "event")
     gate_chips = "".join(f'<span class="chip">{esc(g)}</span>' for g in gates)
+    chips_block = f'<div class="chips">{gate_chips}</div>' if gate_chips else ""
     spon = '<span class="chip spon">赞助</span>' if (sponsor or sponsored) else ""
     reco = '<span class="chip reco">⭐ 站长推荐</span>' if recommended else ""
     # 教程角标：条目带 guide（详情页领取教程）时显示，提示卡内附图文步骤
@@ -371,7 +373,7 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
       {promo_block}
       <div class="c-quota">{quota}</div>
       {note_block}
-      <div class="chips">{gate_chips}</div>
+      {chips_block}
       <div class="c-actions">
         <a class="btn sm ghost" href="{href}" rel="bookmark">查看详情</a>
         <a class="btn sm primary" href="{entry}" target="_blank" rel="{entry_rel}">点击领取 →</a>
@@ -627,8 +629,8 @@ img{max-width:100%}
 .stat .sl{color:var(--text2);font-size:13px}
 .stat.stat-note .sv{color:var(--text2);font-weight:750;font-size:14px}
 .stat.stat-note .sl{color:var(--text3);font-size:12.5px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);align-items:start;gap:14px;padding-bottom:30px}
-.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px;transition:.18s;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);align-items:stretch;gap:14px;padding-bottom:30px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px;height:100%;transition:.18s;box-shadow:var(--shadow);position:relative;overflow:hidden}
 .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent);opacity:.0;transition:.18s}
 .card:hover{transform:translateY(-3px);border-color:var(--accent)}
 .card:hover::before{opacity:1}
@@ -681,7 +683,7 @@ img{max-width:100%}
 .ad-note{font-size:13px;color:var(--text3)}
 .ad-inquiry{margin-left:auto;font-size:13px;font-weight:700;color:var(--accent-deep);white-space:nowrap}
 .ad-inquiry:hover{text-decoration:underline}
-.ad-row{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:12px;align-items:start}
+.ad-row{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:12px;align-items:stretch}
 .ad-tile{position:relative;display:flex;flex-direction:column;gap:3px;background:var(--bg2);border:1px solid var(--line2);border-radius:12px;padding:11px 15px 12px;overflow:hidden;transition:.18s;box-shadow:var(--shadow)}
 .ad-tile::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent);opacity:.9}
 .ad-tile:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(34,52,58,.16)}
@@ -689,7 +691,7 @@ img{max-width:100%}
 .ad-brand{font-size:13px;font-weight:800;letter-spacing:.06em;color:var(--accent-deep);text-transform:uppercase;padding-right:52px}
 .ad-hook{font-size:15.5px;font-weight:850;line-height:1.3;letter-spacing:-.01em;color:var(--text)}
 .ad-desc{display:none}
-.ad-foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px}
+.ad-foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
 .ad-cta{background:var(--accent-deep);color:#fff;padding:9px 18px;font-size:13.5px}
 .ad-cta:hover{background:#27606f;transform:translateY(-1px)}
 .ad-more{font-size:13px;font-weight:700;color:var(--text2)}

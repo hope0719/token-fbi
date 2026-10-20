@@ -71,13 +71,10 @@
       "vendor": "",
       "category": "tool",
       "free_type": "长期免费",
-      "quota": "基础版长期免费（覆盖约 90% 个人开发场景），SOLO 模式 0 元使用；新用户通过分享链接注册并登录桌面端，可一次性获得 5,000 积分（500 积分注册奖励 + 4,500 积分新人福利）。",
+      "quota": "基础版长期免费（覆盖约 90% 个人开发场景），SOLO 模式 0 元使用；新用户通过分享链接注册并登录桌面端，可一次性获得 5,000 积分（500 积分注册奖励 + 4,500 积分新人福利），积分用于抵扣模型调用消耗，用完仍可使用免费基础模型。",
       "validity": "",
       "region": "",
-      "gates": [
-        "5,000 积分需注册后登录桌面端领取，网页端不计入，一次性发放",
-        "积分用于抵扣 TRAE 内模型的调用消耗，用完后仍可使用免费基础模型"
-      ],
+      "gates": [],
       "note": "",
       "sponsored": false,
       "entry_url": "https://www.trae.cn",
@@ -1015,9 +1012,7 @@
       "quota": "每周提供免费使用额度，支持 Gemini、Claude 等模型。",
       "validity": "每周免费额度；以官方当前方案为准",
       "region": "",
-      "gates": [
-        "Google 账号"
-      ],
+      "gates": [],
       "note": "",
       "sponsored": false,
       "entry_url": "https://antigravity.google/download",

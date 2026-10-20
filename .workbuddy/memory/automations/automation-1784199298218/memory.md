@@ -197,3 +197,14 @@
   - **官网套餐页与文档中心口径冲突**：套餐页写 Free Trial「与 Lite Plan 用量相当」，文档中心写 Free Trial 每 5 小时约 40 次 prompts、Lite 约 120 次；已在 quota 中双向标注、未自行取舍。
   - **本次搜索源高度饱和**：夜雨聆风（yeyulingfeng.com，10-12 版已读）、smzdm 10-16 版（/p/avgpxnk9）、aiaiai.help/free 与 /radar（新增的免费额度监控站，71 平台、每日 3 次扫描、带核验时间戳，**建议列入常规信源**）、llmperks（按模型列免费端点）——命中项全部已收录或在 watchlist。
   - 排除：蚂蚁百灵 20 元 Token 券（代金券 + 同平台已有卡）、云知声 U2-Decision（专用决策模型，沿用 HAL-X 判定）、智谱推荐有礼（同平台，且 BigModel 在 watchlist）、DeepSeek Search/Fetch 免至 11-01（黑名单平台）、基元律动充值赠额（充值型中转站）、京东 JoyAI 商家包（企业定向）。
+
+## 2026-10-20（09:00 定时自动更新）
+- **状态**：成功。构建（items=60、122 详情页、`check_star.py` 2 星标）、推送成功（`b287dc3..14c294f`，无 rebase）、线上首页 200、`/intel/0121rbso/` 200、`_version.txt`=`14c294f...`、线上 data.json total=60（公开 57 = 剔 3 赞助）。
+- **新增 1 条**（append 末尾）：Inception Labs / Mercury 3 扩散式大模型（model/注册赠送/region=国际，新账户一次性 1 亿 Tokens 全模型共享、无需绑卡；5 折后 $0.10/$0.35 每百万）`0121rbso`。**watchlist +2**：IteraCompute（`0122mclg`，每月 3000 万 Tokens 但主体未披露）、Dahl Inference（`0123ugxl`，Gonka 网关、一次性 1 亿）。
+- **既有卡更新 1 条**：智谱 AutoClaw `0085puck` 原 validity=2026-10-16 已过期，续接 M10W3（10/19–10/25 每日登录）+ v2.1.0 一次性 2 亿 Tokens（10/21 前领），validity→2026-10-25，name 去掉「每周」。
+- **关键注意（下次先看）**：
+  - **国内 token 侧继续零新增**：夜雨聆风 10-12 版、smzdm 10-19 版、10-20「AI 模型优惠速报」三源交叉，近 24h 新上线全部是付费定价/折扣（MiniMax M3.1 Flash 降价、天猫双 11 Token 套餐、火山/腾讯/千帆 Coding Plan 首月折扣），无新增免费额度。
+  - **官方 docs 是免费额度的最佳证据源**：Inception 的 1 亿 tokens 在 `docs.inceptionlabs.ai/resources/faq` 与 `/get-started` 双处明写「one-time credit of 100 million free tokens，no payment details required」，比第三方清单可靠；此类外网平台应先抓 docs/FAQ 再入库。
+  - **新判定**：运营主体未披露、域名新注册的海外小型推理站（IteraCompute，第三方核验站直接标「untrusted infrastructure」）→ watchlist；去中心化 GPU 网络网关（Dahl/Gonka，加密充值 + Key 需手动分配额度）→ watchlist。
+  - 排除：腾讯 WorkBuddy 教育公益版（教师身份限定，且与站内 WorkBuddy 同平台）、MiniMax M3.1 Flash 在 Vercel AI Gateway 限免（今日到期 + Vercel 已在 watchlist + 模型级活动）、沐曦 100 元 GPU 算力券（参赛限定）、基元律动 NeoHorse-1.9B 转 0 元（充值型中转站）、AMD Radeon Cloud 中国区免费模型（站内已有 AMD 卡，未新增额度）、Dahl/IteraCompute 之外的小额 signup（Wallaby $0.5、Impossibl $1、Standard Compute $0.25 等）。
+  - 本次远端与本地同起点，单文件（data.json）提交并 push 一次成功。
