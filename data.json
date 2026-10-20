@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-10-20",
-  "total": 55,
+  "total": 54,
   "items": [
     {
       "name": "库库 AI",
@@ -1242,30 +1242,6 @@
       "added": "2026-10-15"
     },
     {
-      "name": "百度搭子 DuMate",
-      "vendor": "百度智能云",
-      "category": "tool",
-      "free_type": "每日赠送",
-      "quota": "个人体验版 ¥0/月、全量功能开放：全部用户（含免费版）限时每日签到可领 500 积分；积分按失效时间排序优先扣减，逾期清零。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://www.dumate.cn/",
-      "intel_url": "https://cloud.baidu.com/doc/Dumate/s/nmnevrk0l",
-      "signup": "下载 DuMate 客户端并登录百度账号后，在客户端内每日签到即可领取 500 积分。",
-      "modality": "内置多模型 · Turbo / Ultra 模式",
-      "last_verified": "2026-10-15",
-      "update_source": "自动更新 2026-10-15",
-      "source_urls": [
-        "https://cloud.baidu.com/doc/Dumate/s/nmnevrk0l",
-        "https://www.dumate.cn/"
-      ],
-      "detail_slug": "0099bcrh",
-      "added": "2026-10-15"
-    },
-    {
       "name": "移动云 MoMA 模型服务平台",
       "vendor": "中国移动（移动云）",
       "category": "model",
@@ -1713,6 +1689,13 @@
       "url": "https://portal.nousresearch.com/",
       "reason": "一周限免已于 2026-10-15 结束；Step 5 Preview 同日开源，海外第三方平台的免费通道未续期，阶跃自有入口见「阶跃星辰 StepFun」条目。",
       "detail_slug": "0081fhdd",
+      "legacy_detail_paths": []
+    },
+    {
+      "name": "百度搭子 DuMate",
+      "url": "https://www.dumate.cn/",
+      "reason": "用户明确要求永不上架（2026-10-20）：未获用户明确同意不得重新收录。",
+      "detail_slug": "0099bcrh",
       "legacy_detail_paths": []
     }
   ],

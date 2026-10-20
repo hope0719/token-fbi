@@ -142,6 +142,19 @@ retired = d.get("retired", [])
 watchlist = d.get("watchlist", [])
 anchored = d.get("last_updated") or max((it.get("last_verified", "") for it in items), default="")
 
+# ---------- 永不上架名单 ----------
+# 用户明确点名「禁止上架」的平台。出现在 items 里直接中断构建，
+# 避免自动更新把用户否掉的平台又加回来。新增一律走用户明确指示。
+NEVER_RELIST = ("腾讯元器", "DeepSeek 开放平台", "百度搭子 DuMate")
+_relisted = [it.get("name", "") for it in items
+             if any(k in (it.get("name") or "") for k in NEVER_RELIST)]
+if _relisted:
+    raise SystemExit(
+        "构建中断：以下平台在「永不上架」名单里，却被写进了 items —— "
+        + "、".join(_relisted)
+        + "。除非用户明确要求上架，否则不要收录。")
+
+
 CAT_LABEL = {"model": "大模型", "tool": "工具", "event": "限时活动"}
 FREE_LABEL = {"长期免费": "长期免费", "注册赠送": "注册赠送",
               "限时活动": "限时活动", "开源自部署": "开源自部署"}
