@@ -319,7 +319,14 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
     name = esc(it.get("name", ""))
     vendor = esc(it.get("vendor", ""))
     modality = esc(it.get("modality", ""))
-    sub = vendor or modality
+    # 卡片第二行固定语义：左边厂商、右边支持模型（mono 小字），避免同一位置有时是厂商有时是模型
+    sub_bits = []
+    if vendor:
+        sub_bits.append(f'<span class="v-brand">{vendor}</span>')
+    if modality:
+        sub_bits.append(f'<span class="v-mod">{modality}</span>')
+    sub = '<span class="v-dot">·</span>'.join(sub_bits)
+    sub_title = esc(" · ".join(x for x in (it.get("vendor", ""), it.get("modality", "")) if x))
     quota = esc(it.get("quota", "")).replace("\n", "<br>")
     # 提示位（蓝框 gates / 黄底 note）只允许人工录入：
     # 自动更新来源的条目一律不渲染，避免脚本往卡片里塞读者不需要的补充说明。
@@ -360,7 +367,7 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
         {reco}{spon}{guide_chip}
       </div>
       <h3 class="c-name"><a class="c-link" href="{href}">{name}</a></h3>
-      <div class="c-vendor">{sub}</div>
+      <div class="c-vendor" title="{sub_title}">{sub}</div>
       {promo_block}
       <div class="c-quota">{quota}</div>
       {note_block}
@@ -547,6 +554,7 @@ jsonld = json.dumps(graph, ensure_ascii=False, indent=2)
 
 n_model = sum(1 for i in editorial if i.get("category") == "model")
 n_tool = sum(1 for i in editorial if i.get("category") == "tool")
+n_active = sum(1 for i in editorial if i.get("category") == "event")
 # 「限时活动」按 free_type 统计（与 category 正交：这些条目同时归入大模型/工具）
 n_event = sum(1 for i in editorial if i.get("free_type") == "限时活动")
 
@@ -572,8 +580,8 @@ TEMPLATE = r'''<!DOCTYPE html>
   --ok:#3F8F6B; --ok-soft:rgba(63,143,107,.12);
   --warn:#C08A2E; --warn-soft:rgba(192,138,46,.14);
   --danger:#C2543F; --danger-soft:rgba(194,84,63,.12);
-  --r:16px; --r-sm:10px;
-  --shadow:0 10px 30px rgba(34,52,58,.10);
+  --r:14px; --r-sm:9px;
+  --shadow:0 3px 12px rgba(34,52,58,.06);
   --nav-bg:rgba(245,241,232,.86);
   --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
@@ -593,10 +601,12 @@ img{max-width:100%}
 .nav-links a:hover{color:var(--accent-deep)}
 .nav-right{margin-left:auto;display:flex;gap:10px;align-items:center;flex-shrink:0}
 .nav-right .btn{padding:9px 18px;font-size:14px;white-space:nowrap}
+.nav-toggle{display:none;align-items:center;justify-content:center;width:38px;height:38px;flex-shrink:0;border-radius:10px;border:1px solid var(--line2);background:var(--bg2);color:var(--text);font-size:14px;line-height:1;cursor:pointer}
+.nav-drawer{display:none}
 .btn{display:inline-flex;align-items:center;gap:7px;font-weight:700;border-radius:99px;transition:.18s;cursor:pointer;border:1px solid transparent;font-size:14.5px;white-space:nowrap}
 .btn.sm{padding:9px 16px;font-size:13.5px}
-.btn.primary{background:var(--accent);color:var(--accent-ink);box-shadow:0 6px 18px var(--accent-soft)}
-.btn.primary:hover{background:var(--accent-2);transform:translateY(-1px)}
+.btn.primary{background:var(--accent-deep);color:#fff;box-shadow:0 6px 16px rgba(47,111,130,.22)}
+.btn.primary:hover{background:#27606F;transform:translateY(-1px)}
 .btn.ghost{background:var(--bg2);color:var(--text);border-color:var(--line2)}
 .btn.ghost:hover{border-color:var(--accent-deep);color:var(--accent-deep)}
 .btn.line{background:transparent;color:var(--text2);border-color:var(--line2)}
@@ -607,30 +617,40 @@ img{max-width:100%}
 .badge-dot{display:inline-block;font-family:var(--mono);font-size:11.5px;color:var(--accent-deep);background:var(--accent-soft);border:1px solid var(--accent);padding:3px 11px;border-radius:99px}
 .hero-link{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:750;color:var(--accent-deep);background:var(--bg2);border:1px solid var(--accent);padding:3px 12px;border-radius:99px;transition:.18s;white-space:nowrap}
 .hero-link:hover{background:var(--accent-soft);border-color:var(--accent-deep)}
-.hero h1{font-size:clamp(25px,4.1vw,38px);line-height:1.14;font-weight:850;letter-spacing:-.01em}
+.hero h1{font-size:clamp(25px,4.1vw,38px);line-height:1.14;font-weight:850;letter-spacing:-.01em;text-wrap:balance}
 .hero h1 .hl{color:var(--accent-deep)}
-.hero .sub{max-width:900px;margin:11px auto 0;color:var(--text2);font-size:14.5px;line-height:1.5}
+.hero .sub{max-width:900px;margin:11px auto 0;color:var(--text2);font-size:14.5px;line-height:1.5;text-wrap:pretty}
 .hero .sub b{color:var(--text)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0 4px}
-.stat{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;text-align:center;box-shadow:var(--shadow)}
-.stat .sv{font-size:24px;font-weight:850;color:var(--accent-deep);font-family:var(--mono)}
-.stat .sl{display:block;margin-top:3px;color:var(--text2);font-size:12.5px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:30px}
-.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:9px;transition:.18s;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.stats{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:4px 18px;margin:14px 0 0;color:var(--text2);font-size:13px}
+.stat{display:inline-flex;align-items:baseline;gap:6px;background:none;border:0;padding:0;box-shadow:none;text-align:left}
+.stat .sv{font-size:16px;font-weight:850;color:var(--accent-deep);font-family:var(--mono);line-height:1}
+.stat .sl{color:var(--text2);font-size:13px}
+.stat.stat-note .sv{color:var(--text2);font-weight:750;font-size:14px}
+.stat.stat-note .sl{color:var(--text3);font-size:12.5px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);align-items:start;gap:14px;padding-bottom:30px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px;transition:.18s;box-shadow:var(--shadow);position:relative;overflow:hidden}
 .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent);opacity:.0;transition:.18s}
 .card:hover{transform:translateY(-3px);border-color:var(--accent)}
 .card:hover::before{opacity:1}
 .c-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .cat-tag{font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:7px;background:var(--bg3);color:var(--text2)}
 .cat-model{background:var(--accent-soft);color:var(--accent-deep)}
-.free-tag{font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:7px;background:var(--bg3);color:var(--text2)}
-.free-限时活动{background:var(--warn-soft);color:var(--warn)}
-.free-长期免费{background:var(--ok-soft);color:var(--ok)}
-.free-注册赠送{background:var(--accent-soft);color:var(--accent-deep)}
+.cat-tool{background:var(--bg4);color:#5C4B2E}
+.cat-event{background:var(--warn-soft);color:var(--warn)}
+.free-tag{font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:7px;background:transparent;border:1px solid var(--line2);color:var(--text2)}
+.free-限时活动{border-color:var(--warn);color:var(--warn)}
+.free-长期免费{border-color:rgba(63,143,107,.45);color:var(--ok)}
+.free-注册赠送{border-color:var(--accent);color:var(--accent-deep)}
+.free-每日赠送{border-color:var(--accent);color:var(--accent-deep)}
+.free-免费层{border-color:var(--line2);color:var(--text2)}
+.free-付费中转{border-color:var(--line2);color:var(--text3)}
 .c-name{font-size:17px;font-weight:800;line-height:1.25}
 .c-name a{color:inherit;text-decoration:none}
 .c-name a:hover{color:var(--accent-deep)}
-.c-vendor{font-size:13px;color:var(--text3);display:flex;align-items:center;gap:7px}
+.c-vendor{font-size:12.5px;color:var(--text3);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c-vendor .v-brand{color:var(--text3);font-weight:700}
+.c-vendor .v-mod{font-family:var(--mono);font-size:11.5px;color:var(--text3)}
+.c-vendor .v-dot{margin:0 6px;color:var(--line2)}
 .c-quota{font-size:13.5px;color:var(--text2);line-height:1.5}
 /* 卡片卖点条：一句话钩子，字号比 quota 大一档、加粗，便于扫读 */
 .c-promo{display:inline-block;align-self:flex-start;font-size:14.5px;font-weight:850;line-height:1.35;letter-spacing:-.01em;color:var(--accent-deep);background:var(--accent-soft);border:1px solid var(--accent);border-radius:9px;padding:5px 11px}
@@ -655,21 +675,21 @@ img{max-width:100%}
 .footer a:hover{color:var(--accent-deep)}
 .footer .disc{font-size:12.5px;color:var(--text3);line-height:1.6;margin-top:14px}
 .foot-bottom{text-align:center;color:var(--text3);font-size:12.5px;margin-top:26px;padding-top:18px;border-top:1px solid var(--line)}
-.sponsor-wrap{margin-top:24px}
-.ad-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.sponsor-wrap{margin-top:12px}
+.ad-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:9px}
 .sponsor-tag{font-size:12px;font-weight:800;letter-spacing:.06em;color:#fff;background:var(--accent-deep);padding:4px 11px;border-radius:8px;flex-shrink:0}
 .ad-note{font-size:13px;color:var(--text3)}
 .ad-inquiry{margin-left:auto;font-size:13px;font-weight:700;color:var(--accent-deep);white-space:nowrap}
 .ad-inquiry:hover{text-decoration:underline}
-.ad-row{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px}
-.ad-tile{position:relative;display:flex;flex-direction:column;gap:9px;background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r);padding:20px;overflow:hidden;transition:.18s;box-shadow:var(--shadow)}
+.ad-row{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:12px;align-items:start}
+.ad-tile{position:relative;display:flex;flex-direction:column;gap:3px;background:var(--bg2);border:1px solid var(--line2);border-radius:12px;padding:11px 15px 12px;overflow:hidden;transition:.18s;box-shadow:var(--shadow)}
 .ad-tile::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent);opacity:.9}
 .ad-tile:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(34,52,58,.16)}
 .ad-badge{position:absolute;top:0;right:0;font-size:10.5px;font-weight:800;letter-spacing:.1em;color:var(--text3);background:rgba(34,52,58,.06);padding:5px 11px;border-radius:0 var(--r) 0 10px}
 .ad-brand{font-size:13px;font-weight:800;letter-spacing:.06em;color:var(--accent-deep);text-transform:uppercase;padding-right:52px}
-.ad-hook{font-size:19.5px;font-weight:850;line-height:1.3;letter-spacing:-.01em;color:var(--text)}
-.ad-desc{font-size:13.5px;color:var(--text2);line-height:1.6}
-.ad-foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:auto;padding-top:14px}
+.ad-hook{font-size:15.5px;font-weight:850;line-height:1.3;letter-spacing:-.01em;color:var(--text)}
+.ad-desc{display:none}
+.ad-foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px}
 .ad-cta{background:var(--accent-deep);color:#fff;padding:9px 18px;font-size:13.5px}
 .ad-cta:hover{background:#27606f;transform:translateY(-1px)}
 .ad-more{font-size:13px;font-weight:700;color:var(--text2)}
@@ -737,10 +757,10 @@ img{max-width:100%}
 .ct-desc{font-size:13.5px;color:var(--text2);line-height:1.6}
 .contact-card .btn{align-self:flex-start;margin-top:2px}
 @media(max-width:1080px){.nav-right .btn.line{display:none}}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.ad-row{grid-template-columns:repeat(2,1fr)}.contact-row{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.footer-in{grid-template-columns:1fr}}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.ad-row{grid-template-columns:repeat(2,1fr)}.contact-row{grid-template-columns:repeat(2,1fr)}.footer-in{grid-template-columns:1fr}}
 @media(max-width:820px){.nav-in{gap:14px}.nav-links{gap:14px;margin-left:0;font-size:13px}}
-@media(max-width:700px){.nav-links{display:none}}
-@media(max-width:600px){.grid{grid-template-columns:1fr}.ad-row{grid-template-columns:1fr}.contact-row{grid-template-columns:1fr}.nav-right .btn{padding:8px 14px;font-size:13px}}
+@media(max-width:700px){.nav-links{display:none}.nav-toggle{display:inline-flex}.nav-drawer{display:block;max-height:0;overflow:hidden;background:var(--bg2);transition:max-height .22s ease}body.nav-open .nav-drawer{max-height:320px;border-bottom:1px solid var(--line)}.nav-drawer a{display:block;padding:11px 22px;font-size:14px;color:var(--text2);border-top:1px solid var(--line)}.nav-drawer a:hover{color:var(--accent-deep);background:var(--bg3)}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.ad-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-bottom:4px;-webkit-overflow-scrolling:touch}.ad-row .ad-tile{flex:0 0 86%;scroll-snap-align:start}.contact-row{grid-template-columns:1fr}.nav-right .btn{padding:8px 14px;font-size:13px}}
 @media(max-width:420px){.brand{font-size:16px}.brand .dot{width:10px;height:10px}}
 </style>
 </head>
@@ -751,21 +771,31 @@ img{max-width:100%}
   <div class="nav-right">
     <a class="btn primary" href="#list">查看免费额度 →</a>
     <a class="btn line" href="https://github.com/hope0719/token-fbi" target="_blank" rel="noopener">在 GitHub 上查看</a>
+    <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">☰</button>
   </div>
+</div>
+<div class="nav-drawer" id="navDrawer">
+  <a href="#list">情报列表</a>
+  <a href="/table/">完整情报表</a>
+  <a href="#watchlist">观望区</a>
+  <a href="#faq">常见问题</a>
+  <a href="/about/">关于</a>
+  <a href="/sponsor/">合作赞助</a>
 </div></nav>
 
 <header class="hero"><div class="wrap">
   <div class="hero-top">
-    <span class="badge-dot">连续投稿 · 全网免费 AI token 情报</span>
+    <span class="badge-dot">持续更新 · 全网免费 AI token 情报</span>
     <a class="hero-link" href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达 →</a>
   </div>
   <h1>把值得领取的 <span class="hl">AI 额度</span>放在一处。</h1>
   <p class="sub">额度、模型、领取方式一次查清，每条都标注<b>免费类型、门槛与截止时间，不靠猜。</b></p>
   <div class="stats">
-    <div class="stat"><span class="sv">{N_TOTAL}</span><span class="sl">情报总数</span></div>
+    <div class="stat"><span class="sv">{N_TOTAL}</span><span class="sl">条情报</span></div>
     <div class="stat"><span class="sv">{N_MODEL}</span><span class="sl">大模型</span></div>
     <div class="stat"><span class="sv">{N_TOOL}</span><span class="sl">工具</span></div>
-    <div class="stat" title="按「免费类型＝限时活动」统计，与上方分类维度交叉"><span class="sv">{N_EVENT}</span><span class="sl">限时活动</span></div>
+    <div class="stat"><span class="sv">{N_ACTIVE}</span><span class="sl">活动</span></div>
+    <div class="stat stat-note" title="按免费类型统计，与左侧分类维度不同"><span class="sl">其中限时活动</span><span class="sv">{N_EVENT}</span></div>
   </div>
 </div></header>
 
@@ -773,7 +803,7 @@ img{max-width:100%}
 
 <main class="wrap" id="list">
   <h2 class="sec-title" style="text-align:left;font-size:23px;margin-bottom:20px">全部情报</h2>
-  <p class="sec-lead">以下 {N_TOTAL} 个渠道当前均可免费领取大模型或工具额度，无需付费、无需绑卡；限时活动已标注截止时间。</p>
+  <p class="sec-lead">以下 {N_TOTAL} 个渠道当前均可免费领取大模型或工具额度，无需付费、无需绑卡；其中 {N_EVENT} 条为限时活动，已标注截止时间。</p>
   <div class="grid" id="grid">
     {CARDS}
   </div>
@@ -871,6 +901,7 @@ img{max-width:100%}
   <div class="foot-bottom">© 2026 Token FBI（Token 情报局）· 本站不替代各平台官方政策</div>
 </div></footer>
 
+<script>(function(){var t=document.querySelector('.nav-toggle');if(!t)return;t.addEventListener('click',function(){var o=document.body.classList.toggle('nav-open');t.setAttribute('aria-expanded',o?'true':'false');});Array.prototype.forEach.call(document.querySelectorAll('.nav-drawer a'),function(a){a.addEventListener('click',function(){document.body.classList.remove('nav-open');t.setAttribute('aria-expanded','false');});});})();</script>
 </body>
 </html>'''
 
@@ -890,6 +921,7 @@ index_html = (TEMPLATE
        .replace("{N_TOTAL}", str(len(editorial)))
        .replace("{N_MODEL}", str(n_model))
        .replace("{N_TOOL}", str(n_tool))
+       .replace("{N_ACTIVE}", str(n_active))
        .replace("{N_EVENT}", str(n_event))
        .replace("{PAID_GROUP_URL}", PAID_GROUP_URL)
        .replace("{WECHAT_ID}", WECHAT_ID)
@@ -928,7 +960,7 @@ section{margin:24px 0}
 section h2{font-size:18px;color:var(--accent-deep);margin-bottom:8px}
 section p{color:var(--text2);font-size:15px}
 .cta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:30px 0 0;padding-top:24px;border-top:1px solid var(--line)}
-.btn{display:inline-flex;align-items:center;gap:7px;font-weight:800;border-radius:99px;padding:12px 22px;background:var(--accent);color:#0E2A33;box-shadow:0 6px 18px var(--accent-soft);transition:.18s}
+.btn{display:inline-flex;align-items:center;gap:7px;font-weight:800;border-radius:99px;padding:12px 22px;background:var(--accent-deep);color:#fff;box-shadow:0 6px 18px rgba(47,111,130,.22);transition:.18s}
 .btn.line{background:var(--bg2);color:var(--accent-deep);border:1px solid var(--accent);box-shadow:none}
 .btn.line:hover{background:var(--accent-soft)}
 .disc{font-size:13px;color:var(--text2);margin-top:18px}
@@ -958,6 +990,14 @@ section p{color:var(--text2);font-size:15px}
 .guide-tips{margin-top:16px;padding:12px 14px;border-radius:12px;background:var(--warn-soft);color:#8A6117;font-size:13.8px;line-height:1.7}
 .guide-tips b{color:var(--warn)}
 .guide-src{margin-top:12px;font-size:12.5px;color:var(--text2)}
+.related{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px}
+.related ul{list-style:none;display:grid;gap:0;margin-top:6px}
+.related li{display:flex;gap:10px;align-items:baseline;padding:9px 0;border-top:1px dashed var(--line)}
+.related li:first-child{border-top:0}
+.related li a{font-weight:800;color:var(--accent-deep);font-size:14.5px;white-space:nowrap}
+.related li span{font-size:12.5px;color:var(--text2);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.related .rel-all{font-size:13px;font-weight:700;color:var(--text2)}
+.related .rel-all:hover{color:var(--accent-deep)}
 @media(min-width:601px){.fact>div:last-child:nth-child(odd){grid-column:1/-1}}
 @media(max-width:600px){.fact{grid-template-columns:1fr}.poster-box{padding:10px}}
 </style>
@@ -981,6 +1021,7 @@ section p{color:var(--text2);font-size:15px}
 {EFFECT_SEC}
 <section><h2>核验说明</h2><p>本页由 Token 情报局根据公开页面与实际入口进行人工整理。额度、模型和活动时间可能变化，请在领取前再次查看平台页面。</p></section>
 {INVITE_SEC}
+{RELATED}
 <div class="cta">{ENTRY_BTN}<a class="btn line" href="/">查看全部情报</a></div>
 <p class="disc">部分平台入口可能包含邀请参数；这不会改变本站对免费额度与使用限制的编辑判断。本站不替代各平台官方政策。</p>
 </div></body></html>'''
@@ -1096,6 +1137,22 @@ for i, it in enumerate(items + archive_details):
     validity_txt = esc(it.get("validity", "")) or "长期（以平台为准）"
     entry, entry_spon = out_link(it)
     entry_rel = "noopener nofollow sponsored" if entry_spon else "noopener"
+    # 同类推荐：按当前条目在在架列表中的位置向后取 3 条同类（不足则绕回），补站内内链
+    _names = [x.get("name") for x in editorial]
+    _base = _names.index(raw_name) if raw_name in _names else 0
+    _ordered = editorial[_base + 1:] + editorial[:_base]
+    _same = [x for x in _ordered if x.get("category") == it.get("category")]
+    _cand = (_same or _ordered)[:3]
+    if _cand:
+        _rows = "".join(
+            f'<li><a href="/intel/{x.get("detail_slug")}/">{esc(x.get("name"))}</a>'
+            f'<span>{esc((x.get("quota") or "").replace(chr(10), " ")[:36])}</span></li>'
+            for x in _cand)
+        related_html = (f'<section class="related"><h2>同类免费额度</h2><ul>{_rows}</ul>'
+                        f'<p style="margin-top:8px"><a class="rel-all" href="/table/">'
+                        f'查看完整情报表（{len(editorial)} 条）→</a></p></section>')
+    else:
+        related_html = ""
     canon = f"{SITE}/intel/{s}/"
     desc = meta_desc_for(it)
     og_img = og_image_for(i) if i < len(items) else OG_IMAGE_DEFAULT
@@ -1178,6 +1235,7 @@ for i, it in enumerate(items + archive_details):
         .replace("{REGION}", region).replace("{VALIDITY_TXT}", validity_txt)
         .replace("{LEAD}", lead_html).replace("{EFFECT_SEC}", effect_sec_html)
         .replace("{INVITE_SEC}", invite_sec_html).replace("{NOTE_SEC}", note_sec_html)
+        .replace("{RELATED}", related_html)
         .replace("{GUIDE_SEC}", guide_sec_html)
         .replace("{ACTIVITY_RULES}", activity_rules_html)
         .replace("{POSTER_SEC}", poster_sec_html)
@@ -2281,7 +2339,7 @@ main{padding:6px 0 50px}
     <div class="stat"><span class="sv">{N_TOTAL}</span><span class="sl">情报总数</span></div>
     <div class="stat"><span class="sv">{N_MODEL}</span><span class="sl">大模型</span></div>
     <div class="stat"><span class="sv">{N_TOOL}</span><span class="sl">工具</span></div>
-    <div class="stat" title="按「免费类型＝限时活动」统计，与上方分类维度交叉"><span class="sv">{N_EVENT}</span><span class="sl">限时活动</span></div>
+    <div class="stat"><span class="sv">{N_ACTIVE}</span><span class="sl">活动</span></div>
   </div>
 </div>
 
@@ -2304,6 +2362,7 @@ table_html = (TABLE
     .replace("{N_TOTAL}", str(len(editorial)))
     .replace("{N_MODEL}", str(n_model))
     .replace("{N_TOOL}", str(n_tool))
+    .replace("{N_ACTIVE}", str(n_active))
     .replace("{N_EVENT}", str(n_event)))
 os.makedirs(os.path.join(DIST, "table"), exist_ok=True)
 with open(os.path.join(DIST, "table", "index.html"), "w", encoding="utf-8") as f:
