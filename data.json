@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-10-20",
-  "total": 47,
+  "total": 46,
   "items": [
     {
       "name": "库库 AI",
@@ -1217,30 +1217,6 @@
       "added": "2026-10-14"
     },
     {
-      "name": "千问办公（QwenWork，阿里）",
-      "vendor": "阿里云",
-      "category": "tool",
-      "free_type": "注册赠送",
-      "quota": "个人免费版 ¥0：首次注册限时赠 2,000 积分（自发放起 3 个月有效）；每日登录限时再赠 100 积分（仅当日有效、次日清零）。按第三方实测 1 积分 ≈ 1,600 Token 折算，2,000 积分约合 320 万 Token 量级。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://www.qwenwork.cn/",
-      "intel_url": "https://help.aliyun.com/zh/qwenwork/qwenwork-is-live",
-      "signup": "访问 qwenwork.cn 注册并进入「个人空间」，系统自动到账 2,000 积分，无需手动领取；每日登录自动发放 100 积分。",
-      "modality": "Qwen3.8 · 多模型可选",
-      "last_verified": "2026-10-15",
-      "update_source": "自动更新 2026-10-15",
-      "source_urls": [
-        "https://help.aliyun.com/zh/qwenwork/qwenwork-is-live",
-        "https://help.aliyun.com/zh/document_detail/3047912.html"
-      ],
-      "detail_slug": "0098zpea",
-      "added": "2026-10-15"
-    },
-    {
       "name": "移动云 MoMA 模型服务平台",
       "vendor": "中国移动（移动云）",
       "category": "model",
@@ -2164,6 +2140,13 @@
       "url": "https://www.codebuddy.cn/",
       "reason": "非模型额度：属 Coding Plan / IDE 插件 / 办公 Agent 类工具，按现行上架口径（只收可直接调用大模型额度的平台）暂不收录。",
       "detail_slug": "0124njuf",
+      "reviewed_at": "2026-10-20"
+    },
+    {
+      "name": "千问办公（QwenWork，阿里）",
+      "url": "https://www.qwenwork.cn/",
+      "reason": "办公客户端，非模型额度，暂时下架。",
+      "detail_slug": "0098zpea",
       "reviewed_at": "2026-10-20"
     }
   ],
