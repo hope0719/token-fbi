@@ -105,7 +105,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "限时活动",
-      "quota": "千问 Qwen3.8-Flash 限免至 10 月 31 日，且无隐藏的每日调用上限。",
+      "quota": "Qwen3.8-Flash 限免至 10 月 31 日、无每日调用上限；DeepSeek-V4.1-Flash-1017 限免至 10 月 24 日。",
       "validity": "2026-10-31",
       "region": "",
       "gates": [],
@@ -113,13 +113,13 @@
       "sponsored": false,
       "entry_url": "https://t.aliyun.com/U/Ob4f6l",
       "intel_url": "https://t.aliyun.com/U/Ob4f6l",
-      "last_verified": "2026-10-12",
-      "modality": "Qwen3.8-Flash · Qwen3.8-Max",
+      "last_verified": "2026-10-20",
+      "modality": "Qwen3.8-Flash · Qwen3.8-Max · DeepSeek-V4.1-Flash-1017",
       "signup": "",
       "activity_rules": [
         "Qwen3.8-Flash 免费使用延长至 2026 年 10 月 31 日；经确认无隐藏的每日调用上限，实际额度以客户端活动说明为准。"
       ],
-      "update_source": "用户补充，2026-10-12",
+      "update_source": "用户指定，2026-10-20（新增 DeepSeek-V4.1-Flash-1017 限免至 10-24）",
       "detail_slug": "0002eanr",
       "legacy_detail_paths": [
         "/intel/item-001-qoder-cn/",
