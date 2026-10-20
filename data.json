@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-10-20",
-  "total": 57,
+  "total": 55,
   "items": [
     {
       "name": "库库 AI",
@@ -344,58 +344,6 @@
         "/intel/item-021-硅基流动-siliconflow/"
       ],
       "update_source": "自动更新 2026-10-20（补充新用户 16 元代金券口径）"
-    },
-    {
-      "name": "NVIDIA NIM 免费 API",
-      "vendor": "",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "上述模型免费调用（H100 算力、有速率限制）；无截止时间。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://build.nvidia.com",
-      "intel_url": "https://build.nvidia.com",
-      "last_verified": "2026-07-15",
-      "modality": "MiniMax M2.7 · GLM-5.1 · Kimi K2.5 · DeepSeek V3.2 · Gemma 4 · Llama 4",
-      "signup": "",
-      "detail_slug": "0014jyev",
-      "legacy_detail_paths": [
-        "/intel/item-014-nvidia-nim-免费-api/",
-        "/intel/item-015-nvidia-nim-免费-api/",
-        "/intel/item-016-nvidia-nim-免费-api/",
-        "/intel/item-017-nvidia-nim-免费-api/",
-        "/intel/item-018-nvidia-nim-免费-api/",
-        "/intel/item-022-nvidia-nim-免费-api/"
-      ]
-    },
-    {
-      "name": "商汤 Token Plan（sensenova）",
-      "vendor": "",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "公测免费：每 5 小时 6 万积分、每周 60 万积分滚动额度；Flash-Lite 积分消费等额返赠通用积分。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "用的人比较多，高峰期有时不太好用，会经常出现 429 限流。",
-      "sponsored": false,
-      "entry_url": "https://www.sensenova.cn/token-plan",
-      "intel_url": "https://www.sensenova.cn/token-plan",
-      "last_verified": "2026-09-29",
-      "modality": "DeepSeek V4",
-      "signup": "",
-      "detail_slug": "0015ebfj",
-      "legacy_detail_paths": [
-        "/intel/item-015-商汤-token-plan-sensenova/",
-        "/intel/item-016-商汤-token-plan-sensenova/",
-        "/intel/item-017-商汤-token-plan-sensenova/",
-        "/intel/item-018-商汤-token-plan-sensenova/",
-        "/intel/item-019-商汤-token-plan-sensenova/",
-        "/intel/item-023-商汤-token-plan-sensenova/"
-      ]
     },
     {
       "name": "Agnes AI",
@@ -2342,6 +2290,21 @@
       "reason": "新手适合，老手别用。",
       "detail_slug": "0009cwfz",
       "reviewed_at": "2026-10-20"
+    },
+    {
+      "name": "NVIDIA NIM 免费 API",
+      "url": "https://build.nvidia.com",
+      "reason": "目前阶段无特别大价值。",
+      "detail_slug": "0014jyev",
+      "reviewed_at": "2026-10-20"
+    },
+    {
+      "name": "商汤 Token Plan（sensenova）",
+      "url": "https://www.sensenova.cn/token-plan",
+      "reason": "目前阶段无特别大价值。",
+      "detail_slug": "0015ebfj",
+      "reviewed_at": "2026-10-20",
+      "note": "用的人比较多，高峰期有时不太好用，会经常出现 429 限流。"
     }
   ],
   "hidden": []
