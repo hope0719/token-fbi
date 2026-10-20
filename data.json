@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-10-20",
-  "total": 59,
+  "total": 58,
   "items": [
     {
       "name": "库库 AI",
@@ -156,31 +156,6 @@
         "/intel/item-007-蓝博科技-lanbuff/",
         "/intel/item-008-蓝博科技-lanbuff/",
         "/intel/item-012-蓝博科技-lanbuff/"
-      ]
-    },
-    {
-      "name": "阶跃星辰 StepFun",
-      "vendor": "",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "注册即送 15 天，邀请好友可延长，最高累计 90 天；免费档每月 4 亿 Credits。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://platform.stepfun.com",
-      "intel_url": "https://platform.stepfun.com",
-      "last_verified": "2026-09-28",
-      "modality": "step-5-preview · step-3.7-flash",
-      "signup": "",
-      "detail_slug": "0005ebrx",
-      "legacy_detail_paths": [
-        "/intel/item-004-阶跃星辰-stepfun/",
-        "/intel/item-006-阶跃星辰-stepfun/",
-        "/intel/item-008-阶跃星辰-stepfun/",
-        "/intel/item-009-阶跃星辰-stepfun/",
-        "/intel/item-013-阶跃星辰-stepfun/"
       ]
     },
     {
@@ -2377,6 +2352,13 @@
       "url": "https://www.scnet.cn/",
       "reason": "新户普惠包仅对 2026-08-13 至 11-10 期间的新注册账号发放、到账 30 天即失效，老用户没有持续免费额度；待观察是否恢复常态化赠送。",
       "detail_slug": "0024dpvl",
+      "reviewed_at": "2026-10-20"
+    },
+    {
+      "name": "阶跃星辰 StepFun",
+      "url": "https://platform.stepfun.com",
+      "reason": "暂时无免费额度。",
+      "detail_slug": "0005ebrx",
       "reviewed_at": "2026-10-20"
     }
   ],
