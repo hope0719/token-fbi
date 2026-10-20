@@ -343,8 +343,8 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
     # 备注：仅当该条目显式提供且非自动更新来源时渲染（人工提示位）
     note_text = "" if auto_src else (it.get("note") or "").strip()
     note_block = f'<div class="c-note">{esc(note_text)}</div>' if note_text else ""
-    # 卡片卖点条：条目设 card_promo 时在名称下方显示一行高亮文案（用于「送 6 个月服务器」这类一句话钩子）
-    promo_txt = (it.get("card_promo") or "").strip()
+    # 卡片卖点条（蓝字）：人工提示位，仅当条目显式提供且非自动更新来源时渲染
+    promo_txt = "" if auto_src else (it.get("card_promo") or "").strip()
     promo_block = f'<div class="c-promo">{esc(promo_txt)}</div>' if promo_txt else ""
     # 新增星标：收录 3 天内在卡片右上角固定显示（不占文档流，不遮挡标签与按钮）
     star = ""
