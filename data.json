@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-20",
-  "total": 46,
+  "last_updated": "2026-10-26",
+  "total": 47,
   "items": [
     {
       "name": "库库 AI",
@@ -1087,18 +1087,18 @@
       "vendor": "",
       "category": "event",
       "free_type": "限时活动",
-      "quota": "10/20–10/25 每天登录领 500 Credits（约 500 万 Tokens）；v2.1.0 焕新一次性 2 亿 Tokens 领取至 10/21，两套可叠加。",
-      "validity": "2026-10-25",
+      "quota": "10/26–11/1 登录客户端领 1 亿 Token（约 10,000 积分），每账号限一次，统一 11/1 23:59 失效。",
+      "validity": "2026-11-01",
       "region": "",
       "gates": [],
       "note": "",
       "sponsored": false,
       "entry_url": "https://autoclaw.zhipuai.cn",
-      "intel_url": "https://autoclaw.z.ai/blog/news/Weekly-Perks-M10W2/",
+      "intel_url": "https://autoclaw.zhipuai.cn/blog/news/M10W4/",
       "signup": "",
       "modality": "GLM-5.3-Flash · 桌面 Agent",
-      "last_verified": "2026-10-20",
-      "update_source": "自动更新 2026-10-20（首日福利已结束，改写为当前档）",
+      "last_verified": "2026-10-26",
+      "update_source": "自动更新 2026-10-26（M10W4 新一轮）",
       "detail_slug": "0085puck",
       "added": "2026-10-11",
       "source_urls": [
@@ -1355,6 +1355,35 @@
       ],
       "detail_slug": "0121rbso",
       "added": "2026-10-20"
+    },
+    {
+      "name": "七牛云 Conatus Free（1024 免费模型季）",
+      "vendor": "七牛云",
+      "category": "model",
+      "free_type": "限时活动",
+      "quota": "实名认证后每日 1 亿 Token；单笔充值满 100 元提至每日 10 亿。10/24–11/30，额度每日 0 点重置不结转。",
+      "validity": "2026-11-30",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://www.qiniu.com/ai/free-models/conatus-2026",
+      "intel_url": "https://www.qiniu.com/ai/model/qiniu/conatus-free",
+      "signup": "登录七牛云完成实名认证，控制台创建 API Key，Base 填 https://api.qnaigc.com/v1，模型名填 qiniu/conatus-free。",
+      "modality": "Conatus 融合模型 · 1M 上下文",
+      "last_verified": "2026-10-26",
+      "update_source": "自动更新 2026-10-26",
+      "source_urls": [
+        "https://www.qiniu.com/ai/free-models/conatus-2026",
+        "https://www.qiniu.com/ai/model/qiniu/conatus-free"
+      ],
+      "detail_slug": "0040fdzy",
+      "legacy_detail_paths": [
+        "/intel/item-010-七牛云-ai-推理/",
+        "/intel/item-012-七牛云-ai-推理/",
+        "/intel/item-014-七牛云-ai-推理/"
+      ],
+      "added": "2026-10-26"
     }
   ],
   "retired": [
@@ -1499,18 +1528,6 @@
     }
   ],
   "watchlist": [
-    {
-      "name": "七牛云 AI 推理",
-      "url": "https://s.qiniu.com/VV7Zfa",
-      "reason": "用户于 2026-10-06 要求移入观望区，待观察免费额度政策是否稳定。",
-      "detail_slug": "0040fdzy",
-      "legacy_detail_paths": [
-        "/intel/item-010-七牛云-ai-推理/",
-        "/intel/item-012-七牛云-ai-推理/",
-        "/intel/item-014-七牛云-ai-推理/"
-      ],
-      "reviewed_at": "2026-10-06"
-    },
     {
       "name": "百度千帆（文心）",
       "url": "https://qianfan.cloud.baidu.com",
@@ -2143,6 +2160,13 @@
       "reason": "办公客户端，非模型额度，暂时下架。",
       "detail_slug": "0098zpea",
       "reviewed_at": "2026-10-20"
+    },
+    {
+      "name": "Today AI（todayai.cn）",
+      "url": "https://todayai.cn",
+      "reason": "2026-10-26 发现：官网首页明写「新用户注册即领 3 亿 Tokens，畅享 3 个月 Pro 权益，基础版永久免费」，内置 DeepSeek V4.1-Flash 与 GLM-5.3，额度按月重置。属消费级桌面/云端 Agent，官网未提供公开 API 接入方式，额度只能在产品内消耗，与站内已移入观望的 千问办公 / 库库 AI 同类；待观察是否开放 API 与额度稳定性。",
+      "detail_slug": "0125ojmc",
+      "added": "2026-10-26"
     }
   ],
   "hidden": []
