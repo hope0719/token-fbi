@@ -143,9 +143,12 @@ watchlist = d.get("watchlist", [])
 anchored = d.get("last_updated") or max((it.get("last_verified", "") for it in items), default="")
 
 # ---------- 永不上架名单 ----------
-# 用户明确点名「禁止上架」的平台。出现在 items 里直接中断构建，
-# 避免自动更新把用户否掉的平台又加回来。新增一律走用户明确指示。
-NEVER_RELIST = ("腾讯元器", "DeepSeek 开放平台", "百度搭子 DuMate")
+# 用户明确点名「禁止上架」的平台。出现在 items（首页卡片）里直接中断构建；
+# 观望区同样对外渲染，所以出现在 watchlist 里也中断，避免自动更新把用户否掉的
+# 平台又加回来。新增一律走用户明确指示。
+NEVER_RELIST = ("腾讯元器", "DeepSeek 开放平台", "百度搭子 DuMate",
+                "Today AI", "todayai")
+
 _relisted = [it.get("name", "") for it in items
              if any(k in (it.get("name") or "") for k in NEVER_RELIST)]
 if _relisted:
@@ -153,6 +156,14 @@ if _relisted:
         "构建中断：以下平台在「永不上架」名单里，却被写进了 items —— "
         + "、".join(_relisted)
         + "。除非用户明确要求上架，否则不要收录。")
+
+_watch_blocked = [w.get("name", "") for w in watchlist
+                  if any(k in (w.get("name") or "") for k in NEVER_RELIST)]
+if _watch_blocked:
+    raise SystemExit(
+        "构建中断：以下平台在「永不上架」名单里，却被写进了 watchlist（观望区对外可见）—— "
+        + "、".join(_watch_blocked)
+        + "。这类平台连观望区都不许出现，请直接从 data.json 删除。")
 
 
 CAT_LABEL = {"model": "大模型", "tool": "工具", "event": "限时活动"}

@@ -2160,13 +2160,6 @@
       "reason": "办公客户端，非模型额度，暂时下架。",
       "detail_slug": "0098zpea",
       "reviewed_at": "2026-10-20"
-    },
-    {
-      "name": "Today AI（todayai.cn）",
-      "url": "https://todayai.cn",
-      "reason": "2026-10-26 发现：官网首页明写「新用户注册即领 3 亿 Tokens，畅享 3 个月 Pro 权益，基础版永久免费」，内置 DeepSeek V4.1-Flash 与 GLM-5.3，额度按月重置。属消费级桌面/云端 Agent，官网未提供公开 API 接入方式，额度只能在产品内消耗，与站内已移入观望的 千问办公 / 库库 AI 同类；待观察是否开放 API 与额度稳定性。",
-      "detail_slug": "0125ojmc",
-      "added": "2026-10-26"
     }
   ],
   "hidden": []
