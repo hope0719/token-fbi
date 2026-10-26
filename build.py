@@ -386,7 +386,6 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
       {note_block}
       {chips_block}
       <div class="c-actions">
-        <a class="btn sm ghost" href="{href}" rel="bookmark">查看详情</a>
         <a class="btn sm primary" href="{entry}" target="_blank" rel="{entry_rel}">点击领取 →</a>
       </div>
     </article>'''
@@ -662,6 +661,12 @@ img{max-width:100%}
 .c-name{font-size:17px;font-weight:800;line-height:1.25}
 .c-name a{color:inherit;text-decoration:none}
 .c-name a:hover{color:var(--accent-deep)}
+/* 【整卡详情入口】标题链接用 ::after 铺满整张卡：点卡片任意位置进详情页，
+   「点击领取」按钮靠 z-index 浮在上层保持独立外链。去掉「查看详情」按钮后入口反而更大。 */
+.card{cursor:pointer}
+.c-name a::after{content:"";position:absolute;inset:0;z-index:1}
+.c-actions .btn{position:relative;z-index:2}
+.c-actions .btn.primary{flex:1;justify-content:center}
 .c-vendor{font-size:12.5px;color:var(--text3);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .c-vendor .v-brand{color:var(--text3);font-weight:700}
 .c-vendor .v-mod{font-family:var(--mono);font-size:11.5px;color:var(--text3)}
