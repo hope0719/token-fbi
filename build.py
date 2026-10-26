@@ -634,6 +634,8 @@ img{max-width:100%}
 .hero h1 .hl{color:var(--accent-deep)}
 .hero .sub{max-width:900px;margin:11px auto 0;color:var(--text2);font-size:14.5px;line-height:1.5;text-wrap:pretty}
 .hero .sub b{color:var(--text)}
+/* 仅供读屏与搜索引擎读取的隐藏标题（首页视觉标题已移除） */
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .stats{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:4px 18px;margin:14px 0 0;color:var(--text2);font-size:13px}
 .stat{display:inline-flex;align-items:baseline;gap:6px;background:none;border:0;padding:0;box-shadow:none;text-align:left}
 .stat .sv{font-size:16px;font-weight:850;color:var(--accent-deep);font-family:var(--mono);line-height:1}
@@ -688,7 +690,9 @@ img{max-width:100%}
 .footer a:hover{color:var(--accent-deep)}
 .footer .disc{font-size:12.5px;color:var(--text3);line-height:1.6;margin-top:14px}
 .foot-bottom{text-align:center;color:var(--text3);font-size:12.5px;margin-top:26px;padding-top:18px;border-top:1px solid var(--line)}
-.sponsor-wrap{margin-top:12px}
+.sponsor-wrap{margin-top:22px}
+/* 首屏 hero 已移除：内容区补上方留白 */
+#list{padding-top:34px}
 .ad-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:9px}
 .sponsor-tag{font-size:12px;font-weight:800;letter-spacing:.06em;color:#fff;background:var(--accent-deep);padding:4px 11px;border-radius:8px;flex-shrink:0}
 .ad-note{font-size:13px;color:var(--text3)}
@@ -782,7 +786,6 @@ img{max-width:100%}
   <div class="brand"><span class="dot"></span>Token FBI</div>
   <div class="nav-links"><a href="#list">情报列表</a><a href="/table/">完整情报表</a><a href="#faq">常见问题</a><a href="/about/">关于</a><a href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达</a></div>
   <div class="nav-right">
-    <a class="btn primary" href="#list">查看免费额度 →</a>
     <a class="btn line" href="https://github.com/hope0719/token-fbi" target="_blank" rel="noopener">在 GitHub 上查看</a>
     <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">☰</button>
   </div>
@@ -797,24 +800,10 @@ img{max-width:100%}
   <a href="/sponsor/">合作赞助</a>
 </div></nav>
 
-<header class="hero"><div class="wrap">
-  <div class="hero-top">
-    <span class="badge-dot">持续更新 · 全网免费 AI token 情报</span>
-  </div>
-  <h1>把值得领取的 <span class="hl">AI 额度</span>放在一处。</h1>
-  <p class="sub">额度、模型、领取方式一次查清，每条都标注<b>免费类型、门槛与截止时间，不靠猜。</b></p>
-  <div class="stats">
-    <div class="stat"><span class="sv">{N_TOTAL}</span><span class="sl">条情报</span></div>
-    <div class="stat"><span class="sv">{N_MODEL}</span><span class="sl">大模型</span></div>
-    <div class="stat"><span class="sv">{N_TOOL}</span><span class="sl">工具</span></div>
-    <div class="stat"><span class="sv">{N_ACTIVE}</span><span class="sl">活动</span></div>
-    <div class="stat stat-note" title="按免费类型统计，与左侧分类维度不同"><span class="sl">其中限时活动</span><span class="sv">{N_EVENT}</span></div>
-  </div>
-</div></header>
-
 {SPONSOR}
 
 <main class="wrap" id="list">
+  <h1 class="vh">Token FBI · 免费 AI 额度情报站｜免费大模型 API 汇总</h1>
   <h2 class="sec-title" style="text-align:left;font-size:23px;margin-bottom:20px">全部情报</h2>
   <p class="sec-lead">以下 {N_TOTAL} 个渠道当前均可免费领取大模型或工具额度，无需付费、无需绑卡；其中 {N_EVENT} 条为限时活动，已标注截止时间。</p>
   <div class="grid" id="grid">
