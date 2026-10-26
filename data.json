@@ -38,7 +38,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "限时活动",
-      "quota": "Step 5 Preview 免费至 10 月 25 日；HY3 免费至 10 月 31 日；HY4 preview 按体验记录享免费额度。",
+      "quota": "Hy3 全天免费、Hy4 preview 每晚 23:00–次日 8:00 免费，两档均至 10 月 31 日；Step 5 Preview 的限免已于 10 月 25 日结束。",
       "validity": "2026-10-31",
       "region": "",
       "gates": [],
@@ -46,7 +46,7 @@
       "sponsored": false,
       "entry_url": "https://www.codebuddy.cn/events/invite?inviteCode=3g5i964bgg0sknpi",
       "intel_url": "https://www.codebuddy.cn/events/invite?inviteCode=3g5i964bgg0sknpi",
-      "last_verified": "2026-10-12",
+      "last_verified": "2026-10-26",
       "modality": "Step 5 Preview · HY3 · HY4 preview · DeepSeek-V4.1-Flash",
       "signup": "新用户注册送 2000 积分；Step 5 Preview 于 2026 年 10 月 12 日上线、限时免费至 10 月 25 日；HY4 preview 首次体验用户须在 10 月 10 日 23:59 前开启对话。",
       "activity_rules": [
@@ -56,7 +56,7 @@
         "HY4 preview 从未体验用户（包括此前未体验过该模型的老账号）：在 2026 年 10 月 10 日 23:59 前首次开启一次 HY4 preview 对话，从开启当天起享连续 14 天的每日免费额度。",
         "每日免费额度不等于不限量；额度数值和时间口径以客户端活动说明为准。"
       ],
-      "update_source": "用户补充，2026-10-12",
+      "update_source": "自动更新 2026-10-26（巡检：Step 5 限免到期未续、Hy3/Hy4 到 10/31）",
       "detail_slug": "0001hgwg",
       "legacy_detail_paths": [
         "/intel/item-000-workbuddy/",
