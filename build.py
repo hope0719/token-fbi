@@ -786,7 +786,7 @@ img{max-width:100%}
   <div class="brand"><span class="dot"></span>Token FBI</div>
   <div class="nav-links"><a href="#list">情报列表</a><a href="/table/">完整情报表</a><a href="#faq">常见问题</a><a href="/about/">关于</a><a href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达</a></div>
   <div class="nav-right">
-    <a class="btn line" href="https://github.com/hope0719/token-fbi" target="_blank" rel="noopener">在 GitHub 上查看</a>
+    <a class="btn line" href="https://github.com/hope0719/token-fbi" target="_blank" rel="noopener">给作者点 star</a>
     <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">☰</button>
   </div>
 </div>
