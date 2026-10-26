@@ -470,7 +470,7 @@
       "sponsored": false,
       "entry_url": "https://modelscope.cn",
       "intel_url": "https://modelscope.cn",
-      "last_verified": "2026-09-28",
+      "last_verified": "2026-10-26",
       "modality": "Qwen 系列 · LUX · Stable Diffusion 等",
       "signup": "",
       "detail_slug": "0020xrne",
@@ -481,7 +481,13 @@
         "/intel/item-023-魔搭社区-modelscope/",
         "/intel/item-024-魔搭社区-modelscope/",
         "/intel/item-028-魔搭社区-modelscope/"
-      ]
+      ],
+      "promo_url": "https://modelscope.cn/register?inviteCode=%E5%88%98%E5%90%8C%E5%AD%A6&invitorName=modelscope_mp_982967993",
+      "promo_net": "ModelScope 注册邀请",
+      "invite_url": "https://modelscope.cn/register?inviteCode=%E5%88%98%E5%90%8C%E5%AD%A6&invitorName=modelscope_mp_982967993",
+      "invite_code": "刘同学",
+      "invite_text": "我在用魔搭社区 ModelScope，注册即享模型免费调用，邀请码 刘同学。",
+      "update_source": "用户指定，2026-10-26（点击领取改走注册邀请链接）"
     },
     {
       "name": "OpenCode Zen",
