@@ -99,3 +99,10 @@ python3 gen_og_images.py && python3 build.py
 - 调整保留天数：改 `build.py` 顶部的 `NEW_DAYS`（默认 3）。
 - **时区口径（务必遵守）**：`added` 的窗口判定与星标到期时刻一律按**北京时间（UTC+8）**计算，不依赖构建机时区。本机是 CST、Cloudflare 构建机是 UTC，两边结果必须完全一致 —— 验证方式：`TZ=UTC python3 build.py` 与本地构建产出的 `data-exp` 应逐字节相同。若改回用 `date.today()` / 裸 `datetime.now()`，会出现两种故障：① 到期时刻随构建机漂移 8 小时（线上曾出现北京 10-10 08:00 而非 00:00）；② 北京时间 00:00–08:00 之间构建时 UTC 仍停在前一天，当天新增条目**不出星**。
 - 校验：构建日志末尾的 `newstar=N` 为注入自摘脚本的页面数（正常为 1，即首页）；或直接跑 `python3 scripts/check_star.py`（比对 `data.json` 的 `added` 口径与首页实际渲染结果，不符即非 0 退出）。
+
+## AI 活动雷达
+
+- 正式地址：`https://token-fbi.com/ai-pick/`，首页及各内容页入口使用同域链接。
+- `ai-pick/` 保存原站前端、图片和数据快照，构建器复制到 `dist/ai-pick/`，统一注入主站统计、favicon 和广告配置。
+- 原仓库 `hope0719/ai-pick` 继续作为活动数据来源；`.github/workflows/sync-ai-pick.yml` 每小时检查数据更新，有变化后验证构建并提交，触发 Cloudflare 发布。失败时保留已有快照。可手动运行该工作流立即同步。
+- 页面样式与筛选逻辑保留，canonical 与分享地址使用新正式地址；来源项目致谢见 `ai-pick/README.md`。

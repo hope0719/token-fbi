@@ -789,7 +789,7 @@ img{max-width:100%}
 <body>
 <nav class="nav"><div class="wrap nav-in">
   <div class="brand"><span class="dot"></span>Token FBI</div>
-  <div class="nav-links"><a href="#list">情报列表</a><a href="/table/">完整情报表</a><a href="#faq">常见问题</a><a href="/about/">关于</a><a href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达</a></div>
+  <div class="nav-links"><a href="#list">情报列表</a><a href="/table/">完整情报表</a><a href="#faq">常见问题</a><a href="/about/">关于</a><a href="/ai-pick/">活动雷达</a></div>
   <div class="nav-right">
     <a class="btn line" href="https://github.com/hope0719/token-fbi" target="_blank" rel="noopener">给作者点 star</a>
     <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">☰</button>
@@ -801,7 +801,7 @@ img{max-width:100%}
   <a href="#watchlist">观望区</a>
   <a href="#faq">常见问题</a>
   <a href="/about/">关于</a>
-  <a href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达</a>
+  <a href="/ai-pick/">活动雷达</a>
   <a href="/sponsor/">合作赞助</a>
 </div></nav>
 
@@ -1358,7 +1358,7 @@ with open(os.path.join(DIST, "_headers"), "w", encoding="utf-8") as f:
     f.write("/go/*\n  X-Robots-Tag: noindex\n")
 
 # ---------- sitemap.xml ----------
-urls = [f"{SITE}/", f"{SITE}/table/", f"{SITE}/about/", f"{SITE}/sponsor/", f"{SITE}/subscribe/", f"{SITE}/traffic/", f"{SITE}/privacy/", f"{SITE}/terms/", f"{SITE}/data.json", f"{SITE}/llms.txt", f"{SITE}/llms-full.txt"]
+urls = [f"{SITE}/ai-pick/", f"{SITE}/", f"{SITE}/table/", f"{SITE}/about/", f"{SITE}/sponsor/", f"{SITE}/subscribe/", f"{SITE}/traffic/", f"{SITE}/privacy/", f"{SITE}/terms/", f"{SITE}/data.json", f"{SITE}/llms.txt", f"{SITE}/llms-full.txt"]
 urls += [f"{SITE}/intel/{slug(i, it.get('name',''))}/" for i, it in enumerate(items) if not it.get("ad_only")]
 sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for u in urls:
@@ -1368,7 +1368,7 @@ with open(os.path.join(DIST, "sitemap.xml"), "w", encoding="utf-8") as f:
     f.write(sitemap)
 
 # ---------- llms.txt / llms-full.txt ----------
-llms = f"# Token 情报局\n\n> 面向中文用户的免费 AI Token、模型额度与开发工具情报目录。本站只整理、核验并链接到平台入口，不代跑、不镜像。\n\n## 核心页面\n\n- [首页]({SITE}/): 最新免费额度、工具与下架名单。\n- [完整情报表]({SITE}/table/): 逐条列出免费类型、额度摘要、适用地区与截止时间。\n- [关于与核验方法论]({SITE}/about/): 运营主体、核验流程、收录标准与数据开放说明。\n- [合作赞助]({SITE}/sponsor/): 首页广告位刊例价 ¥{AD_PRICE_FROM} / 月起（首屏主位 / 常规位 / 专题冠名三档，季付约 8 折、年付约 6.7 折）、投稿邮箱与合作流程。\n- [订阅新额度提醒]({SITE}/subscribe/): 免费微信群、邮件订阅与作者付费社群三种触达方式，用于接收新上架额度与活动变更提醒。\n- [流量透明]({SITE}/traffic/): 本站访问数据的统计方式、统计区间与当前数值，以及 AITDK / SimilarWeb 等第三方工具为何显示 0 的机制说明（面板样本偏差与 5,000 次展示门槛）。\n- [隐私政策]({SITE}/privacy/): 数据处理与免责说明（无登录、不收集个人信息，仅做匿名访问统计）。\n- [服务条款]({SITE}/terms/): 使用规则、知识产权、第三方链接、广告位标注、免责与责任限制。\n- [完整机器可读目录]({SITE}/llms-full.txt): 当前全部有效条目。\n- [开放数据]({SITE}/data.json): 全量结构化 JSON。\n\n## 使用边界\n\n- 额度、价格、模型和截止时间会变化，以平台最新页面为准。\n- 推广内容单独标注，不参与排序与收录判断。\n"
+llms = f"# Token 情报局\n\n> 面向中文用户的免费 AI Token、模型额度与开发工具情报目录。本站只整理、核验并链接到平台入口，不代跑、不镜像。\n\n## 核心页面\n\n- [首页]({SITE}/): 最新免费额度、工具与下架名单。\n- [AI 活动雷达]({SITE}/ai-pick/): 黑客松、竞赛与开发者活动机会。\n- [完整情报表]({SITE}/table/): 逐条列出免费类型、额度摘要、适用地区与截止时间。\n- [关于与核验方法论]({SITE}/about/): 运营主体、核验流程、收录标准与数据开放说明。\n- [合作赞助]({SITE}/sponsor/): 首页广告位刊例价 ¥{AD_PRICE_FROM} / 月起（首屏主位 / 常规位 / 专题冠名三档，季付约 8 折、年付约 6.7 折）、投稿邮箱与合作流程。\n- [订阅新额度提醒]({SITE}/subscribe/): 免费微信群、邮件订阅与作者付费社群三种触达方式，用于接收新上架额度与活动变更提醒。\n- [流量透明]({SITE}/traffic/): 本站访问数据的统计方式、统计区间与当前数值，以及 AITDK / SimilarWeb 等第三方工具为何显示 0 的机制说明（面板样本偏差与 5,000 次展示门槛）。\n- [隐私政策]({SITE}/privacy/): 数据处理与免责说明（无登录、不收集个人信息，仅做匿名访问统计）。\n- [服务条款]({SITE}/terms/): 使用规则、知识产权、第三方链接、广告位标注、免责与责任限制。\n- [完整机器可读目录]({SITE}/llms-full.txt): 当前全部有效条目。\n- [开放数据]({SITE}/data.json): 全量结构化 JSON。\n\n## 使用边界\n\n- 额度、价格、模型和截止时间会变化，以平台最新页面为准。\n- 推广内容单独标注，不参与排序与收录判断。\n"
 llms_full = f"# Token 情报局完整目录\n\n最后更新：{anchored}\n\n## 当前有效情报（{len(editorial)} 条）\n\n"
 for it in editorial:
     u = f"{SITE}{name2href.get(it.get('name'), '/')}"
@@ -1866,7 +1866,7 @@ h1{font-size:clamp(26px,4vw,36px);line-height:1.22;font-weight:850}
 <body>
 <nav class="nav"><div class="wrap nav-in">
   <div class="brand"><span class="dot"></span>Token FBI</div>
-  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/about/">关于</a><a href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达</a></div>
+  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/about/">关于</a><a href="/ai-pick/">活动雷达</a></div>
   <div class="nav-right"><a class="btn" href="/">← 返回情报列表</a></div>
 </div></nav>
 
@@ -2028,7 +2028,7 @@ h1{font-size:clamp(26px,4vw,36px);line-height:1.22;font-weight:850}
 <body>
 <nav class="nav"><div class="wrap nav-in">
   <div class="brand"><span class="dot"></span>Token FBI</div>
-  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/about/">关于</a><a href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达</a></div>
+  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/about/">关于</a><a href="/ai-pick/">活动雷达</a></div>
   <div class="nav-right"><a class="btn" href="/">← 返回情报列表</a></div>
 </div></nav>
 
@@ -2196,7 +2196,7 @@ h1{font-size:clamp(26px,4vw,36px);line-height:1.22;font-weight:850}
 <body>
 <nav class="nav"><div class="wrap nav-in">
   <div class="brand"><span class="dot"></span>Token FBI</div>
-  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/sponsor/">合作赞助</a><a href="/about/">关于</a><a href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达</a></div>
+  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/sponsor/">合作赞助</a><a href="/about/">关于</a><a href="/ai-pick/">活动雷达</a></div>
   <div class="nav-right"><a class="btn" href="/">← 返回情报列表</a></div>
 </div></nav>
 
@@ -2334,7 +2334,7 @@ main{padding:6px 0 50px}
 <body>
 <nav class="nav"><div class="wrap nav-in">
   <div class="brand"><span class="dot"></span>Token FBI</div>
-  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/about/">关于</a><a href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达</a></div>
+  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/about/">关于</a><a href="/ai-pick/">活动雷达</a></div>
   <div class="nav-right"><a class="btn" href="/">← 返回情报列表</a></div>
 </div></nav>
 
@@ -2473,6 +2473,12 @@ body.site-promo-notfound>.wrap{margin:auto;padding:80px 24px}
 if ADSENSE_ID:
     with open(os.path.join(DIST, "ads.txt"), "w", encoding="utf-8") as f:
         f.write(f"google.com, {ADSENSE_ID.removeprefix('ca-')}, DIRECT, f08c47fec0942fa0\n")
+
+# 活动雷达作为同域子目录发布，沿用全站统计、广告与 favicon 注入。
+radar_src = os.path.join(HERE, "ai-pick")
+radar_out = os.path.join(DIST, "ai-pick")
+shutil.rmtree(radar_out, ignore_errors=True)
+shutil.copytree(radar_src, radar_out, ignore=shutil.ignore_patterns("README.md", "SOURCES.md"))
 
 _fav_patched = 0
 _author_patched = 0
