@@ -101,7 +101,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "限时活动",
-      "quota": "Qwen3.8-Flash 限免至 10 月 31 日、无每日调用上限；DeepSeek-V4.1-Flash-1017 限免至 10 月 24 日。",
+      "quota": "Qwen3.8-Flash 限免至 10 月 31 日、无每日调用上限；DeepSeek-V4.1-Flash-1017 按 0× Credits 计费，免费期延至 11 月 1 日 00:00（UTC+8）。",
       "validity": "2026-10-31",
       "region": "",
       "gates": [],
@@ -109,13 +109,14 @@
       "sponsored": false,
       "entry_url": "https://t.aliyun.com/U/Ob4f6l",
       "intel_url": "https://t.aliyun.com/U/Ob4f6l",
-      "last_verified": "2026-10-20",
+      "last_verified": "2026-10-26",
       "modality": "Qwen3.8-Flash · Qwen3.8-Max · DeepSeek-V4.1-Flash-1017",
       "signup": "",
       "activity_rules": [
-        "Qwen3.8-Flash 免费使用延长至 2026 年 10 月 31 日；经确认无隐藏的每日调用上限，实际额度以客户端活动说明为准。"
+        "Qwen3.8-Flash 免费使用延长至 2026 年 10 月 31 日；经确认无隐藏的每日调用上限，实际额度以客户端活动说明为准。",
+        "DeepSeek-V4.1-Flash-1017 由 10 月 24 日延长至 11 月 1 日 00:00（UTC+8），期间按 0× Credits 计费，免费与付费个人账号同享，在模型选择器里直接选中即可使用、无需领取；该模型原为 0.2× 系数，到期后以官方模型系数表为准。"
       ],
-      "update_source": "用户指定，2026-10-20（新增 DeepSeek-V4.1-Flash-1017 限免至 10-24）",
+      "update_source": "用户指定，2026-10-26（DeepSeek-V4.1-Flash-1017 限免延长至 10/31）",
       "detail_slug": "0002eanr",
       "legacy_detail_paths": [
         "/intel/item-001-qoder-cn/",
