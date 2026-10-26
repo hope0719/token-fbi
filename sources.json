@@ -1,0 +1,112 @@
+{
+  "_comment": "官方源监控清单。每日抓取 -> 正文归一化 -> 与上次快照 diff，只报「变了什么」。kind=html 走正文抽取，kind=rss 走条目抽取。min_chars 低于阈值视为抓取退化（多为 SPA 页面），会标 short 让人工兜底。slug 指向 data.json 里受该源影响的卡片，用于定位要改哪一条。",
+  "version": 1,
+  "updated": "2026-10-26",
+  "sources": [
+    {
+      "id": "autoclaw-blog",
+      "label": "智谱 AutoClaw 博客（周更福利公告首发）",
+      "url": "https://autoclaw.zhipuai.cn/blog/",
+      "kind": "html",
+      "slugs": ["0085puck"],
+      "min_chars": 3000,
+      "enabled": true,
+      "note": "周更福利 M10W3/M10W4 这类帖子的首发地，比中文清单快"
+    },
+    {
+      "id": "autoclaw-changelog",
+      "label": "智谱 AutoClaw 更新日志",
+      "url": "https://autoclaw.zhipuai.cn/changelog",
+      "kind": "html",
+      "slugs": ["0085puck"],
+      "min_chars": 1500,
+      "enabled": true,
+      "note": "版本号与功能变更"
+    },
+    {
+      "id": "qoder-blog",
+      "label": "Qoder 官方博客（模型限免公告）",
+      "url": "https://qoder.com/blog",
+      "kind": "html",
+      "slugs": ["0002eanr"],
+      "min_chars": 5000,
+      "enabled": true,
+      "note": "DeepSeek 免费期延长的原始公告就在这里，中文源滞后 1-3 天"
+    },
+    {
+      "id": "qiniu-conatus",
+      "label": "七牛云 Conatus Free 活动页",
+      "url": "https://www.qiniu.com/ai/free-models/conatus-2026",
+      "kind": "html",
+      "slugs": ["0040fdzy"],
+      "min_chars": 2000,
+      "enabled": true,
+      "note": "活动期与每日额度原文"
+    },
+    {
+      "id": "unisound-u2flash",
+      "label": "云知声 U2-Flash 模型页",
+      "url": "https://maas.unisound.com/models/u2-flash",
+      "kind": "html",
+      "slugs": ["0108rkie"],
+      "min_chars": 2000,
+      "enabled": true,
+      "note": "页面标题里直接写限免起止日期，变化一眼可见"
+    },
+    {
+      "id": "siliconflow-news",
+      "label": "硅基流动 资讯中心",
+      "url": "https://www.siliconflow.cn/news",
+      "kind": "html",
+      "slugs": ["0013uppn"],
+      "min_chars": 1500,
+      "enabled": true,
+      "note": "上新与活动公告"
+    },
+    {
+      "id": "openrouter-announcements",
+      "label": "OpenRouter Announcements",
+      "url": "https://openrouter.ai/announcements",
+      "kind": "html",
+      "slugs": ["0018bing"],
+      "min_chars": 3000,
+      "enabled": true,
+      "note": "免费模型上下架的风向标，聚合器卡片据此更新"
+    },
+    {
+      "id": "ailyre-news",
+      "label": "Ailyre AI 速递 RSS（带已开始/已结束/待确认状态）",
+      "url": "https://www.ailyre.com/news/rss.xml",
+      "kind": "rss",
+      "slugs": [],
+      "min_chars": 1500,
+      "enabled": true,
+      "note": "覆盖官方 X 上的限免/延期公告，本清单里最灵敏的一路：每条带状态与来源链接，正文页是前端渲染抓不到，RSS 可以；slug 为空表示全局线索，需人工判断落到哪张卡"
+    },
+    {
+      "id": "freetokens-index",
+      "label": "FreeTokens 免费额度索引",
+      "url": "https://freetokens.custats.info/",
+      "kind": "html",
+      "slugs": [],
+      "min_chars": 5000,
+      "enabled": true,
+      "note": "每条带 last checked 与引用原文，可反查官方口径"
+    },
+    {
+      "id": "rssbz-briefing",
+      "label": "RSS.bz AI 简报",
+      "url": "https://rss.bz/",
+      "kind": "html",
+      "slugs": [],
+      "min_chars": 2000,
+      "enabled": true,
+      "note": "英文侧简讯，官方 X 帖的二手镜像"
+    }
+  ],
+  "known_limits": [
+    "火山方舟 docs、阿里云百炼 release-notes、腾讯云部分文档、qwen.ai/blog、阶跃 stepfun.com 都是前端渲染（JS），纯抓取只能拿到几百字壳子，本脚本会标 short；这些平台继续靠搜索 + audit_drift 巡检兜底。",
+    "各家 X 账号目前没有可用原生 RSS（rsshub 公共实例 404/503），X 侧公告通过 ailyre / rss.bz 二手镜像覆盖。",
+    "登录态页面（控制台内的额度页）不抓，礼貌起见只抓公开页。"
+  ]
+}
