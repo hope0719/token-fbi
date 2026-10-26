@@ -23,8 +23,9 @@
 - 排序列：`editorial = items 去掉 sponsored`，按 items 自然顺序渲染，无额外排序；新增只需 append。
 - **更新既有卡不产生新增星标、不触发 assign 脚本**（星标只认条目 `added`）。
 
-## 黑名单（用户指定，永不上架 items）
-- 腾讯元器（yuanqi.tencent.com）、DeepSeek 开放平台（platform.deepseek.com）。
+## 黑名单（用户指定，永不上架）
+- 腾讯元器（yuanqi.tencent.com）、DeepSeek 开放平台（platform.deepseek.com）、百度搭子 DuMate（dumate.cn）、**Today AI（todayai.cn，2026-10-26 用户原话「绝对不上架」）**。
+- **连 `watchlist`（观望区）也不许出现**——观望区同样对外渲染，写进去等于还挂在站上。`build.py` 的 `NEVER_RELIST` 守卫已覆盖 `items` + `watchlist` 双处，命中即中断构建。
 
 ## 首页角标
 - 站长推荐：`build.py` 的 `RECO_NAMES` 当前 = `["WorkBuddy 国际版"]`。
@@ -62,5 +63,12 @@
 - **收录总原则（2026-10-20 用户明确，优先于此前所有门槛细则）**：本站有成本、靠邀请码/返佣维持，**「带邀请码 / 返佣链接 / affiliate」本身不是排除理由，也不是下架理由**；带了也不影响收录与排序，只需在字段上如实呈现。不要用「属付费抵扣券 / 推广链接」这类理由把用户想留的条目砍掉。原有「排除付费抵扣券、纯赞助/返佣」的收紧口径作废，改为：有免费或近乎免费的可用权益（含代金券、学生认证、新户礼）即可收，能否获利不参与判断。此类条目的 quota 不写「无免费模型：」开头（会与 free_type 冲突），直接写能拿到什么。
 - 状态变更实例（2026-10-20）：国家超算 SCNet `0024dpvl` 移入 watchlist（新户包限时 30 天、老用户无持续额度）；云工开物学生专区 `0031rtun` 恢复 items 原位（index 30，LobsterAI 之后、阿里云百炼之前），free_type 改注册赠送；硅基流动 `0013uppn` 长期免费成立，补「新用户注册赠 16 元代金券」口径。
 - **卡片提示位只许人工写入（2026-10-20 用户明确，最高优先级）**：卡片上的**蓝框 = `gates`**、**黄底块 = `note`** 都是人工提示位。自动更新**一律留空**，不得写「需实名 / 需下载客户端 / 当天清零 / 以页面为准 / 用完仍可用基础模型」这类补充说明；只有用户说「这条加一句 XX」才填，并在 `update_source` 标「用户指定」。`build.py` 已加渲染层拦截：`render_card` 与详情页对 `update_source` 以「自动更新」开头的条目，`gates` / `note` 一律不渲染（`auto_src` 变量）。用户认可的标准示例是「字节 TRAE」卡片（2 条蓝框、由用户 2026-10-19 亲自给出）。2026-10-20 已清空 20 条自动更新条目的 gates、25 条 note；现存仅 TRAE(2)+Antigravity(1) 蓝框、商汤+微信云开发(2) 黄块，均为人工内容。
-- **永不上架黑名单（`build.py` 顶部 `NEVER_RELIST`，2026-10-20 起硬约束）**：腾讯元器、DeepSeek 开放平台、**百度搭子 DuMate**。命中即 `raise SystemExit` 中断构建并打印平台名，自动更新无法把它们塞回 `items`。新增只能靠用户明确点名；`retired` 里对应 reason 写「用户明确要求永不上架（YYYY-MM-DD）」。已验证：临时把 DuMate 写回 items → 构建 exit=1 并输出提示。
+- **永不上架黑名单（`build.py` 顶部 `NEVER_RELIST`，2026-10-20 起硬约束）**：腾讯元器、DeepSeek 开放平台、**百度搭子 DuMate**、**Today AI / todayai（2026-10-26 增补）**。命中即 `raise SystemExit` 中断构建并打印平台名，自动更新无法把它们塞回 `items`。**2026-10-26 起守卫范围扩到 `watchlist`**：观望区也对外渲染，写进去同样中断（`_watch_blocked`）。新增只能靠用户明确点名；`retired` 里对应 reason 写「用户明确要求永不上架（YYYY-MM-DD）」。已验证：临时把 DuMate 写回 items → 构建 exit=1 并输出提示；临时把 Today AI 写回 watchlist → 同样中断。
+- **2026-10-26（恢复自动化后的首次运行）**：
+  - 定时任务已重建为 `76b2fc99-635a-42d2-83ba-24b84d6298fd`「Token FBI 每日免费 token 情报更新」，每天 09:00，`cwds` 指向本生产目录；旧 `automation-1784199298218` 已不在任务列表中（10-20 置 PAUSED 后消失），提示词按 `_新定时任务-提示词-2026-10-20.md` 落地。
+  - items 46→47：**七牛云从 watchlist 提升为 items**（沿用原 slug `0040fdzy`，保留 `legacy_detail_paths`）——Conatus Free 1024 免费模型季，实名后每日 1 亿 Token、单笔充值满 100 元提至每日 10 亿，10/24–11/30，`qiniu/conatus-free`、1M 上下文、Completions+Messages 双协议，官方活动页全量核实。
+  - AutoClaw `0085puck` 续期至 M10W4（10/26–11/1 登录领 1 亿 Token≈10,000 积分，11/1 23:59 统一失效）。周更活动按「有新一期直接改 validity+quota」处理，不下架。
+  - watchlist 曾 +1 Today AI（todayai.cn，注册 3 亿 Tokens + 3 个月 Pro，消费级 Agent、无公开 API）。**2026-10-26 12:35 用户裁定「绝对不上架」→ 已从 watchlist 删除并列入 `NEVER_RELIST`（items + watchlist 双守卫），此条永不出现。**
+  - 本轮远端与本地同起点，commit `72d09f2` 一次推送成功；线上 total=47、公开 44。
+
 - **蓝字卖点条 = `card_promo`（2026-10-20 用户指出，与 gates/note 同属人工提示位）**：渲染为 `.c-promo`（浅蓝底 + 蓝字 + 蓝边框），位于名称下方。自动更新一律不得写；`build.py` 已按 `auto_src` 同规则拦截（`update_source` 以「自动更新」开头的条目不渲染）。现存仅「华为云码道」一条为人工内容（🎁 送 6 个月服务器）。
