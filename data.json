@@ -71,7 +71,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "长期免费",
-      "quota": "基础版长期免费（覆盖约 90% 个人开发场景），SOLO 模式 0 元使用；新用户通过分享链接注册并登录桌面端，可一次性获得 5,000 积分（500 积分注册奖励 + 4,500 积分新人福利），积分用于抵扣模型调用消耗，用完仍可使用免费基础模型。",
+      "quota": "基础版长期免费（覆盖约 90% 个人开发场景），SOLO 模式 0 元使用；经分享链接注册并登录桌面端，新用户一次性得 3,000 积分（500 注册 + 2,500 新人福利），积分抵扣模型调用，用完仍可用免费基础模型。",
       "validity": "",
       "region": "",
       "gates": [],
@@ -79,7 +79,7 @@
       "sponsored": false,
       "entry_url": "https://www.trae.cn",
       "intel_url": "https://www.trae.cn",
-      "last_verified": "2026-10-19",
+      "last_verified": "2026-10-26",
       "modality": "GPT-4o · Doubao-1.5-pro · DeepSeek",
       "signup": "",
       "detail_slug": "0032tvoc",
@@ -91,10 +91,18 @@
         "/intel/item-036-字节-trae-ai-ide/",
         "/intel/item-040-字节-trae-ai-ide/"
       ],
-      "invite_text": "我在用 TRAE AI 编程工具，搞定各类任务。通过我的分享链接注册并登录桌面端，新用户一次性获得 5,000 积分！",
+      "invite_text": "我在用 TRAE AI 编程工具，搞定各类任务。通过我的分享链接注册并登录桌面端，新用户一次性获得 3,000 积分！",
       "invite_url": "https://www.trae.cn/events/code-fission/PBUXWVH6P439?utm_source=copy_link&utm_medium=code_fission",
       "invite_code": "PBUXWVH6P439",
-      "update_source": "用户补充，2026-10-19（补专属邀请链接与积分口径，移至第 3 位）"
+      "update_source": "用户指定，2026-10-26（点击领取改走专属邀请链接；积分按分享页口径 3,000）",
+      "promo_url": "https://www.trae.cn/events/code-fission/PBUXWVH6P439?utm_source=copy_link&utm_medium=code_fission",
+      "promo_net": "TRAE 邀请活动",
+      "activity_rules": [
+        "邀请活动期 2026-09-07 至 12-31（北京时间）；被邀请人须是从未注册过的新用户，经专属链接首次注册并成功登录桌面端，双方各得 500 通用积分，实时到账。",
+        "分享页另列「新人福利再送 2,500 积分」，与注册礼合并即 3,000 积分；注册礼只认「完成注册 + 登录桌面端」，只在网页端登录不发放。",
+        "积分自发放起 31 天内有效，逾期自动失效；单账号活动期内邀请奖励累计上限 3,500 积分。",
+        "老用户点链接登录不计有效邀请；同一账号、手机号或设备任一相同均视为同一用户；积分不可转让、不可兑现；仅调用内置模型消耗积分，自定义模型不消耗。"
+      ]
     },
     {
       "name": "Qoder cn",
