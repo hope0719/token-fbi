@@ -768,7 +768,7 @@
       "sponsored": false,
       "entry_url": "https://dashscope.console.aliyun.com",
       "intel_url": "https://dashscope.console.aliyun.com",
-      "last_verified": "2026-09-28",
+      "last_verified": "2026-10-26",
       "modality": "Qwen 全系 · DeepSeek · Kimi · GLM · Baichuan · Llama 等 70+ 模型",
       "signup": "",
       "detail_slug": "0033dkpk",
@@ -779,7 +779,12 @@
         "/intel/item-036-阿里云百炼-dashscope/",
         "/intel/item-037-阿里云百炼-dashscope/",
         "/intel/item-041-阿里云百炼-dashscope/"
-      ]
+      ],
+      "promo_url": "https://www.aliyun.com/benefit?userCode=ygtxup80",
+      "promo_net": "阿里云推荐",
+      "invite_url": "https://www.aliyun.com/benefit?userCode=ygtxup80",
+      "invite_code": "ygtxup80",
+      "update_source": "用户指定，2026-10-26（点击领取改走阿里云推荐链接）"
     },
     {
       "name": "书生·端砚 墨点计划（上海AI实验室）",
