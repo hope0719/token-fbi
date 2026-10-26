@@ -772,7 +772,7 @@ img{max-width:100%}
 @media(max-width:1080px){.nav-right .btn.line{display:none}}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.ad-row{grid-template-columns:repeat(2,1fr)}.contact-row{grid-template-columns:repeat(2,1fr)}.footer-in{grid-template-columns:1fr}}
 @media(max-width:820px){.nav-in{gap:14px}.nav-links{gap:14px;margin-left:0;font-size:13px}}
-@media(max-width:700px){.nav-links{display:none}.nav-toggle{display:inline-flex}.nav-drawer{display:block;max-height:0;overflow:hidden;background:var(--bg2);transition:max-height .22s ease}body.nav-open .nav-drawer{max-height:320px;border-bottom:1px solid var(--line)}.nav-drawer a{display:block;padding:11px 22px;font-size:14px;color:var(--text2);border-top:1px solid var(--line)}.nav-drawer a:hover{color:var(--accent-deep);background:var(--bg3)}}
+@media(max-width:700px){.nav-links{display:none}.nav-toggle{display:inline-flex}.nav-drawer{display:block;max-height:0;overflow:hidden;background:var(--bg2);transition:max-height .22s ease}body.nav-open .nav-drawer{max-height:400px;border-bottom:1px solid var(--line)}.nav-drawer a{display:block;padding:11px 22px;font-size:14px;color:var(--text2);border-top:1px solid var(--line)}.nav-drawer a:hover{color:var(--accent-deep);background:var(--bg3)}}
 @media(max-width:600px){.grid{grid-template-columns:1fr}.ad-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-bottom:4px;-webkit-overflow-scrolling:touch}.ad-row .ad-tile{flex:0 0 86%;scroll-snap-align:start}.contact-row{grid-template-columns:1fr}.nav-right .btn{padding:8px 14px;font-size:13px}}
 @media(max-width:420px){.brand{font-size:16px}.brand .dot{width:10px;height:10px}}
 </style>
@@ -780,7 +780,7 @@ img{max-width:100%}
 <body>
 <nav class="nav"><div class="wrap nav-in">
   <div class="brand"><span class="dot"></span>Token FBI</div>
-  <div class="nav-links"><a href="#list">情报列表</a><a href="/table/">完整情报表</a><a href="#faq">常见问题</a><a href="/about/">关于</a></div>
+  <div class="nav-links"><a href="#list">情报列表</a><a href="/table/">完整情报表</a><a href="#faq">常见问题</a><a href="/about/">关于</a><a href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达</a></div>
   <div class="nav-right">
     <a class="btn primary" href="#list">查看免费额度 →</a>
     <a class="btn line" href="https://github.com/hope0719/token-fbi" target="_blank" rel="noopener">在 GitHub 上查看</a>
@@ -793,13 +793,13 @@ img{max-width:100%}
   <a href="#watchlist">观望区</a>
   <a href="#faq">常见问题</a>
   <a href="/about/">关于</a>
+  <a href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达</a>
   <a href="/sponsor/">合作赞助</a>
 </div></nav>
 
 <header class="hero"><div class="wrap">
   <div class="hero-top">
     <span class="badge-dot">持续更新 · 全网免费 AI token 情报</span>
-    <a class="hero-link" href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达 →</a>
   </div>
   <h1>把值得领取的 <span class="hl">AI 额度</span>放在一处。</h1>
   <p class="sub">额度、模型、领取方式一次查清，每条都标注<b>免费类型、门槛与截止时间，不靠猜。</b></p>
@@ -1872,7 +1872,7 @@ h1{font-size:clamp(26px,4vw,36px);line-height:1.22;font-weight:850}
 <body>
 <nav class="nav"><div class="wrap nav-in">
   <div class="brand"><span class="dot"></span>Token FBI</div>
-  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/about/">关于</a></div>
+  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/about/">关于</a><a href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达</a></div>
   <div class="nav-right"><a class="btn" href="/">← 返回情报列表</a></div>
 </div></nav>
 
@@ -2034,7 +2034,7 @@ h1{font-size:clamp(26px,4vw,36px);line-height:1.22;font-weight:850}
 <body>
 <nav class="nav"><div class="wrap nav-in">
   <div class="brand"><span class="dot"></span>Token FBI</div>
-  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/about/">关于</a></div>
+  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/about/">关于</a><a href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达</a></div>
   <div class="nav-right"><a class="btn" href="/">← 返回情报列表</a></div>
 </div></nav>
 
@@ -2202,7 +2202,7 @@ h1{font-size:clamp(26px,4vw,36px);line-height:1.22;font-weight:850}
 <body>
 <nav class="nav"><div class="wrap nav-in">
   <div class="brand"><span class="dot"></span>Token FBI</div>
-  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/sponsor/">合作赞助</a><a href="/about/">关于</a></div>
+  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/sponsor/">合作赞助</a><a href="/about/">关于</a><a href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达</a></div>
   <div class="nav-right"><a class="btn" href="/">← 返回情报列表</a></div>
 </div></nav>
 
@@ -2340,7 +2340,7 @@ main{padding:6px 0 50px}
 <body>
 <nav class="nav"><div class="wrap nav-in">
   <div class="brand"><span class="dot"></span>Token FBI</div>
-  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/about/">关于</a></div>
+  <div class="nav-links"><a href="/">情报列表</a><a href="/table/">完整情报表</a><a href="/about/">关于</a><a href="https://hope0719.github.io/ai-pick/" target="_blank" rel="noopener">活动雷达</a></div>
   <div class="nav-right"><a class="btn" href="/">← 返回情报列表</a></div>
 </div></nav>
 
