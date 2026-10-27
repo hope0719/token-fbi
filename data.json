@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-26",
+  "last_updated": "2026-10-27",
   "total": 47,
   "items": [
     {
@@ -109,7 +109,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "限时活动",
-      "quota": "Qwen3.8-Flash 限免至 10 月 31 日、无每日调用上限；DeepSeek-V4.1-Flash-1017 按 0× Credits 计费，免费期延至 11 月 1 日 00:00（UTC+8）。",
+      "quota": "Qwen3.8-Flash 限免（官方未公布截止日，将在活动页提前公告）；DeepSeek-V4.1-Flash-1017 按 0× Credits 计费，免费期延至 11 月 1 日 00:00（UTC+8）。",
       "validity": "2026-10-31",
       "region": "",
       "gates": [],
@@ -117,14 +117,14 @@
       "sponsored": false,
       "entry_url": "https://t.aliyun.com/U/Ob4f6l",
       "intel_url": "https://t.aliyun.com/U/Ob4f6l",
-      "last_verified": "2026-10-26",
+      "last_verified": "2026-10-27",
       "modality": "Qwen3.8-Flash · Qwen3.8-Max · DeepSeek-V4.1-Flash-1017",
       "signup": "",
       "activity_rules": [
         "Qwen3.8-Flash 免费使用延长至 2026 年 10 月 31 日；经确认无隐藏的每日调用上限，实际额度以客户端活动说明为准。",
         "DeepSeek-V4.1-Flash-1017 由 10 月 24 日延长至 11 月 1 日 00:00（UTC+8），期间按 0× Credits 计费，免费与付费个人账号同享，在模型选择器里直接选中即可使用、无需领取；该模型原为 0.2× 系数，到期后以官方模型系数表为准。"
       ],
-      "update_source": "用户指定，2026-10-26（DeepSeek-V4.1-Flash-1017 限免延长至 10/31）",
+      "update_source": "自动更新 2026-10-27（巡检：日 diff 无变化；Qoder 文档明确 Qwen3.8-Flash 无截止日，原「限免至 10-31」表述纠正）",
       "detail_slug": "0002eanr",
       "legacy_detail_paths": [
         "/intel/item-001-qoder-cn/",
@@ -1159,8 +1159,8 @@
       "name": "ZCode",
       "vendor": "",
       "category": "tool",
-      "free_type": "长期免费",
-      "quota": "每天的免费额度 800 万 Token；周五、周六、周日有概率额外赠送 1 亿 Token；新用户完成 3 个新手任务可领「夜间蹭蹭卡」1 亿 GLM-5.3-Flash Token。",
+      "free_type": "免费层",
+      "quota": "新用户 5 天体验：GLM-5.3 300 万 + GLM-5-turbo 200 万 Token/天，5 天后失效；ZCode Work 每日可领 800 万 Token，以客户端显示为准。",
       "validity": "",
       "region": "",
       "gates": [],
@@ -1168,17 +1168,17 @@
       "sponsored": false,
       "entry_url": "https://zcode.z.ai/cn",
       "intel_url": "https://bigmodel.cn/activity/trial-card/PU9MTWG0PM",
-      "last_verified": "2026-10-13",
+      "last_verified": "2026-10-27",
       "modality": "GLM-5.3 · GLM-5.3-Flash",
       "signup": "新手任务领「夜间蹭蹭卡」：打开邀请链接 https://zcode.z.ai/invite/MWE6YM36 绑定邀请码，登录 ZCode 客户端并发送一条消息，三个任务完成后即可领取 1 亿 GLM-5.3-Flash Token。",
       "activity_rules": [
-        "每日免费额度 800 万 Token，按日重置。",
+        "新用户首次使用可享 5 天免费体验：GLM-5.3 300 万 + GLM-5-turbo 200 万 Token/天，5 天后失效（官方文档口径）。",
         "周五 / 周六 / 周日有概率额外赠送 1 亿 Token（随机发放，非必得）。",
         "新用户见面礼「夜间蹭蹭卡」：完成绑定邀请码、登录客户端、发送消息三个新手任务，即得 1 亿 GLM-5.3-Flash Token（一次性，限时活动页口径）。",
         "首发额度包（9 月 28 日–10 月 7 日，每天 10 万份 × 1 亿 Token）已结束；现行口径为每日免费额度 + 周末概率大额赠送。",
         "具体额度与发放概率以官方活动页 / 客户端实时显示为准。"
       ],
-      "update_source": "用户补充（邀请链接 + 活动页截图），2026-10-13",
+      "update_source": "自动更新 2026-10-27（巡检：官方文档明确为新用户 5 天体验制、非长期每日额度）",
       "detail_slug": "0003dfyo",
       "legacy_detail_paths": [
         "/intel/item-002-zcode/",
@@ -2180,6 +2180,14 @@
       "reason": "办公客户端，非模型额度，暂时下架。",
       "detail_slug": "0098zpea",
       "reviewed_at": "2026-10-20"
+    },
+    {
+      "name": "讯飞星辰 MaaS（Spark-X2.6 10 亿 Tokens）",
+      "url": "https://maas.xfyun.cn/",
+      "reason": "2026-10-27 发现：实名认证后在星辰 MaaS 平台领取 Spark-X2.6 免费额度 10 亿 Tokens，每位用户限领一次、自领取起 31 天内有效；293B MoE/30B 激活、1M 上下文，OpenAI 与 Anthropic 双协议（maas-api.cn-huabei-1.xf-yun.com）。同为讯飞系、且用户 2026-10-06 已将「讯飞星火（开放平台）」移入观望区，故本条暂列观望，待用户裁定是否上架。",
+      "detail_slug": "0125rcqt",
+      "added": "2026-10-27",
+      "reviewed_at": "2026-10-27"
     }
   ],
   "hidden": []
