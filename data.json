@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-27",
+  "last_updated": "2026-10-28",
   "total": 47,
   "items": [
     {
@@ -110,21 +110,21 @@
       "category": "tool",
       "free_type": "限时活动",
       "quota": "Qwen3.8-Flash 限免（官方未公布截止日，将在活动页提前公告）；DeepSeek-V4.1-Flash-1017 按 0× Credits 计费，免费期延至 11 月 1 日 00:00（UTC+8）。",
-      "validity": "2026-10-31",
+      "validity": "2026-11-01",
       "region": "",
       "gates": [],
       "note": "",
       "sponsored": false,
       "entry_url": "https://t.aliyun.com/U/Ob4f6l",
       "intel_url": "https://t.aliyun.com/U/Ob4f6l",
-      "last_verified": "2026-10-27",
+      "last_verified": "2026-10-28",
       "modality": "Qwen3.8-Flash · Qwen3.8-Max · DeepSeek-V4.1-Flash-1017",
       "signup": "",
       "activity_rules": [
-        "Qwen3.8-Flash 免费使用延长至 2026 年 10 月 31 日；经确认无隐藏的每日调用上限，实际额度以客户端活动说明为准。",
+        "Qwen3.8-Flash 限免，官方未公布截止日（将在活动页提前公告）；经确认无隐藏的每日调用上限，实际额度以客户端活动说明为准。",
         "DeepSeek-V4.1-Flash-1017 由 10 月 24 日延长至 11 月 1 日 00:00（UTC+8），期间按 0× Credits 计费，免费与付费个人账号同享，在模型选择器里直接选中即可使用、无需领取；该模型原为 0.2× 系数，到期后以官方模型系数表为准。"
       ],
-      "update_source": "自动更新 2026-10-27（巡检：日 diff 无变化；Qoder 文档明确 Qwen3.8-Flash 无截止日，原「限免至 10-31」表述纠正）",
+      "update_source": "自动更新 2026-10-28（巡检：validity 对齐官方 DS 免费截止 Nov 1 00:00 UTC+8，与 quota 文案一致）",
       "detail_slug": "0002eanr",
       "legacy_detail_paths": [
         "/intel/item-001-qoder-cn/",
@@ -327,8 +327,8 @@
       "name": "硅基流动 SiliconFlow",
       "vendor": "",
       "category": "model",
-      "free_type": "长期免费",
-      "quota": "部分小模型长期免费、不限量；新用户注册赠 16 元代金券，可抵扣付费模型。",
+      "free_type": "免费层",
+      "quota": "免费仅剩 embedding/语音识别/OCR/翻译/Kolors 生图（对话类小模型永久免费已于 2026-09 取消）；新用户注册赠约 16 元无门槛代金券（活动至 2026-12-31），可抵扣付费大模型调用。",
       "validity": "",
       "region": "",
       "gates": [],
@@ -336,7 +336,7 @@
       "sponsored": false,
       "entry_url": "https://cloud.siliconflow.cn/i/HgdEna2e",
       "intel_url": "https://cloud.siliconflow.cn/i/HgdEna2e",
-      "last_verified": "2026-10-20",
+      "last_verified": "2026-10-28",
       "modality": "DeepSeek V4 Pro · GLM-5.3 · Kimi K3 · 千问 3.8 等",
       "signup": "",
       "detail_slug": "0013uppn",
@@ -348,7 +348,7 @@
         "/intel/item-017-硅基流动-siliconflow/",
         "/intel/item-021-硅基流动-siliconflow/"
       ],
-      "update_source": "自动更新 2026-10-20（补充新用户 16 元代金券口径）"
+      "update_source": "自动更新 2026-10-28（巡检：多方信源确认小模型永久免费 2026-09 已取消，仅剩辅助模型免费 + 16 元代金券；纠正原「长期免费小模型」表述）"
     },
     {
       "name": "Agnes AI",
@@ -2188,6 +2188,14 @@
       "detail_slug": "0125rcqt",
       "added": "2026-10-27",
       "reviewed_at": "2026-10-27"
+    },
+    {
+      "name": "InferX（DeepSeek V4.1 Flash 免费网关）",
+      "url": "https://model.inferx.net/endpoints/v1",
+      "reason": "2026-10-28 自动扫描发现：新注册（Google/GitHub OAuth，免绑卡）即免费用 DeepSeek-V4.1-Flash-1017（512K 上下文，单价归零），但官方称「接下来几天」限时促销、稳定性差（满载 429），按新聚合器先入观望区规则收录，待观察是否长期化。",
+      "reviewed_at": "2026-10-28",
+      "detail_slug": "0126korq",
+      "added": "2026-10-28"
     }
   ],
   "hidden": []
