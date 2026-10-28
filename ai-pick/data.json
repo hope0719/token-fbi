@@ -1,7 +1,7 @@
 {
   "site_name": "AI 活动雷达",
   "tagline": "在时间截止前找到 AI 机会",
-  "updated_at": "2026-10-27T03:09:43.050Z",
+  "updated_at": "2026-10-28T02:49:27.483Z",
   "source": "JS-banana/ai-opportunity-radar (airadar.laifuyou.com) + LucianaiB 飞书表「AI 活动推荐」+ events.waytoagi.com 三源合并 + 手工补录 35 条",
   "activities": [
     {
@@ -5572,7 +5572,7 @@
       "participation": null,
       "winningCriteria": null,
       "timelineNotes": null,
-      "startAt": "2026-10-22T00:00:00.000+08:00",
+      "startAt": "2026-10-28T00:00:00.000+08:00",
       "endAt": null,
       "deadline_date": null,
       "region": "其他",
@@ -6214,6 +6214,35 @@
       "slug": null,
       "image": "event-pass-macro.png",
       "firstSeen": "2000-01-01"
+    },
+    {
+      "id": "wag_e_c2f243437e",
+      "title": "华硕 A+ 青年 Creator Lab",
+      "vendor": "华硕 A+ 青年",
+      "type": "黑客松",
+      "score": 0,
+      "difficulty": null,
+      "difficultyNote": null,
+      "reward": "",
+      "rewardDetail": "标签：AI创作 / 大学生 / 华硕A+ / 创意实验 / AIGC / 共创",
+      "rewardTypes": [],
+      "format": "线下",
+      "participation": "站内报名；线下 · 主办 华硕 A+ 青年",
+      "winningCriteria": null,
+      "timelineNotes": null,
+      "startAt": "2026-11-21",
+      "endAt": "2026-11-22T23:59:59+08:00",
+      "deadline_date": "2026-11-22",
+      "region": "中国",
+      "officialStatus": "官方确认",
+      "url": "https://events.waytoagi.com/events/%E5%8D%8E%E7%A1%95%20A%2B%20%E9%9D%92%E5%B9%B4%20Creator%20Lab-e_c2f243437e",
+      "source": "waytoagi",
+      "estimatedEffort": null,
+      "suggestion": "值得参加",
+      "discoveredAt": "2026-10-27T13:17:30.026Z",
+      "slug": null,
+      "image": "event-pass-macro.png",
+      "firstSeen": "2026-10-28"
     },
     {
       "id": "wag_e_85a64024dd",
