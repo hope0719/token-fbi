@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-28",
+  "last_updated": "2026-10-29",
   "total": 47,
   "items": [
     {
@@ -1162,7 +1162,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "免费层",
-      "quota": "新用户 5 天体验：GLM-5.3 300 万 + GLM-5-turbo 200 万 Token/天，5 天后失效；ZCode Work 每日可领 800 万 Token，以客户端显示为准。",
+      "quota": "注册送 5 天体验（GLM-5.3 300 万 + 200 万/天）；每日 3 亿 GLM-5.3-Flash，19:00 领取、23:00–次日 9:00 用。",
       "validity": "",
       "region": "",
       "gates": [],
@@ -1170,17 +1170,19 @@
       "sponsored": false,
       "entry_url": "https://zcode.z.ai/cn",
       "intel_url": "https://bigmodel.cn/activity/trial-card/PU9MTWG0PM",
-      "last_verified": "2026-10-27",
+      "last_verified": "2026-10-29",
       "modality": "GLM-5.3 · GLM-5.3-Flash",
       "signup": "新手任务领「夜间蹭蹭卡」：打开邀请链接 https://zcode.z.ai/invite/MWE6YM36 绑定邀请码，登录 ZCode 客户端并发送一条消息，三个任务完成后即可领取 1 亿 GLM-5.3-Flash Token。",
       "activity_rules": [
         "新用户首次使用可享 5 天免费体验：GLM-5.3 300 万 + GLM-5-turbo 200 万 Token/天，5 天后失效（官方文档口径）。",
         "周五 / 周六 / 周日有概率额外赠送 1 亿 Token（随机发放，非必得）。",
         "新用户见面礼「夜间蹭蹭卡」：完成绑定邀请码、登录客户端、发送消息三个新手任务，即得 1 亿 GLM-5.3-Flash Token（一次性，限时活动页口径）。",
+        "每日 3 亿 GLM-5.3-Flash：每天 19:00 起在客户端领取，仅限当晚 23:00–次日 09:00、切到 Global Building 通道并选 GLM-5.3-Flash 使用，次日 09:00 清零，官方未公布截止日（2026-10-27 官方公告）。",
         "首发额度包（9 月 28 日–10 月 7 日，每天 10 万份 × 1 亿 Token）已结束；现行口径为每日免费额度 + 周末概率大额赠送。",
+        "受邀注册另得被邀方权益：5 天每天 800 万 Token（邀新活动至 11/13，以客户端活动页为准）。",
         "具体额度与发放概率以官方活动页 / 客户端实时显示为准。"
       ],
-      "update_source": "自动更新 2026-10-27（巡检：官方文档明确为新用户 5 天体验制、非长期每日额度）",
+      "update_source": "自动更新 2026-10-29（巡检：官方新增每日 3 亿 GLM-5.3-Flash 口径，纠正原「Work 每日 800 万」表述）",
       "detail_slug": "0003dfyo",
       "legacy_detail_paths": [
         "/intel/item-002-zcode/",
