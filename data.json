@@ -2202,6 +2202,14 @@
       "reviewed_at": "2026-10-28",
       "detail_slug": "0126korq",
       "added": "2026-10-28"
+    },
+    {
+      "name": "Devin（$0 Free 档）",
+      "url": "https://devin.ai/",
+      "reason": "2026-10-29 用户提供 X 截图（@Fei2411，10-28）后核实：Cognition 的 Devin 除 $20 Pro 外有 $0 Free 档，官方定价页写「Light daily and weekly quota、limited model availability、unlimited inline edits and Tab completions」，注册即用、无需绑卡；Pro 档的「免费用 SWE-2」属促销，客户端标注 Promo until 12/1/2026（原定 10-16 结束，已延期）。只入观望原因：① 免费档额度官方始终写「light quota」、未公布具体数字；② SWE-2 真正免费的前提是 $20 订阅，属付费订阅附赠，按收录规则不上首页；③ 国际站、需海外网络。待额度口径透明化或开放更多免费模型后再评估上架。",
+      "reviewed_at": "2026-10-29",
+      "detail_slug": "0127dyyv",
+      "added": "2026-10-29"
     }
   ],
   "hidden": []
