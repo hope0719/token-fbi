@@ -1,14 +1,16 @@
 {
   "_comment": "官方源监控清单。每日抓取 -> 正文归一化 -> 与上次快照 diff，只报「变了什么」。kind=html 走正文抽取，kind=rss 走条目抽取。min_chars 低于阈值视为抓取退化（多为 SPA 页面），会标 short 让人工兜底。slug 指向 data.json 里受该源影响的卡片，用于定位要改哪一条。",
   "version": 1,
-  "updated": "2026-10-26",
+  "updated": "2026-10-30",
   "sources": [
     {
       "id": "autoclaw-blog",
       "label": "智谱 AutoClaw 博客（周更福利公告首发）",
       "url": "https://autoclaw.zhipuai.cn/blog/",
       "kind": "html",
-      "slugs": ["0085puck"],
+      "slugs": [
+        "0085puck"
+      ],
       "min_chars": 3000,
       "enabled": true,
       "note": "周更福利 M10W3/M10W4 这类帖子的首发地，比中文清单快"
@@ -18,7 +20,9 @@
       "label": "智谱 AutoClaw 更新日志",
       "url": "https://autoclaw.zhipuai.cn/changelog",
       "kind": "html",
-      "slugs": ["0085puck"],
+      "slugs": [
+        "0085puck"
+      ],
       "min_chars": 1500,
       "enabled": true,
       "note": "版本号与功能变更"
@@ -28,7 +32,9 @@
       "label": "Qoder 官方博客（模型限免公告）",
       "url": "https://qoder.com/blog",
       "kind": "html",
-      "slugs": ["0002eanr"],
+      "slugs": [
+        "0002eanr"
+      ],
       "min_chars": 5000,
       "enabled": true,
       "note": "DeepSeek 免费期延长的原始公告就在这里，中文源滞后 1-3 天"
@@ -38,7 +44,9 @@
       "label": "七牛云 Conatus Free 活动页",
       "url": "https://www.qiniu.com/ai/free-models/conatus-2026",
       "kind": "html",
-      "slugs": ["0040fdzy"],
+      "slugs": [
+        "0040fdzy"
+      ],
       "min_chars": 2000,
       "enabled": true,
       "note": "活动期与每日额度原文"
@@ -48,7 +56,9 @@
       "label": "云知声 U2-Flash 模型页",
       "url": "https://maas.unisound.com/models/u2-flash",
       "kind": "html",
-      "slugs": ["0108rkie"],
+      "slugs": [
+        "0108rkie"
+      ],
       "min_chars": 2000,
       "enabled": true,
       "note": "页面标题里直接写限免起止日期，变化一眼可见"
@@ -58,7 +68,9 @@
       "label": "硅基流动 资讯中心",
       "url": "https://www.siliconflow.cn/news",
       "kind": "html",
-      "slugs": ["0013uppn"],
+      "slugs": [
+        "0013uppn"
+      ],
       "min_chars": 1500,
       "enabled": true,
       "note": "上新与活动公告"
@@ -68,7 +80,9 @@
       "label": "OpenRouter Announcements",
       "url": "https://openrouter.ai/announcements",
       "kind": "html",
-      "slugs": ["0018bing"],
+      "slugs": [
+        "0018bing"
+      ],
       "min_chars": 3000,
       "enabled": true,
       "note": "免费模型上下架的风向标，聚合器卡片据此更新"
@@ -102,6 +116,18 @@
       "min_chars": 2000,
       "enabled": true,
       "note": "英文侧简讯，官方 X 帖的二手镜像"
+    },
+    {
+      "id": "huawei-codearts-news",
+      "label": "华为云码道 最新动态（官方 changelog）",
+      "url": "https://support.huaweicloud.com/wtsnew-codeartsagent/index.html",
+      "kind": "html",
+      "slugs": [
+        "0038rlna"
+      ],
+      "min_chars": 1500,
+      "enabled": true,
+      "note": "福利下线/口径调整只在这里公告（例：2026-10-20 22:00 限时领取福利Tokens活动下线），活动页与二手清单都不写"
     }
   ],
   "known_limits": [
