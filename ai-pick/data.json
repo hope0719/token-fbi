@@ -1,7 +1,7 @@
 {
   "site_name": "AI 活动雷达",
   "tagline": "在时间截止前找到 AI 机会",
-  "updated_at": "2026-10-28T02:49:27.483Z",
+  "updated_at": "2026-10-31T01:20:19.490Z",
   "source": "JS-banana/ai-opportunity-radar (airadar.laifuyou.com) + LucianaiB 飞书表「AI 活动推荐」+ events.waytoagi.com 三源合并 + 手工补录 35 条",
   "activities": [
     {
@@ -5926,35 +5926,6 @@
       "discoveredAt": null,
       "slug": null,
       "image": "event-pass-macro.png",
-      "firstSeen": "2026-10-19"
-    },
-    {
-      "id": "luc_reczz28OoFbgLHYh",
-      "title": "知乎知学堂大模型挑战赛：大模型复杂表格识别与内容理解",
-      "vendor": "",
-      "type": "开发挑战",
-      "score": 0,
-      "difficulty": null,
-      "difficultyNote": null,
-      "reward": "",
-      "rewardDetail": null,
-      "rewardTypes": [],
-      "format": null,
-      "participation": null,
-      "winningCriteria": null,
-      "timelineNotes": null,
-      "startAt": "2026-10-18T00:00:00.000+08:00",
-      "endAt": "2026-10-31T23:59:59+08:00",
-      "deadline_date": "2026-10-31",
-      "region": "其他",
-      "officialStatus": "",
-      "url": "https://tianchi.aliyun.com/competition/entrance/532510",
-      "source": "lucianaib",
-      "estimatedEffort": null,
-      "suggestion": "值得参加",
-      "discoveredAt": null,
-      "slug": null,
-      "image": "path-prize-envelope.png",
       "firstSeen": "2026-10-19"
     },
     {
