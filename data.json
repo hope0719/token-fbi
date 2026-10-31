@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-30",
+  "last_updated": "2026-10-31",
   "total": 47,
   "items": [
     {
@@ -1111,8 +1111,8 @@
       "vendor": "",
       "category": "event",
       "free_type": "限时活动",
-      "quota": "10/26–11/1 登录客户端领 1 亿 Token（约 10,000 积分），每账号限一次，统一 11/1 23:59 失效。",
-      "validity": "2026-11-01",
+      "quota": "每周登录领一次：本周 10/26–11/1 领 1 亿 Token（1 万积分），下周 11/2–11/8 为 5000 万（5000 积分），均于当期截止日失效。",
+      "validity": "2026-11-08",
       "region": "",
       "gates": [],
       "note": "",
@@ -1121,8 +1121,8 @@
       "intel_url": "https://autoclaw.zhipuai.cn/blog/news/M10W4/",
       "signup": "",
       "modality": "GLM-5.3-Flash · 桌面 Agent",
-      "last_verified": "2026-10-30",
-      "update_source": "自动更新 2026-10-30（巡检：M10W4 一周福利仍为 10/26–11/1；补 2.2.0 升级礼 5000 积分）",
+      "last_verified": "2026-10-31",
+      "update_source": "自动更新 2026-10-31（巡检：已公告 11/2–11/8 周福利降至 5000 万 Token，validity 顺延至 11-08）",
       "detail_slug": "0085puck",
       "added": "2026-10-11",
       "source_urls": [
@@ -1130,8 +1130,8 @@
         "https://autoclaw.z.ai/blog/news/Weekly-Perks-M10W3/"
       ],
       "activity_rules": [
-        "10 月 26 日 00:00 至 11 月 1 日 23:59（北京时间）登录 AutoClaw，即可领取 1 亿 Tokens（约 10,000 积分），每个账号限领一次。",
-        "奖励在 11 月 1 日 23:59（北京时间）失效，越早领取可用时间越长。",
+        "10 月 26 日 00:00 至 11 月 1 日 23:59（北京时间）登录 AutoClaw，领取 1 亿 Tokens（约 10,000 积分），每账号限一次，奖励在 11 月 1 日 23:59 失效。",
+        "下一周福利已公告：11 月 2 日 00:00 至 11 月 8 日 23:59（北京时间）登录可领 5000 万 Tokens（约 5,000 积分），每账号限一次，11 月 8 日 23:59 失效。",
         "另有一项升级礼：升级至 2.2.0 版本、完成旧版数据迁移可领 5000 积分（约 5000 万 tokens），积分发放后 7 天内有效。"
       ]
     },
@@ -1342,25 +1342,32 @@
       "name": "云知声 U2-Flash（Unisound MaaS）",
       "vendor": "云知声（Unisound）",
       "category": "model",
-      "free_type": "限时活动",
-      "quota": "活动期内 U2-Flash 输入、输出、缓存命中三档全部 0 元且不限量，不绑卡、不充值，注册登录 MaaS 平台即自动发放免费额度。",
-      "validity": "2026-10-31",
+      "free_type": "免费层",
+      "quota": "U Plan Free 档：每周 2500 积分、5 小时窗口 500 积分，另赠 U2-ASR 8 小时 / U2-TTS 4 万字；原不限量限免已于 10-31 结束。",
+      "validity": "",
       "region": "",
       "gates": [],
       "note": "",
       "sponsored": false,
       "entry_url": "https://maas.unisound.com/",
       "intel_url": "https://maas.unisound.com/models/u2-flash",
-      "signup": "访问 maas.unisound.com 注册登录，系统自动发放免费额度；进入「控制台 → API Key 管理 → 创建 API Key」，Base URL 为 https://maas-api.unisound.com/v1。",
+      "signup": "访问 maas.unisound.com 注册并实名后领取 U Plan Free 档，进入「控制台 → API Key 管理 → 创建 API Key」，Base URL 为 https://maas-api.unisound.com/v1。",
       "modality": "U2-Flash · U2 · U2-Med · U2-Decision",
-      "last_verified": "2026-10-16",
-      "update_source": "自动更新 2026-10-16",
+      "last_verified": "2026-10-31",
+      "update_source": "自动更新 2026-10-31（源 diff：U2-Flash 不限量限免于 10-31 结束，改为 U Plan Free 档积分制）",
       "source_urls": [
         "https://maas.unisound.com/models/u2-flash",
         "https://m.toutiao.com/article/7690902463473402419"
       ],
       "detail_slug": "0108rkie",
-      "added": "2026-10-16"
+      "added": "2026-10-16",
+      "activity_rules": [
+        "U Plan 分 Free / Standard / Plus 三档。Free 档免费领取：每周 2,500 积分、5 小时动态窗口 500 积分，积分按「输入×系数 + 缓存命中×系数 + 输出×系数 ÷ 10000」抵扣。",
+        "Free 档另赠多模态额度：U2-ASR 8 小时、U2-TTS 4 万字、U2-OCR 与 U2-OCR-Med 各 737.5 万 Token、U2-RadiMed 47.5 万 Token；赠送额度不受 5 小时窗口限制，套餐周期内用完即止。",
+        "积分按 7 天周期刷新，未用完不累积、不结转；5 小时窗口额度在消耗 5 小时后重置。",
+        "原「U2-Flash 输入/输出/缓存全部 0 元不限量」限时活动已于 2026-10-31 结束，现按量计费为输入 1 元、缓存命中 0.2 元、输出 2 元每百万 Token。",
+        "U2-Decision 在模型价格页仍标注「限时免费」（0 元），未公布截止日，以官方价格页为准。"
+      ]
     },
     {
       "name": "Inception Labs（Mercury 3 扩散式大模型）",
