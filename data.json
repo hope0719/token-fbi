@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-10-31",
+  "last_updated": "2026-11-01",
   "total": 47,
   "items": [
     {
@@ -111,23 +111,25 @@
       "name": "Qoder cn",
       "vendor": "",
       "category": "tool",
-      "free_type": "限时活动",
-      "quota": "Qwen3.8-Flash 限免（官方未公布截止日，将在活动页提前公告）；DeepSeek-V4.1-Flash-1017 按 0× Credits 计费，免费期延至 11 月 1 日 00:00（UTC+8）。",
-      "validity": "2026-11-01",
+      "free_type": "每日赠送",
+      "quota": "Qwen3.8-Flash 个人版每日赠送免费额度、按 0× 计费，官方未公布截止日；DeepSeek 系列 0× 免费期已于 11-01 00:00 结束，现按 0.1×–0.5× 计费。",
+      "validity": "",
       "region": "",
       "gates": [],
       "note": "",
       "sponsored": false,
       "entry_url": "https://t.aliyun.com/U/Ob4f6l",
       "intel_url": "https://t.aliyun.com/U/Ob4f6l",
-      "last_verified": "2026-10-28",
-      "modality": "Qwen3.8-Flash · Qwen3.8-Max · DeepSeek-V4.1-Flash-1017",
+      "last_verified": "2026-11-01",
+      "modality": "Qwen3.8-Flash · Qwen3.8-Max · DeepSeek-V4-Pro · DeepSeek-Flash · GLM-5.3",
       "signup": "",
       "activity_rules": [
-        "Qwen3.8-Flash 限免，官方未公布截止日（将在活动页提前公告）；经确认无隐藏的每日调用上限，实际额度以客户端活动说明为准。",
-        "DeepSeek-V4.1-Flash-1017 由 10 月 24 日延长至 11 月 1 日 00:00（UTC+8），期间按 0× Credits 计费，免费与付费个人账号同享，在模型选择器里直接选中即可使用、无需领取；该模型原为 0.2× 系数，到期后以官方模型系数表为准。"
+        "Qwen3.8-Flash：模型选择器标 Free，倍率由 0.1× 降为 0×，个人版限时每日赠送免费使用额度；官方未公布截止日，以客户端活动说明为准。",
+        "DeepSeek 系列（V4.1-Flash-1017 等）的 0× 限免已于 2026 年 11 月 1 日 00:00（UTC+8）结束，现 DeepSeek-Flash 按 0.1× 系数计费、DeepSeek-V4-Pro 按 0.5× 计费，无需领取、在模型选择器直接选中即可使用。",
+        "错峰折扣：每晚 22:00 至次日 08:00 的低峰时段，Qwen3.8-Max 由 0.5× 降至 0.2×（约 4 折），其他付费模型同时段另有折扣；客户端模型浮层顶部显示「错峰折扣进行中」及倒计时。",
+        "模型倍率即积分折扣（0.5× = 半价、0× = 不扣 Credits）；实际可调用模型与倍率以客户端模型列表为准，官方调整不另行公告。"
       ],
-      "update_source": "自动更新 2026-10-28（巡检：validity 对齐官方 DS 免费截止 Nov 1 00:00 UTC+8，与 quota 文案一致）",
+      "update_source": "用户指定 2026-11-01（客户端截图：DeepSeek 0× 限免已结束、Qwen3.8-Flash 仍标 Free、错峰折扣进行中）",
       "detail_slug": "0002eanr",
       "legacy_detail_paths": [
         "/intel/item-001-qoder-cn/",
