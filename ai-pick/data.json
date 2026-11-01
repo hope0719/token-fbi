@@ -1,7 +1,7 @@
 {
   "site_name": "AI 活动雷达",
   "tagline": "在时间截止前找到 AI 机会",
-  "updated_at": "2026-10-31T01:20:19.490Z",
+  "updated_at": "2026-11-01T01:34:15.443Z",
   "source": "JS-banana/ai-opportunity-radar (airadar.laifuyou.com) + LucianaiB 飞书表「AI 活动推荐」+ events.waytoagi.com 三源合并 + 手工补录 35 条",
   "activities": [
     {
@@ -6329,35 +6329,6 @@
       "slug": null,
       "image": "event-pass-macro.png",
       "firstSeen": "2000-01-01"
-    },
-    {
-      "id": "wag_e_c1a5f6728f",
-      "title": "杭州 Workshop｜当 AI 开始替你做事，谁来管住它的「手」？",
-      "vendor": "C-Star AI Hub",
-      "type": "社区活动",
-      "score": 0,
-      "difficulty": null,
-      "difficultyNote": null,
-      "reward": "",
-      "rewardDetail": "标签：AI Agent / 隐私保护 / Midnight / Workshop / 开发者 / 人工智能",
-      "rewardTypes": [],
-      "format": "线下",
-      "participation": "站外链接报名；线下 · 杭州 · 主办 C-Star AI Hub",
-      "winningCriteria": null,
-      "timelineNotes": "19:00 - 21:00",
-      "startAt": "2026-10-31",
-      "endAt": "2026-10-31T23:59:59+08:00",
-      "deadline_date": "2026-10-31",
-      "region": "中国",
-      "officialStatus": "官方确认",
-      "url": "https://luma.com/b31uqcuo",
-      "source": "waytoagi",
-      "estimatedEffort": null,
-      "suggestion": "值得参加",
-      "discoveredAt": "2026-10-25T13:41:26.065Z",
-      "slug": null,
-      "image": "event-pass-macro.png",
-      "firstSeen": "2026-10-26"
     },
     {
       "id": "wag_e_68f515d808",
