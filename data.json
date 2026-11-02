@@ -900,17 +900,18 @@
       "sponsored": false,
       "entry_url": "https://edu.huaweicloud.com/signup/00ce9d4a32584039a9741d8488d16711?channelCode=edu&medium=share_kfzlb&invitation=ae0390096b6645e1825b6b01e4cb04ec",
       "intel_url": "https://edu.huaweicloud.com/signup/00ce9d4a32584039a9741d8488d16711?channelCode=edu&medium=share_kfzlb&invitation=ae0390096b6645e1825b6b01e4cb04ec",
-      "last_verified": "2026-10-30",
-      "modality": "GLM-5.3 Flash · DeepSeek V4 系列",
+      "last_verified": "2026-11-02",
+      "modality": "Kimi-K3.1-Pro · GLM-5.3 Flash · DeepSeek V4 系列",
       "signup": "通过活动入口领取，具体资格以活动页面为准。",
       "activity_rules": [
         "每日签到领积分：个人体验版 100、个人标准版 150、个人高级版/旗舰版 200，当日领取当日有效、逾期失效；活动期 2026-10-27 20:00 至 2026-12-31 23:59（北京时间）。领取路径：IDE / CodeArts 插件右上角「限时福利」，或控制台/网页端/桌面端/小程序左下角头像「活动福利」→「每日领取」。",
         "原「限时领取福利 Tokens」活动（每日千万级 Token、限时福利模型 3 款）已于 2026-10-20 22:00 下线，官方最新动态页有公告；现只有积分制，按模型积分系数扣减。",
         "新用户注册送 4000 积分（30 天内有效）；学生认证 4000 积分（90 天内有效）；邀新成功双方各 1000 积分（活动至 2026-11-15，累计上限 5 万）。",
         "1024 活动期（10-20 至 11-15）新注册叠加每日登录与邀请积分，官方口径当天最高可得 6000 积分；具体以活动页与账户到账为准。",
-        "通过领取入口查看活动并按页面指引参与；每日免费额度不等于无限使用。"
+        "通过领取入口查看活动并按页面指引参与；每日免费额度不等于无限使用。",
+        "2026 年 10 月 30 日模型上新：开放 Kimi-K3.1-Pro、GLM-5.3-Flash 两款大模型，与原有 DeepSeek V4 系列同时在模型列表可选。"
       ],
-      "update_source": "用户邮件反馈 + 官方帮助中心 2026-10-30（每日千万级 Token 福利已于 10-20 22:00 下线，现为签到 100 积分/天口径）",
+      "update_source": "自动更新 2026-11-02（源 diff：官方最新动态 10-30 模型上新，开放 Kimi-K3.1-Pro、GLM-5.3-Flash）",
       "detail_slug": "0038rlna",
       "legacy_detail_paths": [
         "/intel/item-038-华为云码道/",
@@ -1116,7 +1117,7 @@
       "vendor": "",
       "category": "event",
       "free_type": "限时活动",
-      "quota": "每周登录领一次：本周 10/26–11/1 领 1 亿 Token（1 万积分），下周 11/2–11/8 为 5000 万（5000 积分），均于当期截止日失效。",
+      "quota": "本周 11/2–11/8 登录领 5000 万 Token（5,000 积分），单账号限一次，11-08 23:59 失效；较上周 1 亿减半。",
       "validity": "2026-11-08",
       "region": "",
       "gates": [],
@@ -1126,8 +1127,8 @@
       "intel_url": "https://autoclaw.zhipuai.cn/blog/news/M10W4/",
       "signup": "",
       "modality": "GLM-5.3-Flash · 桌面 Agent",
-      "last_verified": "2026-10-31",
-      "update_source": "自动更新 2026-10-31（巡检：已公告 11/2–11/8 周福利降至 5000 万 Token，validity 顺延至 11-08）",
+      "last_verified": "2026-11-02",
+      "update_source": "自动更新 2026-11-02（源 diff：M11W1 周福利 11/2–11/8 领 5000 万 Token，单账号限一次）",
       "detail_slug": "0085puck",
       "added": "2026-10-11",
       "source_urls": [
@@ -1135,8 +1136,8 @@
         "https://autoclaw.z.ai/blog/news/Weekly-Perks-M10W3/"
       ],
       "activity_rules": [
-        "10 月 26 日 00:00 至 11 月 1 日 23:59（北京时间）登录 AutoClaw，领取 1 亿 Tokens（约 10,000 积分），每账号限一次，奖励在 11 月 1 日 23:59 失效。",
-        "下一周福利已公告：11 月 2 日 00:00 至 11 月 8 日 23:59（北京时间）登录可领 5000 万 Tokens（约 5,000 积分），每账号限一次，11 月 8 日 23:59 失效。",
+        "本周福利：11 月 2 日 00:00 至 11 月 8 日 23:59（北京时间）登录 AutoClaw，可领 5000 万 Tokens（约 5,000 积分），每个账号限领一次，奖励在 11 月 8 日 23:59 失效。",
+        "上一周福利（10 月 26 日至 11 月 1 日，1 亿 Tokens）已于 11 月 1 日 23:59 结束，未领取不再补发。",
         "另有一项升级礼：升级至 2.2.0 版本、完成旧版数据迁移可领 5000 积分（约 5000 万 tokens），积分发放后 7 天内有效。"
       ]
     },
@@ -2243,6 +2244,14 @@
       "detail_slug": "0129dmkr",
       "added": "2026-11-01",
       "reviewed_at": "2026-11-01"
+    },
+    {
+      "name": "Inferbase（$0 Free 档聚合网关）",
+      "url": "https://inferbase.ai",
+      "reason": "2026-11-02 自动更新新增：官方 pricing 页写明永久 $0 Free 档、无需绑卡，托管推理每天 100 次请求 / $0.5 用量、每分钟 10 次，每月 5000 次请求上限，单请求限 8,192 输入 + 1,024 输出 token。只入观望原因：① 属 OpenAI 兼容聚合网关，与 OpenRouter / BazaarLink / Kilo / OpenCode Zen 同构，按「新聚合器先观望」惯例暂不上首页；② 免费是共享用量预算（auto 路由选模型），没有单独免费的模型，额度按美元折算、单请求窗口远小于模型真实上下文；③ 国际站点、主体与合规信息未充分披露，稳定性需再观察。",
+      "added": "2026-11-02",
+      "reviewed_at": "2026-11-02",
+      "detail_slug": "0130qcrr"
     }
   ],
   "hidden": []
