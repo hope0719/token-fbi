@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-01",
-  "total": 47,
+  "last_updated": "2026-11-03",
+  "total": 48,
   "items": [
     {
       "name": "库库 AI",
@@ -40,29 +40,29 @@
       "vendor": "",
       "category": "tool",
       "free_type": "限时活动",
-      "quota": "Hy3 与 Hy4 preview 的 0.00x 限免已于 10-31 结束、官方未续期；新户 2000 积分礼包与邀请奖励至 11-30。",
-      "validity": "2026-11-30",
+      "quota": "Hy3 的 0.00× 限免已延至 11-15，全天可用、纯语言任务不扣积分（生图生视频照扣）；Hy4 preview 限免 10-31 未续期；新户 2000 积分与邀请奖励至 11-30。",
+      "validity": "2026-11-15",
       "region": "",
       "gates": [],
       "note": "",
       "sponsored": false,
       "entry_url": "https://www.codebuddy.cn/events/invite/?inviteCode=854sf4qiw",
       "intel_url": "https://www.codebuddy.cn/events/invite/?inviteCode=854sf4qiw",
-      "last_verified": "2026-11-01",
+      "last_verified": "2026-11-03",
       "modality": "Step 5 Preview · HY3 · HY4 preview · DeepSeek-V4.1-Flash",
       "signup": "新用户注册送 2000 积分；Step 5 Preview 于 2026 年 10 月 12 日上线、限时免费至 10 月 25 日；HY4 preview 首次体验用户须在 10 月 10 日 23:59 前开启对话。",
       "activity_rules": [
         "Step 5 Preview：2026 年 10 月 12 日上线，限时免费至 2026 年 10 月 25 日。",
         "邀请活动（至 2026 年 11 月 30 日）：每邀请 1 位新注册好友完成一次对话或任务得 50 积分；好友注册后 7 天内活跃满 3 天再得 100 积分。",
         "受邀新人在 2026 年 11 月 30 日前注册并完成一次对话或任务，即得 2,000 积分礼包；好友 30 天内首次付费升级个人版，双方各得 500 积分。",
-        "HY3：0.00x 限免已于 2026 年 10 月 31 日结束，官方未公布续期，当前倍率以客户端模型选择器为准。",
+        "HY3：限时免费已第 5 次延期至 2026 年 11 月 15 日，消耗倍率 0.00×、全天可用；仅纯语言任务免费，生图生视频会切到多模态模型并按正常倍率扣积分；每日额度有限、高峰期排队，额度以客户端说明为准。",
         "HY4 preview 夜间免费（23:00—次日 08:00）随本轮限免于 2026 年 10 月 31 日结束，此后按客户端显示倍率计费。",
         "HY4 preview 从未体验用户（包括此前未体验过该模型的老账号）：在 2026 年 10 月 10 日 23:59 前首次开启一次 HY4 preview 对话，从开启当天起享连续 14 天的每日免费额度。",
         "每日免费额度不等于不限量；额度数值和时间口径以客户端活动说明为准。",
         "Buddy One（2026-10-29 发布）：WorkBuddy 积分默认升级为 Buddy One 积分，在 WorkBuddy / 腾讯文档 / ima / 腾讯网盘通用、余额共享；PC 端 5.9.0 以上「设置 → 个人主页 → 前往管理中心」免费关联账号，近期完成可得 100 积分（暂不支持解绑）。",
         "个人版体验版每月 500 积分免费，Auto 模型调度标注「限免全模型」、代码补全限免无限次，具体以定价页为准。"
       ],
-      "update_source": "自动更新 2026-11-01（巡检：Hy3/Hy4 限免 10-31 到期未续期；官网邀请页确认新人 2000 积分与邀请奖励至 11-30）；2026-11-02 用户更换邀请码为 854sf4qiw",
+      "update_source": "自动更新 2026-11-03（巡检纠错：Hy3 限免第 5 次延期至 11-15、Hy4 preview 未续期）",
       "detail_slug": "0001hgwg",
       "legacy_detail_paths": [
         "/intel/item-000-workbuddy/",
@@ -1428,6 +1428,30 @@
         "/intel/item-014-七牛云-ai-推理/"
       ],
       "added": "2026-10-26"
+    },
+    {
+      "name": "商汤小浣熊（办公 Agent）",
+      "vendor": "商汤",
+      "category": "tool",
+      "free_type": "注册赠送",
+      "quota": "网页/桌面/移动三端各送 3000 积分（共 9000，有效期 1 年），每日登录再领 300；6.8 Flash 等模型限免至 12-01。",
+      "validity": "",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://xiaohuanxiong.com/",
+      "intel_url": "https://xiaohuanxiong.com/",
+      "signup": "手机号或微信登录 xiaohuanxiong.com 得 3000 积分，桌面端、移动端各登录一次再各得 3000；无需绑定支付方式。",
+      "modality": "SenseNova 6.8 Flash · 办公/表格/PPT",
+      "last_verified": "2026-11-03",
+      "update_source": "自动更新 2026-11-03（新增扫描：商汤 11-02 发布 SenseNova 6.8 Flash，小浣熊模型限免至 12-01）",
+      "source_urls": [
+        "https://xiaohuanxiong.com/",
+        "https://www.sensenova.cn/token-plan"
+      ],
+      "detail_slug": "0131ltlx",
+      "added": "2026-11-03"
     }
   ],
   "retired": [
@@ -2252,6 +2276,14 @@
       "added": "2026-11-02",
       "reviewed_at": "2026-11-02",
       "detail_slug": "0130qcrr"
+    },
+    {
+      "name": "魔芋 AI（moyu.cn 大模型网关）",
+      "url": "https://moyu.cn",
+      "reason": "2026-11-03 自动更新新增：双 11 活动（11-01 至 11-11）个人新客实名送 1000 万 Token、30 天未消费老用户回归 5000 万、企业认证 1 亿、连续签到 11 天累计 1000 万、邀请最高 1.6 亿，全任务合计最高 2.7 亿；官方公众号与官网入口均确认。只入观望原因：① 属聚合网关（自称聚合 500+ 模型），与 OpenRouter / BazaarLink / Kilo / OpenCode Zen 同构，按「新聚合器先观望」惯例不上首页；② 网站为 SPA、抓不到额度细则，官方公告只给总量、未逐模型列免费清单；③ 主体与合规披露有限，活动仅 11 天，需观察活动后是否保留常驻免费档。",
+      "added": "2026-11-03",
+      "reviewed_at": "2026-11-03",
+      "detail_slug": "0132cfjp"
     }
   ],
   "hidden": []
