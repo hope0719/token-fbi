@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-03",
-  "total": 48,
+  "last_updated": "2026-11-04",
+  "total": 49,
   "items": [
     {
       "name": "库库 AI",
@@ -418,7 +418,7 @@
       "vendor": "",
       "category": "model",
       "free_type": "长期免费",
-      "quota": "免费模型每日 50 次（充值 $10 后升至 1000 次/日）；永久免费、无截止时间。",
+      "quota": "免费模型（:free 后缀）每分钟 20 次、每日 50 次；账户累计充值满 $10 后每日上限提至 1000 次；永久免费、无截止时间。",
       "validity": "",
       "region": "",
       "gates": [],
@@ -426,8 +426,8 @@
       "sponsored": false,
       "entry_url": "https://openrouter.ai",
       "intel_url": "https://openrouter.ai",
-      "last_verified": "2026-08-19",
-      "modality": "Kimi K2 · Qwen3-Next-80B · Llama 等 35+ 模型",
+      "last_verified": "2026-11-04",
+      "modality": "Nemotron 3 Ultra / 3.5 · Gemma 4 31B · Inkling · Cohere North Mini 等 14 款 :free 模型",
       "signup": "",
       "detail_slug": "0018bing",
       "legacy_detail_paths": [
@@ -437,7 +437,8 @@
         "/intel/item-021-openrouter/",
         "/intel/item-022-openrouter/",
         "/intel/item-026-openrouter/"
-      ]
+      ],
+      "update_source": "自动更新 2026-11-04（源 diff：免费模型清单已轮换为 14 款 :free，额度文档补每分钟 20 次上限）"
     },
     {
       "name": "BazaarLink",
@@ -1124,11 +1125,11 @@
       "note": "",
       "sponsored": false,
       "entry_url": "https://autoclaw.zhipuai.cn",
-      "intel_url": "https://autoclaw.zhipuai.cn/blog/news/M10W4/",
+      "intel_url": "https://autoclaw.zhipuai.cn/blog/news/M11W1/",
       "signup": "",
       "modality": "GLM-5.3-Flash · 桌面 Agent",
-      "last_verified": "2026-11-02",
-      "update_source": "自动更新 2026-11-02（源 diff：M11W1 周福利 11/2–11/8 领 5000 万 Token，单账号限一次）",
+      "last_verified": "2026-11-04",
+      "update_source": "自动更新 2026-11-04（源 diff：官方 M11W1 公告确认 11/2–11/8 领 5000 万 Token，情报链接改指本周公告）",
       "detail_slug": "0085puck",
       "added": "2026-10-11",
       "source_urls": [
@@ -1452,6 +1453,26 @@
       ],
       "detail_slug": "0131ltlx",
       "added": "2026-11-03"
+    },
+    {
+      "name": "腾讯云 TokenHub（大模型服务平台）",
+      "vendor": "",
+      "category": "model",
+      "free_type": "限时活动",
+      "quota": "每个语言模型各 100 万 Tokens、有效期 1 年；生视频 50 积分、混元生3D 各 100 积分；领取截止 12-31。",
+      "validity": "2026-12-31",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://console.cloud.tencent.com/tokenhub/models",
+      "intel_url": "https://cloud.tencent.com/document/product/1823/130053",
+      "signup": "",
+      "modality": "腾讯混元 · DeepSeek-V4.1-Flash · Kimi · MiniMax 等",
+      "last_verified": "2026-11-04",
+      "update_source": "自动更新 2026-11-04（新增扫描：官方《新人免费体验包》文档，每语言模型 100 万 Tokens / 1 年）",
+      "detail_slug": "0133ivna",
+      "added": "2026-11-04"
     }
   ],
   "retired": [
