@@ -1,7 +1,7 @@
 {
   "site_name": "AI 活动雷达",
   "tagline": "在时间截止前找到 AI 机会",
-  "updated_at": "2026-11-04T01:45:25.322Z",
+  "updated_at": "2026-11-05T02:01:53.869Z",
   "source": "JS-banana/ai-opportunity-radar (airadar.laifuyou.com) + LucianaiB 飞书表「AI 活动推荐」+ events.waytoagi.com 三源合并 + 手工补录 35 条",
   "activities": [
     {
@@ -6102,6 +6102,35 @@
       "slug": null,
       "image": "event-pass-macro.png",
       "firstSeen": "2000-01-01"
+    },
+    {
+      "id": "wag_e_6c03ce7c53",
+      "title": "首届AI × 音乐视觉黑客松",
+      "vendor": "WaytoAGI × ACE-CON",
+      "type": "黑客松",
+      "score": 0,
+      "difficulty": null,
+      "difficultyNote": "拟邀/出席嘉宾：卢笛  裁缝铺主唱 & 制作人（评审团队）、戈非  草台回声创始人&CEO（评审团队）、神思远  AI影视导演（评审团队）、丁一  广告/纪录片导演（评审团队）",
+      "reward": "",
+      "rewardDetail": "标签：AI音乐 / 视觉艺术 / 黑客松 / AIGC / WaytoAGI / 跨界共创",
+      "rewardTypes": [],
+      "format": "线上+线下",
+      "participation": "站外链接报名；线上+线下 · 北京 · 主办 WaytoAGI × ACE-CON",
+      "winningCriteria": null,
+      "timelineNotes": null,
+      "startAt": "2026-11-02",
+      "endAt": "2026-11-21T23:59:59+08:00",
+      "deadline_date": "2026-11-21",
+      "region": "中国",
+      "officialStatus": "官方确认",
+      "url": "https://resonance.waytoagi.com/",
+      "source": "waytoagi",
+      "estimatedEffort": null,
+      "suggestion": "值得参加",
+      "discoveredAt": "2026-11-04T14:50:13.629Z",
+      "slug": null,
+      "image": "event-pass-macro.png",
+      "firstSeen": "2026-11-05"
     },
     {
       "id": "dy-mtcgttis-0",
