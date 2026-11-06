@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-05",
-  "total": 49,
+  "last_updated": "2026-11-06",
+  "total": 50,
   "items": [
     {
       "name": "库库 AI",
@@ -115,7 +115,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "每日赠送",
-      "quota": "Qwen3.8-Flash 个人版每日赠送免费额度、按 0× 计费，官方未公布截止日；DeepSeek 系列 0× 免费期已于 11-01 00:00 结束，现按 0.1×–0.5× 计费。",
+      "quota": "每日 10:00 客户端领 100 Credits（30 天有效、可累积），新户注册送 300；Qwen3.8-Flash 每日免费用量按 0×，DeepSeek 系列 11-01 起转 0.1×–0.5×。",
       "validity": "官方未公布（以客户端为准）",
       "region": "",
       "gates": [],
@@ -123,7 +123,7 @@
       "sponsored": false,
       "entry_url": "https://t.aliyun.com/U/Ob4f6l",
       "intel_url": "https://t.aliyun.com/U/Ob4f6l",
-      "last_verified": "2026-11-01",
+      "last_verified": "2026-11-06",
       "modality": "Qwen3.8-Flash · Qwen3.8-Max · DeepSeek-V4-Pro · DeepSeek-Flash · GLM-5.3",
       "signup": "",
       "activity_rules": [
@@ -132,7 +132,7 @@
         "错峰折扣：每晚 22:00 至次日 08:00 的低峰时段，Qwen3.8-Max 由 0.5× 降至 0.2×（约 4 折），其他付费模型同时段另有折扣；客户端模型浮层顶部显示「错峰折扣进行中」及倒计时。",
         "模型倍率即积分折扣（0.5× = 半价、0× = 不扣 Credits）；实际可调用模型与倍率以客户端模型列表为准，官方调整不另行公告。"
       ],
-      "update_source": "用户指定 2026-11-01（客户端截图：DeepSeek 0× 限免已结束、Qwen3.8-Flash 仍标 Free、错峰折扣进行中）",
+      "update_source": "自动更新 2026-11-06（巡检：补每日 10:00 领 100 Credits 与注册送 300，DeepSeek 免费期结束口径并入）",
       "detail_slug": "0002eanr",
       "legacy_detail_paths": [
         "/intel/item-001-qoder-cn/",
@@ -1476,6 +1476,30 @@
       "update_source": "自动更新 2026-11-04（新增扫描：官方《新人免费体验包》文档，每语言模型 100 万 Tokens / 1 年）",
       "detail_slug": "0133ivna",
       "added": "2026-11-04"
+    },
+    {
+      "name": "蚂蚁百灵 Ling-3.2-flash（首发限免）",
+      "vendor": "蚂蚁集团（百灵大模型）",
+      "category": "model",
+      "free_type": "限时活动",
+      "quota": "上线首两周 API 全免费（输入输出均不计费），11-19 起恢复按量：输入约 ¥2、输出约 ¥6 / 百万 tokens。",
+      "validity": "2026-11-19",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://developer.ant-ling.com/",
+      "intel_url": "https://developer.ant-ling.com/en/docs/models/price/",
+      "signup": "支付宝账号在 API 控制台开通 Ling 服务即可，模型 id 为 Ling-3.2-flash，兼容 OpenAI / Anthropic 协议；未签自动扣款则额度用尽即停，不产生扣费。",
+      "modality": "Ling-3.2-flash（560B MoE / 25B 激活、1M 上下文、图像+视频输入）",
+      "last_verified": "2026-11-06",
+      "update_source": "自动更新 2026-11-06（新增扫描：官方定价页 Limited-Time Benefits 明确「上线首 2 周免费」）",
+      "source_urls": [
+        "https://developer.ant-ling.com/en/docs/models/price/",
+        "https://developer.ant-ling.com/en/docs/getting-started/changelog"
+      ],
+      "detail_slug": "0134gfaz",
+      "added": "2026-11-06"
     }
   ],
   "retired": [
