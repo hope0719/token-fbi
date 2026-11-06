@@ -44,11 +44,11 @@
       "validity": "2026-11-15",
       "region": "",
       "gates": [],
-      "note": "",
+      "note": "Hy4 千万别用，会不幸（额度少、扣分快，长任务容易翻车）。",
       "sponsored": false,
       "entry_url": "https://www.codebuddy.cn/events/invite/?inviteCode=854sf4qiw",
       "intel_url": "https://www.codebuddy.cn/events/invite/?inviteCode=854sf4qiw",
-      "last_verified": "2026-11-05",
+      "last_verified": "2026-11-06",
       "modality": "Hy4 · HY3 · Step 5 Preview · DeepSeek-V4.1-Flash",
       "signup": "新用户注册送 2000 积分；Step 5 Preview 于 2026 年 10 月 12 日上线、限时免费至 10 月 25 日；Hy4 正式版 2026 年 11 月 4 日上线，客户端模型列表选中即可使用。",
       "activity_rules": [
@@ -62,7 +62,7 @@
         "Buddy One（2026-10-29 发布）：WorkBuddy 积分默认升级为 Buddy One 积分，在 WorkBuddy / 腾讯文档 / ima / 腾讯网盘通用、余额共享；PC 端 5.9.0 以上「设置 → 个人主页 → 前往管理中心」免费关联账号，近期完成可得 100 积分（暂不支持解绑）。",
         "个人版体验版每月 500 积分免费，Auto 模型调度标注「限免全模型」、代码补全限免无限次，具体以定价页为准。"
       ],
-      "update_source": "自动更新 2026-11-05（巡检：官方 11-04 发布 Hy4 正式版并接入国内版，限免至 11-15、Hy3 同步延期）",
+      "update_source": "用户指定 2026-11-06（站长指定推荐口径：日常全任务用 DeepSeek-V4.1-Flash，Hy3 继续推荐，Hy4 加禁用提示）",
       "detail_slug": "0001hgwg",
       "legacy_detail_paths": [
         "/intel/item-000-workbuddy/",
@@ -70,7 +70,8 @@
         "/intel/item-004-workbuddy/",
         "/intel/item-005-workbuddy/",
         "/intel/item-009-workbuddy/"
-      ]
+      ],
+      "card_promo": "日常全任务首选 DeepSeek-V4.1-Flash；Hy3 也值得用（纯语言 0.00× 全天免费）"
     },
     {
       "name": "字节 TRAE（AI IDE）",
@@ -855,11 +856,11 @@
       "free_type": "限时活动",
       "region": "国际版",
       "gates": [],
-      "note": "",
+      "note": "Hy4 千万别用，会不幸（额度少、扣分快，长任务容易翻车）。",
       "sponsored": false,
-      "last_verified": "2026-11-05",
+      "last_verified": "2026-11-06",
       "signup": "",
-      "update_source": "自动更新 2026-11-05（巡检：官方 11-04 国际版同步接入 Hy4 正式版，限免至 11-15）",
+      "update_source": "用户指定 2026-11-06（站长指定推荐口径：日常全任务用 DeepSeek-V4.1-Flash，Hy3 继续推荐，Hy4 加禁用提示）",
       "name": "WorkBuddy 国际版",
       "quota": "Hy4 正式版与国际版同步接入，11-04–11-15 限免；Hy3 限免同步延至 11-15；DeepSeek-V4.1-Flash 倍率以客户端为准。",
       "validity": "2026-11-15",
@@ -887,7 +888,8 @@
       "source_urls": [
         "https://www.toutiao.com/a7698041018058342953",
         "https://cloud.tencent.com/developer/article/2762018"
-      ]
+      ],
+      "card_promo": "日常全任务首选 DeepSeek-V4.1-Flash；Hy3 也值得用（纯语言 0.00× 全天免费）"
     },
     {
       "name": "华为云码道",
