@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-11-06",
-  "total": 50,
+  "total": 49,
   "items": [
     {
       "name": "库库 AI",
@@ -383,35 +383,6 @@
         "/intel/item-019-agnes-ai/",
         "/intel/item-020-agnes-ai/",
         "/intel/item-024-agnes-ai/"
-      ]
-    },
-    {
-      "name": "美团 longcat 大模型",
-      "vendor": "",
-      "category": "model",
-      "free_type": "长期免费",
-      "quota": "新用户实名认证送 1000 万 token；邀请好友完成实名，邀请人与受邀人各再得 1000 万（可与实名额度叠加）；无截止时间。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://longcat.chat/platform/product",
-      "intel_url": "https://longcat.chat/platform/product",
-      "last_verified": "2026-09-28",
-      "modality": "LongCat-2.5-Preview",
-      "signup": "",
-      "invite_text": "我在用 LongCat AI 开放平台，体验 LongCat 最新模型，编程、推理、Agent 工具调用能力持续进化！通过我的链接完成实名认证，你我各得 1000 万 Tokens（叠加平台新人礼包最高可得 2000 万）；首购下单即可返实付金额 5%！",
-      "invite_url": "https://longcat.chat/platform/product?inviteCode=CNOXBVA4",
-      "invite_code": "CNOXBVA4",
-      "detail_slug": "0017onfn",
-      "legacy_detail_paths": [
-        "/intel/item-017-美团-longcat-大模型/",
-        "/intel/item-018-美团-longcat-大模型/",
-        "/intel/item-019-美团-longcat-大模型/",
-        "/intel/item-020-美团-longcat-大模型/",
-        "/intel/item-021-美团-longcat-大模型/",
-        "/intel/item-025-美团-longcat-大模型/"
       ]
     },
     {
@@ -1644,6 +1615,20 @@
       "reason": "用户明确要求永不上架（2026-10-20）：未获用户明确同意不得重新收录。",
       "detail_slug": "0099bcrh",
       "legacy_detail_paths": []
+    },
+    {
+      "name": "美团 longcat 大模型",
+      "url": "https://longcat.chat/platform/product",
+      "reason": "额度实为实名认证赠送量包（1000 万 tokens、官方口径 30 天有效），与「长期免费」标签不符，已下架。",
+      "detail_slug": "0017onfn",
+      "legacy_detail_paths": [
+        "/intel/item-017-美团-longcat-大模型/",
+        "/intel/item-018-美团-longcat-大模型/",
+        "/intel/item-019-美团-longcat-大模型/",
+        "/intel/item-020-美团-longcat-大模型/",
+        "/intel/item-021-美团-longcat-大模型/",
+        "/intel/item-025-美团-longcat-大模型/"
+      ]
     }
   ],
   "watchlist": [
