@@ -427,8 +427,8 @@
       "sponsored": false,
       "entry_url": "https://openrouter.ai",
       "intel_url": "https://openrouter.ai",
-      "last_verified": "2026-11-04",
-      "modality": "Nemotron 3 Ultra / 3.5 · Gemma 4 31B · Inkling · Cohere North Mini 等 14 款 :free 模型",
+      "last_verified": "2026-11-06",
+      "modality": "Nemotron 3 Ultra 550B / 3.5 系列 · Gemma 4 31B/26B · Cohere North Mini · Xingchen 4.0 · dots-3-note 等 12 款 :free",
       "signup": "",
       "detail_slug": "0018bing",
       "legacy_detail_paths": [
@@ -439,7 +439,7 @@
         "/intel/item-022-openrouter/",
         "/intel/item-026-openrouter/"
       ],
-      "update_source": "自动更新 2026-11-04（源 diff：免费模型清单已轮换为 14 款 :free，额度文档补每分钟 20 次上限）"
+      "update_source": "自动更新 2026-11-06（巡检：/api/v1/models 实测 :free 由 14 款降为 12 款，Inkling 已退出免费清单；限速 20/分、50/日，满 $10 提至 1000/日 不变）"
     },
     {
       "name": "BazaarLink",
@@ -560,7 +560,7 @@
       "name": "天翼云息壤（电信）",
       "vendor": "",
       "category": "model",
-      "free_type": "长期免费",
+      "free_type": "注册赠送",
       "quota": "文本类模型每款 2500 万 Tokens，有效期 2 周（自首次使用算起）。",
       "validity": "",
       "region": "",
@@ -569,7 +569,7 @@
       "sponsored": false,
       "entry_url": "https://www.ctyun.cn/product/maas",
       "intel_url": "https://www.ctyun.cn/product/maas",
-      "last_verified": "2026-07-19",
+      "last_verified": "2026-11-06",
       "modality": "GLM-5 · DeepSeek V4 · Qwen3.5 · Doubao 等约 18 个模型",
       "signup": "",
       "detail_slug": "0023klwn",
@@ -580,7 +580,8 @@
         "/intel/item-026-天翼云息壤-电信/",
         "/intel/item-027-天翼云息壤-电信/",
         "/intel/item-031-天翼云息壤-电信/"
-      ]
+      ],
+      "update_source": "自动更新 2026-11-06（巡检：卡面标签与额度性质不符——每款 2500 万 Tokens、2 周有效，属注册赠送而非长期免费）"
     },
     {
       "name": "MonkeyCode（长亭）",
@@ -1051,7 +1052,7 @@
       "sponsored": false,
       "entry_url": "https://antigravity.google/download",
       "intel_url": "https://antigravity.google/pricing",
-      "last_verified": "2026-10-02",
+      "last_verified": "2026-11-06",
       "modality": "Gemini · Claude · GPT-OSS",
       "signup": "下载客户端并使用 Google 账号登录，选择免费个人方案。",
       "activity_rules": [
@@ -1064,7 +1065,7 @@
         "https://antigravity.google/pricing",
         "https://antigravity.google/docs/models/"
       ],
-      "update_source": "官方定价页与模型文档，2026-10-02",
+      "update_source": "自动更新 2026-11-06（巡检：官方 pricing 仍为 $0/月、Generally Available、basic weekly limits、无截止日；修正原 last_verified 早于 added 的日期矛盾）",
       "detail_slug": "0039ysko",
       "legacy_detail_paths": [
         "/intel/item-039-google-antigravity-反重力/",
