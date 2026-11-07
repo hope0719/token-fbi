@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-06",
-  "total": 49,
+  "last_updated": "2026-11-07",
+  "total": 50,
   "items": [
     {
       "name": "库库 AI",
@@ -40,7 +40,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "限时活动",
-      "quota": "Hy4 正式版 11-04 上线并限免至 11-15（0.00× 全天）；Hy3 限免同步延至 11-15；新户 2000 积分与邀请奖励至 11-30。",
+      "quota": "Hy4 限免至 11-15（0.00×，每日额度有限、用尽转积分）；Hy3 同步延至 11-15；新户 2000 积分至 11-30。",
       "validity": "2026-11-15",
       "region": "",
       "gates": [],
@@ -48,7 +48,7 @@
       "sponsored": false,
       "entry_url": "https://www.codebuddy.cn/events/invite/?inviteCode=854sf4qiw",
       "intel_url": "https://www.codebuddy.cn/events/invite/?inviteCode=854sf4qiw",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "modality": "DeepSeek-V4.1-Flash · Hy3 · Hy4 · Kimi-K3.1-Pro",
       "signup": "新用户注册送 2000 积分；Hy4 正式版 2026 年 11 月 4 日上线，客户端模型列表选中即可使用；Step 5 Preview 已不在免费范围，现按 0.33× 正常计费。",
       "activity_rules": [
@@ -60,9 +60,10 @@
         "HY4 preview 已于 2026 年 11 月 4 日被正式版替代，客户端模型列表不再单列 preview；其夜间免费时段（23:00—次日 08:00）已于 2026 年 10 月 31 日结束。",
         "每日免费额度不等于不限量；额度数值和时间口径以客户端活动说明为准。",
         "Buddy One（2026-10-29 发布）：WorkBuddy 积分默认升级为 Buddy One 积分，在 WorkBuddy / 腾讯文档 / ima / 腾讯网盘通用、余额共享；PC 端 5.9.0 以上「设置 → 个人主页 → 前往管理中心」免费关联账号，近期完成可得 100 积分（暂不支持解绑）。",
-        "个人版体验版每月 500 积分免费，Auto 模型调度标注「限免全模型」、代码补全限免无限次，具体以定价页为准。"
+        "个人版体验版每月 500 积分免费，Auto 模型调度标注「限免全模型」、代码补全限免无限次，具体以定价页为准。",
+        "2026-11-05 官方将 Hy4 推理集群扩容 10 倍并上调免费额度；免费用户额度低于订阅用户，高峰时段仍可能排队，额度刷新时间以客户端提示为准。"
       ],
-      "update_source": "用户指定 2026-11-06（站长指定推荐口径：日常全任务用 DeepSeek-V4.1-Flash；Hy3 继续推荐；Hy4 因能力差加禁用提示）",
+      "update_source": "自动更新 2026-11-07（巡检：官方 11-05 将 Hy4 推理集群扩容 10 倍并上调免费额度，明确免费用户每日额度有上限、用尽转积分）",
       "detail_slug": "0001hgwg",
       "legacy_detail_paths": [
         "/intel/item-000-workbuddy/",
@@ -1093,18 +1094,18 @@
       "vendor": "",
       "category": "event",
       "free_type": "限时活动",
-      "quota": "本周 11/2–11/8 登录领 5000 万 Token（5,000 积分），单账号限一次，11-08 23:59 失效；较上周 1 亿减半。",
-      "validity": "2026-11-08",
+      "quota": "本周 11/2–11/8 登录领 5000 万 Token，11-08 23:59 失效；官方已预告 11/9–11/15 同档 5000 万。",
+      "validity": "2026-11-15",
       "region": "",
       "gates": [],
       "note": "",
       "sponsored": false,
       "entry_url": "https://autoclaw.zhipuai.cn",
-      "intel_url": "https://autoclaw.zhipuai.cn/blog/news/M11W1/",
+      "intel_url": "https://autoclaw.zhipuai.cn/blog/news/M11W2/",
       "signup": "",
       "modality": "GLM-5.3-Flash · 桌面 Agent",
-      "last_verified": "2026-11-04",
-      "update_source": "自动更新 2026-11-04（源 diff：官方 M11W1 公告确认 11/2–11/8 领 5000 万 Token，情报链接改指本周公告）",
+      "last_verified": "2026-11-07",
+      "update_source": "自动更新 2026-11-07（源 diff：官方 11-06 发布 M11W2 公告，预告 11/9–11/15 登录领 5000 万 Tokens，有效期顺延）",
       "detail_slug": "0085puck",
       "added": "2026-10-11",
       "source_urls": [
@@ -1112,6 +1113,7 @@
         "https://autoclaw.z.ai/blog/news/Weekly-Perks-M10W3/"
       ],
       "activity_rules": [
+        "下周福利（官方 11-06 预告）：11 月 9 日至 11 月 15 日登录 AutoClaw 即得 5000 万 Tokens（双十一福利），领取与失效规则同本周。",
         "本周福利：11 月 2 日 00:00 至 11 月 8 日 23:59（北京时间）登录 AutoClaw，可领 5000 万 Tokens（约 5,000 积分），每个账号限领一次，奖励在 11 月 8 日 23:59 失效。",
         "上一周福利（10 月 26 日至 11 月 1 日，1 亿 Tokens）已于 11 月 1 日 23:59 结束，未领取不再补发。",
         "另有一项升级礼：升级至 2.2.0 版本、完成旧版数据迁移可领 5000 积分（约 5000 万 tokens），积分发放后 7 天内有效。"
@@ -1474,6 +1476,31 @@
       ],
       "detail_slug": "0134gfaz",
       "added": "2026-11-06"
+    },
+    {
+      "name": "腾讯 EdgeOne Makers（AI 网关）",
+      "vendor": "",
+      "category": "model",
+      "free_type": "免费层",
+      "quota": "新账号赠 50 万 Token（账号内项目共享、免绑卡），网关内置 DeepSeek/MiniMax/混元；英文口径每月 50 万，以控制台为准。",
+      "validity": "",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://pages.edgeone.ai/zh",
+      "intel_url": "https://pages.edgeone.ai/zh/use-cases/ai-agent-framework",
+      "signup": "",
+      "modality": "DeepSeek-V4.1-Flash · MiniMax · 混元（AI 网关）",
+      "last_verified": "2026-11-07",
+      "update_source": "自动更新 2026-11-07（新增：官方中文页确认新用户赠 50 万 Token、免绑卡，AI 网关内置 DeepSeek/MiniMax/混元）",
+      "detail_slug": "0135hnxh",
+      "added": "2026-11-07",
+      "activity_rules": [
+        "在 Makers 控制台 Models 面板领取额度，平台自动创建调用密钥并注入项目环境变量，无需自填 API Key。",
+        "额度按账号共享，同一账号下所有项目共用 50 万 Token；自带 API Key 的模型由原厂商计费，Makers 不加价。",
+        "免费部署额度：每月 20 万次执行、10 万 GB·s 内存时长、40 并发会话，单次最长 3600 秒。"
+      ]
     }
   ],
   "retired": [
