@@ -410,7 +410,7 @@
       "vendor": "",
       "category": "model",
       "free_type": "长期免费",
-      "quota": "较优模型每天至少可调用 200 次；属阿里云旗下，站内还有非常多值得研究的东西；注册即享、无需实名。",
+      "quota": "较优文本模型每天至少 200 次调用；阿里云旗下，注册即享、无需实名。",
       "validity": "",
       "region": "",
       "gates": [],
@@ -418,8 +418,8 @@
       "sponsored": false,
       "entry_url": "https://modelscope.cn",
       "intel_url": "https://modelscope.cn",
-      "last_verified": "2026-10-26",
-      "modality": "Qwen 系列 · LUX · Stable Diffusion 等",
+      "last_verified": "2026-11-10",
+      "modality": "Qwen 系列 · 通义万相 · LUX · Stable Diffusion 等",
       "signup": "",
       "detail_slug": "0020xrne",
       "legacy_detail_paths": [
@@ -435,7 +435,9 @@
       "invite_url": "https://modelscope.cn/register?inviteCode=%E5%88%98%E5%90%8C%E5%AD%A6&invitorName=modelscope_mp_982967993",
       "invite_code": "刘同学",
       "invite_text": "我在用魔搭社区 ModelScope，注册即享模型免费调用，邀请码 刘同学。",
-      "update_source": "用户指定，2026-10-26（点击领取改走注册邀请链接）"
+      "update_source": "用户指定，2026-11-10（改五彩渐变卡面，补多模态生图说明）",
+      "card_style": "rainbow",
+      "card_promo": "多模态：每天约出 60–80 张图，效果不错"
     },
     {
       "name": "OpenCode Zen",

@@ -358,8 +358,9 @@ def render_card(it, recommended=False, sponsor=False, href="#"):
     reco = '<span class="chip reco">⭐ 站长推荐</span>' if recommended else ""
     # 教程角标：条目带 guide（详情页领取教程）时显示，提示卡内附图文步骤
     guide_chip = '<span class="chip guide-chip">📖 领取教程</span>' if it.get("guide") else ""
-    # 视觉强调：card_style="red" 时卡片整块填充红色（用于重点教程/主推条目）
-    red_cls = " card-red" if (it.get("card_style") == "red") else ""
+    # 视觉强调：card_style 支持 "red"（纯红）与 "rainbow"（五彩渐变），其余值忽略
+    _style = it.get("card_style")
+    red_cls = f" card-{_style}" if _style in ("red", "rainbow") else ""
     # 备注：仅当该条目显式提供且非自动更新来源时渲染（人工提示位）
     note_text = "" if auto_src else (it.get("note") or "").strip()
     note_block = f'<div class="c-note">{esc(note_text)}</div>' if note_text else ""
@@ -746,6 +747,24 @@ img{max-width:100%}
 .card.card-red .btn.ghost:hover{background:rgba(255,255,255,.16);border-color:#fff;color:#fff}
 .card.card-red .btn.primary{background:#fff;color:#B92A20;box-shadow:0 6px 18px rgba(0,0,0,.14)}
 .card.card-red .btn.primary:hover{background:#FFE9E6;color:#8F1D17}
+/* 整卡五彩渐变：条目设 card_style="rainbow" 时生效（多模态/生图等重点卡）。
+   做法是「高亮度彩虹底 + 深墨色字」——比白字压深色纱更通透，中段黄绿区也不会糊。 */
+.card.card-rainbow{background:linear-gradient(118deg,#FF6FAE 0%,#FF9A5B 15%,#FFD75E 30%,#6FE6A6 46%,#5CD8EE 62%,#7FA5FF 78%,#C287FF 92%,#FF6FAE 100%);border-color:transparent;box-shadow:0 18px 40px rgba(176,86,150,.26)}
+.card.card-rainbow::before{display:none}
+.card.card-rainbow .c-name,.card.card-rainbow .c-name a{color:#17102B}
+.card.card-rainbow .c-name a:hover{color:#3B1E6E}
+.card.card-rainbow .c-vendor,.card.card-rainbow .c-vendor .v-brand,.card.card-rainbow .c-vendor .v-mod{color:rgba(23,16,43,.8)}
+.card.card-rainbow .c-vendor .v-dot{color:rgba(23,16,43,.38)}
+.card.card-rainbow .c-quota{color:rgba(23,16,43,.9)}
+.card.card-rainbow .c-promo{color:#5B21B6;background:rgba(255,255,255,.92);border-color:transparent;box-shadow:0 4px 14px rgba(80,30,120,.16)}
+.card.card-rainbow .c-note{background:rgba(255,255,255,.5);color:#241A3D}
+.card.card-rainbow .cat-tag,.card.card-rainbow .free-tag{background:rgba(255,255,255,.62);color:#241A3D;border-color:rgba(255,255,255,.82)}
+.card.card-rainbow .chip{background:rgba(255,255,255,.55);color:#241A3D;border-color:rgba(255,255,255,.8)}
+.card.card-rainbow .chip.guide-chip{background:#17102B;color:#fff;border-color:#17102B;font-weight:800}
+.card.card-rainbow .btn.ghost{background:rgba(255,255,255,.4);color:#17102B;border-color:rgba(255,255,255,.75)}
+.card.card-rainbow .btn.ghost:hover{background:#fff;border-color:#fff;color:#17102B}
+.card.card-rainbow .btn.primary{background:#17102B;color:#fff;box-shadow:0 8px 20px rgba(23,16,43,.28)}
+.card.card-rainbow .btn.primary:hover{background:#2A1B4A;color:#fff}
 .card.card-red:hover{border-color:transparent;transform:translateY(-3px)}
 .chip.guide-chip{background:var(--ok-soft);color:var(--ok);border-color:rgba(63,143,107,.45)}
 /* 新增五角星：条目收录后 3 天内在卡片右上角显示，到期由页面脚本自动摘除 */
