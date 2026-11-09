@@ -515,8 +515,8 @@
       "sponsored": false,
       "entry_url": "https://cloud.tencent.com/developer/article/2705075",
       "intel_url": "https://cloud.tencent.com/developer/article/2705075",
-      "last_verified": "2026-07-29",
-      "modality": "Hy3 · Hy Image 3.0",
+      "last_verified": "2026-11-09",
+      "modality": "Hy3 · Hy4 preview · DeepSeek-V4.1-Flash · Hy Image 3.0",
       "signup": "",
       "detail_slug": "0022behf",
       "legacy_detail_paths": [
@@ -526,6 +526,14 @@
         "/intel/item-025-微信-ai-小程序成长计划-云开发-cloudbase/",
         "/intel/item-026-微信-ai-小程序成长计划-云开发-cloudbase/",
         "/intel/item-030-微信-ai-小程序成长计划-云开发-cloudbase/"
+      ],
+      "update_source": "自动更新 2026-11-09（巡检：官方 11-04 公告 10 亿 Token 生文额度新增 hy4-preview / deepseek-v4.1-flash 两个可抵扣模型，原仅 Hy3）",
+      "activity_rules": [
+        "AI 资源包：单个小程序可领 10 亿大模型 Token 生文额度 + 10 万张 AI 生图额度 + 免费云开发个人版环境（6 个月），资源包自申请成功之日起 6 个月有效。",
+        "生文额度目前覆盖三个文本模型：Hy3、Hy4 preview、DeepSeek-V4.1-Flash；三者均无需在云开发控制台开启，调用时 Token 用量自动从赠送额度扣除。",
+        "生图额度对应 Hy Image 3.0；Hy-image-v3.5-preview 与 Hy4 正式版官方称在接入中，上线后另发通知。",
+        "报名入口：微信公众平台 → 行业能力 → 小程序成长计划；全行业类目开放，小游戏开发者走 MP 后台「游戏能力地图 → AI 成长计划」，待遇相同。",
+        "额度用尽后可切换 CloudBase 资源点套餐抵扣；用量达 80%、90%、100% 时通过微信公众号消息提醒。"
       ]
     },
     {
