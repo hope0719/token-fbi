@@ -1,7 +1,7 @@
 {
   "site_name": "AI 活动雷达",
   "tagline": "在时间截止前找到 AI 机会",
-  "updated_at": "2026-11-07T00:18:02.268Z",
+  "updated_at": "2026-11-09T02:13:56.755Z",
   "source": "JS-banana/ai-opportunity-radar (airadar.laifuyou.com) + LucianaiB 飞书表「AI 活动推荐」+ events.waytoagi.com 三源合并 + 手工补录 35 条",
   "activities": [
     {
@@ -6073,35 +6073,6 @@
       "slug": null,
       "image": "event-pass-macro.png",
       "firstSeen": "2000-01-01"
-    },
-    {
-      "id": "wag_e_49b9748836",
-      "title": "HR AI 造物游园会",
-      "vendor": "HR Next",
-      "type": "社区活动",
-      "score": 0,
-      "difficulty": null,
-      "difficultyNote": null,
-      "reward": "",
-      "rewardDetail": "标签：AI产品 / AI招聘 / AI培训 / 绿皮书 / 造物集市 / 智能体",
-      "rewardTypes": [],
-      "format": "线下",
-      "participation": "站外链接报名；线下 · 上海、北京、深圳、成都 · 主办 HR Next",
-      "winningCriteria": null,
-      "timelineNotes": "13:30 开始",
-      "startAt": "2026-11-07",
-      "endAt": "2026-11-07T23:59:59+08:00",
-      "deadline_date": "2026-11-07",
-      "region": "中国",
-      "officialStatus": "官方确认",
-      "url": "https://my.feishu.cn/share/base/form/shrcn53qSwomZ1qk1X01nG3csEf",
-      "source": "waytoagi",
-      "estimatedEffort": null,
-      "suggestion": "值得参加",
-      "discoveredAt": "2026-10-15T22:18:26.913Z",
-      "slug": null,
-      "image": "event-pass-macro.png",
-      "firstSeen": "2026-10-16"
     },
     {
       "id": "wag_e_6c03ce7c53",
