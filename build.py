@@ -1332,6 +1332,9 @@ for it in all_detail_entries:
     for source in it.get("legacy_detail_paths", []):
         if not source.startswith("/intel/") or any(c in source for c in "?#\n\r"):
             raise ValueError(f"非法旧详情路径：{source}")
+        # 自我重定向会形成 301 死循环（/intel/<slug>/ 跳自己），直接跳过。
+        if source.rstrip("/") == target.rstrip("/"):
+            continue
         source = quote(source, safe="/%")
         if source in _detail_redirects and _detail_redirects[source] != target:
             raise ValueError(f"旧路径映射冲突：{source}")
