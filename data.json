@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-09",
-  "total": 50,
+  "last_updated": "2026-11-10",
+  "total": 49,
   "items": [
     {
       "name": "库库 AI",
@@ -298,40 +298,6 @@
         "/intel/item-015-美团-catpaw-app/",
         "/intel/item-019-美团-catpaw-app/"
       ]
-    },
-    {
-      "name": "豆包拉新项目",
-      "vendor": "",
-      "category": "tool",
-      "free_type": "长期免费",
-      "quota": "非模型 / API：拉新推广变现项目（豆包 15 元/单、迅雷网盘 15 元/单、夸克网盘 13 元/单）；零门槛免费参与，无截止时间。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": true,
-      "entry_url": "#",
-      "intel_url": "#",
-      "last_verified": "2026-08-22",
-      "modality": "网盘拉新 · 多平台带赚",
-      "signup": "",
-      "ad_brand": "豆包拉新项目",
-      "ad_hook": "零门槛拉新变现",
-      "ad_desc": "豆包 15 元/单 · 迅雷网盘 15 元/单 · 夸克网盘 13 元/单。",
-      "ad_cta": "查看详情",
-      "poster_url": "https://token-fbi.com/poster-doubao-laxin.jpg",
-      "poster_alt": "豆包拉新项目 · 网盘拉新活动海报",
-      "poster_caption": "长按识别海报中的二维码，查看项目详情与参与方式。",
-      "detail_slug": "0012ocut",
-      "legacy_detail_paths": [
-        "/intel/item-012-豆包拉新项目/",
-        "/intel/item-013-豆包拉新项目/",
-        "/intel/item-014-豆包拉新项目/",
-        "/intel/item-015-豆包拉新项目/",
-        "/intel/item-016-豆包拉新项目/",
-        "/intel/item-020-豆包拉新项目/"
-      ],
-      "update_source": "自动更新 2026-10-20（分类由活动改为工具，避免与长期免费标签冲突）"
     },
     {
       "name": "硅基流动 SiliconFlow",
@@ -2244,5 +2210,42 @@
       "detail_slug": "0132cfjp"
     }
   ],
-  "hidden": []
+  "hidden": [
+    {
+      "name": "豆包拉新项目",
+      "vendor": "",
+      "category": "tool",
+      "free_type": "长期免费",
+      "quota": "非模型 / API：拉新推广变现项目（豆包 15 元/单、迅雷网盘 15 元/单、夸克网盘 13 元/单）；零门槛免费参与，无截止时间。",
+      "validity": "",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": true,
+      "entry_url": "#",
+      "intel_url": "#",
+      "last_verified": "2026-08-22",
+      "modality": "网盘拉新 · 多平台带赚",
+      "signup": "",
+      "ad_brand": "豆包拉新项目",
+      "ad_hook": "零门槛拉新变现",
+      "ad_desc": "豆包 15 元/单 · 迅雷网盘 15 元/单 · 夸克网盘 13 元/单。",
+      "ad_cta": "查看详情",
+      "poster_url": "https://token-fbi.com/poster-doubao-laxin.jpg",
+      "poster_alt": "豆包拉新项目 · 网盘拉新活动海报",
+      "poster_caption": "长按识别海报中的二维码，查看项目详情与参与方式。",
+      "detail_slug": "0012ocut",
+      "legacy_detail_paths": [
+        "/intel/item-012-豆包拉新项目/",
+        "/intel/item-013-豆包拉新项目/",
+        "/intel/item-014-豆包拉新项目/",
+        "/intel/item-015-豆包拉新项目/",
+        "/intel/item-016-豆包拉新项目/",
+        "/intel/item-020-豆包拉新项目/"
+      ],
+      "update_source": "自动更新 2026-10-20（分类由活动改为工具，避免与长期免费标签冲突）",
+      "hidden_at": "2026-11-10",
+      "hidden_reason": "用户 2026-11-10 00:10 要求撤下该赞助广告位（豆包拉新项目）。卡片本身为返佣推广、非免费额度情报，撤下后整条不渲染，也不进下架区。"
+    }
+  ]
 }
