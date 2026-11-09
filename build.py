@@ -730,7 +730,7 @@ img{max-width:100%}
 .reco-card{border-color:var(--accent)}
 .reco-card::before{opacity:1}
 .chip.reco{background:var(--accent-deep);color:#fff;border-color:var(--accent-deep)}
-/* 整卡填充红色：条目设 card_style="red" 时生效（当前仅「华为云码道」带领取教程的重点卡） */
+/* 整卡填充红色：条目设 card_style="red" 时生效（当前无条目使用，保留能力备用） */
 .card.card-red{background:linear-gradient(152deg,#D8382C 0%,#B92A20 52%,#97190F 100%);border-color:transparent;box-shadow:0 16px 36px rgba(150,25,15,.26)}
 .card.card-red::before{display:none}
 .card.card-red .c-name,.card.card-red .c-name a{color:#fff}
