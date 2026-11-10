@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-11-10",
-  "total": 49,
+  "total": 50,
   "items": [
     {
       "name": "库库 AI",
@@ -1357,6 +1357,37 @@
       ],
       "detail_slug": "0136ggaf",
       "added": "2026-11-09"
+    },
+    {
+      "name": "麦块云 · 每日签到送 1 亿 Token（DeepSeek）",
+      "vendor": "四川麦块信息科技有限公司",
+      "category": "tool",
+      "free_type": "每日赠送",
+      "quota": "每日签到得 10 鱼币可兑 1 亿 Token（DeepSeek V4.1 Flash 优先通道），当日 24:00 清零；用尽自动转不限量通道。",
+      "validity": "",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://minekuai.cn",
+      "intel_url": "https://minekuai.cn",
+      "signup": "",
+      "modality": "DeepSeek V4.1 Flash · GLM 系列（麦块本地部署）",
+      "last_verified": "2026-11-10",
+      "update_source": "用户指定 2026-11-10（用户提供控制台「按量额度」截图：签到 10 鱼币兑 1 亿 Token/日，DeepSeek V4.1 Flash 优先通道）",
+      "promo_url": "https://minekuai.cn/r/8HPQ72GD",
+      "promo_net": "麦块云 邀请注册（另送 10 鱼币）",
+      "invite_text": "通过邀请链接注册麦块云，另送 10 鱼币（可兑 1 亿 Token）。",
+      "invite_url": "https://minekuai.cn/r/8HPQ72GD",
+      "invite_code": "8HPQ72GD",
+      "activity_rules": [
+        "每日签到得 10 鱼币，可兑换 1 亿 Token 当日按量额度，当日 24:00 前有效，未用完不结转。",
+        "该额度走 DeepSeek V4.1 Flash 的按量优先通道，不参与不限量通道的高峰排队；额度用尽后自动切换至不限量通道继续调用。",
+        "可在控制台开启「每日自动兑换」，每天首次调用时自动把鱼币兑成当日额度，无需手动操作。",
+        "邀请好友、完成新手任务（实名认证、首次调用等）可获得永久额度，可累计使用。"
+      ],
+      "detail_slug": "0137lekw",
+      "added": "2026-11-10"
     }
   ],
   "retired": [
