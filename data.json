@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-10",
+  "last_updated": "2026-11-11",
   "total": 50,
   "items": [
     {
@@ -365,8 +365,8 @@
       "sponsored": false,
       "entry_url": "https://openrouter.ai",
       "intel_url": "https://openrouter.ai",
-      "last_verified": "2026-11-10",
-      "modality": "Nemotron 3 Ultra 550B / 3.5 系列 · Gemma 4 31B/26B · Inkling 2 Small · Xingchen 4.0 · dots-3-note · LFM3/LFM2.5 等 13 款 :free",
+      "last_verified": "2026-11-11",
+      "modality": "Nemotron 3 Ultra 550B / 3.5 系列 · Gemma 4 31B/26B · Inkling 2 Small · LFM3/LFM2.5 · Flint v1.0 · dots-3-note 等 12 款 :free",
       "signup": "",
       "detail_slug": "0018bing",
       "legacy_detail_paths": [
@@ -377,7 +377,7 @@
         "/intel/item-022-openrouter/",
         "/intel/item-026-openrouter/"
       ],
-      "update_source": "自动更新 2026-11-10（源 diff：/api/v1/models 实测 :free 由 12 款增至 13 款，Inkling 2 Small 重回免费清单；限速 20/分、50/日 不变）"
+      "update_source": "自动更新 2026-11-11（源 diff：/api/v1/models 实测 :free 由 13 款降至 12 款，Xingchen 4.0 已下架、Flint v1.0 在列；限速 20/分、50/日 不变）"
     },
     {
       "name": "BazaarLink",
@@ -2104,9 +2104,9 @@
     {
       "name": "阶跃星辰 StepFun",
       "url": "https://platform.stepfun.com",
-      "reason": "暂时无免费额度。",
+      "reason": "2026-11-11 复核更新：原记录「暂时无免费额度」已过期。官方 API 定价文档（platform.stepfun.com/docs/zh/guides/pricing/details.md）写明StepAudio 3 系列适用限时免费政策、限免至北京时间 2026-11-17 11:59:59，同日起按新价计费（语音识别 7.5 元/音频小时、语音合成 95 元/百万字符、实时语音 0.65 元/会话分钟）；文本侧 Step 5 Preview / Step 3.7 Flash 均按量计费、无免费额度。只入观望原因：① 官方只说「适用限时免费政策的模型」、未逐条列出哪几款在免，额度与限速也未公布；② 免费范围限于语音（ASR/TTS/音乐生成），文本模型仍需付费，作为「免费 token」情报价值有限；③ 窗口只剩 6 天，结束后转常规计费。待官方明确免费模型清单与额度后再评估上架。",
       "detail_slug": "0005ebrx",
-      "reviewed_at": "2026-10-20"
+      "reviewed_at": "2026-11-11"
     },
     {
       "name": "腾讯 Marvis（马维斯）",
@@ -2205,8 +2205,8 @@
     {
       "name": "Devin（$0 Free 档）",
       "url": "https://devin.ai/",
-      "reason": "2026-10-29 用户提供 X 截图（@Fei2411，10-28）后核实：Cognition 的 Devin 除 $20 Pro 外有 $0 Free 档，官方定价页写「Light daily and weekly quota、limited model availability、unlimited inline edits and Tab completions」，注册即用、无需绑卡；Pro 档的「免费用 SWE-2」属促销，客户端标注 Promo until 12/1/2026（原定 10-16 结束，已延期）。只入观望原因：① 免费档额度官方始终写「light quota」、未公布具体数字；② SWE-2 真正免费的前提是 $20 订阅，属付费订阅附赠，按收录规则不上首页；③ 国际站、需海外网络。待额度口径透明化或开放更多免费模型后再评估上架。",
-      "reviewed_at": "2026-10-29",
+      "reason": "2026-10-29 用户提供 X 截图（@Fei2411，10-28）后核实：Cognition 的 Devin 除 $20 Pro 外有 $0 Free 档，官方定价页写「Light daily and weekly quota、limited model availability、unlimited inline edits and Tab completions」，注册即用、无需绑卡；Pro 档的「免费用 SWE-2」属促销，客户端标注 Promo until 12/1/2026。2026-11-11 复核：官方 11-04 发布 SWE-2 Flash（276B/12B 激活，基于 Inkling-Small），博客明确「Free through 11/30，在 Devin Desktop 与 CLI 使用」，但未写明适用套餐；免费档仍写「limited model availability」。只入观望原因：① 免费档额度官方始终写「light quota」、未公布具体数字；② SWE-2 / SWE-2 Flash 免费窗口是否覆盖 $0 档未确认，官网 pricing 仅把「免费用 SWE-2」列在 Pro 权益下，按付费订阅附赠口径暂不上首页；③ 国际站、需海外网络。待额度口径透明化或免费档明确开放旗舰模型后再评估上架。",
+      "reviewed_at": "2026-11-11",
       "detail_slug": "0127dyyv",
       "added": "2026-10-29"
     },
