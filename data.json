@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-11",
-  "total": 50,
+  "last_updated": "2026-11-12",
+  "total": 51,
   "items": [
     {
       "name": "库库 AI",
@@ -117,7 +117,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "每日赠送",
-      "quota": "每日 10:00 客户端领 100 Credits（30 天有效、可累积），新户注册送 300；Qwen3.8-Flash 每日免费用量按 0×，DeepSeek 系列 11-01 起转 0.1×–0.5×。",
+      "quota": "每日 10:00 桌面端领 100 Credits（30 天有效、可累积）；Qwen3.8-Flash 免限 11-06 24:00 已结束，现 0.1×、错峰 0.04×；Qwen4-Max-Preview 11-11 上线，0.5×。",
       "validity": "官方未公布（以客户端为准）",
       "region": "",
       "gates": [],
@@ -125,16 +125,17 @@
       "sponsored": false,
       "entry_url": "https://t.aliyun.com/U/Ob4f6l",
       "intel_url": "https://t.aliyun.com/U/Ob4f6l",
-      "last_verified": "2026-11-06",
-      "modality": "Qwen3.8-Flash · Qwen3.8-Max · DeepSeek-V4-Pro · DeepSeek-Flash · GLM-5.3",
+      "last_verified": "2026-11-12",
+      "modality": "Qwen4-Max-Preview · Qwen3.8-Flash · Qwen3.8-Max · DeepSeek-V4-Pro · DeepSeek-Flash · GLM-5.3",
       "signup": "",
       "activity_rules": [
-        "Qwen3.8-Flash：模型选择器标 Free，倍率由 0.1× 降为 0×，个人版限时每日赠送免费使用额度；官方未公布截止日，以客户端活动说明为准。",
-        "DeepSeek 系列（V4.1-Flash-1017 等）的 0× 限免已于 2026 年 11 月 1 日 00:00（UTC+8）结束，现 DeepSeek-Flash 按 0.1× 系数计费、DeepSeek-V4-Pro 按 0.5× 计费，无需领取、在模型选择器直接选中即可使用。",
-        "错峰折扣：每晚 22:00 至次日 08:00 的低峰时段，Qwen3.8-Max 由 0.5× 降至 0.2×（约 4 折），其他付费模型同时段另有折扣；客户端模型浮层顶部显示「错峰折扣进行中」及倒计时。",
-        "模型倍率即积分折扣（0.5× = 半价、0× = 不扣 Credits）；实际可调用模型与倍率以客户端模型列表为准，官方调整不另行公告。"
+        "每日 100 通用 Credits：2026-09-18 10:00 起，每日 10:00 开放新一轮、窗口至次日 10:00；仅限 Qoder CN 桌面端「用量面板 → 礼物图标」主动领取，每轮 100 枚，30 天内有效、可跨天累积，结束时间另行公告。",
+        "Qwen3.8-Flash 的 0× 限免已于 2026-11-06 24:00（即 11-07 00:00）结束；11-07 起转错峰折扣——常规时段 0.1×、错峰时段（22:00–08:00）0.04×，仅 Pro Trial 及付费档自动生效。",
+        "Qwen4-Max-Preview 于 2026-11-11 在 Qoder CN 上线，Credits 系数 0.5×，不属免费模型；同日起有配套创作活动（小红书投稿，至 11-14，限量实物奖）。",
+        "DeepSeek 系列的 0× 限免已于 2026-11-01 00:00 结束，现 DeepSeek-Flash 0.1×、DeepSeek-V4-Pro 0.5×，无需领取、模型选择器直接选中即用。",
+        "Credits 耗尽后仍可使用免费基础模型，但有每日与每月使用限额；模型倍率即积分折扣（0.5× = 半价、0× = 不扣 Credits），实际可用模型与倍率以客户端为准。"
       ],
-      "update_source": "自动更新 2026-11-06（巡检：补每日 10:00 领 100 Credits 与注册送 300，DeepSeek 免费期结束口径并入）",
+      "update_source": "自动更新 2026-11-12（巡检：官方文档确认 Qwen3.8-Flash 0× 免限已于 11-06 24:00 结束、转 0.1×/错峰 0.04×，Qwen4-Max-Preview 11-11 上线 0.5×；删去无一手支撑的「注册送 300」）",
       "detail_slug": "0002eanr",
       "legacy_detail_paths": [
         "/intel/item-001-qoder-cn/",
@@ -365,8 +366,8 @@
       "sponsored": false,
       "entry_url": "https://openrouter.ai",
       "intel_url": "https://openrouter.ai",
-      "last_verified": "2026-11-11",
-      "modality": "Nemotron 3 Ultra 550B / 3.5 系列 · Gemma 4 31B/26B · Inkling 2 Small · LFM3/LFM2.5 · Flint v1.0 · dots-3-note 等 12 款 :free",
+      "last_verified": "2026-11-12",
+      "modality": "Nemotron 3 Ultra 550B / 3.5 系列 · Gemma 4 31B/26B · ERNIE-5.5-Flash-Preview · Inkling 2 Small · LFM3/LFM2.5 · Flint v1.0 · dots-3-note 等 13 款 :free",
       "signup": "",
       "detail_slug": "0018bing",
       "legacy_detail_paths": [
@@ -377,7 +378,7 @@
         "/intel/item-022-openrouter/",
         "/intel/item-026-openrouter/"
       ],
-      "update_source": "自动更新 2026-11-11（源 diff：/api/v1/models 实测 :free 由 13 款降至 12 款，Xingchen 4.0 已下架、Flint v1.0 在列；限速 20/分、50/日 不变）"
+      "update_source": "自动更新 2026-11-12（源 diff：/api/v1/models 实测 :free 由 12 款升至 13 款，新增 ERNIE-5.5-Flash-Preview；限速 20/分、50/日 不变）"
     },
     {
       "name": "BazaarLink",
@@ -1388,6 +1389,32 @@
       ],
       "detail_slug": "0137lekw",
       "added": "2026-11-10"
+    },
+    {
+      "name": "LG EXAONE API Platform（K-EXAONE 2.5）",
+      "vendor": "LG AI 研究院（LG AI Research）",
+      "category": "model",
+      "free_type": "免费层",
+      "quota": "API 现免费开放，K-EXAONE 2.5（750B/激活 31B、512K 上下文）与 EXAONE Tabular 均可调用；每日 86,400 次、每分钟 60 次上限。",
+      "validity": "",
+      "region": "国际",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://docs.exaone.ai/",
+      "intel_url": "https://docs.exaone.ai/docs/changelog",
+      "signup": "",
+      "modality": "K-EXAONE 2.5（文本 / 工具调用 / 结构化输出 / 代码）· EXAONE Tabular（表格数据预测）",
+      "last_verified": "2026-11-12",
+      "update_source": "自动更新 2026-11-12（新增扫描：官方 changelog 2026-11-09 明确「본 서비스는 현재 무료로 제공됩니다」，现免费开放、未公布截止日）",
+      "activity_rules": [
+        "2026-11-09 起 EXAONE API Platform 开放，官方 changelog 写明「本服务目前免费提供」，覆盖 K-EXAONE 2.5（750B）与 EXAONE Tabular，未公布截止日。",
+        "注册 LG 账号后在控制台申请 API Key 即可调用，无需绑卡；文档与接口说明为韩文/英文。",
+        "限速示例：每分钟 60 次、每日 86,400 次（x-day-rate-limit），超限返回 429；在个人资料「同意及通知管理」中同意使用记录分析可获得更高每日额度。",
+        "K-EXAONE 2.5 偏韩语/英语，官方未公布中文能力；文本模型，不支持图像输入。"
+      ],
+      "added": "2026-11-12",
+      "detail_slug": "0138jlfs"
     }
   ],
   "retired": [
