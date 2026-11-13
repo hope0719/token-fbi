@@ -853,7 +853,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "免费层",
-      "quota": "登录电脑版领 30 天标准订阅（可续领一次，合计最多 60 天）；简单小额任务免费，两款轻量模型限时 0.01×。",
+      "quota": "登录电脑版领 30 天标准订阅（可续领一次，共最多 60 天）；小额任务免费，用 DeepSeek-V4.1-Flash 限时 0.01×。",
       "validity": "",
       "region": "",
       "gates": [],
@@ -864,15 +864,19 @@
       "signup": "",
       "modality": "豆包2.1 Lite／2.1 Pro · DeepSeek-V4.1-Flash／V4-Pro · Kimi-K3.1-Pro · GLM-5.3／5.3-Flash",
       "last_verified": "2026-11-13",
-      "update_source": "自动更新 2026-11-13（巡检：官方 11-12 接入 Kimi-K3.1-Pro／GLM-5.3／DeepSeek-V4.1-Flash，豆包2.1 Lite 与 DS-V4.1-Flash 限时倍率 0.01×）",
+      "update_source": "自动更新 2026-11-13（巡检：官方 11-12 接入 Kimi-K3.1-Pro／GLM-5.3／DeepSeek-V4.1-Flash，豆包2.1 Lite 与 DS-V4.1-Flash 限时倍率 0.01×）；邀请链接用户指定 2026-11-13",
       "detail_slug": "0076drty",
       "added": "2026-10-09",
       "activity_rules": [
         "2026-11-12 起正式接入第三方模型：Kimi-K3.1-Pro（0.95×／高速 1.44×）、Kimi-K3（1.48×）、GLM-5.3（0.80×）、GLM-5.3-Flash（0.08×）、DeepSeek-V4.1-Flash（限时 0.01×）、DeepSeek-V4-Pro（0.46×）。",
+        "额度口径：日常小额任务本身不消耗或仅消耗极少额度；任务需要更强模型时，切到 DeepSeek-V4.1-Flash 按 0.01× 计（约为常规消耗的 1%），豆包2.1-Lite 同为限时 0.01×。",
         "模型选择页新增额度消耗倍率标注，系数越低同等任务消耗越少；豆包2.1-Lite 与 DeepSeek-V4.1-Flash 已下调倍率至 0.01×（限时）。",
         "工作日与节假日的指定优惠时段使用参与活动的模型，可再享额度消耗折扣；具体时段以客户端提示为准。",
         "新用户登录豆包工作电脑版可免费领取 30 天订阅权益，到期可再续领一次（合计最多 60 天）。"
-      ]
+      ],
+      "invite_text": "我在用豆包工作电脑版，新用户下载可领 30 天免费体验套餐（到期还能再领一次）。",
+      "invite_url": "https://www.doubao.com/pc/desktop-fission/pro-trial/invited?inviteCode=b8QTIiiJ3f",
+      "invite_code": "b8QTIiiJ3f"
     },
     {
       "name": "OVHcloud AI Endpoints",
