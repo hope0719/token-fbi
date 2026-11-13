@@ -2,39 +2,8 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-11-13",
-  "total": 51,
+  "total": 50,
   "items": [
-    {
-      "name": "库库 AI",
-      "vendor": "百度",
-      "category": "tool",
-      "free_type": "每日赠送",
-      "quota": "每日登录 +50 积分、完成一次对话 +50 积分，合计每天可领 100 积分；DeepSeek V4.1 按 0.16 倍率消耗。",
-      "validity": "每日额度以平台显示为准",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://kuku.baidu.com",
-      "intel_url": "https://kuku.baidu.com",
-      "last_verified": "2026-10-28",
-      "modality": "DeepSeek V4.1 · GLM-5.3 / 5.2 / 5.1 · 文心 5.1 · Kimi-K3",
-      "signup": "打开邀请链接下载并登录库库 AI 客户端，进入「免费领积分」页，完成每日登录与一次对话即可领取积分。",
-      "activity_rules": [
-        "每日登录 +50 积分、完成一次对话 +50 积分，单账号每日合计 100 积分（活动页口径上限更高，以页面显示为准）。",
-        "积分用于抵扣模型调用：DeepSeek V4.1 约 0.16 倍率，GLM-5.3-Flash 低至 0.07 倍率；可选 DeepSeek-V4.1/Pro、GLM-5.3/5.2/5.1、文心 5.1、Kimi-K3/K2.7/K2.6、MiniMax-M3 等。",
-        "免费领积分活动分期限时发放，本期是否续期以官方活动页为准。"
-      ],
-      "source_urls": [
-        "https://kuku.baidu.com/landing/tscp_doc/241ee0e211f5585043d18609e5269ca1",
-        "https://kuku.baidu.com"
-      ],
-      "update_source": "用户指定 2026-10-28（更换库库AI邀请链接为助力领SVIP码 X4WFL6FH：下载PC客户端新用户领1天网盘SVIP）",
-      "detail_slug": "0075fcju",
-      "added": "2026-10-08",
-      "promo_url": "https://kuku.baidu.com/home?invite_code=X4WFL6FH&task_type=252&task_id_str=1458635171792479&task_from=kuku_signin_30_pc",
-      "promo_net": "百度库库"
-    },
     {
       "name": "WorkBuddy",
       "vendor": "",
@@ -1591,6 +1560,12 @@
         "/intel/item-042-华为云码道/",
         "/intel/item-046-华为云码道/"
       ]
+    },
+    {
+      "name": "库库 AI",
+      "url": "https://kuku.baidu.com",
+      "reason": "该条目已停止展示，不再提供额度与领取信息。",
+      "detail_slug": "0075fcju"
     }
   ],
   "watchlist": [

@@ -147,18 +147,23 @@ anchored = d.get("last_updated") or max((it.get("last_verified", "") for it in i
 # 观望区同样对外渲染，所以出现在 watchlist 里也中断，避免自动更新把用户否掉的
 # 平台又加回来。新增一律走用户明确指示。
 NEVER_RELIST = ("腾讯元器", "DeepSeek 开放平台", "百度搭子 DuMate",
-                "Today AI", "todayai")
+                "Today AI", "todayai", "库库", "kuku.baidu")
 
-_relisted = [it.get("name", "") for it in items
-             if any(k in (it.get("name") or "") for k in NEVER_RELIST)]
+def _blocked(it):
+    """名称或落地域名命中黑名单即拦截，防止换个显示名又被自动收录。"""
+    blob = " ".join(str(it.get(k) or "") for k in
+                    ("name", "vendor", "entry_url", "intel_url", "promo_url"))
+    return any(k in blob for k in NEVER_RELIST)
+
+
+_relisted = [it.get("name", "") for it in items if _blocked(it)]
 if _relisted:
     raise SystemExit(
         "构建中断：以下平台在「永不上架」名单里，却被写进了 items —— "
         + "、".join(_relisted)
         + "。除非用户明确要求上架，否则不要收录。")
 
-_watch_blocked = [w.get("name", "") for w in watchlist
-                  if any(k in (w.get("name") or "") for k in NEVER_RELIST)]
+_watch_blocked = [w.get("name", "") for w in watchlist if _blocked(w)]
 if _watch_blocked:
     raise SystemExit(
         "构建中断：以下平台在「永不上架」名单里，却被写进了 watchlist（观望区对外可见）—— "
