@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-12",
+  "last_updated": "2026-11-13",
   "total": 51,
   "items": [
     {
@@ -366,8 +366,8 @@
       "sponsored": false,
       "entry_url": "https://openrouter.ai",
       "intel_url": "https://openrouter.ai",
-      "last_verified": "2026-11-12",
-      "modality": "Nemotron 3 Ultra 550B / 3.5 系列 · Gemma 4 31B/26B · ERNIE-5.5-Flash-Preview · Inkling 2 Small · LFM3/LFM2.5 · Flint v1.0 · dots-3-note 等 13 款 :free",
+      "last_verified": "2026-11-13",
+      "modality": "Nemotron 3 Ultra 550B / 3.5 系列 · Gemma 4 31B/26B · ERNIE-5.5-Flash-Preview · Inkling 2 Small · LFM3/LFM2.5 · Flint v1.0 · Particle-1 · Apodex-1.1-mini 等 15 款 :free",
       "signup": "",
       "detail_slug": "0018bing",
       "legacy_detail_paths": [
@@ -378,7 +378,7 @@
         "/intel/item-022-openrouter/",
         "/intel/item-026-openrouter/"
       ],
-      "update_source": "自动更新 2026-11-12（源 diff：/api/v1/models 实测 :free 由 12 款升至 13 款，新增 ERNIE-5.5-Flash-Preview；限速 20/分、50/日 不变）"
+      "update_source": "自动更新 2026-11-13（源 diff：/api/v1/models 实测 :free 13→15 款，新增 Particle-1、Apodex-1.1-mini；限速与永久免费口径不变）"
     },
     {
       "name": "BazaarLink",
@@ -884,20 +884,26 @@
       "vendor": "",
       "category": "tool",
       "free_type": "免费层",
-      "quota": "登录电脑版即可领 30 天标准订阅，到期可再续领一次（合计最多 60 天），付费订阅时长自动顺延。",
+      "quota": "登录电脑版领 30 天标准订阅（可续领一次，合计最多 60 天）；简单小额任务免费，两款轻量模型限时 0.01×。",
       "validity": "",
       "region": "",
       "gates": [],
       "note": "",
       "sponsored": false,
       "entry_url": "https://www.doubao.com/download",
-      "intel_url": "https://post.m.smzdm.com/p/awwoe9zm",
+      "intel_url": "https://www.mrjjxw.com/articles/2026-11-12/4646119.html",
       "signup": "",
-      "modality": "豆包工作 · Agent 云端工作台",
-      "last_verified": "2026-10-20",
-      "update_source": "自动更新 2026-10-20（去掉首轮到期叙述）",
+      "modality": "豆包2.1 Lite／2.1 Pro · DeepSeek-V4.1-Flash／V4-Pro · Kimi-K3.1-Pro · GLM-5.3／5.3-Flash",
+      "last_verified": "2026-11-13",
+      "update_source": "自动更新 2026-11-13（巡检：官方 11-12 接入 Kimi-K3.1-Pro／GLM-5.3／DeepSeek-V4.1-Flash，豆包2.1 Lite 与 DS-V4.1-Flash 限时倍率 0.01×）",
       "detail_slug": "0076drty",
-      "added": "2026-10-09"
+      "added": "2026-10-09",
+      "activity_rules": [
+        "2026-11-12 起正式接入第三方模型：Kimi-K3.1-Pro（0.95×／高速 1.44×）、Kimi-K3（1.48×）、GLM-5.3（0.80×）、GLM-5.3-Flash（0.08×）、DeepSeek-V4.1-Flash（限时 0.01×）、DeepSeek-V4-Pro（0.46×）。",
+        "模型选择页新增额度消耗倍率标注，系数越低同等任务消耗越少；豆包2.1-Lite 与 DeepSeek-V4.1-Flash 已下调倍率至 0.01×（限时）。",
+        "工作日与节假日的指定优惠时段使用参与活动的模型，可再享额度消耗折扣；具体时段以客户端提示为准。",
+        "新用户登录豆包工作电脑版可免费领取 30 天订阅权益，到期可再续领一次（合计最多 60 天）。"
+      ]
     },
     {
       "name": "OVHcloud AI Endpoints",
@@ -1337,7 +1343,7 @@
       "vendor": "国家超算互联网",
       "category": "event",
       "free_type": "限时活动",
-      "quota": "新户注册领 1 亿词元智能体额度；客户端旗舰模型活动期内词元不限量；活动至 11-30。",
+      "quota": "新户注册领 1 亿词元智能体额度（仅客户端内，网页端与 API 不适用）；客户端旗舰模型词元不限量；活动至 11-30。",
       "validity": "2026-11-30",
       "region": "",
       "gates": [],
@@ -1347,14 +1353,15 @@
       "intel_url": "https://news.sciencenet.cn/htmlnews/2026/11/574358.shtm",
       "signup": "",
       "modality": "科学计算智能体 · 旗舰级大模型（客户端）",
-      "last_verified": "2026-11-09",
-      "update_source": "自动更新 2026-11-09（新增：官方 11-06 启动双 11 年终钜惠，11-09 起新户注册领 1 亿词元；原观望区条目转正）",
+      "last_verified": "2026-11-13",
+      "update_source": "自动更新 2026-11-13（巡检：明确 1 亿词元仅在 SCNet 客户端内生效，网页端与 API 不适用；11-30 为免费词元期限，12-31 属推荐官活动档期）",
       "activity_rules": [
         "活动期：2026 年 11 月 6 日至 11 月 30 日，下载最新版 SCNet 客户端可享旗舰级模型词元不限量、AI 调用不受限。",
         "新户礼：11 月 9 日起在 SCNet 官网完成注册，可领 1 亿词元科学计算智能体应用额度，用于文献梳理、参数试算、结果解释等环节。",
         "智能体覆盖材料研发、生物医药、工业仿真、气象模拟等场景，支持安装技能、接入 MCP 与插件，可接飞书、钉钉协同。",
         "同活动另有 0.1 元秒杀 5000 万词元包、Token Plan 5.4 折起、满减券等付费权益，不属于免费额度。",
-        "新用户还可在 Seedance 2.5、光影智创、赤乌漫创、TRAE 教育版中任选一款享限时免费/特价；文档智能解析限时免费。"
+        "新用户还可在 Seedance 2.5、光影智创、赤乌漫创、TRAE 教育版中任选一款享限时免费/特价；文档智能解析限时免费。",
+        "注意：1 亿词元与客户端不限量仅在官方客户端内生效，网页端与 API 走单独计费；11-30 是本批免费词元的期限，会场页的 12-31 属推荐官活动档期，勿混淆。"
       ],
       "detail_slug": "0136ggaf",
       "added": "2026-11-09"
