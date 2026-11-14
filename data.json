@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-13",
-  "total": 50,
+  "last_updated": "2026-11-14",
+  "total": 51,
   "items": [
     {
       "name": "WorkBuddy",
@@ -903,28 +903,29 @@
       "vendor": "",
       "category": "event",
       "free_type": "限时活动",
-      "quota": "11/9–11/15 登录领 5000 万 Token，11-15 23:59 失效；每账号限领一次。",
-      "validity": "2026-11-15",
+      "quota": "11/9–11/15 领 5000 万；11/16–11/22 起领 1 亿（1 万积分）；均当期周日 23:59 失效，每账号限领一次。",
+      "validity": "2026-11-22",
       "region": "",
       "gates": [],
       "note": "",
       "sponsored": false,
       "entry_url": "https://autoclaw.zhipuai.cn",
-      "intel_url": "https://autoclaw.zhipuai.cn/blog/news/M11W2/",
+      "intel_url": "https://autoclaw.zhipuai.cn/blog/news/M11W3/",
       "signup": "",
       "modality": "GLM-5.3-Flash · 桌面 Agent",
-      "last_verified": "2026-11-09",
-      "update_source": "自动更新 2026-11-09（巡检：M11W2 双十一福利 11/9–11/15 当期生效，50M Tokens 每账号限领一次、积分至 11-15 23:59 失效）",
+      "last_verified": "2026-11-14",
+      "update_source": "自动更新 2026-11-14（源 diff：博客 11-13 发布 M11W3 每周福利，11/16–11/22 登录送 100M Tokens=1 万积分）",
       "detail_slug": "0085puck",
       "added": "2026-10-11",
       "source_urls": [
         "https://autoclaw.zhipuai.cn",
-        "https://autoclaw.z.ai/blog/news/Weekly-Perks-M10W3/"
+        "https://autoclaw.z.ai/blog/news/Weekly-Perks-M10W3/",
+        "https://autoclaw.zhipuai.cn/blog/news/M11W3/"
       ],
       "activity_rules": [
-        "本期福利：11 月 9 日 00:00 至 11 月 15 日 23:59（北京时间）登录 AutoClaw，即得 5000 万 Tokens（双十一福利），每个账号限领一次，积分有效期至 11 月 15 日 23:59，逾期自动失效。",
-        "上一期福利（11 月 2 日至 11 月 8 日，5000 万 Tokens）已于 11 月 8 日 23:59 结束，未领取不再补发。",
-        "再上一期（10 月 26 日至 11 月 1 日，1 亿 Tokens）已于 11 月 1 日 23:59 结束。",
+        "本期福利（11 月 16 日 00:00 至 11 月 22 日 23:59，北京时间）登录 AutoClaw 即得 100M Tokens（相当于 10,000 积分），每个账号限领一次，奖励于 11 月 22 日 23:59 失效。",
+        "上一期（11 月 9 日至 11 月 15 日，5000 万 Tokens 双十一福利）将于 11 月 15 日 23:59 结束，每个账号限领一次，未领取不再补发。",
+        "更早两期（11 月 2 日至 8 日 5000 万 Tokens、10 月 26 日至 11 月 1 日 1 亿 Tokens）均已结束。",
         "另有一项升级礼：升级至 2.2.0 版本、完成旧版数据迁移可领 5000 积分（约 5000 万 tokens），积分发放后 7 天内有效。"
       ]
     },
@@ -1395,6 +1396,31 @@
       ],
       "added": "2026-11-12",
       "detail_slug": "0138jlfs"
+    },
+    {
+      "name": "NVIDIA NIM（build.nvidia.com 免费 API 端点）",
+      "vendor": "NVIDIA",
+      "category": "model",
+      "free_type": "免费层",
+      "quota": "注册免绑卡建 Key 即可调 43 个免费端点，含 DeepSeek-V4.1-Flash、GLM-5.3-Flash、MiniMax-M3.1-Flash；无截止日。",
+      "validity": "",
+      "region": "国际",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://build.nvidia.com/models",
+      "intel_url": "https://build.nvidia.com/deepseek-ai/deepseek-v4.1-flash",
+      "signup": "邮箱注册 build.nvidia.com（Location 可选 China、+86 手机号可验证），进入任一免费模型页点「Generate API Key」生成密钥（只显示一次），Base URL 填 https://integrate.api.nvidia.com/v1，OpenAI 兼容。",
+      "modality": "DeepSeek-V4.1-Flash · GLM-5.3-Flash · MiniMax-M3.1-Flash · Kimi-K3.1-Pro（仅 Playground）",
+      "last_verified": "2026-11-14",
+      "update_source": "自动更新 2026-11-14（新增扫描：官方模型页标注 free API endpoint，11-07 起新增 DeepSeek-V4.1-Flash 与 GLM-5.3-Flash 免费；原观望条目转正）",
+      "detail_slug": "0014jyev",
+      "added": "2026-11-14",
+      "source_urls": [
+        "https://build.nvidia.com/models",
+        "https://build.nvidia.com/z-ai/glm-5-3-flash",
+        "https://build.nvidia.com/minimaxai/minimax-m3.1-flash"
+      ]
     }
   ],
   "retired": [
@@ -2126,13 +2152,6 @@
       "url": "https://marvis.qq.com",
       "reason": "新手适合，老手别用。",
       "detail_slug": "0009cwfz",
-      "reviewed_at": "2026-10-20"
-    },
-    {
-      "name": "NVIDIA NIM 免费 API",
-      "url": "https://build.nvidia.com",
-      "reason": "目前阶段无特别大价值。",
-      "detail_slug": "0014jyev",
       "reviewed_at": "2026-10-20"
     },
     {
