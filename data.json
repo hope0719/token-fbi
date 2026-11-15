@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-14",
-  "total": 51,
+  "last_updated": "2026-11-15",
+  "total": 52,
   "items": [
     {
       "name": "WorkBuddy",
@@ -335,8 +335,8 @@
       "sponsored": false,
       "entry_url": "https://openrouter.ai",
       "intel_url": "https://openrouter.ai",
-      "last_verified": "2026-11-13",
-      "modality": "Nemotron 3 Ultra 550B / 3.5 系列 · Gemma 4 31B/26B · ERNIE-5.5-Flash-Preview · Inkling 2 Small · LFM3/LFM2.5 · Flint v1.0 · Particle-1 · Apodex-1.1-mini 等 15 款 :free",
+      "last_verified": "2026-11-15",
+      "modality": "Nemotron 3 Ultra 550B / 3.5 系列 · Gemma 4 31B/26B · ERNIE-5.5-Flash-Preview · Ling-3.2-flash · Inkling 2 Small · LFM-3 · Flint v1.0 · Particle-1 等 14 款 :free",
       "signup": "",
       "detail_slug": "0018bing",
       "legacy_detail_paths": [
@@ -347,7 +347,7 @@
         "/intel/item-022-openrouter/",
         "/intel/item-026-openrouter/"
       ],
-      "update_source": "自动更新 2026-11-13（源 diff：/api/v1/models 实测 :free 13→15 款，新增 Particle-1、Apodex-1.1-mini；限速与永久免费口径不变）"
+      "update_source": "自动更新 2026-11-15（巡检：/api/v1/models 实测 :free 15→14 款，Apodex-1.1-mini 下线、Ling-3.2-flash 加入免费；限速与永久免费口径不变）"
     },
     {
       "name": "BazaarLink",
@@ -1420,6 +1420,35 @@
         "https://build.nvidia.com/models",
         "https://build.nvidia.com/z-ai/glm-5-3-flash",
         "https://build.nvidia.com/minimaxai/minimax-m3.1-flash"
+      ]
+    },
+    {
+      "name": "月之暗面 Kimi 开放平台（Kimi K3.1 Pro）",
+      "vendor": "月之暗面 Moonshot AI",
+      "category": "model",
+      "free_type": "注册赠送",
+      "quota": "新用户实名认证即送 15 元代金券，可抵 K3.1 Pro/K3 等 API 调用费；券自发放起 90 天有效（至 2027-02-11 一类），约合百万级输入 tokens。",
+      "validity": "",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://platform.moonshot.cn/",
+      "intel_url": "https://platform.moonshot.cn/docs/pricing/chat",
+      "signup": "手机号注册 platform.moonshot.cn，完成实名认证后到「代金券管理」查看 15 元券是否到账；再建 API Key（只显示一次），Base URL 填 https://api.moonshot.cn/v1，OpenAI 兼容。",
+      "modality": "Kimi K3.1 Pro（3 万亿级参数、100 万上下文、原生视觉）· K3 · K2 系列（12 月底下线）",
+      "activity_rules": [
+        "15 元代金券由注册赠送发放，只抵扣 API 调用费，不足部分需充值；不适用于 K3.1 Pro Highspeed 高速版。",
+        "K3.1 Pro 始终开启思考模式，无法关闭；视觉输入只接受 base64 编码，不支持公网图片链接。",
+        "K2 系列自 2026-10-31 起停止向新注册用户开放，官方计划 12 月底全部下线。"
+      ],
+      "last_verified": "2026-11-15",
+      "update_source": "自动更新 2026-11-15（新增扫描：官方代金券页证实新用户实名注册赠 15 元、90 天有效；免费额度总表与 CNESA 日报同口径，均注明「代金券非免费模型层」）",
+      "detail_slug": "0139jupq",
+      "added": "2026-11-15",
+      "source_urls": [
+        "https://platform.moonshot.cn/",
+        "https://platform.moonshot.cn/docs/pricing/chat"
       ]
     }
   ],
