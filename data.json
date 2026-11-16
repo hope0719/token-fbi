@@ -9,7 +9,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "注册赠送",
-      "quota": "Hy3/Hy4 0.00× 限免已于 11-15 结束、未续期；新户注册送 2000 积分（至 11-30）；免费档每月 500 积分、签到每日补 100。",
+      "quota": "新户注册送 2000 积分（至 11-30）；免费档每月 500 积分、签到每日补 100。",
       "validity": "2026-11-30",
       "region": "",
       "gates": [],
@@ -87,7 +87,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "每日赠送",
-      "quota": "每日 10:00 桌面端领 100 Credits（30 天有效、可累积）；Qwen3.8-Flash 免限 11-06 24:00 已结束，现 0.1×、错峰 0.04×；Qwen4-Max-Preview 11-11 上线，0.5×。",
+      "quota": "每日 10:00 桌面端领 100 Credits（30 天有效、可累积）；倍率 Qwen4-Max 0.4×、Qwen3.8-Flash 0.1×、DeepSeek-Flash 0.1×、GLM-5.3 0.8×；22:00–08:00 错峰 Qwen3.8-Max/Flash 再 4 折。",
       "validity": "官方未公布（以客户端为准）",
       "region": "",
       "gates": [],
@@ -95,17 +95,16 @@
       "sponsored": false,
       "entry_url": "https://t.aliyun.com/U/Ob4f6l",
       "intel_url": "https://t.aliyun.com/U/Ob4f6l",
-      "last_verified": "2026-11-12",
-      "modality": "Qwen4-Max-Preview · Qwen3.8-Flash · Qwen3.8-Max · DeepSeek-V4-Pro · DeepSeek-Flash · GLM-5.3",
+      "last_verified": "2026-11-16",
+      "modality": "Qwen4-Max · Qwen3.8-Max · Qwen3.8-Flash · DeepSeek-V4-Pro · DeepSeek-Flash · GLM-5.3 · Kimi-K3.1-Pro · MiniMax-M3.1-Flash",
       "signup": "",
       "activity_rules": [
-        "每日 100 通用 Credits：2026-09-18 10:00 起，每日 10:00 开放新一轮、窗口至次日 10:00；仅限 Qoder CN 桌面端「用量面板 → 礼物图标」主动领取，每轮 100 枚，30 天内有效、可跨天累积，结束时间另行公告。",
-        "Qwen3.8-Flash 的 0× 限免已于 2026-11-06 24:00（即 11-07 00:00）结束；11-07 起转错峰折扣——常规时段 0.1×、错峰时段（22:00–08:00）0.04×，仅 Pro Trial 及付费档自动生效。",
-        "Qwen4-Max-Preview 于 2026-11-11 在 Qoder CN 上线，Credits 系数 0.5×，不属免费模型；同日起有配套创作活动（小红书投稿，至 11-14，限量实物奖）。",
-        "DeepSeek 系列的 0× 限免已于 2026-11-01 00:00 结束，现 DeepSeek-Flash 0.1×、DeepSeek-V4-Pro 0.5×，无需领取、模型选择器直接选中即用。",
-        "Credits 耗尽后仍可使用免费基础模型，但有每日与每月使用限额；模型倍率即积分折扣（0.5× = 半价、0× = 不扣 Credits），实际可用模型与倍率以客户端为准。"
+        "每日 100 通用 Credits：每日 10:00 开放新一轮、窗口至次日 10:00；仅限 Qoder CN 桌面端「用量面板 → 礼物图标」主动领取，每轮 100 枚、30 天内有效、可跨天累积，结束时间另行公告。",
+        "当前 Credits 用量参考系数：Qwen4-Max 0.4×、Qwen3.8-Max 0.5×、Qwen3.8-Flash 0.1×、DeepSeek-V4-Pro 0.5×、DeepSeek-Flash 0.1×、GLM-5.3 0.8×、GLM-5.3-Flash 0.1×、Kimi-K3.1-Pro 1.0×、MiniMax-M3.1-Flash 0.1×、Step-5-Preview 0.3×；档位 Auto 0.5×、Fast 0.8×。",
+        "错峰折扣：每日 22:00 至次日 08:00（北京时间），Qwen3.8-Max 0.2×、Qwen3.8-Flash 0.04×，相当于标准倍率 4 折；仅 Pro Trial 及付费档自动生效，免费用户不享受，结束时间官方未公布。",
+        "Credits 耗尽后仍可使用免费基础模型，但有每日与每月使用限额；模型倍率即积分折扣（0.5× = 半价），实际可用模型与倍率以客户端为准。"
       ],
-      "update_source": "自动更新 2026-11-12（巡检：官方文档确认 Qwen3.8-Flash 0× 免限已于 11-06 24:00 结束、转 0.1×/错峰 0.04×，Qwen4-Max-Preview 11-11 上线 0.5×；删去无一手支撑的「注册送 300」）",
+      "update_source": "用户指定 2026-11-16（按客户端模型选择器截图 + docs.qoder.cn 倍率表更新，删去已结束活动口径）",
       "detail_slug": "0002eanr",
       "legacy_detail_paths": [
         "/intel/item-001-qoder-cn/",
@@ -2252,10 +2251,10 @@
     {
       "name": "讯飞星辰 MaaS（Spark-X2.6 10 亿 Tokens）",
       "url": "https://maas.xfyun.cn/",
-      "reason": "2026-10-27 发现：实名认证后在星辰 MaaS 平台领取 Spark-X2.6 免费额度 10 亿 Tokens，每位用户限领一次、自领取起 31 天内有效；293B MoE/30B 激活、1M 上下文，OpenAI 与 Anthropic 双协议（maas-api.cn-huabei-1.xf-yun.com）。同为讯飞系、且用户 2026-10-06 已将「讯飞星火（开放平台）」移入观望区，故本条暂列观望，待用户裁定是否上架。",
+      "reason": "2026-11-16 官方复核：10 亿 Token 属「10.24 开发者节」活动，额度只绑定 spark-x2.6 一个模型（领取后同一 API Key 仅限调用该模型，实名后领、31 天有效）；平台本身在售 54 个模型，讯飞自研 10 个、阿里通义 26 个、智谱 GLM 5 个、DeepSeek 4 个、Kimi 3 个、腾讯混元 2 个等，均需付费或另计；当前另有 8 个模型标「限时免费」至 2026-12-31 10:00（X2.6-4B / X2.6-1.7B / X2.5-4B / PaddleOCR-VL-1.6 / DeepSeek-OCR / HunyuanOCR / Qwen3-Embedding-8B / Qwen3-Reranker-8B），Spark-X2.5-1.7B 为长期 0 元。官方公告称 Spark-X2.5 与 DeepSeek-V4-Pro 于 11-24 10:00 下线。本质是「自营模型 + 第三方聚合」平台。2026-11-16 用户裁定：暂不上架，保留观望记录备查。",
       "detail_slug": "0125rcqt",
       "added": "2026-10-27",
-      "reviewed_at": "2026-10-27"
+      "reviewed_at": "2026-11-16"
     },
     {
       "name": "InferX（DeepSeek V4.1 Flash 免费网关）",
