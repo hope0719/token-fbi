@@ -779,7 +779,7 @@
       "sponsored": false,
       "last_verified": "2026-11-16",
       "signup": "",
-      "update_source": "用户指定 2026-11-16（客户端模型列表：Hy4-flash 新上架并标 Free now、倍率 0.03×，Nov 16–30 每日免费额度、订阅档更高）",
+      "update_source": "用户指定 2026-11-16（客户端模型列表：Hy4-flash 新上架并标 Free now、倍率 0.03×，Nov 16–30 每日免费额度、订阅档更高；card_promo 按用户口述改为 Hy4-flash）",
       "name": "WorkBuddy 国际版",
       "quota": "Hy4-flash 11-16 至 11-30 每日免费额度（客户端标 Free now、倍率 0.03×），订阅档额度更高；用尽按 0.03× 扣积分。",
       "validity": "2026-11-30",
@@ -809,7 +809,7 @@
         "https://www.toutiao.com/a7698041018058342953",
         "https://cloud.tencent.com/developer/article/2762018"
       ],
-      "card_promo": "日常全任务首选 DeepSeek-V4.1-Flash；Hy3 也值得用（纯语言 0.00× 全天免费）"
+      "card_promo": "日常全任务首选 DeepSeek-V4.1-Flash；Hy4-flash 也值得用（11-16 至 11-30 每日免费）"
     },
     {
       "name": "Google Antigravity（反重力）",
