@@ -4,6 +4,10 @@
 #
 # /go/ 为推广外链中转层：允许抓取，让爬虫读取 noindex 或 302。
 # 跳转 URL 不进入 sitemap；静态兜底页声明 noindex。
+#
+# 机器可读摘要（AI 引擎优先读取）：https://token-fbi.com/llms.txt
+# 全量目录：https://token-fbi.com/llms-full.txt ｜ 更新订阅：https://token-fbi.com/feed.xml
+# 结构化数据：https://token-fbi.com/data.json
 
 User-agent: *
 Allow: /

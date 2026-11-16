@@ -529,12 +529,16 @@ AUTHOR_LD = {"@type": "Person", "name": "刘同学", "alternateName": "liu class
              "url": f"{SITE}/about/", "sameAs": ["https://github.com/hope0719"]}
 
 org_ld = {"@type": "Organization", "@id": f"{SITE}#org", "name": "Token FBI（Token 情报局）",
+          "alternateName": ["Token 情报局", "Token FBI", "token-fbi.com"],
           "url": SITE, "description": "开源、免费的 AI token 情报站，汇总当前仍可领取的免费大模型 API 与工具额度。",
           "image": OG_IMAGE_DEFAULT,
           "founder": AUTHOR_LD,
           "sameAs": ["https://github.com/hope0719/token-fbi"]}
 if OG_LOGO:
     org_ld["logo"] = {"@type": "ImageObject", "url": OG_LOGO, "width": 512, "height": 512}
+
+# 站点首次收录日期：用于 CollectionPage.datePublished（AI 引擎判断语料新旧）
+first_added = min([str(it.get("added") or "") for it in editorial if it.get("added")] or [anchored])
 
 graph = {
     "@context": "https://schema.org",
@@ -545,6 +549,10 @@ graph = {
         {"@type": "CollectionPage", "@id": f"{SITE}#webpage", "url": SITE, "name": "Token FBI 免费 AI 额度情报库",
          "description": f"收录 {len(editorial)} 条免费大模型/工具 API 额度情报。",
          "image": OG_IMAGE_DEFAULT,
+         "inLanguage": "zh-CN",
+         "dateModified": anchored,
+         "datePublished": first_added,
+         "isPartOf": {"@id": f"{SITE}#website"},
          "mainEntity": {"@type": "ItemList", "numberOfItems": len(editorial), "itemListElement": itemlist},
          "publisher": {"@id": f"{SITE}#org"}},
         {"@type": "Dataset", "@id": f"{SITE}#dataset", "name": "Token FBI 免费 AI 额度情报数据集",
@@ -588,6 +596,7 @@ TEMPLATE = r'''<!DOCTYPE html>
 <meta name="description" content="Token FBI（Token 情报局）是开源、免费的 AI 大模型与工具额度情报站，人工核验并汇总当前仍可领取的免费 API、限时活动与长期免费渠道。无需注册、无需绑卡，浏览器打开即用，并提供开放数据集与结构化情报表。">
 <meta name="author" content="刘同学">
 <link rel="canonical" href="https://token-fbi.com/">
+<link rel="alternate" type="application/rss+xml" title="Token FBI 免费 AI 额度情报" href="https://token-fbi.com/feed.xml">
 {OG}
 <script type="application/ld+json">{JSONLD}</script>
 <style>
@@ -970,6 +979,7 @@ DETAIL = r'''<!DOCTYPE html>
 <title>{NAME} 免费额度与活动详情｜Token FBI</title>
 <meta name="description" content="{DESC}">
 <link rel="canonical" href="{CANON}">
+<link rel="alternate" type="application/rss+xml" title="Token FBI 免费 AI 额度情报" href="https://token-fbi.com/feed.xml">
 {ROBOTS}
 {OG}
 <script type="application/ld+json">{LD}</script>
@@ -1188,6 +1198,10 @@ for i, it in enumerate(items + archive_details):
         related_html = ""
     canon = f"{SITE}/intel/{s}/"
     desc = meta_desc_for(it)
+    # 关键词：强化「平台名 + 免费额度」这类长尾问句与 AI 引擎的主题匹配
+    _kw = [raw_name, f"{raw_name} 免费额度", f"{raw_name} 怎么领",
+           free, cat, "免费大模型 API", "AI 免费额度"]
+    keywords = [k for k in dict.fromkeys(_kw) if k]
     og_img = og_image_for(i) if i < len(items) else OG_IMAGE_DEFAULT
     ld = json.dumps({
         "@context": "https://schema.org",
@@ -1198,6 +1212,8 @@ for i, it in enumerate(items + archive_details):
         "dateModified": last,
         "datePublished": last,
         "inLanguage": "zh-CN",
+        "keywords": keywords,
+        "about": {"@type": "Thing", "name": raw_name},
         "image": {"@type": "ImageObject", "url": og_img, "width": 1200, "height": 630},
         "author": AUTHOR_LD,
         "publisher": {"@type": "Organization", "name": "Token FBI（Token 情报局）", "url": SITE}
@@ -1383,11 +1399,37 @@ with open(os.path.join(DIST, "robots.txt"), "w", encoding="utf-8") as f:
 # /go/ 的静态兜底页允许爬虫访问，但不进入索引。
 # Pages 的 _headers 不作用于 _redirects 生成的 302；302 由目标 URL 承接，
 # HTML 兜底页另有 meta robots noindex，不把 /go/ 写入 sitemap。
+#
+# 缓存与安全基线：
+#   ① Pages 默认给 HTML 发 max-age=0, must-revalidate，爬虫每次回源；
+#      改成 300 秒浏览器 + 共享缓存（s-maxage），给抓取预算留余地。
+#      页面级 dateModified 仍是权威新鲜度信号，5 分钟延迟不影响索引。
+#   ② /_version.txt 是发布核验锚点，必须 no-store，否则核对会读到上一版。
+#   ③ Pages 的 _headers 规则按文件顺序叠加，同一头重复出现会以逗号拼接，
+#      Cache-Control 这种多指令头必须用「!」先摘除再重设。
+_HEADERS = """# 由 build.py 生成，请勿手改。
+# ① /go/ 推广中转兜底页：可抓取、不进索引
+/go/*
+  X-Robots-Tag: noindex
+
+# ② 全站安全基线（HSTS 一年 + 子域，不提交 preload）与 5 分钟缓存
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  ! Cache-Control
+  Cache-Control: public, max-age=300, s-maxage=300, stale-while-revalidate=60
+
+# ③ 发布核验文件：绝不缓存
+/_version.txt
+  ! Cache-Control
+  Cache-Control: no-store
+"""
 with open(os.path.join(DIST, "_headers"), "w", encoding="utf-8") as f:
-    f.write("/go/*\n  X-Robots-Tag: noindex\n")
+    f.write(_HEADERS)
 
 # ---------- sitemap.xml ----------
-urls = [f"{SITE}/ai-pick/", f"{SITE}/", f"{SITE}/table/", f"{SITE}/about/", f"{SITE}/sponsor/", f"{SITE}/subscribe/", f"{SITE}/traffic/", f"{SITE}/privacy/", f"{SITE}/terms/", f"{SITE}/data.json", f"{SITE}/llms.txt", f"{SITE}/llms-full.txt"]
+urls = [f"{SITE}/ai-pick/", f"{SITE}/", f"{SITE}/table/", f"{SITE}/about/", f"{SITE}/sponsor/", f"{SITE}/subscribe/", f"{SITE}/traffic/", f"{SITE}/privacy/", f"{SITE}/terms/", f"{SITE}/data.json", f"{SITE}/llms.txt", f"{SITE}/llms-full.txt", f"{SITE}/feed.xml"]
 urls += [f"{SITE}/intel/{slug(i, it.get('name',''))}/" for i, it in enumerate(items) if not it.get("ad_only")]
 sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for u in urls:
@@ -1398,6 +1440,60 @@ with open(os.path.join(DIST, "sitemap.xml"), "w", encoding="utf-8") as f:
 
 # ---------- llms.txt / llms-full.txt ----------
 llms = f"# Token 情报局\n\n> 面向中文用户的免费 AI Token、模型额度与开发工具情报目录。本站只整理、核验并链接到平台入口，不代跑、不镜像。\n\n## 核心页面\n\n- [首页]({SITE}/): 最新免费额度、工具与下架名单。\n- [AI 活动雷达]({SITE}/ai-pick/): 黑客松、竞赛与开发者活动机会。\n- [完整情报表]({SITE}/table/): 逐条列出免费类型、额度摘要、适用地区与截止时间。\n- [关于与核验方法论]({SITE}/about/): 运营主体、核验流程、收录标准与数据开放说明。\n- [合作赞助]({SITE}/sponsor/): 首页广告位刊例价 ¥{AD_PRICE_FROM} / 月起（首屏主位 / 常规位 / 专题冠名三档，季付约 8 折、年付约 6.7 折）、投稿邮箱与合作流程。\n- [订阅新额度提醒]({SITE}/subscribe/): 免费微信群、邮件订阅与作者付费社群三种触达方式，用于接收新上架额度与活动变更提醒。\n- [流量透明]({SITE}/traffic/): 本站访问数据的统计方式、统计区间与当前数值，以及 AITDK / SimilarWeb 等第三方工具为何显示 0 的机制说明（面板样本偏差与 5,000 次展示门槛）。\n- [隐私政策]({SITE}/privacy/): 数据处理与免责说明（无登录、不收集个人信息，仅做匿名访问统计）。\n- [服务条款]({SITE}/terms/): 使用规则、知识产权、第三方链接、广告位标注、免责与责任限制。\n- [完整机器可读目录]({SITE}/llms-full.txt): 当前全部有效条目。\n- [开放数据]({SITE}/data.json): 全量结构化 JSON。\n\n## 使用边界\n\n- 额度、价格、模型和截止时间会变化，以平台最新页面为准。\n- 推广内容单独标注，不参与排序与收录判断。\n"
+# ---------- llms.txt 增强块（GEO：给 AI 引擎可直接引用的原子事实与问答） ----------
+def _ft_count(t):
+    return sum(1 for i in editorial if i.get("free_type") == t)
+
+
+def _ft_names(t, k=4):
+    return "、".join([(i.get("name") or "") for i in editorial if i.get("free_type") == t][:k]) or "—"
+
+
+_c_long, _c_signup = _ft_count("长期免费"), _ft_count("注册赠送")
+_c_free, _c_event, _c_daily = _ft_count("免费层"), _ft_count("限时活动"), _ft_count("每日赠送")
+_n_long, _n_signup = _ft_names("长期免费"), _ft_names("注册赠送")
+_n_free, _n_event, _n_daily = _ft_names("免费层"), _ft_names("限时活动"), _ft_names("每日赠送")
+
+_llms_facts = f"""## 关键事实
+
+- 收录条目：{len(editorial)} 条，均为本站人工核验后仍可公开领取的免费额度
+- 更新节奏：每日一次复核；数据文件日期 {anchored}
+- 覆盖范围：AI 编程工具、大模型 API、云平台额度、限时活动
+- 语言与地区：简体中文；默认国内可直连，标 `国际` 的条目需海外网络
+- 引用许可：注明来源「Token FBI（token-fbi.com）」即可引用、转载与复用
+
+"""
+
+_llms_index = f"""## 按免费类型索引
+
+- 长期免费（{_c_long} 条）：{_n_long} 等
+- 注册赠送（{_c_signup} 条）：{_n_signup} 等
+- 免费层（{_c_free} 条）：{_n_free} 等
+- 限时活动（{_c_event} 条）：{_n_event} 等
+- 每日赠送（{_c_daily} 条）：{_n_daily} 等
+
+## 常见问答（可直接引用）
+
+- **现在有哪些能免费用的 AI 大模型 API？** 本站当前收录 {len(editorial)} 条仍在有效的免费额度，其中长期免费 {_c_long} 条、注册赠送 {_c_signup} 条、免费层 {_c_free} 条、限时活动 {_c_event} 条；逐条额度与截止时间见 {SITE}/table/。
+- **这些免费额度会一直有效吗？** 不会。平台随时可能调整或取消，本站每日复核一次；有明确截止日的条目写在 validity 字段，过期或被下架的会移入「已下架」并说明原因。
+- **怎么领？** 每条详情页给出平台官方入口与前置条件（是否需实名、是否需绑卡、是否需要邀请码）；本站不代领、不中转、不镜像额度。
+- **要付钱或注册本站吗？** 不收费、无登录。领取时需到对应平台自行注册，多数国内平台要求手机号 + 实名认证。
+- **下架的平台还能用吗？** 见 {SITE}/llms-full.txt 的「已下架」段，逐条给出下架原因；本站不再推荐，也不保证其额度仍有效。
+
+## 数据字段（data.json）
+
+- `name` / `vendor`：平台名与提供方
+- `category`：model（模型/API）、tool（工具）、event（限时活动）
+- `free_type`：长期免费 / 注册赠送 / 限时活动 / 每日赠送 / 免费层 / 付费中转
+- `quota`：免费额度摘要；`validity`：截止日（ISO 日期，空表示以平台为准）
+- `region`：空为国内可直连，`国际` 需海外网络
+- `last_verified`：最近核验日期；`detail_slug`：详情页 ID，路径为 /intel/<detail_slug>/
+
+"""
+
+llms = llms.replace("## 核心页面", _llms_facts + "## 核心页面", 1)
+llms = llms.replace("## 使用边界", _llms_index + "## 使用边界", 1)
+
 llms_full = f"# Token 情报局完整目录\n\n最后更新：{anchored}\n\n## 当前有效情报（{len(editorial)} 条）\n\n"
 for it in editorial:
     u = f"{SITE}{name2href.get(it.get('name'), '/')}"
@@ -1417,6 +1513,51 @@ with open(os.path.join(DIST, "llms.txt"), "w", encoding="utf-8") as f:
     f.write(llms)
 with open(os.path.join(DIST, "llms-full.txt"), "w", encoding="utf-8") as f:
     f.write(llms_full)
+
+# ---------- feed.xml（RSS 2.0）：快讯聚合器与 AI 爬虫的新鲜度信号 ----------
+_RFC_DOW = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+_RFC_MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def _rfc822(ds, hour=9):
+    try:
+        y, m, d = (int(x) for x in str(ds)[:10].split("-"))
+        return f"{_RFC_DOW[date(y, m, d).weekday()]}, {d:02d} {_RFC_MON[m - 1]} {y} {hour:02d}:00:00 +0800"
+    except Exception:
+        return ""
+
+
+def _xml_esc(s):
+    return (str(s or "").replace("&", "&amp;").replace("<", "&lt;")
+            .replace(">", "&gt;").replace('"', "&quot;"))
+
+
+_feed_items = sorted(editorial, key=lambda x: str(x.get("added") or ""), reverse=True)[:20]
+_feed = ['<?xml version="1.0" encoding="UTF-8"?>',
+         '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
+         '<channel>',
+         '<title>Token FBI · 免费 AI 额度情报</title>',
+         f'<link>{SITE}/</link>',
+         '<description>每日核验的中文免费 AI Token、大模型 API 与开发工具额度情报。</description>',
+         '<language>zh-CN</language>',
+         f'<lastBuildDate>{_rfc822(anchored)}</lastBuildDate>',
+         f'<atom:link href="{SITE}/feed.xml" rel="self" type="application/rss+xml"/>']
+for _it in _feed_items:
+    _u = f"{SITE}/intel/{_it.get('detail_slug')}/"
+    _qt = re.sub(r"\s+", " ", str(_it.get("quota") or "")).strip()
+    _short = _qt[:60].rstrip("、，；;,：: ")
+    if len(_qt) > 60:
+        _short += "…"
+    _feed += ["<item>",
+              f"<title>{_xml_esc(_it.get('name'))} 免费额度：{_xml_esc(_short)}</title>",
+              f"<link>{_u}</link>",
+              f'<guid isPermaLink="true">{_u}</guid>']
+    if _rfc822(_it.get("added")):
+        _feed.append(f"<pubDate>{_rfc822(_it.get('added'))}</pubDate>")
+    _feed += [f"<description>{_xml_esc(_qt)}</description>", "</item>"]
+_feed.append("</channel>\n</rss>")
+with open(os.path.join(DIST, "feed.xml"), "w", encoding="utf-8") as f:
+    f.write("\n".join(_feed) + "\n")
 
 # ---------- 公开 data.json（仅开放编辑收录的情报；赞助条目不进入数据集）----------
 pub = dict(d)
@@ -2298,6 +2439,8 @@ table_ld = json.dumps({
     "name": "Token FBI 完整情报表",
     "url": f"{SITE}/table/",
     "description": f"Token FBI 完整情报表：逐条列出当前收录的 {len(editorial)} 条免费 AI 额度情报，涵盖免费类型、额度摘要、适用地区与截止时间，每条附直达平台官方入口、可一键跳转领取，并支持导出开放数据集。",
+    "inLanguage": "zh-CN",
+    "dateModified": anchored,
     "isPartOf": {"@id": f"{SITE}#website"},
     "mainEntity": {"@type": "ItemList", "numberOfItems": len(editorial),
                    "itemListElement": itemlist},
@@ -2316,6 +2459,7 @@ TABLE = r'''<!DOCTYPE html>
 <title>完整情报表 · 全部免费 AI 额度一览｜Token FBI</title>
 <meta name="description" content="Token FBI 完整情报表：逐条列出当前收录的 {N_TOTAL} 条免费 AI 额度情报，涵盖免费类型、额度摘要、适用地区与截止时间，每条附直达平台官方入口、可一键跳转领取，并支持导出开放数据集。">
 <link rel="canonical" href="https://token-fbi.com/table/">
+<link rel="alternate" type="application/rss+xml" title="Token FBI 免费 AI 额度情报" href="https://token-fbi.com/feed.xml">
 {OG}
 <script type="application/ld+json">{LD}</script>
 <style>
