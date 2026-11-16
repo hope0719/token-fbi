@@ -50,6 +50,9 @@
 - push 被拒先 `git fetch`，用 `git diff --name-only <sha>^ <sha>` 判断远端动了什么（**别用 `git diff HEAD origin/main`，会把自身改动显示成远端删除**）；仅改 `ai-pick/data.json` → `git rebase origin/main`；被已跟踪 memory 挡住先 `git stash push -- <file>`。
 - `legacy_detail_paths` → `_redirects` 301；**禁止把条目自身 `/intel/<slug>/` 写进 legacy**（死循环）。CF 缓存 s-maxage≈7 天，需 Dashboard Purge。
 - `dist/_headers` 由 `build.py` 生成（**不要手改 dist**）：`/go/*` X-Robots-Tag、全站 HSTS + `Cache-Control: public,max-age=300,s-maxage=300,stale-while-revalidate=60`、`/_version.txt` 必须 `no-store`。Pages 的规则**按文件顺序叠加**，同一个头写两次会逗号拼接，`Cache-Control` 必须用 `! Cache-Control` 先摘除再重设，否则指令打架（RFC 9111 取第一个值）。Pages 的 HTML 即使带 `s-maxage` 仍 `cf-cache-status: DYNAMIC`，要边缘缓存须在 Dashboard 加 Cache Rule。
+- **Dashboard Cache Rule「HTML 短缓存 5min」（2026-11-16 用户建，已 Deploy）**：表达式 `(path eq "/" or ends_with(path,"/")) and not starts_with(path,"/go/") and not starts_with(path,"/cdn-cgi/")`，Edge/Browser TTL 均 respect origin。实测首页/栏目页/详情页 `MISS→HIT`、`age` 按 300s 走；`/_version.txt` 仍 `no-store / DYNAMIC`（不受影响，**版本核验永远准**）；`/data.json`、`/sitemap.xml`、`/feed.xml`、`/llms.txt` 不在规则内 → `DYNAMIC`，每次回源、始终最新（可接受，勿盲目扩进规则）。
+- **发布后内容可能陈旧 ≤5 分钟**（边缘 HTML 缓存所致）：核验新文案时若 `curl` 未命中，先 Purge 或等 5 分钟再判，**别据此判定构建失败**；`_version.txt` 前缀匹配仍可即时确认是否已部署。
+- Cloudflare 的 zone 级 **Browser Cache TTL 只覆盖静态扩展**（实测 `robots.txt` 的 `max-age` 被改写为 14400，而 `s-maxage=300` 保留），HTML 不受影响、沿用源站 300s。
 - 下架迁 retired：只留 name/url/reason/detail_slug/legacy_detail_paths，`total`−1；详情页 noindex + 「已下架 + 原因」。`reason` 是外对文案，禁内部术语。
 - 观望区转正须**同批删 watchlist 同 slug**。
 - **唯一工作目录** = 本仓库（见 `WORKDIR.md`）；归档克隆远端 `no-push://` 禁改；旧流水线 `token-fbi-data` 已冻结。
