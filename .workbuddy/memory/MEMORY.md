@@ -13,7 +13,7 @@
 
 ## 二、硬规则
 1. **`gates`/`note`/`card_promo` 只许人工写**，自动更新一律空；`build.py` 按 `auto_src`（update_source 以「自动更新」开头）拦截。现存人工内容：TRAE(2 蓝框)+Antigravity(1)、商汤+微信云开发(黄块)。
-2. **`NEVER_RELIST`（items+watchlist 双守卫，命中中断构建）**：腾讯元器、DeepSeek 开放平台、百度搭子 DuMate、Today AI（todayai.cn）、库库 AI（kuku.baidu，2026-11-13 用户点名下架）。守卫匹配 name/vendor/entry_url/intel_url/promo_url，换名也拦得住。
+2. **`NEVER_RELIST`（items+watchlist 双守卫，命中中断构建）**：腾讯元器、DeepSeek 开放平台、百度搭子 DuMate、Today AI（todayai.cn）、库库 AI（kuku.baidu，2026-11-13 用户点名下架）、**月之暗面 / Moonshot / Kimi 全系（2026-11-16 用户点名「下掉以后都不允许上架」，含 kimi.com、moonshot.cn、Kimi Work、Kimi 开放平台）**。守卫匹配 name/vendor/entry_url/intel_url/promo_url，换名也拦得住；黑名单不匹配 `modality`/`quota`，故 Qoder、硅基流动、讯飞星辰这类「聚合了 Kimi 模型」的他家卡片不受影响。
 3. **邀请码/返佣不是排除或下架理由**；有免费或近乎免费权益即可收；此类 quota 不以「无免费模型：」开头。
 4. 限时活动必带 `validity` ISO 日期；限量但无官方截止日 → `free_type=免费层`，禁编造。
 5. 不收：付费订阅附赠（Claude Max/Team、Codex 重置卡、会员制视频平台 0 积分）、必绑卡试用、身份/融资门槛、地方与运营商定向补贴、专用小模型 API、已关停（QClaw）。
@@ -60,9 +60,10 @@
 - **P2 误报三类**（占多数，勿盲改）：活动起算日、已写进卡面的下线日、模型版本串（`Mistral-Small-3.2-24B` 会被 parse_dates 当日期）。
 - 聚合站虚增免费模型数（把路由/音乐模型算进去）→ 以官方 API/目录为准。
 
-## 七、当前状态（2026-11-16）
-- items 52 / total 52 / watchlist 64 / retired 22 / hidden 1，赞助 3（蓝博、豆包拉新、腾讯云服务器）。
-- **WorkBuddy 双卡限免 11-15 到期、未续期**：国内 `0001hgwg` → 注册赠送、validity 11-30（仅剩新户 2000 积分 + 免费档 500 积分/月）；国际版 `0036xxzt` → 免费层、validity 空。两卡 `card_promo` 仍写「Hy3 0.00× 全天免费」，**已失效待用户裁定**。
+## 七、当前状态（2026-11-16 12:50）
+- items 51 / total 51 / watchlist 63 / retired 23 / hidden 1，赞助 3（蓝博、豆包拉新、腾讯云服务器）。
+- **月之暗面已整体下架**：`0139jupq`（Kimi 开放平台，原在架）与 `0112soyt`（Kimi Work，原观望）同批迁入 retired，`0061stqi` 旧重复条目删除并把 `/intel/0061stqi/` 写成 301 到 `0139jupq`；`build.py` 黑名单已加月之暗面关键词。
+- **WorkBuddy 双卡限免 11-15 到期、未续期**：国内 `0001hgwg` → 注册赠送、validity 11-30（新户 2000 积分 + 免费档 500 积分/月，`card_promo`「日常任务推荐使用 DeepSeek-V4.1-Flash」）；国际版 `0036xxzt` → 限时活动、validity 11-30（Hy4-flash 11-16~11-30 每日免费、0.03×，`card_promo` 后半句为 Hy4-flash）。两卡 `note` 黄底句已于 11-16 删除。
 - AutoClaw `0085puck` 已切 M11W3 当期（11/16–11/22 送 1 亿=1 万积分，validity 11-22），M11W4 未发布。
 - 码道 `0038rlna` 在 retired；`sources.json` 的 `huawei-codearts-news` 仍指向它，属陈旧映射待清理。
 - 近期到期：11-17 阶跃 StepAudio 3、11-19 Ling-3.2-flash、11-20 云知声 U Plan 活动期。

@@ -147,7 +147,9 @@ anchored = d.get("last_updated") or max((it.get("last_verified", "") for it in i
 # 观望区同样对外渲染，所以出现在 watchlist 里也中断，避免自动更新把用户否掉的
 # 平台又加回来。新增一律走用户明确指示。
 NEVER_RELIST = ("腾讯元器", "DeepSeek 开放平台", "百度搭子 DuMate",
-                "Today AI", "todayai", "库库", "kuku.baidu")
+                "Today AI", "todayai", "库库", "kuku.baidu",
+                "月之暗面", "Moonshot", "moonshot.cn", "kimi.com",
+                "Kimi 开放平台", "Kimi Work")
 
 def _blocked(it):
     """名称或落地域名命中黑名单即拦截，防止换个显示名又被自动收录。"""

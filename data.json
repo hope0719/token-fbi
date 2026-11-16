@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-11-16",
-  "total": 52,
+  "total": 51,
   "items": [
     {
       "name": "WorkBuddy",
@@ -1423,35 +1423,6 @@
         "https://build.nvidia.com/z-ai/glm-5-3-flash",
         "https://build.nvidia.com/minimaxai/minimax-m3.1-flash"
       ]
-    },
-    {
-      "name": "月之暗面 Kimi 开放平台（Kimi K3.1 Pro）",
-      "vendor": "月之暗面 Moonshot AI",
-      "category": "model",
-      "free_type": "注册赠送",
-      "quota": "新用户实名认证即送 15 元代金券，可抵 K3.1 Pro/K3 等 API 调用费；券自发放起 90 天有效（至 2027-02-11 一类），约合百万级输入 tokens。",
-      "validity": "",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://platform.moonshot.cn/",
-      "intel_url": "https://platform.moonshot.cn/docs/pricing/chat",
-      "signup": "手机号注册 platform.moonshot.cn，完成实名认证后到「代金券管理」查看 15 元券是否到账；再建 API Key（只显示一次），Base URL 填 https://api.moonshot.cn/v1，OpenAI 兼容。",
-      "modality": "Kimi K3.1 Pro（3 万亿级参数、100 万上下文、原生视觉）· K3 · K2 系列（12 月底下线）",
-      "activity_rules": [
-        "15 元代金券由注册赠送发放，只抵扣 API 调用费，不足部分需充值；不适用于 K3.1 Pro Highspeed 高速版。",
-        "K3.1 Pro 始终开启思考模式，无法关闭；视觉输入只接受 base64 编码，不支持公网图片链接。",
-        "K2 系列自 2026-10-31 起停止向新注册用户开放，官方计划 12 月底全部下线。"
-      ],
-      "last_verified": "2026-11-15",
-      "update_source": "自动更新 2026-11-15（新增扫描：官方代金券页证实新用户实名注册赠 15 元、90 天有效；免费额度总表与 CNESA 日报同口径，均注明「代金券非免费模型层」）",
-      "detail_slug": "0139jupq",
-      "added": "2026-11-15",
-      "source_urls": [
-        "https://platform.moonshot.cn/",
-        "https://platform.moonshot.cn/docs/pricing/chat"
-      ]
     }
   ],
   "retired": [
@@ -1508,13 +1479,6 @@
       "url": "https://huggingface.co",
       "reason": "免费共享推理端点限流过紧，已不足以支撑实际使用（更高额度需订阅 PRO）。",
       "detail_slug": "0060hjdp",
-      "legacy_detail_paths": []
-    },
-    {
-      "name": "月之暗面 Kimi 开放平台",
-      "url": "https://platform.moonshot.cn",
-      "reason": "仅有一次性新用户体验金，用尽后无持续免费额度。",
-      "detail_slug": "0061stqi",
       "legacy_detail_paths": []
     },
     {
@@ -1627,6 +1591,22 @@
       "url": "https://kuku.baidu.com",
       "reason": "该条目已停止展示，不再提供额度与领取信息。",
       "detail_slug": "0075fcju"
+    },
+    {
+      "name": "月之暗面 Kimi 开放平台（Moonshot AI）",
+      "url": "https://platform.moonshot.cn/",
+      "reason": "用户明确要求永不上架（2026-11-16）：月之暗面（Moonshot AI / Kimi）全系产品下架，未获用户明确同意不得重新收录。",
+      "detail_slug": "0139jupq",
+      "legacy_detail_paths": [
+        "/intel/0061stqi/"
+      ]
+    },
+    {
+      "name": "Kimi Work（月之暗面桌面 Agent）",
+      "url": "https://www.kimi.com/",
+      "reason": "用户明确要求永不上架（2026-11-16）：月之暗面（Moonshot AI / Kimi）全系产品下架，未获用户明确同意不得重新收录。",
+      "detail_slug": "0112soyt",
+      "legacy_detail_paths": []
     }
   ],
   "watchlist": [
@@ -2104,14 +2084,6 @@
       "url": "https://vercel.com/ai-gateway",
       "reason": "每个 Vercel 团队每月赠 $5 AI Gateway Credits（每 30 天重置、不结转），另有约 8 款 $0 免费模型（如 nvidia/nemotron-3.5-lightning-free，1M 上下文）。属 OpenRouter 式同构聚合器，站内已有 OpenRouter 作为代表，按「聚合器只留 1–2 个代表」先入观望区。2026-10-16 自动更新。",
       "detail_slug": "0111vlhe",
-      "added": "2026-10-16",
-      "reviewed_at": "2026-10-16"
-    },
-    {
-      "name": "Kimi Work（月之暗面）",
-      "url": "https://www.kimi.com/",
-      "reason": "月之暗面桌面级 Agent「Kimi Work」公测期免费版可用，免费用户最多 2 个定时任务 / 小组件任务，高峰时段限流；官方未公示 token / 积分额度口径，待核后决定是否收录。与 retired 中的「月之暗面 Kimi 开放平台」为不同产品。2026-10-16 自动更新。",
-      "detail_slug": "0112soyt",
       "added": "2026-10-16",
       "reviewed_at": "2026-10-16"
     },
