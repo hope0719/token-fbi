@@ -67,7 +67,7 @@
 ## 七、当前状态（2026-11-16 12:50）
 - items 51 / total 51 / watchlist 63 / retired 23 / hidden 1，赞助 3（蓝博、豆包拉新、腾讯云服务器）。
 - **月之暗面已整体下架**：`0139jupq`（Kimi 开放平台，原在架）与 `0112soyt`（Kimi Work，原观望）同批迁入 retired，`0061stqi` 旧重复条目删除并把 `/intel/0061stqi/` 写成 301 到 `0139jupq`；`build.py` 黑名单已加月之暗面关键词。
-- **WorkBuddy 双卡限免 11-15 到期、未续期**：国内 `0001hgwg` → 注册赠送、validity 11-30（新户 2000 积分 + 免费档 500 积分/月，`card_promo`「日常任务推荐使用 DeepSeek-V4.1-Flash」）；国际版 `0036xxzt` → 限时活动、validity 11-30（Hy4-flash 11-16~11-30 每日免费、0.03×，`card_promo` 后半句为 Hy4-flash）。两卡 `note` 黄底句已于 11-16 删除。
+- **WorkBuddy 双卡已切 Hy4 flash 限免口径（11-16）**：Hy3 已从两版客户端选择器移除；DeepSeek-V4.1-Flash **仍在售**（勿当已下架）。国内 `0001hgwg` → 限时活动、validity 11-30（Hy4 flash **0.00×**，Hy4 0.29×、均衡 0.50×、极致 1.00×；新户 2000 积分至 11-30、免费档 500 积分/月；`card_promo`「日常任务推荐使用 DeepSeek-V4.1-Flash」）；国际版 `0036xxzt` → 限时活动、validity 11-30（Hy4-flash **0.03×** 标 new+Free now，Hy4 0.29×、自动 0.15×、Max 1.33×；`card_promo` 后半句为 Hy4-flash）。两卡 `note` 黄底句已于 11-16 删除。国际版倍率结构与国内不同，**不可互套**。
 - AutoClaw `0085puck` 已切 M11W3 当期（11/16–11/22 送 1 亿=1 万积分，validity 11-22），M11W4 未发布。
 - 码道 `0038rlna` 在 retired；`sources.json` 的 `huawei-codearts-news` 仍指向它，属陈旧映射待清理。
 - 近期到期：11-17 阶跃 StepAudio 3、11-19 Ling-3.2-flash、11-20 云知声 U Plan 活动期。
