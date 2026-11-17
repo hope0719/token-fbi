@@ -14,6 +14,7 @@
 ## 二、硬规则
 1. **`gates`/`note`/`card_promo` 只许人工写**，自动更新一律空；`build.py` 按 `auto_src`（update_source 以「自动更新」开头）拦截。现存人工内容：TRAE(2 蓝框)+Antigravity(1)、商汤+微信云开发(黄块)。
 2. **`NEVER_RELIST`（items+watchlist 双守卫，命中中断构建）**：腾讯元器、DeepSeek 开放平台、百度搭子 DuMate、Today AI（todayai.cn）、库库 AI（kuku.baidu，2026-11-13 用户点名下架）、**月之暗面 / Moonshot / Kimi 全系（2026-11-16 用户点名「下掉以后都不允许上架」，含 kimi.com、moonshot.cn、Kimi Work、Kimi 开放平台）**。守卫匹配 name/vendor/entry_url/intel_url/promo_url，换名也拦得住；黑名单不匹配 `modality`/`quota`，故 Qoder、硅基流动、讯飞星辰这类「聚合了 Kimi 模型」的他家卡片不受影响。
+   - **智谱 BigModel 新客 2000 万 Token 永不上首页**（2026-11-17 用户裁定）；观望区 `0044xxum`（Z.AI 开放平台）保留但不再提转正。注意：白名单式拦截只针对这个体验包，**不能把「智谱」写进 NEVER_RELIST**——ZCode（`0003dfyo`）是在架卡，会误伤中断构建。
 3. **邀请码/返佣不是排除或下架理由**；有免费或近乎免费权益即可收；此类 quota 不以「无免费模型：」开头。
 4. 限时活动必带 `validity` ISO 日期；限量但无官方截止日 → `free_type=免费层`，禁编造。
 5. 不收：付费订阅附赠（Claude Max/Team、Codex 重置卡、会员制视频平台 0 积分）、必绑卡试用、身份/融资门槛、地方与运营商定向补贴、专用小模型 API、已关停（QClaw）。

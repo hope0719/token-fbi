@@ -433,7 +433,7 @@ def render_ad(it):
 </article>'''
 
 # ---------- 站长推荐（仅作标识，不再单列板块）----------
-RECO_NAMES = ["WorkBuddy 国际版"]
+RECO_NAMES = ["WorkBuddy"]  # 2026-11-17 国际版下架，推荐标记转到仅存的国内版卡片
 RECO_SET = set(RECO_NAMES)
 
 # 编辑列表口径：赞助条目只出现在赞助位，不进入「全部情报」与情报表

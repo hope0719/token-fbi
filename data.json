@@ -2,7 +2,7 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-11-17",
-  "total": 51,
+  "total": 50,
   "items": [
     {
       "name": "WorkBuddy",
@@ -13,11 +13,11 @@
       "validity": "2026-11-30",
       "region": "",
       "gates": [],
-      "note": "",
+      "note": "国际版与国内版基本一致，没有可免费使用的国外模型；两边额度不通用，统一用国内版即可。",
       "sponsored": false,
       "entry_url": "https://www.codebuddy.cn/events/invite/?inviteCode=854sf4qiw",
       "intel_url": "https://www.codebuddy.cn/events/invite/?inviteCode=854sf4qiw",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-17",
       "modality": "Hy4 flash · Hy4 · DeepSeek-V4.1-Flash · Kimi-K3.1-Pro",
       "signup": "新用户注册送 2000 积分；Hy4 正式版 2026 年 11 月 4 日上线，客户端模型列表选中即可使用；Step 5 Preview 已不在免费范围，现按 0.33× 正常计费。",
       "activity_rules": [
@@ -33,9 +33,10 @@
         "个人版体验版每月 500 积分免费，Auto 模型调度标注「限免全模型」、代码补全限免无限次，具体以定价页为准。",
         "2026-11-05 官方将 Hy4 推理集群扩容 10 倍并上调免费额度；免费用户额度低于订阅用户，高峰时段仍可能排队，额度刷新时间以客户端提示为准。",
         "2026-11-16 复核：Hy3/Hy4 限免到期后官方未发布新一轮免费公告；当前可白拿的是新户 2000 积分（注册后 30 天内首付费双方各 500 积分口径不变）与免费档每月 500 积分 + Buddy 签到每日 100 积分。",
-        "当前客户端可选倍率：Hy4 0.29×、Hy4 flash 0.00×（限时免费）、均衡 0.50×、极致 1.00×；倍率与免费档额度以客户端实时提示为准。"
+        "当前客户端可选倍率：Hy4 0.29×、Hy4 flash 0.00×（限时免费）、均衡 0.50×、极致 1.00×；倍率与免费档额度以客户端实时提示为准。",
+        "2026-11-17 起国际版已与国内版合并，本站只保留国内版卡片；国际版模型清单与倍率同国内版，没有可免费使用的国外模型（GPT/Claude/Gemini 等均不在免费范围）。"
       ],
-      "update_source": "用户指定 2026-11-16（客户端模型列表：Hy4 flash 标「限时免费」0.00×、Hy4 0.29×、均衡 0.50×、极致 1.00×，Hy3 已从列表移除；IT之家 11-16 引官方口径「11 月 30 日前 WorkBuddy 限时免费」）",
+      "update_source": "用户指定 2026-11-17（下架 WorkBuddy 国际版、合二为一，只留国内版；卡面注明「国际版与国内版基本一致，无国外模型可免费使用」）",
       "detail_slug": "0001hgwg",
       "legacy_detail_paths": [
         "/intel/item-000-workbuddy/",
@@ -778,49 +779,6 @@
       "legacy_detail_paths": [
         "/intel/item-039-腾讯云服务器/"
       ]
-    },
-    {
-      "vendor": "",
-      "category": "tool",
-      "free_type": "限时活动",
-      "region": "国际版",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "last_verified": "2026-11-16",
-      "signup": "",
-      "update_source": "用户指定 2026-11-16（国际版客户端模型选择器：Hy4-flash 标 new + Free now、0.03×，Hy4 0.29×，自动 0.15×、Max 1.33×；Hy3 已移除，DeepSeek-V4.1-Flash 仍在）",
-      "name": "WorkBuddy 国际版",
-      "quota": "Hy4-flash 标 new + Free now、倍率 0.03×，11-16 至 11-30 每日免费额度；Hy4 0.29×、自动 0.15×、Max 1.33×，用尽按 0.03× 扣积分。",
-      "validity": "2026-11-30",
-      "modality": "Hy4-flash · Hy4 · DeepSeek-V4.1-Flash",
-      "entry_url": "https://workbuddy.ai/invite?code=3V5YNJCC",
-      "intel_url": "https://workbuddy.ai/invite?code=3V5YNJCC",
-      "activity_rules": [
-        "下载 WorkBuddy 国际版客户端并注册或登录账号。",
-        "新建任务，在模型选择器中选择 Hy4-flash、Hy4 或 DeepSeek-V4.1-Flash；Hy4-flash 当前标 new + Free now，另可切「自动」（0.15×）与「Max」（1.33×）两档。",
-        "2026-11-16 复核：混元 Hy3 已从选择器移除，Hy4-flash（Free now，0.03×）、Hy4（0.29×）、DeepSeek-V4.1-Flash 仍在售；自动档 0.15×、Max 档 1.33×。",
-        "Hy4-flash 为 2026 年 11 月 16 日新上架的 Flash 档旗舰，11-16 至 11-30 提供每日免费额度（客户端标 Free now、倍率 0.03×），订阅档享有更高额度；额度用尽后按 0.03× 消耗积分。",
-        "Hy4 正式版于 2026 年 11 月 4 日同步接入国际版，11 月 4 日至 15 日的免费额度已结束，现按 0.29× 计费；混元 Hy3 已从选择器移除，此前的限免同样在 11 月 15 日结束。",
-        "免费额度为每日分配的体验量，触及上限后可消耗积分继续使用，实际倍率以客户端模型选择器显示为准。",
-        "账户积分余额为 0 时免费模型同样无法调用，建议号上留少量底。",
-        "国内版与国际版活动规则不同，两套额度不通用。"
-      ],
-      "detail_slug": "0036xxzt",
-      "legacy_detail_paths": [
-        "/intel/item-036-workbuddy-国际版/",
-        "/intel/item-037-workbuddy-国际版/",
-        "/intel/item-038-workbuddy-国际版/",
-        "/intel/item-039-workbuddy-国际版/",
-        "/intel/item-040-workbuddy-国际版/",
-        "/intel/item-044-workbuddy-国际版/"
-      ],
-      "added": "2026-10-07",
-      "source_urls": [
-        "https://www.toutiao.com/a7698041018058342953",
-        "https://cloud.tencent.com/developer/article/2762018"
-      ],
-      "card_promo": "日常全任务首选 DeepSeek-V4.1-Flash；Hy4-flash 也值得用（11-16 至 11-30 每日免费）"
     },
     {
       "name": "Google Antigravity（反重力）",
@@ -1618,6 +1576,20 @@
       "reason": "用户明确要求永不上架（2026-11-16）：月之暗面（Moonshot AI / Kimi）全系产品下架，未获用户明确同意不得重新收录。",
       "detail_slug": "0112soyt",
       "legacy_detail_paths": []
+    },
+    {
+      "name": "WorkBuddy 国际版",
+      "url": "https://workbuddy.ai",
+      "reason": "已与国内版合并（2026-11-17）：国际版与国内版基本一致、没有可免费使用的国外模型，本站合并后只保留国内版卡片，原国际版邀请链接同步停止维护。",
+      "detail_slug": "0036xxzt",
+      "legacy_detail_paths": [
+        "/intel/item-036-workbuddy-国际版/",
+        "/intel/item-037-workbuddy-国际版/",
+        "/intel/item-038-workbuddy-国际版/",
+        "/intel/item-039-workbuddy-国际版/",
+        "/intel/item-040-workbuddy-国际版/",
+        "/intel/item-044-workbuddy-国际版/"
+      ]
     }
   ],
   "watchlist": [
