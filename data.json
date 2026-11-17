@@ -51,7 +51,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "长期免费",
-      "quota": "免费档 ¥0：每月 500 积分、全部功能免费使用、2 个云端任务并发；经分享链接注册并登录桌面端另得 3,000 积分（31 天有效），用完仍可用免费基础模型。",
+      "quota": "免费档 ¥0：每月 500 积分、全部功能免费使用、2 个云端任务并发；经分享链接注册并登录桌面端另得 2,500 积分（邀请 500 + 新人 2,000，31 天有效）。",
       "validity": "",
       "region": "",
       "gates": [],
@@ -59,8 +59,8 @@
       "sponsored": false,
       "entry_url": "https://www.trae.cn",
       "intel_url": "https://www.trae.cn",
-      "last_verified": "2026-11-10",
-      "modality": "GPT-4o · Doubao-1.5-pro · DeepSeek",
+      "last_verified": "2026-11-17",
+      "modality": "Seed-2.1-Turbo · Seed-Code · DeepSeek-V4.1-Flash · DeepSeek-V4-Pro",
       "signup": "",
       "detail_slug": "0032tvoc",
       "legacy_detail_paths": [
@@ -71,16 +71,17 @@
         "/intel/item-036-字节-trae-ai-ide/",
         "/intel/item-040-字节-trae-ai-ide/"
       ],
-      "invite_text": "我在用 TRAE AI 编程工具，搞定各类任务。通过我的分享链接注册并登录桌面端，新用户一次性获得 3,000 积分！",
-      "invite_url": "https://www.trae.cn/events/code-fission/PBUXWVH6P439?utm_source=copy_link&utm_medium=code_fission",
-      "invite_code": "PBUXWVH6P439",
-      "update_source": "自动更新 2026-11-10（巡检：trae.cn/pricing 现口径为免费档 ¥0、每月 500 积分、全部功能免费、2 个云端任务并发；原卡只写邀请 3,000 积分，漏了月度 500）",
-      "promo_url": "https://www.trae.cn/events/code-fission/PBUXWVH6P439?utm_source=copy_link&utm_medium=code_fission",
+      "invite_text": "我在用 TRAE AI 编程工具，搞定各类任务，通过我的分享链接注册并登录桌面端，新用户一次性获得 2,500 积分！",
+      "invite_url": "https://www.trae.cn/events/code-fission/WW2VV866E8ZH?utm_source=copy_link&utm_medium=code_fission",
+      "invite_code": "WW2VV866E8ZH",
+      "update_source": "用户指定 2026-11-17（更换专属邀请链接；docs.trae.cn 规则新版：活动期 11-13 至 11-30、新人 2,000+邀请 500=2,500、满 2/4 人加赠汉堡券、满 3/5 人各 500、上限 3,500；pricing 页现售 Seed-2.1-Turbo/Seed-Code/DS-V4.1-Flash/DS-V4-Pro）",
+      "promo_url": "https://www.trae.cn/events/code-fission/WW2VV866E8ZH?utm_source=copy_link&utm_medium=code_fission",
       "promo_net": "TRAE 邀请活动",
       "activity_rules": [
-        "邀请活动期 2026-09-07 至 12-31（北京时间）；被邀请人须是从未注册过的新用户，经专属链接首次注册并成功登录桌面端，双方各得 500 通用积分，实时到账。",
-        "分享页另列「新人福利再送 2,500 积分」，与注册礼合并即 3,000 积分；注册礼只认「完成注册 + 登录桌面端」，只在网页端登录不发放。",
-        "积分自发放起 31 天内有效，逾期自动失效；单账号活动期内邀请奖励累计上限 3,500 积分。",
+        "邀请活动期 2026-11-13 00:00 至 11-30 00:00（北京时间）；被邀请人须为从未注册过 TRAE 的新用户，经专属链接首次注册并成功登录桌面端，双方各得 500 积分、实时到账。",
+        "分享页另列「新人福利再送 2,000 积分」，与注册礼 500 积分合并即 2,500 积分；注册礼只认「完成注册 + 登录桌面端」，仅在网页端登录不发放。",
+        "邀请人有效邀请满 2 人、4 人各得肯德基香辣鸡腿堡汉堡券 1 张（先到先得）；满 3 人、5 人各额外得 500 积分。",
+        "单个邀请人活动期累计上限 3,500 积分；积分自发放起 31 天内有效，汉堡券自领取起 60 天内有效，逾期自动失效。",
         "老用户点链接登录不计有效邀请；同一账号、手机号或设备任一相同均视为同一用户；积分不可转让、不可兑现；仅调用内置模型消耗积分，自定义模型不消耗。"
       ]
     },
@@ -586,7 +587,7 @@
       "vendor": "",
       "category": "model",
       "free_type": "长期免费",
-      "quota": "AMD AI 开发者计划最高 $100 云额度 + $50 Fireworks 托管推理额度；无截止时间。",
+      "quota": "免费加入开发者计划：Instinct 云额度最高 $100 + Fireworks $50 + Token Lab 免费 API（10 款开源模型、积分制、20 次/分）。",
       "validity": "",
       "region": "",
       "gates": [],
@@ -594,8 +595,8 @@
       "sponsored": false,
       "entry_url": "https://developer.amd.com.cn/radeon/tokenfactory",
       "intel_url": "https://developer.amd.com.cn/radeon/tokenfactory",
-      "last_verified": "2026-09-02",
-      "modality": "AMD 免费 API · Fireworks 托管推理",
+      "last_verified": "2026-11-17",
+      "modality": "Token Lab：Gemma 4 31B · DeepSeek V4 / V4.1 Flash · Qwen3.8 27B · MiniCPM 系列（10 款全免费）",
       "signup": "",
       "detail_slug": "0028ekrf",
       "legacy_detail_paths": [
@@ -605,6 +606,13 @@
         "/intel/item-031-amd-免费-api-与开发者计划/",
         "/intel/item-032-amd-免费-api-与开发者计划/",
         "/intel/item-036-amd-免费-api-与开发者计划/"
+      ],
+      "update_source": "用户指定 2026-11-17（并入 AMD Token Lab：api.tokenlab.amd.com/v1，免费会员积分制、20 次/分、目录 10 款开源模型全标 Free）",
+      "activity_rules": [
+        "加入 AMD AI Developer Program（developer.amd.com，免费、不绑卡）后，到 notebooks.amd.com/tokenlab 领 Key，base URL 为 https://api.tokenlab.amd.com/v1，兼容 OpenAI 与 Anthropic SDK。",
+        "Token Lab 按积分计费：社区实测新 Key 为 10 积分、访问期 30 天（可延一次 15 天）、20 次/分钟；积分按模型单价折算，官方未公布积分总量与截止日。",
+        "目录含 Gemma 4 31B、DeepSeek V4 Flash / V4.1 Flash、Qwen3.8 27B、三款 MiniCPM 与三款 decision 模型，全部标 Free；Gemma 4 31B 上下文 262,144 tokens、支持图像输入与工具调用。",
+        "云额度分三路：AMD Instinct Developer Cloud 最高 $100、Fireworks AI $50、Token Lab 免申请（Get Key 即用），同一会员可分别申请。"
       ]
     },
     {
@@ -1651,13 +1659,13 @@
     {
       "name": "智谱AI（Z.AI 开放平台）",
       "url": "https://open.bigmodel.cn",
-      "reason": "用户于 2026-10-07 要求移入观望区，待观察免费额度政策是否稳定。",
+      "reason": "用户于 2026-11-17 复核：新客 2000 万 Token 体验包不上首页，继续观望。",
       "detail_slug": "0044xxum",
       "legacy_detail_paths": [
         "/intel/item-001-智谱ai-z-ai-开放平台/",
         "/intel/item-006-智谱ai-z-ai-开放平台/"
       ],
-      "reviewed_at": "2026-10-07"
+      "reviewed_at": "2026-11-17"
     },
     {
       "name": "Mistral La Plateforme",
