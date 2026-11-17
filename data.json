@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-16",
+  "last_updated": "2026-11-17",
   "total": 51,
   "items": [
     {
@@ -416,7 +416,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "免费层",
-      "quota": "免费模型已扩至 15 个（含 DeepSeek V4.1 Flash、GLM-5.3-Flash 免费档），限时开放、官方未公布截止日。",
+      "quota": "免费模型共 14 款（含 Hy4 flash、DeepSeek V4.1 Flash、GLM-5.3-Flash、LongCat 2.5），官方标 limited time、未公布截止日。",
       "validity": "免费名单滚动轮换，以 /models 实时列表为准",
       "region": "",
       "gates": [],
@@ -424,8 +424,8 @@
       "sponsored": false,
       "entry_url": "https://opencode.ai/zen",
       "intel_url": "https://opencode.ai/zen",
-      "last_verified": "2026-10-20",
-      "modality": "DeepSeek V4.1 Flash Free · GLM-5.3-Flash Free · MiMo-V2.5 Free · LongCat-2.5 Preview Free · Nemotron 3 Ultra Free · Big Pickle",
+      "last_verified": "2026-11-17",
+      "modality": "Hy4 flash Free · DeepSeek V4.1 Flash Free · GLM-5.3-Flash Free · LongCat 2.5 Free · MiMo-V2.6-Flash Free · Nemotron 3.5 系列 · Big Pickle",
       "signup": "",
       "detail_slug": "0021agqn",
       "legacy_detail_paths": [
@@ -436,7 +436,7 @@
         "/intel/item-025-opencode-zen/",
         "/intel/item-029-opencode-zen/"
       ],
-      "update_source": "自动更新 2026-10-20（免费模型扩至 15 个，清理 LongCat 过期日期）",
+      "update_source": "自动更新 2026-11-17（巡检：docs/zen 全免费模型 15→14 款，新增 hy4-flash-free，LongCat 2.5 限 100 次/日）",
       "source_urls": [
         "https://opencode.ai/zen",
         "https://www.logeshwaran.org/2026/10/opencode-install-zen-go-pricing-ollama.html"
