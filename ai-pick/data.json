@@ -1,7 +1,7 @@
 {
   "site_name": "AI 活动雷达",
   "tagline": "在时间截止前找到 AI 机会",
-  "updated_at": "2026-11-16T01:34:14.378Z",
+  "updated_at": "2026-11-17T00:42:38.004Z",
   "source": "JS-banana/ai-opportunity-radar (airadar.laifuyou.com) + LucianaiB 飞书表「AI 活动推荐」+ events.waytoagi.com 三源合并 + 手工补录 35 条",
   "activities": [
     {
@@ -5588,7 +5588,7 @@
     {
       "id": "luc_reczz28PYliO10z2",
       "title": "群核科技Ahoolo 全球3D AI黑客松",
-      "vendor": "ModelScope",
+      "vendor": "",
       "type": "黑客松",
       "score": 0,
       "difficulty": null,
@@ -5605,7 +5605,7 @@
       "deadline_date": "2026-11-19",
       "region": "中国",
       "officialStatus": "",
-      "url": "https://www.modelscope.cn/events/386/%E6%AF%94%E8%B5%9B%E4%BB%8B%E7%BB%8D",
+      "url": "https://www.aholo.cn/hackathon?utm_source=moda",
       "source": "lucianaib",
       "estimatedEffort": null,
       "suggestion": "值得参加",
@@ -6188,6 +6188,35 @@
       "slug": null,
       "image": "event-pass-macro.png",
       "firstSeen": "2026-10-28"
+    },
+    {
+      "id": "wag_e_74e11a7e5b",
+      "title": "Booster 冠军之夜·第二季 3v3 足球锦标赛",
+      "vendor": "BOOSTER 加速进化",
+      "type": "黑客松",
+      "score": 0,
+      "difficulty": null,
+      "difficultyNote": null,
+      "reward": "",
+      "rewardDetail": "标签：具身智能 / 机器人 / 算法竞赛 / AI编程 / 黑客松 / 仿真足球",
+      "rewardTypes": [],
+      "format": "线上",
+      "participation": "站外链接报名；线上 · 主办 BOOSTER 加速进化",
+      "winningCriteria": null,
+      "timelineNotes": null,
+      "startAt": "2026-11-16",
+      "endAt": "2026-12-13T23:59:59+08:00",
+      "deadline_date": "2026-12-13",
+      "region": "中国",
+      "officialStatus": "官方确认",
+      "url": "https://champion.booster.tech/s2?org_referral_code=huobanwaytoagi",
+      "source": "waytoagi",
+      "estimatedEffort": null,
+      "suggestion": "值得参加",
+      "discoveredAt": "2026-11-16T11:32:56.829Z",
+      "slug": null,
+      "image": "event-pass-macro.png",
+      "firstSeen": "2026-11-17"
     },
     {
       "id": "wag_e_bbf381b818",
