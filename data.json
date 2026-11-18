@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-17",
+  "last_updated": "2026-11-18",
   "total": 50,
   "items": [
     {
@@ -91,7 +91,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "每日赠送",
-      "quota": "每日 10:00 桌面端领 100 Credits（30 天有效、可累积）；倍率 Qwen4-Max 0.4×、Qwen3.8-Flash 0.1×、DeepSeek-Flash 0.1×、GLM-5.3 0.8×；22:00–08:00 错峰 Qwen3.8-Max/Flash 再 4 折。",
+      "quota": "新户注册送 300 Credits（含 2 周专业版试用，每人一次）；每日 10:00 桌面端领 100 Credits（30 天有效、可累积）；倍率 Qwen4-Max 0.4×、Qwen3.8-Flash 0.1×、DeepSeek-Flash 0.1×、GLM-5.3 0.8×；22:00–08:00 错峰再 4 折。",
       "validity": "官方未公布（以客户端为准）",
       "region": "",
       "gates": [],
@@ -99,16 +99,17 @@
       "sponsored": false,
       "entry_url": "https://t.aliyun.com/U/Ob4f6l",
       "intel_url": "https://t.aliyun.com/U/Ob4f6l",
-      "last_verified": "2026-11-16",
+      "last_verified": "2026-11-18",
       "modality": "Qwen4-Max · Qwen3.8-Max · Qwen3.8-Flash · DeepSeek-V4-Pro · DeepSeek-Flash · GLM-5.3 · Kimi-K3.1-Pro · MiniMax-M3.1-Flash",
       "signup": "",
       "activity_rules": [
+        "新用户（体验版）权益：官方文档明确「为期 2 周的专业版试用及 300 Credits」，每账号一次，需绑定手机号并实名；试用到期后不自动续费，仍可用免费基础模型但受每日与每月限额。",
         "每日 100 通用 Credits：每日 10:00 开放新一轮、窗口至次日 10:00；仅限 Qoder CN 桌面端「用量面板 → 礼物图标」主动领取，每轮 100 枚、30 天内有效、可跨天累积，结束时间另行公告。",
         "当前 Credits 用量参考系数：Qwen4-Max 0.4×、Qwen3.8-Max 0.5×、Qwen3.8-Flash 0.1×、DeepSeek-V4-Pro 0.5×、DeepSeek-Flash 0.1×、GLM-5.3 0.8×、GLM-5.3-Flash 0.1×、Kimi-K3.1-Pro 1.0×、MiniMax-M3.1-Flash 0.1×、Step-5-Preview 0.3×；档位 Auto 0.5×、Fast 0.8×。",
         "错峰折扣：每日 22:00 至次日 08:00（北京时间），Qwen3.8-Max 0.2×、Qwen3.8-Flash 0.04×，相当于标准倍率 4 折；仅 Pro Trial 及付费档自动生效，免费用户不享受，结束时间官方未公布。",
         "Credits 耗尽后仍可使用免费基础模型，但有每日与每月使用限额；模型倍率即积分折扣（0.5× = 半价），实际可用模型与倍率以客户端为准。"
       ],
-      "update_source": "用户指定 2026-11-16（按客户端模型选择器截图 + docs.qoder.cn 倍率表更新，删去已结束活动口径）",
+      "update_source": "自动更新 2026-11-18（巡检：docs.qoder.cn 账户与计费文档确认体验版含 2 周 Pro 试用 + 300 Credits，补回 11-12 曾因缺一手源删除的新户权益）",
       "detail_slug": "0002eanr",
       "legacy_detail_paths": [
         "/intel/item-001-qoder-cn/",
@@ -1107,7 +1108,7 @@
       "vendor": "云知声（Unisound）",
       "category": "model",
       "free_type": "免费层",
-      "quota": "U Plan Free 档：每周 2500 积分、5 小时窗口 500 积分，另赠 U2-ASR 8 小时 / U2-TTS 4 万字；U2-Flash 上线平台另赠 1 亿 Token。",
+      "quota": "U Plan Free 永久免费：每周 2500 积分、5 小时窗口 500 积分，另赠 5 款模型包（ASR 8 小时 / TTS 4 万字 / OCR 与影像）；新客另赠 1 亿 Token。",
       "validity": "",
       "region": "",
       "gates": [],
@@ -1116,9 +1117,9 @@
       "entry_url": "https://maas.unisound.com/",
       "intel_url": "https://maas.unisound.com/models/u2-flash",
       "signup": "访问 maas.unisound.com 注册并实名后领取 U Plan Free 档，进入「控制台 → API Key 管理 → 创建 API Key」，Base URL 为 https://maas-api.unisound.com/v1。",
-      "modality": "U2-Flash · U2 · U2-Med · U2-Decision",
-      "last_verified": "2026-11-05",
-      "update_source": "自动更新 2026-11-05（巡检：官方 MaaS 平台首页显示 U2-Flash 上线赠送 1 亿 Token）",
+      "modality": "U2-Flash-1118（266B·原生多模态·1M 上下文） · U2 · U2-Med · U2-Decision（限时 ¥0）",
+      "last_verified": "2026-11-18",
+      "update_source": "自动更新 2026-11-18（源 diff：U2-Flash 换代 U2-Flash-1118，266B/原生多模态/1M 上下文，限时 6 折；U Plan Free 档权益与三档模型包不变）",
       "source_urls": [
         "https://maas.unisound.com/models/u2-flash",
         "https://m.toutiao.com/article/7690902463473402419"
@@ -1129,10 +1130,11 @@
         "U Plan 分 Free / Standard / Plus 三档。Free 档免费领取：每周 2,500 积分、5 小时动态窗口 500 积分，积分按「输入×系数 + 缓存命中×系数 + 输出×系数 ÷ 10000」抵扣。",
         "Free 档另赠多模态额度：U2-ASR 8 小时、U2-TTS 4 万字、U2-OCR 与 U2-OCR-Med 各 737.5 万 Token、U2-RadiMed 47.5 万 Token；赠送额度不受 5 小时窗口限制，套餐周期内用完即止。",
         "积分按 7 天周期刷新，未用完不累积、不结转；5 小时窗口额度在消耗 5 小时后重置。",
-        "原「U2-Flash 输入/输出/缓存全部 0 元不限量」限时活动已于 2026-10-31 结束，现按量计费为输入 1 元、缓存命中 0.2 元、输出 2 元每百万 Token。",
+        "原「U2-Flash 输入/输出/缓存全部 0 元不限量」限时活动已于 2026-10-31 结束；2026-11-18 起主模型换代为 U2-Flash-1118，按量计费输入 0.6 元、输出 1.2 元、输入缓存命中 0.02 元每百万 Token（限时 6 折，原价 1 / 2 元），价格页「限时 6 折」未公布截止日。",
         "U2-Flash 上线赠礼：官方 MaaS 平台首页标注「平台赠送 1 亿 Token」，额度自动发放至账户、仅可用于 U2-Flash 模型调用，官方未公布领取截止日，以账户到账提示为准。",
         "U Plan 活动期 2026-11-01 至 2026-11-20：Free 档免费领取，Standard / Plus 升级限时 5 折（低至 29.5 元/月），活动结束后恢复原价。",
-        "U2-Decision 在模型价格页仍标注「限时免费」（0 元），未公布截止日，以官方价格页为准。"
+        "U2-Decision 在模型价格页仍标注「限时免费」（0 元），未公布截止日，以官方价格页为准。",
+        "U2-Flash-1118 于 2026-11-18 上架模型广场：总参数 266B、原生多模态支持图片理解、1M 上下文、256K 最大输出，模型 ID 仍为 u2-flash；官方文档中心「模型发布」页尚未同步该版本。"
       ]
     },
     {
@@ -2113,10 +2115,10 @@
     {
       "name": "IteraCompute",
       "url": "https://iteracompute.com/free",
-      "reason": "2026-10-20 发现：免费层 Qwen3.8-27B 每月 3,000 万 Tokens（无卡、邮箱或 Google 登录、160K TPM），OpenAI 兼容，额度按月重置。但运营主体未披露、域名 2026-08 才注册，第三方核验站明确提示「按不可信基础设施对待」；充值档为一次性累计充值而非月费。待观察主体资质与额度稳定性，暂不进 items。",
+      "reason": "2026-10-20 发现、2026-11-18 复核：免费层 Qwen3.8-27B 每月 3,000 万 Tokens（无卡、邮箱或 Google 登录、共享免费池、UTC 每月 1 日重置不结转、并发 1 请求），OpenAI 兼容，超额直接返回 429 不自动转付费。11-18 复核新增：qwen3.8-27b 与 Auto 路由免费窗口标至 2026-11-24，条款自述「shared capacity may queue / No SLA」，同构聚合网关按「新聚合器先观望」惯例不上首页；运营主体未披露、域名 2026-08 才注册，第三方核验站提示「按不可信基础设施对待」。仍待观察：11-24 后是否保留常驻免费档、主体资质与额度稳定性。",
       "detail_slug": "0122mclg",
       "added": "2026-10-20",
-      "reviewed_at": "2026-10-20"
+      "reviewed_at": "2026-11-18"
     },
     {
       "name": "Dahl Inference（Gonka 去中心化网关）",
