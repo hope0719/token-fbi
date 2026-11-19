@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-18",
+  "last_updated": "2026-11-19",
   "total": 50,
   "items": [
     {
@@ -9,7 +9,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "限时活动",
-      "quota": "Hy4 flash 限时免费 0.00×（至 11-30），Hy4 0.29×；新户注册送 2000 积分（至 11-30）；免费档每月 500 积分、签到每日补 100。",
+      "quota": "Hy4 flash 限时免费 0.00×（至 11-30，每日发放固定额度、用尽转积分），Hy4 0.29×；新户注册送 2000 积分（至 11-30）；免费档每月 500 积分、签到每日补 100。",
       "validity": "2026-11-30",
       "region": "",
       "gates": [],
@@ -17,7 +17,7 @@
       "sponsored": false,
       "entry_url": "https://www.codebuddy.cn/events/invite/?inviteCode=854sf4qiw",
       "intel_url": "https://www.codebuddy.cn/events/invite/?inviteCode=854sf4qiw",
-      "last_verified": "2026-11-17",
+      "last_verified": "2026-11-19",
       "modality": "Hy4 flash · Hy4 · DeepSeek-V4.1-Flash · Kimi-K3.1-Pro",
       "signup": "新用户注册送 2000 积分；Hy4 正式版 2026 年 11 月 4 日上线，客户端模型列表选中即可使用；Step 5 Preview 已不在免费范围，现按 0.33× 正常计费。",
       "activity_rules": [
@@ -36,7 +36,7 @@
         "当前客户端可选倍率：Hy4 0.29×、Hy4 flash 0.00×（限时免费）、均衡 0.50×、极致 1.00×；倍率与免费档额度以客户端实时提示为准。",
         "2026-11-17 起国际版已与国内版合并，本站只保留国内版卡片；国际版模型清单与倍率同国内版，没有可免费使用的国外模型（GPT/Claude/Gemini 等均不在免费范围）。"
       ],
-      "update_source": "用户指定 2026-11-17（下架 WorkBuddy 国际版、合二为一，只留国内版；卡面注明「国际版与国内版基本一致，无国外模型可免费使用」）",
+      "update_source": "自动更新 2026-11-19（巡检：Hy4 flash 限免 11/16–11/30 复核，补每日额度上限口径）",
       "detail_slug": "0001hgwg",
       "legacy_detail_paths": [
         "/intel/item-000-workbuddy/",
@@ -1240,7 +1240,7 @@
       "vendor": "蚂蚁集团（百灵大模型）",
       "category": "model",
       "free_type": "限时活动",
-      "quota": "上线首两周 API 全免费（输入输出均不计费），11-19 起恢复按量：输入约 ¥2、输出约 ¥6 / 百万 tokens。",
+      "quota": "上线首两周 API 全免费（11-05 至 11-19，输入输出不计费）；到期后按量计费，官方定价表 11-19 起已不单列该模型价位，实际价格以控制台为准。",
       "validity": "2026-11-19",
       "region": "",
       "gates": [],
@@ -1250,8 +1250,8 @@
       "intel_url": "https://developer.ant-ling.com/en/docs/models/price/",
       "signup": "支付宝账号在 API 控制台开通 Ling 服务即可，模型 id 为 Ling-3.2-flash，兼容 OpenAI / Anthropic 协议；未签自动扣款则额度用尽即停，不产生扣费。",
       "modality": "Ling-3.2-flash（560B MoE / 25B 激活、1M 上下文、图像+视频输入）",
-      "last_verified": "2026-11-06",
-      "update_source": "自动更新 2026-11-06（新增扫描：官方定价页 Limited-Time Benefits 明确「上线首 2 周免费」）",
+      "last_verified": "2026-11-19",
+      "update_source": "自动更新 2026-11-19（巡检：首两周免费窗 11-19 到期、官方定价表同日移除 Ling-3.2-flash 价位，改按控制台口径）",
       "source_urls": [
         "https://developer.ant-ling.com/en/docs/models/price/",
         "https://developer.ant-ling.com/en/docs/getting-started/changelog"
