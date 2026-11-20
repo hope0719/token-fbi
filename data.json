@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-19",
-  "total": 50,
+  "last_updated": "2026-11-20",
+  "total": 49,
   "items": [
     {
       "name": "WorkBuddy",
@@ -1236,30 +1236,6 @@
       "added": "2026-11-04"
     },
     {
-      "name": "蚂蚁百灵 Ling-3.2-flash（首发限免）",
-      "vendor": "蚂蚁集团（百灵大模型）",
-      "category": "model",
-      "free_type": "限时活动",
-      "quota": "上线首两周 API 全免费（11-05 至 11-19，输入输出不计费）；到期后按量计费，官方定价表 11-19 起已不单列该模型价位，实际价格以控制台为准。",
-      "validity": "2026-11-19",
-      "region": "",
-      "gates": [],
-      "note": "",
-      "sponsored": false,
-      "entry_url": "https://developer.ant-ling.com/",
-      "intel_url": "https://developer.ant-ling.com/en/docs/models/price/",
-      "signup": "支付宝账号在 API 控制台开通 Ling 服务即可，模型 id 为 Ling-3.2-flash，兼容 OpenAI / Anthropic 协议；未签自动扣款则额度用尽即停，不产生扣费。",
-      "modality": "Ling-3.2-flash（560B MoE / 25B 激活、1M 上下文、图像+视频输入）",
-      "last_verified": "2026-11-19",
-      "update_source": "自动更新 2026-11-19（巡检：首两周免费窗 11-19 到期、官方定价表同日移除 Ling-3.2-flash 价位，改按控制台口径）",
-      "source_urls": [
-        "https://developer.ant-ling.com/en/docs/models/price/",
-        "https://developer.ant-ling.com/en/docs/getting-started/changelog"
-      ],
-      "detail_slug": "0134gfaz",
-      "added": "2026-11-06"
-    },
-    {
       "name": "腾讯 EdgeOne Makers（AI 网关）",
       "vendor": "",
       "category": "model",
@@ -1592,6 +1568,13 @@
         "/intel/item-040-workbuddy-国际版/",
         "/intel/item-044-workbuddy-国际版/"
       ]
+    },
+    {
+      "name": "蚂蚁百灵 Ling-3.2-flash",
+      "url": "https://developer.ant-ling.com/",
+      "reason": "首发限免已于 2026-11-19 结束：官方定价页自 11-20 起恢复 Ling-3.2-flash 按量计费（输入 2 元、输出 6 元、缓存命中 0.4 元每百万 Token），限时优惠名单中已不含该模型，暂无免费额度；仍想免费调用该模型可看 OpenRouter 的 :free 通道。",
+      "detail_slug": "0134gfaz",
+      "legacy_detail_paths": []
     }
   ],
   "watchlist": [
@@ -2131,9 +2114,9 @@
     {
       "name": "阶跃星辰 StepFun",
       "url": "https://platform.stepfun.com",
-      "reason": "2026-11-11 复核更新：原记录「暂时无免费额度」已过期。官方 API 定价文档（platform.stepfun.com/docs/zh/guides/pricing/details.md）写明StepAudio 3 系列适用限时免费政策、限免至北京时间 2026-11-17 11:59:59，同日起按新价计费（语音识别 7.5 元/音频小时、语音合成 95 元/百万字符、实时语音 0.65 元/会话分钟）；文本侧 Step 5 Preview / Step 3.7 Flash 均按量计费、无免费额度。只入观望原因：① 官方只说「适用限时免费政策的模型」、未逐条列出哪几款在免，额度与限速也未公布；② 免费范围限于语音（ASR/TTS/音乐生成），文本模型仍需付费，作为「免费 token」情报价值有限；③ 窗口只剩 6 天，结束后转常规计费。待官方明确免费模型清单与额度后再评估上架。",
+      "reason": "2026-11-20 复核更新：官方 API 定价文档已把 StepAudio 3 系列限免窗口顺延至北京时间 2026-11-23 11:59:59（原写 11-17），11-23 12:00 起按新价计费（语音识别 7.5 元/音频小时、语音合成 95 元/百万字符、实时语音 0.65 元/会话分钟）；文本侧 step-5-preview（7 / 0.7 / 20 元每百万 tokens）、step-3.7-flash（1.35 / 0.27 / 8.1）均按量计费。只入观望原因：① 官方只说「适用限时免费政策的模型」、未逐条列出哪几款在免，额度与限速也未公布；② 免费范围限于语音（ASR/TTS/音乐生成），文本模型仍需付费——若只需文本，官方 Model Lab 内 step-5-preview 客户端免费（限 1 并发、不能接 API），属客户端内权益；③ 窗口仅到 11-23，之后转常规计费。待官方明确免费模型清单与额度后再评估上架。",
       "detail_slug": "0005ebrx",
-      "reviewed_at": "2026-11-11"
+      "reviewed_at": "2026-11-20"
     },
     {
       "name": "腾讯 Marvis（马维斯）",
@@ -2241,10 +2224,10 @@
     {
       "name": "Command Code（Ling 3.1 Flash 与 Glyph Cluster 免费窗口）",
       "url": "https://commandcode.ai",
-      "reason": "2026-11-01 自动更新新增：官方 10-31 起限时免费开放 Ling 3.1 Flash 1019（每天最多 100 次、不消耗额度）与 Glyph Cluster 预览（每天最多 1,000 次），另一并称 $10 GOAT 套餐的 100 美元用量额度转为永久。只入观望原因：① 免费属短窗口推广（约 3 天内截止），无公开截止日与额度上限说明，稳定性未验证；② 核心产品是按月付费的编码 Agent（GOAT $10 / Pro 更高档），免费额度与付费套餐绑定，非独立免费层；③ 与 OpenCode Zen、Kilo 等编码 Agent 同构，按聚合器/同类先观望的惯例暂不上首页。",
+      "reason": "2026-11-01 自动更新新增：官方 10-31 起限时免费开放 Ling 3.1 Flash 1019（每天最多 100 次、不消耗额度）与 Glyph Cluster 预览（每天最多 1,000 次），另一并称 $10 GOAT 套餐的 100 美元用量额度转为永久。只入观望原因：① 免费属短窗口推广（约 3 天内截止），无公开截止日与额度上限说明，稳定性未验证；② 核心产品是按月付费的编码 Agent（GOAT $10 / Pro 更高档），免费额度与付费套餐绑定，非独立免费层；③ 与 OpenCode Zen、Kilo 等编码 Agent 同构，按聚合器/同类先观望的惯例暂不上首页。2026-11-20 快讯（ailyre）又称新增免费模型 Flint，调用不消耗额度、未公布截止时间，属单源待核。",
       "detail_slug": "0129dmkr",
       "added": "2026-11-01",
-      "reviewed_at": "2026-11-01"
+      "reviewed_at": "2026-11-20"
     },
     {
       "name": "Inferbase（$0 Free 档聚合网关）",
