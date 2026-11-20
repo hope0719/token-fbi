@@ -2624,7 +2624,7 @@ PROMO_BAR = '''<aside class="site-promo-bar" aria-label="推广入口">
 <a href="https://www.16688.com.cn/shop/K4399" target="_blank" rel="sponsored nofollow noopener noreferrer">
 <span class="site-promo-label">推广</span>
 <span class="site-promo-title">Codex 充值快车道</span>
-<span class="site-promo-price">月 Plus 仅需 138</span>
+<span class="site-promo-price">月 Plus 仅需 130</span>
 <span class="site-promo-arrow" aria-hidden="true">↗</span>
 </a></aside>'''
 PROMO_STYLE = '''<style id="site-promo-style">
