@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-21",
-  "total": 49,
+  "last_updated": "2026-11-22",
+  "total": 50,
   "items": [
     {
       "name": "WorkBuddy",
@@ -99,18 +99,18 @@
       "sponsored": false,
       "entry_url": "https://t.aliyun.com/U/Ob4f6l",
       "intel_url": "https://t.aliyun.com/U/Ob4f6l",
-      "last_verified": "2026-11-20",
-      "modality": "Qwen4-Max · Qwen3.8-Max · Qwen3.8-Flash · DeepSeek-V4-Pro · DeepSeek-Flash · GLM-5.3 · GLM-5.3-Flash · MiniMax-M3.1-Flash · Step-5-Preview",
+      "last_verified": "2026-11-22",
+      "modality": "Qwen4-Max · Qwen3.8-Max · Qwen3.8-Flash · DeepSeek-V4-Pro · DeepSeek-Flash · GLM-5.3 · GLM-5.3-Flash · Kimi-K3.1-Pro · Kimi-K2.8-Preview · MiniMax-M3.1-Flash · Step-5-Preview",
       "signup": "",
       "activity_rules": [
         "新用户（体验版）权益：官方文档明确「为期 2 周的专业版试用及 300 Credits」，每账号一次，需绑定手机号并实名；试用到期后不自动续费，仍可用免费基础模型但受每日与每月限额。",
         "每日 100 通用 Credits：自 2026-11-19 10:00 起仅向试用期用户、个人付费订阅（专业版/高级版/旗舰版）与会员卡用户开放，体验版（免费）用户不再发放；调整前已领取的不受影响，仍在各自 30 天有效期内可用。领取需在 Qoder CN 桌面端/移动端/IDE 主动领取，每轮 100 枚、30 天有效、可跨天累积，结束时间另行公告。",
-        "当前 Credits 用量参考系数（Auto/Fast 自 2026-11-18 10:00 起下调，指定模型倍率不变）：Auto 0.3×、Fast 0.6×；Qwen4-Max 0.4×、Qwen3.8-Max 0.5×、Qwen3.8-Flash 0.1×、DeepSeek-V4-Pro 0.5×、DeepSeek-Flash 0.1×、GLM-5.3 0.8×、GLM-5.3-Flash 0.1×、MiniMax-M3.1-Flash 0.1×、Step-5-Preview 0.3×；以客户端模型选择器显示为准。",
+        "当前 Credits 用量参考系数（Auto/Fast 自 2026-11-18 10:00 起下调，指定模型倍率不变）：Auto 0.3×、Fast 0.6×；Qwen4-Max 0.4×、Qwen3.8-Max 0.5×、Qwen3.8-Flash 0.1×、DeepSeek-V4-Pro 0.5×、DeepSeek-Flash 0.1×、GLM-5.3 0.8×、GLM-5.3-Flash 0.1×、MiniMax-M3.1-Flash 0.1×、Step-5-Preview 0.3×、Kimi-K3.1-Pro 1.0×、Kimi-K2.8-Preview 0.8×；以客户端模型选择器显示为准。",
         "首购特价（双十一限时、份额先到先得）：专业版月付 19.9 元（原价 59）含 2,000 Credits；高级版月付 169 元含 6,000 Credits 另加赠 6,000 Qwen 专属 Credits；年付专业版首月 4,000、高级版首月 12,000。仅限从未成功付费的 Qoder CN 账户，团队版/企业版/会员卡不适用，结束时间官方另行公告，能否享 19.9 元以价格页与实际支付为准。",
         "错峰折扣：每日 22:00 至次日 08:00（北京时间），Qwen3.8-Max 0.2×、Qwen3.8-Flash 0.04×，相当于标准倍率 4 折；仅 Pro Trial 及付费档自动生效，免费用户不享受，结束时间官方未公布。",
         "Credits 耗尽后仍可使用免费基础模型，但有每日与每月使用限额；模型倍率即积分折扣（0.5× = 半价），实际可用模型与倍率以客户端为准。"
       ],
-      "update_source": "用户指定 2026-11-20（点明 Qoder 免费用户已无每日额度、DeepSeek 低倍率与 19.9 首购更划算；据 docs.qoder.cn「每日领取 100 Credits」11-19 调整、「限时特价首购」页与模型选择器校正）",
+      "update_source": "自动更新 2026-11-22（巡检：官方模型选择器新增 Kimi-K3.1-Pro 1.0×／Kimi-K2.8-Preview 0.8×，一并写入 modality 与系数说明；Qwen3.8-Flash 仍为常规 0.1×、错峰 0.04×，未恢复免费）",
       "detail_slug": "0002eanr",
       "legacy_detail_paths": [
         "/intel/item-001-qoder-cn/",
@@ -835,8 +835,8 @@
       "intel_url": "https://www.mrjjxw.com/articles/2026-11-12/4646119.html",
       "signup": "",
       "modality": "豆包2.1 Lite／2.1 Pro · DeepSeek-V4.1-Flash／V4-Pro · Kimi-K3.1-Pro · GLM-5.3／5.3-Flash",
-      "last_verified": "2026-11-13",
-      "update_source": "自动更新 2026-11-13（巡检：官方 11-12 接入 Kimi-K3.1-Pro／GLM-5.3／DeepSeek-V4.1-Flash，豆包2.1 Lite 与 DS-V4.1-Flash 限时倍率 0.01×）；邀请链接用户指定 2026-11-13",
+      "last_verified": "2026-11-22",
+      "update_source": "自动更新 2026-11-22（巡检：30 天体验订阅与 DS-V4.1-Flash 0.01× 倍率仍在；补记每日签到 200 额度/周一翻倍/30 天约 8,800 额度的免费入口）",
       "detail_slug": "0076drty",
       "added": "2026-10-09",
       "activity_rules": [
@@ -844,7 +844,8 @@
         "额度口径：日常小额任务本身不消耗或仅消耗极少额度；任务需要更强模型时，切到 DeepSeek-V4.1-Flash 按 0.01× 计（约为常规消耗的 1%），豆包2.1-Lite 同为限时 0.01×。",
         "模型选择页新增额度消耗倍率标注，系数越低同等任务消耗越少；豆包2.1-Lite 与 DeepSeek-V4.1-Flash 已下调倍率至 0.01×（限时）。",
         "工作日与节假日的指定优惠时段使用参与活动的模型，可再享额度消耗折扣；具体时段以客户端提示为准。",
-        "新用户登录豆包工作电脑版可免费领取 30 天订阅权益，到期可再续领一次（合计最多 60 天）。"
+        "新用户登录豆包工作电脑版可免费领取 30 天订阅权益，到期可再续领一次（合计最多 60 天）。",
+        "每日签到另领 200 额度、周一翻倍，连续签到 30 天累计约 8,800 额度（接近标准套餐一个月用量）；额度可攒着做任务时用，具体数值以客户端签到页显示为准。"
       ],
       "invite_text": "我在用豆包工作电脑版，新用户下载可领 30 天免费体验套餐（到期还能再领一次）。",
       "invite_url": "https://www.doubao.com/pc/desktop-fission/pro-trial/invited?inviteCode=b8QTIiiJ3f",
@@ -1119,8 +1120,8 @@
       "intel_url": "https://maas.unisound.com/models/u2-flash",
       "signup": "访问 maas.unisound.com 注册并实名后领取 U Plan Free 档，进入「控制台 → API Key 管理 → 创建 API Key」，Base URL 为 https://maas-api.unisound.com/v1。",
       "modality": "U2-Flash-1118（266B·原生多模态·1M 上下文） · U2 · U2-Med · U2-Decision（限时 ¥0）",
-      "last_verified": "2026-11-18",
-      "update_source": "自动更新 2026-11-18（源 diff：U2-Flash 换代 U2-Flash-1118，266B/原生多模态/1M 上下文，限时 6 折；U Plan Free 档权益与三档模型包不变）",
+      "last_verified": "2026-11-22",
+      "update_source": "自动更新 2026-11-22（源 diff：官方横幅由「升级限时 5 折 29.5 元/月」改为「限时 7 折 41.3 元/月」，11-01~11-20 的 5 折活动已结束；Free 档权益未变）",
       "source_urls": [
         "https://maas.unisound.com/models/u2-flash",
         "https://m.toutiao.com/article/7690902463473402419"
@@ -1133,7 +1134,7 @@
         "积分按 7 天周期刷新，未用完不累积、不结转；5 小时窗口额度在消耗 5 小时后重置。",
         "原「U2-Flash 输入/输出/缓存全部 0 元不限量」限时活动已于 2026-10-31 结束；2026-11-18 起主模型换代为 U2-Flash-1118，按量计费输入 0.6 元、输出 1.2 元、输入缓存命中 0.02 元每百万 Token（限时 6 折，原价 1 / 2 元），价格页「限时 6 折」未公布截止日。",
         "U2-Flash 上线赠礼：官方 MaaS 平台首页标注「平台赠送 1 亿 Token」，额度自动发放至账户、仅可用于 U2-Flash 模型调用，官方未公布领取截止日，以账户到账提示为准。",
-        "U Plan 活动期 2026-11-01 至 2026-11-20：Free 档免费领取，Standard / Plus 升级限时 5 折（低至 29.5 元/月），活动结束后恢复原价。",
+        "U Plan 活动分两期：2026-11-01 至 2026-11-20 的升级限时 5 折（低至 29.5 元/月）已结束；2026-11-22 官方横幅已改为「套餐升级限时 7 折，低至 41.3 元/月」，Free 档仍免费领取，新一轮折扣未公布截止日，以官方活动页与结算页为准。",
         "U2-Decision 在模型价格页仍标注「限时免费」（0 元），未公布截止日，以官方价格页为准。",
         "U2-Flash-1118 于 2026-11-18 上架模型广场：总参数 266B、原生多模态支持图片理解、1M 上下文、256K 最大输出，模型 ID 仍为 u2-flash；官方文档中心「模型发布」页尚未同步该版本。"
       ]
@@ -1370,6 +1371,30 @@
         "https://build.nvidia.com/models",
         "https://build.nvidia.com/z-ai/glm-5-3-flash",
         "https://build.nvidia.com/minimaxai/minimax-m3.1-flash"
+      ]
+    },
+    {
+      "name": "书生·浦语 InternLM 开放 API",
+      "vendor": "上海人工智能实验室",
+      "category": "model",
+      "free_type": "长期免费",
+      "quota": "每月 100 万输入 + 300 万输出 Tokens 免费，限速 10 RPM / 5000 TPM，月初刷新。",
+      "validity": "",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://chat.intern-ai.org.cn/",
+      "intel_url": "https://chat.intern-ai.org.cn/",
+      "signup": "访问 chat.intern-ai.org.cn 注册（手机号或邮箱），在「API 管理 → 获取个人密钥」创建 Token；接口 OpenAI 兼容，base_url 为 https://chat.intern-ai.org.cn/api/v1。",
+      "modality": "intern-latest · internvl-latest（多模态）",
+      "last_verified": "2026-11-22",
+      "update_source": "自动更新 2026-11-22（新增扫描：多份免费额度清单同口径记录每月 100 万输入 + 300 万输出、10 RPM 永久免费；官方站为前端渲染无法一手核，额度以控制台用量页为准）",
+      "detail_slug": "0141obkl",
+      "added": "2026-11-22",
+      "source_urls": [
+        "https://chat.intern-ai.org.cn/",
+        "https://internlm.intern-ai.org.cn/api/document"
       ]
     }
   ],
