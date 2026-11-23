@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-22",
+  "last_updated": "2026-11-23",
   "total": 50,
   "items": [
     {
@@ -341,8 +341,8 @@
       "sponsored": false,
       "entry_url": "https://openrouter.ai",
       "intel_url": "https://openrouter.ai",
-      "last_verified": "2026-11-15",
-      "modality": "Nemotron 3 Ultra 550B / 3.5 系列 · Gemma 4 31B/26B · ERNIE-5.5-Flash-Preview · Ling-3.2-flash · Inkling 2 Small · LFM-3 · Flint v1.0 · Particle-1 等 14 款 :free",
+      "last_verified": "2026-11-23",
+      "modality": "Nemotron 3 Ultra 550B / 3.5 Super-VL / 3.5 Lightning / 3 Nano Omni · Gemma 4 31B/26B · ERNIE-5.5-Flash-Preview · Ling-3.2-flash · LFM-3 1.7B · Particle-1 · Flint v1.0 等 11 款 :free（以 /api/v1/models 为准）",
       "signup": "",
       "detail_slug": "0018bing",
       "legacy_detail_paths": [
@@ -353,7 +353,7 @@
         "/intel/item-022-openrouter/",
         "/intel/item-026-openrouter/"
       ],
-      "update_source": "自动更新 2026-11-15（巡检：/api/v1/models 实测 :free 15→14 款，Apodex-1.1-mini 下线、Ling-3.2-flash 加入免费；限速与永久免费口径不变）"
+      "update_source": "自动更新 2026-11-23（巡检：/api/v1/models 实测 :free 14→11 款，Inkling 2 Small 等下线，总数 476 个模型）"
     },
     {
       "name": "BazaarLink",
@@ -876,29 +876,30 @@
       "vendor": "",
       "category": "event",
       "free_type": "限时活动",
-      "quota": "11/16–11/22 登录即领 1 亿 Tokens（1 万积分），11-22 23:59 失效，每账号限领一次；上周 5000 万已结束。",
-      "validity": "2026-11-22",
+      "quota": "11/23–11/29 登录即领 1 亿 Tokens（1 万积分），11-29 23:59 失效，每账号限领一次；上周同期福利已于 11-22 23:59 结束。",
+      "validity": "2026-11-29",
       "region": "",
       "gates": [],
       "note": "",
       "sponsored": false,
       "entry_url": "https://autoclaw.zhipuai.cn",
-      "intel_url": "https://autoclaw.zhipuai.cn/blog/news/M11W3/",
+      "intel_url": "https://autoclaw.zhipuai.cn/blog/news/M11W4/",
       "signup": "",
       "modality": "GLM-5.3-Flash · 桌面 Agent",
-      "last_verified": "2026-11-16",
-      "update_source": "自动更新 2026-11-16（巡检：M11W3 于 11-16 00:00 当期生效，100M Tokens=1 万积分、11-22 23:59 失效；M11W4 尚未发布）",
+      "last_verified": "2026-11-23",
+      "update_source": "自动更新 2026-11-23（巡检：M11W4 于 11-23 00:00 当期生效，100M Tokens=1 万积分、11-29 23:59 失效）",
       "detail_slug": "0085puck",
       "added": "2026-10-11",
       "source_urls": [
         "https://autoclaw.zhipuai.cn",
         "https://autoclaw.z.ai/blog/news/Weekly-Perks-M10W3/",
-        "https://autoclaw.zhipuai.cn/blog/news/M11W3/"
+        "https://autoclaw.zhipuai.cn/blog/news/M11W3/",
+        "https://autoclaw.zhipuai.cn/blog/news/M11W4/"
       ],
       "activity_rules": [
-        "本期福利（11 月 16 日 00:00 至 11 月 22 日 23:59，北京时间）登录 AutoClaw 即得 100M Tokens（相当于 10,000 积分），每个账号限领一次，奖励于 11 月 22 日 23:59 失效。",
-        "上一期（11 月 9 日至 11 月 15 日，5000 万 Tokens 双十一福利）已于 11 月 15 日 23:59 结束，每账号限领一次，未领取不再补发。",
-        "更早两期（11 月 2 日至 8 日 5000 万 Tokens、10 月 26 日至 11 月 1 日 1 亿 Tokens）均已结束。",
+        "本期福利（11 月 23 日 00:00 至 11 月 29 日 23:59，北京时间）登录 AutoClaw 即得 100M Tokens（相当于 10,000 积分），每个账号限领一次，奖励于 11 月 29 日 23:59 失效。",
+        "上一期（11 月 16 日至 11 月 22 日，同为 100M Tokens）已于 11 月 22 日 23:59 结束，每账号限领一次，未领取不再补发。",
+        "更早各期（11 月 9 日至 15 日 5000 万 Tokens 双十一福利、11 月 2 日至 8 日 5000 万、10 月 26 日至 11 月 1 日 1 亿）均已结束。",
         "另有一项升级礼：升级至 2.2.0 版本、完成旧版数据迁移可领 5000 积分（约 5000 万 tokens），积分发放后 7 天内有效。"
       ]
     },
