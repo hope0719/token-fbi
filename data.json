@@ -1,8 +1,8 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-23",
-  "total": 50,
+  "last_updated": "2026-11-24",
+  "total": 51,
   "items": [
     {
       "name": "WorkBuddy",
@@ -99,7 +99,7 @@
       "sponsored": false,
       "entry_url": "https://t.aliyun.com/U/Ob4f6l",
       "intel_url": "https://t.aliyun.com/U/Ob4f6l",
-      "last_verified": "2026-11-22",
+      "last_verified": "2026-11-24",
       "modality": "Qwen4-Max · Qwen3.8-Max · Qwen3.8-Flash · DeepSeek-V4-Pro · DeepSeek-Flash · GLM-5.3 · GLM-5.3-Flash · Kimi-K3.1-Pro · Kimi-K2.8-Preview · MiniMax-M3.1-Flash · Step-5-Preview",
       "signup": "",
       "activity_rules": [
@@ -108,9 +108,10 @@
         "当前 Credits 用量参考系数（Auto/Fast 自 2026-11-18 10:00 起下调，指定模型倍率不变）：Auto 0.3×、Fast 0.6×；Qwen4-Max 0.4×、Qwen3.8-Max 0.5×、Qwen3.8-Flash 0.1×、DeepSeek-V4-Pro 0.5×、DeepSeek-Flash 0.1×、GLM-5.3 0.8×、GLM-5.3-Flash 0.1×、MiniMax-M3.1-Flash 0.1×、Step-5-Preview 0.3×、Kimi-K3.1-Pro 1.0×、Kimi-K2.8-Preview 0.8×；以客户端模型选择器显示为准。",
         "首购特价（双十一限时、份额先到先得）：专业版月付 19.9 元（原价 59）含 2,000 Credits；高级版月付 169 元含 6,000 Credits 另加赠 6,000 Qwen 专属 Credits；年付专业版首月 4,000、高级版首月 12,000。仅限从未成功付费的 Qoder CN 账户，团队版/企业版/会员卡不适用，结束时间官方另行公告，能否享 19.9 元以价格页与实际支付为准。",
         "错峰折扣：每日 22:00 至次日 08:00（北京时间），Qwen3.8-Max 0.2×、Qwen3.8-Flash 0.04×，相当于标准倍率 4 折；仅 Pro Trial 及付费档自动生效，免费用户不享受，结束时间官方未公布。",
-        "Credits 耗尽后仍可使用免费基础模型，但有每日与每月使用限额；模型倍率即积分折扣（0.5× = 半价），实际可用模型与倍率以客户端为准。"
+        "Credits 耗尽后仍可使用免费基础模型，但有每日与每月使用限额；模型倍率即积分折扣（0.5× = 半价），实际可用模型与倍率以客户端为准。",
+        "同期并行活动：匿名模型 HungerG 于 2026-11-23 24:00 至 11 月 30 日 24:00 限时免费（不消耗 Credits、不限次数、无需领取），与本卡注册/首购权益互不影响。"
       ],
-      "update_source": "自动更新 2026-11-22（巡检：官方模型选择器新增 Kimi-K3.1-Pro 1.0×／Kimi-K2.8-Preview 0.8×，一并写入 modality 与系数说明；Qwen3.8-Flash 仍为常规 0.1×、错峰 0.04×，未恢复免费）",
+      "update_source": "自动更新 2026-11-24（巡检：补充同期 HungerG 匿名模型限免说明，其余权益与倍率未变）",
       "detail_slug": "0002eanr",
       "legacy_detail_paths": [
         "/intel/item-001-qoder-cn/",
@@ -420,7 +421,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "免费层",
-      "quota": "免费模型 12 款（Hy4 flash、DeepSeek V4.1 Flash、LongCat 2.5 等），均标 limited time、未公布截止日；GLM-5.3-Flash、M3.1 Flash 已于 11-17/18 下架；LongCat 2.5 限 100 次/日。",
+      "quota": "免费模型 11 款（DeepSeek V4.1 Flash、Hy4 flash、MiMo-V2.6-Flash、Nemotron 3.5 系列、Big Pickle 等），均标 limited time、未公布截止日；LongCat 2.5 已退出免费池。",
       "validity": "免费名单滚动轮换，以 /models 实时列表为准",
       "region": "",
       "gates": [],
@@ -428,8 +429,8 @@
       "sponsored": false,
       "entry_url": "https://opencode.ai/zen",
       "intel_url": "https://opencode.ai/zen",
-      "last_verified": "2026-11-21",
-      "modality": "Hy4 flash Free · DeepSeek V4.1 Flash Free · LongCat 2.5 Free · MiMo-V2.6-Flash Free · Nemotron 3.5 系列 · Big Pickle",
+      "last_verified": "2026-11-24",
+      "modality": "Hy4 flash Free · DeepSeek V4.1 Flash Free · MiMo-V2.6-Flash Free · Nemotron 3.5 Lightning / Super VL Free · Big Pickle · Tidepool Alpha · Iceman · Beam · Flint 40B",
       "signup": "",
       "detail_slug": "0021agqn",
       "legacy_detail_paths": [
@@ -440,10 +441,16 @@
         "/intel/item-025-opencode-zen/",
         "/intel/item-029-opencode-zen/"
       ],
-      "update_source": "自动更新 2026-11-21（巡检：docs/zen 全免费模型 14→12 款，GLM-5.3-Flash 11-18、MiniMax M3.1 Flash 11-17 下架）",
+      "update_source": "自动更新 2026-11-24（巡检：docs/zen 免费池 12→11 款，LongCat 2.5 退出免费名单，新增 Tidepool Alpha / Iceman / Beam / Flint 40B）",
       "source_urls": [
         "https://opencode.ai/zen",
         "https://www.logeshwaran.org/2026/10/opencode-install-zen-go-pricing-ollama.html"
+      ],
+      "activity_rules": [
+        "免费模型以 docs/zen 的 Free models 段为准，共 11 款：DeepSeek V4.1 Flash、Hy4 flash、MiMo-V2.6-Flash、Nemotron 3.5 Lightning、Nemotron 3.5 Super VL、Big Pickle、Tidepool Alpha、Iceman、Beam、Flint 40B、Jev 1.13。",
+        "免费档仅限在 OpenCode 客户端内使用；通过其他客户端调用需付费模型或 OpenCode Go 订阅。",
+        "Beam Free 不支持中国大陆（含香港、澳门）及俄罗斯、伊朗等地区；其余免费模型未公布地域限制，但均标注 limited time、未公布截止日。",
+        "近期下线（Deprecated models）：LongCat-2.0（11-22）、GLM 5.2 与 5.1（11-19）、Gemini 3.1 Pro 与 Gemini 3 Flash（11-17）。"
       ]
     },
     {
@@ -787,7 +794,7 @@
       "vendor": "Google",
       "category": "tool",
       "free_type": "免费层",
-      "quota": "每周提供免费使用额度，支持 Gemini、Claude 等模型。",
+      "quota": "免费档（Free / AI Plus）额度每周刷新并设周上限，按 Agent 实际工作量扣减；可用 Gemini 4 Hydrogen 与 Gemini 3.8 Flash（后者 2026-11-30 下架），具体额度官方不公布。",
       "validity": "每周免费额度；以官方当前方案为准",
       "region": "",
       "gates": [],
@@ -795,20 +802,23 @@
       "sponsored": false,
       "entry_url": "https://antigravity.google/download",
       "intel_url": "https://antigravity.google/pricing",
-      "last_verified": "2026-11-06",
-      "modality": "Gemini · Claude · GPT-OSS",
+      "last_verified": "2026-11-24",
+      "modality": "Gemini 4 Hydrogen · Gemini 3.8 Flash（11-30 下架）· Claude Sonnet 4.6 / Opus 4.6 · GPT-OSS 120b",
       "signup": "下载客户端并使用 Google 账号登录，选择免费个人方案。",
       "activity_rules": [
-        "免费个人方案为 0 美元/月，提供基础周使用限额；官方未在定价页公布固定 Token 数量。",
-        "可选 Gemini 3.8 Flash、Gemini 3.7 Flash、Gemini 3.6 Flash、Gemini 3.1 Pro。",
-        "可选 Claude Sonnet 4.6（Thinking）、Claude Opus 4.6（Thinking）和 GPT-OSS 120B。",
-        "下载并登录客户端，在模型选择器中切换模型；剩余额度、重置时间及可用模型以账号实际显示为准。"
+        "免费档（Google AI 免费方案与 Google AI Plus）不收费，额度每周刷新并设每周上限；付费 Pro 与 Ultra 为每 5 小时刷新一次，同时受每周上限约束，用满周上限后 5 小时刷新不再累加。",
+        "Gemini 模型与 Claude / GPT 模型分两组计额度，各自有周上限与 5 小时窗口；在客户端设置页或 CLI 输入 /usage（或 /quota）可查剩余额度。",
+        "免费档可用 Gemini 4 Hydrogen、Gemini 3.8 Flash，以及 Claude Sonnet 4.6、Claude Opus 4.6、GPT-OSS 120b；后四款将于 2026-11-30 下架，下架后免费档主要剩 Gemini 4 Hydrogen。",
+        "Gemini 4 Neon / Carbon / Argon 与 Orchestrator 仅对付费 Pro、Ultra 及符合条件设备试用开放；Argon 原独立额度池已并入通用 Gemini 额度池（2026-11-24 起分批推送）。",
+        "2026-11-24 官方重置了所有用户的 Gemini 额度（补回已用量，不提高上限），未公布固定重置周期；额度上限与可用模型以账号实际显示为准。",
+        "下载客户端并用 Google 账号登录即可使用免费档，无需绑定支付方式。"
       ],
       "source_urls": [
         "https://antigravity.google/pricing",
-        "https://antigravity.google/docs/models/"
+        "https://antigravity.google/docs/models/",
+        "https://antigravity.google/docs/plans"
       ],
-      "update_source": "自动更新 2026-11-06（巡检：官方 pricing 仍为 $0/月、Generally Available、basic weekly limits、无截止日；修正原 last_verified 早于 added 的日期矛盾）",
+      "update_source": "自动更新 2026-11-24（源 diff + 巡检：官方 docs/models 与 docs/plans 确认免费档仅 Gemini 4 Hydrogen 与 3.8 Flash、按周刷新；Claude 4.6/Opus 4.6/GPT-OSS 于 11-30 下架；11-24 Gemini 额度全员重置一次）",
       "detail_slug": "0039ysko",
       "legacy_detail_paths": [
         "/intel/item-039-google-antigravity-反重力/",
@@ -1396,6 +1406,40 @@
       "source_urls": [
         "https://chat.intern-ai.org.cn/",
         "https://internlm.intern-ai.org.cn/api/document"
+      ]
+    },
+    {
+      "name": "Qoder HungerG 匿名模型限免（CN 个人用户）",
+      "vendor": "",
+      "category": "event",
+      "free_type": "限时活动",
+      "quota": "11/23 24:00–11/30 24:00 选择 HungerG 不消耗 Credits、不限次数、无需领取，余额 0 也能用。",
+      "validity": "2026-11-30",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://qoder.com.cn",
+      "intel_url": "https://docs.qoder.cn/events/hungerg-free.md",
+      "signup": "",
+      "modality": "匿名 HungerG（身份未公布）· 思考强度 Low/Medium/High/Max · Qoder CN 与 Qoder CN IDE",
+      "last_verified": "2026-11-24",
+      "update_source": "自动更新 2026-11-24（用户提供线索：公众号推送 + 官方 docs 双源核对）",
+      "detail_slug": "0142dzha",
+      "added": "2026-11-24",
+      "source_urls": [
+        "https://mp.weixin.qq.com/s/VhcglOceH15bysZcAwsBtw",
+        "https://docs.qoder.cn/events/hungerg-free.md"
+      ],
+      "activity_rules": [
+        "活动时间：2026 年 11 月 23 日 24:00 至 11 月 30 日 24:00（北京时间）。",
+        "适用用户：Qoder CN 新老个人用户（体验版、专业版、高级版、旗舰版及会员卡用户）；企业订阅（团队版、企业标准版、企业专属版）不适用，模型选择器中不显示。",
+        "免费范围：调用 HungerG 不消耗 Credits、不设每日次数上限、无需领取；Credits 余额为 0 的账号同样可用。支持低/中/高/最大（Low/Medium/High/Max）四档思考强度，调至最大亦按 0 消耗。",
+        "计费边界：仅实际由 HungerG 完成的调用免费；部分功能运行时会调用其他模型，这部分按对应模型的正常系数计费。",
+        "排队规则：免费与付费用户均不限次数，高峰时段付费订阅用户享有更高排队优先级，可能遇到响应变慢或排队。",
+        "适用产品：Qoder CN 与 Qoder CN IDE；JetBrains 插件、CLI、QoderWake、Cloud Agents、移动端与网页版暂不支持。",
+        "国际版：公众号推送称 Qoder / Qoder IDE（CN 版与国际版）同步开放同一窗口，国际版细则以其模型列表与实际计费为准。",
+        "模型身份暂未公布，官方称将在合适时间公布；活动结束后按届时公示的计费系数收费。"
       ]
     }
   ],
