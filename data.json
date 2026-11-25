@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-24",
+  "last_updated": "2026-11-25",
   "total": 51,
   "items": [
     {
@@ -954,8 +954,8 @@
       "note": "",
       "sponsored": false,
       "entry_url": "https://zcode.z.ai/cn",
-      "intel_url": "https://bigmodel.cn/activity/trial-card/PU9MTWG0PM",
-      "last_verified": "2026-10-29",
+      "intel_url": "https://zcode.z.ai/cn/docs",
+      "last_verified": "2026-11-25",
       "modality": "GLM-5.3 · GLM-5.3-Flash",
       "signup": "新手任务领「夜间蹭蹭卡」：打开邀请链接 https://zcode.z.ai/invite/MWE6YM36 绑定邀请码，登录 ZCode 客户端并发送一条消息，三个任务完成后即可领取 1 亿 GLM-5.3-Flash Token。",
       "activity_rules": [
@@ -967,7 +967,7 @@
         "受邀注册另得被邀方权益：5 天每天 800 万 Token（邀新活动至 11/13，以客户端活动页为准）。",
         "具体额度与发放概率以官方活动页 / 客户端实时显示为准。"
       ],
-      "update_source": "自动更新 2026-10-29（巡检：官方新增每日 3 亿 GLM-5.3-Flash 口径，纠正原「Work 每日 800 万」表述）",
+      "update_source": "自动更新 2026-11-25（巡检：原情报链接智谱体验卡页已 404，改指官方文档；docs 已整体切换 GLM-5.4，「每日 3 亿」口径未再出现，额度待人工确认）",
       "detail_slug": "0003dfyo",
       "legacy_detail_paths": [
         "/intel/item-002-zcode/",
@@ -1413,7 +1413,7 @@
       "vendor": "",
       "category": "event",
       "free_type": "限时活动",
-      "quota": "11/23 24:00–11/30 24:00 选择 HungerG 不消耗 Credits、不限次数、无需领取，余额 0 也能用。",
+      "quota": "11/23–11/30 调用 HungerG 不消耗 Credits、无需领取；单账号设每日合理上限（付费用户更高），高峰可能排队。",
       "validity": "2026-11-30",
       "region": "",
       "gates": [],
@@ -1423,8 +1423,8 @@
       "intel_url": "https://docs.qoder.cn/events/hungerg-free.md",
       "signup": "",
       "modality": "匿名 HungerG（身份未公布）· 思考强度 Low/Medium/High/Max · Qoder CN 与 Qoder CN IDE",
-      "last_verified": "2026-11-24",
-      "update_source": "自动更新 2026-11-24（用户提供线索：公众号推送 + 官方 docs 双源核对）",
+      "last_verified": "2026-11-25",
+      "update_source": "自动更新 2026-11-25（源 diff + 巡检：官方活动文档新增「单账号每日合理使用上限」条款，纠正原「不限次数」表述；活动窗口与适用产品未变）",
       "detail_slug": "0142dzha",
       "added": "2026-11-24",
       "source_urls": [
@@ -1434,9 +1434,9 @@
       "activity_rules": [
         "活动时间：2026 年 11 月 23 日 24:00 至 11 月 30 日 24:00（北京时间）。",
         "适用用户：Qoder CN 新老个人用户（体验版、专业版、高级版、旗舰版及会员卡用户）；企业订阅（团队版、企业标准版、企业专属版）不适用，模型选择器中不显示。",
-        "免费范围：调用 HungerG 不消耗 Credits、不设每日次数上限、无需领取；Credits 余额为 0 的账号同样可用。支持低/中/高/最大（Low/Medium/High/Max）四档思考强度，调至最大亦按 0 消耗。",
+        "免费范围：调用 HungerG 不消耗 Credits、无需领取；Credits 余额为 0 的账号同样可用。官方明确单账号设有较高的每日合理使用上限（付费订阅用户上限更高），达到当日上限后次日自动刷新。支持低/中/高/最大（Low/Medium/High/Max）四档思考强度，调至最大亦按 0 消耗。",
         "计费边界：仅实际由 HungerG 完成的调用免费；部分功能运行时会调用其他模型，这部分按对应模型的正常系数计费。",
-        "排队规则：免费与付费用户均不限次数，高峰时段付费订阅用户享有更高排队优先级，可能遇到响应变慢或排队。",
+        "排队规则：高峰时段付费订阅用户享有更高排队优先级，可能遇到响应变慢或排队；官方保留按资源情况调整规则或活动时间的权利，变更通过更新活动文档通知。",
         "适用产品：Qoder CN 与 Qoder CN IDE；JetBrains 插件、CLI、QoderWake、Cloud Agents、移动端与网页版暂不支持。",
         "国际版：公众号推送称 Qoder / Qoder IDE（CN 版与国际版）同步开放同一窗口，国际版细则以其模型列表与实际计费为准。",
         "模型身份暂未公布，官方称将在合适时间公布；活动结束后按届时公示的计费系数收费。"
@@ -2336,6 +2336,14 @@
       "update_source": "自动更新 2026-11-16（新增扫描：公众号单源，每日额度与兑换码待官方核实）",
       "detail_slug": "0140bgjp",
       "added": "2026-11-16"
+    },
+    {
+      "name": "packet.ai Token Factory（限时全量免费）",
+      "url": "https://packet.ai/blog/openai-compatible-api-quickstart-token-factory",
+      "reason": "2026-11-25 自动更新新增：官方博客（11-24）写明 Token Factory 所有输入输出 Token 计费 0 美元，至 2026-12-16；注册只需邮箱或 Google 账号 + 一次短信验证、不绑卡；免费用 DeepSeek V4.1 Flash、MiniMax M3.1 Flash、Qwen2.5-1.5B-Instruct 三款开源模型，OpenAI 兼容端点 https://api.packet.ai/v1。只入观望原因：① 属 OpenAI 兼容推理网关，与 OpenRouter / Inferbase / Novita 同构，按「新聚合器先观望」惯例暂不上首页；② 12-16 后即转为按量付费、无永久免费层，属一次性开张促销；③ 海外站点（GPU 云服务商自营），中国大陆可用性与稳定性未验证。",
+      "added": "2026-11-25",
+      "reviewed_at": "2026-11-25",
+      "detail_slug": "0143uouk"
     }
   ],
   "hidden": [
