@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-25",
+  "last_updated": "2026-11-26",
   "total": 51,
   "items": [
     {
@@ -2279,8 +2279,8 @@
     {
       "name": "Devin（$0 Free 档）",
       "url": "https://devin.ai/",
-      "reason": "2026-10-29 用户提供 X 截图（@Fei2411，10-28）后核实：Cognition 的 Devin 除 $20 Pro 外有 $0 Free 档，官方定价页写「Light daily and weekly quota、limited model availability、unlimited inline edits and Tab completions」，注册即用、无需绑卡；Pro 档的「免费用 SWE-2」属促销，客户端标注 Promo until 12/1/2026。2026-11-11 复核：官方 11-04 发布 SWE-2 Flash（276B/12B 激活，基于 Inkling-Small），博客明确「Free through 11/30，在 Devin Desktop 与 CLI 使用」，但未写明适用套餐；免费档仍写「limited model availability」。只入观望原因：① 免费档额度官方始终写「light quota」、未公布具体数字；② SWE-2 / SWE-2 Flash 免费窗口是否覆盖 $0 档未确认，官网 pricing 仅把「免费用 SWE-2」列在 Pro 权益下，按付费订阅附赠口径暂不上首页；③ 国际站、需海外网络。待额度口径透明化或免费档明确开放旗舰模型后再评估上架。",
-      "reviewed_at": "2026-11-11",
+      "reason": "2026-10-29 用户提供 X 截图（@Fei2411，10-28）后核实：Cognition 的 Devin 除 $20 Pro 外有 $0 Free 档，官方定价页写「Light daily and weekly quota、limited model availability、unlimited inline edits and Tab completions」，注册即用、无需绑卡。2026-11-26 复核：官方 11-24 发布 SWE-2.1（官方博客卡片明写「Free through 12/8 on Desktop and CLI」，Cloud 不在免费内；12/9 起至 1/30 在 Desktop/Cloud/CLI 均为折扣价，非免费）。只入观望原因：① 免费档额度官方始终写「light quota」、未公布具体数字；② SWE-2.1 免费窗口是否覆盖 $0 Free 档仍未公布（官方只写 Desktop 与 CLI，未写适用套餐，11-04 SWE-2 Flash 口径同此）；③ 国际站、需海外网络。待额度口径透明化或免费档明确开放旗舰模型后再评估上架。",
+      "reviewed_at": "2026-11-26",
       "detail_slug": "0127dyyv",
       "added": "2026-10-29"
     },
