@@ -2,8 +2,38 @@
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
   "last_updated": "2026-11-27",
-  "total": 51,
+  "total": 52,
   "items": [
+    {
+      "name": "千问办公（QwenWork，阿里）",
+      "vendor": "阿里",
+      "category": "tool",
+      "free_type": "限时活动",
+      "quota": "11/26 11:00–12/2 23:59 MiniMax-M3.1-Flash 限免 0 积分、无需领取；同选择器内 Qwen4-Max、GLM-5.4 等其余模型仍按各自系数扣积分。",
+      "validity": "2026-12-02",
+      "region": "",
+      "gates": [],
+      "note": "",
+      "sponsored": false,
+      "entry_url": "https://qwenwork.cn/",
+      "promo_url": "https://gzvtyc4y.qwenwork.host/",
+      "promo_net": "千问办公 客户端下载",
+      "intel_url": "https://mp.weixin.qq.com/s?__biz=MzcwMzM3NjM1NQ==&mid=2247486046&idx=1&sn=fb35459c8e94c6a3ae155f195afa231a",
+      "signup": "",
+      "modality": "MiniMax-M3.1-Flash（限免）· Qwen4-Max · Qwen3.8-Max · Qwen3.8-Flash · GLM-5.4 · Kimi-K3.1-Pro · DeepSeek-V4-Pro · Ling-3.1-Flash",
+      "last_verified": "2026-11-27",
+      "update_source": "用户指定 2026-11-27（官方公众号确认 MiniMax-M3.1-Flash 于北京时间 11-26 11:00 至 12-02 23:59 限免；同批自查观区转正并置首）",
+      "detail_slug": "0098zpea",
+      "added": "2026-11-27",
+      "activity_rules": [
+        "活动时间：北京时间 2026 年 11 月 26 日 11:00 至 12 月 2 日 23:59，MiniMax-M3.1-Flash 限免一整周。",
+        "使用方式：下载并打开千问办公客户端（Windows / macOS），在模型选择器中选择带「限免」标记的 MiniMax-M3.1-Flash，正常发起对话即可，无需领取、无兑换码。",
+        "免费范围：仅 MiniMax-M3.1-Flash 在该窗口内不消耗积分；模型选择器内的 Qwen4-Max、Qwen3.8-Max、Qwen3.8-Flash、GLM-5.4、Kimi-K3.1-Pro、DeepSeek-V4-Pro、Ling-3.1-Flash 等仍按各自积分系数正常扣费，看到「限免」仅指该单一模型。",
+        "模型能力：MiniMax-M3.1-Flash 为 MoE 架构（总参约 428B、每 Token 激活约 23B），支持原生多模态输入（图片、图表、截图、视频），覆盖文档成稿、图表解读、视频分镜、调研与估值表等办公场景。",
+        "同期活动：官方同步开启「千仔小M的章鱼游戏」创意征集，带话题 #千问办公 #MiniMax 在公众号 / 视频号 / 小红书投稿，各平台点赞前 5 名赠周边，12 月 4 日开奖。",
+        "边界说明：本次限免是千问办公客户端内的体验权益，不是 MiniMax 开放平台 API 免费；官方未公布账号范围与次数上限，以客户端活动弹窗说明为准，官方保留调整权利。"
+      ]
+    },
     {
       "name": "WorkBuddy",
       "vendor": "",
@@ -2251,13 +2281,6 @@
       "url": "https://www.codebuddy.cn/",
       "reason": "非模型额度：属 Coding Plan / IDE 插件 / 办公 Agent 类工具，按现行上架口径（只收可直接调用大模型额度的平台）暂不收录。",
       "detail_slug": "0124njuf",
-      "reviewed_at": "2026-10-20"
-    },
-    {
-      "name": "千问办公（QwenWork，阿里）",
-      "url": "https://www.qwenwork.cn/",
-      "reason": "办公客户端，非模型额度，暂时下架。",
-      "detail_slug": "0098zpea",
       "reviewed_at": "2026-10-20"
     },
     {
