@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-26",
+  "last_updated": "2026-11-27",
   "total": 51,
   "items": [
     {
@@ -2344,6 +2344,14 @@
       "added": "2026-11-25",
       "reviewed_at": "2026-11-25",
       "detail_slug": "0143uouk"
+    },
+    {
+      "name": "秒悟 Meoo（阿里 ATH 云端 AI 开发平台）",
+      "url": "https://docs.meoo.com/pricing",
+      "reason": "2026-11-27 自动更新新增：官方文档（docs.meoo.com/pricing）载明个人免费版 ¥0，所有用户每日首次登录赠 2,000 积分，新人首月另赠 5,000 积分；免费版含 1 个云服务（限时免费）、1GB 数据存储（限时免费）、应用内调用大模型（限时免费）与 Meoo CLI，可调用千问、Kimi、GLM、MiniMax 等模型。只入观望原因：① 积分绑定平台内使用、无法导出 API Key 给第三方客户端，按「消费级 Agent 积分类默认只进观望区」口径处理；② 每日 2,000 积分的兑换比例与单模型消耗官方未标价，实际可用轮次不可测算；③ 新人首月 5,000 积分的赠送期限与「限时免费」标注均无截止日，稳定性待观察。",
+      "added": "2026-11-27",
+      "reviewed_at": "2026-11-27",
+      "detail_slug": "0144ovjz"
     }
   ],
   "hidden": [
