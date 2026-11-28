@@ -451,7 +451,7 @@
       "vendor": "",
       "category": "tool",
       "free_type": "免费层",
-      "quota": "免费模型 11 款（DeepSeek V4.1 Flash、Hy4 flash、MiMo-V2.6-Flash、Nemotron 3.5 系列、Big Pickle 等），均标 limited time、未公布截止日；LongCat 2.5 已退出免费池。",
+      "quota": "免费模型 12 款（DeepSeek V4.1 Flash、Hy4 flash、MiMo-V2.6-Flash、Nemotron 3.5 系列、Seaglass Alpha、Big Pickle 等），均标 limited time、未公布截止日。",
       "validity": "免费名单滚动轮换，以 /models 实时列表为准",
       "region": "",
       "gates": [],
@@ -459,8 +459,8 @@
       "sponsored": false,
       "entry_url": "https://opencode.ai/zen",
       "intel_url": "https://opencode.ai/zen",
-      "last_verified": "2026-11-24",
-      "modality": "Hy4 flash Free · DeepSeek V4.1 Flash Free · MiMo-V2.6-Flash Free · Nemotron 3.5 Lightning / Super VL Free · Big Pickle · Tidepool Alpha · Iceman · Beam · Flint 40B",
+      "last_verified": "2026-11-28",
+      "modality": "Hy4 flash Free · DeepSeek V4.1 Flash Free · MiMo-V2.6-Flash Free · Nemotron 3.5 Lightning / Super VL Free · Seaglass Alpha Free · Big Pickle · Tidepool Alpha · Iceman · Beam · Flint 40B · Jev 1.13",
       "signup": "",
       "detail_slug": "0021agqn",
       "legacy_detail_paths": [
@@ -471,7 +471,7 @@
         "/intel/item-025-opencode-zen/",
         "/intel/item-029-opencode-zen/"
       ],
-      "update_source": "自动更新 2026-11-24（巡检：docs/zen 免费池 12→11 款，LongCat 2.5 退出免费名单，新增 Tidepool Alpha / Iceman / Beam / Flint 40B）",
+      "update_source": "自动更新 2026-11-28（巡检：docs/zen 免费池 11→12 款，新增 Seaglass Alpha Free，LongCat 2.5 仍在 Deprecated 列表）",
       "source_urls": [
         "https://opencode.ai/zen",
         "https://www.logeshwaran.org/2026/10/opencode-install-zen-go-pricing-ollama.html"
