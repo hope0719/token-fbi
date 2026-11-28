@@ -1,7 +1,7 @@
 {
   "site": "Token FBI · Token 情报局",
   "base_url": "https://token-fbi.com",
-  "last_updated": "2026-11-27",
+  "last_updated": "2026-11-28",
   "total": 52,
   "items": [
     {
@@ -1210,8 +1210,8 @@
       "vendor": "七牛云",
       "category": "model",
       "free_type": "限时活动",
-      "quota": "实名认证后每日 1 亿 Token；单笔充值满 100 元提至每日 10 亿。10/24–11/30，额度每日 0 点重置不结转。",
-      "validity": "2026-11-30",
+      "quota": "实名认证后每日 1 亿 Token；单笔充值满 100 元提至每日 10 亿。10/24–12/31，额度每日 0 点重置不结转。",
+      "validity": "2026-12-31",
       "region": "",
       "gates": [],
       "note": "",
@@ -1220,8 +1220,8 @@
       "intel_url": "https://www.qiniu.com/ai/model/qiniu/conatus-free",
       "signup": "登录七牛云完成实名认证，控制台创建 API Key，Base 填 https://api.qnaigc.com/v1，模型名填 qiniu/conatus-free。",
       "modality": "Conatus 融合模型 · 1M 上下文",
-      "last_verified": "2026-10-26",
-      "update_source": "自动更新 2026-10-26",
+      "last_verified": "2026-11-28",
+      "update_source": "自动更新 2026-11-28（巡检：活动确认延期至 12-31，__NEXT_DATA__ 的 campaign.endAt 与页首倒计时均已同步为 12-31）",
       "source_urls": [
         "https://www.qiniu.com/ai/free-models/conatus-2026",
         "https://www.qiniu.com/ai/model/qiniu/conatus-free"
